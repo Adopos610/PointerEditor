@@ -1,0 +1,441 @@
+@font-face {
+    font-family: "OPPO Sans";
+    src: url("/fonts/oppo-sans.woff2") format("woff2");
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --blue: #2f6fe4;
+    --blue-dark: #2258b8;
+    --blue-soft: #e8f2ff;
+    --ink: #173a6d;
+    --text: #2b4a71;
+    --muted: #7d94b4;
+    --line: #e3edfb;
+    --surface: #fbfdff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--surface);
+    color: var(--text);
+    font-family: "OPPO Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.ext-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 72px;
+    padding: 12px max(24px, calc((100vw - 1280px) / 2));
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, .96);
+    backdrop-filter: blur(14px);
+}
+
+.ext-brand h1 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.2rem;
+    letter-spacing: .01em;
+}
+
+.ext-brand p {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: .74rem;
+}
+
+.ext-search {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: min(340px, 34vw);
+    height: 38px;
+    margin-left: auto;
+    padding: 0 12px;
+    border: 1px solid #d3e2f8;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--muted);
+    transition: border-color .16s ease, box-shadow .16s ease;
+}
+
+.ext-search:focus-within {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(47, 111, 228, .12);
+}
+
+.ext-search input {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: #1d3557;
+    font: 500 .8rem "OPPO Sans", sans-serif;
+    outline: none;
+}
+
+.ext-back {
+    flex: 0 0 auto;
+    padding: 8px 13px;
+    border: 1px solid #d3e2f8;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text);
+    font-size: .74rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .16s ease, border-color .16s ease, color .16s ease;
+}
+
+.ext-back:hover {
+    border-color: #9fc2f4;
+    background: #f4f9ff;
+    color: var(--blue);
+}
+
+.ext-shell {
+    flex: 1;
+    display: flex;
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    padding: 24px;
+    gap: 22px;
+}
+
+.ext-side {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-self: flex-start;
+    position: sticky;
+    top: 96px;
+}
+
+.ext-side-label {
+    padding: 0 10px 4px;
+    color: #93a8c4;
+    font-size: .64rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.ext-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ext-nav button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: transparent;
+    color: #5d7ea4;
+    font: 600 .78rem "OPPO Sans", sans-serif;
+    text-align: left;
+    cursor: pointer;
+    transition: background .16s ease, color .16s ease, border-color .16s ease;
+}
+
+.ext-nav button:hover {
+    background: #eef6ff;
+    color: var(--blue);
+}
+
+.ext-nav button.active {
+    border-color: #cfe0f7;
+    background: #fff;
+    color: var(--blue-dark);
+    box-shadow: 0 3px 10px rgba(23, 58, 109, .06);
+}
+
+.ext-nav em {
+    color: #9aadc4;
+    font-size: .66rem;
+    font-style: normal;
+}
+
+.ext-side-note,
+.ext-side-tip {
+    padding: 10px;
+    border-radius: 10px;
+    background: #f4f9ff;
+    color: #8096b3;
+    font-size: .68rem;
+    line-height: 1.6;
+}
+
+.ext-side-tip {
+    background: #fff;
+    border: 1px solid var(--line);
+    color: #5d7ea4;
+}
+
+.ext-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.ext-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.ext-heading h2 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.05rem;
+}
+
+.ext-heading span {
+    color: #93a8c4;
+    font-size: .72rem;
+}
+
+.ext-banner {
+    margin-bottom: 14px;
+    padding: 10px 13px;
+    border: 1px solid #d8e6fa;
+    border-radius: 10px;
+    background: #f4f9ff;
+    color: #5d7ea4;
+    font-size: .72rem;
+    line-height: 1.6;
+}
+
+.ext-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.ext-card {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-height: 176px;
+    padding: 15px;
+    border: 1px solid #dce9fb;
+    border-radius: 13px;
+    background: #fff;
+    transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+}
+
+.ext-card:hover {
+    transform: translateY(-2px);
+    border-color: #9fc2f4;
+    box-shadow: 0 12px 28px rgba(8, 35, 85, .09);
+}
+
+.ext-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.ext-card-icon {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    background: #f4f9ff;
+    object-fit: contain;
+}
+
+.ext-card-title {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.ext-card-title strong {
+    overflow: hidden;
+    color: var(--ink);
+    font-size: .86rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ext-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #93a8c4;
+    font-size: .64rem;
+}
+
+.ext-card-meta span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ext-badge {
+    flex: 0 0 auto;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: .58rem;
+    font-weight: 700;
+}
+
+.ext-badge.official {
+    background: var(--blue-soft);
+    color: var(--blue-dark);
+}
+
+.ext-badge.community {
+    background: #eafaf2;
+    color: #18794a;
+}
+
+.ext-card-desc {
+    flex: 1;
+    margin: 0;
+    color: var(--muted);
+    font-size: .72rem;
+    line-height: 1.55;
+}
+
+.ext-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.ext-install {
+    height: 28px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--blue);
+    color: #fff;
+    font: 700 .68rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+    transition: background .16s ease;
+}
+
+.ext-install:hover { background: var(--blue-dark); }
+
+.ext-featured {
+    margin-left: auto;
+    color: #b48a1f;
+    font-size: .62rem;
+    font-weight: 600;
+}
+
+.ext-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 60px 20px;
+    color: #93a8c4;
+}
+
+.ext-empty span { font-size: 1.8rem; }
+.ext-empty strong { color: #5d7ea4; font-size: .88rem; }
+.ext-empty small { font-size: .72rem; }
+
+.ext-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    padding: 18px 24px 24px;
+    border-top: 1px solid var(--line);
+    color: #93a8c4;
+    font-size: .66rem;
+}
+
+.ext-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    z-index: 20;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: #173a6d;
+    color: #fff;
+    font-size: .74rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 8px);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.ext-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+@media (max-width: 1100px) {
+    .ext-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 820px) {
+    .ext-header {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 16px;
+    }
+    .ext-search {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+    }
+    .ext-back { margin-left: auto; }
+    .ext-shell {
+        flex-direction: column;
+        padding: 16px;
+        gap: 14px;
+    }
+    .ext-side {
+        position: static;
+        flex-basis: auto;
+    }
+    .ext-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .ext-nav button {
+        height: 32px;
+        padding: 0 10px;
+    }
+    .ext-side-note,
+    .ext-side-tip { display: none; }
+    .ext-brand p { display: none; }
+    .ext-footer { padding: 14px 16px 20px; flex-direction: column; }
+}
+
+@media (max-width: 560px) {
+    .ext-grid { grid-template-columns: 1fr; }
+    .ext-card { min-height: 150px; }
+}

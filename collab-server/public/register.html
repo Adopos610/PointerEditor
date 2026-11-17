@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>创建账号 · PointerE</title>
+<meta name="description" content="创建 PointerE 账号，加入 PointerEditor 在线协作。完成邮箱验证后可获得 100 积分。">
+<meta name="theme-color" content="#f8f9ff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%232f6fe4'/%3E%3Cpath d='M37 13 24 35h12l-8 17 21-27H36z' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/register.css?v=2">
+</head>
+<body>
+<header class="top-app-bar">
+  <a class="brand" href="/" aria-label="PointerEditor 首页">
+    <span class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.2 2.5 7 12.2h5.1L9.6 21.5 18.9 10h-5.6z" fill="currentColor"/></svg>
+    </span>
+    <span>PointerE<small>POINTEREDITOR ACCOUNT</small></span>
+  </a>
+  <a class="top-link" href="/">返回首页</a>
+</header>
+
+<main class="auth-main">
+  <section class="auth-card" id="register-card">
+    <div class="auth-heading">
+      <div class="auth-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="3.5"/>
+          <path d="M5 20a7 7 0 0 1 14 0"/>
+        </svg>
+      </div>
+      <span class="auth-kicker">POINTERE ACCOUNT</span>
+      <h1>创建账号</h1>
+      <p class="auth-description">PointerE 账号用于 PointerEditor 在线协作，与创客次元账号相互独立。完成邮箱验证后即可加入房间。</p>
+      <div class="auth-chips">
+        <span>邮箱验证后 +100 积分</span>
+        <span>每日创作再 +10 积分</span>
+        <span>支持多端协作</span>
+      </div>
+    </div>
+
+    <div class="md-message error" id="form-error" role="alert" aria-live="polite" hidden></div>
+    <div class="md-message ok" id="form-ok" role="status" aria-live="polite" hidden></div>
+
+    <form id="register-form" novalidate>
+      <label class="md-field">
+        <input name="username" autocomplete="username" maxlength="20" placeholder=" " required>
+        <span class="md-label">用户名</span>
+        <span class="md-support">3-20 位字母、数字或下划线</span>
+      </label>
+      <label class="md-field">
+        <input name="email" type="email" autocomplete="email" maxlength="120" placeholder=" " required>
+        <span class="md-label">邮箱</span>
+        <span class="md-support">用于接收验证邮件，请填写常用邮箱</span>
+      </label>
+      <label class="md-field">
+        <input name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder=" " required>
+        <span class="md-label">密码</span>
+        <span class="md-support">至少 8 位</span>
+      </label>
+      <label class="md-field">
+        <input name="confirm" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder=" " required>
+        <span class="md-label">确认密码</span>
+        <span class="md-support">再次输入密码以确认</span>
+      </label>
+
+      <div class="captcha-group">
+        <label class="md-field">
+          <input name="captchaAnswer" maxlength="6" autocomplete="off" placeholder=" " required>
+          <span class="md-label">图形验证码</span>
+        </label>
+        <button type="button" class="captcha-image" id="captcha-button" title="点击刷新验证码" aria-label="刷新图形验证码">
+          <span>加载验证码</span>
+        </button>
+      </div>
+      <p class="auth-hint">验证码不区分大小写。注册后请点击邮件中的链接完成验证。</p>
+
+      <div class="auth-actions">
+        <button type="submit" class="md-button filled" id="submit-button">创建账号</button>
+        <div class="auth-secondary">
+          <a class="md-button text" href="/">返回首页</a>
+        </div>
+      </div>
+    </form>
+
+    <div class="auth-divider"></div>
+    <p class="auth-footnote">已有账号？打开 PointerEditor，在「云端 → 在线协作」中直接登录。遇到问题可前往 <a href="https://forum.ctspace.xyz" target="_blank" rel="noreferrer">创客次元</a> 反馈。</p>
+  </section>
+
+  <section class="auth-card done-card" id="done-card" hidden>
+    <div class="done-icon" aria-hidden="true">✓</div>
+    <span class="auth-kicker">CHECK YOUR EMAIL</span>
+    <h1>请查收验证邮件</h1>
+    <p class="auth-description" id="done-text">验证邮件已发送，请点击邮件中的链接完成邮箱验证。验证完成后即可回到 PointerEditor 登录协作。</p>
+    <div class="md-message ok" id="done-message" role="status" aria-live="polite" hidden></div>
+    <div class="done-actions">
+      <button type="button" class="md-button filled" id="resend-button">重新发送验证邮件</button>
+      <a class="md-button text" href="/">返回首页</a>
+    </div>
+  </section>
+
+  <p class="auth-legal">注册即表示你同意将 PointerE 账号用于 PointerEditor 协作服务。账号与创客次元账号相互独立，请妥善保管密码。</p>
+</main>
+<script src="/register.js"></script>
+</body>
+</html>

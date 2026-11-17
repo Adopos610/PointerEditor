@@ -1,0 +1,21 @@
+{
+  "short_name": "PointerEditor",
+  "name": "PointerEditor",
+  "description": "蓝白配色的 Scratch 兼容创作编辑器",
+  "icons": [
+    {
+      "src": "images/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "editor",
+  "background_color": "#f0f7ff",
+  "display": "standalone",
+  "theme_color": "#2f6fe4"
+}

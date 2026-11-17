@@ -1,0 +1,254 @@
+{
+  "items": [
+    {
+      "id": "pointerToolbox",
+      "name": "Pointer 工具箱",
+      "description": "项目统计、日期时间与文本小工具，由 PointerEditor 官方维护。",
+      "icon": "pointer-toolbox.svg",
+      "url": "pointer-toolbox.js",
+      "author": "PointerEditor",
+      "category": "pointer",
+      "featured": true
+    },
+    {
+      "id": "pointerMath",
+      "name": "Pointer 数学工具",
+      "description": "映射、限制、取整、百分比与千分位格式化等常用数学积木。",
+      "icon": "pointer-math.svg",
+      "url": "pointer-math.js",
+      "author": "PointerEditor",
+      "category": "pointer",
+      "featured": true
+    },
+    {
+      "id": "files",
+      "name": "文件",
+      "description": "读取或下载文件。",
+      "icon": "files.svg",
+      "url": "https://extensions.turbowarp.org/files.js",
+      "author": "GarboMuffin",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "runtimeoptions",
+      "name": "运行时选项",
+      "description": "获取或修改关于加速模式，帧数，补帧，克隆体上限，舞台大小以及其他的设置。",
+      "icon": "runtimeoptions.svg",
+      "url": "https://extensions.turbowarp.org/runtime-options.js",
+      "author": "GarboMuffin",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "fetch",
+      "name": "Fetch",
+      "description": "向广阔的互联网进行请求。",
+      "icon": "fetch.svg",
+      "url": "https://extensions.turbowarp.org/fetch.js",
+      "author": "GarboMuffin",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "strings",
+      "name": "文本",
+      "description": "处理字符与文本。",
+      "icon": "strings.svg",
+      "url": "https://extensions.turbowarp.org/text.js",
+      "author": "CST1229、BludIsAnLemon、Man-o-Valor",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "localstorage",
+      "name": "本地存储",
+      "description": "持久地存储数据。类似于 Cookies，但这项技术更好。",
+      "icon": "localstorage.svg",
+      "url": "https://extensions.turbowarp.org/local-storage.js",
+      "author": "infernostars、GarboMuffin",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "clipboard",
+      "name": "剪切板",
+      "description": "读取与写入系统剪切板。",
+      "icon": "clipboard.svg",
+      "url": "https://extensions.turbowarp.org/clipboard.js",
+      "author": "tomyo-code、AdamMady、NamelessCat",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "iframe",
+      "name": "内嵌框架",
+      "description": "在舞台上嵌入网页或 HTML 。",
+      "icon": "iframe.svg",
+      "url": "https://extensions.turbowarp.org/iframe.js",
+      "author": "GarboMuffin",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "xeltallivSimple3D",
+      "name": "简单 3D",
+      "description": "轻松制作适用于 GPU 加速的 3D 项目。",
+      "icon": "xeltallivSimple3D.png",
+      "url": "https://extensions.turbowarp.org/Xeltalliv/simple3D.js",
+      "author": "Vadik1",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "penP",
+      "name": "画笔 + V7",
+      "description": "更加高级的画笔渲染。",
+      "icon": "penP.svg",
+      "url": "https://extensions.turbowarp.org/obviousAlexC/penPlus.js",
+      "author": "ObviousAlexC、Pen-Group",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "lmsclonesplus",
+      "name": "克隆 +",
+      "description": "Scratch 的克隆功能的推广与延申。",
+      "icon": "lmsclonesplus.svg",
+      "url": "https://extensions.turbowarp.org/Lily/ClonesPlus.js",
+      "author": "LilyMakesThings",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "nkmoremotion",
+      "name": "更多运动",
+      "description": "更多跟运动相关的积木。",
+      "icon": "nkmoremotion.svg",
+      "url": "https://extensions.turbowarp.org/NexusKitten/moremotion.js",
+      "author": "NamelessCat",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "lmsTempVars2",
+      "name": "临时变量",
+      "description": "来创建可丢弃的线程变量和运行时变量吧。",
+      "icon": "lmsTempVars2.svg",
+      "url": "https://extensions.turbowarp.org/Lily/TempVariables2.js",
+      "author": "LilyMakesThings、Mio",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "lmsTimers",
+      "name": "更多计时器",
+      "description": "同时控制多个计时器。",
+      "icon": "lmsTimers.svg",
+      "url": "https://extensions.turbowarp.org/Lily/MoreTimers.js",
+      "author": "LilyMakesThings",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "mdwaltersnotifications",
+      "name": "通知",
+      "description": "显示通知。",
+      "icon": "mdwaltersnotifications.svg",
+      "url": "https://extensions.turbowarp.org/mdwalters/notifications.js",
+      "author": "mdwalters",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "shreder95resolution",
+      "name": "屏幕分辨率",
+      "description": "获取主屏幕的分辨率。",
+      "icon": "shreder95resolution.svg",
+      "url": "https://extensions.turbowarp.org/shreder95ua/resolution.js",
+      "author": "shreder95ua",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "fullscreen0419",
+      "name": "全屏模式",
+      "description": "进入或退出全屏模式。",
+      "icon": "fullscreen0419.svg",
+      "url": "https://extensions.turbowarp.org/veggiecan/browserfullscreen.js",
+      "author": "Veggiecan0419",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "Encoding",
+      "name": "编码",
+      "description": "把字符串解码或编码为 Unicode，Base64，或者 URL。",
+      "icon": "Encoding.svg",
+      "url": "https://extensions.turbowarp.org/encoding.js",
+      "author": "-SIPC-",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "truefantomregexp",
+      "name": "正则表达式",
+      "description": "为使用正则表达式准备的全套接口。",
+      "icon": "truefantomregexp.svg",
+      "url": "https://extensions.turbowarp.org/true-fantom/regexp.js",
+      "author": "TrueFantom",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "Gamepad",
+      "name": "游戏手柄",
+      "description": "直接访问游戏手柄而不再将按钮映射为按键。",
+      "icon": "Gamepad.svg",
+      "url": "https://extensions.turbowarp.org/gamepad.js",
+      "author": "GarboMuffin",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "pointerlock",
+      "name": "鼠标指针锁定",
+      "description": "添加鼠标锁定的功能。鼠标的 x、y 块在指针锁定时将返回上一帧到现在的变化，并取代了指针锁定的实验性功能。",
+      "icon": "pointerlock.png",
+      "url": "https://extensions.turbowarp.org/pointerlock.js",
+      "author": "GarboMuffin",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "lmsVideo",
+      "name": "视频",
+      "description": "从 URL 播放视频",
+      "icon": "lmsVideo.svg",
+      "url": "https://extensions.turbowarp.org/Lily/Video.js",
+      "author": "LilyMakesThings、SharkPool、Fath11",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "shovelcss",
+      "name": "自定义样式",
+      "description": "自定义作品中变量监视器和询问的样式。",
+      "icon": "shovelcss.svg",
+      "url": "https://extensions.turbowarp.org/TheShovel/CustomStyles.js",
+      "author": "TheShovel",
+      "category": "community",
+      "featured": false
+    },
+    {
+      "id": "truefantommath",
+      "name": "数学",
+      "description": "添加了从求幂到三角函数计算的大量积木。",
+      "icon": "truefantommath.svg",
+      "url": "https://extensions.turbowarp.org/true-fantom/math.js",
+      "author": "TrueFantom",
+      "category": "community",
+      "featured": false
+    }
+  ]
+}

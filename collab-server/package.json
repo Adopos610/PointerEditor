@@ -1,0 +1,14 @@
+{
+  "name": "pointere-cloud",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PointerE accounts, admin console and collaboration relay",
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs"
+  },
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

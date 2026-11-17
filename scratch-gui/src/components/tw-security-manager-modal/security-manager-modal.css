@@ -1,0 +1,309 @@
+@import "../../css/colors.css";
+
+.modal-content {
+    width: 440px;
+    margin-top: 25px;
+}
+
+.body {
+    max-height: calc(100vh - 170px);
+    overflow-y: auto;
+    background: $ui-white;
+    padding: 1rem 1.5rem;
+}
+
+.body p {
+    margin: 8px 0;
+}
+
+.buttons {
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    padding-top: 8px;
+    background: $ui-white;
+}
+.buttons :disabled {
+    opacity: 0.8;
+}
+.deny-button, .allow-button {
+    flex-grow: 1;
+    font: inherit;
+    color: inherit;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid $ui-black-transparent;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+.deny-button {
+    background-color: rgb(255, 92, 92);
+    color: white;
+    margin-right: 8px;
+}
+.allow-button {
+    background-color: #24cd11;
+    color: black;
+}
+
+.analysis {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed #d6e4fa;
+}
+.analyze-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    border: 1px solid #b9d3f8;
+    border-radius: 0.25rem;
+    background: linear-gradient(135deg, #f3f8ff, #e8f1ff);
+    color: #2258b8;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.analyze-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #e9f3ff, #dbe9ff);
+    border-color: #7faef2;
+    transform: translateY(-1px);
+}
+.analyze-button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+.analyze-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #7cc4ff, #3b82f6 55%, #7c5cff);
+    color: #fff;
+    font-size: 0.68rem;
+    font-style: normal;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.28);
+}
+.analysis-panel {
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #dbe7f8;
+    border-left-width: 4px;
+    border-radius: 8px;
+    background: #fbfdff;
+    max-height: 260px;
+    overflow-y: auto;
+    animation: analysis-in 0.22s ease both;
+}
+.analysis-danger {
+    border-left-color: #e55353;
+    background: #fffafa;
+}
+.analysis-caution {
+    border-left-color: #e8a23a;
+    background: #fffdf7;
+}
+.analysis-safe {
+    border-left-color: #22a06b;
+    background: #f9fffc;
+}
+@keyframes analysis-in {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.analysis-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.analysis-badge {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #2258b8;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+.analysis-danger .analysis-badge {
+    background: #d94040;
+}
+.analysis-caution .analysis-badge {
+    background: #d98b1e;
+}
+.analysis-safe .analysis-badge {
+    background: #1c8f5c;
+}
+.analysis-score {
+    color: #7a8ca6;
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+.analysis-summary {
+    margin: 4px 0 8px;
+    color: #3c4a60;
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+.analysis-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.analysis-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 5px 0;
+}
+.analysis-item + .analysis-item {
+    border-top: 1px solid #eef3fb;
+}
+.analysis-item strong {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #2c3a4f;
+    font-size: 0.74rem;
+}
+.analysis-item p {
+    margin: 2px 0 0;
+    color: #6b7b93;
+    font-size: 0.7rem;
+    line-height: 1.45;
+}
+.analysis-level {
+    color: #93a1b5;
+    font-size: 0.62rem;
+    font-style: normal;
+    font-weight: 500;
+}
+.analysis-dot {
+    flex: 0 0 auto;
+    width: 7px;
+    height: 7px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background: #97a6bb;
+}
+.dot-high {
+    background: #e55353;
+}
+.dot-medium {
+    background: #e8a23a;
+}
+.dot-good {
+    background: #22a06b;
+}
+.analysis-empty {
+    margin: 4px 0;
+    color: #6b7b93;
+    font-size: 0.72rem;
+}
+.analysis-foot {
+    margin: 8px 0 0;
+    color: #97a6bb;
+    font-size: 0.64rem;
+}
+
+.ai-block {
+    margin-top: 10px;
+    padding-top: 9px;
+    border-top: 1px dashed #d6e4fa;
+}
+.ai-head {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 6px;
+    color: #7089a8;
+    font-size: 0.68rem;
+}
+.ai-badge {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6d5cf6, #a855f7);
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 700;
+    box-shadow: 0 2px 7px rgba(124, 92, 255, 0.25);
+}
+.ai-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-bottom: 7px;
+    color: #556b88;
+    font-size: 0.68rem;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.ai-consent input {
+    margin-top: 2px;
+    accent-color: #7c5cff;
+}
+.ai-button {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #b8a8ff;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f4f1ff, #ece7ff);
+    color: #5b3fd1;
+    font: 600 0.72rem "OPPO Sans", "Helvetica Neue", Arial, sans-serif;
+    cursor: pointer;
+    transition: background 0.16s ease, transform 0.16s ease;
+}
+.ai-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #ebe5ff, #e1d8ff);
+    transform: translateY(-1px);
+}
+.ai-button:disabled {
+    opacity: 0.55;
+    cursor: default;
+}
+.ai-hint {
+    margin: 0;
+    color: #8b9bb2;
+    font-size: 0.68rem;
+    line-height: 1.5;
+}
+.ai-error {
+    margin: 8px 0 0;
+    padding: 6px 8px;
+    border-radius: 7px;
+    background: #fff1f0;
+    color: #c0392b;
+    font-size: 0.68rem;
+    line-height: 1.45;
+}
+.ai-panel {
+    max-height: 220px;
+    overflow-y: auto;
+    margin-top: 9px;
+    padding: 9px 10px;
+    border: 1px solid #ddd3ff;
+    border-left-width: 4px;
+    border-radius: 8px;
+    background: #fbfaff;
+    animation: analysis-in 0.22s ease both;
+}
+.ai-panel.analysis-danger {
+    border-left-color: #e55353;
+    background: #fffafa;
+}
+.ai-panel.analysis-caution {
+    border-left-color: #e8a23a;
+    background: #fffdf7;
+}
+.ai-panel.analysis-safe {
+    border-left-color: #22a06b;
+    background: #f9fffc;
+}

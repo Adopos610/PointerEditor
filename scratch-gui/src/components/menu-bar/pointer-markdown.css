@@ -1,0 +1,132 @@
+.markdown {
+    color: inherit;
+    font-size: 0.83rem;
+    line-height: 1.68;
+    word-break: break-word;
+}
+.markdown > :first-child {
+    margin-top: 0;
+}
+.markdown > :last-child {
+    margin-bottom: 0;
+}
+.paragraph {
+    margin: 0 0 8px;
+    white-space: normal;
+}
+.heading1,
+.heading2,
+.heading3,
+.heading4,
+.heading5,
+.heading6 {
+    margin: 10px 0 6px;
+    color: #1d3557;
+    line-height: 1.35;
+}
+.heading1 { font-size: 1.1rem; }
+.heading2 { font-size: 1rem; }
+.heading3 { font-size: 0.92rem; }
+.heading4, .heading5, .heading6 { font-size: 0.86rem; }
+.list,
+.task-list {
+    margin: 5px 0 9px;
+    padding-left: 1.25rem;
+}
+.list li,
+.task-list li {
+    margin: 2px 0;
+}
+.task-list {
+    padding-left: 0.25rem;
+    list-style: none;
+}
+.task-mark {
+    display: inline-block;
+    width: 1.15rem;
+    color: #2f6fe4;
+}
+.inline-code {
+    padding: 1px 4px;
+    border-radius: 4px;
+    background: rgba(37, 99, 235, 0.08);
+    color: #194f9c;
+    font-family: Consolas, "SFMono-Regular", monospace;
+    font-size: 0.78rem;
+}
+.code-block {
+    position: relative;
+    margin: 8px 0 10px;
+    padding: 12px 12px 10px;
+    overflow-x: auto;
+    border-radius: 9px;
+    background: #102746;
+    color: #dcecff;
+    font-size: 0.74rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.code-block code {
+    font-family: Consolas, "SFMono-Regular", monospace;
+}
+.code-language {
+    display: block;
+    margin-bottom: 5px;
+    color: #7fa8d8;
+    font-family: "OPPO Sans", sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.blockquote {
+    margin: 8px 0;
+    padding: 5px 10px;
+    border-left: 3px solid #9fc2f4;
+    background: #f4f9ff;
+    color: #5f7898;
+}
+.hr {
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #e0ebfa;
+}
+.markdown a {
+    color: #2f6fe4;
+    text-decoration: none;
+}
+.markdown a:hover {
+    text-decoration: underline;
+}
+.markdown strong {
+    color: #1f3f6a;
+    font-weight: 700;
+}
+.markdown del {
+    color: #9aaac0;
+}
+.table-wrap {
+    margin: 8px 0 10px;
+    overflow-x: auto;
+    border: 1px solid #e0ebfa;
+    border-radius: 8px;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.74rem;
+}
+.table th,
+.table td {
+    padding: 5px 8px;
+    border-bottom: 1px solid #e8f0fb;
+    text-align: left;
+}
+.table th {
+    background: #f2f8ff;
+    color: #34577f;
+    font-weight: 700;
+}
+.table tr:last-child td {
+    border-bottom: 0;
+}

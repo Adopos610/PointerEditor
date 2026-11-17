@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PointerEditor 0.2.0 · 中文 Scratch 创作工具</title>
+<meta name="description" content="PointerEditor 是一款蓝白主题、中文界面、兼容 Scratch 的创作工具。支持真实积木、矢量画板、PEAgent AI 编程、在线协作与 PointerE 积分商城。">
+<meta name="theme-color" content="#2f6fe4">
+<meta property="og:title" content="PointerEditor 0.2.0 · 中文 Scratch 创作工具">
+<meta property="og:description" content="真积木、真画板，还有会写 Scratch 的 PEAgent。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ctspace.xyz/">
+<link rel="canonical" href="https://www.ctspace.xyz/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%232f6fe4'/%3E%3Cpath d='M37 13 24 35h12l-8 17 21-27H36z' fill='white'/%3E%3C/svg%3E">
+<style>
+:root {
+  --blue-900: #0c2448;
+  --blue-800: #12376a;
+  --blue-700: #1b4f9e;
+  --blue-600: #2f6fe4;
+  --blue-500: #4b8df7;
+  --blue-300: #8fc2ff;
+  --blue-100: #e8f2ff;
+  --ink: #15304f;
+  --muted: #6d86a4;
+  --line: rgba(88, 129, 180, .2);
+  --paper: #f7fbff;
+  --white: #fff;
+  --green: #2fa66a;
+  --orange: #f0a83b;
+  --purple: #7c5cff;
+  --shadow: 0 24px 70px rgba(18, 58, 120, .16);
+  --radius: 24px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "OPPO Sans", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 11px; border-radius: 999px;
+  border: 1px solid rgba(47, 111, 228, .18);
+  background: #edf5ff; color: #2760bf;
+  font-size: .7rem; font-weight: 700; letter-spacing: .06em;
+}
+.eyebrow i { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(47,166,106,.12); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  min-height: 50px; padding: 0 22px; border-radius: 13px;
+  border: 1px solid transparent; text-decoration: none; cursor: pointer;
+  font-family: inherit; font-size: .86rem; font-weight: 700;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  color: #fff; background: linear-gradient(135deg, var(--blue-500), var(--blue-600) 58%, #2258b8);
+  box-shadow: 0 12px 28px rgba(47, 111, 228, .28);
+}
+.btn-primary:hover { box-shadow: 0 16px 36px rgba(47, 111, 228, .35); }
+.btn-soft { color: #2358a8; background: #fff; border-color: #cfe0f7; box-shadow: 0 6px 16px rgba(29, 75, 140, .07); }
+.btn-soft:hover { background: #f1f8ff; border-color: #9fc2f4; }
+.btn.white { color: #174786; background: #fff; border-color: rgba(255, 255, 255, .7); }
+.btn.ghost-white { color: #eaf4ff; border-color: rgba(255, 255, 255, .3); background: rgba(255, 255, 255, .08); }
+.btn.ghost-white:hover { background: rgba(255, 255, 255, .16); }
+.btn.small { min-height: 40px; padding: 0 16px; font-size: .76rem; border-radius: 10px; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(249, 252, 255, .82);
+  border-bottom: 1px solid rgba(164, 195, 233, .3);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 18px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; color: #133764; letter-spacing: -.01em; }
+.brand-mark {
+  display: inline-grid; place-items: center; width: 34px; height: 34px;
+  border-radius: 11px; background: linear-gradient(145deg, #6db7ff, #2f6fe4 60%, #2458ba);
+  box-shadow: 0 7px 16px rgba(47,111,228,.24);
+}
+.brand-mark svg { width: 19px; height: 19px; }
+.brand small { display: block; margin-top: -2px; color: #89a0ba; font-size: .56rem; font-weight: 600; letter-spacing: .12em; }
+.nav-links { display: flex; align-items: center; gap: 23px; }
+.nav-links a { color: #5d7694; text-decoration: none; font-size: .78rem; font-weight: 600; transition: color .18s ease; }
+.nav-links a:hover { color: var(--blue-600); }
+.nav-actions { display: flex; align-items: center; gap: 9px; }
+
+/* Hero */
+.hero {
+  position: relative; overflow: hidden;
+  padding: 78px 0 80px;
+  background:
+    radial-gradient(circle at 82% 16%, rgba(117, 187, 255, .35), transparent 34%),
+    radial-gradient(circle at 20% 24%, rgba(146, 208, 255, .22), transparent 30%),
+    linear-gradient(180deg, #f8fcff, #eef7ff 72%, #f8fcff);
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(60, 120, 200, .12) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,.5), transparent 75%);
+}
+.hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: center; gap: 54px; }
+.hero h1 { margin: 16px 0 14px; color: #0d2b55; font-size: clamp(2.5rem, 5.2vw, 4.4rem); line-height: 1.1; letter-spacing: -.055em; }
+.hero h1 .accent {
+  background: linear-gradient(110deg, #2f6fe4, #55a7ff 50%, #7c5cff);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero p.lead { max-width: 520px; margin: 0; color: #63809f; font-size: .98rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 26px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 22px; color: #7f97b1; font-size: .7rem; }
+.hero-meta span { display: inline-flex; align-items: center; gap: 6px; }
+.hero-meta span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #6fb5ff; }
+.hero-visual { position: relative; min-width: 0; }
+.hero-glow { position: absolute; inset: 10% 8%; background: rgba(80, 164, 255, .32); filter: blur(46px); border-radius: 40%; }
+.editor-window {
+  position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, .85);
+  border-radius: 20px; background: #fff; box-shadow: var(--shadow), 0 0 0 1px rgba(118, 160, 220, .14);
+  transform: perspective(1200px) rotateY(-4deg) rotateX(1.5deg);
+  animation: float 8s ease-in-out infinite;
+}
+@keyframes float { 50% { transform: perspective(1200px) rotateY(-1deg) rotateX(0) translateY(-7px); } }
+.window-bar { display: flex; align-items: center; gap: 10px; height: 42px; padding: 0 14px; background: linear-gradient(135deg, #3f82f5, #2f6fe4); color: #fff; }
+.window-dots { display: flex; gap: 5px; }
+.window-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.55); }
+.window-title { font-size: .62rem; font-weight: 700; letter-spacing: .04em; }
+.window-pill { margin-left: auto; padding: 3px 8px; border-radius: 999px; background: rgba(255,255,255,.16); font-size: .55rem; }
+.editor-body { display: grid; grid-template-columns: 92px 1fr 1.05fr; min-height: 315px; }
+.palette { padding: 12px 9px; background: #f4f9ff; border-right: 1px solid #e4eefb; }
+.palette .dot { display: flex; align-items: center; gap: 5px; margin: 8px 0; color: #7994b2; font-size: .45rem; }
+.palette .dot::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: var(--c, #4b8df7); }
+.workspace { position: relative; padding: 17px 13px; background-color: #fbfdff; background-image: radial-gradient(#d9e8fa 1px, transparent 1px); background-size: 15px 15px; overflow: hidden; }
+.block { display: inline-flex; align-items: center; gap: 5px; height: 20px; padding: 0 9px; margin: 0 0 7px; border-radius: 5px; background: var(--b, #4b8df7); color: #fff; font-size: .44rem; font-weight: 700; box-shadow: 0 2px 0 rgba(0,0,0,.1); }
+.block.y { --b: #f0a83b; }
+.block.p { --b: #a15cff; }
+.block.g { --b: #48b879; }
+.stage-mini {
+  position: relative; display: grid; place-items: center; min-height: 315px;
+  background: linear-gradient(160deg, #dff3ff, #bde3ff 48%, #9bcfff);
+  overflow: hidden;
+}
+.stage-mini::before { content: ""; position: absolute; left: -10%; right: -10%; bottom: -35%; height: 70%; border-radius: 50%; background: rgba(77, 145, 255, .28); }
+.stage-mini::after { content: ""; position: absolute; left: -20%; right: -20%; bottom: -28%; height: 52%; border-radius: 50%; background: rgba(255, 255, 255, .22); }
+.hero-character { position: relative; z-index: 1; width: 114px; height: 114px; filter: drop-shadow(0 16px 18px rgba(25, 78, 150, .18)); }
+.stage-label { position: absolute; z-index: 2; left: 12px; top: 10px; padding: 3px 7px; border-radius: 6px; background: rgba(255,255,255,.55); color: #4374ac; font-size: .47rem; font-weight: 700; }
+.floating-card {
+  position: absolute; z-index: 3; display: flex; align-items: center; gap: 8px;
+  padding: 8px 11px; border: 1px solid rgba(255,255,255,.8); border-radius: 12px;
+  background: rgba(255,255,255,.86); box-shadow: 0 12px 30px rgba(21, 69, 130, .15);
+  backdrop-filter: blur(14px); color: #31567f; font-size: .6rem; font-weight: 700;
+  animation: bob 6s ease-in-out infinite;
+}
+.floating-card svg { width: 20px; height: 20px; }
+.floating-card.agent { right: -16px; top: 35px; animation-delay: -1s; }
+.floating-card.collab { left: -22px; bottom: 52px; animation-delay: -3s; }
+.floating-card.fps { right: 24px; bottom: -15px; color: #267c58; animation-delay: -4.5s; }
+@keyframes bob { 50% { transform: translateY(-6px); } }
+
+/* Section basics */
+.section { padding: 84px 0; }
+.section-head { max-width: 680px; margin-bottom: 34px; }
+.section-head h2 { margin: 13px 0 9px; color: #102f59; font-size: clamp(1.8rem, 3.9vw, 2.9rem); line-height: 1.2; letter-spacing: -.04em; }
+.section-head p { margin: 0; color: var(--muted); font-size: .88rem; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head.center p { margin-left: auto; margin-right: auto; }
+.features { background: #fff; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.feature-card {
+  padding: 24px; border: 1px solid #e1edfb; border-radius: 18px;
+  background: linear-gradient(180deg, #fff, #fbfdff);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.feature-card:hover { transform: translateY(-4px); border-color: #b9d7fa; box-shadow: 0 18px 40px rgba(31, 83, 155, .1); }
+.feature-icon { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 13px; background: #eaf4ff; color: #2f6fe4; }
+.feature-icon svg { width: 22px; height: 22px; }
+.feature-card.green .feature-icon { background: #eafaf1; color: #24865b; }
+.feature-card.purple .feature-icon { background: #f1edff; color: #7454e8; }
+.feature-card.orange .feature-icon { background: #fff7e6; color: #c78319; }
+.feature-card h3 { margin: 15px 0 7px; color: #20466f; font-size: 1rem; }
+.feature-card p { margin: 0; color: #7a92ad; font-size: .8rem; }
+
+/* AI */
+.ai-section { overflow: hidden; background: linear-gradient(180deg, #f8fcff, #f0f8ff); }
+.ai-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 48px; align-items: center; }
+.ai-copy h2 { margin: 13px 0 12px; color: #102f59; font-size: clamp(1.8rem, 3.8vw, 2.75rem); line-height: 1.2; letter-spacing: -.04em; }
+.ai-copy p { margin: 0 0 20px; color: #7189a3; font-size: .88rem; }
+.ai-list { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
+.ai-list li { display: flex; gap: 10px; color: #4d6b8d; font-size: .78rem; }
+.ai-list li strong { color: #244d7c; }
+.check { display: inline-grid; place-items: center; flex: none; width: 18px; height: 18px; margin-top: 1px; border-radius: 50%; background: #e7f8ef; color: #1e8c59; font-size: .65rem; font-weight: 900; }
+.agent-demo { position: relative; padding: 12px; border-radius: 25px; background: linear-gradient(135deg, #ff5f6d, #ffb347 25%, #ffe45e 40%, #4ade80 58%, #38bdf8 76%, #8b5cf6); box-shadow: 0 24px 60px rgba(53, 108, 205, .2); }
+.agent-panel { overflow: hidden; border-radius: 17px; background: #fff; }
+.agent-top { display: flex; align-items: center; gap: 8px; padding: 12px 15px; background: linear-gradient(135deg, #3f82f5, #2f6fe4); color: #fff; font-size: .72rem; font-weight: 700; }
+.agent-top .spark { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 7px; background: rgba(255,255,255,.18); }
+.agent-top small { margin-left: auto; color: rgba(255,255,255,.65); font-size: .55rem; font-weight: 500; }
+.agent-chat { padding: 14px 15px 10px; background: #f8fbff; }
+.agent-bubble { width: fit-content; max-width: 88%; margin: 0 0 9px; padding: 8px 10px; border: 1px solid #dfeaf9; border-radius: 11px; background: #fff; color: #52708f; font-size: .68rem; line-height: 1.55; }
+.agent-bubble.user { margin-left: auto; border-color: transparent; background: linear-gradient(135deg, #4b8df7, #2f6fe4); color: #fff; }
+.agent-bubble strong { color: #255da8; }
+.agent-actions { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.agent-actions span { padding: 3px 6px; border-radius: 5px; background: #eaf3ff; color: #2f6fe4; font-size: .56rem; font-weight: 600; }
+.agent-island { display: flex; align-items: center; gap: 7px; margin: 0 12px 12px; padding: 7px 9px; border-radius: 999px; background: #0d2345; color: #eaf4ff; font-size: .6rem; }
+.agent-island i { width: 6px; height: 6px; border-radius: 50%; background: #57e3a0; box-shadow: 0 0 0 4px rgba(87,227,160,.12); }
+.agent-island span { margin-left: auto; padding: 2px 7px; border-radius: 999px; background: rgba(255,255,255,.1); color: #cfe4ff; font-size: .54rem; }
+
+/* Collaboration / points */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.panel { position: relative; overflow: hidden; padding: 30px; border-radius: var(--radius); border: 1px solid #e0ecfa; background: #fff; }
+.panel.dark { border-color: transparent; background: linear-gradient(150deg, #17498e, #2f6fe4 55%, #65adff); color: #fff; }
+.panel.dark h3, .panel.dark p { color: #fff; }
+.panel.dark p { color: rgba(235,246,255,.72); }
+.panel h3 { margin: 14px 0 7px; color: #173d69; font-size: 1.25rem; }
+.panel > p { margin: 0; color: #7991ab; font-size: .82rem; }
+.panel-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 13px; background: #e9f4ff; color: #2f6fe4; }
+.panel.dark .panel-icon { background: rgba(255,255,255,.14); color: #fff; }
+.panel-icon svg { width: 22px; height: 22px; }
+.avatars { display: flex; margin-top: 20px; }
+.avatar { display: grid; place-items: center; width: 32px; height: 32px; margin-right: -7px; border: 2px solid #fff; border-radius: 50%; background: #dcecff; color: #2c65b4; font-size: .58rem; font-weight: 800; }
+.avatar:nth-child(2) { background: #e5ddff; color: #6446c8; }
+.avatar:nth-child(3) { background: #dff6e9; color: #287f59; }
+.avatar:nth-child(4) { background: #fff0d9; color: #a46c16; }
+.points-row { display: flex; align-items: center; gap: 14px; margin-top: 18px; padding: 12px; border-radius: 12px; background: #f4f9ff; }
+.points-big { color: #2f6fe4; font-size: 1.5rem; font-weight: 900; letter-spacing: -.03em; }
+.points-row span { color: #7993b0; font-size: .68rem; }
+.product-mini { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.product-mini span { padding: 6px 9px; border: 1px solid #e0ecfa; border-radius: 8px; background: #fff; color: #53718f; font-size: .62rem; }
+
+/* Download */
+.download { position: relative; overflow: hidden; padding: 88px 0; background:
+  radial-gradient(circle at 80% 0%, rgba(124, 92, 255, .28), transparent 34%),
+  radial-gradient(circle at 10% 100%, rgba(80, 164, 255, .25), transparent 36%),
+  linear-gradient(135deg, #10294f, #1b4b91 58%, #2f6fe4);
+  color: #fff;
+}
+.download::after { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(rgba(255,255,255,.14) 1px, transparent 1px); background-size: 28px 28px; mask-image: linear-gradient(90deg, transparent, rgba(0,0,0,.5)); }
+.download .wrap { position: relative; z-index: 1; }
+.download h2 { margin: 14px 0 10px; color: #fff; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.15; letter-spacing: -.045em; }
+.download p { max-width: 560px; margin: 0; color: rgba(224,240,255,.72); font-size: .88rem; }
+.download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.download-card { display: flex; flex-direction: column; gap: 15px; padding: 25px; border: 1px solid rgba(255,255,255,.18); border-radius: 20px; background: rgba(255,255,255,.08); backdrop-filter: blur(12px); }
+.download-card h3 { margin: 0; color: #fff; font-size: 1.06rem; }
+.download-card p { color: rgba(224,240,255,.63); font-size: .74rem; }
+.download-card .meta { display: flex; gap: 8px; flex-wrap: wrap; }
+.download-card .meta span { padding: 3px 7px; border-radius: 5px; background: rgba(255,255,255,.1); color: #dceeff; font-size: .58rem; }
+.download-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+.download-note { margin-top: 19px; color: rgba(221,238,255,.5); font-size: .62rem; }
+.download-note a { color: #cfe7ff; }
+
+/* FAQ */
+.faq-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 45px; align-items: start; }
+.faq-list { display: grid; gap: 10px; }
+details { padding: 16px 18px; border: 1px solid #e1edfb; border-radius: 13px; background: #fff; transition: border-color .2s ease, box-shadow .2s ease; }
+details[open] { border-color: #b8d8fa; box-shadow: 0 10px 26px rgba(34, 84, 150, .07); }
+summary { color: #254d78; font-size: .85rem; font-weight: 700; cursor: pointer; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; float: right; color: #79a4d7; font-weight: 500; }
+details[open] summary::after { content: "−"; }
+details p { margin: 10px 0 0; color: #8198b0; font-size: .76rem; }
+.faq-aside { padding: 26px; border-radius: 20px; border: 1px solid #d9e9fb; background: linear-gradient(160deg, #eef8ff, #f7fbff); }
+.faq-aside h3 { margin: 0 0 8px; color: #1d4776; font-size: 1.1rem; }
+.faq-aside p { margin: 0 0 16px; color: #7891ab; font-size: .78rem; }
+
+/* Footer */
+.site-footer { padding: 32px 0; border-top: 1px solid #e4eefb; background: #fbfdff; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.footer-row p { margin: 0; color: #8ca0b7; font-size: .67rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 17px; }
+.footer-links a { color: #6885a5; font-size: .7rem; text-decoration: none; }
+.footer-links a:hover { color: var(--blue-600); }
+
+/* Reveal */
+.reveal { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+@media (max-width: 980px) {
+  .hero-grid, .ai-grid, .faq-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 56px; }
+  .hero-visual { max-width: 680px; margin: 0 auto; }
+  .feature-grid { grid-template-columns: 1fr 1fr; }
+  .ai-grid { gap: 32px; }
+  .ai-copy { order: 1; }
+  .agent-demo { order: 2; }
+  .nav-links { display: none; }
+}
+@media (max-width: 720px) {
+  .wrap { width: min(100% - 28px, 1180px); }
+  .section { padding: 60px 0; }
+  .hero h1 { font-size: 2.6rem; }
+  .hero-actions .btn { width: 100%; }
+  .feature-grid, .split, .download-grid { grid-template-columns: 1fr; }
+  .editor-body { grid-template-columns: 70px 1fr; min-height: 260px; }
+  .stage-mini { display: none; }
+  .floating-card.collab { left: 8px; bottom: 8px; }
+  .floating-card.agent { right: 8px; top: 28px; }
+  .floating-card.fps { display: none; }
+  .download-card { padding: 21px; }
+  .nav-actions .btn.small { display: none; }
+  .footer-row { align-items: flex-start; flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="PointerEditor 首页">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M14.2 2.5 7 12.2h5.1L9.6 21.5 18.9 10h-5.6z" fill="#fff"/></svg>
+      </span>
+      <span>PointerEditor<small>POINTER · SCRATCH STUDIO</small></span>
+    </a>
+    <nav class="nav-links" aria-label="主要导航">
+      <a href="#features">能力</a>
+      <a href="#agent">PEAgent</a>
+      <a href="#cloud">云协作</a>
+      <a href="#download">下载</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-soft small" href="https://vable.ctspace.xyz/register" target="_blank" rel="noreferrer">注册 PointerE</a>
+      <a class="btn btn-primary small" href="#download">下载 0.2.0</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><i></i> PointerEditor 0.2.0 · 中文 Scratch 创作工具</span>
+        <h1>让每一次指针，<br>都能变成<span class="accent">作品</span>。</h1>
+        <p class="lead">真实积木、真实画板、真实的运行引擎。PointerEditor 把 Scratch 的熟悉感，做成一套更快、更顺手、更适合中文创作的工作台。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://forum.ctspace.xyz/api/drive/raw/6b3a6c6d-430a-45e4-9e64-ee2ce2907f84">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+            下载 Windows 安装版
+          </a>
+          <a class="btn btn-soft" href="https://cloud.ctspace.xyz/api/drive/raw/9a38bc68-296b-4240-a96d-5464a40f5e10" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10 18.5h4"/></svg>
+            下载 Android 版
+          </a>
+        </div>
+        <div class="hero-meta">
+          <span>Windows 0.2.0</span>
+          <span>Android 0.1.0</span>
+          <span>真实积木 · 真实画板</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-glow"></div>
+        <div class="editor-window">
+          <div class="window-bar">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span class="window-title">PointerEditor</span>
+            <span class="window-pill">实时预览</span>
+          </div>
+          <div class="editor-body">
+            <div class="palette">
+              <div class="dot" style="--c:#4b8df7">运动</div>
+              <div class="dot" style="--c:#a15cff">外观</div>
+              <div class="dot" style="--c:#df6cb7">声音</div>
+              <div class="dot" style="--c:#f0c23b">事件</div>
+              <div class="dot" style="--c:#f09a3b">控制</div>
+              <div class="dot" style="--c:#5ab7e8">侦测</div>
+              <div class="dot" style="--c:#4bc47a">运算</div>
+              <div class="dot" style="--c:#ff9b3d">变量</div>
+            </div>
+            <div class="workspace">
+              <div class="block">当绿旗被点击</div>
+              <div class="block y">将分数设为 0</div>
+              <div class="block">重复执行</div>
+              <div class="block g">如果碰到苹果</div>
+              <div class="block p">将分数增加 1</div>
+              <div class="block">移到随机位置</div>
+            </div>
+            <div class="stage-mini">
+              <span class="stage-label">舞台</span>
+              <svg class="hero-character" viewBox="0 0 140 140">
+                <path d="M30 30 58 10l4 32z" fill="#5aa9ff"/>
+                <path d="M110 30 82 10l-4 32z" fill="#5aa9ff"/>
+                <circle cx="70" cy="72" r="48" fill="#65b1ff"/>
+                <circle cx="54" cy="64" r="7" fill="#12345a"/>
+                <circle cx="86" cy="64" r="7" fill="#12345a"/>
+                <path d="M52 88 Q70 102 88 88" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+                <circle cx="44" cy="82" r="8" fill="#ffb2c8" opacity=".7"/>
+                <circle cx="96" cy="82" r="8" fill="#ffb2c8" opacity=".7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card agent">
+          <svg viewBox="0 0 24 24" fill="#7c5cff"><path d="M11 2.5 12.9 8.1 18.5 10 12.9 11.9 11 17.5 9.1 11.9 3.5 10 9.1 8.1z"/><path d="M18.7 2.2 19.5 4.5 21.8 5.3 19.5 6.1 18.7 8.4 17.9 6.1 15.6 5.3 17.9 4.5z" opacity=".7"/></svg>
+          PEAgent · 会写积木
+        </div>
+        <div class="floating-card collab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6fe4" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17.5" cy="10" r="2.5"/><path d="M15 20a4.5 4.5 0 0 1 6-4.2"/></svg>
+          3 人正在协作
+        </div>
+        <div class="floating-card fps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13h4l2-6 4 12 2-7h6"/></svg>
+          60 FPS
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section features" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">把创作留在熟悉的地方</span>
+        <h2>不是套壳，是一间真正能用的<br>Scratch 工作台。</h2>
+        <p>真实的 scratch-blocks、scratch-paint、scratch-render 和 scratch-vm，保留你熟悉的每一个操作，再把它们做得更顺手。</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="4"/><path d="M8 9h8M8 13h5"/></svg>
+          </div>
+          <h3>真积木 · 真运行</h3>
+          <p>原生 Scratch 积木、变量、列表、广播与扩展，项目直接导入导出 SB3，不改变你的创作习惯。</p>
+        </article>
+        <article class="feature-card purple reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 2.5 12.9 8.1 18.5 10 12.9 11.9 11 17.5 9.1 11.9 3.5 10 9.1 8.1z"/><path d="M18.7 2.2 19.5 4.5 21.8 5.3 19.5 6.1 18.7 8.4 17.9 6.1 15.6 5.3 17.9 4.5z" opacity=".75"/></svg>
+          </div>
+          <h3>PEAgent</h3>
+          <p>用中文描述需求，让 Agent 生成积木、创建变量和广播、插入脚本，甚至直接画一个 SVG 角色造型。</p>
+        </article>
+        <article class="feature-card green reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12h8"/><path d="M12 8v8"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <h3>在线协作</h3>
+          <p>创建房间，邀请同学一起改同一个作品。角色认领、代码锁定、实时积木同步，谁在改什么一目了然。</p>
+        </article>
+        <article class="feature-card orange reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 14.5 8.5 21 9.3l-5 4.5 1.5 6.2-5.5-3.3-5.5 3.3L8 13.8 3 9.3l6.5-.8z"/></svg>
+          </div>
+          <h3>积分与商城</h3>
+          <p>完成每日创作获得积分，在 PointerE 积分商城兑换贴纸、徽章等实物，填写收货地址即可等待发货。</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16 12 4l8 12"/><path d="M6 20h12"/><circle cx="12" cy="13" r="2"/></svg>
+          </div>
+          <h3>矢量画板</h3>
+          <p>完整的造型编辑器，支持矢量绘制、节点编辑、图层与造型中心调整，细节不会被缩略图吃掉。</p>
+        </article>
+        <article class="feature-card green reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4.5 6v5c0 4.6 3.2 7.9 7.5 9.5 4.3-1.6 7.5-4.9 7.5-9.5V6z"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg>
+          </div>
+          <h3>更克制的安全提示</h3>
+          <p>加载扩展前提供本地静态分析与 AI 深度审计，先看清风险再决定是否允许，不再只有粗暴的“阻止 / 允许”。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ai-section" id="agent">
+    <div class="wrap ai-grid">
+      <div class="ai-copy reveal">
+        <span class="eyebrow">PEAgent · 你的积木搭子</span>
+        <h2>把想法说出来，<br>剩下的交给它。</h2>
+        <p>PEAgent 直接连接你配置的模型，支持 DeepSeek V4、OpenAI 兼容接口和 Anthropic 兼容格式。Key 只保存在本机，不经过 PointerE 服务器。</p>
+        <ul class="ai-list">
+          <li><span class="check">✓</span><span><strong>流式输出与 Markdown。</strong>思路边想边显示，代码、列表和步骤清楚可读。</span></li>
+          <li><span class="check">✓</span><span><strong>真的会动手。</strong>创建变量、新建广播、插入积木、添加 SVG 造型，一次完成。</span></li>
+          <li><span class="check">✓</span><span><strong>权限由你决定。</strong>完全自动、操作前确认、只读建议，三种模式随时切换。</span></li>
+          <li><span class="check">✓</span><span><strong>最小化也能看见。</strong>彩虹描边与灵动岛提示运行状态，需要审批时直接在顶部完成。</span></li>
+        </ul>
+      </div>
+      <div class="agent-demo reveal" aria-hidden="true">
+        <div class="agent-panel">
+          <div class="agent-top"><span class="spark">✦</span> PEAgent <small>deepseek-v4 · 思考 high</small></div>
+          <div class="agent-chat">
+            <div class="agent-bubble user">做一个接苹果小游戏，分数记录在变量里。</div>
+            <div class="agent-bubble">
+              好的，我会先创建变量 <strong>分数</strong> 和广播 <strong>开始游戏</strong>，再插入计分积木，并画一个苹果角色。
+              <div class="agent-actions"><span>创建变量</span><span>新建广播</span><span>插入积木</span><span>SVG 造型</span></div>
+            </div>
+          </div>
+          <div class="agent-island"><i></i> PEAgent 正在运行 <span>取消</span><span>预览</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cloud">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">PointerE 云服务</span>
+        <h2>一起写，才更像创作。</h2>
+        <p>PointerE 账号与创客次元账号相互独立。登录 PointerE 后，可以在编辑器中发布作品、创建协作房间，也可以在个人中心管理积分和兑换订单。</p>
+      </div>
+      <div class="split">
+        <article class="panel dark reveal">
+          <div class="panel-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17.5" cy="10" r="2.5"/><path d="M15 20a4.5 4.5 0 0 1 6-4.2"/></svg>
+          </div>
+          <h3>实时协作房间</h3>
+          <p>分享房间码即可加入。每位成员可以认领角色，只有认领者能修改该角色；房主也可以锁定全部代码。积木修改通过加密 WebSocket 实时同步。</p>
+          <div class="avatars"><span class="avatar">阿</span><span class="avatar">P</span><span class="avatar">小</span><span class="avatar">星</span></div>
+        </article>
+        <article class="panel reveal">
+          <div class="panel-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 14.5 8.5 21 9.3l-5 4.5 1.5 6.2-5.5-3.3-5.5 3.3L8 13.8 3 9.3l6.5-.8z"/></svg>
+          </div>
+          <h3>PointerE 积分商城</h3>
+          <p>注册验证 +100，每天第一次编辑积木 +10。积分可以在商城兑换实物，填写收货地址后由团队安排发货。</p>
+          <div class="points-row"><strong class="points-big">+100</strong><span>注册奖励<br>完成邮箱验证自动到账</span></div>
+          <div class="product-mini"><span>Pointer 贴纸包</span><span>Pointer 徽章</span><span>Pointer 马克杯</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="download" id="download">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-bottom: 0;">
+        <span class="eyebrow" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:#dcefff;">PointerEditor 0.2.0 · 现在开始</span>
+        <h2>下载，打开，<br>然后让指针动起来。</h2>
+        <p>Windows 安装包和 Android 安装包使用现有直链。首次安装如遇系统安全提示，请确认来源后继续。</p>
+      </div>
+      <div class="download-grid">
+        <article class="download-card reveal">
+          <div>
+            <span class="eyebrow" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:#dcefff;">Windows</span>
+            <h3>PointerEditor 0.2.0</h3>
+            <p>适合鼠标与键盘的完整版本，包含 PEAgent、本地 API Key 加密、FPS 监视器与全部扩展能力。</p>
+          </div>
+          <div class="meta"><span>NSIS 安装器</span><span>x64</span><span>0.2.0</span></div>
+          <div class="download-actions">
+            <a class="btn white" href="https://forum.ctspace.xyz/api/drive/raw/6b3a6c6d-430a-45e4-9e64-ee2ce2907f84">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+              下载 Windows 安装版
+            </a>
+          </div>
+        </article>
+        <article class="download-card reveal">
+          <div>
+            <span class="eyebrow" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:#dcefff;">Android</span>
+            <h3>PointerEditor Mobile 0.1.0</h3>
+            <p>横竖屏自动切换的移动界面，保留完整编辑器入口，支持触控、本地项目导入导出与 APK 安装。</p>
+          </div>
+          <div class="meta"><span>APK</span><span>Android 7.0+</span><span>0.1.0</span></div>
+          <div class="download-actions">
+            <a class="btn ghost-white" href="https://cloud.ctspace.xyz/api/drive/raw/9a38bc68-296b-4240-a96d-5464a40f5e10" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10 18.5h4"/></svg>
+              下载 Android 安装包
+            </a>
+          </div>
+        </article>
+      </div>
+      <p class="download-note">提示：Windows 安装器暂未进行代码签名，Android 安装包使用自签名密钥。遇到“未知来源”提示时，请在确认文件名与来源后选择继续安装。<a href="https://vable.ctspace.xyz/register" target="_blank" rel="noreferrer">还没有 PointerE 账号？去注册 →</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap faq-grid">
+      <div class="faq-aside reveal">
+        <span class="eyebrow">开始之前</span>
+        <h3>你可能会问</h3>
+        <p>如果这里没有答案，可以去创客次元逛逛，或者注册 PointerE 后在编辑器里体验。</p>
+        <a class="btn btn-soft small" href="https://forum.ctspace.xyz" target="_blank" rel="noreferrer">前往创客次元</a>
+      </div>
+      <div class="faq-list reveal">
+        <details open>
+          <summary>PointerEditor 和 Scratch 是什么关系？</summary>
+          <p>PointerEditor 基于 Scratch 的积木、画板与运行能力构建，并做了中文界面和蓝白视觉改造。项目仍然使用 SB3 格式，可以与 Scratch 互相导入导出。</p>
+        </details>
+        <details>
+          <summary>PEAgent 的 API Key 会传到云端吗？</summary>
+          <p>不会。桌面版会把 Key 用 Windows 系统密钥加密后保存在本机。PEAgent 的请求直接从你的电脑发给你配置的模型服务商，不经过 PointerE 服务器。</p>
+        </details>
+        <details>
+          <summary>协作时我的代码会被别人改掉吗？</summary>
+          <p>房间内可以认领角色，只有认领者能修改该角色；房主还可以锁定全部代码。其他人尝试编辑时会收到提示，也可以向锁定者申请编辑权。</p>
+        </details>
+        <details>
+          <summary>积分怎么获得，可以兑换什么？</summary>
+          <p>完成 PointerE 账号邮箱验证获得 100 积分，每天第一次编辑积木再获得 10 积分。积分可以在个人中心的积分商城兑换实物，填写收货信息后等待发货。</p>
+        </details>
+        <details>
+          <summary>软件安装提示“未知来源”怎么办？</summary>
+          <p>Windows 安装器和 Android APK 目前使用自签名方式发布。请确认下载链接来自本页，再按系统提示选择允许安装。若不确定，请不要继续。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p>© 2026 PointerEditor · 指针迭代 · 与 PointerE 云服务共同构建</p>
+    <div class="footer-links">
+      <a href="https://www.ctspace.xyz" target="_blank" rel="noreferrer">指针迭代官网</a>
+      <a href="https://forum.ctspace.xyz" target="_blank" rel="noreferrer">创客次元</a>
+      <a href="https://vable.ctspace.xyz/register" target="_blank" rel="noreferrer">PointerE 注册</a>
+      <a href="#download">下载</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

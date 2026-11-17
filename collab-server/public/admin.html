@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PointerE 控制台</title>
+<link rel="stylesheet" href="/app.css?v=2">
+</head>
+<body class="admin-page">
+<div class="login-wrap" id="login-view">
+  <main class="simple-card">
+    <h1 class="form-title">PointerE 控制台</h1>
+    <p class="form-subtitle">工作人员登录后可管理 PointerE 账号、邮箱验证和协作节点。</p>
+    <div class="message error" id="login-error" hidden></div>
+    <form id="login-form">
+      <label class="field">
+        <span>管理账号</span>
+        <input name="account" autocomplete="username" placeholder="账号" required>
+      </label>
+      <label class="field">
+        <span>密码</span>
+        <input name="password" type="password" autocomplete="current-password" placeholder="密码" required>
+      </label>
+      <button type="submit" class="button-link" id="login-button">登录控制台</button>
+    </form>
+    <p class="form-footer">账号与密码由服务器维护者生成并保管。</p>
+  </main>
+</div>
+
+<div class="admin-shell" id="dashboard" hidden>
+  <header class="admin-header">
+    <div>
+      <h1>PointerE 控制台</h1>
+      <div class="who" id="who"></div>
+    </div>
+    <div class="tools">
+      <a class="button-link" href="/" target="_blank" rel="noreferrer">打开前台</a>
+      <button type="button" class="button-link" id="logout-button">退出登录</button>
+    </div>
+  </header>
+
+  <section class="cards" id="stats"></section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>账号管理</h2>
+      <div class="tools">
+        <input class="input" id="user-search" placeholder="搜索用户名 / 邮箱">
+        <button type="button" class="button-small" id="user-refresh">刷新</button>
+      </div>
+    </div>
+    <div class="message error" id="users-error" hidden></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>用户名</th>
+            <th>邮箱</th>
+            <th>状态</th>
+            <th>注册时间</th>
+            <th>最近登录</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="user-rows"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="user-empty" hidden>暂无账号</div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>协作房间</h2>
+      <div class="tools">
+        <button type="button" class="button-small" id="room-refresh">刷新</button>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>房间码</th>
+            <th>人数</th>
+            <th>房主</th>
+            <th>已锁定角色</th>
+            <th>全部锁定</th>
+            <th>成员</th>
+          </tr>
+        </thead>
+        <tbody id="room-rows"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="room-empty" hidden>当前没有在线房间</div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>兑换订单</h2>
+      <div class="tools">
+        <span class="badge off" id="order-count">0 个订单</span>
+        <button type="button" class="button-small" id="order-refresh">刷新</button>
+      </div>
+    </div>
+    <div class="message error" id="orders-error" hidden></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>订单</th>
+            <th>商品</th>
+            <th>用户</th>
+            <th>积分</th>
+            <th>收货信息</th>
+            <th>下单时间</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="order-rows"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="order-empty" hidden>暂无兑换订单</div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>邮件发送设置（QQ SMTP）</h2>
+      <span class="badge off" id="smtp-badge">未配置</span>
+    </div>
+    <div class="message error" id="smtp-error" hidden></div>
+    <div class="message ok" id="smtp-ok" hidden></div>
+    <form id="smtp-form">
+      <div class="smtp-grid">
+        <label class="field">
+          <span>SMTP 主机</span>
+          <input name="host" placeholder="smtp.qq.com" required>
+        </label>
+        <label class="field">
+          <span>端口</span>
+          <input name="port" type="number" min="1" max="65535" placeholder="465" required>
+        </label>
+        <label class="field">
+          <span>加密方式</span>
+          <select name="secure">
+            <option value="true">SSL / TLS（465）</option>
+            <option value="false">STARTTLS（587）</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>发件邮箱</span>
+          <input name="user" type="email" placeholder="admin@example.com" required>
+        </label>
+        <label class="field">
+          <span>授权码 / 密码</span>
+          <input name="pass" type="password" autocomplete="new-password" placeholder="留空表示不修改">
+        </label>
+        <label class="field">
+          <span>发件人名称</span>
+          <input name="fromName" placeholder="PointerE">
+        </label>
+      </div>
+      <div class="form-actions" style="margin-top:16px;">
+        <button type="submit" class="button-link" id="smtp-save">保存设置</button>
+        <button type="button" class="button-link secondary" id="smtp-test">测试连接</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<div class="modal-overlay" id="modal" hidden>
+  <div class="modal-panel">
+    <h2 id="modal-title">提示</h2>
+    <pre id="modal-body"></pre>
+    <div class="form-actions">
+      <button type="button" class="button-link" id="modal-close">知道了</button>
+    </div>
+  </div>
+</div>
+
+<script src="/pointere-console/app.js?v=3"></script>
+</body>
+</html>

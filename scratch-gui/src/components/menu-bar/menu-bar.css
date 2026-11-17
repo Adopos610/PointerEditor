@@ -1,0 +1,489 @@
+@import "../../css/colors.css";
+@import "../../css/units.css";
+@import "../../css/z-index.css";
+
+.menu-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+
+    /*
+        For most things, we shouldn't explicitly set height, and let the
+        content push the element to whatever fits. Using a fixed height
+        instead, will help us subtract the value we assign from the body,
+        adding up to a perfect 100%. This means we don't need to set
+        overflow: hidden, which makes it hard to debug. border-box
+        simplifies by all of this by removing padding from the equation.
+    */
+    box-sizing: border-box;
+    height: $menu-bar-height;
+
+    /*
+        @todo: This adds ~20px in Chrome, when scrolling to the right,
+        but fixes [FFx + Safari] [resize window down + scroll to the right] bug.
+        width: 100%;
+    */
+    font-family: "OPPO Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: $menu-bar-standard-font-size;
+    font-weight: bold;
+    background-color: $menu-bar-background;
+    background-image: $menu-bar-background-image;
+    color: $menu-bar-foreground;
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-grow: 1;
+    gap: 0.5rem;
+}
+.inactive {
+    opacity: 0;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0 0.35rem 0 0.5rem;
+}
+.brand-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.6rem;
+    background: #ffffff;
+    box-shadow: 0 1px 2px rgba(9, 40, 90, 0.28);
+}
+.brand-logo {
+    height: 1.7rem;
+    width: 1.7rem;
+    object-fit: contain;
+}
+.brand-name {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+@media (max-width: 1150px) {
+    .brand-name {
+        display: none;
+    }
+}
+.scratch-logo {
+    height:  1.6rem;
+    vertical-align: middle;
+}
+
+.scratch-logo.clickable {
+    cursor: pointer;
+}
+
+.menu-bar-item {
+    display: flex;
+    text-decoration: none;
+    user-select: none;
+    align-self: center;
+    position: relative;
+    align-items: center;
+    white-space: nowrap;
+    height: $menu-bar-height;
+}
+
+.menu-bar-item.hoverable {
+    cursor: pointer;
+}
+
+.menu-bar-item.active,
+.menu-bar-item.hoverable:hover {
+    background-color: $ui-black-transparent;
+}
+
+.menu-bar-item.growable {
+    max-width: $menu-bar-item-max-width;
+    flex: 1;
+}
+
+.title-field-growable {
+    flex-grow: 1;
+    width: 2rem;
+}
+
+.file-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.file-group .menu-bar-item {
+    padding: 0 0.5rem;
+}
+
+.menu-bar-menu {
+    margin-top: $menu-bar-height;
+    z-index: $z-index-menu-bar;
+}
+
+.feedback-link {
+    color: $menu-bar-background;
+    text-decoration: none;
+}
+
+.feedback-button {
+    background-color: white;
+    color: inherit;
+    height: 34px;
+}
+
+.divider {
+    height: 34px;
+}
+
+.author-info {
+    margin-left: .25rem;
+    margin-right: .6875rem;
+}
+
+.menu-bar-button {
+    height: $menu-bar-button-size;
+}
+
+.remix-button {
+    background-color: $pen-primary
+}
+
+.remix-button-icon {
+    height: 1.25rem;
+}
+
+.coming-soon >:not(.coming-soon-tooltip) {
+    opacity: 0.5;
+}
+
+.account-info-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.account-info-group .menu-bar-item {
+    margin: 0 .25rem;
+    padding: 0 0.75rem;
+}
+
+.mystuff-icon {
+    margin: 0 .25rem;
+    height: 1rem;
+}
+
+.help-icon {
+    margin: 0 .25rem 0 0;
+}
+
+[dir="rtl"] .help-icon {
+    margin: 0 0 0 .25rem;
+}
+
+.account-nav-menu, .mystuff-button {
+    padding: 0 .25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile-icon {
+    margin: 0 .25rem;
+    width: $menu-bar-button-size;
+    border-radius: $form-radius;
+}
+
+.dropdown-caret-icon {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+[dir="ltr"] .dropdown-caret-icon {
+    margin-left: .5rem;
+}
+
+[dir="rtl"] .dropdown-caret-icon {
+    margin-right: .5rem;
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.mystuff > a {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 45%;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 30px;
+  overflow: hidden;
+  text-indent: 50px;
+  white-space: nowrap;
+}
+.mystuff > a:hover {
+  background-size: 50%;
+}
+
+.mystuff > a {
+  /* background-image: url("/images/mystuff.png"); */
+}
+
+.about-icon {
+    height: 1.25rem;
+    margin: 0.5rem;
+    vertical-align: middle;
+}
+
+.collapsible-label {
+    margin: 0 .25rem;
+}
+
+@media only screen and (max-width: 1124px) {
+    .tutorials-label, .collapsible-label {
+        display: none;
+    }
+
+    .help-icon {
+        margin-right: 0;
+    }
+}
+
+.menu-item-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.collab-indicator {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: min(480px, calc(100vw - 36px));
+    padding: 9px 14px;
+    border: 1px solid #b8d2f8;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #ffffff, #eef5ff);
+    color: #2258b8;
+    font-family: "OPPO Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(24, 72, 150, 0.22);
+}
+
+.collab-indicator:hover {
+    border-color: #7faef5;
+    box-shadow: 0 10px 28px rgba(24, 72, 150, 0.3);
+}
+
+.collab-indicator-dot {
+    flex: 0 0 auto;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #22b573;
+    box-shadow: 0 0 0 3px rgba(34, 181, 115, 0.18);
+}
+
+.collab-indicator-text {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.collab-indicator-notice {
+    min-width: 0;
+    padding-left: 8px;
+    border-left: 1px solid #c9dcf9;
+    color: #b45309;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pointer-e-account-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 30px;
+    margin-right: 8px;
+    padding: 0 9px 0 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font: 600 0.72rem "OPPO Sans", "Helvetica Neue", Arial, sans-serif;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease;
+}
+.pointer-e-account-button:hover {
+    background: rgba(255, 255, 255, 0.24);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.pointer-e-account-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    color: #2f6fe4;
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+.pointer-e-account-label {
+    max-width: 92px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.pointer-e-account-points {
+    padding: 2px 5px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    color: #eaf4ff;
+    font-size: 0.66rem;
+    font-weight: 600;
+}
+.points-toast {
+    position: fixed;
+    right: 20px;
+    top: 76px;
+    z-index: 2400;
+    padding: 9px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4d91fb, #2f6fe4);
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(20, 63, 138, 0.3);
+    font: 600 0.8rem "OPPO Sans", "Helvetica Neue", Arial, sans-serif;
+    animation: pointer-toast-in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes pointer-toast-in {
+    from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.peagent-menu-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+.peagent-menu-icon {
+    display: block;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    transform: translateY(1px);
+    filter: drop-shadow(0 1px 1px rgba(0, 35, 90, 0.2));
+}
+
+
+
+
+.todo-menu-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+.todo-menu-icon {
+    display: block;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    filter: drop-shadow(0 1px 1px rgba(0, 35, 90, 0.2));
+}
+
+.asset-toast {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    z-index: 2450;
+    transform: translateX(-50%);
+    padding: 7px 13px;
+    border: 1px solid rgba(255, 255, 255, .7);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4d91fb, #2f6fe4);
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(20, 63, 138, .25);
+    font: 600 .72rem "OPPO Sans", "Helvetica Neue", Arial, sans-serif;
+    animation: pointer-toast-in .28s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.file-menu-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+}
+
+.file-menu-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(47, 111, 228, .09);
+    color: #2f6fe4;
+}
+
+.file-menu-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.file-menu-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-menu-shortcut {
+    flex: 0 0 auto;
+    margin-left: 14px;
+    color: #9aadc4;
+    font-size: .66rem;
+    font-weight: 500;
+    letter-spacing: .02em;
+}

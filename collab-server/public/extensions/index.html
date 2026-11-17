@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PointerEditor 扩展库</title>
+<meta name="description" content="PointerEditor 扩展库：官方扩展与社区精选，一键复制安装地址。">
+<link rel="stylesheet" href="./extensions.css">
+</head>
+<body>
+<header class="ext-header">
+    <div class="ext-brand">
+        <h1>PointerEditor 扩展库</h1>
+        <p>官方扩展与社区精选</p>
+    </div>
+    <label class="ext-search">
+        <span>⌕</span>
+        <input id="extSearch" type="search" placeholder="搜索扩展、作者…" autocomplete="off">
+    </label>
+    <a class="ext-back" href="https://www.ctspace.xyz" target="_blank" rel="noreferrer">返回官网 ↗</a>
+</header>
+<main class="ext-shell">
+    <aside class="ext-side">
+        <div class="ext-side-label">分类</div>
+        <nav id="extNav" class="ext-nav"></nav>
+        <div class="ext-side-note">
+            社区扩展由原作者维护，安装前请确认来源。扩展只会在本机运行，不会上传作品。
+        </div>
+        <div class="ext-side-tip">
+            桌面版编辑器已内置这份扩展库：打开积木区左下角的「添加扩展」即可直接安装，无需复制地址。
+        </div>
+    </aside>
+    <section class="ext-main">
+        <div class="ext-heading">
+            <h2 id="extCategory">全部扩展</h2>
+            <span id="extCount"></span>
+        </div>
+        <div id="extBanner" class="ext-banner">
+            在编辑器中打开「添加扩展 → 扩展库」，可直接安装；也可以复制下方地址，通过「自定义加载」添加。
+        </div>
+        <div id="extGrid" class="ext-grid"></div>
+        <div id="extEmpty" class="ext-empty" hidden>
+            <span>⌕</span>
+            <strong>没有找到匹配的扩展</strong>
+            <small>换一个关键词，或选择其他分类。</small>
+        </div>
+    </section>
+</main>
+<footer class="ext-footer">
+    <span>PointerEditor · 基于 TurboWarp scratch-gui 的 Scratch 编辑器</span>
+    <span>扩展版权归各位作者所有</span>
+</footer>
+<div id="extToast" class="ext-toast" role="status" aria-live="polite"></div>
+<script src="./extensions.js"></script>
+</body>
+</html>

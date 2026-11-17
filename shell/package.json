@@ -1,0 +1,97 @@
+{
+  "name": "pointer-editor-desktop",
+  "version": "0.2.0",
+  "private": true,
+  "description": "PointerEditor desktop shell",
+  "author": "PointerEditor",
+  "main": "main.cjs",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "start": "electron .",
+    "web": "node scripts/serve-web.cjs",
+    "dist": "electron-builder --win dir --x64",
+    "portable": "electron-builder --win portable --x64",
+    "zip": "node scripts/zip-release.cjs"
+  },
+  "devDependencies": {
+    "electron": "^45.3.3",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "com.pointer.editor",
+    "productName": "PointerEditor",
+    "asar": true,
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "peagent.cjs",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../scratch-gui/build",
+        "to": "gui"
+      },
+      {
+        "from": "build/icon.png",
+        "to": "icon.png"
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "dir",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "fileAssociations": [
+      {
+        "ext": "sb3",
+        "name": "PointerEditor.sb3",
+        "description": "Scratch 3 项目（PointerEditor）",
+        "icon": "icon.ico",
+        "role": "Editor"
+      },
+      {
+        "ext": "sb2",
+        "name": "PointerEditor.sb2",
+        "description": "Scratch 2 项目（PointerEditor）",
+        "icon": "icon.ico",
+        "role": "Editor"
+      },
+      {
+        "ext": "sb",
+        "name": "PointerEditor.sb",
+        "description": "Scratch 1 项目（PointerEditor）",
+        "icon": "icon.ico",
+        "role": "Editor"
+      }
+    ],
+    "portable": {
+      "artifactName": "PointerEditor-${version}-portable.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "PointerEditor",
+      "artifactName": "PointerEditor-${version}-setup.${ext}",
+      "deleteAppDataOnUninstall": false,
+      "installerLanguages": [
+        "zh_CN"
+      ],
+      "displayLanguageSelector": false
+    }
+  }
+}
