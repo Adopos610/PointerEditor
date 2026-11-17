@@ -90,10 +90,13 @@ const ensureUserPoints = user => {
 const addPointsInternal = (user, delta, reason, meta = {}) => {
     if (!user || !Number.isFinite(delta) || delta === 0) return null;
     ensureUserPoints(user);
-    user.points = Math.max(0, user.points + delta);
+    const before = user.points;
+    user.points = Math.max(0, before + delta);
+    const applied = user.points - before;
+    if (applied === 0) return null;
     const entry = {
         id: randomId(6),
-        delta,
+        delta: applied,
         reason,
         meta,
         at: now()
@@ -171,11 +174,16 @@ if (!Array.isArray(db.sessions)) db.sessions = [];
 if (!Array.isArray(db.products)) db.products = [];
 if (!Array.isArray(db.orders)) db.orders = [];
 db.users.forEach(ensureUserPoints);
-DEFAULT_PRODUCTS.forEach(product => {
-    if (!db.products.some(item => item.id === product.id)) {
-        db.products.push({...product});
-    }
-});
+let seededProducts = false;
+if (!db.productsSeeded) {
+    DEFAULT_PRODUCTS.forEach(product => {
+        if (!db.products.some(item => item.id === product.id)) {
+            db.products.push({...product});
+        }
+    });
+    db.productsSeeded = true;
+    seededProducts = true;
+}
 
 let migratedPoints = false;
 db.users.forEach(user => {
@@ -188,7 +196,7 @@ db.users.forEach(user => {
 });
 
 const persist = () => writeJSON(DB_FILE, db, 0o600);
-if (migratedPoints) persist();
+if (migratedPoints || seededProducts) persist();
 
 const seedAdmin = () => {
     const hasAdmin = db.users.some(user => user.role === 'admin');
@@ -234,7 +242,8 @@ const publicUser = user => ({
     disabled: Boolean(user.disabled),
     createdAt: user.createdAt,
     verifiedAt: user.verifiedAt || 0,
-    lastLoginAt: user.lastLoginAt || 0
+    lastLoginAt: user.lastLoginAt || 0,
+    points: Number(user.points) || 0
 });
 
 const findById = id => db.users.find(user => user.id === id) || null;
@@ -429,7 +438,58 @@ const claimDailyCodePoints = userId => {
 };
 
 const getProducts = () => db.products.filter(product => product.enabled !== false);
+const listAllProducts = () => db.products.map(product => ({...product}));
 const findProduct = id => db.products.find(product => product.id === id) || null;
+
+const normalizeProduct = (input = {}, existing = {}) => {
+    const name = String(input.name !== undefined ? input.name : existing.name || '').trim().slice(0, 80);
+    const description = String(
+        input.description !== undefined ? input.description : existing.description || ''
+    ).trim().slice(0, 500);
+    const icon = (String(input.icon !== undefined ? input.icon : existing.icon || '✦').trim() || '✦').slice(0, 8);
+    const points = Number(input.points !== undefined ? input.points : existing.points);
+    const stock = Number(input.stock !== undefined ? input.stock : existing.stock);
+    const enabled = input.enabled !== undefined ? Boolean(input.enabled) : existing.enabled !== false;
+    if (!name) return {error: '请填写商品名称'};
+    if (!Number.isInteger(points) || points < 1 || points > 1000000) {
+        return {error: '所需积分必须是 1–1000000 的整数'};
+    }
+    if (!Number.isInteger(stock) || stock < 0 || stock > 1000000) {
+        return {error: '库存必须是 0–1000000 的整数'};
+    }
+    return {value: {...existing, name, description, icon, points, stock, enabled}};
+};
+
+const createProduct = input => {
+    const normalized = normalizeProduct(input, {});
+    if (normalized.error) return normalized;
+    const product = {
+        id: `product_${randomId(6)}`,
+        ...normalized.value,
+        createdAt: now()
+    };
+    db.products.unshift(product);
+    persist();
+    return {product};
+};
+
+const updateProduct = (id, input) => {
+    const product = findProduct(id);
+    if (!product) return {error: '商品不存在'};
+    const normalized = normalizeProduct(input, product);
+    if (normalized.error) return normalized;
+    Object.assign(product, normalized.value);
+    persist();
+    return {product};
+};
+
+const deleteProduct = id => {
+    const index = db.products.findIndex(product => product.id === id);
+    if (index < 0) return false;
+    db.products.splice(index, 1);
+    persist();
+    return true;
+};
 
 const saveShippingAddress = (userId, address) => {
     const user = findById(userId);
@@ -515,7 +575,11 @@ module.exports = {
     awardPoints,
     claimDailyCodePoints,
     getProducts,
+    listAllProducts,
     findProduct,
+    createProduct,
+    updateProduct,
+    deleteProduct,
     saveShippingAddress,
     getUserOrders,
     redeemProduct,

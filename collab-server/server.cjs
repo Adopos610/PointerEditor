@@ -619,6 +619,108 @@ const handleAdminOrderStatus = async (req, res, orderId) => {
     sendJson(res, 200, {ok: true, order});
 };
 
+const handleAdminProducts = (req, res) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    sendJson(res, 200, {products: store.listAllProducts()});
+};
+
+const handleAdminProductCreate = async (req, res) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    let body;
+    try {
+        body = await readBody(req);
+    } catch (error) {
+        sendJson(res, error.status || 400, {error: error.message});
+        return;
+    }
+    const result = store.createProduct(body);
+    if (result.error) {
+        sendJson(res, 400, {error: result.error});
+        return;
+    }
+    sendJson(res, 200, {ok: true, product: result.product});
+};
+
+const handleAdminProductUpdate = async (req, res, productId) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    let body;
+    try {
+        body = await readBody(req);
+    } catch (error) {
+        sendJson(res, error.status || 400, {error: error.message});
+        return;
+    }
+    const result = store.updateProduct(productId, body);
+    if (result.error) {
+        sendJson(res, 400, {error: result.error});
+        return;
+    }
+    sendJson(res, 200, {ok: true, product: result.product});
+};
+
+const handleAdminProductDelete = (req, res, productId) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    if (!store.deleteProduct(productId)) {
+        sendJson(res, 404, {error: '商品不存在'});
+        return;
+    }
+    sendJson(res, 200, {ok: true});
+};
+
+const handleAdminUserPoints = async (req, res, userId) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    let body;
+    try {
+        body = await readBody(req);
+    } catch (error) {
+        sendJson(res, error.status || 400, {error: error.message});
+        return;
+    }
+    const amount = Number(body.amount);
+    if (!Number.isInteger(amount) || amount === 0) {
+        sendJson(res, 400, {error: '调整数量必须是非零整数'});
+        return;
+    }
+    if (Math.abs(amount) > 1000000) {
+        sendJson(res, 400, {error: '单次调整不能超过 1000000 积分'});
+        return;
+    }
+    const reason = String(body.reason || '').trim().slice(0, 120);
+    if (!reason) {
+        sendJson(res, 400, {error: '请填写调整原因'});
+        return;
+    }
+    const target = store.findById(userId);
+    if (!target) {
+        sendJson(res, 404, {error: '用户不存在'});
+        return;
+    }
+    if (target.role === 'admin') {
+        sendJson(res, 400, {error: '管理员账号不需要调整积分'});
+        return;
+    }
+    const user = store.awardPoints(userId, amount, `管理员调整：${reason}`, {
+        source: 'admin',
+        admin: found.user.username,
+        reason
+    });
+    if (!user) {
+        sendJson(res, 400, {error: '调整后积分没有变化'});
+        return;
+    }
+    sendJson(res, 200, {
+        ok: true,
+        points: user.points,
+        user: store.publicUser(user),
+        entry: Array.isArray(user.pointsHistory) ? user.pointsHistory[0] : null
+    });
+};
+
 const handleVerify = (req, res, url) => {
     const token = url.searchParams.get('token') || '';
     const user = store.findUserByVerifyToken(token);
@@ -1577,6 +1679,11 @@ const server = http.createServer(async (req, res) => {
             handleAdminUsers(req, res, url);
             return;
         }
+        const pointsMatch = pathname.match(/^\/api\/pointere-console\/users\/([a-f0-9]+)\/points$/);
+        if (pointsMatch && req.method === 'POST') {
+            await handleAdminUserPoints(req, res, pointsMatch[1]);
+            return;
+        }
         const actionMatch = pathname.match(/^\/api\/pointere-console\/users\/([a-f0-9]+)\/action$/);
         if (actionMatch && req.method === 'POST') {
             await handleAdminUserAction(req, res, actionMatch[1]);
@@ -1588,6 +1695,24 @@ const server = http.createServer(async (req, res) => {
         }
         if (pathname === '/api/pointere-console/rooms' && req.method === 'GET') {
             handleAdminRooms(req, res);
+            return;
+        }
+        if (pathname === '/api/pointere-console/products' && req.method === 'GET') {
+            handleAdminProducts(req, res);
+            return;
+        }
+        if (pathname === '/api/pointere-console/products' && req.method === 'POST') {
+            await handleAdminProductCreate(req, res);
+            return;
+        }
+        const productDeleteMatch = pathname.match(/^\/api\/pointere-console\/products\/([A-Za-z0-9_-]+)\/delete$/);
+        if (productDeleteMatch && req.method === 'POST') {
+            handleAdminProductDelete(req, res, productDeleteMatch[1]);
+            return;
+        }
+        const productMatch = pathname.match(/^\/api\/pointere-console\/products\/([A-Za-z0-9_-]+)$/);
+        if (productMatch && req.method === 'POST') {
+            await handleAdminProductUpdate(req, res, productMatch[1]);
             return;
         }
         if (pathname === '/api/pointere-console/orders' && req.method === 'GET') {

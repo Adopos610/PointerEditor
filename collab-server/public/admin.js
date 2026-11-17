@@ -19,6 +19,25 @@ const orderRows = $('order-rows');
 const orderEmpty = $('order-empty');
 const orderCount = $('order-count');
 const ordersError = $('orders-error');
+const productRows = $('product-rows');
+const productEmpty = $('product-empty');
+const productCount = $('product-count');
+const productsError = $('products-error');
+const productsOk = $('products-ok');
+const productForm = $('product-form');
+const productSave = $('product-save');
+const productCancel = $('product-cancel');
+const productNew = $('product-new');
+const productRefresh = $('product-refresh');
+const pointsForm = $('points-form');
+const pointsTarget = $('points-target');
+const pointsCurrent = $('points-current');
+const pointsAmount = $('points-amount');
+const pointsReason = $('points-reason');
+const pointsSubmit = $('points-submit');
+const pointsCancel = $('points-cancel');
+const pointsError = $('points-error');
+const pointsOk = $('points-ok');
 const userSearch = $('user-search');
 const smtpForm = $('smtp-form');
 const smtpError = $('smtp-error');
@@ -30,6 +49,8 @@ const modalBody = $('modal-body');
 
 let adminUser = null;
 let refreshTimer = null;
+let products = [];
+let selectedPointsUser = null;
 
 const el = (tag, options = {}, children = []) => {
     const node = document.createElement(tag);
@@ -193,6 +214,9 @@ const renderUsers = users => {
         } else {
             actions.appendChild(button('停用', () => runUserAction(user, 'disable')));
         }
+        if (user.role !== 'admin') {
+            actions.appendChild(button('调整积分', () => openPointsForm(user)));
+        }
         actions.appendChild(button('重置密码', () => runUserAction(user, 'reset-password')));
         actions.appendChild(button('删除', () => runUserAction(user, 'delete'), 'button-small danger'));
 
@@ -200,6 +224,7 @@ const renderUsers = users => {
             el('td', {text: user.username}),
             el('td', {text: user.email || '—'}),
             el('td', {}, [status]),
+            el('td', {text: String(user.points || 0)}),
             el('td', {text: formatDate(user.createdAt)}),
             el('td', {text: formatDate(user.lastLoginAt)}),
             actions
@@ -312,7 +337,7 @@ const loadSmtp = async () => {
 
 const loadAll = async () => {
     try {
-        await Promise.all([loadUsers(), loadRooms(), loadOrders(), loadSmtp()]);
+        await Promise.all([loadUsers(), loadRooms(), loadOrders(), loadSmtp(), loadProducts()]);
     } catch (error) {
         showMessage(usersError, error.message);
     }
@@ -341,6 +366,165 @@ loginForm.addEventListener('submit', async event => {
     }
 });
 
+const openPointsForm = user => {
+    selectedPointsUser = user;
+    pointsTarget.textContent = `调整积分 · ${user.nickname || user.username}（${user.username}）`;
+    pointsCurrent.textContent = `当前 ${Number(user.points) || 0} 积分`;
+    pointsAmount.value = '';
+    pointsReason.value = '';
+    showMessage(pointsError, '');
+    showMessage(pointsOk, '');
+    pointsForm.hidden = false;
+    pointsAmount.focus();
+};
+
+const closePointsForm = () => {
+    selectedPointsUser = null;
+    pointsForm.hidden = true;
+    pointsForm.reset();
+    showMessage(pointsError, '');
+    showMessage(pointsOk, '');
+};
+
+const submitPoints = async event => {
+    event.preventDefault();
+    if (!selectedPointsUser) return;
+    const amount = Number(pointsAmount.value);
+    const reason = pointsReason.value.trim();
+    showMessage(pointsError, '');
+    showMessage(pointsOk, '');
+    if (!Number.isInteger(amount) || amount === 0) {
+        showMessage(pointsError, '请输入非零整数，正数增加、负数扣除');
+        return;
+    }
+    if (!reason) {
+        showMessage(pointsError, '请填写调整原因');
+        return;
+    }
+    pointsSubmit.disabled = true;
+    pointsSubmit.textContent = '正在调整…';
+    try {
+        const data = await api(`/api/pointere-console/users/${selectedPointsUser.id}/points`, {
+            method: 'POST',
+            body: {amount, reason}
+        });
+        showMessage(pointsOk, `已调整 ${amount > 0 ? '+' : ''}${amount} 积分，当前 ${data.points} 积分`);
+        pointsCurrent.textContent = `当前 ${data.points} 积分`;
+        pointsAmount.value = '';
+        pointsReason.value = '';
+        await loadUsers();
+    } catch (error) {
+        showMessage(pointsError, error.message);
+    } finally {
+        pointsSubmit.disabled = false;
+        pointsSubmit.textContent = '确认调整';
+    }
+};
+
+const renderProducts = list => {
+    products = list;
+    productRows.textContent = '';
+    productEmpty.hidden = list.length > 0;
+    productCount.textContent = `${list.length} 个商品`;
+    for (const product of list) {
+        const actions = el('td', {className: 'actions'});
+        actions.appendChild(button('编辑', () => openProductForm(product)));
+        actions.appendChild(button(product.enabled === false ? '上架' : '下架', () => toggleProduct(product)));
+        actions.appendChild(button('删除', () => deleteProduct(product), 'button-small danger'));
+        productRows.appendChild(el('tr', {}, [
+            el('td', {text: `${product.icon || '✦'} ${product.name}`}),
+            el('td', {text: String(product.points)}),
+            el('td', {text: String(product.stock)}),
+            el('td', {}, [badge(product.enabled === false ? '已下架' : '上架中', product.enabled === false ? 'off' : 'ok')]),
+            actions
+        ]));
+    }
+};
+
+const loadProducts = async () => {
+    showMessage(productsError, '');
+    const data = await api('/api/pointere-console/products');
+    renderProducts(data.products || []);
+};
+
+const openProductForm = product => {
+    showMessage(productsError, '');
+    showMessage(productsOk, '');
+    productForm.hidden = false;
+    productForm.elements.id.value = product ? product.id : '';
+    productForm.elements.name.value = product ? product.name : '';
+    productForm.elements.icon.value = product ? (product.icon || '✦') : '✦';
+    productForm.elements.points.value = product ? product.points : 300;
+    productForm.elements.stock.value = product ? product.stock : 10;
+    productForm.elements.description.value = product ? (product.description || '') : '';
+    productForm.elements.enabled.checked = product ? product.enabled !== false : true;
+    productSave.textContent = product ? '保存修改' : '添加商品';
+    productForm.scrollIntoView({behavior: 'smooth', block: 'center'});
+    productForm.elements.name.focus();
+};
+
+const closeProductForm = () => {
+    productForm.hidden = true;
+    productForm.reset();
+    showMessage(productsError, '');
+};
+
+const saveProduct = async event => {
+    event.preventDefault();
+    const id = productForm.elements.id.value;
+    const payload = {
+        name: productForm.elements.name.value.trim(),
+        icon: productForm.elements.icon.value.trim() || '✦',
+        points: Number(productForm.elements.points.value),
+        stock: Number(productForm.elements.stock.value),
+        description: productForm.elements.description.value.trim(),
+        enabled: productForm.elements.enabled.checked
+    };
+    showMessage(productsError, '');
+    showMessage(productsOk, '');
+    productSave.disabled = true;
+    productSave.textContent = '保存中…';
+    try {
+        await api(id ? `/api/pointere-console/products/${id}` : '/api/pointere-console/products', {
+            method: 'POST',
+            body: payload
+        });
+        await loadProducts();
+        closeProductForm();
+        showMessage(productsOk, id ? '商品已更新' : '商品已添加');
+    } catch (error) {
+        showMessage(productsError, error.message);
+    } finally {
+        productSave.disabled = false;
+        productSave.textContent = id ? '保存修改' : '添加商品';
+    }
+};
+
+const toggleProduct = async product => {
+    showMessage(productsError, '');
+    try {
+        await api(`/api/pointere-console/products/${product.id}`, {
+            method: 'POST',
+            body: {enabled: product.enabled === false}
+        });
+        await loadProducts();
+    } catch (error) {
+        showMessage(productsError, error.message);
+    }
+};
+
+const deleteProduct = async product => {
+    if (!window.confirm(`确定删除商品「${product.name}」？已产生的订单不会受影响。`)) return;
+    showMessage(productsError, '');
+    try {
+        await api(`/api/pointere-console/products/${product.id}/delete`, {method: 'POST'});
+        await loadProducts();
+        showMessage(productsOk, '商品已删除');
+    } catch (error) {
+        showMessage(productsError, error.message);
+    }
+};
+
 $('logout-button').addEventListener('click', logout);
 
 $('user-refresh').addEventListener('click', () => {
@@ -353,6 +537,14 @@ $('room-refresh').addEventListener('click', () => {
 $('order-refresh').addEventListener('click', () => {
     loadOrders().catch(error => showMessage(ordersError, error.message));
 });
+$('product-new').addEventListener('click', () => openProductForm(null));
+$('product-refresh').addEventListener('click', () => {
+    loadProducts().catch(error => showMessage(productsError, error.message));
+});
+productForm.addEventListener('submit', saveProduct);
+productCancel.addEventListener('click', closeProductForm);
+pointsForm.addEventListener('submit', submitPoints);
+pointsCancel.addEventListener('click', closePointsForm);
 
 let searchTimer = null;
 userSearch.addEventListener('input', () => {

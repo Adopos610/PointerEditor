@@ -578,3 +578,67 @@ td.actions {
 [hidden] {
     display: none !important;
 }
+
+/* Admin product and points forms */
+.admin-inline-form {
+    margin: 12px 0 18px;
+    padding: 14px;
+    border: 1px solid #e2ecfa;
+    border-radius: 12px;
+    background: #f8fbff;
+}
+
+.admin-inline-form .smtp-grid {
+    margin-bottom: 12px;
+}
+
+.form-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: #2a4a72;
+    font-size: 0.86rem;
+}
+
+.form-title-row span {
+    color: #7d94b4;
+    font-size: 0.76rem;
+}
+
+.field textarea {
+    width: 100%;
+    min-height: 64px;
+    padding: 10px 12px;
+    border: 1px solid #c9d8ee;
+    border-radius: 9px;
+    background: #f7faff;
+    color: #1d3557;
+    font: inherit;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    resize: vertical;
+    outline: none;
+}
+
+.field textarea:focus {
+    border-color: #2f6fe4;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(47, 111, 228, 0.15);
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 2px 0 12px;
+    color: #3d5a80;
+    font-size: 0.84rem;
+}
+
+.checkbox-field input {
+    width: 16px;
+    height: 16px;
+    accent-color: #2f6fe4;
+}

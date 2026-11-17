@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PointerE 控制台</title>
-<link rel="stylesheet" href="/app.css?v=2">
+<link rel="stylesheet" href="/app.css?v=3">
 </head>
 <body class="admin-page">
 <div class="login-wrap" id="login-view">
@@ -57,6 +57,7 @@
             <th>用户名</th>
             <th>邮箱</th>
             <th>状态</th>
+            <th>积分</th>
             <th>注册时间</th>
             <th>最近登录</th>
             <th>操作</th>
@@ -66,6 +67,28 @@
       </table>
     </div>
     <div class="empty" id="user-empty" hidden>暂无账号</div>
+    <form id="points-form" class="admin-inline-form" hidden>
+      <div class="form-title-row">
+        <strong id="points-target">调整用户积分</strong>
+        <span id="points-current"></span>
+      </div>
+      <div class="smtp-grid">
+        <label class="field">
+          <span>调整数量</span>
+          <input id="points-amount" type="number" step="1" required placeholder="正数增加，负数扣除">
+        </label>
+        <label class="field">
+          <span>调整原因</span>
+          <input id="points-reason" maxlength="120" required placeholder="例如：活动奖励 / 手动补发">
+        </label>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="button-link" id="points-submit">确认调整</button>
+        <button type="button" class="button-link secondary" id="points-cancel">取消</button>
+      </div>
+      <div class="message error" id="points-error" hidden></div>
+      <div class="message ok" id="points-ok" hidden></div>
+    </form>
   </section>
 
   <section class="panel">
@@ -91,6 +114,64 @@
       </table>
     </div>
     <div class="empty" id="room-empty" hidden>当前没有在线房间</div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>积分商城商品</h2>
+      <div class="tools">
+        <span class="badge off" id="product-count">0 个商品</span>
+        <button type="button" class="button-small" id="product-new">新增商品</button>
+        <button type="button" class="button-small" id="product-refresh">刷新</button>
+      </div>
+    </div>
+    <div class="message error" id="products-error" hidden></div>
+    <div class="message ok" id="products-ok" hidden></div>
+    <form id="product-form" class="admin-inline-form" hidden>
+      <input type="hidden" id="product-id" name="id">
+      <div class="smtp-grid">
+        <label class="field">
+          <span>商品名称</span>
+          <input id="product-name" name="name" maxlength="80" required placeholder="例如：PointerEditor 马克杯">
+        </label>
+        <label class="field">
+          <span>图标字符 / Emoji</span>
+          <input id="product-icon" name="icon" maxlength="8" placeholder="✦ / 🎁 / ◎">
+        </label>
+        <label class="field">
+          <span>所需积分</span>
+          <input id="product-points" name="points" type="number" min="1" max="1000000" step="1" required>
+        </label>
+        <label class="field">
+          <span>库存</span>
+          <input id="product-stock" name="stock" type="number" min="0" max="1000000" step="1" required>
+        </label>
+      </div>
+      <label class="field">
+        <span>商品描述</span>
+        <textarea id="product-description" name="description" rows="2" maxlength="500" placeholder="会显示在积分商城的商品卡片里"></textarea>
+      </label>
+      <label class="checkbox-field"><input type="checkbox" id="product-enabled" name="enabled" checked> 上架显示</label>
+      <div class="form-actions">
+        <button type="submit" class="button-link" id="product-save">保存商品</button>
+        <button type="button" class="button-link secondary" id="product-cancel">取消</button>
+      </div>
+    </form>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>商品</th>
+            <th>积分</th>
+            <th>库存</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="product-rows"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="product-empty" hidden>暂无商品</div>
   </section>
 
   <section class="panel">
@@ -177,6 +258,6 @@
   </div>
 </div>
 
-<script src="/pointere-console/app.js?v=3"></script>
+<script src="/pointere-console/app.js?v=4"></script>
 </body>
 </html>
