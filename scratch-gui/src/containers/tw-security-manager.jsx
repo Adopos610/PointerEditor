@@ -6,6 +6,7 @@ import bindAll from 'lodash.bindall';
 import SecurityManagerModal from '../components/tw-security-manager-modal/security-manager-modal.jsx';
 import SecurityModals from '../lib/tw-security-manager-constants';
 import {getPersistedUnsandboxed, setPersistedUnsandboxed} from '../lib/tw-persisted-unsandboxed.js';
+import guard from '../lib/pointer-guard';
 
 /* eslint-disable require-atomic-updates */
 
@@ -309,7 +310,18 @@ class TWSecurityManagerComponent extends React.Component {
      * @returns {Promise<boolean>} Whether the extension can be loaded
      */
     async canLoadExtensionFromProject (url) {
-        if (isTrustedExtension(url)) {
+        const trusted = isTrustedExtension(url);
+        const verdict = guard.inspectExtension({
+            url,
+            trusted,
+            automatic: true,
+            unsandboxed: getPersistedUnsandboxed()
+        });
+        if (verdict.action === 'block') {
+            log.warn(`PointerGuard blocked extension: ${verdict.reasons.join('; ')}`);
+            return false;
+        }
+        if (trusted) {
             log.info(`Loading extension ${url} automatically`);
             return true;
         }
@@ -317,7 +329,7 @@ class TWSecurityManagerComponent extends React.Component {
         if (url.startsWith('data:')) {
             const allowed = await showModal(SecurityModals.LoadExtension, {
                 url,
-                unsandboxed: getPersistedUnsandboxed(),
+                unsandboxed: guard.isCollabActive() ? false : getPersistedUnsandboxed(),
                 onChangeUnsandboxed: this.handleChangeUnsandboxed.bind(this)
             });
             if (allowed) {

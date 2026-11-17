@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import JSZip from '@turbowarp/jszip';
 
 import {
     REGISTER_URL,
@@ -23,6 +24,7 @@ import CollabSession, {
     normalizeRoomCode,
     normalizeServer
 } from '../../lib/pointer-collab';
+import guard, {analyzeProjectJson} from '../../lib/pointer-guard';
 import styles from './pointer-collab-modal.css';
 
 const ACCOUNT_CENTER = 'https://vable.ctspace.xyz';
@@ -54,6 +56,20 @@ const parseBlocks = data => {
         blocks[id] = block;
     });
     return {blocks, text: JSON.stringify(blocks)};
+};
+
+const inspectSnapshotBuffer = (buffer, currentBlocks) => {
+    const bytes = new Uint8Array(buffer);
+    if (bytes.length < 4 || bytes[0] !== 0x50 || bytes[1] !== 0x4b) {
+        return Promise.resolve({ok: false, reason: '不是有效的 sb3 压缩包，可能已被篡改或加密'});
+    }
+    return JSZip.loadAsync(buffer)
+        .then(zip => {
+            const entry = zip.file('project.json');
+            if (!entry) return {ok: false, reason: '项目缺少 project.json'};
+            return entry.async('string').then(text => analyzeProjectJson(text, currentBlocks));
+        })
+        .catch(() => ({ok: false, reason: '无法解压项目，文件可能已损坏或被加密'}));
 };
 
 class PointerCollabModal extends React.Component {
@@ -88,7 +104,9 @@ class PointerCollabModal extends React.Component {
             notice: null,
             lockRequests: [],
             pendingRequestTarget: '',
-            error: ''
+            error: '',
+            guard: guard.getState(),
+            guardOpen: false
         };
         this.mounted = false;
         this.session = null;
@@ -99,6 +117,8 @@ class PointerCollabModal extends React.Component {
         this.knownBlocks = {};
         this.lastSentByTarget = {};
         this.pendingBlockMap = new Map();
+        this.quarantinedBlocks = {};
+        this.lastDestructivePrompt = {};
         this.applyingState = false;
         this.suppressUntil = 0;
         this.pushTimer = null;
@@ -129,6 +149,8 @@ class PointerCollabModal extends React.Component {
         this.handleSelectTarget = this.handleSelectTarget.bind(this);
         this.handleDismissNotice = this.handleDismissNotice.bind(this);
         this.handleTodoPublish = this.handleTodoPublish.bind(this);
+        this.handleRollbackBackup = this.handleRollbackBackup.bind(this);
+        this.handleToggleGuard = this.handleToggleGuard.bind(this);
     }
 
     componentDidMount () {
@@ -140,6 +162,10 @@ class PointerCollabModal extends React.Component {
         }
         this.refreshTargets();
         window.addEventListener('pointere-collab-todo-publish', this.handleTodoPublish);
+        this.unsubscribeGuard = guard.subscribe(guardState => {
+            if (!this.mounted) return;
+            this.setState({guard: guardState});
+        });
         const stored = getAccount();
         if (!stored) {
             this.setState({phase: 'login'});
@@ -178,6 +204,11 @@ class PointerCollabModal extends React.Component {
         clearTimeout(this.snapshotTimer);
         clearTimeout(this.structureTimer);
         window.removeEventListener('pointere-collab-todo-publish', this.handleTodoPublish);
+        if (this.unsubscribeGuard) {
+            this.unsubscribeGuard();
+            this.unsubscribeGuard = null;
+        }
+        guard.endCollab();
         const vm = this.props.vm;
         if (vm && typeof vm.removeListener === 'function') {
             vm.removeListener('PROJECT_CHANGED', this.handleProjectChanged);
@@ -343,6 +374,8 @@ class PointerCollabModal extends React.Component {
             return;
         }
         localStorage.setItem('pointer.collab.server', server);
+        guard.startCollab({room, server});
+        this.setState({guard: guard.getState(), guardOpen: false});
         if (this.session) this.session.close();
         this.session = null;
         this.gotInitialState = false;
@@ -351,6 +384,8 @@ class PointerCollabModal extends React.Component {
         this.knownBlocks = {};
         this.lastSentByTarget = {};
         this.pendingBlockMap.clear();
+        this.quarantinedBlocks = {};
+        this.lastDestructivePrompt = {};
         this.applyingState = false;
         this.suppressUntil = 0;
         this.disconnecting = false;
@@ -383,6 +418,7 @@ class PointerCollabModal extends React.Component {
                 },
                 onPeers: message => {
                     if (!this.mounted || this.session !== session) return;
+                    guard.setCollabIdentity({hostId: message.hostId});
                     this.update({
                         peers: message.peers || [],
                         hostId: message.hostId || ''
@@ -390,18 +426,30 @@ class PointerCollabModal extends React.Component {
                 },
                 onLocks: message => {
                     if (!this.mounted || this.session !== session) return;
+                    guard.observeCollab({message});
                     this.handleLocks(message);
                 },
                 onState: message => {
                     if (!this.mounted || this.session !== session) return;
                     if (message.from === session.selfId) return;
+                    guard.observeCollab({message});
+                    if (guard.isLockedDown()) {
+                        this.setState({error: guard.getState().lockdownReason || '安全引擎已暂停接收远端项目'});
+                        return;
+                    }
                     this.gotInitialState = true;
                     const fromName = message.from === 'server' ? '房间快照' : (message.name || '对方');
-                    this.applyRemoteState(message.data, fromName);
+                    guard.createBackup(this.props.vm, '应用对方项目前').then(() => {
+                        if (!this.mounted || this.session !== session) return;
+                        if (guard.isLockedDown()) return;
+                        this.applyRemoteState(message.data, fromName);
+                    });
                 },
                 onBlocks: message => {
                     if (!this.mounted || this.session !== session) return;
                     if (message.from === session.selfId) return;
+                    guard.observeCollab({message});
+                    if (guard.isLockedDown()) return;
                     this.handleRemoteBlocks(message);
                 },
                 onStateRequest: () => {
@@ -411,6 +459,7 @@ class PointerCollabModal extends React.Component {
                 },
                 onTodo: message => {
                     if (!this.mounted || this.session !== session) return;
+                    guard.observeCollab({message});
                     window.dispatchEvent(new CustomEvent('pointere-collab-todos', {
                         detail: {
                             todos: message.todos || [],
@@ -425,6 +474,7 @@ class PointerCollabModal extends React.Component {
                 },
                 onLockRequest: message => {
                     if (!this.mounted || this.session !== session) return;
+                    guard.observeCollab({message});
                     this.handleLockRequest(message);
                 },
                 onLockResponse: message => {
@@ -449,6 +499,7 @@ class PointerCollabModal extends React.Component {
                     if (!this.mounted || this.session !== session) return;
                     const intentional = wasClosedByUs || this.disconnecting;
                     this.session = null;
+                    guard.endCollab();
                     window.dispatchEvent(new CustomEvent('pointere-collab-closed'));
                     this.update({
                         connected: false,
@@ -490,6 +541,7 @@ class PointerCollabModal extends React.Component {
 
     handleJoined (message) {
         if (!this.mounted) return;
+        guard.setCollabIdentity({selfId: message.id, hostId: message.hostId});
         const peers = message.peers || [];
         const waiting = peers.length <= 1;
         if (message.user) updateStoredUser(message.user);
@@ -828,6 +880,32 @@ class PointerCollabModal extends React.Component {
             this.pendingBlockMap.set(targetKey, message.data);
             return;
         }
+        const previous = this.knownBlocks[targetKey];
+        const verdict = guard.inspectTargetUpdate(previous, message.data);
+        if (verdict.suspicious) {
+            if (previous) this.quarantinedBlocks[targetKey] = previous;
+            guard.addAlert('critical', '拦截了疑似加密或乱码的角色代码改动');
+            this.showNotice('安全引擎：收到的代码疑似被加密或损坏，已保留上一版本', 'warn');
+            return;
+        }
+        if (verdict.destructive) {
+            if (previous) this.quarantinedBlocks[targetKey] = previous;
+            const label = this.labelForTarget(targetKey);
+            const lastPrompt = this.lastDestructivePrompt[targetKey] || 0;
+            let accepted = false;
+            if (Date.now() - lastPrompt > 30000) {
+                this.lastDestructivePrompt[targetKey] = Date.now();
+                accepted = window.confirm(
+                    `安全引擎：${message.name || '对方'} 正在大幅清空「${label}」的代码（` +
+                    `${verdict.previousBlocks} → ${verdict.nextBlocks} 块）。保留上一版本并接受吗？`
+                );
+            }
+            if (!accepted) {
+                guard.addAlert('warn', `已阻止对「${label}」的大幅清空，上一版本已保留`, {});
+                this.showNotice(`已阻止清空「${label}」的代码，上一版本已保留`, 'warn');
+                return;
+            }
+        }
         const applied = this.applyRemoteBlocks(targetKey, message.data);
         if (!applied) {
             this.showNotice('收到未知角色的代码，请让房主重新同步整个项目', 'warn');
@@ -867,6 +945,17 @@ class PointerCollabModal extends React.Component {
         this.applyRemoteBlocks(targetKey, data);
     }
 
+    countProjectBlocks () {
+        const vm = this.props.vm;
+        if (!vm || !vm.runtime) return 0;
+        let total = 0;
+        (vm.runtime.targets || []).filter(target => target.isOriginal).forEach(target => {
+            const blocks = target.blocks && target.blocks._blocks;
+            if (blocks && typeof blocks === 'object') total += Object.keys(blocks).length;
+        });
+        return total;
+    }
+
     applyRemoteState (data, fromName) {
         if (typeof data !== 'string' || data.length > MAX_SNAPSHOT_BASE64) {
             this.setState({error: '收到的项目数据超过同步上限，已拒绝应用'});
@@ -879,6 +968,35 @@ class PointerCollabModal extends React.Component {
             this.setState({error: '收到的项目数据损坏，无法应用'});
             return;
         }
+        const currentBlocks = this.countProjectBlocks();
+        inspectSnapshotBuffer(buffer, currentBlocks).then(info => {
+            if (!this.mounted) return;
+            if (!info.ok) {
+                guard.addAlert('critical', `已拦截可疑项目同步：${info.reason}`);
+                this.setState({error: `安全引擎已拦截对方项目：${info.reason}`});
+                return;
+            }
+            if (info.suspicious) {
+                guard.addAlert('critical', '对方项目内容疑似被加密或乱码，已拒绝应用');
+                this.setState({error: '安全引擎：项目内容疑似被加密或乱码，已拒绝应用'});
+                return;
+            }
+            if (info.destructive) {
+                guard.addAlert('critical', `项目积木从 ${currentBlocks} 骤降到 ${info.blocks}，疑似清空或勒索`);
+                const accepted = window.confirm(
+                    `安全引擎：对方项目积木数量从 ${currentBlocks} 降到 ${info.blocks}，` +
+                    '疑似清空或勒索。仍要应用吗？'
+                );
+                if (!accepted) {
+                    this.setState({error: '已拒绝应用骤减的项目。可回滚到同步前快照。'});
+                    return;
+                }
+            }
+            this.performRemoteState(buffer, fromName);
+        });
+    }
+
+    performRemoteState (buffer, fromName) {
         this.applyingState = true;
         this.suppressUntil = Date.now() + 1200;
         this.pendingBlockMap.clear();
@@ -1093,6 +1211,30 @@ class PointerCollabModal extends React.Component {
         );
     }
 
+    handleToggleGuard () {
+        this.setState(previous => ({guardOpen: !previous.guardOpen}));
+    }
+
+    handleRollbackBackup () {
+        const backup = guard.latestBackup();
+        if (!backup) return;
+        if (!window.confirm('恢复到同步前的本地快照？当前项目会被替换，建议先断开协作。')) return;
+        if (this.session) this.handleDisconnect();
+        this.applyingState = true;
+        Promise.resolve(this.props.vm.loadProject(backup.data))
+            .then(() => {
+                this.applyingState = false;
+                this.refreshTargets(true);
+                this.rebuildKnownBlocks();
+                this.showNotice('已回滚到同步前快照', 'info');
+                guard.clearBackups();
+            })
+            .catch(error => {
+                this.applyingState = false;
+                this.setState({error: `回滚失败：${error.message}`});
+            });
+    }
+
     renderNotice () {
         const {notice} = this.state;
         if (!notice) return null;
@@ -1217,6 +1359,59 @@ class PointerCollabModal extends React.Component {
         );
     }
 
+    renderSecurity () {
+        const {guard: guardState, guardOpen} = this.state;
+        if (!guardState.active) return null;
+        const levelClass = guardState.lockdown ? styles.securityCritical :
+            (guardState.level === 'warn' ? styles.securityWarn : '');
+        return (
+            <div className={`${styles.securityBar} ${levelClass}`}>
+                <div className={styles.securityHead}>
+                    <strong>PointerGuard</strong>
+                    <span>
+                        {guardState.lockdown ? '已暂停接收远端改动' :
+                            (guardState.level === 'warn' ? '发现可疑行为' : '实时守护中')}
+                    </span>
+                    {guardState.blockedExtensions ? (
+                        <span>已拦截 {guardState.blockedExtensions} 个扩展</span>
+                    ) : null}
+                    <button type="button" className={styles.securityLink} onClick={this.handleToggleGuard}>
+                        {guardOpen ? '收起' : '详情'}
+                    </button>
+                </div>
+                {guardOpen ? (
+                    <div className={styles.securityBody}>
+                        {guardState.alerts.length ? (
+                            <ul className={styles.securityAlerts}>
+                                {guardState.alerts.slice(0, 6).map(alert => (
+                                    <li
+                                        key={alert.id}
+                                        className={alert.level === 'critical' ? styles.securityCriticalText : ''}
+                                    >
+                                        <span>{new Date(alert.at).toLocaleTimeString()}</span>
+                                        {alert.message}
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : <p>暂无异常事件。</p>}
+                    </div>
+                ) : null}
+                {guardState.backups.length ? (
+                    <div className={styles.securityActions}>
+                        <button type="button" className={styles.securityRollback} onClick={this.handleRollbackBackup}>
+                            回滚到同步前
+                        </button>
+                        <span>
+                            本地快照 {new Date(guardState.backups[0].at).toLocaleTimeString()}
+                            {' · '}
+                            {Math.round(guardState.backups[0].size / 1024)} KB
+                        </span>
+                    </div>
+                ) : null}
+            </div>
+        );
+    }
+
     renderRoom () {
         const {room, peers, selfId, lastSync, projectLocked, hostId} = this.state;
         const isHost = hostId === selfId;
@@ -1246,6 +1441,7 @@ class PointerCollabModal extends React.Component {
                 </div>
                 {this.renderLockRequests()}
                 {this.renderNotice()}
+                {this.renderSecurity()}
                 <div className={styles.sectionHeader}>
                     <span className={styles.sectionTitle}>角色与代码锁定</span>
                     {isHost ? (

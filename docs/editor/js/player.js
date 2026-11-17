@@ -1857,7 +1857,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".pointer-collab-modal_overlay_2k6Tj {\r\n    position: fixed;\r\n    inset: 0;\r\n    z-index: 2000;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 24px;\r\n    background: rgba(12, 34, 68, 0.42);\r\n    backdrop-filter: blur(16px) saturate(1.15);\r\n    -webkit-backdrop-filter: blur(16px) saturate(1.15);\r\n    animation: pointer-collab-modal_pointer-overlay-in_3j3kl 0.22s ease both;\r\n}\r\n\r\n@keyframes pointer-collab-modal_pointer-overlay-in_3j3kl {\r\n    from { opacity: 0; }\r\n    to { opacity: 1; }\r\n}\r\n\r\n.pointer-collab-modal_panel__eB32 {\r\n    width: 460px;\r\n    max-width: 100%;\r\n    max-height: calc(100vh - 48px);\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-radius: 14px;\r\n    background: #ffffff;\r\n    box-shadow: 0 24px 64px rgba(9, 30, 66, 0.35);\r\n    overflow: hidden;\r\n    font-family: \"OPPO Sans\", \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n    color: #1d3557;\r\n    animation: pointer-collab-modal_pointer-panel-in_1Ig_p 0.28s cubic-bezier(0.18, 0.9, 0.24, 1) both;\r\n}\r\n\r\n@keyframes pointer-collab-modal_pointer-panel-in_1Ig_p {\r\n    from { opacity: 0; transform: translateY(16px) scale(0.975); }\r\n    to { opacity: 1; transform: translateY(0) scale(1); }\r\n}\r\n\r\n.pointer-collab-modal_header_2iEzL {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    padding: 14px 20px;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 1rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_close_3c08P {\r\n    width: 28px;\r\n    height: 28px;\r\n    border: none;\r\n    border-radius: 8px;\r\n    background: rgba(255, 255, 255, 0.16);\r\n    color: #ffffff;\r\n    font-size: 1.15rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-collab-modal_close_3c08P:hover {\r\n    background: rgba(255, 255, 255, 0.3);\r\n}\r\n\r\n.pointer-collab-modal_body_1qdDR {\r\n    padding: 18px 20px 20px;\r\n    overflow-y: auto;\r\n}\r\n\r\n.pointer-collab-modal_form_BqUjQ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 12px;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n    font-size: 0.85rem;\r\n    color: #3d5a80;\r\n    flex: 1;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ span {\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ input,\r\n.pointer-collab-modal_field_2DFqZ select {\r\n    height: 38px;\r\n    padding: 0 12px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 8px;\r\n    background: #f7faff;\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    outline: none;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ input:focus,\r\n.pointer-collab-modal_field_2DFqZ select:focus {\r\n    border-color: #2f6fe4;\r\n    background: #ffffff;\r\n    box-shadow: 0 0 0 3px rgba(47, 111, 228, 0.15);\r\n}\r\n\r\n.pointer-collab-modal_hint_GqENw {\r\n    margin: 0;\r\n    font-size: 0.78rem;\r\n    color: #6b86a8;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_actions_2PKaN {\r\n    display: flex;\r\n    gap: 10px;\r\n}\r\n\r\n.pointer-collab-modal_actions_2PKaN .pointer-collab-modal_primary_1xZcz,\r\n.pointer-collab-modal_actions_2PKaN .pointer-collab-modal_secondary_20gIi {\r\n    flex: 1;\r\n}\r\n\r\n.pointer-collab-modal_primary_1xZcz {\r\n    height: 40px;\r\n    border: none;\r\n    border-radius: 9px;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 0.92rem;\r\n    font-weight: 700;\r\n    cursor: pointer;\r\n    box-shadow: 0 2px 6px rgba(47, 111, 228, 0.3);\r\n}\r\n\r\n.pointer-collab-modal_primary_1xZcz:disabled,\r\n.pointer-collab-modal_secondary_20gIi:disabled {\r\n    opacity: 0.6;\r\n    cursor: default;\r\n}\r\n\r\n.pointer-collab-modal_secondary_20gIi {\r\n    height: 40px;\r\n    padding: 0 16px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 9px;\r\n    background: #ffffff;\r\n    color: #2f6fe4;\r\n    font-size: 0.88rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    text-decoration: none;\r\n}\r\n\r\n.pointer-collab-modal_room-card_16cPB {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 12px;\r\n    padding: 12px 14px;\r\n    border-radius: 10px;\r\n    background: #eef4ff;\r\n    border: 1px solid #d6e4fb;\r\n}\r\n\r\n.pointer-collab-modal_room-card_16cPB .pointer-collab-modal_secondary_20gIi {\r\n    height: 34px;\r\n    flex: 0 0 auto;\r\n    background: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_room-label_3PQjW {\r\n    display: block;\r\n    font-size: 0.75rem;\r\n    color: #6b86a8;\r\n    margin-bottom: 2px;\r\n}\r\n\r\n.pointer-collab-modal_room-code_3bfOK {\r\n    font-size: 1.25rem;\r\n    letter-spacing: 0.14em;\r\n    color: #2258b8;\r\n}\r\n\r\n.pointer-collab-modal_peer-list_13JTr {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    gap: 8px;\r\n}\r\n\r\n.pointer-collab-modal_peer_2yNOL,\r\n.pointer-collab-modal_peer-self_2xfxN {\r\n    padding: 5px 10px;\r\n    border-radius: 999px;\r\n    background: #f1f6ff;\r\n    border: 1px solid #d6e4fb;\r\n    color: #3d5a80;\r\n    font-size: 0.8rem;\r\n}\r\n\r\n.pointer-collab-modal_peer-self_2xfxN {\r\n    background: #e3efff;\r\n    border-color: #9fc2f7;\r\n    color: #2258b8;\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_checkbox_10hd6 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    font-size: 0.85rem;\r\n    color: #3d5a80;\r\n}\r\n\r\n.pointer-collab-modal_checkbox_10hd6 input {\r\n    width: 16px;\r\n    height: 16px;\r\n    accent-color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_status_8YwSe {\r\n    margin: 10px 0 0;\r\n    font-size: 0.82rem;\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_error_hx0JE {\r\n    margin: 10px 0 0;\r\n    padding: 8px 10px;\r\n    border-radius: 8px;\r\n    background: #fff1f0;\r\n    color: #c0392b;\r\n    font-size: 0.82rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_panel__eB32 {\r\n    width: 540px;\r\n}\r\n\r\n.pointer-collab-modal_account-intro_fHkmt {\r\n    padding: 12px 14px;\r\n    border-radius: 10px;\r\n    background: #eef4ff;\r\n    border: 1px solid #d6e4fb;\r\n}\r\n\r\n.pointer-collab-modal_account-intro-title_237Iv {\r\n    margin-bottom: 6px;\r\n    color: #2258b8;\r\n    font-size: 0.95rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_account-bar_1tT7v {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    padding: 10px 12px;\r\n    border: 1px solid #d6e4fb;\r\n    border-radius: 10px;\r\n    background: #f7faff;\r\n}\r\n\r\n.pointer-collab-modal_account-avatar_wLdUp {\r\n    flex: 0 0 auto;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 34px;\r\n    height: 34px;\r\n    border-radius: 50%;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 0.95rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_account-meta_33HpZ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 2px;\r\n    min-width: 0;\r\n    flex: 1;\r\n    color: #3d5a80;\r\n    font-size: 0.78rem;\r\n    line-height: 1.35;\r\n}\r\n\r\n.pointer-collab-modal_account-meta_33HpZ strong {\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB {\r\n    align-self: flex-start;\r\n    padding: 0;\r\n    border: none;\r\n    background: transparent;\r\n    color: #2f6fe4;\r\n    font-size: 0.8rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    text-align: left;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB:disabled {\r\n    opacity: 0.55;\r\n    cursor: default;\r\n    text-decoration: none;\r\n}\r\n\r\n.pointer-collab-modal_section-header_2Rz8P {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    margin-top: 2px;\r\n}\r\n\r\n.pointer-collab-modal_section-title_1BzMB {\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_target-list_mrlYV {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n    max-height: 260px;\r\n    margin: 0;\r\n    padding: 0;\r\n    overflow-y: auto;\r\n    list-style: none;\r\n}\r\n\r\n.pointer-collab-modal_target-row_38w2S {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    padding: 7px 9px;\r\n    border: 1px solid #e1ecfb;\r\n    border-radius: 9px;\r\n    background: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_target-current_1WqgS {\r\n    border-color: #9fc2f7;\r\n    background: #f2f7ff;\r\n    box-shadow: inset 3px 0 0 #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_target-name_1DSM6 {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    min-width: 0;\r\n    flex: 0 1 auto;\r\n    padding: 0;\r\n    border: none;\r\n    background: transparent;\r\n    color: #1d3557;\r\n    font-size: 0.85rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_target-name_1DSM6:hover {\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_target-kind_dhQ6i {\r\n    flex: 0 0 auto;\r\n    padding: 1px 6px;\r\n    border-radius: 999px;\r\n    background: #e7f0ff;\r\n    color: #517bb8;\r\n    font-size: 0.68rem;\r\n    font-weight: 500;\r\n}\r\n\r\n.pointer-collab-modal_target-state_3RvU1 {\r\n    flex: 1;\r\n    text-align: right;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.pointer-collab-modal_target-actions_16cih {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    gap: 5px;\r\n}\r\n\r\n.pointer-collab-modal_tag-open_3R5bP,\r\n.pointer-collab-modal_tag-mine_3GFBJ,\r\n.pointer-collab-modal_tag-locked_Hv-5F {\r\n    display: inline-block;\r\n    padding: 2px 8px;\r\n    border-radius: 999px;\r\n    font-size: 0.72rem;\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_tag-open_3R5bP {\r\n    background: #eaf7ef;\r\n    color: #1c7c4a;\r\n}\r\n\r\n.pointer-collab-modal_tag-mine_3GFBJ {\r\n    background: #e3efff;\r\n    color: #2258b8;\r\n}\r\n\r\n.pointer-collab-modal_tag-locked_Hv-5F {\r\n    background: #fff4e5;\r\n    color: #b45309;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l,\r\n.pointer-collab-modal_mini-primary_3yBmF {\r\n    height: 26px;\r\n    padding: 0 9px;\r\n    border-radius: 7px;\r\n    font-size: 0.74rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l {\r\n    border: 1px solid #c9d8ee;\r\n    background: #ffffff;\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l:hover {\r\n    border-color: #8fb6f3;\r\n    background: #f5f9ff;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l:disabled {\r\n    opacity: 0.55;\r\n    cursor: default;\r\n}\r\n\r\n.pointer-collab-modal_mini-primary_3yBmF {\r\n    border: 1px solid #2f6fe4;\r\n    background: #2f6fe4;\r\n    color: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_mini-primary_3yBmF:hover {\r\n    background: #225fc9;\r\n}\r\n\r\n.pointer-collab-modal_notice_gZ5eB {\r\n    display: flex;\r\n    align-items: flex-start;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    padding: 9px 11px;\r\n    border: 1px solid #cfe0fa;\r\n    border-radius: 9px;\r\n    background: #f1f7ff;\r\n    color: #2258b8;\r\n    font-size: 0.8rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_notice-warn__9va- {\r\n    border-color: #f3d19b;\r\n    background: #fff8ec;\r\n    color: #9a5b06;\r\n}\r\n\r\n.pointer-collab-modal_notice-actions_1PlL- {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    align-items: center;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_notice-close_2-Ir0 {\r\n    width: 22px;\r\n    height: 22px;\r\n    padding: 0;\r\n    border: none;\r\n    border-radius: 6px;\r\n    background: rgba(47, 111, 228, 0.08);\r\n    color: inherit;\r\n    font-size: 1rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-collab-modal_notice-close_2-Ir0:hover {\r\n    background: rgba(47, 111, 228, 0.16);\r\n}\r\n\r\n.pointer-collab-modal_request-list_3uwMJ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_request-card_3Bpsz {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    padding: 9px 11px;\r\n    border: 1px solid #f3d19b;\r\n    border-radius: 9px;\r\n    background: #fff8ec;\r\n    color: #7a4a05;\r\n    font-size: 0.8rem;\r\n    line-height: 1.45;\r\n}\r\n\r\n.pointer-collab-modal_inline-actions_2K-Q0 {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    gap: 6px;\r\n}\r\n", ""]);
+exports.push([module.i, ".pointer-collab-modal_overlay_2k6Tj {\r\n    position: fixed;\r\n    inset: 0;\r\n    z-index: 2000;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 24px;\r\n    background: rgba(12, 34, 68, 0.42);\r\n    backdrop-filter: blur(16px) saturate(1.15);\r\n    -webkit-backdrop-filter: blur(16px) saturate(1.15);\r\n    animation: pointer-collab-modal_pointer-overlay-in_3j3kl 0.22s ease both;\r\n}\r\n\r\n@keyframes pointer-collab-modal_pointer-overlay-in_3j3kl {\r\n    from { opacity: 0; }\r\n    to { opacity: 1; }\r\n}\r\n\r\n.pointer-collab-modal_panel__eB32 {\r\n    width: 460px;\r\n    max-width: 100%;\r\n    max-height: calc(100vh - 48px);\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-radius: 14px;\r\n    background: #ffffff;\r\n    box-shadow: 0 24px 64px rgba(9, 30, 66, 0.35);\r\n    overflow: hidden;\r\n    font-family: \"OPPO Sans\", \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n    color: #1d3557;\r\n    animation: pointer-collab-modal_pointer-panel-in_1Ig_p 0.28s cubic-bezier(0.18, 0.9, 0.24, 1) both;\r\n}\r\n\r\n@keyframes pointer-collab-modal_pointer-panel-in_1Ig_p {\r\n    from { opacity: 0; transform: translateY(16px) scale(0.975); }\r\n    to { opacity: 1; transform: translateY(0) scale(1); }\r\n}\r\n\r\n.pointer-collab-modal_header_2iEzL {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    padding: 14px 20px;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 1rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_close_3c08P {\r\n    width: 28px;\r\n    height: 28px;\r\n    border: none;\r\n    border-radius: 8px;\r\n    background: rgba(255, 255, 255, 0.16);\r\n    color: #ffffff;\r\n    font-size: 1.15rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-collab-modal_close_3c08P:hover {\r\n    background: rgba(255, 255, 255, 0.3);\r\n}\r\n\r\n.pointer-collab-modal_body_1qdDR {\r\n    padding: 18px 20px 20px;\r\n    overflow-y: auto;\r\n}\r\n\r\n.pointer-collab-modal_form_BqUjQ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 12px;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n    font-size: 0.85rem;\r\n    color: #3d5a80;\r\n    flex: 1;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ span {\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ input,\r\n.pointer-collab-modal_field_2DFqZ select {\r\n    height: 38px;\r\n    padding: 0 12px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 8px;\r\n    background: #f7faff;\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    outline: none;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ input:focus,\r\n.pointer-collab-modal_field_2DFqZ select:focus {\r\n    border-color: #2f6fe4;\r\n    background: #ffffff;\r\n    box-shadow: 0 0 0 3px rgba(47, 111, 228, 0.15);\r\n}\r\n\r\n.pointer-collab-modal_hint_GqENw {\r\n    margin: 0;\r\n    font-size: 0.78rem;\r\n    color: #6b86a8;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_actions_2PKaN {\r\n    display: flex;\r\n    gap: 10px;\r\n}\r\n\r\n.pointer-collab-modal_actions_2PKaN .pointer-collab-modal_primary_1xZcz,\r\n.pointer-collab-modal_actions_2PKaN .pointer-collab-modal_secondary_20gIi {\r\n    flex: 1;\r\n}\r\n\r\n.pointer-collab-modal_primary_1xZcz {\r\n    height: 40px;\r\n    border: none;\r\n    border-radius: 9px;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 0.92rem;\r\n    font-weight: 700;\r\n    cursor: pointer;\r\n    box-shadow: 0 2px 6px rgba(47, 111, 228, 0.3);\r\n}\r\n\r\n.pointer-collab-modal_primary_1xZcz:disabled,\r\n.pointer-collab-modal_secondary_20gIi:disabled {\r\n    opacity: 0.6;\r\n    cursor: default;\r\n}\r\n\r\n.pointer-collab-modal_secondary_20gIi {\r\n    height: 40px;\r\n    padding: 0 16px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 9px;\r\n    background: #ffffff;\r\n    color: #2f6fe4;\r\n    font-size: 0.88rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    text-decoration: none;\r\n}\r\n\r\n.pointer-collab-modal_room-card_16cPB {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 12px;\r\n    padding: 12px 14px;\r\n    border-radius: 10px;\r\n    background: #eef4ff;\r\n    border: 1px solid #d6e4fb;\r\n}\r\n\r\n.pointer-collab-modal_room-card_16cPB .pointer-collab-modal_secondary_20gIi {\r\n    height: 34px;\r\n    flex: 0 0 auto;\r\n    background: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_room-label_3PQjW {\r\n    display: block;\r\n    font-size: 0.75rem;\r\n    color: #6b86a8;\r\n    margin-bottom: 2px;\r\n}\r\n\r\n.pointer-collab-modal_room-code_3bfOK {\r\n    font-size: 1.25rem;\r\n    letter-spacing: 0.14em;\r\n    color: #2258b8;\r\n}\r\n\r\n.pointer-collab-modal_peer-list_13JTr {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    gap: 8px;\r\n}\r\n\r\n.pointer-collab-modal_peer_2yNOL,\r\n.pointer-collab-modal_peer-self_2xfxN {\r\n    padding: 5px 10px;\r\n    border-radius: 999px;\r\n    background: #f1f6ff;\r\n    border: 1px solid #d6e4fb;\r\n    color: #3d5a80;\r\n    font-size: 0.8rem;\r\n}\r\n\r\n.pointer-collab-modal_peer-self_2xfxN {\r\n    background: #e3efff;\r\n    border-color: #9fc2f7;\r\n    color: #2258b8;\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_checkbox_10hd6 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    font-size: 0.85rem;\r\n    color: #3d5a80;\r\n}\r\n\r\n.pointer-collab-modal_checkbox_10hd6 input {\r\n    width: 16px;\r\n    height: 16px;\r\n    accent-color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_status_8YwSe {\r\n    margin: 10px 0 0;\r\n    font-size: 0.82rem;\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_error_hx0JE {\r\n    margin: 10px 0 0;\r\n    padding: 8px 10px;\r\n    border-radius: 8px;\r\n    background: #fff1f0;\r\n    color: #c0392b;\r\n    font-size: 0.82rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_panel__eB32 {\r\n    width: 540px;\r\n}\r\n\r\n.pointer-collab-modal_account-intro_fHkmt {\r\n    padding: 12px 14px;\r\n    border-radius: 10px;\r\n    background: #eef4ff;\r\n    border: 1px solid #d6e4fb;\r\n}\r\n\r\n.pointer-collab-modal_account-intro-title_237Iv {\r\n    margin-bottom: 6px;\r\n    color: #2258b8;\r\n    font-size: 0.95rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_account-bar_1tT7v {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    padding: 10px 12px;\r\n    border: 1px solid #d6e4fb;\r\n    border-radius: 10px;\r\n    background: #f7faff;\r\n}\r\n\r\n.pointer-collab-modal_account-avatar_wLdUp {\r\n    flex: 0 0 auto;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 34px;\r\n    height: 34px;\r\n    border-radius: 50%;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 0.95rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_account-meta_33HpZ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 2px;\r\n    min-width: 0;\r\n    flex: 1;\r\n    color: #3d5a80;\r\n    font-size: 0.78rem;\r\n    line-height: 1.35;\r\n}\r\n\r\n.pointer-collab-modal_account-meta_33HpZ strong {\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB {\r\n    align-self: flex-start;\r\n    padding: 0;\r\n    border: none;\r\n    background: transparent;\r\n    color: #2f6fe4;\r\n    font-size: 0.8rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    text-align: left;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB:disabled {\r\n    opacity: 0.55;\r\n    cursor: default;\r\n    text-decoration: none;\r\n}\r\n\r\n.pointer-collab-modal_section-header_2Rz8P {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    margin-top: 2px;\r\n}\r\n\r\n.pointer-collab-modal_section-title_1BzMB {\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_target-list_mrlYV {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n    max-height: 260px;\r\n    margin: 0;\r\n    padding: 0;\r\n    overflow-y: auto;\r\n    list-style: none;\r\n}\r\n\r\n.pointer-collab-modal_target-row_38w2S {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    padding: 7px 9px;\r\n    border: 1px solid #e1ecfb;\r\n    border-radius: 9px;\r\n    background: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_target-current_1WqgS {\r\n    border-color: #9fc2f7;\r\n    background: #f2f7ff;\r\n    box-shadow: inset 3px 0 0 #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_target-name_1DSM6 {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    min-width: 0;\r\n    flex: 0 1 auto;\r\n    padding: 0;\r\n    border: none;\r\n    background: transparent;\r\n    color: #1d3557;\r\n    font-size: 0.85rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_target-name_1DSM6:hover {\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_target-kind_dhQ6i {\r\n    flex: 0 0 auto;\r\n    padding: 1px 6px;\r\n    border-radius: 999px;\r\n    background: #e7f0ff;\r\n    color: #517bb8;\r\n    font-size: 0.68rem;\r\n    font-weight: 500;\r\n}\r\n\r\n.pointer-collab-modal_target-state_3RvU1 {\r\n    flex: 1;\r\n    text-align: right;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.pointer-collab-modal_target-actions_16cih {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    gap: 5px;\r\n}\r\n\r\n.pointer-collab-modal_tag-open_3R5bP,\r\n.pointer-collab-modal_tag-mine_3GFBJ,\r\n.pointer-collab-modal_tag-locked_Hv-5F {\r\n    display: inline-block;\r\n    padding: 2px 8px;\r\n    border-radius: 999px;\r\n    font-size: 0.72rem;\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_tag-open_3R5bP {\r\n    background: #eaf7ef;\r\n    color: #1c7c4a;\r\n}\r\n\r\n.pointer-collab-modal_tag-mine_3GFBJ {\r\n    background: #e3efff;\r\n    color: #2258b8;\r\n}\r\n\r\n.pointer-collab-modal_tag-locked_Hv-5F {\r\n    background: #fff4e5;\r\n    color: #b45309;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l,\r\n.pointer-collab-modal_mini-primary_3yBmF {\r\n    height: 26px;\r\n    padding: 0 9px;\r\n    border-radius: 7px;\r\n    font-size: 0.74rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l {\r\n    border: 1px solid #c9d8ee;\r\n    background: #ffffff;\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l:hover {\r\n    border-color: #8fb6f3;\r\n    background: #f5f9ff;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l:disabled {\r\n    opacity: 0.55;\r\n    cursor: default;\r\n}\r\n\r\n.pointer-collab-modal_mini-primary_3yBmF {\r\n    border: 1px solid #2f6fe4;\r\n    background: #2f6fe4;\r\n    color: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_mini-primary_3yBmF:hover {\r\n    background: #225fc9;\r\n}\r\n\r\n.pointer-collab-modal_notice_gZ5eB {\r\n    display: flex;\r\n    align-items: flex-start;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    padding: 9px 11px;\r\n    border: 1px solid #cfe0fa;\r\n    border-radius: 9px;\r\n    background: #f1f7ff;\r\n    color: #2258b8;\r\n    font-size: 0.8rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_notice-warn__9va- {\r\n    border-color: #f3d19b;\r\n    background: #fff8ec;\r\n    color: #9a5b06;\r\n}\r\n\r\n.pointer-collab-modal_notice-actions_1PlL- {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    align-items: center;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_notice-close_2-Ir0 {\r\n    width: 22px;\r\n    height: 22px;\r\n    padding: 0;\r\n    border: none;\r\n    border-radius: 6px;\r\n    background: rgba(47, 111, 228, 0.08);\r\n    color: inherit;\r\n    font-size: 1rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-collab-modal_notice-close_2-Ir0:hover {\r\n    background: rgba(47, 111, 228, 0.16);\r\n}\r\n\r\n.pointer-collab-modal_request-list_3uwMJ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_request-card_3Bpsz {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    padding: 9px 11px;\r\n    border: 1px solid #f3d19b;\r\n    border-radius: 9px;\r\n    background: #fff8ec;\r\n    color: #7a4a05;\r\n    font-size: 0.8rem;\r\n    line-height: 1.45;\r\n}\r\n\r\n.pointer-collab-modal_inline-actions_2K-Q0 {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_security-bar_33NBy {\n    display: flex;\n    flex-direction: column;\n    gap: 6px;\n    padding: 8px 10px;\n    border: 1px solid #bfe0c8;\n    border-radius: 9px;\n    background: #f2fbf4;\n    color: #246b3a;\n    font-size: 0.76rem;\n}\r\n\r\n.pointer-collab-modal_security-warn_1JWaV {\n    border-color: #f3d19b;\n    background: #fff8ec;\n    color: #7a4a05;\n}\r\n\r\n.pointer-collab-modal_security-critical_1DdkQ {\n    border-color: #f0b3ad;\n    background: #fdf0ee;\n    color: #8d2a20;\n}\r\n\r\n.pointer-collab-modal_security-head_3JjuC {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    flex-wrap: wrap;\n}\r\n\r\n.pointer-collab-modal_security-head_3JjuC strong {\n    font-size: 0.76rem;\n    letter-spacing: 0.02em;\n}\r\n\r\n.pointer-collab-modal_security-link_19s4J {\n    margin-left: auto;\n    padding: 0;\n    border: 0;\n    background: transparent;\n    color: inherit;\n    font-size: 0.72rem;\n    text-decoration: underline;\n    cursor: pointer;\n}\r\n\r\n.pointer-collab-modal_security-body_26RtE {\n    color: inherit;\n    font-size: 0.72rem;\n}\r\n\r\n.pointer-collab-modal_security-body_26RtE p {\n    margin: 0;\n}\r\n\r\n.pointer-collab-modal_security-alerts_1oG2T {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\r\n\r\n.pointer-collab-modal_security-alerts_1oG2T li {\n    display: flex;\n    gap: 6px;\n    line-height: 1.45;\n}\r\n\r\n.pointer-collab-modal_security-alerts_1oG2T li span {\n    flex: 0 0 auto;\n    opacity: 0.7;\n}\r\n\r\n.pointer-collab-modal_security-critical-text_vrTAE {\n    color: #8d2a20;\n    font-weight: 600;\n}\r\n\r\n.pointer-collab-modal_security-actions_1g0Yl {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    flex-wrap: wrap;\n}\r\n\r\n.pointer-collab-modal_security-rollback_1MZLS {\n    height: 24px;\n    padding: 0 9px;\n    border: 1px solid currentColor;\n    border-radius: 6px;\n    background: transparent;\n    color: inherit;\n    font: 600 0.7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\r\n\r\n.pointer-collab-modal_security-rollback_1MZLS:hover {\n    background: rgba(255, 255, 255, 0.7);\n}\r\n\r\n.pointer-collab-modal_security-actions_1g0Yl span {\n    opacity: 0.8;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -1942,7 +1942,27 @@ exports.locals = {
 	"request-card": "pointer-collab-modal_request-card_3Bpsz",
 	"requestCard": "pointer-collab-modal_request-card_3Bpsz",
 	"inline-actions": "pointer-collab-modal_inline-actions_2K-Q0",
-	"inlineActions": "pointer-collab-modal_inline-actions_2K-Q0"
+	"inlineActions": "pointer-collab-modal_inline-actions_2K-Q0",
+	"security-bar": "pointer-collab-modal_security-bar_33NBy",
+	"securityBar": "pointer-collab-modal_security-bar_33NBy",
+	"security-warn": "pointer-collab-modal_security-warn_1JWaV",
+	"securityWarn": "pointer-collab-modal_security-warn_1JWaV",
+	"security-critical": "pointer-collab-modal_security-critical_1DdkQ",
+	"securityCritical": "pointer-collab-modal_security-critical_1DdkQ",
+	"security-head": "pointer-collab-modal_security-head_3JjuC",
+	"securityHead": "pointer-collab-modal_security-head_3JjuC",
+	"security-link": "pointer-collab-modal_security-link_19s4J",
+	"securityLink": "pointer-collab-modal_security-link_19s4J",
+	"security-body": "pointer-collab-modal_security-body_26RtE",
+	"securityBody": "pointer-collab-modal_security-body_26RtE",
+	"security-alerts": "pointer-collab-modal_security-alerts_1oG2T",
+	"securityAlerts": "pointer-collab-modal_security-alerts_1oG2T",
+	"security-critical-text": "pointer-collab-modal_security-critical-text_vrTAE",
+	"securityCriticalText": "pointer-collab-modal_security-critical-text_vrTAE",
+	"security-actions": "pointer-collab-modal_security-actions_1g0Yl",
+	"securityActions": "pointer-collab-modal_security-actions_1g0Yl",
+	"security-rollback": "pointer-collab-modal_security-rollback_1MZLS",
+	"securityRollback": "pointer-collab-modal_security-rollback_1MZLS"
 };
 
 /***/ }),
@@ -16102,10 +16122,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib/pointer-account */ "./src/lib/pointer-account.js");
-/* harmony import */ var _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib/pointer-collab */ "./src/lib/pointer-collab.js");
-/* harmony import */ var _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pointer-collab-modal.css */ "./src/components/menu-bar/pointer-collab-modal.css");
-/* harmony import */ var _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @turbowarp/jszip */ "./node_modules/@turbowarp/jszip/dist/jszip.min.js");
+/* harmony import */ var _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_turbowarp_jszip__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib/pointer-account */ "./src/lib/pointer-account.js");
+/* harmony import */ var _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib/pointer-collab */ "./src/lib/pointer-collab.js");
+/* harmony import */ var _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../lib/pointer-guard */ "./src/lib/pointer-guard.js");
+/* harmony import */ var _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pointer-collab-modal.css */ "./src/components/menu-bar/pointer-collab-modal.css");
+/* harmony import */ var _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6__);
+
+
 
 
 
@@ -16121,7 +16146,7 @@ const targetName = target => target.isStage ? '舞台' : target.getName();
 const snapshotBlocks = target => JSON.stringify(target.blocks._blocks || {});
 const parseBlocks = data => {
   if (typeof data !== 'string' || !data) throw new Error('代码数据为空');
-  if (data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["MAX_TARGET_BLOCKS"]) throw new Error('角色代码超过 4MB 同步上限');
+  if (data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["MAX_TARGET_BLOCKS"]) throw new Error('角色代码超过 4MB 同步上限');
   const parsed = JSON.parse(data);
   if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
     throw new Error('代码数据格式不正确');
@@ -16138,11 +16163,31 @@ const parseBlocks = data => {
     text: JSON.stringify(blocks)
   };
 };
+const inspectSnapshotBuffer = (buffer, currentBlocks) => {
+  const bytes = new Uint8Array(buffer);
+  if (bytes.length < 4 || bytes[0] !== 0x50 || bytes[1] !== 0x4b) {
+    return Promise.resolve({
+      ok: false,
+      reason: '不是有效的 sb3 压缩包，可能已被篡改或加密'
+    });
+  }
+  return _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_2___default.a.loadAsync(buffer).then(zip => {
+    const entry = zip.file('project.json');
+    if (!entry) return {
+      ok: false,
+      reason: '项目缺少 project.json'
+    };
+    return entry.async('string').then(text => Object(_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["analyzeProjectJson"])(text, currentBlocks));
+  }).catch(() => ({
+    ok: false,
+    reason: '无法解压项目，文件可能已损坏或被加密'
+  }));
+};
 class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   constructor(props) {
     super(props);
-    const storedServer = localStorage.getItem('pointer.collab.server') || _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_SERVER"];
-    const storedPreset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["OFFICIAL_SERVERS"].find(item => item.url === storedServer);
+    const storedServer = localStorage.getItem('pointer.collab.server') || _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_SERVER"];
+    const storedPreset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["OFFICIAL_SERVERS"].find(item => item.url === storedServer);
     this.state = {
       phase: 'checking',
       account: null,
@@ -16170,7 +16215,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       notice: null,
       lockRequests: [],
       pendingRequestTarget: '',
-      error: ''
+      error: '',
+      guard: _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].getState(),
+      guardOpen: false
     };
     this.mounted = false;
     this.session = null;
@@ -16181,6 +16228,8 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     this.knownBlocks = {};
     this.lastSentByTarget = {};
     this.pendingBlockMap = new Map();
+    this.quarantinedBlocks = {};
+    this.lastDestructivePrompt = {};
     this.applyingState = false;
     this.suppressUntil = 0;
     this.pushTimer = null;
@@ -16211,6 +16260,8 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     this.handleSelectTarget = this.handleSelectTarget.bind(this);
     this.handleDismissNotice = this.handleDismissNotice.bind(this);
     this.handleTodoPublish = this.handleTodoPublish.bind(this);
+    this.handleRollbackBackup = this.handleRollbackBackup.bind(this);
+    this.handleToggleGuard = this.handleToggleGuard.bind(this);
   }
   componentDidMount() {
     this.mounted = true;
@@ -16221,7 +16272,13 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }
     this.refreshTargets();
     window.addEventListener('pointere-collab-todo-publish', this.handleTodoPublish);
-    const stored = Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["getAccount"])();
+    this.unsubscribeGuard = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].subscribe(guardState => {
+      if (!this.mounted) return;
+      this.setState({
+        guard: guardState
+      });
+    });
+    const stored = Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["getAccount"])();
     if (!stored) {
       this.setState({
         phase: 'login'
@@ -16231,9 +16288,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     this.setState({
       account: stored
     });
-    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["fetchMe"])(stored.token).then(data => {
+    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["fetchMe"])(stored.token).then(data => {
       if (!this.mounted) return;
-      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["updateStoredUser"])(data.user);
+      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["updateStoredUser"])(data.user);
       this.setState({
         phase: 'join',
         account: {
@@ -16244,7 +16301,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }).catch(error => {
       if (!this.mounted) return;
       if (error.status === 401 || error.status === 403) {
-        Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["clearAccount"])();
+        Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["clearAccount"])();
         this.setState({
           phase: 'login',
           account: null,
@@ -16266,6 +16323,11 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     clearTimeout(this.snapshotTimer);
     clearTimeout(this.structureTimer);
     window.removeEventListener('pointere-collab-todo-publish', this.handleTodoPublish);
+    if (this.unsubscribeGuard) {
+      this.unsubscribeGuard();
+      this.unsubscribeGuard = null;
+    }
+    _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].endCollab();
     const vm = this.props.vm;
     if (vm && typeof vm.removeListener === 'function') {
       vm.removeListener('PROJECT_CHANGED', this.handleProjectChanged);
@@ -16327,10 +16389,10 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       });
       return;
     }
-    const preset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["OFFICIAL_SERVERS"].find(item => item.id === serverPreset);
+    const preset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["OFFICIAL_SERVERS"].find(item => item.id === serverPreset);
     this.setState({
       serverPreset,
-      server: preset ? preset.url : _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_SERVER"],
+      server: preset ? preset.url : _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_SERVER"],
       error: ''
     });
   }
@@ -16338,9 +16400,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const _this$state2 = this.state,
       serverPreset = _this$state2.serverPreset,
       customServer = _this$state2.customServer;
-    if (serverPreset === 'custom') return Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["normalizeServer"])(customServer);
-    const preset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["OFFICIAL_SERVERS"].find(item => item.id === serverPreset);
-    return preset ? preset.url : _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_SERVER"];
+    if (serverPreset === 'custom') return Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["normalizeServer"])(customServer);
+    const preset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["OFFICIAL_SERVERS"].find(item => item.id === serverPreset);
+    return preset ? preset.url : _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_SERVER"];
   }
   handleLogin(event) {
     event.preventDefault();
@@ -16357,9 +16419,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       loginError: '',
       needsVerification: false
     });
-    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["loginAccount"])(accountName, password).then(data => {
+    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["loginAccount"])(accountName, password).then(data => {
       if (!this.mounted) return;
-      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["saveAccount"])(data.token, data.user);
+      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["saveAccount"])(data.token, data.user);
       localStorage.setItem(LAST_ACCOUNT_KEY, accountName);
       this.setState({
         account: {
@@ -16387,9 +16449,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       connected = _this$state3.connected;
     if (connected) this.handleDisconnect();
     if (account && account.token) {
-      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["logoutAccount"])(account.token).catch(() => {});
+      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["logoutAccount"])(account.token).catch(() => {});
     }
-    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["clearAccount"])();
+    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["clearAccount"])();
     this.setState({
       account: null,
       phase: 'login',
@@ -16407,18 +16469,18 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     });
   }
   handleOpenRegister() {
-    window.open(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["REGISTER_URL"], '_blank', 'noopener');
+    window.open(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["REGISTER_URL"], '_blank', 'noopener');
   }
   handleClose() {
     this.props.onClose();
   }
   handleCreate(event) {
     event.preventDefault();
-    this.startSession(Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["makeRoomCode"])());
+    this.startSession(Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["makeRoomCode"])());
   }
   handleJoin(event) {
     event.preventDefault();
-    const room = Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["normalizeRoomCode"])(this.state.roomCode);
+    const room = Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["normalizeRoomCode"])(this.state.roomCode);
     if (!/^[A-Z0-9]{4,12}$/.test(room)) {
       this.setState({
         error: '房间码需为 4-12 位字母或数字'
@@ -16455,13 +16517,21 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       });
       return;
     }
-    if (Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["isInsecureServer"])(server)) {
+    if (Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["isInsecureServer"])(server)) {
       this.setState({
         error: '公网协作服务器必须使用 wss:// 加密连接；ws:// 仅允许本机或局域网地址'
       });
       return;
     }
     localStorage.setItem('pointer.collab.server', server);
+    _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].startCollab({
+      room,
+      server
+    });
+    this.setState({
+      guard: _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].getState(),
+      guardOpen: false
+    });
     if (this.session) this.session.close();
     this.session = null;
     this.gotInitialState = false;
@@ -16470,6 +16540,8 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     this.knownBlocks = {};
     this.lastSentByTarget = {};
     this.pendingBlockMap.clear();
+    this.quarantinedBlocks = {};
+    this.lastDestructivePrompt = {};
     this.applyingState = false;
     this.suppressUntil = 0;
     this.disconnecting = false;
@@ -16490,7 +16562,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       lockRequests: [],
       pendingRequestTarget: ''
     });
-    const session = new _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["default"]({
+    const session = new _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["default"]({
       server,
       room,
       token: account.token,
@@ -16501,6 +16573,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         },
         onPeers: message => {
           if (!this.mounted || this.session !== session) return;
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].setCollabIdentity({
+            hostId: message.hostId
+          });
           this.update({
             peers: message.peers || [],
             hostId: message.hostId || ''
@@ -16508,18 +16583,38 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         },
         onLocks: message => {
           if (!this.mounted || this.session !== session) return;
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].observeCollab({
+            message
+          });
           this.handleLocks(message);
         },
         onState: message => {
           if (!this.mounted || this.session !== session) return;
           if (message.from === session.selfId) return;
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].observeCollab({
+            message
+          });
+          if (_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].isLockedDown()) {
+            this.setState({
+              error: _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].getState().lockdownReason || '安全引擎已暂停接收远端项目'
+            });
+            return;
+          }
           this.gotInitialState = true;
           const fromName = message.from === 'server' ? '房间快照' : message.name || '对方';
-          this.applyRemoteState(message.data, fromName);
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].createBackup(this.props.vm, '应用对方项目前').then(() => {
+            if (!this.mounted || this.session !== session) return;
+            if (_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].isLockedDown()) return;
+            this.applyRemoteState(message.data, fromName);
+          });
         },
         onBlocks: message => {
           if (!this.mounted || this.session !== session) return;
           if (message.from === session.selfId) return;
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].observeCollab({
+            message
+          });
+          if (_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].isLockedDown()) return;
           this.handleRemoteBlocks(message);
         },
         onStateRequest: () => {
@@ -16529,6 +16624,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         },
         onTodo: message => {
           if (!this.mounted || this.session !== session) return;
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].observeCollab({
+            message
+          });
           window.dispatchEvent(new CustomEvent('pointere-collab-todos', {
             detail: {
               todos: message.todos || [],
@@ -16543,6 +16641,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         },
         onLockRequest: message => {
           if (!this.mounted || this.session !== session) return;
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].observeCollab({
+            message
+          });
           this.handleLockRequest(message);
         },
         onLockResponse: message => {
@@ -16571,6 +16672,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
           if (!this.mounted || this.session !== session) return;
           const intentional = wasClosedByUs || this.disconnecting;
           this.session = null;
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].endCollab();
           window.dispatchEvent(new CustomEvent('pointere-collab-closed'));
           this.update({
             connected: false,
@@ -16594,7 +16696,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       this.session.close();
       this.session = null;
     }
-    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["clearAccount"])();
+    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["clearAccount"])();
     this.setState({
       account: null,
       phase: 'login',
@@ -16610,9 +16712,13 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
   }
   handleJoined(message) {
     if (!this.mounted) return;
+    _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].setCollabIdentity({
+      selfId: message.id,
+      hostId: message.hostId
+    });
     const peers = message.peers || [];
     const waiting = peers.length <= 1;
-    if (message.user) Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["updateStoredUser"])(message.user);
+    if (message.user) Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["updateStoredUser"])(message.user);
     this.lastStructureSig = this.targetSignature();
     window.dispatchEvent(new CustomEvent('pointere-collab-joined', {
       detail: {
@@ -16793,7 +16899,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const _this$state5 = this.state,
       room = _this$state5.room,
       server = _this$state5.server;
-    const text = "\u623F\u95F4\u7801\uFF1A".concat(room, "\n\u534F\u4F5C\u670D\u52A1\u5668\uFF1A").concat(server, "\n\u8BF7\u5148\u6CE8\u518C\u5E76\u767B\u5F55 PointerE \u8D26\u53F7\uFF1A").concat(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["REGISTER_URL"], "\n\u7136\u540E\u5728 PointerEditor \u6253\u5F00\u300C\u4E91\u7AEF \u2192 \u5728\u7EBF\u534F\u4F5C\u300D\uFF0C\u8F93\u5165\u623F\u95F4\u7801\u5373\u53EF\u4E00\u8D77\u7F16\u8F91\u3002");
+    const text = "\u623F\u95F4\u7801\uFF1A".concat(room, "\n\u534F\u4F5C\u670D\u52A1\u5668\uFF1A").concat(server, "\n\u8BF7\u5148\u6CE8\u518C\u5E76\u767B\u5F55 PointerE \u8D26\u53F7\uFF1A").concat(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["REGISTER_URL"], "\n\u7136\u540E\u5728 PointerEditor \u6253\u5F00\u300C\u4E91\u7AEF \u2192 \u5728\u7EBF\u534F\u4F5C\u300D\uFF0C\u8F93\u5165\u623F\u95F4\u7801\u5373\u53EF\u4E00\u8D77\u7F16\u8F91\u3002");
     const done = () => this.showNotice('邀请信息已复制', 'info');
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(done).catch(() => this.fallbackCopy(text, done));
@@ -16922,7 +17028,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       });
       return;
     }
-    if (data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["MAX_TARGET_BLOCKS"]) {
+    if (data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["MAX_TARGET_BLOCKS"]) {
       this.showNotice('当前角色代码超过 4MB，无法实时同步', 'warn');
       return;
     }
@@ -16942,6 +17048,29 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     if (this.applyingState) {
       this.pendingBlockMap.set(targetKey, message.data);
       return;
+    }
+    const previous = this.knownBlocks[targetKey];
+    const verdict = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].inspectTargetUpdate(previous, message.data);
+    if (verdict.suspicious) {
+      if (previous) this.quarantinedBlocks[targetKey] = previous;
+      _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].addAlert('critical', '拦截了疑似加密或乱码的角色代码改动');
+      this.showNotice('安全引擎：收到的代码疑似被加密或损坏，已保留上一版本', 'warn');
+      return;
+    }
+    if (verdict.destructive) {
+      if (previous) this.quarantinedBlocks[targetKey] = previous;
+      const label = this.labelForTarget(targetKey);
+      const lastPrompt = this.lastDestructivePrompt[targetKey] || 0;
+      let accepted = false;
+      if (Date.now() - lastPrompt > 30000) {
+        this.lastDestructivePrompt[targetKey] = Date.now();
+        accepted = window.confirm("\u5B89\u5168\u5F15\u64CE\uFF1A".concat(message.name || '对方', " \u6B63\u5728\u5927\u5E45\u6E05\u7A7A\u300C").concat(label, "\u300D\u7684\u4EE3\u7801\uFF08") + "".concat(verdict.previousBlocks, " \u2192 ").concat(verdict.nextBlocks, " \u5757\uFF09\u3002\u4FDD\u7559\u4E0A\u4E00\u7248\u672C\u5E76\u63A5\u53D7\u5417\uFF1F"));
+      }
+      if (!accepted) {
+        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].addAlert('warn', "\u5DF2\u963B\u6B62\u5BF9\u300C".concat(label, "\u300D\u7684\u5927\u5E45\u6E05\u7A7A\uFF0C\u4E0A\u4E00\u7248\u672C\u5DF2\u4FDD\u7559"), {});
+        this.showNotice("\u5DF2\u963B\u6B62\u6E05\u7A7A\u300C".concat(label, "\u300D\u7684\u4EE3\u7801\uFF0C\u4E0A\u4E00\u7248\u672C\u5DF2\u4FDD\u7559"), 'warn');
+        return;
+      }
     }
     const applied = this.applyRemoteBlocks(targetKey, message.data);
     if (!applied) {
@@ -16982,8 +17111,18 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     if (!data) return;
     this.applyRemoteBlocks(targetKey, data);
   }
+  countProjectBlocks() {
+    const vm = this.props.vm;
+    if (!vm || !vm.runtime) return 0;
+    let total = 0;
+    (vm.runtime.targets || []).filter(target => target.isOriginal).forEach(target => {
+      const blocks = target.blocks && target.blocks._blocks;
+      if (blocks && typeof blocks === 'object') total += Object.keys(blocks).length;
+    });
+    return total;
+  }
   applyRemoteState(data, fromName) {
-    if (typeof data !== 'string' || data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["MAX_SNAPSHOT_BASE64"]) {
+    if (typeof data !== 'string' || data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["MAX_SNAPSHOT_BASE64"]) {
       this.setState({
         error: '收到的项目数据超过同步上限，已拒绝应用'
       });
@@ -16991,13 +17130,44 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }
     let buffer;
     try {
-      buffer = Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["base64ToArrayBuffer"])(data);
+      buffer = Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["base64ToArrayBuffer"])(data);
     } catch (error) {
       this.setState({
         error: '收到的项目数据损坏，无法应用'
       });
       return;
     }
+    const currentBlocks = this.countProjectBlocks();
+    inspectSnapshotBuffer(buffer, currentBlocks).then(info => {
+      if (!this.mounted) return;
+      if (!info.ok) {
+        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].addAlert('critical', "\u5DF2\u62E6\u622A\u53EF\u7591\u9879\u76EE\u540C\u6B65\uFF1A".concat(info.reason));
+        this.setState({
+          error: "\u5B89\u5168\u5F15\u64CE\u5DF2\u62E6\u622A\u5BF9\u65B9\u9879\u76EE\uFF1A".concat(info.reason)
+        });
+        return;
+      }
+      if (info.suspicious) {
+        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].addAlert('critical', '对方项目内容疑似被加密或乱码，已拒绝应用');
+        this.setState({
+          error: '安全引擎：项目内容疑似被加密或乱码，已拒绝应用'
+        });
+        return;
+      }
+      if (info.destructive) {
+        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].addAlert('critical', "\u9879\u76EE\u79EF\u6728\u4ECE ".concat(currentBlocks, " \u9AA4\u964D\u5230 ").concat(info.blocks, "\uFF0C\u7591\u4F3C\u6E05\u7A7A\u6216\u52D2\u7D22"));
+        const accepted = window.confirm("\u5B89\u5168\u5F15\u64CE\uFF1A\u5BF9\u65B9\u9879\u76EE\u79EF\u6728\u6570\u91CF\u4ECE ".concat(currentBlocks, " \u964D\u5230 ").concat(info.blocks, "\uFF0C") + '疑似清空或勒索。仍要应用吗？');
+        if (!accepted) {
+          this.setState({
+            error: '已拒绝应用骤减的项目。可回滚到同步前快照。'
+          });
+          return;
+        }
+      }
+      this.performRemoteState(buffer, fromName);
+    });
+  }
+  performRemoteState(buffer, fromName) {
     this.applyingState = true;
     this.suppressUntil = Date.now() + 1200;
     this.pendingBlockMap.clear();
@@ -17039,7 +17209,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         status: '正在把整个项目同步给对方…'
       });
     }
-    Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["encodeProjectSnapshot"])(this.props.vm).then(data => {
+    Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["encodeProjectSnapshot"])(this.props.vm).then(data => {
       if (!this.mounted || !this.session) return;
       if (this.session.sendState(data)) {
         this.lastSnapshotAt = Date.now();
@@ -17078,16 +17248,16 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       loginError = _this$state6.loginError,
       needsVerification = _this$state6.needsVerification;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.form,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.form,
       onSubmit: this.handleLogin
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.accountIntro
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.accountIntro
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.accountIntroTitle
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.accountIntroTitle
     }, "\u767B\u5F55 PointerE \u8D26\u53F7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
     }, "PointerE \u8D26\u53F7\u4EC5\u7528\u4E8E\u5728\u7EBF\u534F\u4F5C\uFF0C\u4E0E\u521B\u5BA2\u6B21\u5143\u8D26\u53F7\u76F8\u4E92\u72EC\u7ACB\u3002\u767B\u5F55\u540E\u53EF\u4EE5\u548C\u540C\u4F34\u5B9E\u65F6\u7F16\u8F91\u540C\u4E00\u4E2A\u9879\u76EE\u3002")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.field
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u7528\u6237\u540D\u6216\u90AE\u7BB1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       name: "loginAccount",
       value: loginAccount,
@@ -17096,7 +17266,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       spellCheck: false,
       disabled: authBusy
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.field
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5BC6\u7801"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       name: "loginPassword",
       type: "password",
@@ -17105,21 +17275,21 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       autoComplete: "current-password",
       disabled: authBusy
     })), loginError ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.error
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.error
     }, loginError) : null, needsVerification ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
     }, "\u8BF7\u6253\u5F00\u6CE8\u518C\u90AE\u7BB1\u5B8C\u6210\u9A8C\u8BC1\u3002\u6CA1\u6709\u6536\u5230\u90AE\u4EF6\u65F6\uFF0C\u53EF\u5728\u6CE8\u518C\u9875\u91CD\u65B0\u53D1\u9001\uFF0C\u6216\u8054\u7CFB\u7BA1\u7406\u5458\u3002") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.actions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.actions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "submit",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.primary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.primary,
       disabled: authBusy
     }, authBusy ? '登录中…' : '登录'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.secondary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.secondary,
       onClick: this.handleOpenRegister
     }, "\u6CE8\u518C PointerE \u8D26\u53F7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
     }, "\u8D26\u53F7\u4E2D\u5FC3\uFF1A", ACCOUNT_CENTER, " \xB7 \u6CE8\u518C\u9700\u8981\u56FE\u5F62\u9A8C\u8BC1\u7801\u548C\u90AE\u7BB1\u9A8C\u8BC1"));
   }
   renderAccountBar() {
@@ -17128,14 +17298,14 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const user = account.user;
     const initial = String(user.username || 'P').slice(0, 1).toUpperCase();
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.accountBar
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.accountBar
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.accountAvatar
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.accountAvatar
     }, initial), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.accountMeta
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.accountMeta
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, user.nickname || user.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "@", user.username, " \xB7 PointerE \u8D26\u53F7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.linkButton,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.linkButton,
       onClick: this.handleLogout
     }, "\u9000\u51FA\u767B\u5F55"));
   }
@@ -17147,22 +17317,22 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       connecting = _this$state7.connecting,
       account = _this$state7.account;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.form,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.form,
       onSubmit: this.handleJoin
     }, this.renderAccountBar(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.field
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u534F\u4F5C\u670D\u52A1\u5668"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
       name: "serverPreset",
       value: serverPreset,
       onChange: this.handleServerPresetChange,
       disabled: connecting
-    }, _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_3__["OFFICIAL_SERVERS"].map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+    }, _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["OFFICIAL_SERVERS"].map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
       key: item.id,
       value: item.id
     }, item.label)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
       value: "custom"
     }, "\u81EA\u5B9A\u4E49\u534F\u4F5C\u670D\u52A1\u5668"))), serverPreset === 'custom' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.field
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u670D\u52A1\u5668\u5730\u5740"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       name: "customServer",
       value: customServer,
@@ -17171,9 +17341,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       spellCheck: false,
       disabled: connecting
     })) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
     }, serverPreset === 'custom' ? '公网服务器必须使用 wss:// 加密连接；ws:// 仅允许本机或局域网地址。' : '官方节点通过 WSS（TLS）加密传输，进入房间需要已验证的 PointerE 账号。'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.field
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u623F\u95F4\u7801"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       name: "roomCode",
       value: roomCode,
@@ -17184,19 +17354,43 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       spellCheck: false,
       disabled: connecting
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
     }, "\u8FDB\u5165\u540C\u4E00\u623F\u95F4\u540E\uFF0C\u79EF\u6728\u4FEE\u6539\u4F1A\u5B9E\u65F6\u540C\u6B65\uFF1B\u6BCF\u4E2A\u89D2\u8272\u540C\u4E00\u65F6\u95F4\u7531\u4E00\u540D\u6210\u5458\u8BA4\u9886\u7F16\u8F91\uFF0C\u623F\u4E3B\u53EF\u4EE5\u9501\u5B9A\u5168\u90E8\u4EE3\u7801\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.actions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.actions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.primary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.primary,
       onClick: this.handleCreate,
       disabled: connecting || !account
     }, "\u521B\u5EFA\u623F\u95F4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "submit",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.secondary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.secondary,
       disabled: connecting || !account
     }, "\u52A0\u5165\u623F\u95F4")));
+  }
+  handleToggleGuard() {
+    this.setState(previous => ({
+      guardOpen: !previous.guardOpen
+    }));
+  }
+  handleRollbackBackup() {
+    const backup = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].latestBackup();
+    if (!backup) return;
+    if (!window.confirm('恢复到同步前的本地快照？当前项目会被替换，建议先断开协作。')) return;
+    if (this.session) this.handleDisconnect();
+    this.applyingState = true;
+    Promise.resolve(this.props.vm.loadProject(backup.data)).then(() => {
+      this.applyingState = false;
+      this.refreshTargets(true);
+      this.rebuildKnownBlocks();
+      this.showNotice('已回滚到同步前快照', 'info');
+      _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].clearBackups();
+    }).catch(error => {
+      this.applyingState = false;
+      this.setState({
+        error: "\u56DE\u6EDA\u5931\u8D25\uFF1A".concat(error.message)
+      });
+    });
   }
   renderNotice() {
     const notice = this.state.notice;
@@ -17204,16 +17398,16 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const claim = notice.targetId ? this.claimFor(notice.targetId) : null;
     const canRequest = claim && claim.clientId !== this.state.selfId && this.state.pendingRequestTarget !== notice.targetId;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.notice, " ").concat(notice.level === 'warn' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.noticeWarn : '')
+      className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.notice, " ").concat(notice.level === 'warn' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.noticeWarn : '')
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, notice.message), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.noticeActions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.noticeActions
     }, canRequest ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.miniButton,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniButton,
       onClick: () => this.handleRequestEdit(notice.targetId)
     }, "\u53D1\u9001\u7533\u8BF7") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.noticeClose,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.noticeClose,
       onClick: this.handleDismissNotice,
       "aria-label": "\u5173\u95ED\u63D0\u793A"
     }, "\xD7")));
@@ -17222,19 +17416,19 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const lockRequests = this.state.lockRequests;
     if (!lockRequests.length) return null;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.requestList
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.requestList
     }, lockRequests.map(request => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       key: "".concat(request.targetId, "-").concat(request.from.id),
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.requestCard
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.requestCard
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, request.from.name), " \u7533\u8BF7\u7F16\u8F91\u300C", this.labelForTarget(request.targetId), "\u300D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.inlineActions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.inlineActions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.miniPrimary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniPrimary,
       onClick: () => this.handleRespondRequest(request, true)
     }, "\u540C\u610F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.miniButton,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniButton,
       onClick: () => this.handleRespondRequest(request, false)
     }, "\u62D2\u7EDD")))));
   }
@@ -17250,11 +17444,11 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const isHost = hostId === selfId;
     if (!targets.length) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.hint
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
       }, "\u5F53\u524D\u9879\u76EE\u8FD8\u6CA1\u6709\u53EF\u534F\u4F5C\u7684\u89D2\u8272\u3002");
     }
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.targetList
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetList
     }, targets.map(target => {
       const claim = claims.find(item => item.targetId === target.key);
       const mine = claim && claim.clientId === selfId;
@@ -17263,134 +17457,163 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       const canClaim = !claim && (!projectLocked || isHost);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         key: target.key,
-        className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.targetRow, " ").concat(target.id === editingTargetId ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.targetCurrent : '')
+        className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetRow, " ").concat(target.id === editingTargetId ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetCurrent : '')
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "button",
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.targetName,
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetName,
         onClick: () => this.handleSelectTarget(target.id),
         title: "\u5207\u6362\u5230\u8FD9\u4E2A\u89D2\u8272"
       }, target.name, target.isStage ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.targetKind
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetKind
       }, "\u821E\u53F0") : null, target.id === editingTargetId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.targetKind
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetKind
       }, "\u5F53\u524D") : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.targetState
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetState
       }, claim ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: mine ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.tagMine : _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.tagLocked
+        className: mine ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.tagMine : _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.tagLocked
       }, mine ? '我' : claim.name, " \u5DF2\u9501\u5B9A") : projectBlocked ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.tagLocked
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.tagLocked
       }, "\u623F\u4E3B\u5DF2\u9501\u5B9A") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.tagOpen
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.tagOpen
       }, "\u53EF\u7F16\u8F91")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.targetActions
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetActions
       }, canClaim ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "button",
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.miniButton,
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniButton,
         onClick: () => this.handleClaim(target.key)
       }, "\u8BA4\u9886") : null, mine ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "button",
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.miniButton,
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniButton,
         onClick: () => this.handleRelease(target.key)
       }, "\u91CA\u653E") : null, other ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "button",
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.miniButton,
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniButton,
         onClick: () => this.handleRequestEdit(target.key),
         disabled: pendingRequestTarget === target.key
       }, pendingRequestTarget === target.key ? '申请中…' : '申请编辑') : null));
     }));
   }
-  renderRoom() {
+  renderSecurity() {
     const _this$state9 = this.state,
-      room = _this$state9.room,
-      peers = _this$state9.peers,
-      selfId = _this$state9.selfId,
-      lastSync = _this$state9.lastSync,
-      projectLocked = _this$state9.projectLocked,
-      hostId = _this$state9.hostId;
-    const isHost = hostId === selfId;
+      guardState = _this$state9.guard,
+      guardOpen = _this$state9.guardOpen;
+    if (!guardState.active) return null;
+    const levelClass = guardState.lockdown ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityCritical : guardState.level === 'warn' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityWarn : '';
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.form
-    }, this.renderAccountBar(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.roomCard
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.roomLabel
-    }, "\u623F\u95F4\u7801"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.roomCode
-    }, room)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityBar, " ").concat(levelClass)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityHead
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "PointerGuard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, guardState.lockdown ? '已暂停接收远端改动' : guardState.level === 'warn' ? '发现可疑行为' : '实时守护中'), guardState.blockedExtensions ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5DF2\u62E6\u622A ", guardState.blockedExtensions, " \u4E2A\u6269\u5C55") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.secondary,
-      onClick: this.handleCopyInvite
-    }, "\u590D\u5236\u9080\u8BF7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.peerList
-    }, peers.map(peer => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      key: peer.id,
-      className: peer.id === selfId ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.peerSelf : _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.peer
-    }, peer.nickname || peer.name, peer.host ? '（房主）' : '', peer.id === selfId ? ' · 我' : ''))), this.renderLockRequests(), this.renderNotice(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.sectionHeader
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.sectionTitle
-    }, "\u89D2\u8272\u4E0E\u4EE3\u7801\u9501\u5B9A"), isHost ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-      type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.miniPrimary,
-      onClick: this.handleHostLock
-    }, projectLocked ? '解锁全部代码' : '锁定全部代码') : null), this.renderTargets(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.hint
-    }, "\u8BA4\u9886\u89D2\u8272\u540E\u53EA\u6709\u4F60\u80FD\u4FEE\u6539\u8BE5\u89D2\u8272\u7684\u79EF\u6728\uFF1B\u5176\u4ED6\u4EBA\u60F3\u4FEE\u6539\u65F6\uFF0C\u9700\u8981\u5411\u4F60\u53D1\u9001\u7533\u8BF7\u3002\u623F\u4E3B\u9501\u5B9A\u5168\u90E8\u4EE3\u7801\u540E\uFF0C\u53EA\u6709\u623F\u4E3B\u53EF\u4EE5\u7F16\u8F91\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.actions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityLink,
+      onClick: this.handleToggleGuard
+    }, guardOpen ? '收起' : '详情')), guardOpen ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityBody
+    }, guardState.alerts.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityAlerts
+    }, guardState.alerts.slice(0, 6).map(alert => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      key: alert.id,
+      className: alert.level === 'critical' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityCriticalText : ''
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, new Date(alert.at).toLocaleTimeString()), alert.message))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u6682\u65E0\u5F02\u5E38\u4E8B\u4EF6\u3002")) : null, guardState.backups.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityActions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.primary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityRollback,
+      onClick: this.handleRollbackBackup
+    }, "\u56DE\u6EDA\u5230\u540C\u6B65\u524D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u672C\u5730\u5FEB\u7167 ", new Date(guardState.backups[0].at).toLocaleTimeString(), ' · ', Math.round(guardState.backups[0].size / 1024), " KB")) : null);
+  }
+  renderRoom() {
+    const _this$state0 = this.state,
+      room = _this$state0.room,
+      peers = _this$state0.peers,
+      selfId = _this$state0.selfId,
+      lastSync = _this$state0.lastSync,
+      projectLocked = _this$state0.projectLocked,
+      hostId = _this$state0.hostId;
+    const isHost = hostId === selfId;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.form
+    }, this.renderAccountBar(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.roomCard
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.roomLabel
+    }, "\u623F\u95F4\u7801"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.roomCode
+    }, room)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.secondary,
+      onClick: this.handleCopyInvite
+    }, "\u590D\u5236\u9080\u8BF7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.peerList
+    }, peers.map(peer => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      key: peer.id,
+      className: peer.id === selfId ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.peerSelf : _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.peer
+    }, peer.nickname || peer.name, peer.host ? '（房主）' : '', peer.id === selfId ? ' · 我' : ''))), this.renderLockRequests(), this.renderNotice(), this.renderSecurity(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.sectionHeader
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.sectionTitle
+    }, "\u89D2\u8272\u4E0E\u4EE3\u7801\u9501\u5B9A"), isHost ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniPrimary,
+      onClick: this.handleHostLock
+    }, projectLocked ? '解锁全部代码' : '锁定全部代码') : null), this.renderTargets(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
+    }, "\u8BA4\u9886\u89D2\u8272\u540E\u53EA\u6709\u4F60\u80FD\u4FEE\u6539\u8BE5\u89D2\u8272\u7684\u79EF\u6728\uFF1B\u5176\u4ED6\u4EBA\u60F3\u4FEE\u6539\u65F6\uFF0C\u9700\u8981\u5411\u4F60\u53D1\u9001\u7533\u8BF7\u3002\u623F\u4E3B\u9501\u5B9A\u5168\u90E8\u4EE3\u7801\u540E\uFF0C\u53EA\u6709\u623F\u4E3B\u53EF\u4EE5\u7F16\u8F91\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.actions
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.primary,
       onClick: this.handleClose
     }, "\u6536\u8D77\u7A97\u53E3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.secondary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.secondary,
       onClick: this.handleDisconnect
     }, "\u65AD\u5F00\u534F\u4F5C")), isHost ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.linkButton,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.linkButton,
       onClick: this.handleSyncNow
     }, "\u540C\u6B65\u6574\u4E2A\u9879\u76EE\uFF08\u623F\u4E3B\uFF09") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
     }, lastSync ? "\u6700\u8FD1\u540C\u6B65\uFF1A".concat(lastSync, "\u3002") : '', "\u6536\u8D77\u7A97\u53E3\u4E0D\u4F1A\u9000\u51FA\u534F\u4F5C\uFF0C\u623F\u95F4\u6210\u5458\u4ECD\u53EF\u7EE7\u7EED\u7F16\u8F91\u3002"));
   }
   renderChecking() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.form
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.form
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
     }, "\u6B63\u5728\u68C0\u67E5 PointerE \u767B\u5F55\u72B6\u6001\u2026"));
   }
   render() {
     if (this.props.hidden) return null;
-    const _this$state0 = this.state,
-      phase = _this$state0.phase,
-      connecting = _this$state0.connecting,
-      server = _this$state0.server,
-      error = _this$state0.error,
-      status = _this$state0.status;
+    const _this$state1 = this.state,
+      phase = _this$state1.phase,
+      connecting = _this$state1.connecting,
+      server = _this$state1.server,
+      error = _this$state1.error,
+      status = _this$state1.status;
     let content;
     if (phase === 'checking') content = this.renderChecking();else if (phase === 'login') content = this.renderLogin();else if (this.state.connected) content = this.renderRoom();else content = this.renderJoinForm();
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.overlay,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.overlay,
       role: "dialog",
       "aria-modal": "true"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.panel
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.panel
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.header
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.header
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5728\u7EBF\u534F\u4F5C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.close,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.close,
       onClick: this.handleClose,
       "aria-label": "\u6536\u8D77"
     }, "\xD7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.body
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.body
     }, content, error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.error
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.error
     }, error) : null, !error && status ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.status
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.status
     }, status) : null, connecting ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_4___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
     }, "\u6B63\u5728\u8FDE\u63A5 ", server, " \u2026") : null)));
   }
 }
@@ -43468,11 +43691,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_tw_security_manager_modal_security_manager_modal_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/tw-security-manager-modal/security-manager-modal.jsx */ "./src/components/tw-security-manager-modal/security-manager-modal.jsx");
 /* harmony import */ var _lib_tw_security_manager_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/tw-security-manager-constants */ "./src/lib/tw-security-manager-constants.js");
 /* harmony import */ var _lib_tw_persisted_unsandboxed_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../lib/tw-persisted-unsandboxed.js */ "./src/lib/tw-persisted-unsandboxed.js");
+/* harmony import */ var _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../lib/pointer-guard */ "./src/lib/pointer-guard.js");
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
 function _toPrimitive(t, e) { if ("object" != typeof t || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
+
 
 
 
@@ -43711,7 +43936,18 @@ class TWSecurityManagerComponent extends react__WEBPACK_IMPORTED_MODULE_0___defa
    * @returns {Promise<boolean>} Whether the extension can be loaded
    */
   async canLoadExtensionFromProject(url) {
-    if (isTrustedExtension(url)) {
+    const trusted = isTrustedExtension(url);
+    const verdict = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_8__["default"].inspectExtension({
+      url,
+      trusted,
+      automatic: true,
+      unsandboxed: Object(_lib_tw_persisted_unsandboxed_js__WEBPACK_IMPORTED_MODULE_7__["getPersistedUnsandboxed"])()
+    });
+    if (verdict.action === 'block') {
+      _lib_log__WEBPACK_IMPORTED_MODULE_3__["default"].warn("PointerGuard blocked extension: ".concat(verdict.reasons.join('; ')));
+      return false;
+    }
+    if (trusted) {
       _lib_log__WEBPACK_IMPORTED_MODULE_3__["default"].info("Loading extension ".concat(url, " automatically"));
       return true;
     }
@@ -43720,7 +43956,7 @@ class TWSecurityManagerComponent extends react__WEBPACK_IMPORTED_MODULE_0___defa
     if (url.startsWith('data:')) {
       const allowed = await showModal(_lib_tw_security_manager_constants__WEBPACK_IMPORTED_MODULE_6__["default"].LoadExtension, {
         url,
-        unsandboxed: Object(_lib_tw_persisted_unsandboxed_js__WEBPACK_IMPORTED_MODULE_7__["getPersistedUnsandboxed"])(),
+        unsandboxed: _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_8__["default"].isCollabActive() ? false : Object(_lib_tw_persisted_unsandboxed_js__WEBPACK_IMPORTED_MODULE_7__["getPersistedUnsandboxed"])(),
         onChangeUnsandboxed: this.handleChangeUnsandboxed.bind(this)
       });
       if (allowed) {
@@ -51797,6 +52033,436 @@ const applyPayloadToEditor = async (vm, payload) => {
   }
   return null;
 };
+
+/***/ }),
+
+/***/ "./src/lib/pointer-guard.js":
+/*!**********************************!*\
+  !*** ./src/lib/pointer-guard.js ***!
+  \**********************************/
+/*! exports provided: looksScrambled, analyzeProjectJson, default, PointerGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "looksScrambled", function() { return looksScrambled; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "analyzeProjectJson", function() { return analyzeProjectJson; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PointerGuard", function() { return PointerGuard; });
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+/*
+ * PointerGuard - real-time security engine for PointerEditor collaboration.
+ *
+ * It watches the collaboration channel and extension loading path, keeps a
+ * rolling audit trail, blocks high-risk actions and preserves local snapshots
+ * so a room member cannot hold the project hostage.
+ */
+
+const ALERT_LIMIT = 40;
+const BACKUP_LIMIT = 3;
+const BACKUP_MAX_BYTES = 48 * 1024 * 1024;
+const LEVEL_RANK = {
+  ok: 0,
+  info: 0,
+  warn: 1,
+  critical: 2
+};
+const CONTROL_CHARS = /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g;
+const ESCAPED_CONTROLS = /\\u00[01][0-9a-f]/gi;
+const countBlockMap = value => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return 0;
+  return Object.keys(value).length;
+};
+
+/**
+ * Detect text that looks encrypted, XORed or otherwise scrambled. Normal
+ * project JSON never contains many raw control characters or \u000x escapes.
+ */
+const looksScrambled = text => {
+  const value = String(text || '');
+  if (value.length < 200) return false;
+  const control = (value.match(CONTROL_CHARS) || []).length;
+  if (control / value.length > 0.005) return true;
+  const escaped = (value.match(ESCAPED_CONTROLS) || []).length;
+  if (escaped > 3) return true;
+  const replacement = (value.match(/\ufffd/g) || []).length;
+  if (replacement / value.length > 0.01) return true;
+  return false;
+};
+const analyzeProjectJson = (text, currentBlocks) => {
+  let project;
+  try {
+    project = JSON.parse(text);
+  } catch (error) {
+    return {
+      ok: false,
+      reason: '项目 JSON 无法解析，内容可能已损坏'
+    };
+  }
+  if (!project || !Array.isArray(project.targets)) {
+    return {
+      ok: false,
+      reason: '项目结构异常，缺少角色列表'
+    };
+  }
+  let blocks = 0;
+  for (const target of project.targets) {
+    blocks += countBlockMap(target && target.blocks);
+  }
+  const suspicious = looksScrambled(text);
+  const destructive = Boolean(Number.isFinite(currentBlocks) && currentBlocks >= 20 && (blocks === 0 || blocks < currentBlocks * 0.1));
+  return {
+    ok: true,
+    blocks,
+    targets: project.targets.length,
+    suspicious,
+    destructive
+  };
+};
+const trimUrl = url => {
+  const text = String(url || '');
+  if (/^data:/i.test(text)) return 'data: 内嵌扩展';
+  return text.length > 140 ? "".concat(text.slice(0, 137), "...") : text;
+};
+class PointerGuard {
+  constructor() {
+    this.collab = {
+      active: false,
+      room: '',
+      server: '',
+      selfId: '',
+      hostId: '',
+      startedAt: 0
+    };
+    this.alerts = [];
+    this.counters = new Map();
+    this.claimSnapshot = new Map();
+    this.level = 'ok';
+    this.lockdown = false;
+    this.lockdownReason = '';
+    this.blockedExtensions = 0;
+    this.backups = [];
+    this.backupBusy = false;
+    this.listeners = new Set();
+    this.seq = 0;
+  }
+
+  /* ---------------------------------------------------------------- */
+  /* Collaboration lifecycle                                          */
+  /* ---------------------------------------------------------------- */
+
+  startCollab(_ref) {
+    let room = _ref.room,
+      server = _ref.server;
+    this.collab = {
+      active: true,
+      room: String(room || ''),
+      server: String(server || ''),
+      selfId: '',
+      hostId: '',
+      startedAt: Date.now()
+    };
+    this.counters.clear();
+    this.claimSnapshot = new Map();
+    this.level = 'ok';
+    this.lockdown = false;
+    this.lockdownReason = '';
+    this.addAlert('info', "\u5B89\u5168\u5F15\u64CE\u5F00\u59CB\u5B88\u62A4\u623F\u95F4 ".concat(this.collab.room));
+  }
+  setCollabIdentity(_ref2) {
+    let selfId = _ref2.selfId,
+      hostId = _ref2.hostId;
+    if (!this.collab.active) return;
+    if (selfId !== undefined) this.collab.selfId = String(selfId || '');
+    if (hostId !== undefined) this.collab.hostId = String(hostId || '');
+  }
+  endCollab() {
+    if (!this.collab.active) return;
+    this.collab.active = false;
+    this.collab.room = '';
+    this.collab.selfId = '';
+    this.collab.hostId = '';
+    this.counters.clear();
+    this.claimSnapshot = new Map();
+    this.level = 'ok';
+    this.lockdown = false;
+    this.lockdownReason = '';
+    this.emit();
+  }
+  isCollabActive() {
+    return Boolean(this.collab.active);
+  }
+  isLockedDown() {
+    return Boolean(this.lockdown);
+  }
+
+  /* ---------------------------------------------------------------- */
+  /* Extension policy                                                 */
+  /* ---------------------------------------------------------------- */
+
+  inspectExtension(_ref3) {
+    let url = _ref3.url,
+      _ref3$trusted = _ref3.trusted,
+      trusted = _ref3$trusted === void 0 ? false : _ref3$trusted,
+      _ref3$automatic = _ref3.automatic,
+      automatic = _ref3$automatic === void 0 ? false : _ref3$automatic,
+      _ref3$unsandboxed = _ref3.unsandboxed,
+      unsandboxed = _ref3$unsandboxed === void 0 ? false : _ref3$unsandboxed;
+    const reasons = [];
+    let action = 'allow';
+    const isDataUrl = /^data:/i.test(String(url || ''));
+    if (this.collab.active && isDataUrl) {
+      action = 'block';
+      this.blockedExtensions += 1;
+      reasons.push('协作进行中拒绝加载项目内嵌扩展，避免他人借项目注入脚本');
+      this.addAlert('warn', '已拦截协作中的内嵌扩展', {
+        url: trimUrl(url),
+        reasons
+      });
+    } else if (!trusted && unsandboxed) {
+      action = 'sandbox';
+      reasons.push('未受信任的扩展必须运行在沙箱中');
+    } else if (automatic && !trusted && this.collab.active) {
+      reasons.push('协作项目请求加载外部扩展，需要你确认来源');
+    }
+    return {
+      action,
+      reasons
+    };
+  }
+  shouldForceSandbox(trusted) {
+    return Boolean(this.collab.active && !trusted);
+  }
+
+  /* ---------------------------------------------------------------- */
+  /* Live collaboration watcher                                       */
+  /* ---------------------------------------------------------------- */
+
+  inspectTargetUpdate(previousData, nextData) {
+    let previous = null;
+    try {
+      previous = JSON.parse(String(previousData || ''));
+    } catch (error) {
+      previous = null;
+    }
+    let next = null;
+    try {
+      next = JSON.parse(String(nextData || ''));
+    } catch (error) {
+      next = null;
+    }
+    const previousBlocks = countBlockMap(previous);
+    const nextBlocks = countBlockMap(next);
+    const destroyed = previousBlocks >= 8 && nextBlocks === 0;
+    const massShrink = previousBlocks >= 20 && nextBlocks < previousBlocks * 0.15;
+    const suspicious = looksScrambled(nextData);
+    if (suspicious) {
+      this.addAlert('warn', '收到疑似加密或乱码的代码改动，已保留上一版本', {});
+    }
+    return {
+      destructive: destroyed || massShrink,
+      previousBlocks,
+      nextBlocks,
+      suspicious
+    };
+  }
+  bump(key, windowMs) {
+    const now = Date.now();
+    const entry = this.counters.get(key);
+    if (!entry || now - entry.start > windowMs) {
+      this.counters.set(key, {
+        start: now,
+        count: 1
+      });
+      return 1;
+    }
+    entry.count += 1;
+    return entry.count;
+  }
+  observeCollab(_ref4) {
+    let message = _ref4.message;
+    if (!this.collab.active || !message || typeof message.type !== 'string') return;
+    const type = message.type,
+      from = message.from;
+    if (from && from === this.collab.selfId) return;
+    if (type === 'state') {
+      if (from === 'server') return;
+      const counter = this.bump("state:".concat(from || 'unknown'), 30000);
+      if (counter >= 14) {
+        this.raise('critical', '有人在反复推送整个项目，可能试图强制覆盖所有人的内容', {
+          from
+        });
+      } else if (counter >= 8) {
+        this.raise('warn', '短时间内收到多次整体项目同步，请注意内容变化', {
+          from
+        });
+      }
+    } else if (type === 'locks') {
+      const claims = Array.isArray(message.claims) ? message.claims : [];
+      const current = new Map();
+      for (const claim of claims) {
+        const id = String(claim && claim.clientId || '');
+        if (!id || id === this.collab.selfId) continue;
+        if (!current.has(id)) current.set(id, new Set());
+        current.get(id).add(String(claim.targetId || ''));
+      }
+      for (const _ref5 of current) {
+        var _ref6 = _slicedToArray(_ref5, 2);
+        const clientId = _ref6[0];
+        const targets = _ref6[1];
+        if (clientId === this.collab.hostId) continue;
+        const previous = this.claimSnapshot.get(clientId) || new Set();
+        let added = 0;
+        for (const targetId of targets) {
+          if (!previous.has(targetId)) added += 1;
+        }
+        if (added > 0) {
+          const counter = this.bump("claim:".concat(clientId), 15000);
+          if (counter >= 14 || targets.size >= 24) {
+            this.raise('critical', '检测到批量抢占代码锁，疑似恶意锁定操作', {
+              clientId,
+              count: targets.size
+            });
+          } else if (counter >= 8 || targets.size >= 16) {
+            this.raise('warn', '有成员连续锁定多个角色，请留意', {
+              clientId,
+              count: targets.size
+            });
+          }
+        }
+      }
+      this.claimSnapshot = current;
+    } else if (type === 'blocks') {
+      const counter = this.bump("blocks:".concat(from || 'unknown'), 10000);
+      if (counter >= 240) {
+        this.raise('critical', '检测到异常高频的代码改写，已暂停接收远端改动', {
+          from
+        });
+      } else if (counter >= 120) {
+        this.raise('warn', '远端代码同步频率异常，网络可能不稳定或有人刷写', {
+          from
+        });
+      }
+    } else if (type === 'lock-request') {
+      const counter = this.bump("lockreq:".concat(from && from.id || 'unknown'), 10000);
+      if (counter >= 8) {
+        this.raise('warn', '有成员在短时间内反复申请编辑权限', {});
+      }
+    } else if (type === 'todo') {
+      const counter = this.bump("todo:".concat(from || 'unknown'), 30000);
+      if (counter >= 8) {
+        this.raise('warn', '有成员在频繁覆盖项目 TODO', {
+          from
+        });
+      }
+    } else if (type === 'chat') {
+      const counter = this.bump("chat:".concat(from || 'unknown'), 10000);
+      if (counter >= 30) {
+        this.raise('warn', '有成员在刷屏聊天', {
+          from
+        });
+      }
+    }
+  }
+  raise(level, message, meta) {
+    this.addAlert(level, message, meta);
+    if (level === 'critical') {
+      this.lockdown = true;
+      this.lockdownReason = message;
+    }
+  }
+  addAlert(level, message, meta) {
+    const rank = LEVEL_RANK[level] === undefined ? 0 : LEVEL_RANK[level];
+    if (rank > (LEVEL_RANK[this.level] || 0)) this.level = level;
+    this.alerts.unshift({
+      id: "guard_".concat(Date.now(), "_").concat(++this.seq),
+      at: Date.now(),
+      level,
+      message,
+      meta: meta || {}
+    });
+    if (this.alerts.length > ALERT_LIMIT) this.alerts.length = ALERT_LIMIT;
+    this.emit();
+  }
+
+  /* ---------------------------------------------------------------- */
+  /* Snapshot backups and rollback                                    */
+  /* ---------------------------------------------------------------- */
+
+  createBackup(vm, reason) {
+    if (!vm || typeof vm.saveProjectSb3 !== 'function') return Promise.resolve(null);
+    if (this.backupBusy) return Promise.resolve(null);
+    this.backupBusy = true;
+    return Promise.resolve(vm.saveProjectSb3('arraybuffer')).then(data => {
+      this.backupBusy = false;
+      if (!data || !data.byteLength) return null;
+      if (data.byteLength > BACKUP_MAX_BYTES) return null;
+      const entry = {
+        id: "backup_".concat(Date.now(), "_").concat(++this.seq),
+        at: Date.now(),
+        reason: reason || '同步前自动备份',
+        size: data.byteLength,
+        data
+      };
+      this.backups = [entry, ...this.backups].slice(0, BACKUP_LIMIT);
+      this.addAlert('info', "\u5DF2\u4FDD\u7559\u540C\u6B65\u524D\u5FEB\u7167\uFF08".concat(Math.round(data.byteLength / 1024), " KB\uFF09"));
+      return entry;
+    }).catch(() => {
+      this.backupBusy = false;
+      return null;
+    });
+  }
+  latestBackup() {
+    return this.backups.length ? this.backups[0] : null;
+  }
+  clearBackups() {
+    this.backups = [];
+    this.emit();
+  }
+
+  /* ---------------------------------------------------------------- */
+  /* State and subscriptions                                          */
+  /* ---------------------------------------------------------------- */
+
+  getState() {
+    return {
+      active: this.collab.active,
+      room: this.collab.room,
+      level: this.level,
+      lockdown: this.lockdown,
+      lockdownReason: this.lockdownReason,
+      blockedExtensions: this.blockedExtensions,
+      alerts: this.alerts.slice(0, 12),
+      backups: this.backups.map(entry => ({
+        id: entry.id,
+        at: entry.at,
+        reason: entry.reason,
+        size: entry.size
+      }))
+    };
+  }
+  subscribe(listener) {
+    if (typeof listener !== 'function') return () => {};
+    this.listeners.add(listener);
+    return () => this.listeners.delete(listener);
+  }
+  emit() {
+    for (const listener of this.listeners) {
+      try {
+        listener(this.getState());
+      } catch (error) {
+        // A broken listener must not break the guard.
+      }
+    }
+  }
+}
+const guard = new PointerGuard();
+/* harmony default export */ __webpack_exports__["default"] = (guard);
+
 
 /***/ }),
 

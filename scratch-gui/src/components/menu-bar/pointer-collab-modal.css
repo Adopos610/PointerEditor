@@ -543,3 +543,110 @@
     flex: 0 0 auto;
     gap: 6px;
 }
+
+.security-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 10px;
+    border: 1px solid #bfe0c8;
+    border-radius: 9px;
+    background: #f2fbf4;
+    color: #246b3a;
+    font-size: 0.76rem;
+}
+
+.security-warn {
+    border-color: #f3d19b;
+    background: #fff8ec;
+    color: #7a4a05;
+}
+
+.security-critical {
+    border-color: #f0b3ad;
+    background: #fdf0ee;
+    color: #8d2a20;
+}
+
+.security-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.security-head strong {
+    font-size: 0.76rem;
+    letter-spacing: 0.02em;
+}
+
+.security-link {
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 0.72rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.security-body {
+    color: inherit;
+    font-size: 0.72rem;
+}
+
+.security-body p {
+    margin: 0;
+}
+
+.security-alerts {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.security-alerts li {
+    display: flex;
+    gap: 6px;
+    line-height: 1.45;
+}
+
+.security-alerts li span {
+    flex: 0 0 auto;
+    opacity: 0.7;
+}
+
+.security-critical-text {
+    color: #8d2a20;
+    font-weight: 600;
+}
+
+.security-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.security-rollback {
+    height: 24px;
+    padding: 0 9px;
+    border: 1px solid currentColor;
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+    font: 600 0.7rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+
+.security-rollback:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.security-actions span {
+    opacity: 0.8;
+}

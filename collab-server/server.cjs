@@ -37,6 +37,15 @@ const MAX_API_REQUESTS_PER_MINUTE = 240;
 const MAX_WS_UPGRADES_PER_MINUTE = 30;
 const WS_MESSAGE_WINDOW_MS = 10 * 1000;
 const WS_MESSAGE_LIMIT = 400;
+const MAX_ROOMS = 200;
+const MAX_CLAIMS_PER_CLIENT = 20;
+const CLAIM_WINDOW_MS = 15 * 1000;
+const MAX_CLAIMS_PER_WINDOW = 8;
+const MAX_BLOCKS_PER_WINDOW = 120;
+const BLOCK_WINDOW_MS = 10 * 1000;
+const MAX_STATE_PER_WINDOW = 3;
+const STATE_WINDOW_MS = 30 * 1000;
+const MAX_FAILED_JOINS = 6;
 const ALLOWED_SITE_HOSTS = new Set([
     'www.ctspace.xyz',
     'ctspace.xyz',
@@ -1040,9 +1049,16 @@ class Client {
         this.closed = false;
         this.buffer = Buffer.alloc(0);
         this.fragments = [];
+        this.fragmentBytes = 0;
         this.fragmentOpcode = 0;
         this.messageCount = 0;
         this.messageWindowStart = Date.now();
+        this.failedJoins = 0;
+        this.claimTimes = [];
+        this.blockTimes = [];
+        this.stateTimes = [];
+        this.lockRequestTimes = [];
+        this.ip = '';
     }
 
     sendJSON (payload) {
@@ -1159,10 +1175,18 @@ class Client {
         }
         if (opcode === 0x1 || opcode === 0x2) {
             this.fragments = [payload];
+            this.fragmentBytes = payload.length;
             this.fragmentOpcode = opcode;
         } else if (opcode === 0x0) {
             if (!this.fragments.length) return;
+            if (this.fragmentBytes + payload.length > MAX_MESSAGE_BYTES) {
+                this.fragments = [];
+                this.fragmentBytes = 0;
+                this.close(1009, 'message too big');
+                return;
+            }
             this.fragments.push(payload);
+            this.fragmentBytes += payload.length;
         } else {
             return;
         }
@@ -1170,6 +1194,7 @@ class Client {
         const full = Buffer.concat(this.fragments);
         const messageOpcode = this.fragmentOpcode;
         this.fragments = [];
+        this.fragmentBytes = 0;
         this.fragmentOpcode = 0;
         if (messageOpcode !== 0x1) return;
         this.handleMessage(full.toString('utf8'));
@@ -1318,24 +1343,37 @@ const authenticateJoin = message => {
     return found.user;
 };
 
+const rejectJoin = (client, message, code) => {
+    client.failedJoins += 1;
+    if (client.ip && !rateLimit(client.ip, 'join-fail', 20, 10 * 60 * 1000)) {
+        client.close(1008, 'join attempts');
+        return;
+    }
+    if (client.failedJoins >= MAX_FAILED_JOINS) {
+        client.close(1008, 'join attempts');
+        return;
+    }
+    client.sendJSON({type: 'error', code: code || 'join', message});
+};
+
 const joinRoom = (client, message) => {
     if (client.roomId) leaveRoom(client, 'switch-room');
     const roomId = normalizeRoom(message.room);
     if (!validRoom(roomId)) {
-        client.sendJSON({type: 'error', message: '房间码需为 4-12 位字母或数字'});
+        rejectJoin(client, '房间码需为 4-12 位字母或数字');
         return;
     }
     const user = authenticateJoin(message);
     if (!user) {
-        client.sendJSON({
-            type: 'error',
-            code: 'auth',
-            message: AUTH_DISABLED ? '无法识别身份' : 'PointerE 账号登录已失效，请重新登录'
-        });
+        rejectJoin(client, AUTH_DISABLED ? '无法识别身份' : 'PointerE 账号登录已失效，请重新登录', 'auth');
         return;
     }
     let room = rooms.get(roomId);
     if (!room) {
+        if (rooms.size >= MAX_ROOMS) {
+            rejectJoin(client, '服务器房间数量已达上限，请稍后再试');
+            return;
+        }
         room = {
             id: roomId,
             clients: new Set(),
@@ -1351,7 +1389,7 @@ const joinRoom = (client, message) => {
         log('room created', roomId);
     }
     if (room.clients.size >= MAX_CLIENTS_PER_ROOM) {
-        client.sendJSON({type: 'error', message: '房间人数已满'});
+        rejectJoin(client, '房间人数已满');
         return;
     }
     if (room.cleanupTimer) {
@@ -1361,6 +1399,7 @@ const joinRoom = (client, message) => {
     client.user = user;
     client.name = displayName(user);
     client.roomId = roomId;
+    client.failedJoins = 0;
     room.clients.add(client);
     room.lastActive = Date.now();
     if (!room.hostId || !clientById(room, room.hostId)) {
@@ -1430,6 +1469,25 @@ const handleState = (client, message) => {
         client.sendJSON({type: 'error', message: '项目过大，无法同步'});
         return;
     }
+    if (!message.data.startsWith('UEsDB')) {
+        client.sendJSON({
+            type: 'error',
+            code: 'guard',
+            message: '安全引擎：项目快照不是有效的 sb3 压缩包，已拒绝同步'
+        });
+        return;
+    }
+    const now = Date.now();
+    client.stateTimes = client.stateTimes.filter(at => now - at < STATE_WINDOW_MS);
+    if (client.stateTimes.length >= MAX_STATE_PER_WINDOW) {
+        client.sendJSON({
+            type: 'error',
+            code: 'guard',
+            message: '安全引擎：整体同步过于频繁，已暂缓'
+        });
+        return;
+    }
+    client.stateTimes.push(now);
     room.state = message.data;
     room.blocks.clear();
     room.lastActive = Date.now();
@@ -1470,6 +1528,29 @@ const handleBlocks = (client, message) => {
         client.sendJSON({type: 'error', message: '角色代码过大，无法同步'});
         return;
     }
+    const now = Date.now();
+    client.blockTimes = client.blockTimes.filter(at => now - at < BLOCK_WINDOW_MS);
+    if (client.blockTimes.length >= MAX_BLOCKS_PER_WINDOW) {
+        client.sendJSON({
+            type: 'error',
+            code: 'guard',
+            message: '安全引擎：代码同步频率异常，已暂缓'
+        });
+        return;
+    }
+    client.blockTimes.push(now);
+    const cached = room.blocks.get(targetId);
+    const claim = room.claims.get(targetId);
+    const ownsTarget = Boolean(claim && claim.clientId === client.id);
+    if (cached && !ownsTarget && client.id !== room.hostId &&
+        cached.length > 4000 && message.data.length < cached.length * 0.15) {
+        client.sendJSON({
+            type: 'error',
+            code: 'guard',
+            message: '安全引擎：检测到大幅清空他人代码，已阻止'
+        });
+        return;
+    }
     room.blocks.set(targetId, message.data);
     room.lastActive = Date.now();
     broadcast(room, {
@@ -1495,6 +1576,29 @@ const handleClaim = (client, message) => {
         client.sendJSON({type: 'error', code: 'locked', message: lockOwnerMessage(room, targetId), targetId});
         return;
     }
+    const now = Date.now();
+    client.claimTimes = client.claimTimes.filter(at => now - at < CLAIM_WINDOW_MS);
+    if (client.claimTimes.length >= MAX_CLAIMS_PER_WINDOW) {
+        client.sendJSON({
+            type: 'error',
+            code: 'guard',
+            message: '安全引擎：连续锁定过快，已暂缓'
+        });
+        return;
+    }
+    let owned = 0;
+    for (const claim of room.claims.values()) {
+        if (claim.clientId === client.id) owned += 1;
+    }
+    if (owned >= MAX_CLAIMS_PER_CLIENT && !existing) {
+        client.sendJSON({
+            type: 'error',
+            code: 'guard',
+            message: '安全引擎：单个成员最多同时锁定 20 个角色'
+        });
+        return;
+    }
+    client.claimTimes.push(now);
     room.claims.set(targetId, {
         clientId: client.id,
         userId: client.user ? client.user.id : '',
@@ -1542,6 +1646,13 @@ const handleLockRequest = (client, message) => {
         client.sendJSON({type: 'notice', level: 'info', message: '该角色当前没有被其他人锁定'});
         return;
     }
+    const now = Date.now();
+    client.lockRequestTimes = client.lockRequestTimes.filter(at => now - at < 10000);
+    if (client.lockRequestTimes.length >= 8) {
+        client.sendJSON({type: 'error', code: 'guard', message: '安全引擎：编辑申请过于频繁，已暂缓'});
+        return;
+    }
+    client.lockRequestTimes.push(now);
     const owner = clientById(room, claim.clientId);
     const payload = {
         type: 'lock-request',
@@ -1952,6 +2063,7 @@ server.on('upgrade', (req, socket) => {
     );
     socket.setNoDelay(true);
     const client = new Client(socket);
+    client.ip = clientIp(req);
     socket.on('data', chunk => client.onData(chunk));
     socket.on('close', () => client.terminate('socket-close'));
     socket.on('error', () => client.terminate('socket-error'));
