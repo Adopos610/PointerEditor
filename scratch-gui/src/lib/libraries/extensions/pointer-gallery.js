@@ -1,7 +1,14 @@
 // PointerEditor 精选社区扩展。扩展文件由原作者维护，安装时从扩展的官方地址加载。
 
-const iconURL = file => `${process.env.ROOT}extensions/icons/${file}`;
-const localExtensionURL = file => `${process.env.ROOT}extensions/${file}`;
+const localExtensionRoot = () => {
+    if (typeof window !== 'undefined' && /\/editor\/[^/]*$/.test(window.location.pathname)) {
+        return new URL('../extensions/', window.location.href).href;
+    }
+    return `${process.env.ROOT}extensions/`;
+};
+
+const iconURL = file => `${localExtensionRoot()}icons/${file}`;
+const localExtensionURL = file => `${localExtensionRoot()}${file}`;
 
 export const pointerExtensions = [
     {

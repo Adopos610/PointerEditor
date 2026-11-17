@@ -2,9 +2,12 @@
 
 PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼容编辑器，包含桌面端、网页端、在线协作服务与移动端界面原型。
 
-- 官网：<https://www.ctspace.xyz>
+- 当前版本：0.2.1
+- GitHub Pages 官网：<https://adopos610.github.io/PointerEditor/>
+- 在线编辑器：<https://adopos610.github.io/PointerEditor/editor/editor.html>
 - 扩展库：<https://adopos610.github.io/PointerEditor/extensions/>
 - 仓库：<https://github.com/Adopos610/PointerEditor>
+- 原官网：<https://www.ctspace.xyz>
 
 ![PointerEditor 编辑器](docs/screenshots/editor.png)
 
