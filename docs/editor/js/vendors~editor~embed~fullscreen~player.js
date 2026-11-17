@@ -81722,7 +81722,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "/* DO NOT EDIT\n@todo This file is copied from GUI and should be pulled out into a shared library.\nSee https://github.com/LLK/scratch-paint/issues/13 */\n\n/* 35% transparent version of looks-secondary */\n\n/* DO NOT EDIT\n@todo This file is copied from GUI and should be pulled out into a shared library.\nSee https://github.com/LLK/scratch-paint/issues/13 */\n\n/* ACTUALLY, THIS IS EDITED ;)\nTHIS WAS CHANGED ON 10/25/2017 BY @mewtaylor TO ADD A VARIABLE FOR THE SMALLEST\nGRID UNITS.\n\nALSO EDITED ON 11/13/2017 TO ADD IN CONTANTS FOR LAYOUT FROM `layout-contents.js`*/\n\n/* layout contants from `layout-constants.js`, minus 1px */\n\n.mode-tools_mode-tools_1E5qt {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    min-height: 3rem;\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.mode-tools_mode-tools-icon_3oefQ {\n    margin-right: calc(2 * .25rem);\n    width: 2rem;\n    height: 2rem;\n    -webkit-filter: var(--paint-filter-icon-gray, none);\n            filter: var(--paint-filter-icon-gray, none);\n}\n\n[dir=\"ltr\"] .mode-tools_mod-dashed-border_2PWVn {\n    border-right: 1px dashed var(--paint-ui-pane-border, #D9D9D9);\n    padding-right: calc(3 * .25rem);\n}\n\n[dir=\"rtl\"] .mode-tools_mod-dashed-border_2PWVn {\n    border-left: 1px dashed var(--paint-ui-pane-border, #D9D9D9);\n    padding-left: calc(3 * .25rem);\n}\n\n.mode-tools_mod-labeled-icon-height_2kFDJ {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    height: 2.85rem; /* for the second row so the dashed borders are equal in size */\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n", ""]);
+exports.push([module.i, "/* DO NOT EDIT\n@todo This file is copied from GUI and should be pulled out into a shared library.\nSee https://github.com/LLK/scratch-paint/issues/13 */\n\n/* 35% transparent version of looks-secondary */\n\n/* DO NOT EDIT\n@todo This file is copied from GUI and should be pulled out into a shared library.\nSee https://github.com/LLK/scratch-paint/issues/13 */\n\n/* ACTUALLY, THIS IS EDITED ;)\nTHIS WAS CHANGED ON 10/25/2017 BY @mewtaylor TO ADD A VARIABLE FOR THE SMALLEST\nGRID UNITS.\n\nALSO EDITED ON 11/13/2017 TO ADD IN CONTANTS FOR LAYOUT FROM `layout-contents.js`*/\n\n/* layout contants from `layout-constants.js`, minus 1px */\n\n.mode-tools_mode-tools_1E5qt {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    min-height: 3rem;\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.mode-tools_mode-tools-icon_3oefQ {\n    margin-right: calc(2 * .25rem);\n    width: 2rem;\n    height: 2rem;\n    -webkit-filter: var(--paint-filter-icon-gray, none);\n            filter: var(--paint-filter-icon-gray, none);\n}\n\n[dir=\"ltr\"] .mode-tools_mod-dashed-border_2PWVn {\n    border-right: 1px dashed var(--paint-ui-pane-border, #D9D9D9);\n    padding-right: calc(3 * .25rem);\n}\n\n[dir=\"rtl\"] .mode-tools_mod-dashed-border_2PWVn {\n    border-left: 1px dashed var(--paint-ui-pane-border, #D9D9D9);\n    padding-left: calc(3 * .25rem);\n}\n\n.mode-tools_mod-labeled-icon-height_2kFDJ {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    height: 2.85rem; /* for the second row so the dashed borders are equal in size */\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.mode-tools_rounded-radius-range_3lTlG {\n    width: 82px;\n    accent-color: #2f6fe4;\n}\n\n.mode-tools_rounded-radius-value_1wpLh {\n    min-width: 18px;\n    color: #575e75;\n    font-size: .68rem;\n    text-align: right;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -81733,7 +81733,11 @@ exports.locals = {
 	"mod-dashed-border": "mode-tools_mod-dashed-border_2PWVn",
 	"modDashedBorder": "mode-tools_mod-dashed-border_2PWVn",
 	"mod-labeled-icon-height": "mode-tools_mod-labeled-icon-height_2kFDJ",
-	"modLabeledIconHeight": "mode-tools_mod-labeled-icon-height_2kFDJ"
+	"modLabeledIconHeight": "mode-tools_mod-labeled-icon-height_2kFDJ",
+	"rounded-radius-range": "mode-tools_rounded-radius-range_3lTlG",
+	"roundedRadiusRange": "mode-tools_rounded-radius-range_3lTlG",
+	"rounded-radius-value": "mode-tools_rounded-radius-value_1wpLh",
+	"roundedRadiusValue": "mode-tools_rounded-radius-value_1wpLh"
 };
 
 /***/ }),
@@ -131392,7 +131396,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bit_oval_mode_oval_outlined_svg__WEBPACK_IMPORTED_MODULE_34___default = /*#__PURE__*/__webpack_require__.n(_bit_oval_mode_oval_outlined_svg__WEBPACK_IMPORTED_MODULE_34__);
 /* harmony import */ var _bit_rect_mode_rectangle_outlined_svg__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../bit-rect-mode/rectangle-outlined.svg */ "./node_modules/scratch-paint/src/components/bit-rect-mode/rectangle-outlined.svg");
 /* harmony import */ var _bit_rect_mode_rectangle_outlined_svg__WEBPACK_IMPORTED_MODULE_35___default = /*#__PURE__*/__webpack_require__.n(_bit_rect_mode_rectangle_outlined_svg__WEBPACK_IMPORTED_MODULE_35__);
-/* harmony import */ var _reducers_stroke_width__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../../reducers/stroke-width */ "./node_modules/scratch-paint/src/reducers/stroke-width.js");
+/* harmony import */ var _rounded_rect_mode_rounded_rectangle_svg__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../rounded-rect-mode/rounded-rectangle.svg */ "./node_modules/scratch-paint/src/components/rounded-rect-mode/rounded-rectangle.svg");
+/* harmony import */ var _rounded_rect_mode_rounded_rectangle_svg__WEBPACK_IMPORTED_MODULE_36___default = /*#__PURE__*/__webpack_require__.n(_rounded_rect_mode_rounded_rectangle_svg__WEBPACK_IMPORTED_MODULE_36__);
+/* harmony import */ var _helper_tools_rounded_rect_tool__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../../helper/tools/rounded-rect-tool */ "./node_modules/scratch-paint/src/helper/tools/rounded-rect-tool.js");
+/* harmony import */ var _reducers_stroke_width__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../../reducers/stroke-width */ "./node_modules/scratch-paint/src/reducers/stroke-width.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
 
 
 
@@ -131431,6 +131446,38 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const LiveInput = Object(_forms_live_input_hoc_jsx__WEBPACK_IMPORTED_MODULE_10__["default"])(_forms_input_jsx__WEBPACK_IMPORTED_MODULE_13__["default"]);
+const RoundedRectRadiusControl = props => {
+  const _React$useState = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(Object(_helper_tools_rounded_rect_tool__WEBPACK_IMPORTED_MODULE_37__["getRoundedRectRadius"])()),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    radius = _React$useState2[0],
+    updateRadius = _React$useState2[1];
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(props.className, _mode_tools_css__WEBPACK_IMPORTED_MODULE_19___default.a.modeTools)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
+    alt: "\u5706\u89D2\u534A\u5F84",
+    className: _mode_tools_css__WEBPACK_IMPORTED_MODULE_19___default.a.modeToolsIcon,
+    draggable: false,
+    src: _rounded_rect_mode_rounded_rectangle_svg__WEBPACK_IMPORTED_MODULE_36___default.a
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("input", {
+    className: _mode_tools_css__WEBPACK_IMPORTED_MODULE_19___default.a.roundedRadiusRange,
+    type: "range",
+    min: "0",
+    max: "80",
+    step: "1",
+    value: radius,
+    onChange: event => {
+      const value = Number(event.target.value);
+      updateRadius(value);
+      Object(_helper_tools_rounded_rect_tool__WEBPACK_IMPORTED_MODULE_37__["setRoundedRectRadius"])(value);
+    },
+    title: "\u5706\u89D2\u534A\u5F84"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
+    className: _mode_tools_css__WEBPACK_IMPORTED_MODULE_19___default.a.roundedRadiusValue
+  }, radius));
+};
+RoundedRectRadiusControl.propTypes = {
+  className: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
+};
 const ModeToolsComponent = props => {
   const messages = Object(react_intl__WEBPACK_IMPORTED_MODULE_12__["defineMessages"])({
     brushSize: {
@@ -131483,6 +131530,10 @@ const ModeToolsComponent = props => {
     }
   });
   switch (props.mode) {
+    case _lib_modes__WEBPACK_IMPORTED_MODULE_16__["default"].ROUNDED_RECT:
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(RoundedRectRadiusControl, {
+        className: props.className
+      });
     case _lib_modes__WEBPACK_IMPORTED_MODULE_16__["default"].BRUSH:
     /* falls through */
     case _lib_modes__WEBPACK_IMPORTED_MODULE_16__["default"].BIT_BRUSH:
@@ -131503,7 +131554,7 @@ const ModeToolsComponent = props => {
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(LiveInput, {
           range: true,
           small: true,
-          max: _reducers_stroke_width__WEBPACK_IMPORTED_MODULE_36__["MAX_STROKE_WIDTH"],
+          max: _reducers_stroke_width__WEBPACK_IMPORTED_MODULE_38__["MAX_STROKE_WIDTH"],
           min: "1",
           type: "number",
           value: currentBrushValue,
@@ -131527,7 +131578,7 @@ const ModeToolsComponent = props => {
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(LiveInput, {
           range: true,
           small: true,
-          max: _reducers_stroke_width__WEBPACK_IMPORTED_MODULE_36__["MAX_STROKE_WIDTH"],
+          max: _reducers_stroke_width__WEBPACK_IMPORTED_MODULE_38__["MAX_STROKE_WIDTH"],
           min: "1",
           type: "number",
           value: currentEraserValue,
@@ -131631,7 +131682,7 @@ const ModeToolsComponent = props => {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(LiveInput, {
           range: true,
           small: true,
-          max: _reducers_stroke_width__WEBPACK_IMPORTED_MODULE_36__["MAX_STROKE_WIDTH"],
+          max: _reducers_stroke_width__WEBPACK_IMPORTED_MODULE_38__["MAX_STROKE_WIDTH"],
           min: "1",
           type: "number",
           value: props.bitBrushSize,
@@ -131882,24 +131933,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers_mode_tools_jsx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../containers/mode-tools.jsx */ "./node_modules/scratch-paint/src/containers/mode-tools.jsx");
 /* harmony import */ var _containers_oval_mode_jsx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../../containers/oval-mode.jsx */ "./node_modules/scratch-paint/src/containers/oval-mode.jsx");
 /* harmony import */ var _containers_rect_mode_jsx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../../containers/rect-mode.jsx */ "./node_modules/scratch-paint/src/containers/rect-mode.jsx");
-/* harmony import */ var _containers_reshape_mode_jsx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../containers/reshape-mode.jsx */ "./node_modules/scratch-paint/src/containers/reshape-mode.jsx");
-/* harmony import */ var _containers_select_mode_jsx__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../../containers/select-mode.jsx */ "./node_modules/scratch-paint/src/containers/select-mode.jsx");
-/* harmony import */ var _containers_stroke_color_indicator_jsx__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../../containers/stroke-color-indicator.jsx */ "./node_modules/scratch-paint/src/containers/stroke-color-indicator.jsx");
-/* harmony import */ var _containers_stroke_width_indicator_jsx__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../../containers/stroke-width-indicator.jsx */ "./node_modules/scratch-paint/src/containers/stroke-width-indicator.jsx");
-/* harmony import */ var _containers_text_mode_jsx__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../../containers/text-mode.jsx */ "./node_modules/scratch-paint/src/containers/text-mode.jsx");
-/* harmony import */ var _lib_format__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../lib/format */ "./node_modules/scratch-paint/src/lib/format.js");
-/* harmony import */ var _paint_editor_css__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./paint-editor.css */ "./node_modules/scratch-paint/src/components/paint-editor/paint-editor.css");
-/* harmony import */ var _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default = /*#__PURE__*/__webpack_require__.n(_paint_editor_css__WEBPACK_IMPORTED_MODULE_34__);
-/* harmony import */ var _icons_bitmap_svg__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./icons/bitmap.svg */ "./node_modules/scratch-paint/src/components/paint-editor/icons/bitmap.svg");
-/* harmony import */ var _icons_bitmap_svg__WEBPACK_IMPORTED_MODULE_35___default = /*#__PURE__*/__webpack_require__.n(_icons_bitmap_svg__WEBPACK_IMPORTED_MODULE_35__);
-/* harmony import */ var _icons_zoom_in_svg__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./icons/zoom-in.svg */ "./node_modules/scratch-paint/src/components/paint-editor/icons/zoom-in.svg");
-/* harmony import */ var _icons_zoom_in_svg__WEBPACK_IMPORTED_MODULE_36___default = /*#__PURE__*/__webpack_require__.n(_icons_zoom_in_svg__WEBPACK_IMPORTED_MODULE_36__);
-/* harmony import */ var _icons_zoom_out_svg__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./icons/zoom-out.svg */ "./node_modules/scratch-paint/src/components/paint-editor/icons/zoom-out.svg");
-/* harmony import */ var _icons_zoom_out_svg__WEBPACK_IMPORTED_MODULE_37___default = /*#__PURE__*/__webpack_require__.n(_icons_zoom_out_svg__WEBPACK_IMPORTED_MODULE_37__);
-/* harmony import */ var _icons_zoom_reset_svg__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./icons/zoom-reset.svg */ "./node_modules/scratch-paint/src/components/paint-editor/icons/zoom-reset.svg");
-/* harmony import */ var _icons_zoom_reset_svg__WEBPACK_IMPORTED_MODULE_38___default = /*#__PURE__*/__webpack_require__.n(_icons_zoom_reset_svg__WEBPACK_IMPORTED_MODULE_38__);
-/* harmony import */ var _icons_theme_svg__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./icons/theme.svg */ "./node_modules/scratch-paint/src/components/paint-editor/icons/theme.svg");
-/* harmony import */ var _icons_theme_svg__WEBPACK_IMPORTED_MODULE_39___default = /*#__PURE__*/__webpack_require__.n(_icons_theme_svg__WEBPACK_IMPORTED_MODULE_39__);
+/* harmony import */ var _containers_rounded_rect_mode_jsx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../containers/rounded-rect-mode.jsx */ "./node_modules/scratch-paint/src/containers/rounded-rect-mode.jsx");
+/* harmony import */ var _containers_reshape_mode_jsx__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../../containers/reshape-mode.jsx */ "./node_modules/scratch-paint/src/containers/reshape-mode.jsx");
+/* harmony import */ var _containers_select_mode_jsx__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../../containers/select-mode.jsx */ "./node_modules/scratch-paint/src/containers/select-mode.jsx");
+/* harmony import */ var _containers_stroke_color_indicator_jsx__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../../containers/stroke-color-indicator.jsx */ "./node_modules/scratch-paint/src/containers/stroke-color-indicator.jsx");
+/* harmony import */ var _containers_stroke_width_indicator_jsx__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../../containers/stroke-width-indicator.jsx */ "./node_modules/scratch-paint/src/containers/stroke-width-indicator.jsx");
+/* harmony import */ var _containers_text_mode_jsx__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../containers/text-mode.jsx */ "./node_modules/scratch-paint/src/containers/text-mode.jsx");
+/* harmony import */ var _lib_format__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../../lib/format */ "./node_modules/scratch-paint/src/lib/format.js");
+/* harmony import */ var _paint_editor_css__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./paint-editor.css */ "./node_modules/scratch-paint/src/components/paint-editor/paint-editor.css");
+/* harmony import */ var _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default = /*#__PURE__*/__webpack_require__.n(_paint_editor_css__WEBPACK_IMPORTED_MODULE_35__);
+/* harmony import */ var _icons_bitmap_svg__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./icons/bitmap.svg */ "./node_modules/scratch-paint/src/components/paint-editor/icons/bitmap.svg");
+/* harmony import */ var _icons_bitmap_svg__WEBPACK_IMPORTED_MODULE_36___default = /*#__PURE__*/__webpack_require__.n(_icons_bitmap_svg__WEBPACK_IMPORTED_MODULE_36__);
+/* harmony import */ var _icons_zoom_in_svg__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./icons/zoom-in.svg */ "./node_modules/scratch-paint/src/components/paint-editor/icons/zoom-in.svg");
+/* harmony import */ var _icons_zoom_in_svg__WEBPACK_IMPORTED_MODULE_37___default = /*#__PURE__*/__webpack_require__.n(_icons_zoom_in_svg__WEBPACK_IMPORTED_MODULE_37__);
+/* harmony import */ var _icons_zoom_out_svg__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./icons/zoom-out.svg */ "./node_modules/scratch-paint/src/components/paint-editor/icons/zoom-out.svg");
+/* harmony import */ var _icons_zoom_out_svg__WEBPACK_IMPORTED_MODULE_38___default = /*#__PURE__*/__webpack_require__.n(_icons_zoom_out_svg__WEBPACK_IMPORTED_MODULE_38__);
+/* harmony import */ var _icons_zoom_reset_svg__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./icons/zoom-reset.svg */ "./node_modules/scratch-paint/src/components/paint-editor/icons/zoom-reset.svg");
+/* harmony import */ var _icons_zoom_reset_svg__WEBPACK_IMPORTED_MODULE_39___default = /*#__PURE__*/__webpack_require__.n(_icons_zoom_reset_svg__WEBPACK_IMPORTED_MODULE_39__);
+/* harmony import */ var _icons_theme_svg__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./icons/theme.svg */ "./node_modules/scratch-paint/src/components/paint-editor/icons/theme.svg");
+/* harmony import */ var _icons_theme_svg__WEBPACK_IMPORTED_MODULE_40___default = /*#__PURE__*/__webpack_require__.n(_icons_theme_svg__WEBPACK_IMPORTED_MODULE_40__);
+
 
 
 
@@ -131951,16 +132004,16 @@ const messages = Object(react_intl__WEBPACK_IMPORTED_MODULE_2__["defineMessages"
   }
 });
 const PaintEditorComponent = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.editorContainer,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.editorContainer,
   dir: props.rtl ? 'rtl' : 'ltr',
   "data-paint-theme": props.theme
 }, props.canvas !== null ?
 /*#__PURE__*/
 // eslint-disable-line no-negated-condition
 react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.editorContainerTop
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.editorContainerTop
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.row
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.row
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_fixed_tools_jsx__WEBPACK_IMPORTED_MODULE_24__["default"], {
   canRedo: props.canRedo,
   canUndo: props.canUndo,
@@ -131970,44 +132023,44 @@ react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
   onUpdateImage: props.onUpdateImage,
   onUpdateName: props.onUpdateName,
   width: props.width
-})), Object(_lib_format__WEBPACK_IMPORTED_MODULE_33__["isVector"])(props.format) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.row
+})), Object(_lib_format__WEBPACK_IMPORTED_MODULE_34__["isVector"])(props.format) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.row
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_input_group_input_group_jsx__WEBPACK_IMPORTED_MODULE_21__["default"], {
-  className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.row, _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.modDashedBorder, _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.modLabeledIconHeight)
+  className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.row, _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.modDashedBorder, _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.modLabeledIconHeight)
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_fill_color_indicator_jsx__WEBPACK_IMPORTED_MODULE_19__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.modMarginAfter,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.modMarginAfter,
   onUpdateImage: props.onUpdateImage
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_stroke_color_indicator_jsx__WEBPACK_IMPORTED_MODULE_30__["default"], {
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_stroke_color_indicator_jsx__WEBPACK_IMPORTED_MODULE_31__["default"], {
   onUpdateImage: props.onUpdateImage
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_stroke_width_indicator_jsx__WEBPACK_IMPORTED_MODULE_31__["default"], {
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_stroke_width_indicator_jsx__WEBPACK_IMPORTED_MODULE_32__["default"], {
   onUpdateImage: props.onUpdateImage
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_input_group_input_group_jsx__WEBPACK_IMPORTED_MODULE_21__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.modModeTools
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.modModeTools
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_mode_tools_jsx__WEBPACK_IMPORTED_MODULE_25__["default"], {
   onUpdateImage: props.onUpdateImage,
   onManageFonts: props.onManageFonts
-}))) : Object(_lib_format__WEBPACK_IMPORTED_MODULE_33__["isBitmap"])(props.format) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.row
+}))) : Object(_lib_format__WEBPACK_IMPORTED_MODULE_34__["isBitmap"])(props.format) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.row
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_input_group_input_group_jsx__WEBPACK_IMPORTED_MODULE_21__["default"], {
-  className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.row, _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.modDashedBorder, _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.modLabeledIconHeight)
+  className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.row, _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.modDashedBorder, _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.modLabeledIconHeight)
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_fill_color_indicator_jsx__WEBPACK_IMPORTED_MODULE_19__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.modMarginAfter,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.modMarginAfter,
   onUpdateImage: props.onUpdateImage
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_input_group_input_group_jsx__WEBPACK_IMPORTED_MODULE_21__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.modModeTools
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.modModeTools
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_mode_tools_jsx__WEBPACK_IMPORTED_MODULE_25__["default"], {
   onUpdateImage: props.onUpdateImage,
   onManageFonts: props.onManageFonts
 }))) : null) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.topAlignRow
-}, props.canvas !== null && Object(_lib_format__WEBPACK_IMPORTED_MODULE_33__["isVector"])(props.format) ?
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.topAlignRow
+}, props.canvas !== null && Object(_lib_format__WEBPACK_IMPORTED_MODULE_34__["isVector"])(props.format) ?
 /*#__PURE__*/
 // eslint-disable-line no-negated-condition
 react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.modeSelector
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_select_mode_jsx__WEBPACK_IMPORTED_MODULE_29__["default"], {
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.modeSelector
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_select_mode_jsx__WEBPACK_IMPORTED_MODULE_30__["default"], {
   onUpdateImage: props.onUpdateImage
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_reshape_mode_jsx__WEBPACK_IMPORTED_MODULE_28__["default"], {
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_reshape_mode_jsx__WEBPACK_IMPORTED_MODULE_29__["default"], {
   onUpdateImage: props.onUpdateImage
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_brush_mode_jsx__WEBPACK_IMPORTED_MODULE_17__["default"], {
   onUpdateImage: props.onUpdateImage
@@ -132015,7 +132068,7 @@ react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
   onUpdateImage: props.onUpdateImage
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_fill_mode_jsx__WEBPACK_IMPORTED_MODULE_20__["default"], {
   onUpdateImage: props.onUpdateImage
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_text_mode_jsx__WEBPACK_IMPORTED_MODULE_32__["default"], {
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_text_mode_jsx__WEBPACK_IMPORTED_MODULE_33__["default"], {
   textArea: props.textArea,
   onUpdateImage: props.onUpdateImage
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_line_mode_jsx__WEBPACK_IMPORTED_MODULE_22__["default"], {
@@ -132024,11 +132077,13 @@ react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
   onUpdateImage: props.onUpdateImage
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_rect_mode_jsx__WEBPACK_IMPORTED_MODULE_27__["default"], {
   onUpdateImage: props.onUpdateImage
-})) : null, props.canvas !== null && Object(_lib_format__WEBPACK_IMPORTED_MODULE_33__["isBitmap"])(props.format) ?
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_rounded_rect_mode_jsx__WEBPACK_IMPORTED_MODULE_28__["default"], {
+  onUpdateImage: props.onUpdateImage
+})) : null, props.canvas !== null && Object(_lib_format__WEBPACK_IMPORTED_MODULE_34__["isBitmap"])(props.format) ?
 /*#__PURE__*/
 // eslint-disable-line no-negated-condition
 react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.modeSelector
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.modeSelector
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_bit_brush_mode_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
   onUpdateImage: props.onUpdateImage
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_bit_line_mode_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -132037,7 +132092,7 @@ react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
   onUpdateImage: props.onUpdateImage
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_bit_rect_mode_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], {
   onUpdateImage: props.onUpdateImage
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_text_mode_jsx__WEBPACK_IMPORTED_MODULE_32__["default"], {
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_text_mode_jsx__WEBPACK_IMPORTED_MODULE_33__["default"], {
   isBitmap: true,
   textArea: props.textArea,
   onUpdateImage: props.onUpdateImage
@@ -132048,11 +132103,11 @@ react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_bit_select_mode_jsx__WEBPACK_IMPORTED_MODULE_13__["default"], {
   onUpdateImage: props.onUpdateImage
 })) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.controlsContainer
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.controlsContainer
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_scrollable_canvas_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
   canvas: props.canvas,
   hideScrollbars: props.isEyeDropping,
-  style: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.canvasContainer
+  style: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.canvasContainer
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_paper_canvas_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
   canvasRef: props.setCanvas,
   image: props.image,
@@ -132064,76 +132119,76 @@ react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
   zoomLevelId: props.zoomLevelId,
   onUpdateImage: props.onUpdateImage
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("textarea", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.textArea,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.textArea,
   ref: props.setTextArea,
   spellCheck: false
 }), props.isEyeDropping && props.colorInfo !== null && !props.colorInfo.hideLoupe ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_14__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.colorPickerWrapper
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.colorPickerWrapper
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_loupe_loupe_jsx__WEBPACK_IMPORTED_MODULE_23__["default"], {
   colorInfo: props.colorInfo,
   pixelRatio: _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0___default.a.project.view.pixelRatio,
   theme: props.theme
 })) : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.canvasControls
-}, Object(_lib_format__WEBPACK_IMPORTED_MODULE_33__["isVector"])(props.format) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.bitmapButton,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.canvasControls
+}, Object(_lib_format__WEBPACK_IMPORTED_MODULE_34__["isVector"])(props.format) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.bitmapButton,
   onClick: props.onSwitchToBitmap
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.bitmapButtonIcon,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.bitmapButtonIcon,
   draggable: false,
-  src: _icons_bitmap_svg__WEBPACK_IMPORTED_MODULE_35___default.a
+  src: _icons_bitmap_svg__WEBPACK_IMPORTED_MODULE_36___default.a
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.buttonText
-}, props.intl.formatMessage(messages.bitmap))) : Object(_lib_format__WEBPACK_IMPORTED_MODULE_33__["isBitmap"])(props.format) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.bitmapButton,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.buttonText
+}, props.intl.formatMessage(messages.bitmap))) : Object(_lib_format__WEBPACK_IMPORTED_MODULE_34__["isBitmap"])(props.format) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.bitmapButton,
   onClick: props.onSwitchToVector
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.bitmapButtonIcon,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.bitmapButtonIcon,
   draggable: false,
-  src: _icons_bitmap_svg__WEBPACK_IMPORTED_MODULE_35___default.a
+  src: _icons_bitmap_svg__WEBPACK_IMPORTED_MODULE_36___default.a
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.buttonText
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.buttonText
 }, props.intl.formatMessage(messages.vector))) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_input_group_input_group_jsx__WEBPACK_IMPORTED_MODULE_21__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.zoomControls
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.zoomControls
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_button_group_button_group_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.buttonGroupButton,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.buttonGroupButton,
   onClick: props.onZoomOut
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
   alt: "Zoom Out",
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.buttonGroupButtonIcon,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.buttonGroupButtonIcon,
   draggable: false,
-  src: _icons_zoom_out_svg__WEBPACK_IMPORTED_MODULE_37___default.a
+  src: _icons_zoom_out_svg__WEBPACK_IMPORTED_MODULE_38___default.a
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.buttonGroupButton,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.buttonGroupButton,
   onClick: props.onZoomReset
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
   alt: "Zoom Reset",
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.buttonGroupButtonIcon,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.buttonGroupButtonIcon,
   draggable: false,
-  src: _icons_zoom_reset_svg__WEBPACK_IMPORTED_MODULE_38___default.a
+  src: _icons_zoom_reset_svg__WEBPACK_IMPORTED_MODULE_39___default.a
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.buttonGroupButton,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.buttonGroupButton,
   onClick: props.onZoomIn
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
   alt: "Zoom In",
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.buttonGroupButtonIcon,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.buttonGroupButtonIcon,
   draggable: false,
-  src: _icons_zoom_in_svg__WEBPACK_IMPORTED_MODULE_36___default.a
+  src: _icons_zoom_in_svg__WEBPACK_IMPORTED_MODULE_37___default.a
 }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_button_group_button_group_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.buttonGroupButton,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.buttonGroupButton,
   onClick: props.onChangeTheme
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
   alt: "Change theme",
-  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_34___default.a.buttonGroupButtonIcon,
+  className: _paint_editor_css__WEBPACK_IMPORTED_MODULE_35___default.a.buttonGroupButtonIcon,
   draggable: false,
-  src: _icons_theme_svg__WEBPACK_IMPORTED_MODULE_39___default.a
+  src: _icons_theme_svg__WEBPACK_IMPORTED_MODULE_40___default.a
 }))))))));
 PaintEditorComponent.propTypes = {
   canRedo: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func.isRequired,
   canUndo: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func.isRequired,
   canvas: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.instanceOf(Element),
   colorInfo: _loupe_loupe_jsx__WEBPACK_IMPORTED_MODULE_23__["default"].propTypes.colorInfo,
-  format: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.oneOf(Object.keys(_lib_format__WEBPACK_IMPORTED_MODULE_33__["default"])),
+  format: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.oneOf(Object.keys(_lib_format__WEBPACK_IMPORTED_MODULE_34__["default"])),
   image: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.instanceOf(HTMLImageElement)]),
   imageFormat: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
   imageId: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
@@ -132258,6 +132313,53 @@ ReshapeModeComponent.propTypes = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "static/assets/3e6a0a68ee1872bee1f93e4428bcb993.svg";
+
+/***/ }),
+
+/***/ "./node_modules/scratch-paint/src/components/rounded-rect-mode/rounded-rect-mode.jsx":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/scratch-paint/src/components/rounded-rect-mode/rounded-rect-mode.jsx ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _lib_messages_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib/messages.js */ "./node_modules/scratch-paint/src/lib/messages.js");
+/* harmony import */ var _tool_select_base_tool_select_base_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../tool-select-base/tool-select-base.jsx */ "./node_modules/scratch-paint/src/components/tool-select-base/tool-select-base.jsx");
+/* harmony import */ var _rounded_rectangle_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./rounded-rectangle.svg */ "./node_modules/scratch-paint/src/components/rounded-rect-mode/rounded-rectangle.svg");
+/* harmony import */ var _rounded_rectangle_svg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_rounded_rectangle_svg__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const RoundedRectModeComponent = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tool_select_base_tool_select_base_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  imgDescriptor: _lib_messages_js__WEBPACK_IMPORTED_MODULE_2__["default"].roundedRect,
+  imgSrc: _rounded_rectangle_svg__WEBPACK_IMPORTED_MODULE_4___default.a,
+  isSelected: props.isSelected,
+  onMouseDown: props.onMouseDown
+});
+RoundedRectModeComponent.propTypes = {
+  isSelected: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  onMouseDown: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (RoundedRectModeComponent);
+
+/***/ }),
+
+/***/ "./node_modules/scratch-paint/src/components/rounded-rect-mode/rounded-rectangle.svg":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/scratch-paint/src/components/rounded-rect-mode/rounded-rectangle.svg ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjIwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDIwIDIwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0My4yICgzOTA2OSkgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+cm91bmRlZC1yZWN0YW5nbGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0icm91bmRlZC1yZWN0YW5nbGUiIHN0cm9rZT0iIzU3NUU3NSIgc3Ryb2tlLXdpZHRoPSIxLjUiPgogICAgICAgICAgICA8cmVjdCBpZD0icm91bmRlZC1yZWN0YW5nbGUtaWNvbiIgeD0iNSIgeT0iNSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiByeD0iMiI+PC9yZWN0PgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"
 
 /***/ }),
 
@@ -136857,6 +136959,193 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(ReshapeMode));
+
+/***/ }),
+
+/***/ "./node_modules/scratch-paint/src/containers/rounded-rect-mode.jsx":
+/*!*************************************************************************!*\
+  !*** ./node_modules/scratch-paint/src/containers/rounded-rect-mode.jsx ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turbowarp/paper */ "./node_modules/@turbowarp/paper/dist/paper-full.js");
+/* harmony import */ var _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_turbowarp_paper__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var lodash_bindall__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash.bindall */ "./node_modules/lodash.bindall/index.js");
+/* harmony import */ var lodash_bindall__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_bindall__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _lib_modes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/modes */ "./node_modules/scratch-paint/src/lib/modes.js");
+/* harmony import */ var _helper_style_path__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../helper/style-path */ "./node_modules/scratch-paint/src/helper/style-path.js");
+/* harmony import */ var _lib_color_style_proptype__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../lib/color-style-proptype */ "./node_modules/scratch-paint/src/lib/color-style-proptype.js");
+/* harmony import */ var _lib_gradient_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../lib/gradient-types */ "./node_modules/scratch-paint/src/lib/gradient-types.js");
+/* harmony import */ var _reducers_fill_style__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../reducers/fill-style */ "./node_modules/scratch-paint/src/reducers/fill-style.js");
+/* harmony import */ var _reducers_stroke_style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../reducers/stroke-style */ "./node_modules/scratch-paint/src/reducers/stroke-style.js");
+/* harmony import */ var _reducers_modes__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../reducers/modes */ "./node_modules/scratch-paint/src/reducers/modes.js");
+/* harmony import */ var _reducers_selected_items__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../reducers/selected-items */ "./node_modules/scratch-paint/src/reducers/selected-items.js");
+/* harmony import */ var _reducers_cursor__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../reducers/cursor */ "./node_modules/scratch-paint/src/reducers/cursor.js");
+/* harmony import */ var _helper_selection__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../helper/selection */ "./node_modules/scratch-paint/src/helper/selection.js");
+/* harmony import */ var _helper_tools_rounded_rect_tool__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../helper/tools/rounded-rect-tool */ "./node_modules/scratch-paint/src/helper/tools/rounded-rect-tool.js");
+/* harmony import */ var _components_rounded_rect_mode_rounded_rect_mode_jsx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/rounded-rect-mode/rounded-rect-mode.jsx */ "./node_modules/scratch-paint/src/components/rounded-rect-mode/rounded-rect-mode.jsx");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class RoundedRectMode extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
+  constructor(props) {
+    super(props);
+    lodash_bindall__WEBPACK_IMPORTED_MODULE_4___default()(this, ['activateTool', 'deactivateTool', 'validateColorState']);
+  }
+  componentDidMount() {
+    if (this.props.isRoundedRectModeActive) {
+      this.activateTool(this.props);
+    }
+  }
+  componentWillReceiveProps(nextProps) {
+    if (this.tool && nextProps.colorState !== this.props.colorState) {
+      this.tool.setColorState(nextProps.colorState);
+    }
+    if (this.tool && nextProps.selectedItems !== this.props.selectedItems) {
+      this.tool.onSelectionChanged(nextProps.selectedItems);
+    }
+    if (nextProps.isRoundedRectModeActive && !this.props.isRoundedRectModeActive) {
+      this.activateTool();
+    } else if (!nextProps.isRoundedRectModeActive && this.props.isRoundedRectModeActive) {
+      this.deactivateTool();
+    }
+  }
+  shouldComponentUpdate(nextProps) {
+    return nextProps.isRoundedRectModeActive !== this.props.isRoundedRectModeActive;
+  }
+  componentWillUnmount() {
+    if (this.tool) {
+      this.deactivateTool();
+    }
+  }
+  activateTool() {
+    Object(_helper_selection__WEBPACK_IMPORTED_MODULE_14__["clearSelection"])(this.props.clearSelectedItems);
+    this.validateColorState();
+    this.tool = new _helper_tools_rounded_rect_tool__WEBPACK_IMPORTED_MODULE_15__["default"](this.props.setSelectedItems, this.props.clearSelectedItems, this.props.setCursor, this.props.onUpdateImage);
+    this.tool.setColorState(this.props.colorState);
+    this.tool.activate();
+  }
+  validateColorState() {
+    // TODO move to shared class
+    // Make sure that at least one of fill/stroke is set, and that MIXED is not one of the colors.
+    // If fill and stroke color are both missing, set fill to default and stroke to transparent.
+    // If exactly one of fill or stroke color is set, set the other one to transparent.
+    const strokeWidth = this.props.colorState.strokeWidth;
+    const fillColor1 = this.props.colorState.fillColor.primary;
+    let fillColor2 = this.props.colorState.fillColor.secondary;
+    let fillGradient = this.props.colorState.fillColor.gradientType;
+    const strokeColor1 = this.props.colorState.strokeColor.primary;
+    let strokeColor2 = this.props.colorState.strokeColor.secondary;
+    let strokeGradient = this.props.colorState.strokeColor.gradientType;
+    if (fillColor2 === _helper_style_path__WEBPACK_IMPORTED_MODULE_6__["MIXED"]) {
+      this.props.clearFillGradient();
+      fillColor2 = null;
+      fillGradient = _lib_gradient_types__WEBPACK_IMPORTED_MODULE_8__["default"].SOLID;
+    }
+    if (strokeColor2 === _helper_style_path__WEBPACK_IMPORTED_MODULE_6__["MIXED"]) {
+      this.props.clearStrokeGradient();
+      strokeColor2 = null;
+      strokeGradient = _lib_gradient_types__WEBPACK_IMPORTED_MODULE_8__["default"].SOLID;
+    }
+    const fillColorMissing = fillColor1 === _helper_style_path__WEBPACK_IMPORTED_MODULE_6__["MIXED"] || fillGradient === _lib_gradient_types__WEBPACK_IMPORTED_MODULE_8__["default"].SOLID && fillColor1 === null || fillGradient !== _lib_gradient_types__WEBPACK_IMPORTED_MODULE_8__["default"].SOLID && fillColor1 === null && fillColor2 === null;
+    const strokeColorMissing = strokeColor1 === _helper_style_path__WEBPACK_IMPORTED_MODULE_6__["MIXED"] || strokeWidth === null || strokeWidth === 0 || strokeGradient === _lib_gradient_types__WEBPACK_IMPORTED_MODULE_8__["default"].SOLID && strokeColor1 === null || strokeGradient !== _lib_gradient_types__WEBPACK_IMPORTED_MODULE_8__["default"].SOLID && strokeColor1 === null && strokeColor2 === null;
+    if (fillColorMissing && strokeColorMissing) {
+      this.props.onChangeFillColor(_reducers_fill_style__WEBPACK_IMPORTED_MODULE_9__["DEFAULT_COLOR"]);
+      this.props.clearFillGradient();
+      this.props.onChangeStrokeColor(null);
+      this.props.clearStrokeGradient();
+    } else if (fillColorMissing && !strokeColorMissing) {
+      this.props.onChangeFillColor(null);
+      this.props.clearFillGradient();
+    } else if (!fillColorMissing && strokeColorMissing) {
+      this.props.onChangeStrokeColor(null);
+      this.props.clearStrokeGradient();
+    }
+  }
+  deactivateTool() {
+    this.tool.deactivateTool();
+    this.tool.remove();
+    this.tool = null;
+  }
+  render() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_rounded_rect_mode_rounded_rect_mode_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      isSelected: this.props.isRoundedRectModeActive,
+      onMouseDown: this.props.handleMouseDown
+    });
+  }
+}
+RoundedRectMode.propTypes = {
+  clearFillGradient: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  clearStrokeGradient: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  clearSelectedItems: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  colorState: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    fillColor: _lib_color_style_proptype__WEBPACK_IMPORTED_MODULE_7__["default"],
+    strokeColor: _lib_color_style_proptype__WEBPACK_IMPORTED_MODULE_7__["default"],
+    strokeWidth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
+  }).isRequired,
+  handleMouseDown: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  isRoundedRectModeActive: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  onChangeFillColor: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  onChangeStrokeColor: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  onUpdateImage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  selectedItems: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(_turbowarp_paper__WEBPACK_IMPORTED_MODULE_0___default.a.Item)),
+  setCursor: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  setSelectedItems: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+};
+const mapStateToProps = state => ({
+  colorState: state.scratchPaint.color,
+  isRoundedRectModeActive: state.scratchPaint.mode === _lib_modes__WEBPACK_IMPORTED_MODULE_5__["default"].ROUNDED_RECT,
+  selectedItems: state.scratchPaint.selectedItems
+});
+const mapDispatchToProps = dispatch => ({
+  clearSelectedItems: () => {
+    dispatch(Object(_reducers_selected_items__WEBPACK_IMPORTED_MODULE_12__["clearSelectedItems"])());
+  },
+  clearFillGradient: () => {
+    dispatch(Object(_reducers_fill_style__WEBPACK_IMPORTED_MODULE_9__["clearFillGradient"])());
+  },
+  clearStrokeGradient: () => {
+    dispatch(Object(_reducers_stroke_style__WEBPACK_IMPORTED_MODULE_10__["clearStrokeGradient"])());
+  },
+  setSelectedItems: () => {
+    dispatch(Object(_reducers_selected_items__WEBPACK_IMPORTED_MODULE_12__["setSelectedItems"])(Object(_helper_selection__WEBPACK_IMPORTED_MODULE_14__["getSelectedLeafItems"])(), false /* bitmapMode */));
+  },
+  setCursor: cursorString => {
+    dispatch(Object(_reducers_cursor__WEBPACK_IMPORTED_MODULE_13__["setCursor"])(cursorString));
+  },
+  handleMouseDown: () => {
+    dispatch(Object(_reducers_modes__WEBPACK_IMPORTED_MODULE_11__["changeMode"])(_lib_modes__WEBPACK_IMPORTED_MODULE_5__["default"].ROUNDED_RECT));
+  },
+  onChangeFillColor: fillColor => {
+    dispatch(Object(_reducers_fill_style__WEBPACK_IMPORTED_MODULE_9__["changeFillColor"])(fillColor));
+  },
+  onChangeStrokeColor: strokeColor => {
+    dispatch(Object(_reducers_stroke_style__WEBPACK_IMPORTED_MODULE_10__["changeStrokeColor"])(strokeColor));
+  }
+});
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(RoundedRectMode));
 
 /***/ }),
 
@@ -145240,6 +145529,162 @@ class RectTool extends _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0___default.a.T
   }
 }
 /* harmony default export */ __webpack_exports__["default"] = (RectTool);
+
+/***/ }),
+
+/***/ "./node_modules/scratch-paint/src/helper/tools/rounded-rect-tool.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/scratch-paint/src/helper/tools/rounded-rect-tool.js ***!
+  \**************************************************************************/
+/*! exports provided: getRoundedRectRadius, setRoundedRectRadius, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRoundedRectRadius", function() { return getRoundedRectRadius; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRoundedRectRadius", function() { return setRoundedRectRadius; });
+/* harmony import */ var _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turbowarp/paper */ "./node_modules/@turbowarp/paper/dist/paper-full.js");
+/* harmony import */ var _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_turbowarp_paper__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _lib_modes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib/modes */ "./node_modules/scratch-paint/src/lib/modes.js");
+/* harmony import */ var _style_path__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../style-path */ "./node_modules/scratch-paint/src/helper/style-path.js");
+/* harmony import */ var _selection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../selection */ "./node_modules/scratch-paint/src/helper/selection.js");
+/* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../math */ "./node_modules/scratch-paint/src/helper/math.js");
+/* harmony import */ var _selection_tools_bounding_box_tool__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../selection-tools/bounding-box-tool */ "./node_modules/scratch-paint/src/helper/selection-tools/bounding-box-tool.js");
+/* harmony import */ var _selection_tools_nudge_tool__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../selection-tools/nudge-tool */ "./node_modules/scratch-paint/src/helper/selection-tools/nudge-tool.js");
+
+
+
+
+
+
+
+let roundedRectRadius = 12;
+const getRoundedRectRadius = () => roundedRectRadius;
+const setRoundedRectRadius = value => {
+  const radius = Number(value);
+  roundedRectRadius = Number.isFinite(radius) ? Math.max(0, Math.min(200, radius)) : 12;
+};
+
+/**
+ * Tool for drawing rounded rectangles.
+ */
+class RoundedRectTool extends _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0___default.a.Tool {
+  static get TOLERANCE() {
+    return 2;
+  }
+  constructor(setSelectedItems, clearSelectedItems, setCursor, onUpdateImage) {
+    super();
+    this.setSelectedItems = setSelectedItems;
+    this.clearSelectedItems = clearSelectedItems;
+    this.onUpdateImage = onUpdateImage;
+    this.boundingBoxTool = new _selection_tools_bounding_box_tool__WEBPACK_IMPORTED_MODULE_5__["default"](_lib_modes__WEBPACK_IMPORTED_MODULE_1__["default"].ROUNDED_RECT, setSelectedItems, clearSelectedItems, setCursor, onUpdateImage);
+    const nudgeTool = new _selection_tools_nudge_tool__WEBPACK_IMPORTED_MODULE_6__["default"](_lib_modes__WEBPACK_IMPORTED_MODULE_1__["default"].ROUNDED_RECT, this.boundingBoxTool, onUpdateImage);
+    this.onMouseDown = this.handleMouseDown;
+    this.onMouseMove = this.handleMouseMove;
+    this.onMouseDrag = this.handleMouseDrag;
+    this.onMouseUp = this.handleMouseUp;
+    this.onKeyUp = nudgeTool.onKeyUp;
+    this.onKeyDown = nudgeTool.onKeyDown;
+    this.rect = null;
+    this.colorState = null;
+    this.isBoundingBoxMode = null;
+    this.active = false;
+  }
+  getHitOptions() {
+    return {
+      segments: true,
+      stroke: true,
+      curves: true,
+      fill: true,
+      guide: false,
+      match: hitResult => hitResult.item.data && (hitResult.item.data.isScaleHandle || hitResult.item.data.isRotHandle) || hitResult.item.selected,
+      tolerance: RoundedRectTool.TOLERANCE / _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0___default.a.view.zoom
+    };
+  }
+  onSelectionChanged(selectedItems) {
+    this.boundingBoxTool.onSelectionChanged(selectedItems);
+  }
+  setColorState(colorState) {
+    this.colorState = colorState;
+  }
+  handleMouseDown(event) {
+    if (event.event.button > 0) return;
+    this.active = true;
+    if (this.boundingBoxTool.onMouseDown(event, false, false, false, this.getHitOptions())) {
+      this.isBoundingBoxMode = true;
+    } else {
+      this.isBoundingBoxMode = false;
+      Object(_selection__WEBPACK_IMPORTED_MODULE_3__["clearSelection"])(this.clearSelectedItems);
+    }
+  }
+  handleMouseDrag(event) {
+    if (event.event.button > 0 || !this.active) return;
+    if (this.isBoundingBoxMode) {
+      this.boundingBoxTool.onMouseDrag(event);
+      return;
+    }
+    if (this.rect) {
+      this.rect.remove();
+    }
+    const rect = new _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0___default.a.Rectangle(event.downPoint, event.point);
+    const squareDimensions = Object(_math__WEBPACK_IMPORTED_MODULE_4__["getSquareDimensions"])(event.downPoint, event.point);
+    if (event.modifiers.shift) {
+      rect.size = squareDimensions.size.abs();
+    }
+    const left = Math.min(rect.left, rect.right);
+    const right = Math.max(rect.left, rect.right);
+    const top = Math.min(rect.top, rect.bottom);
+    const bottom = Math.max(rect.top, rect.bottom);
+    const radius = Math.max(0, Math.min(getRoundedRectRadius(), (right - left) / 2, (bottom - top) / 2));
+    this.rect = new _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0___default.a.Path();
+    this.rect.moveTo(left + radius, top);
+    this.rect.lineTo(right - radius, top);
+    this.rect.quadraticCurveTo(right, top, right, top + radius);
+    this.rect.lineTo(right, bottom - radius);
+    this.rect.quadraticCurveTo(right, bottom, right - radius, bottom);
+    this.rect.lineTo(left + radius, bottom);
+    this.rect.quadraticCurveTo(left, bottom, left, bottom - radius);
+    this.rect.lineTo(left, top + radius);
+    this.rect.quadraticCurveTo(left, top, left + radius, top);
+    this.rect.closePath();
+    if (event.modifiers.alt) {
+      this.rect.position = event.downPoint;
+    } else if (event.modifiers.shift) {
+      this.rect.position = squareDimensions.position;
+    } else {
+      const dimensions = event.point.subtract(event.downPoint);
+      this.rect.position = event.downPoint.add(dimensions.multiply(0.5));
+    }
+    Object(_style_path__WEBPACK_IMPORTED_MODULE_2__["styleShape"])(this.rect, this.colorState);
+  }
+  handleMouseUp(event) {
+    if (event.event.button > 0 || !this.active) return;
+    if (this.isBoundingBoxMode) {
+      this.boundingBoxTool.onMouseUp(event);
+      this.isBoundingBoxMode = null;
+      return;
+    }
+    if (this.rect) {
+      if (this.rect.area < RoundedRectTool.TOLERANCE / _turbowarp_paper__WEBPACK_IMPORTED_MODULE_0___default.a.view.zoom) {
+        this.rect.remove();
+        this.rect = null;
+      } else {
+        this.rect.selected = true;
+        this.setSelectedItems();
+        this.onUpdateImage();
+        this.rect = null;
+      }
+    }
+    this.active = false;
+  }
+  handleMouseMove(event) {
+    this.boundingBoxTool.onMouseMove(event, this.getHitOptions());
+  }
+  deactivateTool() {
+    this.boundingBoxTool.deactivateTool();
+  }
+}
+/* harmony default export */ __webpack_exports__["default"] = (RoundedRectTool);
 
 /***/ }),
 
