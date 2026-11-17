@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>发布与桌面版 · 指针迭代实验室文档</title>
+<meta name="description" content="PointerEditor 发布作品到创客次元，以及 Windows 桌面版安装、文件关联、数据目录和多窗口。">
+<link rel="stylesheet" href="./docs.css">
+</head>
+<body>
+<header class="docs-header">
+    <button class="docs-menu-toggle" id="docsMenuToggle" aria-label="打开文档菜单">☰</button>
+    <a class="docs-brand" href="./index.html">
+        <span class="docs-brand-mark">针</span>
+        <span class="docs-brand-copy"><strong>指针迭代实验室</strong><small>文档中心</small></span>
+    </a>
+    <label class="docs-search">
+        <span>⌕</span>
+        <input id="docsSearch" type="search" placeholder="搜索文档… (Ctrl+K)" autocomplete="off">
+        <div id="docsSearchResults" class="docs-search-results" hidden></div>
+    </label>
+    <nav class="docs-top-links" aria-label="站点链接">
+        <a href="../index.html">官网</a>
+        <a href="../editor/editor.html">网页版</a>
+        <a href="../extensions/">扩展商店</a>
+        <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+</header>
+<div class="docs-layout">
+    <aside class="docs-sidebar" id="docsSidebar">
+        <nav class="docs-nav" id="docsNav" aria-label="文档导航"></nav>
+    </aside>
+    <main class="docs-main" data-page="publish">
+        <div class="docs-breadcrumb"><a href="../index.html">官网</a> / <a href="./index.html">文档</a> / 发布与桌面版</div>
+
+<h1>发布作品与桌面版</h1>
+<p class="docs-lead">这一页说明如何把作品发布到创客次元，以及 Windows 桌面版的文件关联、数据目录、多窗口和安装注意事项。</p>
+
+<h2>发布到创客次元</h2>
+<ol>
+    <li>在桌面版打开作品，点击“云端 → 发布到创客次元”。</li>
+    <li>选择账号登录或 API Key 登录。</li>
+    <li>账号登录需要创客次元用户名/邮箱、密码和图中验证码；验证码不区分大小写。</li>
+    <li>API Key 登录请粘贴以 <code>fk_live_</code> 开头的 Key。</li>
+    <li>填写作品标题、简介、分类，选择是否允许下载，封面默认截取舞台画面。</li>
+    <li>发布成功后会得到作品短链接，可以复制或直接打开。</li>
+</ol>
+<div class="callout">
+    <strong>发布目前仅桌面版可用</strong>
+    <p>创客次元接口未对浏览器跨域 POST 放行，网页版直接发布会失败。网页版可以正常创作和保存 .sb3，但发布请使用 Windows 桌面版。</p>
+</div>
+
+<h2>Windows 文件关联</h2>
+<ul>
+    <li>安装版会注册 <code>.sb3</code>、<code>.sb2</code>、<code>.sb</code>，双击作品即可打开。</li>
+    <li>程序已运行时，双击另一个作品会在现有窗口打开。</li>
+    <li>文件 → 从电脑中打开（<code>Ctrl+O</code>）。</li>
+    <li>文件 → 保存到原文件（<code>Ctrl+S</code>）；另存为（<code>Ctrl+Shift+S</code>）。</li>
+    <li>保存只允许写回本次打开或另存为选择的路径，避免任意文件写入。</li>
+</ul>
+
+<h2>数据目录</h2>
+<table>
+    <thead><tr><th>目录</th><th>内容</th></tr></thead>
+    <tbody>
+        <tr><td><code>PointerEditorData</code></td><td>界面状态、缓存、崩溃日志和本机配置</td></tr>
+        <tr><td><code>PointerEditorExports</code></td><td>导出的作品、截图和其他文件</td></tr>
+    </tbody>
+</table>
+<p>安装版和免安装版都把数据放在程序目录，便于整套拷贝和迁移；卸载时请确认是否需要保留这些目录。</p>
+
+<h2>多窗口</h2>
+<p>文件 → 新建窗口最多同时打开 8 个编辑器窗口。适合一边看教程、一边做作品，或同时处理多个项目。角色卡片右上角 ↗ 可以把角色直接拖到另一个窗口。</p>
+
+<h2>安装与更新</h2>
+<ul>
+    <li>新版从 <a href="https://github.com/Adopos610/PointerEditor/releases" target="_blank" rel="noreferrer">GitHub Releases</a> 下载。</li>
+    <li>当前安装器未进行代码签名，Windows 可能提示“未知发布者”；请确认下载来源后选择“仍要运行”。</li>
+    <li>覆盖安装一般会保留程序目录中的项目数据；重要作品仍建议单独导出 .sb3。</li>
+</ul>
+
+<h2>网页版与桌面版怎么选</h2>
+<ul>
+    <li>需要文件关联、保存到原文件、PEAgent 本地 API Key、发布作品：使用 Windows 桌面版。</li>
+    <li>临时体验、跨设备使用、不想安装：使用网页版。</li>
+    <li>需要把项目带走：桌面版直接拷贝数据目录，或导出 .sb3。</li>
+</ul>
+
+    </main>
+</div>
+<footer class="docs-footer">
+    <span>指针迭代实验室 · 文档中心</span>
+    <span><a href="https://ifdian.net/a/HUGOR" target="_blank" rel="noreferrer">支持实验室</a> · <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a> · <a href="../extensions/">扩展商店</a></span>
+</footer>
+<script src="./docs.js"></script>
+</body>
+</html>

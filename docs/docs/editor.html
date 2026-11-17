@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>编辑器 · 指针迭代实验室文档</title>
+<meta name="description" content="PointerEditor 编辑器基础：积木、角色、造型、声音、变量、广播、背包与保存。">
+<link rel="stylesheet" href="./docs.css">
+</head>
+<body>
+<header class="docs-header">
+    <button class="docs-menu-toggle" id="docsMenuToggle" aria-label="打开文档菜单">☰</button>
+    <a class="docs-brand" href="./index.html">
+        <span class="docs-brand-mark">针</span>
+        <span class="docs-brand-copy"><strong>指针迭代实验室</strong><small>文档中心</small></span>
+    </a>
+    <label class="docs-search">
+        <span>⌕</span>
+        <input id="docsSearch" type="search" placeholder="搜索文档… (Ctrl+K)" autocomplete="off">
+        <div id="docsSearchResults" class="docs-search-results" hidden></div>
+    </label>
+    <nav class="docs-top-links" aria-label="站点链接">
+        <a href="../index.html">官网</a>
+        <a href="../editor/editor.html">网页版</a>
+        <a href="../extensions/">扩展商店</a>
+        <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+</header>
+<div class="docs-layout">
+    <aside class="docs-sidebar" id="docsSidebar">
+        <nav class="docs-nav" id="docsNav" aria-label="文档导航"></nav>
+    </aside>
+    <main class="docs-main" data-page="editor">
+        <div class="docs-breadcrumb"><a href="../index.html">官网</a> / <a href="./index.html">文档</a> / 编辑器</div>
+
+<h1>编辑器基础</h1>
+<p class="docs-lead">PointerEditor 复用真实的 Scratch 运行时和积木系统。熟悉 Scratch 的话可以几乎无缝上手；第一次使用的话，先记住五个区域就够了。</p>
+
+<h2>界面区域</h2>
+<table>
+    <thead><tr><th>区域</th><th>作用</th></tr></thead>
+    <tbody>
+        <tr><td>顶部菜单</td><td>文件、设置、云端、PEAgent、TODO、编辑、插件、高级</td></tr>
+        <tr><td>积木分类与工作区</td><td>左侧选择分类，中间拖拽拼接积木</td></tr>
+        <tr><td>舞台</td><td>运行和预览作品；绿旗开始、红点停止</td></tr>
+        <tr><td>角色区</td><td>添加、选择、复制、导出角色，右上角 ↗ 可拖到另一个窗口</td></tr>
+        <tr><td>造型 / 声音 / 背包</td><td>编辑角色素材，保存跨作品复用的积木和素材</td></tr>
+    </tbody>
+</table>
+
+<h2>积木基础</h2>
+<ul>
+    <li><strong>运动 / 外观 / 声音</strong>：角色移动、说话、换造型、播放音频。</li>
+    <li><strong>事件</strong>：绿旗、按键、点击、广播、克隆体启动。</li>
+    <li><strong>控制</strong>：等待、重复、条件、克隆与停止。</li>
+    <li><strong>侦测 / 运算</strong>：碰撞、距离、计时器、随机数、字符串与数学。</li>
+    <li><strong>变量 / 列表</strong>：保存分数、生命、背包数据等。</li>
+    <li><strong>自制积木</strong>：把重复逻辑封装成自己的积木，支持“运行时不刷新屏幕”。</li>
+</ul>
+<div class="callout">
+    <strong>变量和广播</strong>
+    <p>变量是作品内的数据；广播用于角色和舞台之间发消息。PEAgent 也可以帮你创建变量、广播并插入对应积木。</p>
+</div>
+
+<h2>造型和声音</h2>
+<ul>
+    <li>在“造型”页使用矢量画板绘制、调整图层、填充和变形，也可以导入图片。</li>
+    <li>在“声音”页导入音频、裁剪、调整音量或直接录音。</li>
+    <li>舞台背景和角色造型都支持复制、排序和删除。</li>
+</ul>
+
+<h2>保存与作品格式</h2>
+<ul>
+    <li>PointerEditor 使用 Scratch 兼容的 <code>.sb3</code> 作品格式。</li>
+    <li>桌面安装版支持保存到原文件（<code>Ctrl+S</code>）和另存为（<code>Ctrl+Shift+S</code>）。</li>
+    <li>网页版通过下载保存 .sb3；请定期保存，避免浏览器数据被清理。</li>
+    <li>打开 .sb2 / .sb 后，另存会转换为 .sb3。</li>
+</ul>
+
+<h2>快捷键</h2>
+<table>
+    <thead><tr><th>快捷键</th><th>功能</th></tr></thead>
+    <tbody>
+        <tr><td><code>Ctrl+O</code></td><td>从电脑中打开作品</td></tr>
+        <tr><td><code>Ctrl+S</code></td><td>保存到原文件；免安装/网页版会打开保存流程</td></tr>
+        <tr><td><code>Ctrl+Shift+S</code></td><td>另存为</td></tr>
+        <tr><td><code>Ctrl+Z</code> / <code>Ctrl+Y</code></td><td>撤销 / 重做</td></tr>
+        <tr><td><code>Ctrl+F</code></td><td>在积木区查找积木</td></tr>
+    </tbody>
+</table>
+
+<h2>多窗口与跨窗口素材</h2>
+<p>在“文件 → 新建窗口”可以同时打开多个编辑器窗口。角色卡片右上角的 ↗ 可以直接拖到另一个窗口，把角色连同造型、声音和积木一起带过去。</p>
+<p>需要 AI 帮忙写积木时，继续看 <a href="./agent.html">PEAgent 使用指南</a>；需要和朋友协作时，看 <a href="./cloud.html">协作与云服务</a>。</p>
+
+    </main>
+</div>
+<footer class="docs-footer">
+    <span>指针迭代实验室 · 文档中心</span>
+    <span><a href="https://ifdian.net/a/HUGOR" target="_blank" rel="noreferrer">支持实验室</a> · <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a> · <a href="../extensions/">扩展商店</a></span>
+</footer>
+<script src="./docs.js"></script>
+</body>
+</html>

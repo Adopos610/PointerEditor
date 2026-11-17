@@ -6,6 +6,7 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 - 官网：<https://peditor.ctspace.xyz/>
 - 网页版编辑器：<https://peditor.ctspace.xyz/editor/editor.html>
 - 扩展商店：<https://peditor.ctspace.xyz/extensions/>
+- 文档中心：<https://peditor.ctspace.xyz/docs/>
 - 下载：<https://github.com/Adopos610/PointerEditor/releases/latest>
 - 源码仓库：<https://github.com/Adopos610/PointerEditor>
 - GitHub Pages 备份：<https://adopos610.github.io/PointerEditor/>

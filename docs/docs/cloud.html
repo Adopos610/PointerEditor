@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>协作与云服务 · 指针迭代实验室文档</title>
+<meta name="description" content="PointerE 账号与 PointerEditor 在线协作：注册、房间、角色认领、代码锁定、TODO 和多窗口。">
+<link rel="stylesheet" href="./docs.css">
+</head>
+<body>
+<header class="docs-header">
+    <button class="docs-menu-toggle" id="docsMenuToggle" aria-label="打开文档菜单">☰</button>
+    <a class="docs-brand" href="./index.html">
+        <span class="docs-brand-mark">针</span>
+        <span class="docs-brand-copy"><strong>指针迭代实验室</strong><small>文档中心</small></span>
+    </a>
+    <label class="docs-search">
+        <span>⌕</span>
+        <input id="docsSearch" type="search" placeholder="搜索文档… (Ctrl+K)" autocomplete="off">
+        <div id="docsSearchResults" class="docs-search-results" hidden></div>
+    </label>
+    <nav class="docs-top-links" aria-label="站点链接">
+        <a href="../index.html">官网</a>
+        <a href="../editor/editor.html">网页版</a>
+        <a href="../extensions/">扩展商店</a>
+        <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+</header>
+<div class="docs-layout">
+    <aside class="docs-sidebar" id="docsSidebar">
+        <nav class="docs-nav" id="docsNav" aria-label="文档导航"></nav>
+    </aside>
+    <main class="docs-main" data-page="cloud">
+        <div class="docs-breadcrumb"><a href="../index.html">官网</a> / <a href="./index.html">文档</a> / 协作与云服务</div>
+
+<h1>PointerE 协作与云服务</h1>
+<p class="docs-lead">PointerE 是 PointerEditor 配套的协作账号系统，和创客次元账号相互独立。它负责登录、协作房间、角色认领、代码锁定、TODO 和积分。</p>
+
+<h2>账号体系</h2>
+<ul>
+    <li>PointerE 账号用于编辑器在线协作，注册地址：<a href="https://vable.ctspace.xyz/register" target="_blank" rel="noreferrer">vable.ctspace.xyz/register</a>。</li>
+    <li>创客次元账号用于作品社区和发布，两者不通用。</li>
+    <li>注册需要图形验证码和邮箱验证；验证邮件由 PointerE 服务发送。</li>
+</ul>
+
+<h2>登录和开始协作</h2>
+<ol>
+    <li>打开 PointerEditor，点击顶部“云端 → 在线协作”。</li>
+    <li>使用 PointerE 用户名或邮箱登录。</li>
+    <li>创建房间，或输入房间号加入已有房间。</li>
+    <li>邀请同伴进入同一房间，大家会看到同一份项目。</li>
+</ol>
+
+<h2>角色认领与代码锁定</h2>
+<ul>
+    <li>每位成员可以认领一个或多个角色，只有认领者能修改该角色的积木。</li>
+    <li>其他人尝试修改被认领角色时，会看到锁定者，并可以发送编辑申请。</li>
+    <li>房主可以锁定全部代码；锁定后只有房主能编辑。</li>
+    <li>新增或删除角色时，由房主同步整个项目。</li>
+</ul>
+
+<h2>TODO 房间同步</h2>
+<p>项目 TODO 会随协作房间同步，作者和成员看到同一份清单。支持添加、勾选完成、删除和清除已完成；不联网时保存在本地。</p>
+
+<h2>多窗口与素材协作</h2>
+<ul>
+    <li>文件 → 新建窗口，可以同时打开多个编辑器窗口。</li>
+    <li>角色卡片右上角 ↗ 可以直接拖到另一个窗口，角色会连同造型、声音和积木一起导入。</li>
+    <li>协作同步以积木和角色为单位；跨窗口导入适合整理素材和拆分工作。</li>
+</ul>
+
+<h2>安全与连接</h2>
+<ul>
+    <li>协作服务使用 WSS（TLS）加密；自定义公网服务必须使用 <code>wss://</code> 地址。</li>
+    <li>服务端会校验 Origin、限制请求频率和消息大小，并对登录失败做限制。</li>
+    <li>不要把 PointerE 密码、验证码或管理入口分享给其他人。</li>
+</ul>
+
+<h2>常见问题</h2>
+<h3>登录提示账号或密码错误</h3>
+<p>确认使用的是 PointerE 账号，而不是创客次元账号；检查邮箱是否已验证、账号是否被停用。</p>
+<h3>加入房间后看不到别人的修改</h3>
+<p>确认双方在同一个房间、网络正常，并且对方没有修改未认领的角色。必要时重新连接或让房主重新同步项目。</p>
+<h3>为什么不能编辑某个角色</h3>
+<p>该角色已被其他成员认领，或房主锁定了全部代码。可以发送编辑申请，等待对方释放。</p>
+
+    </main>
+</div>
+<footer class="docs-footer">
+    <span>指针迭代实验室 · 文档中心</span>
+    <span><a href="https://ifdian.net/a/HUGOR" target="_blank" rel="noreferrer">支持实验室</a> · <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a> · <a href="../extensions/">扩展商店</a></span>
+</footer>
+<script src="./docs.js"></script>
+</body>
+</html>

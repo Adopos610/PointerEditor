@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>扩展商店 · 指针迭代实验室文档</title>
+<meta name="description" content="PointerEditor 扩展商店：官方扩展、Pointer 工具箱、数学工具、社区精选、安装与自定义加载。">
+<link rel="stylesheet" href="./docs.css">
+</head>
+<body>
+<header class="docs-header">
+    <button class="docs-menu-toggle" id="docsMenuToggle" aria-label="打开文档菜单">☰</button>
+    <a class="docs-brand" href="./index.html">
+        <span class="docs-brand-mark">针</span>
+        <span class="docs-brand-copy"><strong>指针迭代实验室</strong><small>文档中心</small></span>
+    </a>
+    <label class="docs-search">
+        <span>⌕</span>
+        <input id="docsSearch" type="search" placeholder="搜索文档… (Ctrl+K)" autocomplete="off">
+        <div id="docsSearchResults" class="docs-search-results" hidden></div>
+    </label>
+    <nav class="docs-top-links" aria-label="站点链接">
+        <a href="../index.html">官网</a>
+        <a href="../editor/editor.html">网页版</a>
+        <a href="../extensions/">扩展商店</a>
+        <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+</header>
+<div class="docs-layout">
+    <aside class="docs-sidebar" id="docsSidebar">
+        <nav class="docs-nav" id="docsNav" aria-label="文档导航"></nav>
+    </aside>
+    <main class="docs-main" data-page="extensions">
+        <div class="docs-breadcrumb"><a href="../index.html">官网</a> / <a href="./index.html">文档</a> / 扩展商店</div>
+
+<h1>扩展商店</h1>
+<p class="docs-lead">PointerEditor 的扩展商店是自有的全屏扩展页面，包含官方扩展、Pointer 精选、社区精选和自定义加载。安装扩展后，积木区会直接出现新的分类。</p>
+
+<h2>打开扩展商店</h2>
+<ul>
+    <li>在编辑器积木区左下角点击“添加扩展”图标。</li>
+    <li>左侧选择分类，右侧搜索或浏览扩展卡片。</li>
+    <li>点击“添加”，扩展会安装到当前作品，并自动回到积木区。</li>
+    <li>也可以在浏览器访问 <a href="../extensions/" target="_blank" rel="noreferrer">peditor.ctspace.xyz/extensions/</a> 查看扩展目录和安装地址。</li>
+</ul>
+
+<h2>分类说明</h2>
+<table>
+    <thead><tr><th>分类</th><th>内容</th></tr></thead>
+    <tbody>
+        <tr><td>官方扩展</td><td>音乐、画笔、视频侦测、文字朗读、翻译、Makey Makey、micro:bit、LEGO 等内置扩展</td></tr>
+        <tr><td>Pointer 精选</td><td>Pointer 工具箱、Pointer 数学工具，由 PointerEditor 官方维护</td></tr>
+        <tr><td>社区精选</td><td>由社区作者维护的扩展，安装时从扩展作者的官方地址加载</td></tr>
+        <tr><td>自定义加载</td><td>从网址、文件或 JavaScript 源码加载扩展；需要用户确认来源</td></tr>
+    </tbody>
+</table>
+
+<h2>Pointer 官方扩展</h2>
+<h3>Pointer 工具箱</h3>
+<ul>
+    <li>当前日期、当前时间、当前星期、当前时间戳</li>
+    <li>扩展运行秒数、重置计时、随机 UUID</li>
+    <li>文本长度、反转文本、替换文本</li>
+</ul>
+<h3>Pointer 数学工具</h3>
+<ul>
+    <li>把数值限制在范围内、区间映射</li>
+    <li>四舍五入保留小数、百分比</li>
+    <li>随机整数、随机小数、千分位格式化、偶数判断</li>
+</ul>
+
+<h2>社区扩展</h2>
+<p>社区扩展由原作者维护，包括文件、运行时选项、指针、文本、本地存储、剪贴板、内嵌框架、3D、画笔、克隆、计时器、通知等。扩展商店会标注作者和分类；安装前请确认来源可信。</p>
+
+<h2>安装与使用</h2>
+<ol>
+    <li>在扩展商店点击“添加”。扩展安装后不会出现单独的“启用”按钮，积木区会直接新增分类。</li>
+    <li>扩展会记录在作品文件里；重新打开作品时会自动加载。</li>
+    <li>如果想重置扩展，刷新或重新打开编辑器；已保存在作品里的扩展会在加载项目时恢复。</li>
+    <li>部分扩展需要摄像头、麦克风、网络或额外权限，首次使用时浏览器会询问。</li>
+</ol>
+
+<h2>自定义加载与安全</h2>
+<div class="callout">
+    <strong>只加载可信扩展</strong>
+    <p>扩展在浏览器中拥有接近编辑器的权限。不要加载来源不明的 JavaScript 或从未知短链接下载的扩展。PointerEditor 会对自定义来源进行确认，但最终仍需你判断。</p>
+</div>
+<ul>
+    <li>支持从网址加载扩展 JS。</li>
+    <li>支持选择本地扩展文件。</li>
+    <li>支持直接粘贴 JavaScript 源码（仅建议开发者使用）。</li>
+    <li>扩展加载失败时，先检查网络、地址是否以 <code>.js</code> 结尾，以及是否被浏览器拦截。</li>
+</ul>
+
+<h2>开发者</h2>
+<p>Pointer 官方扩展源码在仓库的 <code>scratch-gui/static/extensions</code> 下。社区扩展遵循 Scratch extension API；如果你要编写自己的扩展，可以从一个最小的 <code>getInfo</code> 和积木定义开始，然后在本地加载测试。</p>
+<p><a class="button secondary" href="https://github.com/Adopos610/PointerEditor/tree/main/scratch-gui/static/extensions" target="_blank" rel="noreferrer">查看官方扩展源码</a></p>
+
+    </main>
+</div>
+<footer class="docs-footer">
+    <span>指针迭代实验室 · 文档中心</span>
+    <span><a href="https://ifdian.net/a/HUGOR" target="_blank" rel="noreferrer">支持实验室</a> · <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a> · <a href="../extensions/">扩展商店</a></span>
+</footer>
+<script src="./docs.js"></script>
+</body>
+</html>

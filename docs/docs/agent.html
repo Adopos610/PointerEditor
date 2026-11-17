@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PEAgent · 指针迭代实验室文档</title>
+<meta name="description" content="PEAgent 配置与使用：模型、API Key、深度思考、网页搜索、选择积木、添加文件和权限模式。">
+<link rel="stylesheet" href="./docs.css">
+</head>
+<body>
+<header class="docs-header">
+    <button class="docs-menu-toggle" id="docsMenuToggle" aria-label="打开文档菜单">☰</button>
+    <a class="docs-brand" href="./index.html">
+        <span class="docs-brand-mark">针</span>
+        <span class="docs-brand-copy"><strong>指针迭代实验室</strong><small>文档中心</small></span>
+    </a>
+    <label class="docs-search">
+        <span>⌕</span>
+        <input id="docsSearch" type="search" placeholder="搜索文档… (Ctrl+K)" autocomplete="off">
+        <div id="docsSearchResults" class="docs-search-results" hidden></div>
+    </label>
+    <nav class="docs-top-links" aria-label="站点链接">
+        <a href="../index.html">官网</a>
+        <a href="../editor/editor.html">网页版</a>
+        <a href="../extensions/">扩展商店</a>
+        <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+</header>
+<div class="docs-layout">
+    <aside class="docs-sidebar" id="docsSidebar">
+        <nav class="docs-nav" id="docsNav" aria-label="文档导航"></nav>
+    </aside>
+    <main class="docs-main" data-page="agent">
+        <div class="docs-breadcrumb"><a href="../index.html">官网</a> / <a href="./index.html">文档</a> / PEAgent</div>
+
+<h1>PEAgent 使用指南</h1>
+<p class="docs-lead">PEAgent 是 PointerEditor 内置的 AI 创作助手。它可以生成积木、创建变量和广播、插入脚本，也能直接绘制 SVG 角色造型。</p>
+
+<h2>第一次配置</h2>
+<ol>
+    <li>点击顶部 <strong>PEAgent</strong> 打开面板，进入“设置”。</li>
+    <li>选择服务商：DeepSeek V4、OpenAI 或自定义兼容接口。</li>
+    <li>填写 API Key、Base URL 和模型名称。DeepSeek 的常用参数已经预填。</li>
+    <li>设置 Agent 权限，保存后开始对话。</li>
+</ol>
+<div class="callout">
+    <strong>API Key 只保存在本机</strong>
+    <p>桌面版使用 Windows 系统密钥加密保存 Key，请求直接发送到你填写的模型接口，不经过 PointerE 服务器。网页版不支持本地 Key 调用。</p>
+</div>
+
+<h2>模型选择</h2>
+<table>
+    <thead><tr><th>服务</th><th>可用模型</th><th>说明</th></tr></thead>
+    <tbody>
+        <tr><td>DeepSeek</td><td><code>deepseek-flash</code> / <code>deepseek-v4-pro</code></td><td>默认预填，支持深度思考；flash 支持图像理解</td></tr>
+        <tr><td>OpenAI</td><td>GPT / o 系列等</td><td>需要可访问的 OpenAI 兼容接口</td></tr>
+        <tr><td>自定义</td><td>任意兼容模型</td><td>支持 OpenAI Chat Completions 或 Anthropic 兼容格式</td></tr>
+    </tbody>
+</table>
+<p>模型切换在对话页顶部的下拉框里完成，切换后会保存到本机配置。</p>
+
+<h2>输入区工具</h2>
+<ul>
+    <li><strong>思考</strong>：开启深度思考，并可选择思考强度。思考模式下部分模型会忽略 Temperature。</li>
+    <li><strong>选择积木</strong>：把积木区当前选中的积木作为上下文加入对话。</li>
+    <li><strong>添加文件</strong>：附加文本或代码文件（最大 400KB，读取前 2 万字）。</li>
+    <li><strong>网页搜索</strong>：开启后先检索网络资料，再把结果交给模型。</li>
+    <li><strong>Enter 发送 / Shift+Enter 换行</strong>：中文输入法组词时不会误发送。</li>
+</ul>
+
+<h2>权限模式</h2>
+<table>
+    <thead><tr><th>模式</th><th>行为</th></tr></thead>
+    <tbody>
+        <tr><td>操作前确认（推荐）</td><td>回答结束后展示操作摘要，你确认后才执行</td></tr>
+        <tr><td>完全权限</td><td>自动创建变量/广播、插入积木、添加 SVG 造型</td></tr>
+        <tr><td>只读建议</td><td>只给建议，不修改作品</td></tr>
+    </tbody>
+</table>
+<p>Agent 能做的操作包括创建变量和广播、插入 Scratch 积木、添加 SVG 角色造型；它不会执行任意 JavaScript。所有操作都会在本地校验后应用。</p>
+
+<h2>会话与导出</h2>
+<ul>
+    <li>左侧会保存最近的会话，支持切换、删除和自动标题。</li>
+    <li>回答支持 Markdown、代码块和流式输出。</li>
+    <li>“导出会话”可以把当前对话保存为 Markdown 文件。</li>
+    <li>Agent 最小化后会留在顶部浮标，可以取消运行或重新打开。</li>
+</ul>
+
+<h2>常见问题</h2>
+<h3>提示 401 / Authentication Fails</h3>
+<p>检查 API Key 是否完整、是否过期，以及服务商与 Base URL 是否匹配。Key 不要带空格或引号。</p>
+<h3>提示余额不足</h3>
+<p>AI API 费用由模型服务商按 token 计费，和 PointerEditor 本身无关。请在服务商控制台充值或换用其他模型。</p>
+<h3>回答很慢或中断</h3>
+<p>可以关闭深度思考、减少上下文，或检查网络。长回答会被 Max Tokens 和服务商能力限制。</p>
+<h3>自定义接口应该怎么填</h3>
+<p>Base URL 一般填到 <code>/v1</code> 或服务商给出的接口根路径；模型名称按服务商文档填写。切换服务商后可先用“保存并开始”测试。</p>
+
+    </main>
+</div>
+<footer class="docs-footer">
+    <span>指针迭代实验室 · 文档中心</span>
+    <span><a href="https://ifdian.net/a/HUGOR" target="_blank" rel="noreferrer">支持实验室</a> · <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a> · <a href="../extensions/">扩展商店</a></span>
+</footer>
+<script src="./docs.js"></script>
+</body>
+</html>

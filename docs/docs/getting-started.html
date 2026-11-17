@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>快速开始 · 指针迭代实验室文档</title>
+<meta name="description" content="安装 PointerEditor 桌面版或打开网页版，创建、保存和打开第一个 Scratch 作品。">
+<link rel="stylesheet" href="./docs.css">
+</head>
+<body>
+<header class="docs-header">
+    <button class="docs-menu-toggle" id="docsMenuToggle" aria-label="打开文档菜单">☰</button>
+    <a class="docs-brand" href="./index.html">
+        <span class="docs-brand-mark">针</span>
+        <span class="docs-brand-copy"><strong>指针迭代实验室</strong><small>文档中心</small></span>
+    </a>
+    <label class="docs-search">
+        <span>⌕</span>
+        <input id="docsSearch" type="search" placeholder="搜索文档… (Ctrl+K)" autocomplete="off">
+        <div id="docsSearchResults" class="docs-search-results" hidden></div>
+    </label>
+    <nav class="docs-top-links" aria-label="站点链接">
+        <a href="../index.html">官网</a>
+        <a href="../editor/editor.html">网页版</a>
+        <a href="../extensions/">扩展商店</a>
+        <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+</header>
+<div class="docs-layout">
+    <aside class="docs-sidebar" id="docsSidebar">
+        <nav class="docs-nav" id="docsNav" aria-label="文档导航"></nav>
+    </aside>
+    <main class="docs-main" data-page="getting-started">
+        <div class="docs-breadcrumb"><a href="../index.html">官网</a> / <a href="./index.html">文档</a> / 快速开始</div>
+
+<h1>快速开始</h1>
+<p class="docs-lead">PointerEditor 有 Windows 安装版、Windows 免安装版和网页版三种使用方式。先选一种打开，再用几分钟做出第一个作品。</p>
+
+<h2>选择使用方式</h2>
+<table>
+    <thead><tr><th>方式</th><th>适合</th><th>特点</th></tr></thead>
+    <tbody>
+        <tr><td>Windows 安装版</td><td>长期在 Windows 上创作</td><td>注册 .sb3 / .sb2 / .sb 文件关联，双击打开，支持保存到原文件</td></tr>
+        <tr><td>Windows 免安装版</td><td>U 盘、临时使用、多个版本共存</td><td>解压即用，项目数据保存在程序目录</td></tr>
+        <tr><td>网页版</td><td>快速体验、换电脑使用</td><td>无需安装；不支持 Windows 文件关联和原生保存</td></tr>
+    </tbody>
+</table>
+<div class="button-row">
+    <a class="button" href="https://github.com/Adopos610/PointerEditor/releases/latest" target="_blank" rel="noreferrer">下载最新版本</a>
+    <a class="button secondary" href="../editor/editor.html">立即体验网页版</a>
+    <a class="button secondary" href="../extensions/">浏览扩展商店</a>
+</div>
+
+<h2>Windows 安装版</h2>
+<ol>
+    <li>从 <a href="https://github.com/Adopos610/PointerEditor/releases/latest" target="_blank" rel="noreferrer">GitHub Releases</a> 下载 <code>PointerEditor-0.2.1-setup.exe</code>。</li>
+    <li>运行安装器，选择“仅为我安装”或“为所有用户安装”，可以修改安装目录。</li>
+    <li>首次运行如果出现“未知发布者”，选择“仍要运行”；当前版本没有代码签名。</li>
+    <li>安装器会创建桌面和开始菜单快捷方式，并注册 <code>.sb3</code>、<code>.sb2</code>、<code>.sb</code> 文件关联。</li>
+</ol>
+<p>安装版的项目数据和导出文件保存在程序目录下的 <code>PointerEditorData</code> 与 <code>PointerEditorExports</code>。</p>
+
+<h2>Windows 免安装版</h2>
+<ol>
+    <li>下载 <code>PointerEditor-0.2.1-win64.zip</code> 并解压到任意目录，建议放在非系统盘。</li>
+    <li>双击 <code>PointerEditor.exe</code> 运行。</li>
+    <li>免安装版不会注册系统文件关联；需要双击打开 .sb3 时请使用安装版，或用“文件 → 从电脑中打开”。</li>
+</ol>
+
+<h2>网页版</h2>
+<p>直接打开 <a href="../editor/editor.html">PointerEditor 在线</a> 即可。网页版使用浏览器本地存储，保存作品时请通过编辑器下载 .sb3 文件。</p>
+
+<h2>第一个作品</h2>
+<ol>
+    <li>打开编辑器，默认会创建一个新作品。</li>
+    <li>在左下角角色区添加角色，或使用顶部“造型/声音”编辑素材。</li>
+    <li>从左侧积木分类拖出积木，拼到中间工作区。</li>
+    <li>点击舞台上方绿旗运行，红色圆点停止。</li>
+    <li>按 <code>Ctrl+S</code> 保存到原文件，或使用“文件 → 另存为”（<code>Ctrl+Shift+S</code>）选择新位置。</li>
+</ol>
+
+<h2>打开和保存作品</h2>
+<ul>
+    <li>双击 .sb3 文件，或在编辑器里按 <code>Ctrl+O</code> 从电脑中打开。</li>
+    <li>使用安装版打开 .sb3 后，按 <code>Ctrl+S</code> 会直接保存回原文件。</li>
+    <li>.sb2 / .sb 作品可以打开，但另存时会保存为 .sb3。</li>
+    <li>网页版和免安装版不会注册系统关联；请使用菜单打开，网页版保存时下载文件。</li>
+</ul>
+
+<h2>系统要求</h2>
+<ul>
+    <li>Windows 10 / 11 x64；网页版建议使用最新版 Chrome 或 Edge。</li>
+    <li>首次打开项目或使用视频侦测时需要摄像头权限；音频功能需要麦克风权限。</li>
+    <li>PEAgent 需要可访问所填模型接口的网络环境。</li>
+</ul>
+
+    </main>
+</div>
+<footer class="docs-footer">
+    <span>指针迭代实验室 · 文档中心</span>
+    <span><a href="https://ifdian.net/a/HUGOR" target="_blank" rel="noreferrer">支持实验室</a> · <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a> · <a href="../extensions/">扩展商店</a></span>
+</footer>
+<script src="./docs.js"></script>
+</body>
+</html>

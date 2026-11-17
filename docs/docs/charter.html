@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>章程与规划 · 指针迭代实验室文档</title>
+<meta name="description" content="指针迭代实验室章程：使命、原则、项目治理、赞助资金用途、社区约定与路线图。">
+<link rel="stylesheet" href="./docs.css">
+</head>
+<body>
+<header class="docs-header">
+    <button class="docs-menu-toggle" id="docsMenuToggle" aria-label="打开文档菜单">☰</button>
+    <a class="docs-brand" href="./index.html">
+        <span class="docs-brand-mark">针</span>
+        <span class="docs-brand-copy"><strong>指针迭代实验室</strong><small>文档中心</small></span>
+    </a>
+    <label class="docs-search">
+        <span>⌕</span>
+        <input id="docsSearch" type="search" placeholder="搜索文档… (Ctrl+K)" autocomplete="off">
+        <div id="docsSearchResults" class="docs-search-results" hidden></div>
+    </label>
+    <nav class="docs-top-links" aria-label="站点链接">
+        <a href="../index.html">官网</a>
+        <a href="../editor/editor.html">网页版</a>
+        <a href="../extensions/">扩展商店</a>
+        <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+</header>
+<div class="docs-layout">
+    <aside class="docs-sidebar" id="docsSidebar">
+        <nav class="docs-nav" id="docsNav" aria-label="文档导航"></nav>
+    </aside>
+    <main class="docs-main" data-page="charter">
+        <div class="docs-breadcrumb"><a href="../index.html">官网</a> / <a href="./index.html">文档</a> / 章程与规划</div>
+
+<h1>指针迭代实验室 · 章程与规划</h1>
+<p class="docs-lead">这份章程说明我们是谁、为什么做这些项目、如何治理、赞助会用在哪里，以及未来一段时间准备做什么。</p>
+<div class="callout">
+    <strong>v1.0 草案</strong>
+    <p>本章程会随着实验室的发展调整。欢迎在 <a href="https://github.com/Adopos610/PointerEditor/issues" target="_blank" rel="noreferrer">GitHub Issues</a> 提出建议。</p>
+</div>
+
+<h2>我们是谁</h2>
+<p>指针迭代实验室是一个独立的中文创作工具与云服务项目组，目前由维护者个人主导开发和运营。我们基于 Scratch 生态做更顺手的编辑器、协作服务和 AI 创作能力，也维护创客次元、指向云盘等周边项目。</p>
+
+<h2>使命</h2>
+<p>让中文创作者用更顺手的工具，把脑子里的想法真正做出来。</p>
+<p>我们不追求把界面做得像花束一样好看，而是希望它像一把称手的工具：能敲、能用、能陪你把作品做完。</p>
+
+<h2>四条原则</h2>
+<h3>1. 真实可用优先</h3>
+<p>真实积木、真实画板、真实运行引擎。功能先保证能用，再谈包装；不用假按钮和空壳页面充数。</p>
+<h3>2. 开放与透明</h3>
+<p>PointerEditor 以 GPL-3.0 开源，源码、Issue、版本记录和发布产物公开在 GitHub。服务端不会把用户密钥、数据库或私密配置带进仓库。</p>
+<h3>3. 协作优先</h3>
+<p>除了让 AI 帮你写，我们更在意让一群人真的能一起做：同房间认领角色、代码锁定、编辑申请、TODO 同步和多窗口拖素材，都是围绕这个目标做的。</p>
+<h3>4. 长期主义与克制</h3>
+<p>不堆无意义的功能，不靠夸张承诺换增长。每个新功能都要回答：它是否让创作更顺、让协作更真实、让维护成本可控。</p>
+
+<h2>项目治理</h2>
+<ul>
+    <li>核心项目由维护者负责方向、发布和线上服务；开源仓库接受 Issue、Pull Request 和建议。</li>
+    <li>版本号按语义化大致管理：小更新递增补丁号，重要功能递增次版本号。</li>
+    <li>涉及用户数据的功能遵循最小必要原则：只收集完成功能所需的信息。</li>
+    <li>线上服务、管理入口和用户数据库独立于公开源码；不公开账号密码、SMTP 授权码、API Key 或用户作品。</li>
+</ul>
+
+<h2>赞助与资金</h2>
+<p>实验室目前主要靠维护者个人承担成本。AI API、服务器、域名、构建与签名等都需要持续支出，因此我们在爱发电接受自愿赞助：</p>
+<p><a class="button" href="https://ifdian.net/a/HUGOR" target="_blank" rel="noreferrer">爱发电 · HUGOR</a></p>
+<ul>
+    <li>赞助用于支付 API、服务器、域名、存储和发布相关成本。</li>
+    <li>赞助是自愿支持，不购买产品特权，也不改变开源许可证。</li>
+    <li>实验室会尽量公开资金的大致用途；具体账单和第三方账号信息不公开。</li>
+    <li>如果未来资金有结余，会优先投入长期基础设施和文档建设。</li>
+</ul>
+
+<h2>社区约定</h2>
+<ul>
+    <li>尊重其他创作者，不发布违法、侵权、恶意或骚扰内容。</li>
+    <li>不要滥用协作服务、AI API、验证码或邮件服务，不要尝试攻击、扫描或绕过限制。</li>
+    <li>不要把自己的 API Key、账号密码或他人隐私提交到公开仓库、Issue 或作品里。</li>
+    <li>发现安全问题时，请私下联系维护者，不要在公开 Issue 中贴出可直接利用的细节。</li>
+</ul>
+
+<h2>接下来准备做什么</h2>
+<table>
+    <thead><tr><th>方向</th><th>内容</th><th>状态</th></tr></thead>
+    <tbody>
+        <tr><td>PointerEditor</td><td>0.2.x 稳定版、文件关联、PEAgent 与扩展商店体验完善</td><td>进行中</td></tr>
+        <tr><td>文档与教程</td><td>文档站、入门教程、视频宣传与常见问题</td><td>进行中</td></tr>
+        <tr><td>指针工具箱</td><td>把常用小工具和创作辅助能力整合成一个工具箱</td><td>规划中</td></tr>
+        <tr><td>微信公众号</td><td>发布更新、教程和实验室动态</td><td>筹备中</td></tr>
+        <tr><td>跨平台</td><td>Linux 与 macOS 版本，先做 Linux 测试版</td><td>规划中</td></tr>
+        <tr><td>移动端</td><td>完善移动版编辑器与横竖屏交互</td><td>持续迭代</td></tr>
+    </tbody>
+</table>
+
+<h2>免责声明</h2>
+<p>PointerEditor 是独立产品，与 MIT、Scratch 团队没有隶属或背书关系；Scratch 是麻省理工学院的商标。项目基于 TurboWarp scratch-gui 修改，按 GPL-3.0 分发。创客次元、指向云盘和 PointerXQ 模型分享为独立服务或第三方资源，使用前请自行确认许可与安全边界。</p>
+
+<h2>参与方式</h2>
+<p>你可以通过 GitHub Issue 提 Bug、提需求、提交 Pull Request，也可以帮忙测试、写教程或赞助实验室。所有真诚的参与都会被看见。</p>
+
+    </main>
+</div>
+<footer class="docs-footer">
+    <span>指针迭代实验室 · 文档中心</span>
+    <span><a href="https://ifdian.net/a/HUGOR" target="_blank" rel="noreferrer">支持实验室</a> · <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a> · <a href="../extensions/">扩展商店</a></span>
+</footer>
+<script src="./docs.js"></script>
+</body>
+</html>
