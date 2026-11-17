@@ -1362,7 +1362,8 @@ class PointerCollabModal extends React.Component {
     renderSecurity () {
         const {guard: guardState, guardOpen} = this.state;
         if (!guardState.active) return null;
-        const levelClass = guardState.lockdown ? styles.securityCritical :
+        const critical = guardState.lockdown || guardState.level === 'critical';
+        const levelClass = critical ? styles.securityCritical :
             (guardState.level === 'warn' ? styles.securityWarn : '');
         return (
             <div className={`${styles.securityBar} ${levelClass}`}>
@@ -1370,7 +1371,8 @@ class PointerCollabModal extends React.Component {
                     <strong>PointerGuard</strong>
                     <span>
                         {guardState.lockdown ? '已暂停接收远端改动' :
-                            (guardState.level === 'warn' ? '发现可疑行为' : '实时守护中')}
+                            (critical ? '已拦截可疑操作' :
+                                (guardState.level === 'warn' ? '发现可疑行为' : '实时守护中'))}
                     </span>
                     {guardState.blockedExtensions ? (
                         <span>已拦截 {guardState.blockedExtensions} 个扩展</span>

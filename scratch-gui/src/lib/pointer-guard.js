@@ -291,6 +291,10 @@ class PointerGuard {
     addAlert (level, message, meta) {
         const rank = LEVEL_RANK[level] === undefined ? 0 : LEVEL_RANK[level];
         if (rank > (LEVEL_RANK[this.level] || 0)) this.level = level;
+        if (level === 'critical' && !this.lockdown) {
+            this.lockdown = true;
+            this.lockdownReason = message;
+        }
         this.alerts.unshift({
             id: `guard_${Date.now()}_${++this.seq}`,
             at: Date.now(),

@@ -17507,12 +17507,13 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       guardState = _this$state9.guard,
       guardOpen = _this$state9.guardOpen;
     if (!guardState.active) return null;
-    const levelClass = guardState.lockdown ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityCritical : guardState.level === 'warn' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityWarn : '';
+    const critical = guardState.lockdown || guardState.level === 'critical';
+    const levelClass = critical ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityCritical : guardState.level === 'warn' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityWarn : '';
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityBar, " ").concat(levelClass)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityHead
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "PointerGuard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, guardState.lockdown ? '已暂停接收远端改动' : guardState.level === 'warn' ? '发现可疑行为' : '实时守护中'), guardState.blockedExtensions ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5DF2\u62E6\u622A ", guardState.blockedExtensions, " \u4E2A\u6269\u5C55") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "PointerGuard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, guardState.lockdown ? '已暂停接收远端改动' : critical ? '已拦截可疑操作' : guardState.level === 'warn' ? '发现可疑行为' : '实时守护中'), guardState.blockedExtensions ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5DF2\u62E6\u622A ", guardState.blockedExtensions, " \u4E2A\u6269\u5C55") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
       className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityLink,
       onClick: this.handleToggleGuard
@@ -52387,6 +52388,10 @@ class PointerGuard {
   addAlert(level, message, meta) {
     const rank = LEVEL_RANK[level] === undefined ? 0 : LEVEL_RANK[level];
     if (rank > (LEVEL_RANK[this.level] || 0)) this.level = level;
+    if (level === 'critical' && !this.lockdown) {
+      this.lockdown = true;
+      this.lockdownReason = message;
+    }
     this.alerts.unshift({
       id: "guard_".concat(Date.now(), "_").concat(++this.seq),
       at: Date.now(),
