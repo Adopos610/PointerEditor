@@ -76,22 +76,22 @@
 
 <h2>版本与跨平台</h2>
 <h3>当前版本是什么？</h3>
-<p>当前为 <strong>0.2.2</strong>。发布记录见 <a href="https://github.com/Adopos610/PointerEditor/releases" target="_blank" rel="noreferrer">GitHub Releases</a>。</p>
+<p>当前为 <strong>0.2.2-safety</strong>。发布记录见 <a href="https://github.com/Adopos610/PointerEditor/releases" target="_blank" rel="noreferrer">GitHub Releases</a>。</p>
 <h3>会有 Linux / macOS 版本吗？</h3>
 <p>计划先做 Linux 测试版（AppImage / deb），macOS 需要签名与公证，会在有明确需求后推进。</p>
 <h3>源码和许可证？</h3>
 <p>源码在 <a href="https://github.com/Adopos610/PointerEditor" target="_blank" rel="noreferrer">GitHub</a>，整体以 GPL-3.0 分发。PointerEditor 与 MIT、Scratch 团队无隶属关系。</p>
 
-<h2>0.2.2 更新摘要</h2>
+<h2>0.2.2-safety 安全更新</h2>
 <ul>
-    <li>多标签页：同时打开多个作品，标签栏直接重命名、切换和关闭。</li>
-    <li>版本迭代记录：每个标签自动保留最近 12 个快照，可随时恢复。</li>
-    <li>画图新增圆角矩形，圆角半径 0–80 可调。</li>
-    <li>全部保存：一次把所有标签页导出为独立 .sb3 文件。</li>
-    <li>修复同时打开多个窗口时的端口冲突报错；PEAgent 变量积木与长回答稳定性修复。</li>
+    <li>新增 PointerGuard 实时安全引擎，监控批量抢占代码锁、整包同步轰炸和异常刷写。</li>
+    <li>应用对方项目前自动保留本地快照，可一键回滚。</li>
+    <li>校验协作项目必须是有效 sb3；加密、乱码或积木骤减的内容会被拦截。</li>
+    <li>阻止大幅清空未认领角色的代码；协作中拒绝内嵌 data: 扩展。</li>
+    <li>修复 WebSocket 分片、房间数量和失败加入等资源耗尽问题。</li>
 </ul>
 <div class="button-row">
-    <a class="button" href="https://vable.ctspace.xyz/downloads/PointerEditor-0.2.2-setup.exe" rel="noreferrer">下载 0.2.2 安装包</a>
+    <a class="button" href="https://vable.ctspace.xyz/downloads/PointerEditor-0.2.2-safety-setup.exe" rel="noreferrer">下载 0.2.2-safety 安装包</a>
     <a class="button secondary" href="https://ifdian.net/a/HUGOR" target="_blank" rel="noreferrer">支持实验室</a>
 </div>
 

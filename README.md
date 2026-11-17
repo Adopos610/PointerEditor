@@ -2,7 +2,7 @@
 
 PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼容编辑器，包含桌面端、网页端、在线协作服务与移动端界面原型。
 
-- 当前版本：0.2.2
+- 当前版本：0.2.2-safety
 - 官网：<https://peditor.ctspace.xyz/>
 - 网页版编辑器：<https://peditor.ctspace.xyz/editor/editor.html>
 - 扩展商店：<https://peditor.ctspace.xyz/extensions/>
@@ -23,6 +23,7 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 - **PointerE 账号与协作**：注册、邮箱验证、积分、积分商城、TODO 房间同步、实时协作、角色认领与代码锁定。
 - **创客次元发布**：桌面端可直接登录创客次元并发布作品。
 - **Windows 文件关联**：注册 `.sb3` / `.sb2` / `.sb`，支持双击打开、`Ctrl+O` 打开、`Ctrl+S` 保存到原文件与 `Ctrl+Shift+S` 另存为。
+- **PointerGuard 协作安全引擎**：实时监控异常锁定、整包同步轰炸和恶意清空；同步前自动保留本地快照，可一键回滚；校验协作项目完整性，协作中拒绝内嵌扩展。
 - **多标签页与版本记录**：同一窗口打开多个作品，标签栏重命名/切换/关闭，每个标签自动保留最近 12 个快照并可恢复。
 - **全部保存**：一次把所有标签页导出为独立 .sb3 文件。
 - **圆角矩形**：画图工具栏新增圆角矩形，圆角半径 0–80 可调。
@@ -34,11 +35,11 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 
 ## 下载
 
-0.2.2 安装包、免安装版与网页版静态包：
+0.2.2-safety 安装包、免安装版与网页版静态包：
 
-- Windows 安装版：[PointerEditor-0.2.2-setup.exe](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.2-setup.exe)
-- Windows 免安装版：[PointerEditor-0.2.2-win64.zip](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.2-win64.zip)
-- 网页版静态包：[PointerEditor-0.2.2-web.zip](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.2-web.zip)
+- Windows 安装版：[PointerEditor-0.2.2-safety-setup.exe](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.2-safety-setup.exe)
+- Windows 免安装版：[PointerEditor-0.2.2-safety-win64.zip](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.2-safety-win64.zip)
+- 网页版静态包：[PointerEditor-0.2.2-safety-web.zip](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.2-safety-web.zip)
 - 在线使用：<https://peditor.ctspace.xyz/editor/editor.html>
 
 ## 目录结构

@@ -15916,6 +15916,11 @@ const writeSeen = seen => {
   }
 };
 const versionParts = value => String(value || '').replace(/^v/i, '').split('-')[0].split('.').map(part => Number.parseInt(part, 10) || 0);
+const versionSuffix = value => {
+  const text = String(value || '').replace(/^v/i, '');
+  const index = text.indexOf('-');
+  return index >= 0 ? text.slice(index + 1) : '';
+};
 const isNewer = (latest, current) => {
   const a = versionParts(latest);
   const b = versionParts(current);
@@ -15923,6 +15928,10 @@ const isNewer = (latest, current) => {
     if ((a[index] || 0) > (b[index] || 0)) return true;
     if ((a[index] || 0) < (b[index] || 0)) return false;
   }
+  const latestSuffix = versionSuffix(latest);
+  const currentSuffix = versionSuffix(current);
+  if (latestSuffix && !currentSuffix) return true;
+  if (latestSuffix && currentSuffix && latestSuffix !== currentSuffix) return true;
   return false;
 };
 class PointerCloudNotices extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {

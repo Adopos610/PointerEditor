@@ -166,7 +166,7 @@ module.exports = "data:image/svg+xml;base64,PCEtLSBodHRwczovL2FrYXJpY29ucy5jb20v
 // eslint-disable-next-line import/no-commonjs
 module.exports = {
   APP_NAME: 'PointerEditor',
-  APP_VERSION: '0.2.2'
+  APP_VERSION: '0.2.2-safety'
 };
 
 /***/ }),

@@ -62,7 +62,7 @@
                     id: 'faq',
                     label: '常见问题与更新',
                     href: './faq.html',
-                    keywords: 'FAQ 常见问题 更新日志 0.2.2 版本 报错 API 失败 扩展失败 Linux macOS'
+                    keywords: 'FAQ 常见问题 更新日志 0.2.2-safety 版本 报错 API 失败 扩展失败 Linux macOS'
                 }
             ]
         }
