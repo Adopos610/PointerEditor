@@ -10,7 +10,7 @@ const DEFAULTS = {
     baseUrl: 'https://api.deepseek.com',
     model: 'deepseek-flash',
     temperature: 1,
-    maxTokens: 4096,
+    maxTokens: 16384,
     thinking: true,
     reasoningEffort: 'high',
     permission: 'confirm'
@@ -21,11 +21,14 @@ let registered = false;
 const configFile = () => path.join(app.getPath('userData'), 'peagent-config.json');
 
 const readConfig = () => {
+    let config;
     try {
-        return {...DEFAULTS, ...JSON.parse(fs.readFileSync(configFile(), 'utf8'))};
+        config = {...DEFAULTS, ...JSON.parse(fs.readFileSync(configFile(), 'utf8'))};
     } catch (error) {
-        return {...DEFAULTS};
+        config = {...DEFAULTS};
     }
+    if (Number(config.maxTokens) <= 4096) config.maxTokens = DEFAULTS.maxTokens;
+    return config;
 };
 
 const writeConfig = config => {
@@ -168,7 +171,7 @@ const chat = async payload => {
         return Number.isFinite(parsed) && value !== '' && value !== null && value !== undefined ?
             parsed : fallback;
     };
-    const maxTokens = Math.max(128, Math.min(32768,
+    const maxTokens = Math.max(128, Math.min(65536,
         numeric(payload.maxTokens, config.maxTokens || DEFAULTS.maxTokens)));
     const temperature = Math.max(0, Math.min(2,
         numeric(payload.temperature, config.temperature !== undefined ? config.temperature : DEFAULTS.temperature)));
@@ -227,7 +230,7 @@ const chat = async payload => {
     }
 
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 180000);
+    const timer = setTimeout(() => controller.abort(), 600000);
     let response;
     try {
         response = await fetch(endpoint, {
@@ -309,7 +312,7 @@ const streamChat = async (event, payload) => {
         return Number.isFinite(parsed) && value !== '' && value !== null && value !== undefined ?
             parsed : fallback;
     };
-    const maxTokens = Math.max(128, Math.min(32768,
+    const maxTokens = Math.max(128, Math.min(65536,
         numeric(payload.maxTokens, config.maxTokens || DEFAULTS.maxTokens)));
     const temperature = Math.max(0, Math.min(2,
         numeric(payload.temperature, config.temperature !== undefined ? config.temperature : DEFAULTS.temperature)));
@@ -370,7 +373,7 @@ const streamChat = async (event, payload) => {
 
     const controller = new AbortController();
     activeStreams.set(requestId, controller);
-    const timer = setTimeout(() => controller.abort(), 180000);
+    const timer = setTimeout(() => controller.abort(), 600000);
     const send = message => {
         try {
             if (!event.sender.isDestroyed()) {
@@ -384,6 +387,7 @@ const streamChat = async (event, payload) => {
     let reasoning = '';
     let usage = null;
     let responseModel = model;
+    let finishReason = '';
 
     const handleData = (raw, eventName) => {
         const value = String(raw || '').trim();
@@ -413,10 +417,13 @@ const streamChat = async (event, payload) => {
             }
             if (type === 'message_delta') {
                 if (data.usage) usage = {...(usage || {}), ...data.usage};
+                const stopReason = data.delta && data.delta.stop_reason;
+                if (stopReason) finishReason = stopReason;
             }
             return;
         }
         const choice = data.choices && data.choices[0];
+        if (choice && choice.finish_reason) finishReason = choice.finish_reason;
         const delta = choice && choice.delta;
         if (delta) {
             if (delta.reasoning_content) {
@@ -476,7 +483,13 @@ const streamChat = async (event, payload) => {
         }
         buffer += decoder.decode();
         processLine(buffer);
-        const result = {ok: true, content, reasoning, usage, model: responseModel};
+        if (finishReason === 'length' || finishReason === 'max_tokens') {
+            send({
+                type: 'notice',
+                text: '本次输出达到 Max Tokens 上限，可在设置中提高 Max Tokens 后重试。'
+            });
+        }
+        const result = {ok: true, content, reasoning, usage, model: responseModel, finishReason};
         send({type: 'done', ...result});
         return result;
     } catch (error) {

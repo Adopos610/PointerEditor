@@ -1,0 +1,16 @@
+.tab-bar {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    height: 34px;
+    padding: 0 10px;
+    color: #fff;
+    background-color: var(--menu-bar-background, #2f6fe4);
+    background-image: var(--menu-bar-background-image, none);
+    border-bottom: 1px solid rgba(255, 255, 255, .14);
+    font-family: "OPPO Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 640px) {
+    .tab-bar { height: 32px; padding: 0 6px; }
+}

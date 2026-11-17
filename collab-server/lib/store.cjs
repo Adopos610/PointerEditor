@@ -173,6 +173,14 @@ if (!db || !Array.isArray(db.users)) {
 if (!Array.isArray(db.sessions)) db.sessions = [];
 if (!Array.isArray(db.products)) db.products = [];
 if (!Array.isArray(db.orders)) db.orders = [];
+if (!Array.isArray(db.announcements)) db.announcements = [];
+if (!db.release || typeof db.release !== 'object') {
+    db.release = {
+        version: '0.2.2',
+        downloadUrl: 'https://peditor.ctspace.xyz/',
+        notesUrl: 'https://github.com/Adopos610/PointerEditor/releases'
+    };
+}
 db.users.forEach(ensureUserPoints);
 let seededProducts = false;
 if (!db.productsSeeded) {
@@ -550,6 +558,65 @@ const updateOrderStatus = (orderId, status) => {
     return order;
 };
 
+const normalizeNotice = (input = {}, existing = {}) => {
+    const title = String(input.title !== undefined ? input.title : existing.title || '').trim().slice(0, 80);
+    const body = String(input.body !== undefined ? input.body : existing.body || '').trim().slice(0, 2000);
+    const level = ['info', 'update', 'warning'].includes(input.level) ?
+        input.level : (existing.level || 'info');
+    const active = input.active !== undefined ? Boolean(input.active) : existing.active !== false;
+    if (!title) return {error: '请填写公告标题'};
+    if (!body) return {error: '请填写公告内容'};
+    return {value: {...existing, title, body, level, active}};
+};
+
+const listNotices = () => db.announcements.slice().sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+const listActiveNotices = () => listNotices().filter(notice => notice.active !== false).slice(0, 20);
+
+const createNotice = input => {
+    const normalized = normalizeNotice(input, {});
+    if (normalized.error) return normalized;
+    const notice = {
+        id: `notice_${randomId(6)}`,
+        ...normalized.value,
+        createdAt: now()
+    };
+    db.announcements.unshift(notice);
+    persist();
+    return {notice};
+};
+
+const updateNotice = (id, input) => {
+    const notice = db.announcements.find(item => item.id === id);
+    if (!notice) return {error: '公告不存在'};
+    const normalized = normalizeNotice(input, notice);
+    if (normalized.error) return normalized;
+    Object.assign(notice, normalized.value);
+    persist();
+    return {notice};
+};
+
+const deleteNotice = id => {
+    const index = db.announcements.findIndex(item => item.id === id);
+    if (index < 0) return false;
+    db.announcements.splice(index, 1);
+    persist();
+    return true;
+};
+
+const getRelease = () => ({...db.release});
+
+const saveRelease = input => {
+    const version = String(input.version || '').trim().slice(0, 40);
+    const downloadUrl = String(input.downloadUrl || '').trim().slice(0, 500);
+    const notesUrl = String(input.notesUrl || '').trim().slice(0, 500);
+    if (!/^\d+\.\d+\.\d+(?:[-+].+)?$/.test(version)) return {error: '版本号格式应为 0.2.2'};
+    if (downloadUrl && !/^https?:\/\//i.test(downloadUrl)) return {error: '下载地址必须以 http(s):// 开头'};
+    if (notesUrl && !/^https?:\/\//i.test(notesUrl)) return {error: '更新说明地址必须以 http(s):// 开头'};
+    db.release = {version, downloadUrl, notesUrl};
+    persist();
+    return {release: getRelease()};
+};
+
 module.exports = {
     DATA_DIR,
     CONFIG_FILE,
@@ -585,6 +652,13 @@ module.exports = {
     redeemProduct,
     listOrders,
     updateOrderStatus,
+    listNotices,
+    listActiveNotices,
+    createNotice,
+    updateNotice,
+    deleteNotice,
+    getRelease,
+    saveRelease,
     POINTS,
     chinaDateKey,
     stats

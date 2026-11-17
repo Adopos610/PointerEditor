@@ -1,0 +1,284 @@
+.tabs-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab,
+.tab-active {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex: 0 0 auto;
+    max-width: 190px;
+    height: 26px;
+    padding: 0 3px 0 9px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background: transparent;
+    color: rgba(255, 255, 255, .72);
+    transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.tab:hover { background: rgba(255, 255, 255, .12); color: #fff; }
+.tab-active {
+    border-color: rgba(255, 255, 255, .55);
+    background: rgba(255, 255, 255, .18);
+    color: #fff;
+    box-shadow: none;
+}
+
+.tab-label {
+    max-width: 150px;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: 600 .68rem "OPPO Sans", sans-serif;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.tab-label:disabled { cursor: default; opacity: .7; }
+
+.tab-input {
+    width: 120px;
+    max-width: 150px;
+    height: 22px;
+    padding: 0 3px;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .55);
+    background: transparent;
+    color: #fff;
+    font: 700 .68rem "OPPO Sans", sans-serif;
+    outline: none;
+}
+.tab-input:focus { border-bottom-color: #fff; }
+.tab-input:disabled { opacity: .7; }
+
+.tab-close {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 15px;
+    height: 17px;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: #fff;
+    font-size: .78rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: .55;
+}
+.tab-close:hover { background: rgba(255, 255, 255, .18); opacity: 1; }
+.tab-close:disabled { cursor: default; opacity: .3; }
+
+.tab-add {
+    display: grid;
+    place-items: center;
+    flex: 0 0 25px;
+    width: 25px;
+    height: 25px;
+    border: 1px dashed rgba(255, 255, 255, .55);
+    border-radius: 7px;
+    background: transparent;
+    color: #fff;
+    font-size: .9rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+}
+.tab-add:hover { border-color: #fff; background: rgba(255, 255, 255, .18); }
+.tab-add:disabled { cursor: default; opacity: .4; }
+
+.status,
+.notice,
+.error {
+    flex: 0 0 auto;
+    margin-left: 4px;
+    color: rgba(255, 255, 255, .72);
+    font-size: .6rem;
+    white-space: nowrap;
+}
+.notice {
+    max-width: 260px;
+    overflow: hidden;
+    color: #fff;
+    text-overflow: ellipsis;
+}
+.error { color: #ffd0c9; }
+
+@media (max-width: 640px) {
+    .tab-input { width: 80px; }
+    .tab { max-width: 130px; }
+    .tab-label { max-width: 96px; }
+    .status, .notice, .error { display: none; }
+}
+
+.history-button {
+    flex: 0 0 auto;
+    height: 25px;
+    padding: 0 8px;
+    border: 1px solid rgba(255, 255, 255, .45);
+    border-radius: 7px;
+    background: transparent;
+    color: #fff;
+    font: 600 .62rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+.history-button:hover { border-color: #fff; background: rgba(255, 255, 255, 1); color: #2258b8; }
+.history-button:disabled { opacity: .4; cursor: default; }
+
+.batch-button {
+    flex: 0 0 auto;
+    height: 25px;
+    padding: 0 9px;
+    border: 1px solid rgba(255, 255, 255, .75);
+    border-radius: 7px;
+    background: rgba(255, 255, 255, .14);
+    color: #fff;
+    font: 600 .62rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+}
+.batch-button:hover { border-color: #fff; background: #fff; color: #2258b8; }
+.batch-button:disabled { opacity: .4; cursor: default; }
+
+.history-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2380;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(9, 28, 60, .32);
+    backdrop-filter: blur(16px);
+}
+
+.history-panel {
+    width: min(480px, 100%);
+    max-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 14px;
+    border: 1px solid rgba(255, 255, 255, .8);
+    border-radius: 15px;
+    background: #fff;
+    color: #2b4a71;
+    box-shadow: 0 24px 70px rgba(8, 35, 85, .32);
+    font-family: "OPPO Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.history-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e3edfb;
+    background: #f7fbff;
+}
+.history-head strong { display: block; color: #173a6d; font-size: .88rem; }
+.history-head span { display: block; margin-top: 2px; color: #8ba0ba; font-size: .66rem; }
+.close {
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #8ba0ba;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.close:hover { background: #fdecea; color: #c0392b; }
+
+.history-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px 4px;
+}
+.history-actions span { color: #93a8c4; font-size: .64rem; }
+
+.primary-small {
+    height: 29px;
+    padding: 0 11px;
+    border: 1px solid #2f6fe4;
+    border-radius: 7px;
+    background: #2f6fe4;
+    color: #fff;
+    font: 600 .68rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+.primary-small:hover { background: #2258b8; }
+
+.history-list {
+    flex: 1;
+    min-height: 0;
+    margin: 8px 0 0;
+    padding: 0 10px;
+    overflow-y: auto;
+    list-style: none;
+}
+.history-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 8px;
+    border-bottom: 1px solid #eef4fc;
+}
+.history-list li:last-child { border-bottom: 0; }
+.history-list li div { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.history-list strong {
+    overflow: hidden;
+    color: #2a4a72;
+    font-size: .76rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.history-list span { color: #93a8c4; font-size: .62rem; }
+
+.history-restore {
+    flex: 0 0 auto;
+    height: 26px;
+    padding: 0 9px;
+    border: 1px solid #c9d8ee;
+    border-radius: 7px;
+    background: #fff;
+    color: #2f6fe4;
+    font: 600 .66rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+.history-restore:hover { background: #eef6ff; }
+.history-restore:disabled { opacity: .5; cursor: default; }
+
+.history-empty {
+    margin: 10px 16px;
+    padding: 18px 12px;
+    border: 1px dashed #d8e6fa;
+    border-radius: 9px;
+    color: #93a8c4;
+    font-size: .72rem;
+    text-align: center;
+}
+.history-error { margin: 6px 16px 0; color: #c0392b; font-size: .7rem; }
+
+

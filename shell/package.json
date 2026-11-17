@@ -1,6 +1,6 @@
 {
   "name": "pointer-editor-desktop",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "description": "PointerEditor desktop shell",
   "author": "PointerEditor",
@@ -29,6 +29,7 @@
       "main.cjs",
       "preload.cjs",
       "peagent.cjs",
+      "batch-save.cjs",
       "package.json"
     ],
     "extraResources": [

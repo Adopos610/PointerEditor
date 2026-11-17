@@ -6,7 +6,7 @@ const AGENT_DEFAULTS = {
     baseUrl: 'https://api.deepseek.com',
     model: 'deepseek-flash',
     temperature: 1,
-    maxTokens: 4096,
+    maxTokens: 16384,
     thinking: true,
     reasoningEffort: 'high',
     permission: 'confirm'
@@ -266,6 +266,15 @@ const resolveVariableField = (field, target) => {
     field.textContent = variable.name;
 };
 
+const BLOCK_TYPE_ALIASES = {
+    variables_set: 'data_setvariableto',
+    variables_change: 'data_changevariableby',
+    variables_show: 'data_showvariable',
+    variables_hide: 'data_hidevariable',
+    variables_showlist: 'data_showlist',
+    variables_hidelist: 'data_hidelist'
+};
+
 export const applyScratchXml = (vm, xmlText) => {
     const text = String(xmlText || '').trim();
     if (!text) throw new Error('没有可应用的积木代码');
@@ -286,9 +295,11 @@ export const applyScratchXml = (vm, xmlText) => {
     if (!rootBlocks.length) throw new Error('模型没有返回积木');
     rootBlocks.forEach(block => {
         block.removeAttribute('id');
-        const type = block.getAttribute('type');
+        const rawType = block.getAttribute('type');
+        const type = BLOCK_TYPE_ALIASES[rawType] || rawType;
+        if (type !== rawType) block.setAttribute('type', type);
         if (!type || !Blockly.Blocks[type]) {
-            throw new Error(`不认识的积木类型：${type || '未知'}`);
+            throw new Error(`不认识的积木类型：${rawType || '未知'}`);
         }
     });
     dom.querySelectorAll('shadow').forEach(shadow => shadow.removeAttribute('id'));
@@ -595,7 +606,7 @@ scope 可以是 global（舞台全局变量）或 local（当前角色变量）�
 
 规则：
 1. 先用简短中文说明你的思路，不要输出无关的长篇理论。
-2. XML 只能使用上面列出的 opcode；不要编造积木类型。积木块可以包含 next、value、shadow、field、x、y。
+2. XML 只能使用 Scratch 3 Blockly 真实积木类型；不要编造积木类型。变量积木必须使用 data_setvariableto / data_changevariableby，不能使用 variables_set / variables_change。积木块可以包含 next、value、shadow、field、x、y。
 3. 生成的是追加脚本，不要删除用户已有积木。尽量把新脚本放在空白位置，并保持积木顺序正确。
 4. 不要输出 <category>、<sep>、<button> 等工具箱结构，只输出可插入工作区的积木。
 5. 需要新变量或广播时直接使用 agent 动作创建，不要只让用户手动去面板创建；变量名和广播名要简短、无换行。

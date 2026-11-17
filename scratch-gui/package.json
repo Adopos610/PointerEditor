@@ -22,7 +22,8 @@
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint . --ext .js,.jsx",
     "test:unit": "node --import ./test/register-hooks.mjs --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test \"test/**/*.test.mjs\"",
-    "watch": "webpack --colors --watch"
+    "watch": "webpack --colors --watch",
+    "postinstall": "node scripts/apply-patches.cjs"
   },
   "config": {
     "commitizen": {

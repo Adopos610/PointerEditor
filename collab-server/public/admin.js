@@ -38,6 +38,20 @@ const pointsSubmit = $('points-submit');
 const pointsCancel = $('points-cancel');
 const pointsError = $('points-error');
 const pointsOk = $('points-ok');
+const noticeRows = $('notice-rows');
+const noticeEmpty = $('notice-empty');
+const noticeCount = $('notice-count');
+const noticeError = $('notice-error');
+const noticeOk = $('notice-ok');
+const noticeForm = $('notice-form');
+const noticeSave = $('notice-save');
+const noticeCancel = $('notice-cancel');
+const noticeNew = $('notice-new');
+const noticeRefresh = $('notice-refresh');
+const releaseForm = $('release-form');
+const releaseSave = $('release-save');
+const releaseError = $('release-error');
+const releaseOk = $('release-ok');
 const userSearch = $('user-search');
 const smtpForm = $('smtp-form');
 const smtpError = $('smtp-error');
@@ -337,7 +351,7 @@ const loadSmtp = async () => {
 
 const loadAll = async () => {
     try {
-        await Promise.all([loadUsers(), loadRooms(), loadOrders(), loadSmtp(), loadProducts()]);
+        await Promise.all([loadUsers(), loadRooms(), loadOrders(), loadSmtp(), loadProducts(), loadNotices()]);
     } catch (error) {
         showMessage(usersError, error.message);
     }
@@ -525,6 +539,147 @@ const deleteProduct = async product => {
     }
 };
 
+const NOTICE_LEVELS = {
+    info: {text: '普通公告', tone: 'off'},
+    update: {text: '版本更新', tone: 'ok'},
+    warning: {text: '重要提醒', tone: 'warn'}
+};
+
+const renderNotices = list => {
+    noticeRows.textContent = '';
+    noticeEmpty.hidden = list.length > 0;
+    noticeCount.textContent = `${list.length} 条公告`;
+    for (const notice of list) {
+        const level = NOTICE_LEVELS[notice.level] || NOTICE_LEVELS.info;
+        const actions = el('td', {className: 'actions'});
+        actions.appendChild(button('编辑', () => openNoticeForm(notice)));
+        actions.appendChild(button(notice.active === false ? '启用' : '停用', () => toggleNotice(notice)));
+        actions.appendChild(button('删除', () => deleteNotice(notice), 'button-small danger'));
+        noticeRows.appendChild(el('tr', {}, [
+            el('td', {text: notice.title}),
+            el('td', {}, [badge(level.text, level.tone)]),
+            el('td', {}, [badge(notice.active === false ? '已停用' : '下发中', notice.active === false ? 'off' : 'ok')]),
+            el('td', {text: formatDate(notice.createdAt)}),
+            actions
+        ]));
+    }
+};
+
+const fillRelease = release => {
+    if (!release) return;
+    const version = document.getElementById('release-version');
+    const download = document.getElementById('release-download');
+    const notes = document.getElementById('release-notes');
+    if (document.activeElement === version || document.activeElement === download || document.activeElement === notes) return;
+    version.value = release.version || '';
+    download.value = release.downloadUrl || '';
+    notes.value = release.notesUrl || '';
+};
+
+const loadNotices = async () => {
+    showMessage(noticeError, '');
+    const data = await api('/api/pointere-console/notices');
+    renderNotices(data.announcements || []);
+    fillRelease(data.release);
+};
+
+const openNoticeForm = notice => {
+    showMessage(noticeError, '');
+    showMessage(noticeOk, '');
+    noticeForm.hidden = false;
+    noticeForm.elements.id.value = notice ? notice.id : '';
+    noticeForm.elements.title.value = notice ? notice.title : '';
+    noticeForm.elements.body.value = notice ? notice.body : '';
+    noticeForm.elements.level.value = notice ? notice.level : 'info';
+    noticeForm.elements.active.checked = notice ? notice.active !== false : true;
+    noticeSave.textContent = notice ? '保存修改' : '发布公告';
+    noticeForm.scrollIntoView({behavior: 'smooth', block: 'center'});
+    noticeForm.elements.title.focus();
+};
+
+const closeNoticeForm = () => {
+    noticeForm.hidden = true;
+    noticeForm.reset();
+    showMessage(noticeError, '');
+};
+
+const saveNotice = async event => {
+    event.preventDefault();
+    const id = noticeForm.elements.id.value;
+    const payload = {
+        title: noticeForm.elements.title.value.trim(),
+        body: noticeForm.elements.body.value.trim(),
+        level: noticeForm.elements.level.value,
+        active: noticeForm.elements.active.checked
+    };
+    showMessage(noticeError, '');
+    showMessage(noticeOk, '');
+    noticeSave.disabled = true;
+    noticeSave.textContent = '保存中…';
+    try {
+        await api(id ? `/api/pointere-console/notices/${id}` : '/api/pointere-console/notices', {
+            method: 'POST',
+            body: payload
+        });
+        await loadNotices();
+        closeNoticeForm();
+        showMessage(noticeOk, id ? '公告已更新' : '公告已发布');
+    } catch (error) {
+        showMessage(noticeError, error.message);
+    } finally {
+        noticeSave.disabled = false;
+        noticeSave.textContent = id ? '保存修改' : '发布公告';
+    }
+};
+
+const toggleNotice = async notice => {
+    showMessage(noticeError, '');
+    try {
+        await api(`/api/pointere-console/notices/${notice.id}`, {
+            method: 'POST',
+            body: {active: notice.active === false}
+        });
+        await loadNotices();
+    } catch (error) {
+        showMessage(noticeError, error.message);
+    }
+};
+
+const deleteNotice = async notice => {
+    if (!window.confirm(`确定删除公告「${notice.title}」？`)) return;
+    showMessage(noticeError, '');
+    try {
+        await api(`/api/pointere-console/notices/${notice.id}/delete`, {method: 'POST'});
+        await loadNotices();
+        showMessage(noticeOk, '公告已删除');
+    } catch (error) {
+        showMessage(noticeError, error.message);
+    }
+};
+
+const saveRelease = async event => {
+    event.preventDefault();
+    showMessage(releaseError, '');
+    showMessage(releaseOk, '');
+    releaseSave.disabled = true;
+    try {
+        const data = await api('/api/pointere-console/release', {
+            method: 'POST',
+            body: {
+                version: document.getElementById('release-version').value.trim(),
+                downloadUrl: document.getElementById('release-download').value.trim(),
+                notesUrl: document.getElementById('release-notes').value.trim()
+            }
+        });
+        fillRelease(data.release);
+        showMessage(releaseOk, '更新信息已保存，客户端下次检查时会收到推送');
+    } catch (error) {
+        showMessage(releaseError, error.message);
+    } finally {
+        releaseSave.disabled = false;
+    }
+};
+
 $('logout-button').addEventListener('click', logout);
 
 $('user-refresh').addEventListener('click', () => {
@@ -545,6 +700,13 @@ productForm.addEventListener('submit', saveProduct);
 productCancel.addEventListener('click', closeProductForm);
 pointsForm.addEventListener('submit', submitPoints);
 pointsCancel.addEventListener('click', closePointsForm);
+noticeNew.addEventListener('click', () => openNoticeForm(null));
+noticeRefresh.addEventListener('click', () => {
+    loadNotices().catch(error => showMessage(noticeError, error.message));
+});
+noticeForm.addEventListener('submit', saveNotice);
+noticeCancel.addEventListener('click', closeNoticeForm);
+releaseForm.addEventListener('submit', saveRelease);
 
 let searchTimer = null;
 userSearch.addEventListener('input', () => {

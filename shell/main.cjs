@@ -155,6 +155,28 @@ ipcMain.handle('pointer:save-project-as', async (event, payload) => {
     }
 });
 
+const {writeProjectsToDirectory} = require('./batch-save.cjs');
+
+ipcMain.handle('pointer:save-projects-batch', async (event, payload) => {
+    try {
+        const items = Array.isArray(payload && payload.items) ? payload.items : [];
+        if (!items.length) return {ok: false, error: '没有可保存的标签页'};
+        const result = await dialog.showOpenDialog({
+            title: '批量保存所有标签页',
+            defaultPath: app.getPath('downloads'),
+            properties: ['openDirectory', 'createDirectory'],
+            buttonLabel: '保存到此文件夹'
+        });
+        if (result.canceled || !result.filePaths || !result.filePaths[0]) return {ok: false, canceled: true};
+        const dir = result.filePaths[0];
+        const {saved, failed} = await writeProjectsToDirectory(dir, items);
+        saved.forEach(entry => allowedProjectPaths.add(path.resolve(entry.path)));
+        return {ok: true, dir, saved, failed};
+    } catch (error) {
+        return {ok: false, error: error.message};
+    }
+});
+
 const portableDir = process.env.PORTABLE_EXECUTABLE_DIR;
 const dataRoot = portableDir || (app.isPackaged
     ? path.dirname(process.execPath)
@@ -259,22 +281,22 @@ const startStaticServer = () => new Promise((resolve, reject) => {
             });
         });
     });
-    const listen = port => {
+    const listen = port => new Promise((listenResolve, listenReject) => {
         const onError = error => {
+            server.removeListener('error', onError);
             if (error.code === 'EADDRINUSE' && port !== 0) {
-                server.removeListener('error', onError);
-                listen(0).then(resolve, reject);
+                listen(0).then(listenResolve, listenReject);
                 return;
             }
-            reject(error);
+            listenReject(error);
         };
         server.once('error', onError);
         server.listen(port, '127.0.0.1', () => {
             server.removeListener('error', onError);
-            resolve(server);
+            listenResolve(server);
         });
-    };
-    listen(GUI_PORT);
+    });
+    listen(GUI_PORT).then(resolve, reject);
 });
 
 const isLocalUrl = (url) => {

@@ -37,6 +37,7 @@ contextBridge.exposeInMainWorld('pointerDesktop', {
     openProjectDialog: () => ipcRenderer.invoke('pointer:open-project-dialog'),
     saveProject: (filePath, dataBase64) => ipcRenderer.invoke('pointer:save-project', {path: filePath, dataBase64}),
     saveProjectAs: (suggestedName, dataBase64) => ipcRenderer.invoke('pointer:save-project-as', {suggestedName, dataBase64}),
+    saveProjectsBatch: items => ipcRenderer.invoke('pointer:save-projects-batch', {items}),
     onOpenProject: callback => {
         const listener = (event, payload) => callback(payload);
         ipcRenderer.on('pointer:open-project', listener);

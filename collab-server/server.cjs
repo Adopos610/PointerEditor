@@ -41,6 +41,7 @@ const ALLOWED_SITE_HOSTS = new Set([
     'www.ctspace.xyz',
     'ctspace.xyz',
     'vable.ctspace.xyz',
+    'peditor.ctspace.xyz',
     'forum.ctspace.xyz'
 ]);
 const EXTRA_ALLOWED_ORIGINS = new Set(
@@ -719,6 +720,90 @@ const handleAdminUserPoints = async (req, res, userId) => {
         user: store.publicUser(user),
         entry: Array.isArray(user.pointsHistory) ? user.pointsHistory[0] : null
     });
+};
+
+const handlePublicNotices = (req, res) => {
+    if (!rateLimit(clientIp(req), 'notices', 120, 60 * 1000)) {
+        sendJson(res, 429, {error: '请求过于频繁'});
+        return;
+    }
+    sendJson(res, 200, {
+        announcements: store.listActiveNotices(),
+        release: store.getRelease()
+    });
+};
+
+const handleAdminNotices = (req, res) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    sendJson(res, 200, {
+        announcements: store.listNotices(),
+        release: store.getRelease()
+    });
+};
+
+const handleAdminNoticeCreate = async (req, res) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    let body;
+    try {
+        body = await readBody(req);
+    } catch (error) {
+        sendJson(res, error.status || 400, {error: error.message});
+        return;
+    }
+    const result = store.createNotice(body);
+    if (result.error) {
+        sendJson(res, 400, {error: result.error});
+        return;
+    }
+    sendJson(res, 200, {ok: true, notice: result.notice});
+};
+
+const handleAdminNoticeUpdate = async (req, res, noticeId) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    let body;
+    try {
+        body = await readBody(req);
+    } catch (error) {
+        sendJson(res, error.status || 400, {error: error.message});
+        return;
+    }
+    const result = store.updateNotice(noticeId, body);
+    if (result.error) {
+        sendJson(res, 400, {error: result.error});
+        return;
+    }
+    sendJson(res, 200, {ok: true, notice: result.notice});
+};
+
+const handleAdminNoticeDelete = (req, res, noticeId) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    if (!store.deleteNotice(noticeId)) {
+        sendJson(res, 404, {error: '公告不存在'});
+        return;
+    }
+    sendJson(res, 200, {ok: true});
+};
+
+const handleAdminRelease = async (req, res) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    let body;
+    try {
+        body = await readBody(req);
+    } catch (error) {
+        sendJson(res, error.status || 400, {error: error.message});
+        return;
+    }
+    const result = store.saveRelease(body || {});
+    if (result.error) {
+        sendJson(res, 400, {error: result.error});
+        return;
+    }
+    sendJson(res, 200, {ok: true, release: result.release});
 };
 
 const handleVerify = (req, res, url) => {
@@ -1649,6 +1734,10 @@ const server = http.createServer(async (req, res) => {
             return;
         }
 
+        if (pathname === '/api/notices' && req.method === 'GET') {
+            handlePublicNotices(req, res);
+            return;
+        }
         if (pathname === '/api/points' && req.method === 'GET') {
             handleGetPoints(req, res);
             return;
@@ -1715,6 +1804,28 @@ const server = http.createServer(async (req, res) => {
             await handleAdminProductUpdate(req, res, productMatch[1]);
             return;
         }
+        if (pathname === '/api/pointere-console/notices' && req.method === 'GET') {
+            handleAdminNotices(req, res);
+            return;
+        }
+        if (pathname === '/api/pointere-console/notices' && req.method === 'POST') {
+            await handleAdminNoticeCreate(req, res);
+            return;
+        }
+        const noticeDeleteMatch = pathname.match(/^\/api\/pointere-console\/notices\/([A-Za-z0-9_]+)\/delete$/);
+        if (noticeDeleteMatch && req.method === 'POST') {
+            handleAdminNoticeDelete(req, res, noticeDeleteMatch[1]);
+            return;
+        }
+        const noticeMatch = pathname.match(/^\/api\/pointere-console\/notices\/([A-Za-z0-9_]+)$/);
+        if (noticeMatch && req.method === 'POST') {
+            await handleAdminNoticeUpdate(req, res, noticeMatch[1]);
+            return;
+        }
+        if (pathname === '/api/pointere-console/release' && req.method === 'POST') {
+            await handleAdminRelease(req, res);
+            return;
+        }
         if (pathname === '/api/pointere-console/orders' && req.method === 'GET') {
             handleAdminOrders(req, res);
             return;
@@ -1759,21 +1870,30 @@ const server = http.createServer(async (req, res) => {
             serveStatic(res, 'admin.js');
             return;
         }
-        if (pathname === '/downloads/PointerEditor-0.1.0-mobile.apk' && req.method === 'GET') {
-            const file = path.join(PUBLIC_DIR, 'downloads', 'PointerEditor-0.1.0-mobile.apk');
-            fs.readFile(file, (error, data) => {
-                if (error) {
+        const fileDownloadMatch = pathname.match(/^\/downloads\/([A-Za-z0-9._-]+\.(?:exe|zip|apk|dmg))$/);
+        if (fileDownloadMatch && (req.method === 'GET' || req.method === 'HEAD')) {
+            const fileName = fileDownloadMatch[1];
+            const filePath = path.join(PUBLIC_DIR, 'downloads', fileName);
+            fs.stat(filePath, (error, stats) => {
+                if (error || !stats.isFile()) {
                     sendJson(res, 404, {error: 'Not found'});
                     return;
                 }
                 res.writeHead(200, {
-                    'Content-Type': 'application/vnd.android.package-archive',
-                    'Content-Disposition': 'attachment; filename="PointerEditor-0.1.0-mobile.apk"',
-                    'Content-Length': data.length,
+                    'Content-Type': fileName.toLowerCase().endsWith('.apk') ?
+                        'application/vnd.android.package-archive' :
+                        'application/octet-stream',
+                    'Content-Disposition': `attachment; filename="${fileName}"`,
+                    'Content-Length': stats.size,
                     'Cache-Control': 'public, max-age=3600',
+                    'X-Robots-Tag': 'noindex, nofollow',
                     'X-Content-Type-Options': 'nosniff'
                 });
-                res.end(data);
+                if (req.method === 'HEAD') {
+                    res.end();
+                    return;
+                }
+                fs.createReadStream(filePath).pipe(res);
             });
             return;
         }

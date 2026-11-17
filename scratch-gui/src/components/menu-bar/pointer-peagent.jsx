@@ -591,6 +591,8 @@ class PointerPeAgent extends React.Component {
         } else if (event.type === 'reasoning') {
             this.streamText.reasoning += event.text || '';
             this.scheduleStreamFlush(assistantIndex);
+        } else if (event.type === 'notice' && event.text) {
+            this.setRunNotice(event.text, 7000);
         }
     }
 

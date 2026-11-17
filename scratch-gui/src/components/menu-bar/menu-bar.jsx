@@ -20,7 +20,6 @@ import ProjectWatcher from '../../containers/project-watcher.jsx';
 import MenuBarMenu from './menu-bar-menu.jsx';
 import MenuLabel from './tw-menu-label.jsx';
 import {MenuItem, MenuSection} from '../menu/menu.jsx';
-import ProjectTitleInput from './project-title-input.jsx';
 import AuthorInfo from './author-info.jsx';
 import SB3Downloader from '../../containers/sb3-downloader.jsx';
 import DeletionRestorer from '../../containers/deletion-restorer.jsx';
@@ -112,6 +111,7 @@ import PointerPublishModal from './pointer-publish-modal.jsx';
 import PointerCollabModal from './pointer-collab-modal.jsx';
 import PointerAccountCenter from './pointer-account-center.jsx';
 import PointerPeAgent from './pointer-peagent.jsx';
+import PointerCloudNotices from './pointer-cloud-notices.jsx';
 import PointerTodoBoard from './pointer-todo-board.jsx';
 import {getAccount, fetchPointerPoints, claimDailyCodePoints} from '../../lib/pointer-account';
 import {applyPayloadToEditor, readCrossWindowPayload} from '../../lib/pointer-cross-window';
@@ -179,6 +179,12 @@ const fileMenuIcons = {
         <svg viewBox="0 0 24 24" aria-hidden="true">
             <rect x="3.5" y="4.5" width="17" height="15" rx="2.5" />
             <path d="M3.5 9h17" />
+        </svg>
+    ),
+    tabs: (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.5" y="5" width="17" height="14" rx="2.2" />
+            <path d="M3.5 9h17M8 5v4M14 5v4" />
         </svg>
     ),
     open: (
@@ -364,7 +370,10 @@ class MenuBar extends React.Component {
             'handleCrossDrop',
             'showAssetToast',
             'handleClickNew',
+            'handleClickNewTab',
             'handleClickNewWindow',
+            'handleClickSaveAllTabs',
+            'handleActiveTabChanged',
             'handleClickRemix',
             'handleClickSave',
             'handleClickSaveAsCopy',
@@ -390,6 +399,7 @@ class MenuBar extends React.Component {
         document.addEventListener('keydown', this.handleKeyPress);
         window.addEventListener('pointere-account-changed', this.handleAccountChanged);
         window.addEventListener('pointere-points-changed', this.handlePointsChanged);
+        window.addEventListener('pointere-active-tab-changed', this.handleActiveTabChanged);
         document.addEventListener('dragover', this.handleCrossDragOver, true);
         document.addEventListener('drop', this.handleCrossDrop, true);
         if (this.props.vm && typeof this.props.vm.on === 'function') {
@@ -427,6 +437,7 @@ class MenuBar extends React.Component {
         document.removeEventListener('keydown', this.handleKeyPress);
         window.removeEventListener('pointere-account-changed', this.handleAccountChanged);
         window.removeEventListener('pointere-points-changed', this.handlePointsChanged);
+        window.removeEventListener('pointere-active-tab-changed', this.handleActiveTabChanged);
         document.removeEventListener('dragover', this.handleCrossDragOver, true);
         document.removeEventListener('drop', this.handleCrossDrop, true);
         if (typeof this.removeOpenProjectListener === 'function') {
@@ -571,6 +582,17 @@ class MenuBar extends React.Component {
             window.open('editor.html', '_blank');
         }
         this.props.onRequestCloseFile();
+    }
+    handleClickNewTab () {
+        this.props.onRequestCloseFile();
+        window.dispatchEvent(new CustomEvent('pointere-new-tab'));
+    }
+    handleClickSaveAllTabs () {
+        this.props.onRequestCloseFile();
+        window.dispatchEvent(new CustomEvent('pointere-save-all-tabs'));
+    }
+    handleActiveTabChanged () {
+        if (this.state.externalProject) this.setState({externalProject: null});
     }
     handleClickRemix () {
         this.props.onClickRemix();
@@ -1065,6 +1087,12 @@ class MenuBar extends React.Component {
                                     </MenuItem>
                                     <MenuItem
                                         isRtl={this.props.isRtl}
+                                        onClick={this.handleClickNewTab}
+                                    >
+                                        <FileMenuRow icon={fileMenuIcons.tabs} label="新建标签页" />
+                                    </MenuItem>
+                                    <MenuItem
+                                        isRtl={this.props.isRtl}
                                         onClick={this.handleClickNewWindow}
                                     >
                                         <FileMenuRow
@@ -1189,6 +1217,14 @@ class MenuBar extends React.Component {
                                             </MenuItem>
                                         </MenuSection>
                                     )}
+                                    <MenuSection>
+                                        <MenuItem onClick={this.handleClickSaveAllTabs}>
+                                            <FileMenuRow
+                                                icon={fileMenuIcons.tabs}
+                                                label="批量保存所有标签页…"
+                                            />
+                                        </MenuItem>
+                                    </MenuSection>
                                     {this.props.onClickPackager && (
                                         <MenuSection>
                                             <MenuItem
@@ -1515,16 +1551,7 @@ class MenuBar extends React.Component {
                     <Divider className={styles.divider} />
 
                     {this.props.canEditTitle ? (
-                        <div className={classNames(styles.menuBarItem, styles.growable)}>
-                            <MenuBarItemTooltip
-                                enable
-                                id="title-field"
-                            >
-                                <ProjectTitleInput
-                                    className={classNames(styles.titleFieldGrowable)}
-                                />
-                            </MenuBarItemTooltip>
-                        </div>
+                        <div className={classNames(styles.menuBarItem, styles.growable)} />
                     ) : ((this.props.authorUsername && this.props.authorUsername !== this.props.username) ? (
                         <AuthorInfo
                             className={styles.authorInfo}
@@ -1666,6 +1693,7 @@ class MenuBar extends React.Component {
                 {this.state.todoOpen && (
                     <PointerTodoBoard onClose={this.handleToggleTodo} />
                 )}
+                <PointerCloudNotices />
 
                 {this.state.pointsToast ? (
                     <div className={styles.pointsToast}>{this.state.pointsToast}</div>
