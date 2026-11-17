@@ -650,3 +650,106 @@
 .security-actions span {
     opacity: 0.8;
 }
+
+.guard-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 4000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(9, 28, 60, 0.42);
+    backdrop-filter: blur(10px);
+}
+
+.guard-panel {
+    width: min(460px, 100%);
+    padding: 0 0 16px;
+    border: 1px solid #efb4ad;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 30px 80px rgba(77, 18, 12, 0.3);
+    overflow: hidden;
+}
+
+.guard-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    background: #c0392b;
+    color: #fff;
+}
+
+.guard-head span {
+    padding: 2px 7px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+}
+
+.guard-head strong {
+    font-size: 0.94rem;
+}
+
+.guard-message {
+    margin: 16px 16px 6px;
+    color: #8d2a20;
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.guard-meta {
+    margin: 0 16px;
+    color: #9a6a63;
+    font-size: 0.7rem;
+}
+
+.guard-hint {
+    margin: 12px 16px 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #fdf3f1;
+    color: #7a4a43;
+    font-size: 0.74rem;
+    line-height: 1.55;
+}
+
+.guard-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin: 16px 16px 0;
+    flex-wrap: wrap;
+}
+
+.guard-rollback,
+.guard-disconnect,
+.guard-dismiss {
+    height: 32px;
+    padding: 0 13px;
+    border-radius: 7px;
+    font: 600 0.74rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+
+.guard-rollback {
+    border: 1px solid #c0392b;
+    background: #c0392b;
+    color: #fff;
+}
+
+.guard-disconnect {
+    border: 1px solid #efb4ad;
+    background: #fff;
+    color: #a33226;
+}
+
+.guard-dismiss {
+    border: 1px solid #d8e6fa;
+    background: #f5faff;
+    color: #2f6fe4;
+}

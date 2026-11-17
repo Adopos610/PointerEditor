@@ -571,7 +571,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n/* make sure to keep these in sync with other constants,\ne.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */\n\n/* layout contants from `layout-constants.js` */\n\nbody {\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n\nh2 {\n    font-size: 1.5rem;\n    font-weight: bold;\n}\n\np {\n    font-size: 1rem;\n    line-height: 1.5em;\n}\n\n/*\n    Contains constants for the z-index values of elements that are part of the global stack context.\n    In other words, z-index values that are \"inside\" a component are not added here.\n    This prevents conflicts between identical z-index values in different components.\n*/\n\n/* Toolbox z-index: 40; set in scratch-blocks */\n\n/* tooltips should go over add buttons if they overlap */\n\n/* monitors go over add buttons */\n\n/* \"ask\" block text input goes above monitors */\n\n/* menu-bar should go over monitors, alerts and tutorials */\n\n/* behind menu-bar */\n\n/* Block drag z-index: 1000; default 50 is overriden in blocks.css */\n\n/* so it is draggable into other panes */\n\n/* behind modals */\n\n/* behind modals */\n\n/* in most interfaces, the context menu is always on top */\n\n.browser-modal_modal-overlay_3n1Lc {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 510;\n    background-color: var(--ui-modal-overlay);\n}\n\n.browser-modal_modal-content_3udAD {\n    margin: 100px auto;\n    outline: none;\n    border: .25rem solid var(--ui-white-transparent);\n    padding: 0;\n    border-radius: 0.5rem;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    width: 500px;\n\n    color: var(--text-primary);\n    overflow: hidden;\n}\n\n.browser-modal_illustration_ZJXEu {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n    height: 100px;\n    background-color: var(--control-primary);\n}\n\n[dir=\"rtl\"] .browser-modal_illustration_ZJXEu {\n    transform: scaleX(-1);\n}\n\n.browser-modal_illustration_ZJXEu img {\n    height: 80%;\n    width: auto;\n}\n\n.browser-modal_body_3XY4U {\n    background: var(--ui-modal-background);\n    padding: 1.5rem 2.25rem;\n    display: flex;\n    flex-direction: column;\n    gap: 0.25rem;\n}\n\n.browser-modal_title_28E0- {\n    text-align: center;\n}\n\n.browser-modal_desktop-settings-outer_qyuL1 {\n    display: flex;\n    justify-content: center;\n}\n\n.browser-modal_desktop-settings-inner_26CQT {\n    font: inherit;\n    font-weight: bold;\n    padding: 0.75rem 1rem;\n    border-radius: 0.25rem;\n    border: 1px solid var(--ui-black-transparent);\n    background-color: var(--looks-secondary);\n    color: white;\n}\n", ""]);
+exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n/* make sure to keep these in sync with other constants,\ne.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */\n\n/* layout contants from `layout-constants.js` */\n\nbody {\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n\nh2 {\n    font-size: 1.5rem;\n    font-weight: bold;\n}\n\np {\n    font-size: 1rem;\n    line-height: 1.5em;\n}\n\n/*\n    Contains constants for the z-index values of elements that are part of the global stack context.\n    In other words, z-index values that are \"inside\" a component are not added here.\n    This prevents conflicts between identical z-index values in different components.\n*/\n\n/* Toolbox z-index: 40; set in scratch-blocks */\n\n/* tooltips should go over add buttons if they overlap */\n\n/* monitors go over add buttons */\n\n/* \"ask\" block text input goes above monitors */\n\n/* menu-bar should go over monitors, alerts and tutorials */\n\n/* behind menu-bar */\n\n/* Block drag z-index: 1000; default 50 is overriden in blocks.css */\n\n/* so it is draggable into other panes */\n\n/* behind modals */\n\n/* behind modals */\n\n/* in most interfaces, the context menu is always on top */\n\n.browser-modal_modal-overlay_3n1Lc {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 2100;\n    background-color: var(--ui-modal-overlay);\n}\n\n.browser-modal_modal-content_3udAD {\n    margin: 100px auto;\n    outline: none;\n    border: .25rem solid var(--ui-white-transparent);\n    padding: 0;\n    border-radius: 0.5rem;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    width: 500px;\n\n    color: var(--text-primary);\n    overflow: hidden;\n}\n\n.browser-modal_illustration_ZJXEu {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n    height: 100px;\n    background-color: var(--control-primary);\n}\n\n[dir=\"rtl\"] .browser-modal_illustration_ZJXEu {\n    transform: scaleX(-1);\n}\n\n.browser-modal_illustration_ZJXEu img {\n    height: 80%;\n    width: auto;\n}\n\n.browser-modal_body_3XY4U {\n    background: var(--ui-modal-background);\n    padding: 1.5rem 2.25rem;\n    display: flex;\n    flex-direction: column;\n    gap: 0.25rem;\n}\n\n.browser-modal_title_28E0- {\n    text-align: center;\n}\n\n.browser-modal_desktop-settings-outer_qyuL1 {\n    display: flex;\n    justify-content: center;\n}\n\n.browser-modal_desktop-settings-inner_26CQT {\n    font: inherit;\n    font-weight: bold;\n    padding: 0.75rem 1rem;\n    border-radius: 0.25rem;\n    border: 1px solid var(--ui-black-transparent);\n    background-color: var(--looks-secondary);\n    color: white;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -1857,7 +1857,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".pointer-collab-modal_overlay_2k6Tj {\r\n    position: fixed;\r\n    inset: 0;\r\n    z-index: 2000;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 24px;\r\n    background: rgba(12, 34, 68, 0.42);\r\n    backdrop-filter: blur(16px) saturate(1.15);\r\n    -webkit-backdrop-filter: blur(16px) saturate(1.15);\r\n    animation: pointer-collab-modal_pointer-overlay-in_3j3kl 0.22s ease both;\r\n}\r\n\r\n@keyframes pointer-collab-modal_pointer-overlay-in_3j3kl {\r\n    from { opacity: 0; }\r\n    to { opacity: 1; }\r\n}\r\n\r\n.pointer-collab-modal_panel__eB32 {\r\n    width: 460px;\r\n    max-width: 100%;\r\n    max-height: calc(100vh - 48px);\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-radius: 14px;\r\n    background: #ffffff;\r\n    box-shadow: 0 24px 64px rgba(9, 30, 66, 0.35);\r\n    overflow: hidden;\r\n    font-family: \"OPPO Sans\", \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n    color: #1d3557;\r\n    animation: pointer-collab-modal_pointer-panel-in_1Ig_p 0.28s cubic-bezier(0.18, 0.9, 0.24, 1) both;\r\n}\r\n\r\n@keyframes pointer-collab-modal_pointer-panel-in_1Ig_p {\r\n    from { opacity: 0; transform: translateY(16px) scale(0.975); }\r\n    to { opacity: 1; transform: translateY(0) scale(1); }\r\n}\r\n\r\n.pointer-collab-modal_header_2iEzL {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    padding: 14px 20px;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 1rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_close_3c08P {\r\n    width: 28px;\r\n    height: 28px;\r\n    border: none;\r\n    border-radius: 8px;\r\n    background: rgba(255, 255, 255, 0.16);\r\n    color: #ffffff;\r\n    font-size: 1.15rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-collab-modal_close_3c08P:hover {\r\n    background: rgba(255, 255, 255, 0.3);\r\n}\r\n\r\n.pointer-collab-modal_body_1qdDR {\r\n    padding: 18px 20px 20px;\r\n    overflow-y: auto;\r\n}\r\n\r\n.pointer-collab-modal_form_BqUjQ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 12px;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n    font-size: 0.85rem;\r\n    color: #3d5a80;\r\n    flex: 1;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ span {\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ input,\r\n.pointer-collab-modal_field_2DFqZ select {\r\n    height: 38px;\r\n    padding: 0 12px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 8px;\r\n    background: #f7faff;\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    outline: none;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ input:focus,\r\n.pointer-collab-modal_field_2DFqZ select:focus {\r\n    border-color: #2f6fe4;\r\n    background: #ffffff;\r\n    box-shadow: 0 0 0 3px rgba(47, 111, 228, 0.15);\r\n}\r\n\r\n.pointer-collab-modal_hint_GqENw {\r\n    margin: 0;\r\n    font-size: 0.78rem;\r\n    color: #6b86a8;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_actions_2PKaN {\r\n    display: flex;\r\n    gap: 10px;\r\n}\r\n\r\n.pointer-collab-modal_actions_2PKaN .pointer-collab-modal_primary_1xZcz,\r\n.pointer-collab-modal_actions_2PKaN .pointer-collab-modal_secondary_20gIi {\r\n    flex: 1;\r\n}\r\n\r\n.pointer-collab-modal_primary_1xZcz {\r\n    height: 40px;\r\n    border: none;\r\n    border-radius: 9px;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 0.92rem;\r\n    font-weight: 700;\r\n    cursor: pointer;\r\n    box-shadow: 0 2px 6px rgba(47, 111, 228, 0.3);\r\n}\r\n\r\n.pointer-collab-modal_primary_1xZcz:disabled,\r\n.pointer-collab-modal_secondary_20gIi:disabled {\r\n    opacity: 0.6;\r\n    cursor: default;\r\n}\r\n\r\n.pointer-collab-modal_secondary_20gIi {\r\n    height: 40px;\r\n    padding: 0 16px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 9px;\r\n    background: #ffffff;\r\n    color: #2f6fe4;\r\n    font-size: 0.88rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    text-decoration: none;\r\n}\r\n\r\n.pointer-collab-modal_room-card_16cPB {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 12px;\r\n    padding: 12px 14px;\r\n    border-radius: 10px;\r\n    background: #eef4ff;\r\n    border: 1px solid #d6e4fb;\r\n}\r\n\r\n.pointer-collab-modal_room-card_16cPB .pointer-collab-modal_secondary_20gIi {\r\n    height: 34px;\r\n    flex: 0 0 auto;\r\n    background: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_room-label_3PQjW {\r\n    display: block;\r\n    font-size: 0.75rem;\r\n    color: #6b86a8;\r\n    margin-bottom: 2px;\r\n}\r\n\r\n.pointer-collab-modal_room-code_3bfOK {\r\n    font-size: 1.25rem;\r\n    letter-spacing: 0.14em;\r\n    color: #2258b8;\r\n}\r\n\r\n.pointer-collab-modal_peer-list_13JTr {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    gap: 8px;\r\n}\r\n\r\n.pointer-collab-modal_peer_2yNOL,\r\n.pointer-collab-modal_peer-self_2xfxN {\r\n    padding: 5px 10px;\r\n    border-radius: 999px;\r\n    background: #f1f6ff;\r\n    border: 1px solid #d6e4fb;\r\n    color: #3d5a80;\r\n    font-size: 0.8rem;\r\n}\r\n\r\n.pointer-collab-modal_peer-self_2xfxN {\r\n    background: #e3efff;\r\n    border-color: #9fc2f7;\r\n    color: #2258b8;\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_checkbox_10hd6 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    font-size: 0.85rem;\r\n    color: #3d5a80;\r\n}\r\n\r\n.pointer-collab-modal_checkbox_10hd6 input {\r\n    width: 16px;\r\n    height: 16px;\r\n    accent-color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_status_8YwSe {\r\n    margin: 10px 0 0;\r\n    font-size: 0.82rem;\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_error_hx0JE {\r\n    margin: 10px 0 0;\r\n    padding: 8px 10px;\r\n    border-radius: 8px;\r\n    background: #fff1f0;\r\n    color: #c0392b;\r\n    font-size: 0.82rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_panel__eB32 {\r\n    width: 540px;\r\n}\r\n\r\n.pointer-collab-modal_account-intro_fHkmt {\r\n    padding: 12px 14px;\r\n    border-radius: 10px;\r\n    background: #eef4ff;\r\n    border: 1px solid #d6e4fb;\r\n}\r\n\r\n.pointer-collab-modal_account-intro-title_237Iv {\r\n    margin-bottom: 6px;\r\n    color: #2258b8;\r\n    font-size: 0.95rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_account-bar_1tT7v {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    padding: 10px 12px;\r\n    border: 1px solid #d6e4fb;\r\n    border-radius: 10px;\r\n    background: #f7faff;\r\n}\r\n\r\n.pointer-collab-modal_account-avatar_wLdUp {\r\n    flex: 0 0 auto;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 34px;\r\n    height: 34px;\r\n    border-radius: 50%;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 0.95rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_account-meta_33HpZ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 2px;\r\n    min-width: 0;\r\n    flex: 1;\r\n    color: #3d5a80;\r\n    font-size: 0.78rem;\r\n    line-height: 1.35;\r\n}\r\n\r\n.pointer-collab-modal_account-meta_33HpZ strong {\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB {\r\n    align-self: flex-start;\r\n    padding: 0;\r\n    border: none;\r\n    background: transparent;\r\n    color: #2f6fe4;\r\n    font-size: 0.8rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    text-align: left;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB:disabled {\r\n    opacity: 0.55;\r\n    cursor: default;\r\n    text-decoration: none;\r\n}\r\n\r\n.pointer-collab-modal_section-header_2Rz8P {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    margin-top: 2px;\r\n}\r\n\r\n.pointer-collab-modal_section-title_1BzMB {\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_target-list_mrlYV {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n    max-height: 260px;\r\n    margin: 0;\r\n    padding: 0;\r\n    overflow-y: auto;\r\n    list-style: none;\r\n}\r\n\r\n.pointer-collab-modal_target-row_38w2S {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    padding: 7px 9px;\r\n    border: 1px solid #e1ecfb;\r\n    border-radius: 9px;\r\n    background: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_target-current_1WqgS {\r\n    border-color: #9fc2f7;\r\n    background: #f2f7ff;\r\n    box-shadow: inset 3px 0 0 #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_target-name_1DSM6 {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    min-width: 0;\r\n    flex: 0 1 auto;\r\n    padding: 0;\r\n    border: none;\r\n    background: transparent;\r\n    color: #1d3557;\r\n    font-size: 0.85rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_target-name_1DSM6:hover {\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_target-kind_dhQ6i {\r\n    flex: 0 0 auto;\r\n    padding: 1px 6px;\r\n    border-radius: 999px;\r\n    background: #e7f0ff;\r\n    color: #517bb8;\r\n    font-size: 0.68rem;\r\n    font-weight: 500;\r\n}\r\n\r\n.pointer-collab-modal_target-state_3RvU1 {\r\n    flex: 1;\r\n    text-align: right;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.pointer-collab-modal_target-actions_16cih {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    gap: 5px;\r\n}\r\n\r\n.pointer-collab-modal_tag-open_3R5bP,\r\n.pointer-collab-modal_tag-mine_3GFBJ,\r\n.pointer-collab-modal_tag-locked_Hv-5F {\r\n    display: inline-block;\r\n    padding: 2px 8px;\r\n    border-radius: 999px;\r\n    font-size: 0.72rem;\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_tag-open_3R5bP {\r\n    background: #eaf7ef;\r\n    color: #1c7c4a;\r\n}\r\n\r\n.pointer-collab-modal_tag-mine_3GFBJ {\r\n    background: #e3efff;\r\n    color: #2258b8;\r\n}\r\n\r\n.pointer-collab-modal_tag-locked_Hv-5F {\r\n    background: #fff4e5;\r\n    color: #b45309;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l,\r\n.pointer-collab-modal_mini-primary_3yBmF {\r\n    height: 26px;\r\n    padding: 0 9px;\r\n    border-radius: 7px;\r\n    font-size: 0.74rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l {\r\n    border: 1px solid #c9d8ee;\r\n    background: #ffffff;\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l:hover {\r\n    border-color: #8fb6f3;\r\n    background: #f5f9ff;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l:disabled {\r\n    opacity: 0.55;\r\n    cursor: default;\r\n}\r\n\r\n.pointer-collab-modal_mini-primary_3yBmF {\r\n    border: 1px solid #2f6fe4;\r\n    background: #2f6fe4;\r\n    color: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_mini-primary_3yBmF:hover {\r\n    background: #225fc9;\r\n}\r\n\r\n.pointer-collab-modal_notice_gZ5eB {\r\n    display: flex;\r\n    align-items: flex-start;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    padding: 9px 11px;\r\n    border: 1px solid #cfe0fa;\r\n    border-radius: 9px;\r\n    background: #f1f7ff;\r\n    color: #2258b8;\r\n    font-size: 0.8rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_notice-warn__9va- {\r\n    border-color: #f3d19b;\r\n    background: #fff8ec;\r\n    color: #9a5b06;\r\n}\r\n\r\n.pointer-collab-modal_notice-actions_1PlL- {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    align-items: center;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_notice-close_2-Ir0 {\r\n    width: 22px;\r\n    height: 22px;\r\n    padding: 0;\r\n    border: none;\r\n    border-radius: 6px;\r\n    background: rgba(47, 111, 228, 0.08);\r\n    color: inherit;\r\n    font-size: 1rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-collab-modal_notice-close_2-Ir0:hover {\r\n    background: rgba(47, 111, 228, 0.16);\r\n}\r\n\r\n.pointer-collab-modal_request-list_3uwMJ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_request-card_3Bpsz {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    padding: 9px 11px;\r\n    border: 1px solid #f3d19b;\r\n    border-radius: 9px;\r\n    background: #fff8ec;\r\n    color: #7a4a05;\r\n    font-size: 0.8rem;\r\n    line-height: 1.45;\r\n}\r\n\r\n.pointer-collab-modal_inline-actions_2K-Q0 {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_security-bar_33NBy {\n    display: flex;\n    flex-direction: column;\n    gap: 6px;\n    padding: 8px 10px;\n    border: 1px solid #bfe0c8;\n    border-radius: 9px;\n    background: #f2fbf4;\n    color: #246b3a;\n    font-size: 0.76rem;\n}\r\n\r\n.pointer-collab-modal_security-warn_1JWaV {\n    border-color: #f3d19b;\n    background: #fff8ec;\n    color: #7a4a05;\n}\r\n\r\n.pointer-collab-modal_security-critical_1DdkQ {\n    border-color: #f0b3ad;\n    background: #fdf0ee;\n    color: #8d2a20;\n}\r\n\r\n.pointer-collab-modal_security-head_3JjuC {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    flex-wrap: wrap;\n}\r\n\r\n.pointer-collab-modal_security-head_3JjuC strong {\n    font-size: 0.76rem;\n    letter-spacing: 0.02em;\n}\r\n\r\n.pointer-collab-modal_security-link_19s4J {\n    margin-left: auto;\n    padding: 0;\n    border: 0;\n    background: transparent;\n    color: inherit;\n    font-size: 0.72rem;\n    text-decoration: underline;\n    cursor: pointer;\n}\r\n\r\n.pointer-collab-modal_security-body_26RtE {\n    color: inherit;\n    font-size: 0.72rem;\n}\r\n\r\n.pointer-collab-modal_security-body_26RtE p {\n    margin: 0;\n}\r\n\r\n.pointer-collab-modal_security-alerts_1oG2T {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\r\n\r\n.pointer-collab-modal_security-alerts_1oG2T li {\n    display: flex;\n    gap: 6px;\n    line-height: 1.45;\n}\r\n\r\n.pointer-collab-modal_security-alerts_1oG2T li span {\n    flex: 0 0 auto;\n    opacity: 0.7;\n}\r\n\r\n.pointer-collab-modal_security-critical-text_vrTAE {\n    color: #8d2a20;\n    font-weight: 600;\n}\r\n\r\n.pointer-collab-modal_security-actions_1g0Yl {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    flex-wrap: wrap;\n}\r\n\r\n.pointer-collab-modal_security-rollback_1MZLS {\n    height: 24px;\n    padding: 0 9px;\n    border: 1px solid currentColor;\n    border-radius: 6px;\n    background: transparent;\n    color: inherit;\n    font: 600 0.7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\r\n\r\n.pointer-collab-modal_security-rollback_1MZLS:hover {\n    background: rgba(255, 255, 255, 0.7);\n}\r\n\r\n.pointer-collab-modal_security-actions_1g0Yl span {\n    opacity: 0.8;\n}\n", ""]);
+exports.push([module.i, ".pointer-collab-modal_overlay_2k6Tj {\r\n    position: fixed;\r\n    inset: 0;\r\n    z-index: 2000;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 24px;\r\n    background: rgba(12, 34, 68, 0.42);\r\n    backdrop-filter: blur(16px) saturate(1.15);\r\n    -webkit-backdrop-filter: blur(16px) saturate(1.15);\r\n    animation: pointer-collab-modal_pointer-overlay-in_3j3kl 0.22s ease both;\r\n}\r\n\r\n@keyframes pointer-collab-modal_pointer-overlay-in_3j3kl {\r\n    from { opacity: 0; }\r\n    to { opacity: 1; }\r\n}\r\n\r\n.pointer-collab-modal_panel__eB32 {\r\n    width: 460px;\r\n    max-width: 100%;\r\n    max-height: calc(100vh - 48px);\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-radius: 14px;\r\n    background: #ffffff;\r\n    box-shadow: 0 24px 64px rgba(9, 30, 66, 0.35);\r\n    overflow: hidden;\r\n    font-family: \"OPPO Sans\", \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n    color: #1d3557;\r\n    animation: pointer-collab-modal_pointer-panel-in_1Ig_p 0.28s cubic-bezier(0.18, 0.9, 0.24, 1) both;\r\n}\r\n\r\n@keyframes pointer-collab-modal_pointer-panel-in_1Ig_p {\r\n    from { opacity: 0; transform: translateY(16px) scale(0.975); }\r\n    to { opacity: 1; transform: translateY(0) scale(1); }\r\n}\r\n\r\n.pointer-collab-modal_header_2iEzL {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    padding: 14px 20px;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 1rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_close_3c08P {\r\n    width: 28px;\r\n    height: 28px;\r\n    border: none;\r\n    border-radius: 8px;\r\n    background: rgba(255, 255, 255, 0.16);\r\n    color: #ffffff;\r\n    font-size: 1.15rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-collab-modal_close_3c08P:hover {\r\n    background: rgba(255, 255, 255, 0.3);\r\n}\r\n\r\n.pointer-collab-modal_body_1qdDR {\r\n    padding: 18px 20px 20px;\r\n    overflow-y: auto;\r\n}\r\n\r\n.pointer-collab-modal_form_BqUjQ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 12px;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n    font-size: 0.85rem;\r\n    color: #3d5a80;\r\n    flex: 1;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ span {\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ input,\r\n.pointer-collab-modal_field_2DFqZ select {\r\n    height: 38px;\r\n    padding: 0 12px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 8px;\r\n    background: #f7faff;\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    outline: none;\r\n}\r\n\r\n.pointer-collab-modal_field_2DFqZ input:focus,\r\n.pointer-collab-modal_field_2DFqZ select:focus {\r\n    border-color: #2f6fe4;\r\n    background: #ffffff;\r\n    box-shadow: 0 0 0 3px rgba(47, 111, 228, 0.15);\r\n}\r\n\r\n.pointer-collab-modal_hint_GqENw {\r\n    margin: 0;\r\n    font-size: 0.78rem;\r\n    color: #6b86a8;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_actions_2PKaN {\r\n    display: flex;\r\n    gap: 10px;\r\n}\r\n\r\n.pointer-collab-modal_actions_2PKaN .pointer-collab-modal_primary_1xZcz,\r\n.pointer-collab-modal_actions_2PKaN .pointer-collab-modal_secondary_20gIi {\r\n    flex: 1;\r\n}\r\n\r\n.pointer-collab-modal_primary_1xZcz {\r\n    height: 40px;\r\n    border: none;\r\n    border-radius: 9px;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 0.92rem;\r\n    font-weight: 700;\r\n    cursor: pointer;\r\n    box-shadow: 0 2px 6px rgba(47, 111, 228, 0.3);\r\n}\r\n\r\n.pointer-collab-modal_primary_1xZcz:disabled,\r\n.pointer-collab-modal_secondary_20gIi:disabled {\r\n    opacity: 0.6;\r\n    cursor: default;\r\n}\r\n\r\n.pointer-collab-modal_secondary_20gIi {\r\n    height: 40px;\r\n    padding: 0 16px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 9px;\r\n    background: #ffffff;\r\n    color: #2f6fe4;\r\n    font-size: 0.88rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    text-decoration: none;\r\n}\r\n\r\n.pointer-collab-modal_room-card_16cPB {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 12px;\r\n    padding: 12px 14px;\r\n    border-radius: 10px;\r\n    background: #eef4ff;\r\n    border: 1px solid #d6e4fb;\r\n}\r\n\r\n.pointer-collab-modal_room-card_16cPB .pointer-collab-modal_secondary_20gIi {\r\n    height: 34px;\r\n    flex: 0 0 auto;\r\n    background: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_room-label_3PQjW {\r\n    display: block;\r\n    font-size: 0.75rem;\r\n    color: #6b86a8;\r\n    margin-bottom: 2px;\r\n}\r\n\r\n.pointer-collab-modal_room-code_3bfOK {\r\n    font-size: 1.25rem;\r\n    letter-spacing: 0.14em;\r\n    color: #2258b8;\r\n}\r\n\r\n.pointer-collab-modal_peer-list_13JTr {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    gap: 8px;\r\n}\r\n\r\n.pointer-collab-modal_peer_2yNOL,\r\n.pointer-collab-modal_peer-self_2xfxN {\r\n    padding: 5px 10px;\r\n    border-radius: 999px;\r\n    background: #f1f6ff;\r\n    border: 1px solid #d6e4fb;\r\n    color: #3d5a80;\r\n    font-size: 0.8rem;\r\n}\r\n\r\n.pointer-collab-modal_peer-self_2xfxN {\r\n    background: #e3efff;\r\n    border-color: #9fc2f7;\r\n    color: #2258b8;\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_checkbox_10hd6 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    font-size: 0.85rem;\r\n    color: #3d5a80;\r\n}\r\n\r\n.pointer-collab-modal_checkbox_10hd6 input {\r\n    width: 16px;\r\n    height: 16px;\r\n    accent-color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_status_8YwSe {\r\n    margin: 10px 0 0;\r\n    font-size: 0.82rem;\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_error_hx0JE {\r\n    margin: 10px 0 0;\r\n    padding: 8px 10px;\r\n    border-radius: 8px;\r\n    background: #fff1f0;\r\n    color: #c0392b;\r\n    font-size: 0.82rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_panel__eB32 {\r\n    width: 540px;\r\n}\r\n\r\n.pointer-collab-modal_account-intro_fHkmt {\r\n    padding: 12px 14px;\r\n    border-radius: 10px;\r\n    background: #eef4ff;\r\n    border: 1px solid #d6e4fb;\r\n}\r\n\r\n.pointer-collab-modal_account-intro-title_237Iv {\r\n    margin-bottom: 6px;\r\n    color: #2258b8;\r\n    font-size: 0.95rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_account-bar_1tT7v {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    padding: 10px 12px;\r\n    border: 1px solid #d6e4fb;\r\n    border-radius: 10px;\r\n    background: #f7faff;\r\n}\r\n\r\n.pointer-collab-modal_account-avatar_wLdUp {\r\n    flex: 0 0 auto;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 34px;\r\n    height: 34px;\r\n    border-radius: 50%;\r\n    background: linear-gradient(180deg, #3b7ef2, #2f6fe4);\r\n    color: #ffffff;\r\n    font-size: 0.95rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_account-meta_33HpZ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 2px;\r\n    min-width: 0;\r\n    flex: 1;\r\n    color: #3d5a80;\r\n    font-size: 0.78rem;\r\n    line-height: 1.35;\r\n}\r\n\r\n.pointer-collab-modal_account-meta_33HpZ strong {\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB {\r\n    align-self: flex-start;\r\n    padding: 0;\r\n    border: none;\r\n    background: transparent;\r\n    color: #2f6fe4;\r\n    font-size: 0.8rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    text-align: left;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.pointer-collab-modal_link-button_2HNTB:disabled {\r\n    opacity: 0.55;\r\n    cursor: default;\r\n    text-decoration: none;\r\n}\r\n\r\n.pointer-collab-modal_section-header_2Rz8P {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    margin-top: 2px;\r\n}\r\n\r\n.pointer-collab-modal_section-title_1BzMB {\r\n    color: #1d3557;\r\n    font-size: 0.9rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-collab-modal_target-list_mrlYV {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n    max-height: 260px;\r\n    margin: 0;\r\n    padding: 0;\r\n    overflow-y: auto;\r\n    list-style: none;\r\n}\r\n\r\n.pointer-collab-modal_target-row_38w2S {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    padding: 7px 9px;\r\n    border: 1px solid #e1ecfb;\r\n    border-radius: 9px;\r\n    background: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_target-current_1WqgS {\r\n    border-color: #9fc2f7;\r\n    background: #f2f7ff;\r\n    box-shadow: inset 3px 0 0 #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_target-name_1DSM6 {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    min-width: 0;\r\n    flex: 0 1 auto;\r\n    padding: 0;\r\n    border: none;\r\n    background: transparent;\r\n    color: #1d3557;\r\n    font-size: 0.85rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_target-name_1DSM6:hover {\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_target-kind_dhQ6i {\r\n    flex: 0 0 auto;\r\n    padding: 1px 6px;\r\n    border-radius: 999px;\r\n    background: #e7f0ff;\r\n    color: #517bb8;\r\n    font-size: 0.68rem;\r\n    font-weight: 500;\r\n}\r\n\r\n.pointer-collab-modal_target-state_3RvU1 {\r\n    flex: 1;\r\n    text-align: right;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.pointer-collab-modal_target-actions_16cih {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    gap: 5px;\r\n}\r\n\r\n.pointer-collab-modal_tag-open_3R5bP,\r\n.pointer-collab-modal_tag-mine_3GFBJ,\r\n.pointer-collab-modal_tag-locked_Hv-5F {\r\n    display: inline-block;\r\n    padding: 2px 8px;\r\n    border-radius: 999px;\r\n    font-size: 0.72rem;\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-collab-modal_tag-open_3R5bP {\r\n    background: #eaf7ef;\r\n    color: #1c7c4a;\r\n}\r\n\r\n.pointer-collab-modal_tag-mine_3GFBJ {\r\n    background: #e3efff;\r\n    color: #2258b8;\r\n}\r\n\r\n.pointer-collab-modal_tag-locked_Hv-5F {\r\n    background: #fff4e5;\r\n    color: #b45309;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l,\r\n.pointer-collab-modal_mini-primary_3yBmF {\r\n    height: 26px;\r\n    padding: 0 9px;\r\n    border-radius: 7px;\r\n    font-size: 0.74rem;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l {\r\n    border: 1px solid #c9d8ee;\r\n    background: #ffffff;\r\n    color: #2f6fe4;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l:hover {\r\n    border-color: #8fb6f3;\r\n    background: #f5f9ff;\r\n}\r\n\r\n.pointer-collab-modal_mini-button_2g30l:disabled {\r\n    opacity: 0.55;\r\n    cursor: default;\r\n}\r\n\r\n.pointer-collab-modal_mini-primary_3yBmF {\r\n    border: 1px solid #2f6fe4;\r\n    background: #2f6fe4;\r\n    color: #ffffff;\r\n}\r\n\r\n.pointer-collab-modal_mini-primary_3yBmF:hover {\r\n    background: #225fc9;\r\n}\r\n\r\n.pointer-collab-modal_notice_gZ5eB {\r\n    display: flex;\r\n    align-items: flex-start;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    padding: 9px 11px;\r\n    border: 1px solid #cfe0fa;\r\n    border-radius: 9px;\r\n    background: #f1f7ff;\r\n    color: #2258b8;\r\n    font-size: 0.8rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-collab-modal_notice-warn__9va- {\r\n    border-color: #f3d19b;\r\n    background: #fff8ec;\r\n    color: #9a5b06;\r\n}\r\n\r\n.pointer-collab-modal_notice-actions_1PlL- {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    align-items: center;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_notice-close_2-Ir0 {\r\n    width: 22px;\r\n    height: 22px;\r\n    padding: 0;\r\n    border: none;\r\n    border-radius: 6px;\r\n    background: rgba(47, 111, 228, 0.08);\r\n    color: inherit;\r\n    font-size: 1rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-collab-modal_notice-close_2-Ir0:hover {\r\n    background: rgba(47, 111, 228, 0.16);\r\n}\r\n\r\n.pointer-collab-modal_request-list_3uwMJ {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_request-card_3Bpsz {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    padding: 9px 11px;\r\n    border: 1px solid #f3d19b;\r\n    border-radius: 9px;\r\n    background: #fff8ec;\r\n    color: #7a4a05;\r\n    font-size: 0.8rem;\r\n    line-height: 1.45;\r\n}\r\n\r\n.pointer-collab-modal_inline-actions_2K-Q0 {\r\n    display: flex;\r\n    flex: 0 0 auto;\r\n    gap: 6px;\r\n}\r\n\r\n.pointer-collab-modal_security-bar_33NBy {\n    display: flex;\n    flex-direction: column;\n    gap: 6px;\n    padding: 8px 10px;\n    border: 1px solid #bfe0c8;\n    border-radius: 9px;\n    background: #f2fbf4;\n    color: #246b3a;\n    font-size: 0.76rem;\n}\r\n\r\n.pointer-collab-modal_security-warn_1JWaV {\n    border-color: #f3d19b;\n    background: #fff8ec;\n    color: #7a4a05;\n}\r\n\r\n.pointer-collab-modal_security-critical_1DdkQ {\n    border-color: #f0b3ad;\n    background: #fdf0ee;\n    color: #8d2a20;\n}\r\n\r\n.pointer-collab-modal_security-head_3JjuC {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    flex-wrap: wrap;\n}\r\n\r\n.pointer-collab-modal_security-head_3JjuC strong {\n    font-size: 0.76rem;\n    letter-spacing: 0.02em;\n}\r\n\r\n.pointer-collab-modal_security-link_19s4J {\n    margin-left: auto;\n    padding: 0;\n    border: 0;\n    background: transparent;\n    color: inherit;\n    font-size: 0.72rem;\n    text-decoration: underline;\n    cursor: pointer;\n}\r\n\r\n.pointer-collab-modal_security-body_26RtE {\n    color: inherit;\n    font-size: 0.72rem;\n}\r\n\r\n.pointer-collab-modal_security-body_26RtE p {\n    margin: 0;\n}\r\n\r\n.pointer-collab-modal_security-alerts_1oG2T {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\r\n\r\n.pointer-collab-modal_security-alerts_1oG2T li {\n    display: flex;\n    gap: 6px;\n    line-height: 1.45;\n}\r\n\r\n.pointer-collab-modal_security-alerts_1oG2T li span {\n    flex: 0 0 auto;\n    opacity: 0.7;\n}\r\n\r\n.pointer-collab-modal_security-critical-text_vrTAE {\n    color: #8d2a20;\n    font-weight: 600;\n}\r\n\r\n.pointer-collab-modal_security-actions_1g0Yl {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    flex-wrap: wrap;\n}\r\n\r\n.pointer-collab-modal_security-rollback_1MZLS {\n    height: 24px;\n    padding: 0 9px;\n    border: 1px solid currentColor;\n    border-radius: 6px;\n    background: transparent;\n    color: inherit;\n    font: 600 0.7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\r\n\r\n.pointer-collab-modal_security-rollback_1MZLS:hover {\n    background: rgba(255, 255, 255, 0.7);\n}\r\n\r\n.pointer-collab-modal_security-actions_1g0Yl span {\n    opacity: 0.8;\n}\r\n\r\n.pointer-collab-modal_guard-overlay_1znfV {\n    position: fixed;\n    inset: 0;\n    z-index: 4000;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 20px;\n    background: rgba(9, 28, 60, 0.42);\n    -webkit-backdrop-filter: blur(10px);\n            backdrop-filter: blur(10px);\n}\r\n\r\n.pointer-collab-modal_guard-panel_1vI0i {\n    width: min(460px, 100%);\n    padding: 0 0 16px;\n    border: 1px solid #efb4ad;\n    border-radius: 14px;\n    background: #fff;\n    box-shadow: 0 30px 80px rgba(77, 18, 12, 0.3);\n    overflow: hidden;\n}\r\n\r\n.pointer-collab-modal_guard-head_3oU6N {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    padding: 14px 16px;\n    background: #c0392b;\n    color: #fff;\n}\r\n\r\n.pointer-collab-modal_guard-head_3oU6N span {\n    padding: 2px 7px;\n    border-radius: 5px;\n    background: rgba(255, 255, 255, 0.18);\n    font-size: 0.66rem;\n    letter-spacing: 0.04em;\n}\r\n\r\n.pointer-collab-modal_guard-head_3oU6N strong {\n    font-size: 0.94rem;\n}\r\n\r\n.pointer-collab-modal_guard-message_CF-z8 {\n    margin: 16px 16px 6px;\n    color: #8d2a20;\n    font-size: 0.86rem;\n    font-weight: 600;\n    line-height: 1.6;\n}\r\n\r\n.pointer-collab-modal_guard-meta_1Asq6 {\n    margin: 0 16px;\n    color: #9a6a63;\n    font-size: 0.7rem;\n}\r\n\r\n.pointer-collab-modal_guard-hint_3KHEr {\n    margin: 12px 16px 0;\n    padding: 10px 12px;\n    border-radius: 8px;\n    background: #fdf3f1;\n    color: #7a4a43;\n    font-size: 0.74rem;\n    line-height: 1.55;\n}\r\n\r\n.pointer-collab-modal_guard-actions_2Bk7k {\n    display: flex;\n    justify-content: flex-end;\n    gap: 8px;\n    margin: 16px 16px 0;\n    flex-wrap: wrap;\n}\r\n\r\n.pointer-collab-modal_guard-rollback_1-SMh,\n.pointer-collab-modal_guard-disconnect_JCS00,\n.pointer-collab-modal_guard-dismiss_1J1tC {\n    height: 32px;\n    padding: 0 13px;\n    border-radius: 7px;\n    font: 600 0.74rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\r\n\r\n.pointer-collab-modal_guard-rollback_1-SMh {\n    border: 1px solid #c0392b;\n    background: #c0392b;\n    color: #fff;\n}\r\n\r\n.pointer-collab-modal_guard-disconnect_JCS00 {\n    border: 1px solid #efb4ad;\n    background: #fff;\n    color: #a33226;\n}\r\n\r\n.pointer-collab-modal_guard-dismiss_1J1tC {\n    border: 1px solid #d8e6fa;\n    background: #f5faff;\n    color: #2f6fe4;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -1962,7 +1962,27 @@ exports.locals = {
 	"security-actions": "pointer-collab-modal_security-actions_1g0Yl",
 	"securityActions": "pointer-collab-modal_security-actions_1g0Yl",
 	"security-rollback": "pointer-collab-modal_security-rollback_1MZLS",
-	"securityRollback": "pointer-collab-modal_security-rollback_1MZLS"
+	"securityRollback": "pointer-collab-modal_security-rollback_1MZLS",
+	"guard-overlay": "pointer-collab-modal_guard-overlay_1znfV",
+	"guardOverlay": "pointer-collab-modal_guard-overlay_1znfV",
+	"guard-panel": "pointer-collab-modal_guard-panel_1vI0i",
+	"guardPanel": "pointer-collab-modal_guard-panel_1vI0i",
+	"guard-head": "pointer-collab-modal_guard-head_3oU6N",
+	"guardHead": "pointer-collab-modal_guard-head_3oU6N",
+	"guard-message": "pointer-collab-modal_guard-message_CF-z8",
+	"guardMessage": "pointer-collab-modal_guard-message_CF-z8",
+	"guard-meta": "pointer-collab-modal_guard-meta_1Asq6",
+	"guardMeta": "pointer-collab-modal_guard-meta_1Asq6",
+	"guard-hint": "pointer-collab-modal_guard-hint_3KHEr",
+	"guardHint": "pointer-collab-modal_guard-hint_3KHEr",
+	"guard-actions": "pointer-collab-modal_guard-actions_2Bk7k",
+	"guardActions": "pointer-collab-modal_guard-actions_2Bk7k",
+	"guard-rollback": "pointer-collab-modal_guard-rollback_1-SMh",
+	"guardRollback": "pointer-collab-modal_guard-rollback_1-SMh",
+	"guard-disconnect": "pointer-collab-modal_guard-disconnect_JCS00",
+	"guardDisconnect": "pointer-collab-modal_guard-disconnect_JCS00",
+	"guard-dismiss": "pointer-collab-modal_guard-dismiss_1J1tC",
+	"guardDismiss": "pointer-collab-modal_guard-dismiss_1J1tC"
 };
 
 /***/ }),
@@ -2723,7 +2743,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n/* make sure to keep these in sync with other constants,\ne.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */\n\n/* layout contants from `layout-constants.js` */\n\n/*\n    Contains constants for the z-index values of elements that are part of the global stack context.\n    In other words, z-index values that are \"inside\" a component are not added here.\n    This prevents conflicts between identical z-index values in different components.\n*/\n\n/* Toolbox z-index: 40; set in scratch-blocks */\n\n/* tooltips should go over add buttons if they overlap */\n\n/* monitors go over add buttons */\n\n/* \"ask\" block text input goes above monitors */\n\n/* menu-bar should go over monitors, alerts and tutorials */\n\n/* behind menu-bar */\n\n/* Block drag z-index: 1000; default 50 is overriden in blocks.css */\n\n/* so it is draggable into other panes */\n\n/* behind modals */\n\n/* behind modals */\n\n/* in most interfaces, the context menu is always on top */\n\n.modal_modal-overlay_2_Dgx {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 510;\n    background-color: rgba(19, 43, 82, 0.42);\n    backdrop-filter: blur(16px) saturate(1.15);\n    -webkit-backdrop-filter: blur(16px) saturate(1.15);\n    color: var(--ui-modal-foreground);\n    animation: modal_pointer-modal-overlay-in_1Ca65 0.24s ease both;\n}\n\n@keyframes modal_pointer-modal-overlay-in_1Ca65 {\n    from { opacity: 0; }\n    to { opacity: 1; }\n}\n\n.modal_modal-content_3brCX * {\n    box-sizing: border-box;\n}\n\n.modal_modal-content_3brCX {\n    margin: 100px auto;\n    outline: none;\n    border: 4px solid var(--ui-white-transparent);\n    padding: 0;\n    border-radius: 0.5rem;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    overflow: hidden;\n\n    animation: modal_pointer-modal-content-in_SxjKq 0.28s cubic-bezier(0.18, 0.9, 0.24, 1) both;\n}\n\n@keyframes modal_pointer-modal-content-in_SxjKq {\n    from {\n        opacity: 0;\n        transform: translateY(14px) scale(0.975);\n    }\n    to {\n        opacity: 1;\n        transform: translateY(0) scale(1);\n    }\n}\n\n.modal_modal-content_3brCX.modal_full-screen_3yXCG {\n    position: absolute;\n\n    display: flex;\n    height: 100%;\n    width: 100%;\n\n    overflow-y: auto;\n    -webkit-overflow-scrolling: 'touch';\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n\n    background-color: var(--ui-secondary);\n\n    /* Default modal resets */\n    margin: 0;\n    border: none;\n    border-radius: 0;\n    animation: modal_pointer-modal-overlay-in_1Ca65 0.2s ease both;\n}\n\n/*\n    Modal header has 3 items:\n    |filter     title       x|\n\n    Use the same width for both side item containers,\n    so that title remains centered\n*/\n\n.modal_header_1dNxf {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    height: 3.125rem;\n\n    box-sizing: border-box;\n    width: 100%;\n    background-color: var(--ui-modal-header-background);\n    color: var(--ui-modal-header-foreground);\n\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 1rem;\n    font-weight: normal;\n}\n\n.modal_header-item_1WbOm {\n    display: flex;\n    align-items: center;\n    padding: 1rem;\n    text-decoration: none;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n}\n\n[dir=\"ltr\"] .modal_header-image_2c-LK {\n    margin-right: 0.5rem;\n}\n\n[dir=\"rtl\"] .modal_header-image_2c-LK {\n    margin-left: 0.5rem;\n}\n\n.modal_header-item-filter_slKwM {\n    display: flex;\n    flex-basis: 20rem;\n    justify-content: flex-start;\n}\n\n.modal_header-item-title_1N2BE {\n    flex-grow: 1;\n    flex-shrink: 0;\n    justify-content: center;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    letter-spacing: 0.4px;\n    cursor: default;\n}\n\n[dir=\"ltr\"] .modal_header-item-title_1N2BE {\n    margin: 0 -20rem 0 0;\n}\n\n[dir=\"rtl\"] .modal_header-item-title_1N2BE {\n    margin: 0 0 0 -20rem;\n}\n\n.modal_full-screen_3yXCG [dir=\"ltr\"] .modal_header-item-title_1N2BE {\n    margin: 0 0 0 -20rem;\n}\n\n.modal_full-screen_3yXCG [dir=\"rtl\"] .modal_header-item-title_1N2BE {\n    margin: 0 -20rem 0 0;\n}\n\n.modal_header-item-close_4akWi {\n    flex-basis: 20rem;\n    justify-content: flex-end;\n    z-index: 1;\n}\n\n.modal_full-screen_3yXCG .modal_header-item-close_4akWi {\n    order: -1;\n    justify-content: flex-start;\n}\n\n.modal_back-button_3HvWm {\n    font-weight: normal;\n    padding-right: 0;\n    padding-left: 0;\n}\n\n[dir=\"rtl\"] .modal_back-button_3HvWm img {\n    transform: scaleX(-1);\n}\n\n.modal_header-item-help_2F4to {\n    padding: 0;\n    z-index: 1;\n}\n\n[dir=\"ltr\"] .modal_header-item-help_2F4to {\n    margin-right: -4.75rem;\n}\n\n[dir=\"rtl\"] .modal_header-item-help_2F4to {\n    margin-left: -4.75rem;\n}\n\n.modal_help-button_1F4rs {\n    font-weight: normal;\n    font-size: 0.75rem;\n}\n\n[dir=\"ltr\"] .modal_help-button_1F4rs {\n    padding-right: 0;\n}\n\n[dir=\"rtl\"] .modal_help-button_1F4rs {\n    padding-left: 0;\n}\n", ""]);
+exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n/* make sure to keep these in sync with other constants,\ne.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */\n\n/* layout contants from `layout-constants.js` */\n\n/*\n    Contains constants for the z-index values of elements that are part of the global stack context.\n    In other words, z-index values that are \"inside\" a component are not added here.\n    This prevents conflicts between identical z-index values in different components.\n*/\n\n/* Toolbox z-index: 40; set in scratch-blocks */\n\n/* tooltips should go over add buttons if they overlap */\n\n/* monitors go over add buttons */\n\n/* \"ask\" block text input goes above monitors */\n\n/* menu-bar should go over monitors, alerts and tutorials */\n\n/* behind menu-bar */\n\n/* Block drag z-index: 1000; default 50 is overriden in blocks.css */\n\n/* so it is draggable into other panes */\n\n/* behind modals */\n\n/* behind modals */\n\n/* in most interfaces, the context menu is always on top */\n\n.modal_modal-overlay_2_Dgx {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 2100;\n    background-color: rgba(19, 43, 82, 0.42);\n    backdrop-filter: blur(16px) saturate(1.15);\n    -webkit-backdrop-filter: blur(16px) saturate(1.15);\n    color: var(--ui-modal-foreground);\n    animation: modal_pointer-modal-overlay-in_1Ca65 0.24s ease both;\n}\n\n@keyframes modal_pointer-modal-overlay-in_1Ca65 {\n    from { opacity: 0; }\n    to { opacity: 1; }\n}\n\n.modal_modal-content_3brCX * {\n    box-sizing: border-box;\n}\n\n.modal_modal-content_3brCX {\n    margin: 100px auto;\n    outline: none;\n    border: 4px solid var(--ui-white-transparent);\n    padding: 0;\n    border-radius: 0.5rem;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    overflow: hidden;\n\n    animation: modal_pointer-modal-content-in_SxjKq 0.28s cubic-bezier(0.18, 0.9, 0.24, 1) both;\n}\n\n@keyframes modal_pointer-modal-content-in_SxjKq {\n    from {\n        opacity: 0;\n        transform: translateY(14px) scale(0.975);\n    }\n    to {\n        opacity: 1;\n        transform: translateY(0) scale(1);\n    }\n}\n\n.modal_modal-content_3brCX.modal_full-screen_3yXCG {\n    position: absolute;\n\n    display: flex;\n    height: 100%;\n    width: 100%;\n\n    overflow-y: auto;\n    -webkit-overflow-scrolling: 'touch';\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n\n    background-color: var(--ui-secondary);\n\n    /* Default modal resets */\n    margin: 0;\n    border: none;\n    border-radius: 0;\n    animation: modal_pointer-modal-overlay-in_1Ca65 0.2s ease both;\n}\n\n/*\n    Modal header has 3 items:\n    |filter     title       x|\n\n    Use the same width for both side item containers,\n    so that title remains centered\n*/\n\n.modal_header_1dNxf {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    height: 3.125rem;\n\n    box-sizing: border-box;\n    width: 100%;\n    background-color: var(--ui-modal-header-background);\n    color: var(--ui-modal-header-foreground);\n\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 1rem;\n    font-weight: normal;\n}\n\n.modal_header-item_1WbOm {\n    display: flex;\n    align-items: center;\n    padding: 1rem;\n    text-decoration: none;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n}\n\n[dir=\"ltr\"] .modal_header-image_2c-LK {\n    margin-right: 0.5rem;\n}\n\n[dir=\"rtl\"] .modal_header-image_2c-LK {\n    margin-left: 0.5rem;\n}\n\n.modal_header-item-filter_slKwM {\n    display: flex;\n    flex-basis: 20rem;\n    justify-content: flex-start;\n}\n\n.modal_header-item-title_1N2BE {\n    flex-grow: 1;\n    flex-shrink: 0;\n    justify-content: center;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    letter-spacing: 0.4px;\n    cursor: default;\n}\n\n[dir=\"ltr\"] .modal_header-item-title_1N2BE {\n    margin: 0 -20rem 0 0;\n}\n\n[dir=\"rtl\"] .modal_header-item-title_1N2BE {\n    margin: 0 0 0 -20rem;\n}\n\n.modal_full-screen_3yXCG [dir=\"ltr\"] .modal_header-item-title_1N2BE {\n    margin: 0 0 0 -20rem;\n}\n\n.modal_full-screen_3yXCG [dir=\"rtl\"] .modal_header-item-title_1N2BE {\n    margin: 0 -20rem 0 0;\n}\n\n.modal_header-item-close_4akWi {\n    flex-basis: 20rem;\n    justify-content: flex-end;\n    z-index: 1;\n}\n\n.modal_full-screen_3yXCG .modal_header-item-close_4akWi {\n    order: -1;\n    justify-content: flex-start;\n}\n\n.modal_back-button_3HvWm {\n    font-weight: normal;\n    padding-right: 0;\n    padding-left: 0;\n}\n\n[dir=\"rtl\"] .modal_back-button_3HvWm img {\n    transform: scaleX(-1);\n}\n\n.modal_header-item-help_2F4to {\n    padding: 0;\n    z-index: 1;\n}\n\n[dir=\"ltr\"] .modal_header-item-help_2F4to {\n    margin-right: -4.75rem;\n}\n\n[dir=\"rtl\"] .modal_header-item-help_2F4to {\n    margin-left: -4.75rem;\n}\n\n.modal_help-button_1F4rs {\n    font-weight: normal;\n    font-size: 0.75rem;\n}\n\n[dir=\"ltr\"] .modal_help-button_1F4rs {\n    padding-right: 0;\n}\n\n[dir=\"rtl\"] .modal_help-button_1F4rs {\n    padding-left: 0;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -3570,7 +3590,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n/* make sure to keep these in sync with other constants,\ne.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */\n\n/* layout contants from `layout-constants.js` */\n\nbody {\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n\nh2 {\n    font-size: 1.5rem;\n    font-weight: bold;\n}\n\np {\n    font-size: 1rem;\n    line-height: 1.5em;\n}\n\n/*\n    Contains constants for the z-index values of elements that are part of the global stack context.\n    In other words, z-index values that are \"inside\" a component are not added here.\n    This prevents conflicts between identical z-index values in different components.\n*/\n\n/* Toolbox z-index: 40; set in scratch-blocks */\n\n/* tooltips should go over add buttons if they overlap */\n\n/* monitors go over add buttons */\n\n/* \"ask\" block text input goes above monitors */\n\n/* menu-bar should go over monitors, alerts and tutorials */\n\n/* behind menu-bar */\n\n/* Block drag z-index: 1000; default 50 is overriden in blocks.css */\n\n/* so it is draggable into other panes */\n\n/* behind modals */\n\n/* behind modals */\n\n/* in most interfaces, the context menu is always on top */\n\n/* from scratch-www */\n\n.telemetry-modal_modal-overlay_SDoFR {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 510;\n    background-color: var(--ui-modal-overlay);\n}\n\n.telemetry-modal_modal-content_16B4g {\n    margin: 100px auto;\n    outline: none;\n    border: .25rem solid var(--ui-white-transparent);\n    padding: 0;\n    border-radius: 0.5rem;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    width: 640px;\n\n    color: var(--text-primary);\n    overflow: hidden;\n}\n\n.telemetry-modal_illustration_1Xxcy {\n    width: 100%;\n    height: 123px;\n    background-color: var(--looks-secondary);\n    background-image: url(" + escape(__webpack_require__(/*! ./telemetry-modal-header.png */ "./src/components/telemetry-modal/telemetry-modal-header.png")) + ");\n    background-size: cover;\n}\n\n.telemetry-modal_body_2Gocn {\n    background: var(--ui-white);\n    padding: 1.5rem 2.25rem;\n}\n\n.telemetry-modal_privacy-policy-link_18tcE {\n    color: var(--looks-secondary);\n    text-decoration: none;\n}\n\n/* stack the radio buttons vertically, not horizontally */\n\n.telemetry-modal_radio-buttons_1Tkl7 label {\n    display: block;\n    margin: 0.5rem;\n    transition: all .125s ease;\n    background-color: hsla(0, 0%, 95%, 1);\n    border-radius: .5rem;\n    margin: 0 auto 0.375rem;\n    align-items: center;\n    padding: 1rem 0;\n    vertical-align: middle;\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 label:hover {\n    background-color: hsla(215, 100%, 65%, .1);\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 label.telemetry-modal_label-selected_NsTZr,\n.telemetry-modal_radio-buttons_1Tkl7 label.telemetry-modal_label-selected_NsTZr:hover {\n    background-color: hsla(215, 100%, 65%, .25);\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 input[type=\"radio\"] {\n    margin: -1px 0.75rem 1px;\n    border: 1px solid hsla(0, 0%, 0%, .1);\n    border-radius: 50%;\n    width: 1rem;\n    height: 1rem;\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    background-color: var(--ui-white);\n    vertical-align: middle;\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 input[type=\"radio\"]:checked,\n.telemetry-modal_radio-buttons_1Tkl7 input[type=\"radio\"]:focus {\n    box-shadow: 0 0 0 2px hsla(215, 100%, 65%, .25);\n    outline: none;\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 input[type=\"radio\"]:checked {\n    transition: all .25s ease;\n    background-color: var(--ui-white);\n    border: 1px solid var(--looks-secondary);\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 input[type=\"radio\"]:checked::after {\n    display: block;\n    margin: 0.125rem;\n    border-radius: 50%;\n    background-color: var(--looks-secondary);\n    width: .625rem;\n    height: .625rem;\n    content: \"\";\n}\n\n/* Confirmation buttons at the bottom of the modal */\n\n.telemetry-modal_button-row_1DOWD {\n    display: flex;\n    flex-flow: row nowrap;\n    justify-content: space-between;\n    align-items: baseline;\n\n    margin: 1.5rem 0;\n    font-weight: bolder;\n}\n\n@keyframes telemetry-modal_fade-out_5Xhoq {\n    0% {opacity: 1}\n    100% {opacity: 0}\n}\n\n.telemetry-modal_setting-was-updated_3U6oM {\n    animation: telemetry-modal_fade-out_5Xhoq 3s ease-out;\n    color: var(--extensions-primary);\n}\n\n.telemetry-modal_button-row_1DOWD button {\n    border: 1px solid var(--looks-secondary);\n    border-radius: 0.25rem;\n    padding: 0.5rem 1.5rem;\n    color: white;\n    background: var(--looks-secondary);\n    font-weight: bold;\n    font-size: .875rem;\n    cursor: pointer;\n}\n\n.telemetry-modal_button-row_1DOWD button:hover {\n    background: var(--extensions-primary);\n    box-shadow: 0 0 0 6px var(--looks-transparent);\n}\n\n.telemetry-modal_button-row_1DOWD button:disabled {\n    background: var(--text-primary);\n    border-color: var(--ui-black-transparent);\n    box-shadow: none;\n    opacity: 0.25;\n}\n\n@media screen and (max-height: 660px) {\n    .telemetry-modal_modal-content_16B4g {\n        margin: 5vh auto;\n        width: 90%;\n    }\n}\n\n@media screen and (max-height: 540px) {\n    .telemetry-modal_illustration_1Xxcy {\n        display: none;\n    }\n}\n", ""]);
+exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n/* make sure to keep these in sync with other constants,\ne.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */\n\n/* layout contants from `layout-constants.js` */\n\nbody {\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n\nh2 {\n    font-size: 1.5rem;\n    font-weight: bold;\n}\n\np {\n    font-size: 1rem;\n    line-height: 1.5em;\n}\n\n/*\n    Contains constants for the z-index values of elements that are part of the global stack context.\n    In other words, z-index values that are \"inside\" a component are not added here.\n    This prevents conflicts between identical z-index values in different components.\n*/\n\n/* Toolbox z-index: 40; set in scratch-blocks */\n\n/* tooltips should go over add buttons if they overlap */\n\n/* monitors go over add buttons */\n\n/* \"ask\" block text input goes above monitors */\n\n/* menu-bar should go over monitors, alerts and tutorials */\n\n/* behind menu-bar */\n\n/* Block drag z-index: 1000; default 50 is overriden in blocks.css */\n\n/* so it is draggable into other panes */\n\n/* behind modals */\n\n/* behind modals */\n\n/* in most interfaces, the context menu is always on top */\n\n/* from scratch-www */\n\n.telemetry-modal_modal-overlay_SDoFR {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 2100;\n    background-color: var(--ui-modal-overlay);\n}\n\n.telemetry-modal_modal-content_16B4g {\n    margin: 100px auto;\n    outline: none;\n    border: .25rem solid var(--ui-white-transparent);\n    padding: 0;\n    border-radius: 0.5rem;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    width: 640px;\n\n    color: var(--text-primary);\n    overflow: hidden;\n}\n\n.telemetry-modal_illustration_1Xxcy {\n    width: 100%;\n    height: 123px;\n    background-color: var(--looks-secondary);\n    background-image: url(" + escape(__webpack_require__(/*! ./telemetry-modal-header.png */ "./src/components/telemetry-modal/telemetry-modal-header.png")) + ");\n    background-size: cover;\n}\n\n.telemetry-modal_body_2Gocn {\n    background: var(--ui-white);\n    padding: 1.5rem 2.25rem;\n}\n\n.telemetry-modal_privacy-policy-link_18tcE {\n    color: var(--looks-secondary);\n    text-decoration: none;\n}\n\n/* stack the radio buttons vertically, not horizontally */\n\n.telemetry-modal_radio-buttons_1Tkl7 label {\n    display: block;\n    margin: 0.5rem;\n    transition: all .125s ease;\n    background-color: hsla(0, 0%, 95%, 1);\n    border-radius: .5rem;\n    margin: 0 auto 0.375rem;\n    align-items: center;\n    padding: 1rem 0;\n    vertical-align: middle;\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 label:hover {\n    background-color: hsla(215, 100%, 65%, .1);\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 label.telemetry-modal_label-selected_NsTZr,\n.telemetry-modal_radio-buttons_1Tkl7 label.telemetry-modal_label-selected_NsTZr:hover {\n    background-color: hsla(215, 100%, 65%, .25);\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 input[type=\"radio\"] {\n    margin: -1px 0.75rem 1px;\n    border: 1px solid hsla(0, 0%, 0%, .1);\n    border-radius: 50%;\n    width: 1rem;\n    height: 1rem;\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    background-color: var(--ui-white);\n    vertical-align: middle;\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 input[type=\"radio\"]:checked,\n.telemetry-modal_radio-buttons_1Tkl7 input[type=\"radio\"]:focus {\n    box-shadow: 0 0 0 2px hsla(215, 100%, 65%, .25);\n    outline: none;\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 input[type=\"radio\"]:checked {\n    transition: all .25s ease;\n    background-color: var(--ui-white);\n    border: 1px solid var(--looks-secondary);\n}\n\n.telemetry-modal_radio-buttons_1Tkl7 input[type=\"radio\"]:checked::after {\n    display: block;\n    margin: 0.125rem;\n    border-radius: 50%;\n    background-color: var(--looks-secondary);\n    width: .625rem;\n    height: .625rem;\n    content: \"\";\n}\n\n/* Confirmation buttons at the bottom of the modal */\n\n.telemetry-modal_button-row_1DOWD {\n    display: flex;\n    flex-flow: row nowrap;\n    justify-content: space-between;\n    align-items: baseline;\n\n    margin: 1.5rem 0;\n    font-weight: bolder;\n}\n\n@keyframes telemetry-modal_fade-out_5Xhoq {\n    0% {opacity: 1}\n    100% {opacity: 0}\n}\n\n.telemetry-modal_setting-was-updated_3U6oM {\n    animation: telemetry-modal_fade-out_5Xhoq 3s ease-out;\n    color: var(--extensions-primary);\n}\n\n.telemetry-modal_button-row_1DOWD button {\n    border: 1px solid var(--looks-secondary);\n    border-radius: 0.25rem;\n    padding: 0.5rem 1.5rem;\n    color: white;\n    background: var(--looks-secondary);\n    font-weight: bold;\n    font-size: .875rem;\n    cursor: pointer;\n}\n\n.telemetry-modal_button-row_1DOWD button:hover {\n    background: var(--extensions-primary);\n    box-shadow: 0 0 0 6px var(--looks-transparent);\n}\n\n.telemetry-modal_button-row_1DOWD button:disabled {\n    background: var(--text-primary);\n    border-color: var(--ui-black-transparent);\n    box-shadow: none;\n    opacity: 0.25;\n}\n\n@media screen and (max-height: 660px) {\n    .telemetry-modal_modal-content_16B4g {\n        margin: 5vh auto;\n        width: 90%;\n    }\n}\n\n@media screen and (max-height: 540px) {\n    .telemetry-modal_illustration_1Xxcy {\n        display: none;\n    }\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -3824,7 +3844,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n/*\n    Contains constants for the z-index values of elements that are part of the global stack context.\n    In other words, z-index values that are \"inside\" a component are not added here.\n    This prevents conflicts between identical z-index values in different components.\n*/\n\n/* Toolbox z-index: 40; set in scratch-blocks */\n\n/* tooltips should go over add buttons if they overlap */\n\n/* monitors go over add buttons */\n\n/* \"ask\" block text input goes above monitors */\n\n/* menu-bar should go over monitors, alerts and tutorials */\n\n/* behind menu-bar */\n\n/* Block drag z-index: 1000; default 50 is overriden in blocks.css */\n\n/* so it is draggable into other panes */\n\n/* behind modals */\n\n/* behind modals */\n\n/* in most interfaces, the context menu is always on top */\n\n.fonts-modal_modal-content_18OL8 {\n    max-width: 550px;\n    margin-top: 50px;\n}\n\n.fonts-modal_body_2iQc- {\n    background: var(--ui-modal-background);\n    padding: 1.5rem 2.25rem;\n    max-height: calc(100vh - 150px);\n    overflow: auto;\n    display: flex;\n    flex-direction: column;\n    gap: 1rem;\n}\n\n.fonts-modal_open-buttons_Ibv_M {\n    display: flex;\n    gap: 1rem;\n}\n\n.fonts-modal_open-button_tXG-L {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n    width: 100%;\n    align-items: center;\n    background: none;\n    padding: 0.5rem;\n    margin: 0;\n    border: 2px solid var(--ui-black-transparent);\n    border-radius: 0.5rem;\n}\n\n.fonts-modal_open-button_tXG-L:hover {\n    color: var(--looks-secondary);\n    border-color: var(--looks-secondary);\n}\n\n.fonts-modal_open-button-image_3Yvmx {\n    width: 64px;\n    height: 64px;\n    background-color: currentColor;\n    -webkit-mask-size: cover;\n            mask-size: cover;\n    -webkit-mask-repeat: no-repeat;\n            mask-repeat: no-repeat;\n}\n\n.fonts-modal_system-image_1FMIX {\n    -webkit-mask-image: url(" + escape(__webpack_require__(/*! ./system.svg */ "./src/components/tw-fonts-modal/system.svg")) + ");\n            mask-image: url(" + escape(__webpack_require__(/*! ./system.svg */ "./src/components/tw-fonts-modal/system.svg")) + ");\n}\n\n.fonts-modal_custom-image_3UlWl {\n    -webkit-mask-image: url(" + escape(__webpack_require__(/*! ./custom.svg */ "./src/components/tw-fonts-modal/custom.svg")) + ");\n            mask-image: url(" + escape(__webpack_require__(/*! ./custom.svg */ "./src/components/tw-fonts-modal/custom.svg")) + ");\n}\n\n.fonts-modal_open-button-text_2zjAq {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n}\n\n.fonts-modal_open-button-text-main_2u3P1 {\n    font-weight: bold;\n}\n\n.fonts-modal_open-button-text-sub_1635p {\n\n}\n\n.fonts-modal_font-input-outer__UCqK {\n\n}\n\n.fonts-modal_font-input_10TgQ {\n    width: 100%;\n    border: 1px solid var(--ui-black-transparent);\n    border-radius: 0.25rem;\n    padding: 0 1rem;\n    height: 3rem;\n    font: inherit;\n    color: var(--text-primary);\n    background-color: var(--input-background);\n}\n\n.fonts-modal_font-dropdown-outer_PYJoD {\n    position: absolute;\n    z-index: 510;\n    background-color: var(--ui-white);\n    color: var(--text-primary);\n    border-radius: 0.25rem;\n    overflow: auto;\n    max-height: 300px;\n    border: 1px solid var(--ui-black-transparent);\n    box-sizing: border-box;\n    box-shadow: 0px 0px 8px 1px var(--shadow);\n}\n\n.fonts-modal_font-dropdown-item_2hkHC {\n    display: flex;\n    align-items: center;\n    padding: 0.5rem 0.75rem;\n    height: 1.5rem;\n    cursor: pointer;\n    transition: .1s ease;\n}\n\n.fonts-modal_font-dropdown-item_2hkHC:hover {\n    background-color: var(--looks-secondary);\n    color: #ffffff;\n}\n\n.fonts-modal_font-playground_pRkK6 {\n    background: none;\n    border: none;\n    padding: 0.5rem;\n    margin: 0;\n    resize: none;\n    width: 100%;\n    height: 100px;\n    font-size: 1.5rem;\n    border: 1px solid var(--ui-black-transparent);\n    border-radius: 0.25rem;\n}\n\n.fonts-modal_button_1M3QC {\n    font: inherit;\n    font-weight: bold;\n    padding: 0.75rem 1rem;\n    border-radius: 0.25rem;\n    border: 1px solid var(--ui-black-transparent);\n    background-color: var(--looks-secondary);\n    color: white;\n}\n\n.fonts-modal_button_1M3QC:disabled {\n    opacity: 0.8;\n}\n\n.fonts-modal_fallback-container_3pRR4 {\n    display: flex;\n    flex-direction: column;\n}\n\n.fonts-modal_fallback-label_1O3KW {\n    margin-bottom: 0.5rem;\n}\n\n.fonts-modal_fallback-list_3UBoZ {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 0.25rem\n}\n\n.fonts-modal_fallback-button_348ot {\n    background: none;\n    padding: 0;\n    border: 0;\n    border-radius: 0.25rem;\n    height: 30px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.fonts-modal_fallback-button_348ot:hover {\n    color: var(--looks-secondary);\n}\n\n.fonts-modal_fallback-container_3pRR4 .fonts-modal_fallback-button-selected_3tSlW {\n    background-color: var(--looks-secondary);\n    color: white;\n}\n\n.fonts-modal_fonts-outer_3vCx7 {\n    border-top: 2px solid var(--ui-black-transparent);\n    padding-top: 1rem;\n}\n\n.fonts-modal_fonts-outer_3vCx7 p {\n    margin-bottom: 0.5rem;\n}\n\n.fonts-modal_fonts_2LnvP {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n}\n\n.fonts-modal_manage-font_AA1bK {\n    width: 100%;\n    display: flex;\n    align-items: center;\n    border: 2px solid var(--ui-black-transparent);\n    border-radius: 0.5rem;\n    padding: 0.5rem;\n    gap: 0.5rem;\n}\n\n.fonts-modal_manage-font-name_2SxDI {\n    font-size: 2rem;\n    margin-bottom: 0.5rem;\n    overflow-wrap: anywhere;\n}\n\n.fonts-modal_manage-font-buttons_2JqqJ {\n    margin-left: auto;\n    flex-shrink: 0;\n    display: flex;\n    flex-direction: row;\n    gap: 0.5rem;\n}\n\n.fonts-modal_manage-font-button_3V2ru {\n    background: none;\n    border: none;\n    border-radius: 100%;\n    width: 2rem;\n    height: 2rem;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.fonts-modal_manage-font-button_3V2ru:hover {\n    background-color: var(--ui-black-transparent);\n}\n\n.fonts-modal_manage-font-button_3V2ru img {\n    display: block;\n    width: 100%;\n    height: 100%;\n    filter: var(--filter-icon-black);\n}\n", ""]);
+exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n/*\n    Contains constants for the z-index values of elements that are part of the global stack context.\n    In other words, z-index values that are \"inside\" a component are not added here.\n    This prevents conflicts between identical z-index values in different components.\n*/\n\n/* Toolbox z-index: 40; set in scratch-blocks */\n\n/* tooltips should go over add buttons if they overlap */\n\n/* monitors go over add buttons */\n\n/* \"ask\" block text input goes above monitors */\n\n/* menu-bar should go over monitors, alerts and tutorials */\n\n/* behind menu-bar */\n\n/* Block drag z-index: 1000; default 50 is overriden in blocks.css */\n\n/* so it is draggable into other panes */\n\n/* behind modals */\n\n/* behind modals */\n\n/* in most interfaces, the context menu is always on top */\n\n.fonts-modal_modal-content_18OL8 {\n    max-width: 550px;\n    margin-top: 50px;\n}\n\n.fonts-modal_body_2iQc- {\n    background: var(--ui-modal-background);\n    padding: 1.5rem 2.25rem;\n    max-height: calc(100vh - 150px);\n    overflow: auto;\n    display: flex;\n    flex-direction: column;\n    gap: 1rem;\n}\n\n.fonts-modal_open-buttons_Ibv_M {\n    display: flex;\n    gap: 1rem;\n}\n\n.fonts-modal_open-button_tXG-L {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n    width: 100%;\n    align-items: center;\n    background: none;\n    padding: 0.5rem;\n    margin: 0;\n    border: 2px solid var(--ui-black-transparent);\n    border-radius: 0.5rem;\n}\n\n.fonts-modal_open-button_tXG-L:hover {\n    color: var(--looks-secondary);\n    border-color: var(--looks-secondary);\n}\n\n.fonts-modal_open-button-image_3Yvmx {\n    width: 64px;\n    height: 64px;\n    background-color: currentColor;\n    -webkit-mask-size: cover;\n            mask-size: cover;\n    -webkit-mask-repeat: no-repeat;\n            mask-repeat: no-repeat;\n}\n\n.fonts-modal_system-image_1FMIX {\n    -webkit-mask-image: url(" + escape(__webpack_require__(/*! ./system.svg */ "./src/components/tw-fonts-modal/system.svg")) + ");\n            mask-image: url(" + escape(__webpack_require__(/*! ./system.svg */ "./src/components/tw-fonts-modal/system.svg")) + ");\n}\n\n.fonts-modal_custom-image_3UlWl {\n    -webkit-mask-image: url(" + escape(__webpack_require__(/*! ./custom.svg */ "./src/components/tw-fonts-modal/custom.svg")) + ");\n            mask-image: url(" + escape(__webpack_require__(/*! ./custom.svg */ "./src/components/tw-fonts-modal/custom.svg")) + ");\n}\n\n.fonts-modal_open-button-text_2zjAq {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n}\n\n.fonts-modal_open-button-text-main_2u3P1 {\n    font-weight: bold;\n}\n\n.fonts-modal_open-button-text-sub_1635p {\n\n}\n\n.fonts-modal_font-input-outer__UCqK {\n\n}\n\n.fonts-modal_font-input_10TgQ {\n    width: 100%;\n    border: 1px solid var(--ui-black-transparent);\n    border-radius: 0.25rem;\n    padding: 0 1rem;\n    height: 3rem;\n    font: inherit;\n    color: var(--text-primary);\n    background-color: var(--input-background);\n}\n\n.fonts-modal_font-dropdown-outer_PYJoD {\n    position: absolute;\n    z-index: 2100;\n    background-color: var(--ui-white);\n    color: var(--text-primary);\n    border-radius: 0.25rem;\n    overflow: auto;\n    max-height: 300px;\n    border: 1px solid var(--ui-black-transparent);\n    box-sizing: border-box;\n    box-shadow: 0px 0px 8px 1px var(--shadow);\n}\n\n.fonts-modal_font-dropdown-item_2hkHC {\n    display: flex;\n    align-items: center;\n    padding: 0.5rem 0.75rem;\n    height: 1.5rem;\n    cursor: pointer;\n    transition: .1s ease;\n}\n\n.fonts-modal_font-dropdown-item_2hkHC:hover {\n    background-color: var(--looks-secondary);\n    color: #ffffff;\n}\n\n.fonts-modal_font-playground_pRkK6 {\n    background: none;\n    border: none;\n    padding: 0.5rem;\n    margin: 0;\n    resize: none;\n    width: 100%;\n    height: 100px;\n    font-size: 1.5rem;\n    border: 1px solid var(--ui-black-transparent);\n    border-radius: 0.25rem;\n}\n\n.fonts-modal_button_1M3QC {\n    font: inherit;\n    font-weight: bold;\n    padding: 0.75rem 1rem;\n    border-radius: 0.25rem;\n    border: 1px solid var(--ui-black-transparent);\n    background-color: var(--looks-secondary);\n    color: white;\n}\n\n.fonts-modal_button_1M3QC:disabled {\n    opacity: 0.8;\n}\n\n.fonts-modal_fallback-container_3pRR4 {\n    display: flex;\n    flex-direction: column;\n}\n\n.fonts-modal_fallback-label_1O3KW {\n    margin-bottom: 0.5rem;\n}\n\n.fonts-modal_fallback-list_3UBoZ {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 0.25rem\n}\n\n.fonts-modal_fallback-button_348ot {\n    background: none;\n    padding: 0;\n    border: 0;\n    border-radius: 0.25rem;\n    height: 30px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.fonts-modal_fallback-button_348ot:hover {\n    color: var(--looks-secondary);\n}\n\n.fonts-modal_fallback-container_3pRR4 .fonts-modal_fallback-button-selected_3tSlW {\n    background-color: var(--looks-secondary);\n    color: white;\n}\n\n.fonts-modal_fonts-outer_3vCx7 {\n    border-top: 2px solid var(--ui-black-transparent);\n    padding-top: 1rem;\n}\n\n.fonts-modal_fonts-outer_3vCx7 p {\n    margin-bottom: 0.5rem;\n}\n\n.fonts-modal_fonts_2LnvP {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n}\n\n.fonts-modal_manage-font_AA1bK {\n    width: 100%;\n    display: flex;\n    align-items: center;\n    border: 2px solid var(--ui-black-transparent);\n    border-radius: 0.5rem;\n    padding: 0.5rem;\n    gap: 0.5rem;\n}\n\n.fonts-modal_manage-font-name_2SxDI {\n    font-size: 2rem;\n    margin-bottom: 0.5rem;\n    overflow-wrap: anywhere;\n}\n\n.fonts-modal_manage-font-buttons_2JqqJ {\n    margin-left: auto;\n    flex-shrink: 0;\n    display: flex;\n    flex-direction: row;\n    gap: 0.5rem;\n}\n\n.fonts-modal_manage-font-button_3V2ru {\n    background: none;\n    border: none;\n    border-radius: 100%;\n    width: 2rem;\n    height: 2rem;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.fonts-modal_manage-font-button_3V2ru:hover {\n    background-color: var(--ui-black-transparent);\n}\n\n.fonts-modal_manage-font-button_3V2ru img {\n    display: block;\n    width: 100%;\n    height: 100%;\n    filter: var(--filter-icon-black);\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -16131,13 +16151,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @turbowarp/jszip */ "./node_modules/@turbowarp/jszip/dist/jszip.min.js");
-/* harmony import */ var _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_turbowarp_jszip__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib/pointer-account */ "./src/lib/pointer-account.js");
-/* harmony import */ var _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib/pointer-collab */ "./src/lib/pointer-collab.js");
-/* harmony import */ var _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../lib/pointer-guard */ "./src/lib/pointer-guard.js");
-/* harmony import */ var _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pointer-collab-modal.css */ "./src/components/menu-bar/pointer-collab-modal.css");
-/* harmony import */ var _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @turbowarp/jszip */ "./node_modules/@turbowarp/jszip/dist/jszip.min.js");
+/* harmony import */ var _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_turbowarp_jszip__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib/pointer-account */ "./src/lib/pointer-account.js");
+/* harmony import */ var _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../lib/pointer-collab */ "./src/lib/pointer-collab.js");
+/* harmony import */ var _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../lib/pointer-guard */ "./src/lib/pointer-guard.js");
+/* harmony import */ var _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pointer-collab-modal.css */ "./src/components/menu-bar/pointer-collab-modal.css");
+/* harmony import */ var _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -16155,7 +16178,7 @@ const targetName = target => target.isStage ? '舞台' : target.getName();
 const snapshotBlocks = target => JSON.stringify(target.blocks._blocks || {});
 const parseBlocks = data => {
   if (typeof data !== 'string' || !data) throw new Error('代码数据为空');
-  if (data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["MAX_TARGET_BLOCKS"]) throw new Error('角色代码超过 4MB 同步上限');
+  if (data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["MAX_TARGET_BLOCKS"]) throw new Error('角色代码超过 4MB 同步上限');
   const parsed = JSON.parse(data);
   if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
     throw new Error('代码数据格式不正确');
@@ -16172,6 +16195,10 @@ const parseBlocks = data => {
     text: JSON.stringify(blocks)
   };
 };
+const OFFICIAL_POINTER_EXTENSIONS = {
+  pointerToolbox: 'pointer-toolbox.js',
+  pointerMath: 'pointer-math.js'
+};
 const inspectSnapshotBuffer = (buffer, currentBlocks) => {
   const bytes = new Uint8Array(buffer);
   if (bytes.length < 4 || bytes[0] !== 0x50 || bytes[1] !== 0x4b) {
@@ -16180,13 +16207,13 @@ const inspectSnapshotBuffer = (buffer, currentBlocks) => {
       reason: '不是有效的 sb3 压缩包，可能已被篡改或加密'
     });
   }
-  return _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_2___default.a.loadAsync(buffer).then(zip => {
+  return _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_3___default.a.loadAsync(buffer).then(zip => {
     const entry = zip.file('project.json');
     if (!entry) return {
       ok: false,
       reason: '项目缺少 project.json'
     };
-    return entry.async('string').then(text => Object(_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["analyzeProjectJson"])(text, currentBlocks));
+    return entry.async('string').then(text => Object(_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["analyzeProjectJson"])(text, currentBlocks));
   }).catch(() => ({
     ok: false,
     reason: '无法解压项目，文件可能已损坏或被加密'
@@ -16195,8 +16222,8 @@ const inspectSnapshotBuffer = (buffer, currentBlocks) => {
 class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   constructor(props) {
     super(props);
-    const storedServer = localStorage.getItem('pointer.collab.server') || _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_SERVER"];
-    const storedPreset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["OFFICIAL_SERVERS"].find(item => item.url === storedServer);
+    const storedServer = localStorage.getItem('pointer.collab.server') || _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["DEFAULT_SERVER"];
+    const storedPreset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["OFFICIAL_SERVERS"].find(item => item.url === storedServer);
     this.state = {
       phase: 'checking',
       account: null,
@@ -16225,8 +16252,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       lockRequests: [],
       pendingRequestTarget: '',
       error: '',
-      guard: _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].getState(),
-      guardOpen: false
+      guard: _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].getState(),
+      guardOpen: false,
+      guardPopup: null
     };
     this.mounted = false;
     this.session = null;
@@ -16271,6 +16299,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     this.handleTodoPublish = this.handleTodoPublish.bind(this);
     this.handleRollbackBackup = this.handleRollbackBackup.bind(this);
     this.handleToggleGuard = this.handleToggleGuard.bind(this);
+    this.handleDismissGuardPopup = this.handleDismissGuardPopup.bind(this);
   }
   componentDidMount() {
     this.mounted = true;
@@ -16281,13 +16310,22 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }
     this.refreshTargets();
     window.addEventListener('pointere-collab-todo-publish', this.handleTodoPublish);
-    this.unsubscribeGuard = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].subscribe(guardState => {
+    this.unsubscribeGuard = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].subscribe(guardState => {
       if (!this.mounted) return;
+      let popup = this.state.guardPopup;
+      if (guardState.level === 'critical' || guardState.lockdown) {
+        const alert = guardState.alerts.find(item => item.level === 'critical');
+        if (alert && alert.id !== this.lastGuardAlertId) {
+          this.lastGuardAlertId = alert.id;
+          popup = alert;
+        }
+      }
       this.setState({
-        guard: guardState
+        guard: guardState,
+        guardPopup: popup
       });
     });
-    const stored = Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["getAccount"])();
+    const stored = Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["getAccount"])();
     if (!stored) {
       this.setState({
         phase: 'login'
@@ -16297,9 +16335,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     this.setState({
       account: stored
     });
-    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["fetchMe"])(stored.token).then(data => {
+    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["fetchMe"])(stored.token).then(data => {
       if (!this.mounted) return;
-      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["updateStoredUser"])(data.user);
+      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["updateStoredUser"])(data.user);
       this.setState({
         phase: 'join',
         account: {
@@ -16310,7 +16348,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }).catch(error => {
       if (!this.mounted) return;
       if (error.status === 401 || error.status === 403) {
-        Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["clearAccount"])();
+        Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["clearAccount"])();
         this.setState({
           phase: 'login',
           account: null,
@@ -16336,7 +16374,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       this.unsubscribeGuard();
       this.unsubscribeGuard = null;
     }
-    _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].endCollab();
+    _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].endCollab();
     const vm = this.props.vm;
     if (vm && typeof vm.removeListener === 'function') {
       vm.removeListener('PROJECT_CHANGED', this.handleProjectChanged);
@@ -16398,10 +16436,10 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       });
       return;
     }
-    const preset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["OFFICIAL_SERVERS"].find(item => item.id === serverPreset);
+    const preset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["OFFICIAL_SERVERS"].find(item => item.id === serverPreset);
     this.setState({
       serverPreset,
-      server: preset ? preset.url : _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_SERVER"],
+      server: preset ? preset.url : _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["DEFAULT_SERVER"],
       error: ''
     });
   }
@@ -16409,9 +16447,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const _this$state2 = this.state,
       serverPreset = _this$state2.serverPreset,
       customServer = _this$state2.customServer;
-    if (serverPreset === 'custom') return Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["normalizeServer"])(customServer);
-    const preset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["OFFICIAL_SERVERS"].find(item => item.id === serverPreset);
-    return preset ? preset.url : _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_SERVER"];
+    if (serverPreset === 'custom') return Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["normalizeServer"])(customServer);
+    const preset = _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["OFFICIAL_SERVERS"].find(item => item.id === serverPreset);
+    return preset ? preset.url : _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["DEFAULT_SERVER"];
   }
   handleLogin(event) {
     event.preventDefault();
@@ -16428,9 +16466,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       loginError: '',
       needsVerification: false
     });
-    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["loginAccount"])(accountName, password).then(data => {
+    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["loginAccount"])(accountName, password).then(data => {
       if (!this.mounted) return;
-      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["saveAccount"])(data.token, data.user);
+      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["saveAccount"])(data.token, data.user);
       localStorage.setItem(LAST_ACCOUNT_KEY, accountName);
       this.setState({
         account: {
@@ -16458,9 +16496,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       connected = _this$state3.connected;
     if (connected) this.handleDisconnect();
     if (account && account.token) {
-      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["logoutAccount"])(account.token).catch(() => {});
+      Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["logoutAccount"])(account.token).catch(() => {});
     }
-    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["clearAccount"])();
+    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["clearAccount"])();
     this.setState({
       account: null,
       phase: 'login',
@@ -16478,18 +16516,18 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     });
   }
   handleOpenRegister() {
-    window.open(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["REGISTER_URL"], '_blank', 'noopener');
+    window.open(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["REGISTER_URL"], '_blank', 'noopener');
   }
   handleClose() {
     this.props.onClose();
   }
   handleCreate(event) {
     event.preventDefault();
-    this.startSession(Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["makeRoomCode"])());
+    this.startSession(Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["makeRoomCode"])());
   }
   handleJoin(event) {
     event.preventDefault();
-    const room = Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["normalizeRoomCode"])(this.state.roomCode);
+    const room = Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["normalizeRoomCode"])(this.state.roomCode);
     if (!/^[A-Z0-9]{4,12}$/.test(room)) {
       this.setState({
         error: '房间码需为 4-12 位字母或数字'
@@ -16526,19 +16564,19 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       });
       return;
     }
-    if (Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["isInsecureServer"])(server)) {
+    if (Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["isInsecureServer"])(server)) {
       this.setState({
         error: '公网协作服务器必须使用 wss:// 加密连接；ws:// 仅允许本机或局域网地址'
       });
       return;
     }
     localStorage.setItem('pointer.collab.server', server);
-    _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].startCollab({
+    _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].startCollab({
       room,
       server
     });
     this.setState({
-      guard: _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].getState(),
+      guard: _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].getState(),
       guardOpen: false
     });
     if (this.session) this.session.close();
@@ -16571,7 +16609,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       lockRequests: [],
       pendingRequestTarget: ''
     });
-    const session = new _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["default"]({
+    const session = new _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["default"]({
       server,
       room,
       token: account.token,
@@ -16582,7 +16620,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         },
         onPeers: message => {
           if (!this.mounted || this.session !== session) return;
-          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].setCollabIdentity({
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].setCollabIdentity({
             hostId: message.hostId
           });
           this.update({
@@ -16592,7 +16630,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         },
         onLocks: message => {
           if (!this.mounted || this.session !== session) return;
-          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].observeCollab({
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].observeCollab({
             message
           });
           this.handleLocks(message);
@@ -16600,30 +16638,30 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         onState: message => {
           if (!this.mounted || this.session !== session) return;
           if (message.from === session.selfId) return;
-          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].observeCollab({
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].observeCollab({
             message
           });
-          if (_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].isLockedDown()) {
+          if (_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].isLockedDown()) {
             this.setState({
-              error: _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].getState().lockdownReason || '安全引擎已暂停接收远端项目'
+              error: _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].getState().lockdownReason || '安全引擎已暂停接收远端项目'
             });
             return;
           }
           this.gotInitialState = true;
           const fromName = message.from === 'server' ? '房间快照' : message.name || '对方';
-          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].createBackup(this.props.vm, '应用对方项目前').then(() => {
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].createBackup(this.props.vm, '应用对方项目前').then(() => {
             if (!this.mounted || this.session !== session) return;
-            if (_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].isLockedDown()) return;
+            if (_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].isLockedDown()) return;
             this.applyRemoteState(message.data, fromName);
           });
         },
         onBlocks: message => {
           if (!this.mounted || this.session !== session) return;
           if (message.from === session.selfId) return;
-          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].observeCollab({
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].observeCollab({
             message
           });
-          if (_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].isLockedDown()) return;
+          if (_lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].isLockedDown()) return;
           this.handleRemoteBlocks(message);
         },
         onStateRequest: () => {
@@ -16633,7 +16671,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         },
         onTodo: message => {
           if (!this.mounted || this.session !== session) return;
-          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].observeCollab({
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].observeCollab({
             message
           });
           window.dispatchEvent(new CustomEvent('pointere-collab-todos', {
@@ -16650,7 +16688,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         },
         onLockRequest: message => {
           if (!this.mounted || this.session !== session) return;
-          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].observeCollab({
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].observeCollab({
             message
           });
           this.handleLockRequest(message);
@@ -16681,7 +16719,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
           if (!this.mounted || this.session !== session) return;
           const intentional = wasClosedByUs || this.disconnecting;
           this.session = null;
-          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].endCollab();
+          _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].endCollab();
           window.dispatchEvent(new CustomEvent('pointere-collab-closed'));
           this.update({
             connected: false,
@@ -16705,7 +16743,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       this.session.close();
       this.session = null;
     }
-    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["clearAccount"])();
+    Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["clearAccount"])();
     this.setState({
       account: null,
       phase: 'login',
@@ -16721,13 +16759,13 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
   }
   handleJoined(message) {
     if (!this.mounted) return;
-    _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].setCollabIdentity({
+    _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].setCollabIdentity({
       selfId: message.id,
       hostId: message.hostId
     });
     const peers = message.peers || [];
     const waiting = peers.length <= 1;
-    if (message.user) Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["updateStoredUser"])(message.user);
+    if (message.user) Object(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["updateStoredUser"])(message.user);
     this.lastStructureSig = this.targetSignature();
     window.dispatchEvent(new CustomEvent('pointere-collab-joined', {
       detail: {
@@ -16908,7 +16946,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const _this$state5 = this.state,
       room = _this$state5.room,
       server = _this$state5.server;
-    const text = "\u623F\u95F4\u7801\uFF1A".concat(room, "\n\u534F\u4F5C\u670D\u52A1\u5668\uFF1A").concat(server, "\n\u8BF7\u5148\u6CE8\u518C\u5E76\u767B\u5F55 PointerE \u8D26\u53F7\uFF1A").concat(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_3__["REGISTER_URL"], "\n\u7136\u540E\u5728 PointerEditor \u6253\u5F00\u300C\u4E91\u7AEF \u2192 \u5728\u7EBF\u534F\u4F5C\u300D\uFF0C\u8F93\u5165\u623F\u95F4\u7801\u5373\u53EF\u4E00\u8D77\u7F16\u8F91\u3002");
+    const text = "\u623F\u95F4\u7801\uFF1A".concat(room, "\n\u534F\u4F5C\u670D\u52A1\u5668\uFF1A").concat(server, "\n\u8BF7\u5148\u6CE8\u518C\u5E76\u767B\u5F55 PointerE \u8D26\u53F7\uFF1A").concat(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_4__["REGISTER_URL"], "\n\u7136\u540E\u5728 PointerEditor \u6253\u5F00\u300C\u4E91\u7AEF \u2192 \u5728\u7EBF\u534F\u4F5C\u300D\uFF0C\u8F93\u5165\u623F\u95F4\u7801\u5373\u53EF\u4E00\u8D77\u7F16\u8F91\u3002");
     const done = () => this.showNotice('邀请信息已复制', 'info');
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(done).catch(() => this.fallbackCopy(text, done));
@@ -17037,7 +17075,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       });
       return;
     }
-    if (data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["MAX_TARGET_BLOCKS"]) {
+    if (data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["MAX_TARGET_BLOCKS"]) {
       this.showNotice('当前角色代码超过 4MB，无法实时同步', 'warn');
       return;
     }
@@ -17059,10 +17097,10 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       return;
     }
     const previous = this.knownBlocks[targetKey];
-    const verdict = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].inspectTargetUpdate(previous, message.data);
+    const verdict = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].inspectTargetUpdate(previous, message.data);
     if (verdict.suspicious) {
       if (previous) this.quarantinedBlocks[targetKey] = previous;
-      _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].addAlert('critical', '拦截了疑似加密或乱码的角色代码改动');
+      _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].addAlert('critical', '拦截了疑似加密或乱码的角色代码改动');
       this.showNotice('安全引擎：收到的代码疑似被加密或损坏，已保留上一版本', 'warn');
       return;
     }
@@ -17076,7 +17114,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         accepted = window.confirm("\u5B89\u5168\u5F15\u64CE\uFF1A".concat(message.name || '对方', " \u6B63\u5728\u5927\u5E45\u6E05\u7A7A\u300C").concat(label, "\u300D\u7684\u4EE3\u7801\uFF08") + "".concat(verdict.previousBlocks, " \u2192 ").concat(verdict.nextBlocks, " \u5757\uFF09\u3002\u4FDD\u7559\u4E0A\u4E00\u7248\u672C\u5E76\u63A5\u53D7\u5417\uFF1F"));
       }
       if (!accepted) {
-        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].addAlert('warn', "\u5DF2\u963B\u6B62\u5BF9\u300C".concat(label, "\u300D\u7684\u5927\u5E45\u6E05\u7A7A\uFF0C\u4E0A\u4E00\u7248\u672C\u5DF2\u4FDD\u7559"), {});
+        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].addAlert('warn', "\u5DF2\u963B\u6B62\u5BF9\u300C".concat(label, "\u300D\u7684\u5927\u5E45\u6E05\u7A7A\uFF0C\u4E0A\u4E00\u7248\u672C\u5DF2\u4FDD\u7559"), {});
         this.showNotice("\u5DF2\u963B\u6B62\u6E05\u7A7A\u300C".concat(label, "\u300D\u7684\u4EE3\u7801\uFF0C\u4E0A\u4E00\u7248\u672C\u5DF2\u4FDD\u7559"), 'warn');
         return;
       }
@@ -17130,8 +17168,31 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     });
     return total;
   }
+  preloadSharedExtensions(info) {
+    const vm = this.props.vm;
+    const manager = vm && vm.extensionManager;
+    if (!manager || !info) return Promise.resolve();
+    const jobs = [];
+    const request = (extensionId, rawUrl) => {
+      if (!extensionId) return;
+      if (typeof manager.isExtensionLoaded === 'function' && manager.isExtensionLoaded(extensionId)) return;
+      if (typeof manager.isBuiltinExtension === 'function' && manager.isBuiltinExtension(extensionId)) return;
+      const canonical = Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["canonicalExtensionURL"])(rawUrl);
+      if (rawUrl && canonical === rawUrl) return;
+      const url = rawUrl ? canonical : OFFICIAL_POINTER_EXTENSIONS[extensionId] ? "https://peditor.ctspace.xyz/extensions/".concat(OFFICIAL_POINTER_EXTENSIONS[extensionId]) : '';
+      if (!url) return;
+      jobs.push(Promise.resolve(manager.loadExtensionURL(url)).catch(() => {}));
+    };
+    Object.keys(info.extensionURLs || {}).forEach(extensionId => {
+      request(extensionId, info.extensionURLs[extensionId]);
+    });
+    (info.extensions || []).forEach(extensionId => {
+      if (OFFICIAL_POINTER_EXTENSIONS[extensionId]) request(extensionId, '');
+    });
+    return Promise.all(jobs);
+  }
   applyRemoteState(data, fromName) {
-    if (typeof data !== 'string' || data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["MAX_SNAPSHOT_BASE64"]) {
+    if (typeof data !== 'string' || data.length > _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["MAX_SNAPSHOT_BASE64"]) {
       this.setState({
         error: '收到的项目数据超过同步上限，已拒绝应用'
       });
@@ -17139,7 +17200,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }
     let buffer;
     try {
-      buffer = Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["base64ToArrayBuffer"])(data);
+      buffer = Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["base64ToArrayBuffer"])(data);
     } catch (error) {
       this.setState({
         error: '收到的项目数据损坏，无法应用'
@@ -17150,21 +17211,21 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     inspectSnapshotBuffer(buffer, currentBlocks).then(info => {
       if (!this.mounted) return;
       if (!info.ok) {
-        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].addAlert('critical', "\u5DF2\u62E6\u622A\u53EF\u7591\u9879\u76EE\u540C\u6B65\uFF1A".concat(info.reason));
+        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].addAlert('critical', "\u5DF2\u62E6\u622A\u53EF\u7591\u9879\u76EE\u540C\u6B65\uFF1A".concat(info.reason));
         this.setState({
           error: "\u5B89\u5168\u5F15\u64CE\u5DF2\u62E6\u622A\u5BF9\u65B9\u9879\u76EE\uFF1A".concat(info.reason)
         });
         return;
       }
       if (info.suspicious) {
-        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].addAlert('critical', '对方项目内容疑似被加密或乱码，已拒绝应用');
+        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].addAlert('critical', '对方项目内容疑似被加密或乱码，已拒绝应用');
         this.setState({
           error: '安全引擎：项目内容疑似被加密或乱码，已拒绝应用'
         });
         return;
       }
       if (info.destructive) {
-        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].addAlert('critical', "\u9879\u76EE\u79EF\u6728\u4ECE ".concat(currentBlocks, " \u9AA4\u964D\u5230 ").concat(info.blocks, "\uFF0C\u7591\u4F3C\u6E05\u7A7A\u6216\u52D2\u7D22"));
+        _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].addAlert('critical', "\u9879\u76EE\u79EF\u6728\u4ECE ".concat(currentBlocks, " \u9AA4\u964D\u5230 ").concat(info.blocks, "\uFF0C\u7591\u4F3C\u6E05\u7A7A\u6216\u52D2\u7D22"));
         const accepted = window.confirm("\u5B89\u5168\u5F15\u64CE\uFF1A\u5BF9\u65B9\u9879\u76EE\u79EF\u6728\u6570\u91CF\u4ECE ".concat(currentBlocks, " \u964D\u5230 ").concat(info.blocks, "\uFF0C") + '疑似清空或勒索。仍要应用吗？');
         if (!accepted) {
           this.setState({
@@ -17173,7 +17234,10 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
           return;
         }
       }
-      this.performRemoteState(buffer, fromName);
+      this.preloadSharedExtensions(info).then(() => {
+        if (!this.mounted) return;
+        this.performRemoteState(buffer, fromName);
+      });
     });
   }
   performRemoteState(buffer, fromName) {
@@ -17218,7 +17282,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         status: '正在把整个项目同步给对方…'
       });
     }
-    Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["encodeProjectSnapshot"])(this.props.vm).then(data => {
+    Object(_lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["encodeProjectSnapshot"])(this.props.vm).then(data => {
       if (!this.mounted || !this.session) return;
       if (this.session.sendState(data)) {
         this.lastSnapshotAt = Date.now();
@@ -17257,16 +17321,16 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       loginError = _this$state6.loginError,
       needsVerification = _this$state6.needsVerification;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.form,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.form,
       onSubmit: this.handleLogin
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.accountIntro
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.accountIntro
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.accountIntroTitle
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.accountIntroTitle
     }, "\u767B\u5F55 PointerE \u8D26\u53F7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
     }, "PointerE \u8D26\u53F7\u4EC5\u7528\u4E8E\u5728\u7EBF\u534F\u4F5C\uFF0C\u4E0E\u521B\u5BA2\u6B21\u5143\u8D26\u53F7\u76F8\u4E92\u72EC\u7ACB\u3002\u767B\u5F55\u540E\u53EF\u4EE5\u548C\u540C\u4F34\u5B9E\u65F6\u7F16\u8F91\u540C\u4E00\u4E2A\u9879\u76EE\u3002")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.field
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u7528\u6237\u540D\u6216\u90AE\u7BB1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       name: "loginAccount",
       value: loginAccount,
@@ -17275,7 +17339,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       spellCheck: false,
       disabled: authBusy
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.field
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5BC6\u7801"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       name: "loginPassword",
       type: "password",
@@ -17284,21 +17348,21 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       autoComplete: "current-password",
       disabled: authBusy
     })), loginError ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.error
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.error
     }, loginError) : null, needsVerification ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
     }, "\u8BF7\u6253\u5F00\u6CE8\u518C\u90AE\u7BB1\u5B8C\u6210\u9A8C\u8BC1\u3002\u6CA1\u6709\u6536\u5230\u90AE\u4EF6\u65F6\uFF0C\u53EF\u5728\u6CE8\u518C\u9875\u91CD\u65B0\u53D1\u9001\uFF0C\u6216\u8054\u7CFB\u7BA1\u7406\u5458\u3002") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.actions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.actions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "submit",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.primary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.primary,
       disabled: authBusy
     }, authBusy ? '登录中…' : '登录'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.secondary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.secondary,
       onClick: this.handleOpenRegister
     }, "\u6CE8\u518C PointerE \u8D26\u53F7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
     }, "\u8D26\u53F7\u4E2D\u5FC3\uFF1A", ACCOUNT_CENTER, " \xB7 \u6CE8\u518C\u9700\u8981\u56FE\u5F62\u9A8C\u8BC1\u7801\u548C\u90AE\u7BB1\u9A8C\u8BC1"));
   }
   renderAccountBar() {
@@ -17307,14 +17371,14 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const user = account.user;
     const initial = String(user.username || 'P').slice(0, 1).toUpperCase();
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.accountBar
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.accountBar
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.accountAvatar
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.accountAvatar
     }, initial), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.accountMeta
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.accountMeta
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, user.nickname || user.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "@", user.username, " \xB7 PointerE \u8D26\u53F7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.linkButton,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.linkButton,
       onClick: this.handleLogout
     }, "\u9000\u51FA\u767B\u5F55"));
   }
@@ -17326,22 +17390,22 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       connecting = _this$state7.connecting,
       account = _this$state7.account;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.form,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.form,
       onSubmit: this.handleJoin
     }, this.renderAccountBar(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.field
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u534F\u4F5C\u670D\u52A1\u5668"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
       name: "serverPreset",
       value: serverPreset,
       onChange: this.handleServerPresetChange,
       disabled: connecting
-    }, _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_4__["OFFICIAL_SERVERS"].map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+    }, _lib_pointer_collab__WEBPACK_IMPORTED_MODULE_5__["OFFICIAL_SERVERS"].map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
       key: item.id,
       value: item.id
     }, item.label)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
       value: "custom"
     }, "\u81EA\u5B9A\u4E49\u534F\u4F5C\u670D\u52A1\u5668"))), serverPreset === 'custom' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.field
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u670D\u52A1\u5668\u5730\u5740"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       name: "customServer",
       value: customServer,
@@ -17350,9 +17414,9 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       spellCheck: false,
       disabled: connecting
     })) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
     }, serverPreset === 'custom' ? '公网服务器必须使用 wss:// 加密连接；ws:// 仅允许本机或局域网地址。' : '官方节点通过 WSS（TLS）加密传输，进入房间需要已验证的 PointerE 账号。'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.field
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u623F\u95F4\u7801"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       name: "roomCode",
       value: roomCode,
@@ -17363,17 +17427,17 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       spellCheck: false,
       disabled: connecting
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
     }, "\u8FDB\u5165\u540C\u4E00\u623F\u95F4\u540E\uFF0C\u79EF\u6728\u4FEE\u6539\u4F1A\u5B9E\u65F6\u540C\u6B65\uFF1B\u6BCF\u4E2A\u89D2\u8272\u540C\u4E00\u65F6\u95F4\u7531\u4E00\u540D\u6210\u5458\u8BA4\u9886\u7F16\u8F91\uFF0C\u623F\u4E3B\u53EF\u4EE5\u9501\u5B9A\u5168\u90E8\u4EE3\u7801\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.actions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.actions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.primary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.primary,
       onClick: this.handleCreate,
       disabled: connecting || !account
     }, "\u521B\u5EFA\u623F\u95F4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "submit",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.secondary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.secondary,
       disabled: connecting || !account
     }, "\u52A0\u5165\u623F\u95F4")));
   }
@@ -17382,10 +17446,18 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       guardOpen: !previous.guardOpen
     }));
   }
+  handleDismissGuardPopup() {
+    this.setState({
+      guardPopup: null
+    });
+  }
   handleRollbackBackup() {
-    const backup = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].latestBackup();
+    const backup = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].latestBackup();
     if (!backup) return;
     if (!window.confirm('恢复到同步前的本地快照？当前项目会被替换，建议先断开协作。')) return;
+    this.setState({
+      guardPopup: null
+    });
     if (this.session) this.handleDisconnect();
     this.applyingState = true;
     Promise.resolve(this.props.vm.loadProject(backup.data)).then(() => {
@@ -17393,7 +17465,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       this.refreshTargets(true);
       this.rebuildKnownBlocks();
       this.showNotice('已回滚到同步前快照', 'info');
-      _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_5__["default"].clearBackups();
+      _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].clearBackups();
     }).catch(error => {
       this.applyingState = false;
       this.setState({
@@ -17407,16 +17479,16 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const claim = notice.targetId ? this.claimFor(notice.targetId) : null;
     const canRequest = claim && claim.clientId !== this.state.selfId && this.state.pendingRequestTarget !== notice.targetId;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.notice, " ").concat(notice.level === 'warn' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.noticeWarn : '')
+      className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.notice, " ").concat(notice.level === 'warn' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.noticeWarn : '')
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, notice.message), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.noticeActions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.noticeActions
     }, canRequest ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniButton,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.miniButton,
       onClick: () => this.handleRequestEdit(notice.targetId)
     }, "\u53D1\u9001\u7533\u8BF7") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.noticeClose,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.noticeClose,
       onClick: this.handleDismissNotice,
       "aria-label": "\u5173\u95ED\u63D0\u793A"
     }, "\xD7")));
@@ -17425,19 +17497,19 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const lockRequests = this.state.lockRequests;
     if (!lockRequests.length) return null;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.requestList
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.requestList
     }, lockRequests.map(request => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       key: "".concat(request.targetId, "-").concat(request.from.id),
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.requestCard
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.requestCard
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, request.from.name), " \u7533\u8BF7\u7F16\u8F91\u300C", this.labelForTarget(request.targetId), "\u300D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.inlineActions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.inlineActions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniPrimary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.miniPrimary,
       onClick: () => this.handleRespondRequest(request, true)
     }, "\u540C\u610F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniButton,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.miniButton,
       onClick: () => this.handleRespondRequest(request, false)
     }, "\u62D2\u7EDD")))));
   }
@@ -17453,11 +17525,11 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const isHost = hostId === selfId;
     if (!targets.length) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
       }, "\u5F53\u524D\u9879\u76EE\u8FD8\u6CA1\u6709\u53EF\u534F\u4F5C\u7684\u89D2\u8272\u3002");
     }
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetList
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.targetList
     }, targets.map(target => {
       const claim = claims.find(item => item.targetId === target.key);
       const mine = claim && claim.clientId === selfId;
@@ -17466,37 +17538,37 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       const canClaim = !claim && (!projectLocked || isHost);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         key: target.key,
-        className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetRow, " ").concat(target.id === editingTargetId ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetCurrent : '')
+        className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.targetRow, " ").concat(target.id === editingTargetId ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.targetCurrent : '')
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "button",
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetName,
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.targetName,
         onClick: () => this.handleSelectTarget(target.id),
         title: "\u5207\u6362\u5230\u8FD9\u4E2A\u89D2\u8272"
       }, target.name, target.isStage ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetKind
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.targetKind
       }, "\u821E\u53F0") : null, target.id === editingTargetId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetKind
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.targetKind
       }, "\u5F53\u524D") : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetState
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.targetState
       }, claim ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: mine ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.tagMine : _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.tagLocked
+        className: mine ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.tagMine : _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.tagLocked
       }, mine ? '我' : claim.name, " \u5DF2\u9501\u5B9A") : projectBlocked ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.tagLocked
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.tagLocked
       }, "\u623F\u4E3B\u5DF2\u9501\u5B9A") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.tagOpen
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.tagOpen
       }, "\u53EF\u7F16\u8F91")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.targetActions
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.targetActions
       }, canClaim ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "button",
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniButton,
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.miniButton,
         onClick: () => this.handleClaim(target.key)
       }, "\u8BA4\u9886") : null, mine ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "button",
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniButton,
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.miniButton,
         onClick: () => this.handleRelease(target.key)
       }, "\u91CA\u653E") : null, other ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "button",
-        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniButton,
+        className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.miniButton,
         onClick: () => this.handleRequestEdit(target.key),
         disabled: pendingRequestTarget === target.key
       }, pendingRequestTarget === target.key ? '申请中…' : '申请编辑') : null));
@@ -17508,27 +17580,27 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       guardOpen = _this$state9.guardOpen;
     if (!guardState.active) return null;
     const critical = guardState.lockdown || guardState.level === 'critical';
-    const levelClass = critical ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityCritical : guardState.level === 'warn' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityWarn : '';
+    const levelClass = critical ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityCritical : guardState.level === 'warn' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityWarn : '';
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityBar, " ").concat(levelClass)
+      className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityBar, " ").concat(levelClass)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityHead
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityHead
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "PointerGuard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, guardState.lockdown ? '已暂停接收远端改动' : critical ? '已拦截可疑操作' : guardState.level === 'warn' ? '发现可疑行为' : '实时守护中'), guardState.blockedExtensions ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5DF2\u62E6\u622A ", guardState.blockedExtensions, " \u4E2A\u6269\u5C55") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityLink,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityLink,
       onClick: this.handleToggleGuard
     }, guardOpen ? '收起' : '详情')), guardOpen ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityBody
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityBody
     }, guardState.alerts.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityAlerts
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityAlerts
     }, guardState.alerts.slice(0, 6).map(alert => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
       key: alert.id,
-      className: alert.level === 'critical' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityCriticalText : ''
+      className: alert.level === 'critical' ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityCriticalText : ''
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, new Date(alert.at).toLocaleTimeString()), alert.message))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u6682\u65E0\u5F02\u5E38\u4E8B\u4EF6\u3002")) : null, guardState.backups.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityActions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityActions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.securityRollback,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityRollback,
       onClick: this.handleRollbackBackup
     }, "\u56DE\u6EDA\u5230\u540C\u6B65\u524D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u672C\u5730\u5FEB\u7167 ", new Date(guardState.backups[0].at).toLocaleTimeString(), ' · ', Math.round(guardState.backups[0].size / 1024), " KB")) : null);
   }
@@ -17542,89 +17614,126 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       hostId = _this$state0.hostId;
     const isHost = hostId === selfId;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.form
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.form
     }, this.renderAccountBar(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.roomCard
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.roomCard
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.roomLabel
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.roomLabel
     }, "\u623F\u95F4\u7801"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.roomCode
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.roomCode
     }, room)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.secondary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.secondary,
       onClick: this.handleCopyInvite
     }, "\u590D\u5236\u9080\u8BF7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.peerList
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.peerList
     }, peers.map(peer => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       key: peer.id,
-      className: peer.id === selfId ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.peerSelf : _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.peer
+      className: peer.id === selfId ? _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.peerSelf : _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.peer
     }, peer.nickname || peer.name, peer.host ? '（房主）' : '', peer.id === selfId ? ' · 我' : ''))), this.renderLockRequests(), this.renderNotice(), this.renderSecurity(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.sectionHeader
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.sectionHeader
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.sectionTitle
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.sectionTitle
     }, "\u89D2\u8272\u4E0E\u4EE3\u7801\u9501\u5B9A"), isHost ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.miniPrimary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.miniPrimary,
       onClick: this.handleHostLock
     }, projectLocked ? '解锁全部代码' : '锁定全部代码') : null), this.renderTargets(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
     }, "\u8BA4\u9886\u89D2\u8272\u540E\u53EA\u6709\u4F60\u80FD\u4FEE\u6539\u8BE5\u89D2\u8272\u7684\u79EF\u6728\uFF1B\u5176\u4ED6\u4EBA\u60F3\u4FEE\u6539\u65F6\uFF0C\u9700\u8981\u5411\u4F60\u53D1\u9001\u7533\u8BF7\u3002\u623F\u4E3B\u9501\u5B9A\u5168\u90E8\u4EE3\u7801\u540E\uFF0C\u53EA\u6709\u623F\u4E3B\u53EF\u4EE5\u7F16\u8F91\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.actions
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.actions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.primary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.primary,
       onClick: this.handleClose
     }, "\u6536\u8D77\u7A97\u53E3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.secondary,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.secondary,
       onClick: this.handleDisconnect
     }, "\u65AD\u5F00\u534F\u4F5C")), isHost ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.linkButton,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.linkButton,
       onClick: this.handleSyncNow
     }, "\u540C\u6B65\u6574\u4E2A\u9879\u76EE\uFF08\u623F\u4E3B\uFF09") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
     }, lastSync ? "\u6700\u8FD1\u540C\u6B65\uFF1A".concat(lastSync, "\u3002") : '', "\u6536\u8D77\u7A97\u53E3\u4E0D\u4F1A\u9000\u51FA\u534F\u4F5C\uFF0C\u623F\u95F4\u6210\u5458\u4ECD\u53EF\u7EE7\u7EED\u7F16\u8F91\u3002"));
   }
   renderChecking() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.form
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.form
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
     }, "\u6B63\u5728\u68C0\u67E5 PointerE \u767B\u5F55\u72B6\u6001\u2026"));
   }
-  render() {
-    if (this.props.hidden) return null;
+  renderGuardPopup() {
     const _this$state1 = this.state,
-      phase = _this$state1.phase,
-      connecting = _this$state1.connecting,
-      server = _this$state1.server,
-      error = _this$state1.error,
-      status = _this$state1.status;
+      guardPopup = _this$state1.guardPopup,
+      room = _this$state1.room;
+    if (!guardPopup) return null;
+    const hasBackup = _lib_pointer_guard__WEBPACK_IMPORTED_MODULE_6__["default"].getState().backups.length > 0;
+    return /*#__PURE__*/react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.createPortal(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.guardOverlay,
+      role: "alertdialog",
+      "aria-modal": "true"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.guardPanel
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.guardHead
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "PointerGuard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "\u5DF2\u62E6\u622A\u53EF\u7591\u64CD\u4F5C")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.guardMessage
+    }, guardPopup.message), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.guardMeta
+    }, new Date(guardPopup.at).toLocaleTimeString(), room ? " \xB7 \u623F\u95F4 ".concat(room) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.guardHint
+    }, "\u5DF2\u81EA\u52A8\u6682\u505C\u63A5\u6536\u8FDC\u7AEF\u6539\u52A8\uFF0C\u5E76\u4FDD\u7559\u540C\u6B65\u524D\u7684\u672C\u5730\u5FEB\u7167\u3002\u5EFA\u8BAE\u5148\u56DE\u6EDA\u6216\u65AD\u5F00\u534F\u4F5C\uFF0C\u518D\u68C0\u67E5\u623F\u95F4\u6210\u5458\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.guardActions
+    }, hasBackup ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.guardRollback,
+      onClick: this.handleRollbackBackup
+    }, "\u56DE\u6EDA\u5230\u540C\u6B65\u524D") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.guardDisconnect,
+      onClick: this.handleDisconnect
+    }, "\u65AD\u5F00\u534F\u4F5C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.guardDismiss,
+      onClick: this.handleDismissGuardPopup
+    }, "\u6211\u77E5\u9053\u4E86")))), document.body);
+  }
+  render() {
+    const popup = this.renderGuardPopup();
+    if (this.props.hidden) return popup;
+    const _this$state10 = this.state,
+      phase = _this$state10.phase,
+      connecting = _this$state10.connecting,
+      server = _this$state10.server,
+      error = _this$state10.error,
+      status = _this$state10.status;
     let content;
     if (phase === 'checking') content = this.renderChecking();else if (phase === 'login') content = this.renderLogin();else if (this.state.connected) content = this.renderRoom();else content = this.renderJoinForm();
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.overlay,
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.overlay,
       role: "dialog",
       "aria-modal": "true"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.panel
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.panel
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.header
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.header
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5728\u7EBF\u534F\u4F5C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.close,
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.close,
       onClick: this.handleClose,
       "aria-label": "\u6536\u8D77"
     }, "\xD7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.body
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.body
     }, content, error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.error
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.error
     }, error) : null, !error && status ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.status
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.status
     }, status) : null, connecting ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_6___default.a.hint
-    }, "\u6B63\u5728\u8FDE\u63A5 ", server, " \u2026") : null)));
+      className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
+    }, "\u6B63\u5728\u8FDE\u63A5 ", server, " \u2026") : null))), popup);
   }
 }
 PointerCollabModal.propTypes = {
@@ -43730,7 +43839,7 @@ const isPointerExtensionURL = url => {
   try {
     const parsed = new URL(url);
     const root =  false ? undefined : '';
-    return parsed.origin === window.location.origin && parsed.pathname.startsWith("".concat(root, "/extensions/")) || parsed.origin === 'https://vable.ctspace.xyz' && parsed.pathname.startsWith('/extensions/') || parsed.origin === 'https://adopos610.github.io' && parsed.pathname.startsWith('/PointerEditor/extensions/');
+    return parsed.origin === window.location.origin && parsed.pathname.startsWith("".concat(root, "/extensions/")) || parsed.origin === 'https://peditor.ctspace.xyz' && parsed.pathname.startsWith('/extensions/') || parsed.origin === 'https://vable.ctspace.xyz' && parsed.pathname.startsWith('/extensions/') || parsed.origin === 'https://adopos610.github.io' && parsed.pathname.startsWith('/PointerEditor/extensions/');
   } catch (error) {
     return false;
   }
@@ -51349,7 +51458,7 @@ const redeemMallProduct = (token, productId, address) => request('/points/redeem
 /*!***********************************!*\
   !*** ./src/lib/pointer-collab.js ***!
   \***********************************/
-/*! exports provided: OFFICIAL_SERVERS, MAX_SNAPSHOT_BASE64, MAX_TARGET_BLOCKS, makeRoomCode, normalizeRoomCode, normalizeServer, isInsecureServer, arrayBufferToBase64, base64ToArrayBuffer, encodeProjectSnapshot, DEFAULT_SERVER, default */
+/*! exports provided: OFFICIAL_SERVERS, MAX_SNAPSHOT_BASE64, MAX_TARGET_BLOCKS, makeRoomCode, normalizeRoomCode, normalizeServer, isInsecureServer, canonicalExtensionURL, arrayBufferToBase64, base64ToArrayBuffer, encodeProjectSnapshot, DEFAULT_SERVER, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51361,6 +51470,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizeRoomCode", function() { return normalizeRoomCode; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizeServer", function() { return normalizeServer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isInsecureServer", function() { return isInsecureServer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "canonicalExtensionURL", function() { return canonicalExtensionURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "arrayBufferToBase64", function() { return arrayBufferToBase64; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "base64ToArrayBuffer", function() { return base64ToArrayBuffer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encodeProjectSnapshot", function() { return encodeProjectSnapshot; });
@@ -51405,6 +51515,30 @@ const isInsecureServer = value => {
     return url.protocol === 'ws:' && !LOCAL_HOST.test(url.hostname);
   } catch (error) {
     return false;
+  }
+};
+const OFFICIAL_EXTENSION_FILES = new Set(['pointer-toolbox.js', 'pointer-math.js']);
+
+/**
+ * The host may have loaded our extensions from its own local server
+ * (http://127.0.0.1:<port>/extensions/...) or from the website. Those URLs
+ * are not reliable for other room members, so map the official files to the
+ * public download host before the project is applied.
+ */
+const canonicalExtensionURL = value => {
+  try {
+    const url = new URL(String(value || ''));
+    const isLocal = /^(127\.\d+\.\d+\.\d+|localhost|\[::1\])$/.test(url.hostname);
+    const isWebsite = url.hostname === 'peditor.ctspace.xyz' || url.hostname === 'adopos610.github.io' && url.pathname.startsWith('/PointerEditor/');
+    if (!isLocal && !isWebsite) return value;
+    const pathname = url.pathname.replace(/^\/PointerEditor/, '');
+    const fileName = pathname.split('/').pop();
+    if (pathname.startsWith('/extensions/') && OFFICIAL_EXTENSION_FILES.has(fileName)) {
+      return "https://peditor.ctspace.xyz/extensions/".concat(fileName);
+    }
+    return value;
+  } catch (error) {
+    return value;
   }
 };
 const arrayBufferToBase64 = buffer => {
@@ -52130,7 +52264,9 @@ const analyzeProjectJson = (text, currentBlocks) => {
     blocks,
     targets: project.targets.length,
     suspicious,
-    destructive
+    destructive,
+    extensions: Array.isArray(project.extensions) ? project.extensions.slice(0, 50) : [],
+    extensionURLs: project.extensionURLs && typeof project.extensionURLs === 'object' ? project.extensionURLs : {}
   };
 };
 const trimUrl = url => {

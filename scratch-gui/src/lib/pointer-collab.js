@@ -50,6 +50,32 @@ export const isInsecureServer = value => {
     }
 };
 
+const OFFICIAL_EXTENSION_FILES = new Set(['pointer-toolbox.js', 'pointer-math.js']);
+
+/**
+ * The host may have loaded our extensions from its own local server
+ * (http://127.0.0.1:<port>/extensions/...) or from the website. Those URLs
+ * are not reliable for other room members, so map the official files to the
+ * public download host before the project is applied.
+ */
+export const canonicalExtensionURL = value => {
+    try {
+        const url = new URL(String(value || ''));
+        const isLocal = /^(127\.\d+\.\d+\.\d+|localhost|\[::1\])$/.test(url.hostname);
+        const isWebsite = url.hostname === 'peditor.ctspace.xyz' ||
+            (url.hostname === 'adopos610.github.io' && url.pathname.startsWith('/PointerEditor/'));
+        if (!isLocal && !isWebsite) return value;
+        const pathname = url.pathname.replace(/^\/PointerEditor/, '');
+        const fileName = pathname.split('/').pop();
+        if (pathname.startsWith('/extensions/') && OFFICIAL_EXTENSION_FILES.has(fileName)) {
+            return `https://peditor.ctspace.xyz/extensions/${fileName}`;
+        }
+        return value;
+    } catch (error) {
+        return value;
+    }
+};
+
 export const arrayBufferToBase64 = buffer => {
     const bytes = new Uint8Array(buffer);
     let binary = '';

@@ -61,7 +61,10 @@ export const analyzeProjectJson = (text, currentBlocks) => {
         blocks,
         targets: project.targets.length,
         suspicious,
-        destructive
+        destructive,
+        extensions: Array.isArray(project.extensions) ? project.extensions.slice(0, 50) : [],
+        extensionURLs: project.extensionURLs && typeof project.extensionURLs === 'object' ?
+            project.extensionURLs : {}
     };
 };
 

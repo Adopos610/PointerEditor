@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import JSZip from '@turbowarp/jszip';
 
 import {
@@ -18,6 +19,7 @@ import CollabSession, {
     MAX_TARGET_BLOCKS,
     OFFICIAL_SERVERS,
     base64ToArrayBuffer,
+    canonicalExtensionURL,
     encodeProjectSnapshot,
     isInsecureServer,
     makeRoomCode,
@@ -56,6 +58,11 @@ const parseBlocks = data => {
         blocks[id] = block;
     });
     return {blocks, text: JSON.stringify(blocks)};
+};
+
+const OFFICIAL_POINTER_EXTENSIONS = {
+    pointerToolbox: 'pointer-toolbox.js',
+    pointerMath: 'pointer-math.js'
 };
 
 const inspectSnapshotBuffer = (buffer, currentBlocks) => {
@@ -106,7 +113,8 @@ class PointerCollabModal extends React.Component {
             pendingRequestTarget: '',
             error: '',
             guard: guard.getState(),
-            guardOpen: false
+            guardOpen: false,
+            guardPopup: null
         };
         this.mounted = false;
         this.session = null;
@@ -151,6 +159,7 @@ class PointerCollabModal extends React.Component {
         this.handleTodoPublish = this.handleTodoPublish.bind(this);
         this.handleRollbackBackup = this.handleRollbackBackup.bind(this);
         this.handleToggleGuard = this.handleToggleGuard.bind(this);
+        this.handleDismissGuardPopup = this.handleDismissGuardPopup.bind(this);
     }
 
     componentDidMount () {
@@ -164,7 +173,15 @@ class PointerCollabModal extends React.Component {
         window.addEventListener('pointere-collab-todo-publish', this.handleTodoPublish);
         this.unsubscribeGuard = guard.subscribe(guardState => {
             if (!this.mounted) return;
-            this.setState({guard: guardState});
+            let popup = this.state.guardPopup;
+            if (guardState.level === 'critical' || guardState.lockdown) {
+                const alert = guardState.alerts.find(item => item.level === 'critical');
+                if (alert && alert.id !== this.lastGuardAlertId) {
+                    this.lastGuardAlertId = alert.id;
+                    popup = alert;
+                }
+            }
+            this.setState({guard: guardState, guardPopup: popup});
         });
         const stored = getAccount();
         if (!stored) {
@@ -956,6 +973,33 @@ class PointerCollabModal extends React.Component {
         return total;
     }
 
+    preloadSharedExtensions (info) {
+        const vm = this.props.vm;
+        const manager = vm && vm.extensionManager;
+        if (!manager || !info) return Promise.resolve();
+        const jobs = [];
+        const request = (extensionId, rawUrl) => {
+            if (!extensionId) return;
+            if (typeof manager.isExtensionLoaded === 'function' && manager.isExtensionLoaded(extensionId)) return;
+            if (typeof manager.isBuiltinExtension === 'function' && manager.isBuiltinExtension(extensionId)) return;
+            const canonical = canonicalExtensionURL(rawUrl);
+            if (rawUrl && canonical === rawUrl) return;
+            const url = rawUrl ? canonical : (
+                OFFICIAL_POINTER_EXTENSIONS[extensionId] ?
+                    `https://peditor.ctspace.xyz/extensions/${OFFICIAL_POINTER_EXTENSIONS[extensionId]}` : ''
+            );
+            if (!url) return;
+            jobs.push(Promise.resolve(manager.loadExtensionURL(url)).catch(() => {}));
+        };
+        Object.keys(info.extensionURLs || {}).forEach(extensionId => {
+            request(extensionId, info.extensionURLs[extensionId]);
+        });
+        (info.extensions || []).forEach(extensionId => {
+            if (OFFICIAL_POINTER_EXTENSIONS[extensionId]) request(extensionId, '');
+        });
+        return Promise.all(jobs);
+    }
+
     applyRemoteState (data, fromName) {
         if (typeof data !== 'string' || data.length > MAX_SNAPSHOT_BASE64) {
             this.setState({error: '收到的项目数据超过同步上限，已拒绝应用'});
@@ -992,7 +1036,10 @@ class PointerCollabModal extends React.Component {
                     return;
                 }
             }
-            this.performRemoteState(buffer, fromName);
+            this.preloadSharedExtensions(info).then(() => {
+                if (!this.mounted) return;
+                this.performRemoteState(buffer, fromName);
+            });
         });
     }
 
@@ -1215,10 +1262,15 @@ class PointerCollabModal extends React.Component {
         this.setState(previous => ({guardOpen: !previous.guardOpen}));
     }
 
+    handleDismissGuardPopup () {
+        this.setState({guardPopup: null});
+    }
+
     handleRollbackBackup () {
         const backup = guard.latestBackup();
         if (!backup) return;
         if (!window.confirm('恢复到同步前的本地快照？当前项目会被替换，建议先断开协作。')) return;
+        this.setState({guardPopup: null});
         if (this.session) this.handleDisconnect();
         this.applyingState = true;
         Promise.resolve(this.props.vm.loadProject(backup.data))
@@ -1489,8 +1541,47 @@ class PointerCollabModal extends React.Component {
         );
     }
 
+    renderGuardPopup () {
+        const {guardPopup, room} = this.state;
+        if (!guardPopup) return null;
+        const hasBackup = guard.getState().backups.length > 0;
+        return ReactDOM.createPortal(
+            <div className={styles.guardOverlay} role="alertdialog" aria-modal="true">
+                <div className={styles.guardPanel}>
+                    <div className={styles.guardHead}>
+                        <span>PointerGuard</span>
+                        <strong>已拦截可疑操作</strong>
+                    </div>
+                    <p className={styles.guardMessage}>{guardPopup.message}</p>
+                    <p className={styles.guardMeta}>
+                        {new Date(guardPopup.at).toLocaleTimeString()}
+                        {room ? ` · 房间 ${room}` : ''}
+                    </p>
+                    <p className={styles.guardHint}>
+                        已自动暂停接收远端改动，并保留同步前的本地快照。建议先回滚或断开协作，再检查房间成员。
+                    </p>
+                    <div className={styles.guardActions}>
+                        {hasBackup ? (
+                            <button type="button" className={styles.guardRollback} onClick={this.handleRollbackBackup}>
+                                回滚到同步前
+                            </button>
+                        ) : null}
+                        <button type="button" className={styles.guardDisconnect} onClick={this.handleDisconnect}>
+                            断开协作
+                        </button>
+                        <button type="button" className={styles.guardDismiss} onClick={this.handleDismissGuardPopup}>
+                            我知道了
+                        </button>
+                    </div>
+                </div>
+            </div>,
+            document.body
+        );
+    }
+
     render () {
-        if (this.props.hidden) return null;
+        const popup = this.renderGuardPopup();
+        if (this.props.hidden) return popup;
         const {phase, connecting, server, error, status} = this.state;
         let content;
         if (phase === 'checking') content = this.renderChecking();
@@ -1498,6 +1589,7 @@ class PointerCollabModal extends React.Component {
         else if (this.state.connected) content = this.renderRoom();
         else content = this.renderJoinForm();
         return (
+            <React.Fragment>
             <div className={styles.overlay} role="dialog" aria-modal="true">
                 <div className={styles.panel}>
                     <header className={styles.header}>
@@ -1516,6 +1608,8 @@ class PointerCollabModal extends React.Component {
                     </div>
                 </div>
             </div>
+            {popup}
+            </React.Fragment>
         );
     }
 }

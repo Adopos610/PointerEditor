@@ -26,6 +26,8 @@ const isPointerExtensionURL = url => {
         return (
             (parsed.origin === window.location.origin &&
                 parsed.pathname.startsWith(`${root}/extensions/`)) ||
+            (parsed.origin === 'https://peditor.ctspace.xyz' &&
+                parsed.pathname.startsWith('/extensions/')) ||
             (parsed.origin === 'https://vable.ctspace.xyz' &&
                 parsed.pathname.startsWith('/extensions/')) ||
             (parsed.origin === 'https://adopos610.github.io' &&
