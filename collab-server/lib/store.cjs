@@ -142,6 +142,11 @@ if (!config.captchaSecret) {
     writeJSON(CONFIG_FILE, config, 0o600);
 }
 
+if (!config.collabSecret) {
+    config.collabSecret = crypto.randomBytes(32).toString('hex');
+    writeJSON(CONFIG_FILE, config, 0o600);
+}
+
 const saveConfig = next => {
     config = {...config, ...next};
     writeJSON(CONFIG_FILE, config, 0o600);
@@ -359,6 +364,48 @@ const destroySession = token => {
         return true;
     }
     return false;
+};
+
+const COLLAB_TOKEN_TTL = 2 * 60 * 60 * 1000;
+
+const collabSignature = payload => crypto
+    .createHmac('sha256', config.collabSecret)
+    .update(payload)
+    .digest('base64url');
+
+const createCollabToken = (userId, room) => {
+    const payload = Buffer.from(JSON.stringify({
+        u: userId,
+        r: String(room || '').trim().toUpperCase(),
+        e: now() + COLLAB_TOKEN_TTL
+    }), 'utf8').toString('base64url');
+    return {
+        token: `${payload}.${collabSignature(payload)}`,
+        expiresAt: now() + COLLAB_TOKEN_TTL
+    };
+};
+
+const getCollabSession = (token, room) => {
+    const text = String(token || '');
+    const dot = text.lastIndexOf('.');
+    if (dot <= 0 || dot === text.length - 1) return null;
+    const payload = text.slice(0, dot);
+    const signature = text.slice(dot + 1);
+    const expected = collabSignature(payload);
+    const given = Buffer.from(signature);
+    const want = Buffer.from(expected);
+    if (given.length !== want.length || !crypto.timingSafeEqual(given, want)) return null;
+    let data;
+    try {
+        data = JSON.parse(Buffer.from(payload, 'base64url').toString('utf8'));
+    } catch (error) {
+        return null;
+    }
+    if (!data || typeof data.u !== 'string' || typeof data.e !== 'number' || data.e <= now()) return null;
+    if (room && data.r && data.r !== String(room).trim().toUpperCase()) return null;
+    const user = findById(data.u);
+    if (!user || user.disabled || !user.verified) return null;
+    return {session: {kind: 'collab', userId: user.id, room: data.r || ''}, user};
 };
 
 const purgeSessions = () => {
@@ -635,6 +682,8 @@ module.exports = {
     createSession,
     getSession,
     destroySession,
+    createCollabToken,
+    getCollabSession,
     createVerifyToken,
     findUserByVerifyToken,
     verifyPassword,

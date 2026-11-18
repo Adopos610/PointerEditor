@@ -177,6 +177,34 @@ ipcMain.handle('pointer:save-projects-batch', async (event, payload) => {
     }
 });
 
+const RECOVERY_LIMIT = 5;
+
+ipcMain.handle('pointer:save-recovery', async (event, payload) => {
+    try {
+        const name = String(payload && payload.name || 'snapshot')
+            .replace(/[^A-Za-z0-9_-]/g, '')
+            .slice(0, 40) || 'snapshot';
+        const bytes = typeof (payload && payload.dataBase64) === 'string'
+            ? Buffer.from(payload.dataBase64, 'base64')
+            : Buffer.alloc(0);
+        if (!bytes.length || bytes.length > 64 * 1024 * 1024) return {ok: false, error: '快照数据无效'};
+        const dir = path.join(dataRoot, 'Recovery');
+        await fs.promises.mkdir(dir, {recursive: true});
+        const target = path.join(dir, `recovery-${Date.now()}-${name}.sb3`);
+        await fs.promises.writeFile(target, bytes);
+        const files = (await fs.promises.readdir(dir))
+            .filter(fileName => fileName.endsWith('.sb3'))
+            .sort();
+        while (files.length > RECOVERY_LIMIT) {
+            const old = files.shift();
+            await fs.promises.unlink(path.join(dir, old)).catch(() => {});
+        }
+        return {ok: true, path: target};
+    } catch (error) {
+        return {ok: false, error: error.message};
+    }
+});
+
 const portableDir = process.env.PORTABLE_EXECUTABLE_DIR;
 const dataRoot = portableDir || (app.isPackaged
     ? path.dirname(process.execPath)

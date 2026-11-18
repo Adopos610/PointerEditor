@@ -188,6 +188,13 @@
     color: #2258b8;
 }
 
+.room-secret {
+    display: block;
+    margin-top: 2px;
+    color: #6b86a8;
+    font-size: 0.7rem;
+}
+
 .peer-list {
     display: flex;
     flex-wrap: wrap;

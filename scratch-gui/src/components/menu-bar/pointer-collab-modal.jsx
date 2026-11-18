@@ -21,7 +21,9 @@ import CollabSession, {
     base64ToArrayBuffer,
     canonicalExtensionURL,
     encodeProjectSnapshot,
+    fetchCollabToken,
     isInsecureServer,
+    isOfficialServer,
     makeRoomCode,
     normalizeRoomCode,
     normalizeServer
@@ -96,6 +98,7 @@ class PointerCollabModal extends React.Component {
             server: storedServer,
             customServer: storedPreset ? '' : storedServer,
             roomCode: '',
+            roomPassword: '',
             connecting: false,
             connected: false,
             room: '',
@@ -368,7 +371,7 @@ class PointerCollabModal extends React.Component {
         this.startSession(room);
     }
 
-    startSession (room) {
+    async startSession (room) {
         const {serverPreset, customServer, account} = this.state;
         if (!account || !account.token) {
             this.setState({phase: 'login', error: '请先登录 PointerE 账号'});
@@ -389,6 +392,17 @@ class PointerCollabModal extends React.Component {
         if (isInsecureServer(server)) {
             this.setState({error: '公网协作服务器必须使用 wss:// 加密连接；ws:// 仅允许本机或局域网地址'});
             return;
+        }
+        const official = isOfficialServer(server);
+        if (!official && !window.confirm(
+            '自定义协作服务器会接收你的 PointerE 登录凭据用于房间验证，请只连接你信任的服务器。确定连接吗？'
+        )) {
+            return;
+        }
+        let sessionToken = account.token;
+        if (official) {
+            const scopedToken = await fetchCollabToken(account.token, room);
+            if (scopedToken) sessionToken = scopedToken;
         }
         localStorage.setItem('pointer.collab.server', server);
         guard.startCollab({room, server});
@@ -427,7 +441,8 @@ class PointerCollabModal extends React.Component {
         const session = new CollabSession({
             server,
             room,
-            token: account.token,
+            token: sessionToken,
+            password: this.state.roomPassword,
             handlers: {
                 onJoined: message => {
                     if (this.session !== session) return;
@@ -743,8 +758,9 @@ class PointerCollabModal extends React.Component {
     }
 
     handleCopyInvite () {
-        const {room, server} = this.state;
-        const text = `房间码：${room}\n协作服务器：${server}\n请先注册并登录 PointerE 账号：${REGISTER_URL}\n然后在 PointerEditor 打开「云端 → 在线协作」，输入房间码即可一起编辑。`;
+        const {room, server, roomPassword} = this.state;
+        const secretLine = roomPassword ? `\n房间密码：${roomPassword}` : '';
+        const text = `房间码：${room}${secretLine}\n协作服务器：${server}\n请先注册并登录 PointerE 账号：${REGISTER_URL}\n然后在 PointerEditor 打开「云端 → 在线协作」，输入房间码即可一起编辑。`;
         const done = () => this.showNotice('邀请信息已复制', 'info');
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text).then(done).catch(() => this.fallbackCopy(text, done));
@@ -1194,7 +1210,7 @@ class PointerCollabModal extends React.Component {
     }
 
     renderJoinForm () {
-        const {serverPreset, customServer, roomCode, connecting, account} = this.state;
+        const {serverPreset, customServer, roomCode, roomPassword, connecting, account} = this.state;
         return (
             <form className={styles.form} onSubmit={this.handleJoin}>
                 {this.renderAccountBar()}
@@ -1238,6 +1254,19 @@ class PointerCollabModal extends React.Component {
                         onChange={this.handleChange}
                         maxLength={12}
                         placeholder="输入同伴给你的房间码"
+                        autoComplete="off"
+                        spellCheck={false}
+                        disabled={connecting}
+                    />
+                </label>
+                <label className={styles.field}>
+                    <span>房间密码（可选）</span>
+                    <input
+                        name="roomPassword"
+                        value={roomPassword}
+                        onChange={this.handleChange}
+                        maxLength={24}
+                        placeholder="创建者设置密码后，加入时需填写"
                         autoComplete="off"
                         spellCheck={false}
                         disabled={connecting}
@@ -1467,7 +1496,7 @@ class PointerCollabModal extends React.Component {
     }
 
     renderRoom () {
-        const {room, peers, selfId, lastSync, projectLocked, hostId} = this.state;
+        const {room, roomPassword, peers, selfId, lastSync, projectLocked, hostId} = this.state;
         const isHost = hostId === selfId;
         return (
             <div className={styles.form}>
@@ -1476,6 +1505,9 @@ class PointerCollabModal extends React.Component {
                     <div>
                         <span className={styles.roomLabel}>房间码</span>
                         <strong className={styles.roomCode}>{room}</strong>
+                        {roomPassword ? (
+                            <span className={styles.roomSecret}>密码 {roomPassword}</span>
+                        ) : null}
                     </div>
                     <button type="button" className={styles.secondary} onClick={this.handleCopyInvite}>
                         复制邀请

@@ -12,6 +12,16 @@ const BACKUP_MAX_BYTES = 48 * 1024 * 1024;
 
 const LEVEL_RANK = {ok: 0, info: 0, warn: 1, critical: 2};
 
+const toBase64 = buffer => {
+    const bytes = new Uint8Array(buffer);
+    let binary = '';
+    const chunkSize = 0x8000;
+    for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+        binary += String.fromCharCode.apply(null, bytes.subarray(offset, offset + chunkSize));
+    }
+    return btoa(binary);
+};
+
 const CONTROL_CHARS = /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g;
 const ESCAPED_CONTROLS = /\\u00[01][0-9a-f]/gi;
 
@@ -330,6 +340,7 @@ class PointerGuard {
                     data
                 };
                 this.backups = [entry, ...this.backups].slice(0, BACKUP_LIMIT);
+                this.persistBackup(entry);
                 this.addAlert('info', `已保留同步前快照（${Math.round(data.byteLength / 1024)} KB）`);
                 return entry;
             })
@@ -341,6 +352,19 @@ class PointerGuard {
 
     latestBackup () {
         return this.backups.length ? this.backups[0] : null;
+    }
+
+    persistBackup (entry) {
+        try {
+            if (typeof window === 'undefined' || !window.pointerDesktop ||
+                typeof window.pointerDesktop.saveRecovery !== 'function') return;
+            Promise.resolve(window.pointerDesktop.saveRecovery({
+                name: 'sync',
+                dataBase64: toBase64(entry.data)
+            })).catch(() => {});
+        } catch (error) {
+            // Persistence failures must not break in-memory backups.
+        }
     }
 
     clearBackups () {

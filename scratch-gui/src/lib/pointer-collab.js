@@ -7,6 +7,36 @@ export const OFFICIAL_SERVERS = [
 ];
 
 const DEFAULT_SERVER = OFFICIAL_SERVERS[0].url;
+const OFFICIAL_API = 'https://vable.ctspace.xyz/api';
+
+export const isOfficialServer = value => {
+    try {
+        return new URL(normalizeServer(value)).hostname === 'vable.ctspace.xyz';
+    } catch (error) {
+        return false;
+    }
+};
+
+export const fetchCollabToken = (accountToken, room, timeout = 8000) => {
+    if (!accountToken || !room) return Promise.resolve('');
+    const controller = typeof AbortController === 'function' ? new AbortController() : null;
+    const timer = controller ? setTimeout(() => controller.abort(), timeout) : null;
+    return fetch(`${OFFICIAL_API}/collab-token`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accountToken}`
+        },
+        body: JSON.stringify({room}),
+        signal: controller ? controller.signal : undefined
+    })
+        .then(response => (response.ok ? response.json() : null))
+        .then(data => (data && typeof data.token === 'string' ? data.token : ''))
+        .catch(() => '')
+        .finally(() => {
+            if (timer) clearTimeout(timer);
+        });
+};
 
 export const MAX_SNAPSHOT_BASE64 = 40 * 1024 * 1024;
 export const MAX_TARGET_BLOCKS = 4 * 1024 * 1024;
@@ -108,10 +138,11 @@ export const encodeProjectSnapshot = vm => Promise.resolve(vm.saveProjectSb3('bl
 export {DEFAULT_SERVER};
 
 export default class CollabSession {
-    constructor ({server, room, token, handlers}) {
+    constructor ({server, room, token, password, handlers}) {
         this.server = normalizeServer(server);
         this.room = normalizeRoomCode(room);
         this.token = token;
+        this.password = String(password || '');
         this.handlers = handlers || {};
         this.socket = null;
         this.selfId = null;
@@ -125,7 +156,8 @@ export default class CollabSession {
             this.send({
                 type: 'join',
                 room: this.room,
-                token: this.token
+                token: this.token,
+                password: this.password
             });
         };
         socket.onmessage = event => {

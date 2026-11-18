@@ -1009,6 +1009,16 @@ const handleAdminRooms = (req, res) => {
 const normalizeRoom = value => String(value || '').trim().toUpperCase();
 const validRoom = value => /^[A-Z0-9]{4,12}$/.test(value);
 const normalizeName = value => String(value || '').replace(/\s+/g, ' ').trim().slice(0, 24) || '访客';
+const normalizeRoomSecret = value => String(value || '').trim().slice(0, 24);
+const hashRoomSecret = value => crypto
+    .createHash('sha256')
+    .update(`pointer-room:${value}`)
+    .digest('hex');
+const roomSecretMatches = (hash, secret) => {
+    const given = Buffer.from(hashRoomSecret(secret));
+    const expected = Buffer.from(String(hash || ''));
+    return given.length === expected.length && crypto.timingSafeEqual(given, expected);
+};
 
 const totalClients = () => {
     let count = 0;
@@ -1337,7 +1347,7 @@ const authenticateJoin = message => {
             nickname: name
         };
     }
-    const found = store.getSession(message.token);
+    const found = store.getSession(message.token) || store.getCollabSession(message.token, message.room);
     if (!found) return null;
     if (!found.user.verified) return null;
     return found.user;
@@ -1368,6 +1378,7 @@ const joinRoom = (client, message) => {
         rejectJoin(client, AUTH_DISABLED ? '无法识别身份' : 'PointerE 账号登录已失效，请重新登录', 'auth');
         return;
     }
+    const roomSecret = normalizeRoomSecret(message.password);
     let room = rooms.get(roomId);
     if (!room) {
         if (rooms.size >= MAX_ROOMS) {
@@ -1378,6 +1389,8 @@ const joinRoom = (client, message) => {
             id: roomId,
             clients: new Set(),
             hostId: null,
+            ownerUserId: user.id,
+            secretHash: roomSecret ? hashRoomSecret(roomSecret) : null,
             state: null,
             blocks: new Map(),
             claims: new Map(),
@@ -1386,8 +1399,13 @@ const joinRoom = (client, message) => {
             lastActive: Date.now()
         };
         rooms.set(roomId, room);
-        log('room created', roomId);
+        log('room created', roomId, 'owner', user.username);
     }
+    if (room.secretHash && !roomSecretMatches(room.secretHash, roomSecret)) {
+        rejectJoin(client, '房间密码错误', 'password');
+        return;
+    }
+    if (!room.ownerUserId) room.ownerUserId = user.id;
     if (room.clients.size >= MAX_CLIENTS_PER_ROOM) {
         rejectJoin(client, '房间人数已满');
         return;
@@ -1403,7 +1421,8 @@ const joinRoom = (client, message) => {
     room.clients.add(client);
     room.lastActive = Date.now();
     if (!room.hostId || !clientById(room, room.hostId)) {
-        room.hostId = client.id;
+        const owner = [...room.clients].find(member => member.user && member.user.id === room.ownerUserId);
+        room.hostId = owner ? owner.id : null;
     }
     client.sendJSON({
         type: 'joined',
@@ -1449,7 +1468,14 @@ const leaveRoom = (client, reason) => {
         scheduleRoomCleanup(room);
     } else {
         if (!clientById(room, room.hostId)) {
-            room.hostId = [...room.clients][0].id;
+            const owner = [...room.clients].find(member => member.user && member.user.id === room.ownerUserId);
+            if (owner) {
+                room.hostId = owner.id;
+            } else if (!room.ownerUserId) {
+                room.hostId = [...room.clients][0].id;
+            } else {
+                room.hostId = null;
+            }
         }
         broadcastPeers(room);
         if (released) broadcastLocks(room);
@@ -1845,6 +1871,26 @@ const server = http.createServer(async (req, res) => {
             return;
         }
 
+        if (pathname === '/api/collab-token' && req.method === 'POST') {
+            const found = requireUser(req, res);
+            if (!found) return;
+            let body;
+            try {
+                body = await readBody(req);
+            } catch (error) {
+                sendJson(res, error.status || 400, {error: error.message});
+                return;
+            }
+            const room = normalizeRoom(body.room);
+            if (!validRoom(room)) {
+                sendJson(res, 400, {error: '房间码无效'});
+                return;
+            }
+            const issued = store.createCollabToken(found.user.id, room);
+            sendJson(res, 200, {token: issued.token, room, expiresAt: issued.expiresAt});
+            return;
+        }
+
         if (pathname === '/api/notices' && req.method === 'GET') {
             handlePublicNotices(req, res);
             return;
@@ -2065,8 +2111,18 @@ server.on('upgrade', (req, socket) => {
     const client = new Client(socket);
     client.ip = clientIp(req);
     socket.on('data', chunk => client.onData(chunk));
-    socket.on('close', () => client.terminate('socket-close'));
-    socket.on('error', () => client.terminate('socket-error'));
+    socket.on('end', () => {
+        log('ws end', client.id);
+        client.terminate('socket-end');
+    });
+    socket.on('close', () => {
+        log('ws close', client.id);
+        client.terminate('socket-close');
+    });
+    socket.on('error', error => {
+        log('ws error', client.id, error && error.code);
+        client.terminate('socket-error');
+    });
     client.sendJSON({type: 'welcome', id: client.id});
 });
 
