@@ -1,6 +1,6 @@
 {
   "name": "pointer-editor-desktop",
-  "version": "0.2.2-safety",
+  "version": "0.2.3",
   "private": true,
   "description": "PointerEditor desktop shell",
   "author": "PointerEditor",
