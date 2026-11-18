@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>提交扩展 · PointerEditor</title>
+<meta name="description" content="向 PointerEditor 社区扩展库提交你的扩展，审核通过后展示给所有用户。">
+<link rel="stylesheet" href="./extensions.css">
+</head>
+<body>
+<header class="ext-header">
+    <div class="ext-brand">
+        <h1>提交扩展</h1>
+        <p>审核通过后会出现在社区扩展中</p>
+    </div>
+    <a class="ext-back" href="./">返回扩展库</a>
+</header>
+<main class="submit-shell">
+    <form id="submit-form" class="submit-card">
+        <div class="submit-intro">
+            <strong>提交前请确认</strong>
+            <p>请提供直接可访问的 https JavaScript 地址；审核时我们会固定该地址当前的源码快照并人工检查。审核通过后扩展会以沙箱方式运行，更新代码需要重新提交。</p>
+        </div>
+        <div class="submit-grid">
+            <label class="submit-field">
+                <span>扩展 ID</span>
+                <input name="extensionId" required maxlength="40" placeholder="例如 myExtension">
+            </label>
+            <label class="submit-field">
+                <span>扩展名称</span>
+                <input name="name" required maxlength="60" placeholder="例如 我的扩展">
+            </label>
+            <label class="submit-field">
+                <span>作者名</span>
+                <input name="author" required maxlength="40" placeholder="昵称或团队名">
+            </label>
+            <label class="submit-field">
+                <span>联系方式（可选）</span>
+                <input name="contact" maxlength="120" placeholder="邮箱 / 主页 / GitHub">
+            </label>
+        </div>
+        <label class="submit-field">
+            <span>扩展介绍</span>
+            <textarea name="description" required maxlength="600" rows="4" placeholder="这个扩展提供什么积木，适合什么作品？"></textarea>
+        </label>
+        <label class="submit-field">
+            <span>扩展 JS 地址</span>
+            <input name="sourceUrl" maxlength="500" placeholder="https://example.com/my-extension.js">
+        </label>
+        <label class="submit-field">
+            <span>或直接上传 JS 文件（≤512KB）</span>
+            <input name="sourceFile" type="file" accept=".js,text/javascript,application/javascript">
+        </label>
+        <label class="submit-field">
+            <span>扩展图片（可选，PNG / JPG / WEBP，≤256KB）</span>
+            <input name="iconFile" type="file" accept="image/png,image/jpeg,image/webp">
+        </label>
+        <div id="icon-preview" class="submit-icon-preview" hidden>
+            <img alt="扩展图片预览">
+        </div>
+        <label class="submit-field">
+            <span>标签（可选，逗号分隔）</span>
+            <input name="tags" maxlength="80" placeholder="游戏, 数学, 工具">
+        </label>
+        <div class="submit-captcha">
+            <button type="button" id="captcha-button" class="submit-captcha-image" title="点击刷新验证码">加载中…</button>
+            <label class="submit-field">
+                <span>图形验证码</span>
+                <input name="captchaAnswer" required maxlength="10" autocomplete="off" placeholder="输入图片中的字符">
+            </label>
+        </div>
+        <div class="submit-actions">
+            <button type="submit" id="submit-button" class="ext-btn primary">提交审核</button>
+            <span id="submit-message" class="submit-message" role="status" aria-live="polite"></span>
+        </div>
+    </form>
+</main>
+<footer class="ext-footer">
+    <span>PointerEditor · 社区扩展由原作者维护</span>
+    <span>审核通过前不会公开源码</span>
+</footer>
+<script src="./submit.js"></script>
+</body>
+</html>

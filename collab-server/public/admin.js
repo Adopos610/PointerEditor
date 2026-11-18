@@ -57,6 +57,14 @@ const smtpForm = $('smtp-form');
 const smtpError = $('smtp-error');
 const smtpOk = $('smtp-ok');
 const smtpBadge = $('smtp-badge');
+const extensionRows = $('extension-submission-rows');
+const extensionEmpty = $('extension-submission-empty');
+const extensionApprovedRows = $('extension-approved-rows');
+const extensionApprovedEmpty = $('extension-approved-empty');
+const extensionCount = $('extension-pending-count');
+const extensionError = $('extension-error');
+const extensionOk = $('extension-ok');
+const extensionRefresh = $('extension-refresh');
 const modal = $('modal');
 const modalTitle = $('modal-title');
 const modalBody = $('modal-body');
@@ -349,9 +357,139 @@ const loadSmtp = async () => {
     }
 };
 
+const renderExtensions = data => {
+    const submissions = Array.isArray(data.submissions) ? data.submissions : [];
+    const approved = Array.isArray(data.approved) ? data.approved : [];
+    const pending = submissions.filter(item => item.status === 'pending');
+    extensionCount.textContent = `${pending.length} 个待审核`;
+    extensionCount.className = `badge ${pending.length ? 'off' : 'ok'}`;
+    extensionRows.textContent = '';
+    extensionEmpty.hidden = submissions.length > 0;
+    for (const submission of submissions) {
+        const actions = el('td', {className: 'actions'});
+        actions.appendChild(button('查看源码', () => viewExtensionSource(submission)));
+        if (submission.status !== 'approved') {
+            actions.appendChild(button('通过', () => approveExtension(submission)));
+            actions.appendChild(button('拒绝', () => rejectExtension(submission)));
+        }
+        actions.appendChild(button('删除', () => deleteExtensionSubmission(submission), 'button-small danger'));
+        const tone = submission.status === 'approved' ? 'ok' : (submission.status === 'rejected' ? 'off' : 'off');
+        const nameCell = el('td');
+        if (submission.iconData) {
+            const icon = el('img');
+            icon.src = submission.iconData;
+            icon.alt = '';
+            icon.style.width = '28px';
+            icon.style.height = '28px';
+            icon.style.borderRadius = '6px';
+            icon.style.objectFit = 'cover';
+            icon.style.verticalAlign = 'middle';
+            icon.style.marginRight = '8px';
+            nameCell.appendChild(icon);
+        }
+        nameCell.appendChild(document.createTextNode(`${submission.name}（${submission.extensionId}）`));
+        extensionRows.appendChild(el('tr', {}, [
+            nameCell,
+            el('td', {text: submission.author}),
+            el('td', {}, [badge(
+                submission.status === 'approved' ? '已上线' :
+                    (submission.status === 'rejected' ? '已拒绝' : '待审核'),
+                tone
+            )]),
+            actions
+        ]));
+    }
+    extensionApprovedRows.textContent = '';
+    extensionApprovedEmpty.hidden = approved.length > 0;
+    for (const item of approved) {
+        const actions = el('td', {className: 'actions'});
+        actions.appendChild(button('复制地址', () => {
+            navigator.clipboard.writeText(item.url).then(() => showMessage(extensionOk, '安装地址已复制'));
+        }));
+        actions.appendChild(button('删除', () => deleteApprovedExtension(item), 'button-small danger'));
+        extensionApprovedRows.appendChild(el('tr', {}, [
+            el('td', {text: `${item.name}（${item.id}）`}),
+            el('td', {text: item.author}),
+            el('td', {text: item.url, title: item.url}),
+            actions
+        ]));
+    }
+};
+
+const loadExtensions = async () => {
+    showMessage(extensionError, '');
+    const data = await api('/api/pointere-console/extensions');
+    renderExtensions(data);
+};
+
+const viewExtensionSource = async submission => {
+    try {
+        const data = await api(`/api/pointere-console/extensions/${submission.id}/source`);
+        const header = [
+            `扩展：${submission.name}（${submission.extensionId}）`,
+            `作者：${submission.author}`,
+            `来源：${submission.sourceUrl}`,
+            `介绍：${submission.description}`,
+            ''
+        ].join('\n');
+        showModal('扩展源码', header + (data.source || ''));
+    } catch (error) {
+        showMessage(extensionError, error.message);
+    }
+};
+
+const approveExtension = async submission => {
+    if (!window.confirm(`将通过「${submission.name}」并固定当前源码快照？`)) return;
+    try {
+        await api(`/api/pointere-console/extensions/${submission.id}/approve`, {method: 'POST'});
+        showMessage(extensionOk, '扩展已通过并上线');
+        await loadExtensions();
+    } catch (error) {
+        showMessage(extensionError, error.message);
+    }
+};
+
+const rejectExtension = async submission => {
+    const note = window.prompt('拒绝原因（可选，仅记录在后台）', '');
+    if (note === null) return;
+    try {
+        await api(`/api/pointere-console/extensions/${submission.id}/reject`, {method: 'POST', body: {note}});
+        showMessage(extensionOk, '已拒绝该扩展');
+        await loadExtensions();
+    } catch (error) {
+        showMessage(extensionError, error.message);
+    }
+};
+
+const deleteExtensionSubmission = async submission => {
+    if (!window.confirm(`删除提交「${submission.name}」及其源码？`)) return;
+    try {
+        await api(`/api/pointere-console/extensions/${submission.id}/delete`, {method: 'POST'});
+        showMessage(extensionOk, '提交已删除');
+        await loadExtensions();
+    } catch (error) {
+        showMessage(extensionError, error.message);
+    }
+};
+
+const deleteApprovedExtension = async item => {
+    if (!window.confirm(`下架并删除扩展「${item.name}」？`)) return;
+    try {
+        await api(`/api/pointere-console/community-extensions/${item.id}/delete`, {method: 'POST'});
+        showMessage(extensionOk, '扩展已下架');
+        await loadExtensions();
+    } catch (error) {
+        showMessage(extensionError, error.message);
+    }
+};
+
+extensionRefresh.addEventListener('click', () => {
+    loadExtensions().catch(error => showMessage(extensionError, error.message));
+});
+
 const loadAll = async () => {
     try {
-        await Promise.all([loadUsers(), loadRooms(), loadOrders(), loadSmtp(), loadProducts(), loadNotices()]);
+        await Promise.all([loadUsers(), loadRooms(), loadOrders(), loadSmtp(), loadProducts(), loadNotices(), loadExtensions()]);
     } catch (error) {
         showMessage(usersError, error.message);
     }

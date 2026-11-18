@@ -2,7 +2,7 @@
 
 PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼容编辑器，包含桌面端、网页端、在线协作服务与移动端界面原型。
 
-- 当前版本：0.2.3
+- 当前版本：0.2.4
 - 官网：<https://peditor.ctspace.xyz/>
 - 网页版编辑器：<https://peditor.ctspace.xyz/editor/editor.html>
 - 扩展商店：<https://peditor.ctspace.xyz/extensions/>
@@ -35,11 +35,11 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 
 ## 下载
 
-0.2.3 安装包、免安装版与网页版静态包：
+0.2.4 安装包、免安装版与网页版静态包：
 
-- Windows 安装版：[PointerEditor-0.2.3-setup.exe](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.3-setup.exe)
-- Windows 免安装版：[PointerEditor-0.2.3-win64.zip](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.3-win64.zip)
-- 网页版静态包：[PointerEditor-0.2.3-web.zip](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.3-web.zip)
+- Windows 安装版：[PointerEditor-0.2.4-setup.exe](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.4-setup.exe)
+- Windows 免安装版：[PointerEditor-0.2.4-win64.zip](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.4-win64.zip)
+- 网页版静态包：[PointerEditor-0.2.4-web.zip](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.4-web.zip)
 - 在线使用：<https://peditor.ctspace.xyz/editor/editor.html>
 
 ## 目录结构

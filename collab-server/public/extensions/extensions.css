@@ -439,3 +439,135 @@ body {
     .ext-grid { grid-template-columns: 1fr; }
     .ext-card { min-height: 150px; }
 }
+
+.submit-shell {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 26px 20px 48px;
+}
+
+.submit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    border: 1px solid #dbe8fa;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 18px 50px rgba(38, 92, 170, 0.08);
+}
+
+.submit-intro {
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #f2f8ff;
+    color: #4b6788;
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.submit-intro strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #1f4b86;
+}
+
+.submit-intro p { margin: 0; }
+
+.submit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.submit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #45638a;
+}
+
+.submit-field input,
+.submit-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #cfdfF4;
+    border-radius: 9px;
+    background: #fbfdff;
+    color: #1f3f68;
+    font: inherit;
+    outline: none;
+}
+
+.submit-field input:focus,
+.submit-field textarea:focus {
+    border-color: #7fb0f2;
+    background: #fff;
+}
+
+.submit-captcha {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.submit-captcha-image {
+    min-width: 130px;
+    height: 46px;
+    padding: 0 8px;
+    border: 1px solid #cfdff4;
+    border-radius: 9px;
+    background: #f7fbff;
+    color: #6f88a8;
+    cursor: pointer;
+}
+
+.submit-captcha-image img {
+    max-height: 42px;
+    display: block;
+}
+
+.submit-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.ext-btn {
+    padding: 11px 18px;
+    border: 1px solid #2f6fe4;
+    border-radius: 9px;
+    background: #2f6fe4;
+    color: #fff;
+    font: 600 0.84rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+
+.ext-btn:disabled { opacity: 0.6; cursor: default; }
+.ext-btn.primary:hover { background: #2258b8; }
+
+.submit-message {
+    font-size: 0.8rem;
+    color: #4b6788;
+}
+
+.submit-message.error { color: #b23a2c; }
+.submit-message.ok { color: #1f7a44; }
+
+@media (max-width: 680px) {
+    .submit-grid { grid-template-columns: 1fr; }
+    .submit-card { padding: 18px; }
+}
+
+.submit-icon-preview img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border: 1px solid #dbe8fa;
+    border-radius: 10px;
+    background: #f7fbff;
+}

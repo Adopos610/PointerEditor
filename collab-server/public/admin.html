@@ -284,6 +284,47 @@
 
   <section class="panel">
     <div class="panel-head">
+      <h2>扩展审核</h2>
+      <div class="tools">
+        <span class="badge off" id="extension-pending-count">0 个待审核</span>
+        <button type="button" class="button-small" id="extension-refresh">刷新</button>
+      </div>
+    </div>
+    <div class="message error" id="extension-error" hidden></div>
+    <div class="message ok" id="extension-ok" hidden></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>扩展</th>
+            <th>作者</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="extension-submission-rows"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="extension-submission-empty" hidden>暂无扩展提交</div>
+    <h3 style="margin:20px 0 10px;font-size:15px;">已上线扩展</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>扩展</th>
+            <th>作者</th>
+            <th>安装地址</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="extension-approved-rows"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="extension-approved-empty" hidden>还没有上线的社区扩展</div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
       <h2>邮件发送设置（QQ SMTP）</h2>
       <span class="badge off" id="smtp-badge">未配置</span>
     </div>
@@ -337,6 +378,6 @@
   </div>
 </div>
 
-<script src="/pointere-console/app.js?v=5"></script>
+<script src="/pointere-console/app.js?v=6"></script>
 </body>
 </html>

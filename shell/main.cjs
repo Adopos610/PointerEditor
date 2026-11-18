@@ -399,6 +399,18 @@ const createWindow = async () => {
             }
         }
     });
+    win.webContents.on('will-prevent-unload', event => {
+        const choice = dialog.showMessageBoxSync(win, {
+            type: 'question',
+            buttons: ['直接退出', '取消'],
+            defaultId: 1,
+            cancelId: 1,
+            title: 'PointerEditor',
+            message: '当前作品有未保存的修改',
+            detail: '直接退出会丢失未保存的修改，建议先保存到电脑。'
+        });
+        if (choice === 0) event.preventDefault();
+    });
     win.webContents.on('before-input-event', (event, input) => {
         if (input.type === 'keyDown' && input.key === 'F12') {
             win.webContents.toggleDevTools();

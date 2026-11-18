@@ -13,7 +13,9 @@
 const crypto = require('crypto');
 const fs = require('fs');
 const http = require('http');
+const net = require('net');
 const path = require('path');
+const dns = require('dns');
 const {URL} = require('url');
 
 const store = require('./lib/store.cjs');
@@ -23,6 +25,10 @@ const mailer = require('./lib/mailer.cjs');
 const PORT = Number(process.env.POINTER_COLLAB_PORT || 8788);
 const HOST = process.env.POINTER_COLLAB_HOST || '0.0.0.0';
 const PUBLIC_DIR = path.join(__dirname, 'public');
+const COMMUNITY_EXTENSION_DIR = path.join(PUBLIC_DIR, 'community-extensions');
+const EXTENSION_SUBMISSION_DIR = path.join(store.DATA_DIR, 'extension-submissions');
+fs.mkdirSync(COMMUNITY_EXTENSION_DIR, {recursive: true});
+fs.mkdirSync(EXTENSION_SUBMISSION_DIR, {recursive: true});
 const PUBLIC_BASE = process.env.POINTER_PUBLIC_URL || store.getConfig().publicBaseUrl;
 const AUTH_DISABLED = String(process.env.POINTER_COLLAB_AUTH || '').toLowerCase() === 'off';
 
@@ -162,7 +168,7 @@ const sendHtml = (res, status, html) => {
     res.end(html);
 };
 
-const readBody = req => new Promise((resolve, reject) => {
+const readBody = (req, limit = MAX_BODY_BYTES) => new Promise((resolve, reject) => {
     const contentType = String(req.headers['content-type'] || '');
     if (contentType && !/^application\/json(?:;|$)/i.test(contentType)) {
         reject(Object.assign(new Error('仅接受 JSON 请求'), {status: 415}));
@@ -172,7 +178,7 @@ const readBody = req => new Promise((resolve, reject) => {
     const chunks = [];
     req.on('data', chunk => {
         size += chunk.length;
-        if (size > MAX_BODY_BYTES) {
+        if (size > limit) {
             reject(Object.assign(new Error('请求内容过大'), {status: 413}));
             req.destroy();
             return;
@@ -1000,6 +1006,463 @@ const handleAdminRooms = (req, res) => {
     const found = requireAdmin(req, res);
     if (!found) return;
     sendJson(res, 200, {rooms: getRoomsInfo(), stats: store.stats()});
+};
+
+/* ------------------------------------------------------------------ */
+/* Community extension submissions                                     */
+/* ------------------------------------------------------------------ */
+
+const EXTENSION_ID_RE = /^[A-Za-z][A-Za-z0-9_]{2,40}$/;
+
+const isPrivateAddress = address => {
+    const ip = String(address || '').toLowerCase();
+    if (net.isIPv4(ip)) {
+        return ip === '0.0.0.0' ||
+            /^(10\.|127\.|169\.254\.|192\.168\.|172\.(1[6-9]|2\d|3[0-1])\.)/.test(ip);
+    }
+    if (net.isIPv6(ip)) {
+        return ip === '::' || ip === '::1' || ip.startsWith('fc') || ip.startsWith('fd') || ip.startsWith('fe80');
+    }
+    return true;
+};
+
+const fetchExtensionSource = async rawUrl => {
+    let url;
+    try {
+        url = new URL(String(rawUrl || '').trim());
+    } catch (error) {
+        throw new Error('扩展地址格式不正确');
+    }
+    if (url.protocol !== 'https:') throw new Error('扩展地址必须使用 https://');
+    if (!url.hostname || /^(localhost|.*\.local|.*\.internal)$/i.test(url.hostname)) {
+        throw new Error('扩展地址不能指向本机或内网');
+    }
+    let addresses;
+    try {
+        addresses = await dns.promises.lookup(url.hostname, {all: true, verbatim: true});
+    } catch (error) {
+        throw new Error('无法解析扩展地址');
+    }
+    if (!addresses.length || addresses.some(entry => isPrivateAddress(entry.address))) {
+        throw new Error('扩展地址不能指向内网');
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 12000);
+    try {
+        const response = await fetch(url.href, {
+            redirect: 'error',
+            signal: controller.signal,
+            headers: {
+                'User-Agent': 'PointerEditor-ExtensionBot/1.0',
+                Accept: 'text/javascript, application/javascript, text/plain, */*;q=0.5'
+            }
+        });
+        if (!response.ok) throw new Error(`读取扩展失败（${response.status}）`);
+        const type = String(response.headers.get('content-type') || '');
+        if (type && !/javascript|ecmascript|text\/plain|octet-stream/i.test(type)) {
+            throw new Error('该地址返回的不是 JavaScript 文件');
+        }
+        const buffer = Buffer.from(await response.arrayBuffer());
+        if (buffer.length < 20) throw new Error('扩展源码为空');
+        if (buffer.length > 512 * 1024) throw new Error('扩展源码超过 512KB 限制');
+        const text = buffer.toString('utf8');
+        if (!/Scratch\.extensions\.register/.test(text)) {
+            throw new Error('源码中没有找到 Scratch.extensions.register');
+        }
+        return {text, finalUrl: url.href};
+    } catch (error) {
+        if (error.name === 'AbortError') throw new Error('读取扩展地址超时');
+        throw error;
+    } finally {
+        clearTimeout(timer);
+    }
+};
+
+const MAX_EXTENSION_ICON_BYTES = 256 * 1024;
+
+const detectImageType = buffer => {
+    if (buffer.length >= 8 &&
+        buffer[0] === 0x89 && buffer[1] === 0x50 && buffer[2] === 0x4e && buffer[3] === 0x47 &&
+        buffer[4] === 0x0d && buffer[5] === 0x0a && buffer[6] === 0x1a && buffer[7] === 0x0a) {
+        return {ext: 'png', mime: 'image/png'};
+    }
+    if (buffer.length >= 3 && buffer[0] === 0xff && buffer[1] === 0xd8 && buffer[2] === 0xff) {
+        return {ext: 'jpg', mime: 'image/jpeg'};
+    }
+    if (buffer.length >= 12 && buffer.subarray(0, 4).toString() === 'RIFF' &&
+        buffer.subarray(8, 12).toString() === 'WEBP') {
+        return {ext: 'webp', mime: 'image/webp'};
+    }
+    return null;
+};
+
+const parseIconUpload = raw => {
+    const text = String(raw || '');
+    if (!text) return null;
+    const comma = text.indexOf(',');
+    const base64 = comma >= 0 ? text.slice(comma + 1) : text;
+    let buffer;
+    try {
+        buffer = Buffer.from(base64, 'base64');
+    } catch (error) {
+        throw new Error('扩展图片格式不正确');
+    }
+    if (!buffer.length) return null;
+    if (buffer.length > MAX_EXTENSION_ICON_BYTES) throw new Error('扩展图片不能超过 256KB');
+    const type = detectImageType(buffer);
+    if (!type) throw new Error('扩展图片仅支持 PNG、JPG 或 WEBP');
+    return {buffer, ...type};
+};
+
+const validateUploadedSource = text => {
+    const source = String(text || '');
+    if (source.length < 20) throw new Error('扩展源码为空');
+    if (Buffer.byteLength(source, 'utf8') > 512 * 1024) throw new Error('扩展源码超过 512KB 限制');
+    if (!/Scratch\.extensions\.register/.test(source)) {
+        throw new Error('源码中没有找到 Scratch.extensions.register');
+    }
+    return source;
+};
+
+const CTSPACE_EXTENSIONS_API = 'https://forum.ctspace.xyz/api/extensions?sort=score&page=1';
+let ctspaceCache = {at: 0, listed: []};
+
+const parseExtensionMeta = code => {
+    const get = key => {
+        const match = String(code || '').match(new RegExp(`^\\s*//\\s*${key}\\s*[:：]\\s*(.+)$`, 'im'));
+        return match ? match[1].trim() : '';
+    };
+    return {
+        name: get('Name'),
+        id: get('ID'),
+        description: get('Description'),
+        author: get('By') || get('Author')
+    };
+};
+
+const loadCtspaceExtensions = async () => {
+    if (Date.now() - ctspaceCache.at < 5 * 60 * 1000 && ctspaceCache.listed.length) {
+        return ctspaceCache.listed;
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10000);
+    try {
+        const response = await fetch(CTSPACE_EXTENSIONS_API, {
+            signal: controller.signal,
+            headers: {'User-Agent': 'PointerEditor-ExtensionBot/1.0', Accept: 'application/json'}
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        const listed = (Array.isArray(data.items) ? data.items : [])
+            .filter(item => item && item.id && /Scratch\.extensions\.register/.test(String(item.code || '')))
+            .map(item => {
+                const meta = parseExtensionMeta(item.code);
+                return {
+                    forumId: item.id,
+                    id: meta.id || `ct_${item.id}`,
+                    name: meta.name || item.title || '未命名扩展',
+                    description: meta.description || item.summary || '来自创客次元的社区扩展',
+                    author: meta.author || (item.author && (item.author.nickname || item.author.username)) || '创客次元作者',
+                    category: item.category || 'community',
+                    code: item.code
+                };
+            });
+        ctspaceCache = {at: Date.now(), listed};
+        return listed;
+    } catch (error) {
+        return ctspaceCache.listed;
+    } finally {
+        clearTimeout(timer);
+    }
+};
+
+const handleExtensionSubmit = async (req, res) => {
+    const ip = clientIp(req);
+    if (!rateLimit(ip, 'extension-submit', 5, 60 * 60 * 1000)) {
+        sendJson(res, 429, {error: '提交过于频繁，请稍后再试'});
+        return;
+    }
+    let body;
+    try {
+        body = await readBody(req, 3 * 1024 * 1024);
+    } catch (error) {
+        sendJson(res, error.status || 400, {error: error.message});
+        return;
+    }
+    const captchaId = String(body.captchaId || '');
+    const captchaAnswer = String(body.captchaAnswer || '');
+    if (!captcha.verifyToken(store.getConfig().captchaSecret, captchaId, captchaAnswer)) {
+        sendJson(res, 400, {error: '图形验证码错误或已过期'});
+        return;
+    }
+    const extensionId = String(body.extensionId || '').trim();
+    const name = String(body.name || '').trim();
+    const author = String(body.author || '').trim();
+    const description = String(body.description || '').trim();
+    const sourceUrl = String(body.sourceUrl || '').trim();
+    const sourceText = typeof body.sourceText === 'string' ? body.sourceText : '';
+    const uploadedName = String(body.sourceName || '').trim().slice(0, 120);
+    const contact = String(body.contact || '').trim();
+    const tags = String(body.tags || '')
+        .split(/[,，\s]+/)
+        .map(tag => tag.trim())
+        .filter(Boolean)
+        .slice(0, 5);
+    if (!EXTENSION_ID_RE.test(extensionId)) {
+        sendJson(res, 400, {error: '扩展 ID 需为 3-40 位字母开头，可含数字和下划线'});
+        return;
+    }
+    if (name.length < 1 || name.length > 60) {
+        sendJson(res, 400, {error: '扩展名称需为 1-60 个字符'});
+        return;
+    }
+    if (author.length < 1 || author.length > 40) {
+        sendJson(res, 400, {error: '作者名需为 1-40 个字符'});
+        return;
+    }
+    if (description.length < 10 || description.length > 600) {
+        sendJson(res, 400, {error: '扩展介绍需为 10-600 个字符'});
+        return;
+    }
+    if (!sourceText && !sourceUrl) {
+        sendJson(res, 400, {error: '请上传扩展 JS 文件或填写扩展地址'});
+        return;
+    }
+    if (store.findCommunityExtension(extensionId) ||
+        store.listExtensionSubmissions().some(item => item.extensionId === extensionId && item.status !== 'rejected')) {
+        sendJson(res, 409, {error: '该扩展 ID 已存在或正在审核'});
+        return;
+    }
+    let icon = null;
+    try {
+        icon = parseIconUpload(body.iconData);
+    } catch (error) {
+        sendJson(res, 400, {error: error.message});
+        return;
+    }
+    let source;
+    try {
+        source = sourceText ? {
+            text: validateUploadedSource(sourceText),
+            finalUrl: uploadedName || '直接上传'
+        } : await fetchExtensionSource(sourceUrl);
+    } catch (error) {
+        sendJson(res, 400, {error: error.message});
+        return;
+    }
+    const submission = store.createExtensionSubmission({
+        extensionId,
+        name,
+        author,
+        contact,
+        description,
+        tags,
+        sourceUrl: source.finalUrl,
+        ip
+    });
+    const fileName = `${submission.id}.js`;
+    let iconFile = '';
+    try {
+        await fs.promises.writeFile(path.join(EXTENSION_SUBMISSION_DIR, fileName), source.text, {mode: 0o600});
+        if (icon) {
+            iconFile = `${submission.id}-icon.${icon.ext}`;
+            await fs.promises.writeFile(path.join(EXTENSION_SUBMISSION_DIR, iconFile), icon.buffer, {mode: 0o600});
+        }
+        store.updateExtensionSubmission(submission.id, {
+            sourceFile: fileName,
+            iconFile,
+            iconMime: icon ? icon.mime : ''
+        });
+    } catch (error) {
+        if (iconFile) fs.unlink(path.join(EXTENSION_SUBMISSION_DIR, iconFile), () => {});
+        fs.unlink(path.join(EXTENSION_SUBMISSION_DIR, fileName), () => {});
+        store.deleteExtensionSubmission(submission.id);
+        sendJson(res, 500, {error: '保存扩展文件失败'});
+        return;
+    }
+    sendJson(res, 201, {
+        ok: true,
+        message: '提交成功，审核通过后会出现在社区扩展中',
+        submission: {id: submission.id, extensionId, name, status: 'pending'}
+    });
+};
+
+const handleCommunityExtensions = async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    const own = store.listCommunityExtensions().map(item => ({
+        id: item.id,
+        name: item.name,
+        description: item.description,
+        author: item.author,
+        tags: item.tags || [],
+        iconURL: item.iconURL || '',
+        url: item.url
+    }));
+    const known = new Set(own.map(item => item.id));
+    const ctspace = (await loadCtspaceExtensions())
+        .filter(item => !known.has(item.id))
+        .map(item => ({
+            id: item.id,
+            name: item.name,
+            description: item.description,
+            author: `${item.author}（创客次元）`,
+            tags: ['创客次元'],
+            iconURL: '',
+            url: `${PUBLIC_BASE}/ctspace-extensions/${item.forumId}.js`
+        }));
+    sendJson(res, 200, {items: ctspace.concat(own)});
+};
+
+const handleAdminExtensions = async (req, res) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    const submissions = await Promise.all(store.listExtensionSubmissions().map(async item => {
+        let iconData = '';
+        if (item.iconFile) {
+            try {
+                const buffer = await fs.promises.readFile(path.join(EXTENSION_SUBMISSION_DIR, path.basename(item.iconFile)));
+                iconData = `data:${item.iconMime || 'image/png'};base64,${buffer.toString('base64')}`;
+            } catch (error) {
+                iconData = '';
+            }
+        }
+        return {...item, iconData};
+    }));
+    sendJson(res, 200, {
+        submissions,
+        approved: store.listCommunityExtensions()
+    });
+};
+
+const handleAdminExtensionSource = (req, res, id) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    const submission = store.findExtensionSubmission(id);
+    if (!submission || !submission.sourceFile) {
+        sendJson(res, 404, {error: '提交不存在'});
+        return;
+    }
+    fs.readFile(path.join(EXTENSION_SUBMISSION_DIR, path.basename(submission.sourceFile)), 'utf8', (error, source) => {
+        if (error) {
+            sendJson(res, 404, {error: '源码文件不存在'});
+            return;
+        }
+        sendJson(res, 200, {submission, source: source.slice(0, 600 * 1024)});
+    });
+};
+
+const handleAdminExtensionApprove = async (req, res, id) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    const submission = store.findExtensionSubmission(id);
+    if (!submission) {
+        sendJson(res, 404, {error: '提交不存在'});
+        return;
+    }
+    if (!submission.sourceFile) {
+        sendJson(res, 400, {error: '缺少源码文件'});
+        return;
+    }
+    const sourcePath = path.join(EXTENSION_SUBMISSION_DIR, path.basename(submission.sourceFile));
+    const fileName = `${submission.extensionId}.js`;
+    const publicPath = path.join(COMMUNITY_EXTENSION_DIR, fileName);
+    try {
+        const source = await fs.promises.readFile(sourcePath);
+        await fs.promises.writeFile(publicPath, source);
+        let iconURL = '';
+        if (submission.iconFile) {
+            const iconPath = path.join(EXTENSION_SUBMISSION_DIR, path.basename(submission.iconFile));
+            const iconExt = path.extname(iconPath).toLowerCase();
+            if (['.png', '.jpg', '.webp'].includes(iconExt)) {
+                const publicIcon = `${submission.extensionId}-icon${iconExt}`;
+                await fs.promises.copyFile(iconPath, path.join(COMMUNITY_EXTENSION_DIR, publicIcon));
+                iconURL = `${PUBLIC_BASE}/community-extensions/${publicIcon}`;
+            }
+        }
+        const entry = store.addCommunityExtension({
+            id: submission.extensionId,
+            name: submission.name,
+            description: submission.description,
+            author: submission.author,
+            tags: submission.tags,
+            url: `${PUBLIC_BASE}/community-extensions/${fileName}`,
+            iconURL,
+            submissionId: submission.id
+        });
+        store.updateExtensionSubmission(submission.id, {
+            status: 'approved',
+            approvedAt: Date.now(),
+            publicUrl: entry.url,
+            note: ''
+        });
+        sendJson(res, 200, {ok: true, entry});
+    } catch (error) {
+        sendJson(res, 500, {error: '发布扩展文件失败'});
+    }
+};
+
+const handleAdminExtensionReject = async (req, res, id) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    const submission = store.findExtensionSubmission(id);
+    if (!submission) {
+        sendJson(res, 404, {error: '提交不存在'});
+        return;
+    }
+    let body = {};
+    try {
+        body = await readBody(req);
+    } catch (error) {
+        body = {};
+    }
+    store.updateExtensionSubmission(id, {
+        status: 'rejected',
+        note: String(body.note || '').trim().slice(0, 300)
+    });
+    sendJson(res, 200, {ok: true});
+};
+
+const handleAdminExtensionDelete = (req, res, id) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    const submission = store.findExtensionSubmission(id);
+    if (!submission) {
+        sendJson(res, 404, {error: '提交不存在'});
+        return;
+    }
+    if (submission.sourceFile) {
+        fs.unlink(path.join(EXTENSION_SUBMISSION_DIR, path.basename(submission.sourceFile)), () => {});
+    }
+    if (submission.iconFile) {
+        fs.unlink(path.join(EXTENSION_SUBMISSION_DIR, path.basename(submission.iconFile)), () => {});
+    }
+    const entry = submission.status === 'approved' ?
+        store.listCommunityExtensions().find(item => item.submissionId === id) : null;
+    if (entry) {
+        store.deleteCommunityExtension(entry.id);
+        fs.unlink(path.join(COMMUNITY_EXTENSION_DIR, `${entry.id}.js`), () => {});
+        for (const ext of ['png', 'jpg', 'webp']) {
+            fs.unlink(path.join(COMMUNITY_EXTENSION_DIR, `${entry.id}-icon.${ext}`), () => {});
+        }
+    }
+    store.deleteExtensionSubmission(id);
+    sendJson(res, 200, {ok: true});
+};
+
+const handleAdminCommunityDelete = (req, res, id) => {
+    const found = requireAdmin(req, res);
+    if (!found) return;
+    const entry = store.findCommunityExtension(id);
+    if (!entry) {
+        sendJson(res, 404, {error: '扩展不存在'});
+        return;
+    }
+    store.deleteCommunityExtension(id);
+    fs.unlink(path.join(COMMUNITY_EXTENSION_DIR, `${id}.js`), () => {});
+    for (const ext of ['png', 'jpg', 'webp']) {
+        fs.unlink(path.join(COMMUNITY_EXTENSION_DIR, `${id}-icon.${ext}`), () => {});
+    }
+    sendJson(res, 200, {ok: true});
 };
 
 /* ------------------------------------------------------------------ */
@@ -1895,6 +2358,14 @@ const server = http.createServer(async (req, res) => {
             handlePublicNotices(req, res);
             return;
         }
+        if (pathname === '/api/extensions/community' && req.method === 'GET') {
+            await handleCommunityExtensions(req, res);
+            return;
+        }
+        if (pathname === '/api/extensions/submit' && req.method === 'POST') {
+            await handleExtensionSubmit(req, res);
+            return;
+        }
         if (pathname === '/api/points' && req.method === 'GET') {
             handleGetPoints(req, res);
             return;
@@ -1983,6 +2454,35 @@ const server = http.createServer(async (req, res) => {
             await handleAdminRelease(req, res);
             return;
         }
+        if (pathname === '/api/pointere-console/extensions' && req.method === 'GET') {
+            handleAdminExtensions(req, res);
+            return;
+        }
+        const extensionSourceMatch = pathname.match(/^\/api\/pointere-console\/extensions\/([A-Za-z0-9_]+)\/source$/);
+        if (extensionSourceMatch && req.method === 'GET') {
+            handleAdminExtensionSource(req, res, extensionSourceMatch[1]);
+            return;
+        }
+        const extensionApproveMatch = pathname.match(/^\/api\/pointere-console\/extensions\/([A-Za-z0-9_]+)\/approve$/);
+        if (extensionApproveMatch && req.method === 'POST') {
+            await handleAdminExtensionApprove(req, res, extensionApproveMatch[1]);
+            return;
+        }
+        const extensionRejectMatch = pathname.match(/^\/api\/pointere-console\/extensions\/([A-Za-z0-9_]+)\/reject$/);
+        if (extensionRejectMatch && req.method === 'POST') {
+            await handleAdminExtensionReject(req, res, extensionRejectMatch[1]);
+            return;
+        }
+        const extensionDeleteMatch = pathname.match(/^\/api\/pointere-console\/extensions\/([A-Za-z0-9_]+)\/delete$/);
+        if (extensionDeleteMatch && req.method === 'POST') {
+            handleAdminExtensionDelete(req, res, extensionDeleteMatch[1]);
+            return;
+        }
+        const communityDeleteMatch = pathname.match(/^\/api\/pointere-console\/community-extensions\/([A-Za-z0-9_]+)\/delete$/);
+        if (communityDeleteMatch && req.method === 'POST') {
+            handleAdminCommunityDelete(req, res, communityDeleteMatch[1]);
+            return;
+        }
         if (pathname === '/api/pointere-console/orders' && req.method === 'GET') {
             handleAdminOrders(req, res);
             return;
@@ -2019,6 +2519,60 @@ const server = http.createServer(async (req, res) => {
             serveStatic(res, pathname.slice(1));
             return;
         }
+        if (/^\/community-extensions\/[A-Za-z0-9_-]+\.js$/.test(pathname)) {
+            const filePath = path.join(COMMUNITY_EXTENSION_DIR, path.basename(pathname));
+            fs.stat(filePath, (error, stats) => {
+                if (error || !stats.isFile()) {
+                    sendJson(res, 404, {error: 'Not found'});
+                    return;
+                }
+                res.writeHead(200, {
+                    'Content-Type': 'text/javascript; charset=utf-8',
+                    'Content-Length': stats.size,
+                    'Cache-Control': 'public, max-age=300',
+                    'Access-Control-Allow-Origin': '*',
+                    'X-Content-Type-Options': 'nosniff'
+                });
+                fs.createReadStream(filePath).pipe(res);
+            });
+            return;
+        }
+        if (/^\/community-extensions\/[A-Za-z0-9_-]+-icon\.(?:png|jpg|webp)$/.test(pathname)) {
+            const filePath = path.join(COMMUNITY_EXTENSION_DIR, path.basename(pathname));
+            fs.stat(filePath, (error, stats) => {
+                if (error || !stats.isFile()) {
+                    sendJson(res, 404, {error: 'Not found'});
+                    return;
+                }
+                const ext = path.extname(filePath).toLowerCase();
+                res.writeHead(200, {
+                    'Content-Type': ext === '.png' ? 'image/png' : (ext === '.webp' ? 'image/webp' : 'image/jpeg'),
+                    'Content-Length': stats.size,
+                    'Cache-Control': 'public, max-age=3600',
+                    'Access-Control-Allow-Origin': '*',
+                    'X-Content-Type-Options': 'nosniff'
+                });
+                fs.createReadStream(filePath).pipe(res);
+            });
+            return;
+        }
+        if (/^\/ctspace-extensions\/[A-Za-z0-9]+\.js$/.test(pathname)) {
+            const forumId = path.basename(pathname, '.js');
+            const item = (await loadCtspaceExtensions()).find(entry => entry.forumId === forumId);
+            if (!item) {
+                sendJson(res, 404, {error: 'Not found'});
+                return;
+            }
+            res.writeHead(200, {
+                'Content-Type': 'text/javascript; charset=utf-8',
+                'Content-Length': Buffer.byteLength(item.code, 'utf8'),
+                'Cache-Control': 'public, max-age=300',
+                'Access-Control-Allow-Origin': '*',
+                'X-Content-Type-Options': 'nosniff'
+            });
+            res.end(item.code);
+            return;
+        }
         if (pathname === '/pointere-console' || pathname === '/pointere-console/') {
             serveStatic(res, 'admin.html');
             return;
@@ -2043,6 +2597,7 @@ const server = http.createServer(async (req, res) => {
                     'Content-Disposition': `attachment; filename="${fileName}"`,
                     'Content-Length': stats.size,
                     'Cache-Control': 'public, max-age=3600',
+                    'Access-Control-Allow-Origin': '*',
                     'X-Robots-Tag': 'noindex, nofollow',
                     'X-Content-Type-Options': 'nosniff'
                 });

@@ -178,6 +178,8 @@ if (!db || !Array.isArray(db.users)) {
 if (!Array.isArray(db.sessions)) db.sessions = [];
 if (!Array.isArray(db.products)) db.products = [];
 if (!Array.isArray(db.orders)) db.orders = [];
+if (!Array.isArray(db.extensionSubmissions)) db.extensionSubmissions = [];
+if (!Array.isArray(db.communityExtensions)) db.communityExtensions = [];
 if (!Array.isArray(db.announcements)) db.announcements = [];
 if (!db.release || typeof db.release !== 'object') {
     db.release = {
@@ -650,6 +652,82 @@ const deleteNotice = id => {
     return true;
 };
 
+const listExtensionSubmissions = () => db.extensionSubmissions
+    .slice()
+    .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+
+const findExtensionSubmission = id => db.extensionSubmissions.find(item => item.id === id) || null;
+
+const createExtensionSubmission = input => {
+    const entry = {
+        id: `extsub_${randomId(6)}`,
+        extensionId: String(input.extensionId || '').trim().slice(0, 48),
+        name: String(input.name || '').trim().slice(0, 60),
+        author: String(input.author || '').trim().slice(0, 40),
+        contact: String(input.contact || '').trim().slice(0, 120),
+        description: String(input.description || '').trim().slice(0, 600),
+        tags: Array.isArray(input.tags) ? input.tags.slice(0, 5).map(tag => String(tag).trim().slice(0, 16)).filter(Boolean) : [],
+        sourceUrl: String(input.sourceUrl || '').trim().slice(0, 500),
+        sourceFile: String(input.sourceFile || '').trim().slice(0, 120),
+        status: 'pending',
+        note: '',
+        createdAt: now(),
+        reviewedAt: 0,
+        approvedAt: 0,
+        ip: String(input.ip || '').slice(0, 64)
+    };
+    db.extensionSubmissions.unshift(entry);
+    persist();
+    return entry;
+};
+
+const updateExtensionSubmission = (id, patch) => {
+    const entry = findExtensionSubmission(id);
+    if (!entry) return null;
+    Object.assign(entry, patch, {reviewedAt: now()});
+    persist();
+    return entry;
+};
+
+const deleteExtensionSubmission = id => {
+    const index = db.extensionSubmissions.findIndex(item => item.id === id);
+    if (index < 0) return false;
+    db.extensionSubmissions.splice(index, 1);
+    persist();
+    return true;
+};
+
+const listCommunityExtensions = () => db.communityExtensions.slice();
+
+const findCommunityExtension = id => db.communityExtensions.find(item => item.id === id) || null;
+
+const addCommunityExtension = input => {
+    const entry = {
+        id: String(input.id || '').trim().slice(0, 48),
+        name: String(input.name || '').trim().slice(0, 60),
+        description: String(input.description || '').trim().slice(0, 600),
+        author: String(input.author || '').trim().slice(0, 40),
+        tags: Array.isArray(input.tags) ? input.tags.slice(0, 5) : [],
+        url: String(input.url || '').trim().slice(0, 500),
+        iconURL: String(input.iconURL || '').trim().slice(0, 500),
+        submissionId: String(input.submissionId || '').slice(0, 64),
+        createdAt: now()
+    };
+    const index = db.communityExtensions.findIndex(item => item.id === entry.id);
+    if (index >= 0) db.communityExtensions.splice(index, 1);
+    db.communityExtensions.unshift(entry);
+    persist();
+    return entry;
+};
+
+const deleteCommunityExtension = id => {
+    const index = db.communityExtensions.findIndex(item => item.id === id);
+    if (index < 0) return false;
+    db.communityExtensions.splice(index, 1);
+    persist();
+    return true;
+};
+
 const getRelease = () => ({...db.release});
 
 const saveRelease = input => {
@@ -684,6 +762,15 @@ module.exports = {
     destroySession,
     createCollabToken,
     getCollabSession,
+    listExtensionSubmissions,
+    findExtensionSubmission,
+    createExtensionSubmission,
+    updateExtensionSubmission,
+    deleteExtensionSubmission,
+    listCommunityExtensions,
+    findCommunityExtension,
+    addCommunityExtension,
+    deleteCommunityExtension,
     createVerifyToken,
     findUserByVerifyToken,
     verifyPassword,

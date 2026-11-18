@@ -180,13 +180,47 @@
         render();
     });
 
-    fetch('catalog.json', {cache: 'no-cache'})
-        .then(function (response) {
-            if (!response.ok) throw new Error('HTTP ' + response.status);
-            return response.json();
-        })
-        .then(function (data) {
-            state.items = Array.isArray(data.items) ? data.items : [];
+    Promise.all([
+        fetch('catalog.json', {cache: 'no-cache'})
+            .then(function (response) {
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                return response.json();
+            })
+            .catch(function () {
+                return {items: []};
+            }),
+        fetch('/api/extensions/community', {cache: 'no-cache'})
+            .then(function (response) {
+                return response.ok ? response.json() : {items: []};
+            })
+            .catch(function () {
+                return {items: []};
+            })
+    ])
+        .then(function (results) {
+            var base = Array.isArray(results[0].items) ? results[0].items : [];
+            var known = {};
+            base.forEach(function (item) {
+                known[item.id] = true;
+            });
+            var approved = (Array.isArray(results[1].items) ? results[1].items : [])
+                .filter(function (item) {
+                    return !known[item.id];
+                })
+                .map(function (item) {
+                    return {
+                        id: item.id,
+                        name: item.name,
+                        description: item.description,
+                        icon: '',
+                        url: item.url,
+                        author: item.author,
+                        category: 'community',
+                        featured: false,
+                        tags: item.tags || []
+                    };
+                });
+            state.items = approved.concat(base);
             render();
         })
         .catch(function () {
