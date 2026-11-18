@@ -30,6 +30,8 @@ const isPointerExtensionURL = url => {
                 parsed.pathname.startsWith('/extensions/')) ||
             (parsed.origin === 'https://vable.ctspace.xyz' &&
                 parsed.pathname.startsWith('/extensions/')) ||
+            (parsed.origin === 'https://pointeritera.github.io' &&
+                parsed.pathname.startsWith('/PointerEditor/extensions/')) ||
             (parsed.origin === 'https://adopos610.github.io' &&
                 parsed.pathname.startsWith('/PointerEditor/extensions/'))
         );

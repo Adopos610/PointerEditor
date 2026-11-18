@@ -166,7 +166,7 @@ class PointerExtensionLibrary extends React.Component {
                             </div>
                             <a
                                 className={styles.webLink}
-                                href="https://adopos610.github.io/PointerEditor/extensions/"
+                                href="https://pointeritera.github.io/PointerEditor/extensions/"
                                 target="_blank"
                                 rel="noreferrer"
                             >

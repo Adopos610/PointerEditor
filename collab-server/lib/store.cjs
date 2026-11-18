@@ -183,7 +183,7 @@ if (!db.release || typeof db.release !== 'object') {
     db.release = {
         version: '0.2.2',
         downloadUrl: 'https://peditor.ctspace.xyz/',
-        notesUrl: 'https://github.com/Adopos610/PointerEditor/releases'
+        notesUrl: 'https://github.com/PointerItera/PointerEditor/releases'
     };
 }
 db.users.forEach(ensureUserPoints);

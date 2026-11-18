@@ -93,6 +93,7 @@ export const canonicalExtensionURL = value => {
         const url = new URL(String(value || ''));
         const isLocal = /^(127\.\d+\.\d+\.\d+|localhost|\[::1\])$/.test(url.hostname);
         const isWebsite = url.hostname === 'peditor.ctspace.xyz' ||
+            (url.hostname === 'pointeritera.github.io' && url.pathname.startsWith('/PointerEditor/')) ||
             (url.hostname === 'adopos610.github.io' && url.pathname.startsWith('/PointerEditor/'));
         if (!isLocal && !isWebsite) return value;
         const pathname = url.pathname.replace(/^\/PointerEditor/, '');

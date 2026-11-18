@@ -7,9 +7,9 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 - 网页版编辑器：<https://peditor.ctspace.xyz/editor/editor.html>
 - 扩展商店：<https://peditor.ctspace.xyz/extensions/>
 - 文档中心：<https://peditor.ctspace.xyz/docs/>
-- 下载：<https://peditor.ctspace.xyz/#download> ｜ Releases：<https://github.com/Adopos610/PointerEditor/releases>
-- 源码仓库：<https://github.com/Adopos610/PointerEditor>
-- GitHub Pages 备份：<https://adopos610.github.io/PointerEditor/>
+- 下载：<https://peditor.ctspace.xyz/#download> ｜ Releases：<https://github.com/PointerItera/PointerEditor/releases>
+- 源码仓库：<https://github.com/PointerItera/PointerEditor>
+- GitHub Pages 备份：<https://pointeritera.github.io/PointerEditor/>
 - 原官网：<https://www.ctspace.xyz>
 
 ![PointerEditor 编辑器](docs/screenshots/editor.png)
@@ -124,7 +124,7 @@ PEAgent 的模型 API Key 仅保存在本机，由 Electron `safeStorage` 加密
 - **Pointer 精选**：PointerEditor 官方维护的 Pointer 工具箱、Pointer 数学工具。
 - **社区精选**：由社区作者维护的扩展，安装时从扩展的官方地址加载。
 
-GitHub Pages 版本：<https://adopos610.github.io/PointerEditor/extensions/>
+GitHub Pages 版本：<https://pointeritera.github.io/PointerEditor/extensions/>
 
 ## 安全说明
 

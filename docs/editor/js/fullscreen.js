@@ -24105,7 +24105,7 @@ class PointerExtensionLibrary extends react__WEBPACK_IMPORTED_MODULE_1___default
       className: _pointer_extension_library_css__WEBPACK_IMPORTED_MODULE_3___default.a.sidebarNote
     }, "\u793E\u533A\u6269\u5C55\u7531\u539F\u4F5C\u8005\u7EF4\u62A4\uFF0C\u5B89\u88C5\u524D\u8BF7\u786E\u8BA4\u6765\u6E90\u3002\u6269\u5C55\u53EA\u4F1A\u5728\u672C\u673A\u8FD0\u884C\uFF0C\u4E0D\u4F1A\u4E0A\u4F20\u4F5C\u54C1\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
       className: _pointer_extension_library_css__WEBPACK_IMPORTED_MODULE_3___default.a.webLink,
-      href: "https://adopos610.github.io/PointerEditor/extensions/",
+      href: "https://pointeritera.github.io/PointerEditor/extensions/",
       target: "_blank",
       rel: "noreferrer"
     }, "\u5728\u6D4F\u89C8\u5668\u6253\u5F00\u6269\u5C55\u5E93 \u2197")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
@@ -43896,7 +43896,7 @@ const isPointerExtensionURL = url => {
   try {
     const parsed = new URL(url);
     const root =  false ? undefined : '';
-    return parsed.origin === window.location.origin && parsed.pathname.startsWith("".concat(root, "/extensions/")) || parsed.origin === 'https://peditor.ctspace.xyz' && parsed.pathname.startsWith('/extensions/') || parsed.origin === 'https://vable.ctspace.xyz' && parsed.pathname.startsWith('/extensions/') || parsed.origin === 'https://adopos610.github.io' && parsed.pathname.startsWith('/PointerEditor/extensions/');
+    return parsed.origin === window.location.origin && parsed.pathname.startsWith("".concat(root, "/extensions/")) || parsed.origin === 'https://peditor.ctspace.xyz' && parsed.pathname.startsWith('/extensions/') || parsed.origin === 'https://vable.ctspace.xyz' && parsed.pathname.startsWith('/extensions/') || parsed.origin === 'https://pointeritera.github.io' && parsed.pathname.startsWith('/PointerEditor/extensions/') || parsed.origin === 'https://adopos610.github.io' && parsed.pathname.startsWith('/PointerEditor/extensions/');
   } catch (error) {
     return false;
   }
@@ -51615,7 +51615,7 @@ const canonicalExtensionURL = value => {
   try {
     const url = new URL(String(value || ''));
     const isLocal = /^(127\.\d+\.\d+\.\d+|localhost|\[::1\])$/.test(url.hostname);
-    const isWebsite = url.hostname === 'peditor.ctspace.xyz' || url.hostname === 'adopos610.github.io' && url.pathname.startsWith('/PointerEditor/');
+    const isWebsite = url.hostname === 'peditor.ctspace.xyz' || url.hostname === 'pointeritera.github.io' && url.pathname.startsWith('/PointerEditor/') || url.hostname === 'adopos610.github.io' && url.pathname.startsWith('/PointerEditor/');
     if (!isLocal && !isWebsite) return value;
     const pathname = url.pathname.replace(/^\/PointerEditor/, '');
     const fileName = pathname.split('/').pop();
