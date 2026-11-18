@@ -5,7 +5,7 @@ const path = require('path');
 const {execFileSync} = require('child_process');
 
 const shellRoot = path.resolve(__dirname, '..');
-const {version} = require('../package.json');
+const version = process.env.POINTER_RELEASE_VERSION || require('../package.json').version;
 const releaseDir = process.env.POINTER_RELEASE_DIR
     ? path.resolve(process.env.POINTER_RELEASE_DIR)
     : path.join(shellRoot, 'release');

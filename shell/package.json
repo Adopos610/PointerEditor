@@ -77,7 +77,7 @@
       }
     ],
     "portable": {
-      "artifactName": "PointerEditor-${version}-portable.${ext}"
+      "artifactName": "PointerEditor-0.2.4.1-portable.${ext}"
     },
     "nsis": {
       "oneClick": false,
@@ -87,7 +87,7 @@
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "PointerEditor",
-      "artifactName": "PointerEditor-${version}-setup.${ext}",
+      "artifactName": "PointerEditor-0.2.4.1-setup.${ext}",
       "deleteAppDataOnUninstall": false,
       "installerLanguages": [
         "zh_CN"

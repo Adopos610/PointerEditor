@@ -112,6 +112,7 @@ import PointerCollabModal from './pointer-collab-modal.jsx';
 import PointerAccountCenter from './pointer-account-center.jsx';
 import PointerPeAgent from './pointer-peagent.jsx';
 import PointerCloudNotices from './pointer-cloud-notices.jsx';
+import PointerAboutModal from './pointer-about-modal.jsx';
 import PointerTodoBoard from './pointer-todo-board.jsx';
 import {getAccount, fetchPointerPoints, claimDailyCodePoints} from '../../lib/pointer-account';
 import {applyPayloadToEditor, readCrossWindowPayload} from '../../lib/pointer-cross-window';
@@ -227,6 +228,12 @@ const fileMenuIcons = {
         <svg viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="8" />
             <path d="M12 7.5V12l3 2" />
+        </svg>
+    ),
+    info: (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5" />
+            <path d="M12 10.5v6M12 7.2v.6" />
         </svg>
     )
 };
@@ -347,7 +354,8 @@ class MenuBar extends React.Component {
             peagentOpen: false,
             todoOpen: false,
             assetToast: '',
-            externalProject: null
+            externalProject: null,
+            aboutOpen: false
         };
         bindAll(this, [
             'handleClickSeeInside',
@@ -373,6 +381,8 @@ class MenuBar extends React.Component {
             'handleClickNewTab',
             'handleClickNewWindow',
             'handleClickSaveAllTabs',
+            'handleOpenAbout',
+            'handleCloseAbout',
             'handleActiveTabChanged',
             'handleClickRemix',
             'handleClickSave',
@@ -712,6 +722,13 @@ class MenuBar extends React.Component {
     }
     handleCloseCloud () {
         this.setState({cloudMenuOpen: false});
+    }
+    handleOpenAbout () {
+        this.props.onRequestCloseFile();
+        this.setState({aboutOpen: true});
+    }
+    handleCloseAbout () {
+        this.setState({aboutOpen: false});
     }
     handleOpenPublish () {
         this.setState({publishOpen: true, cloudMenuOpen: false});
@@ -1224,6 +1241,12 @@ class MenuBar extends React.Component {
                                                 label="批量保存所有标签页…"
                                             />
                                         </MenuItem>
+                                        <MenuItem onClick={this.handleOpenAbout}>
+                                            <FileMenuRow
+                                                icon={fileMenuIcons.info}
+                                                label="关于 PointerEditor"
+                                            />
+                                        </MenuItem>
                                     </MenuSection>
                                     {this.props.onClickPackager && (
                                         <MenuSection>
@@ -1692,6 +1715,9 @@ class MenuBar extends React.Component {
                 ) : null}
                 {this.state.todoOpen && (
                     <PointerTodoBoard onClose={this.handleToggleTodo} />
+                )}
+                {this.state.aboutOpen && (
+                    <PointerAboutModal onClose={this.handleCloseAbout} />
                 )}
                 <PointerCloudNotices />
 

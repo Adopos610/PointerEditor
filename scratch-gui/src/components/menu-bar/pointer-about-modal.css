@@ -1,0 +1,219 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(9, 28, 60, 0.38);
+    backdrop-filter: blur(12px);
+}
+
+.panel {
+    width: min(540px, 100%);
+    max-height: 86vh;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    background: #fff;
+    color: #2b4a71;
+    box-shadow: 0 28px 80px rgba(8, 35, 85, 0.32);
+    font-family: "OPPO Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    background: #2f6fe4;
+    color: #fff;
+}
+
+.brand-badge {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #fff;
+    color: #2f6fe4;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.title-block {
+    flex: 1;
+    min-width: 0;
+}
+
+.title-block strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.title-block span {
+    display: block;
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.7rem;
+}
+
+.close {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.close:hover { background: rgba(255, 255, 255, 0.26); }
+
+.body {
+    padding: 18px;
+    overflow-y: auto;
+    max-height: calc(86vh - 74px);
+}
+
+.intro {
+    margin: 0 0 16px;
+    color: #5c7697;
+    font-size: 0.78rem;
+    line-height: 1.7;
+}
+
+.update-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid #dbe8fa;
+    border-radius: 11px;
+    background: #f7fbff;
+}
+
+.update-status {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.update-label {
+    color: #8ba0ba;
+    font-size: 0.64rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.checking,
+.latest,
+.available,
+.error {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.checking { color: #6f88a8; }
+.latest { color: #1f7a44; }
+.available { color: #2258b8; }
+.error { color: #b23a2c; }
+
+.check-button,
+.primary,
+.secondary {
+    flex: 0 0 auto;
+    height: 32px;
+    padding: 0 13px;
+    border-radius: 8px;
+    font: 600 0.74rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+
+.check-button {
+    border: 1px solid #b9d2f6;
+    background: #fff;
+    color: #2f6fe4;
+}
+
+.check-button:hover { background: #eef6ff; }
+.check-button:disabled { opacity: 0.6; cursor: default; }
+
+.update-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.primary {
+    border: 1px solid #2f6fe4;
+    background: #2f6fe4;
+    color: #fff;
+}
+
+.primary:hover { background: #2258b8; }
+
+.secondary {
+    border: 1px solid #d3e2f8;
+    background: #fff;
+    color: #2f6fe4;
+}
+
+.secondary:hover { background: #eef6ff; }
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.link-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    padding: 12px 14px;
+    border: 1px solid #e3edfb;
+    border-radius: 10px;
+    background: #fff;
+    color: #2b4a71;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.link-card:hover {
+    border-color: #9fc2f4;
+    background: #f7fbff;
+}
+
+.link-card strong {
+    color: #2258b8;
+    font-size: 0.8rem;
+}
+
+.link-card span {
+    color: #8ba0ba;
+    font-size: 0.66rem;
+}
+
+.footer-note {
+    margin: 16px 0 0;
+    color: #9aabc1;
+    font-size: 0.64rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+@media (max-width: 520px) {
+    .links { grid-template-columns: 1fr; }
+    .update-row { flex-direction: column; align-items: stretch; }
+    .check-button { align-self: flex-start; }
+}
