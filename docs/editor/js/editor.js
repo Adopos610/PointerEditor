@@ -36948,7 +36948,34 @@ const withSearchText = (item, category) => _objectSpread(_objectSpread({}, item)
 class ExtensionLibrary extends react__WEBPACK_IMPORTED_MODULE_2___default.a.PureComponent {
   constructor(props) {
     super(props);
+    this.state = {
+      approved: []
+    };
     lodash_bindall__WEBPACK_IMPORTED_MODULE_0___default()(this, ['handleItemSelect']);
+  }
+  componentDidMount() {
+    this.mounted = true;
+    fetch('https://vable.ctspace.xyz/api/extensions/community', {
+      cache: 'no-store'
+    }).then(response => response.ok ? response.json() : null).then(data => {
+      if (!this.mounted || !data || !Array.isArray(data.items)) return;
+      const existing = new Set(_lib_libraries_extensions_pointer_gallery__WEBPACK_IMPORTED_MODULE_6__["communityExtensions"].map(item => item.extensionId));
+      const approved = data.items.filter(item => item && item.id && item.url && !existing.has(item.id)).map(item => ({
+        extensionId: item.id,
+        name: item.name,
+        description: item.description,
+        author: item.author,
+        extensionURL: item.url,
+        iconURL: item.iconURL || '',
+        tags: ['community']
+      }));
+      if (approved.length) this.setState({
+        approved
+      });
+    }).catch(() => {});
+  }
+  componentWillUnmount() {
+    this.mounted = false;
   }
   handleItemSelect(item) {
     if (item.href) {
@@ -36985,7 +37012,7 @@ class ExtensionLibrary extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Pure
   render() {
     const localItems = _lib_libraries_extensions_index_jsx__WEBPACK_IMPORTED_MODULE_5__["default"].map(item => withSearchText(item, item.extensionId === 'custom_extension' ? 'custom' : 'official'));
     const pointerItems = _lib_libraries_extensions_pointer_gallery__WEBPACK_IMPORTED_MODULE_6__["pointerExtensions"].map(item => withSearchText(item, 'pointer'));
-    const communityItems = _lib_libraries_extensions_pointer_gallery__WEBPACK_IMPORTED_MODULE_6__["communityExtensions"].map(item => withSearchText(item, 'community'));
+    const communityItems = _lib_libraries_extensions_pointer_gallery__WEBPACK_IMPORTED_MODULE_6__["communityExtensions"].concat(this.state.approved).map(item => withSearchText(item, 'community'));
     const items = pointerItems.concat(localItems.filter(item => item.category === 'official')).concat(communityItems).concat(localItems.filter(item => item.category === 'custom'));
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_pointer_extension_library_pointer_extension_library_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
       items: items,

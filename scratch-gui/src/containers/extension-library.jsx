@@ -53,9 +53,37 @@ const withSearchText = (item, category) => ({
 class ExtensionLibrary extends React.PureComponent {
     constructor (props) {
         super(props);
+        this.state = {
+            approved: []
+        };
         bindAll(this, [
             'handleItemSelect'
         ]);
+    }
+    componentDidMount () {
+        this.mounted = true;
+        fetch('https://vable.ctspace.xyz/api/extensions/community', {cache: 'no-store'})
+            .then(response => (response.ok ? response.json() : null))
+            .then(data => {
+                if (!this.mounted || !data || !Array.isArray(data.items)) return;
+                const existing = new Set(communityExtensions.map(item => item.extensionId));
+                const approved = data.items
+                    .filter(item => item && item.id && item.url && !existing.has(item.id))
+                    .map(item => ({
+                        extensionId: item.id,
+                        name: item.name,
+                        description: item.description,
+                        author: item.author,
+                        extensionURL: item.url,
+                        iconURL: item.iconURL || '',
+                        tags: ['community']
+                    }));
+                if (approved.length) this.setState({approved});
+            })
+            .catch(() => {});
+    }
+    componentWillUnmount () {
+        this.mounted = false;
     }
     handleItemSelect (item) {
         if (item.href) {
@@ -102,7 +130,9 @@ class ExtensionLibrary extends React.PureComponent {
             item.extensionId === 'custom_extension' ? 'custom' : 'official'
         ));
         const pointerItems = pointerExtensions.map(item => withSearchText(item, 'pointer'));
-        const communityItems = communityExtensions.map(item => withSearchText(item, 'community'));
+        const communityItems = communityExtensions
+            .concat(this.state.approved)
+            .map(item => withSearchText(item, 'community'));
         const items = pointerItems
             .concat(localItems.filter(item => item.category === 'official'))
             .concat(communityItems)
