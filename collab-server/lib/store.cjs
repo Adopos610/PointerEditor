@@ -734,7 +734,7 @@ const saveRelease = input => {
     const version = String(input.version || '').trim().slice(0, 40);
     const downloadUrl = String(input.downloadUrl || '').trim().slice(0, 500);
     const notesUrl = String(input.notesUrl || '').trim().slice(0, 500);
-    if (!/^\d+\.\d+\.\d+(?:[-+].+)?$/.test(version)) return {error: '版本号格式应为 0.2.2'};
+    if (!/^\d+(?:\.\d+){2,3}(?:[-+].+)?$/.test(version)) return {error: '版本号格式应为 0.2.4 或 0.2.4.1'};
     if (downloadUrl && !/^https?:\/\//i.test(downloadUrl)) return {error: '下载地址必须以 http(s):// 开头'};
     if (notesUrl && !/^https?:\/\//i.test(notesUrl)) return {error: '更新说明地址必须以 http(s):// 开头'};
     db.release = {version, downloadUrl, notesUrl};
