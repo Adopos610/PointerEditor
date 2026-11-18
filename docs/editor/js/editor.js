@@ -17612,7 +17612,7 @@ class PointerCollabModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: "".concat(_pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityBar, " ").concat(levelClass)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityHead
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "PointerGuard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, guardState.lockdown ? '已暂停接收远端改动' : critical ? '已拦截可疑操作' : guardState.level === 'warn' ? '发现可疑行为' : '实时守护中'), guardState.blockedExtensions ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5DF2\u62E6\u622A ", guardState.blockedExtensions, " \u4E2A\u6269\u5C55") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "PointerGuard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, guardState.lockdown ? '已暂停接收远端改动' : critical ? '已拦截可疑操作' : guardState.level === 'warn' ? '发现可疑行为' : '实时守护中'), guardState.blockedExtensions ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5DF2\u6C99\u7BB1 ", guardState.blockedExtensions, " \u4E2A\u6269\u5C55") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
       className: _pointer_collab_modal_css__WEBPACK_IMPORTED_MODULE_7___default.a.securityLink,
       onClick: this.handleToggleGuard
@@ -52433,10 +52433,10 @@ class PointerGuard {
     let action = 'allow';
     const isDataUrl = /^data:/i.test(String(url || ''));
     if (this.collab.active && isDataUrl) {
-      action = 'block';
+      action = 'sandbox';
       this.blockedExtensions += 1;
-      reasons.push('协作进行中拒绝加载项目内嵌扩展，避免他人借项目注入脚本');
-      this.addAlert('warn', '已拦截协作中的内嵌扩展', {
+      reasons.push('协作项目中的内嵌扩展会被强制在沙箱中运行');
+      this.addAlert('warn', '协作项目请求加载内嵌扩展，已强制沙箱并等待确认', {
         url: trimUrl(url),
         reasons
       });

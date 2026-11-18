@@ -1456,7 +1456,7 @@ class PointerCollabModal extends React.Component {
                                 (guardState.level === 'warn' ? '发现可疑行为' : '实时守护中'))}
                     </span>
                     {guardState.blockedExtensions ? (
-                        <span>已拦截 {guardState.blockedExtensions} 个扩展</span>
+                        <span>已沙箱 {guardState.blockedExtensions} 个扩展</span>
                     ) : null}
                     <button type="button" className={styles.securityLink} onClick={this.handleToggleGuard}>
                         {guardOpen ? '收起' : '详情'}

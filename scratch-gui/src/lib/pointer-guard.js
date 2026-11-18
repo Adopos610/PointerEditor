@@ -165,10 +165,10 @@ class PointerGuard {
         let action = 'allow';
         const isDataUrl = /^data:/i.test(String(url || ''));
         if (this.collab.active && isDataUrl) {
-            action = 'block';
+            action = 'sandbox';
             this.blockedExtensions += 1;
-            reasons.push('协作进行中拒绝加载项目内嵌扩展，避免他人借项目注入脚本');
-            this.addAlert('warn', '已拦截协作中的内嵌扩展', {
+            reasons.push('协作项目中的内嵌扩展会被强制在沙箱中运行');
+            this.addAlert('warn', '协作项目请求加载内嵌扩展，已强制沙箱并等待确认', {
                 url: trimUrl(url),
                 reasons
             });
