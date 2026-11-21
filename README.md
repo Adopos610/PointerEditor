@@ -37,9 +37,16 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 
 0.2.4.1 安装包、免安装版与网页版静态包：
 
-- Windows 安装版：[PointerEditor-0.2.4.1-setup.exe](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.4.1-setup.exe)
-- Windows 免安装版：[PointerEditor-0.2.4.1-win64.zip](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.4.1-win64.zip)
-- 网页版静态包：[PointerEditor-0.2.4.1-web.zip](https://vable.ctspace.xyz/downloads/PointerEditor-0.2.4.1-web.zip)
+国内推荐（123 云盘，免登录、下载更快）：
+
+- [PointerEditor 下载文件夹](https://1827634832.share.123pan.cn/123pan/kBNKjv-KRnX)（Windows 安装版 / 免安装版 / 网页版）
+
+GitHub Releases（海外 / 备用）：
+
+- Windows 安装版：[PointerEditor-0.2.4.1-setup.exe](https://github.com/PointerItera/PointerEditor/releases/download/v0.2.4.1/PointerEditor-0.2.4.1-setup.exe)
+- Windows 免安装版：[PointerEditor-0.2.4.1-win64.zip](https://github.com/PointerItera/PointerEditor/releases/download/v0.2.4.1/PointerEditor-0.2.4.1-win64.zip)
+- 网页版静态包：[PointerEditor-0.2.4.1-web.zip](https://github.com/PointerItera/PointerEditor/releases/download/v0.2.4.1/PointerEditor-0.2.4.1-web.zip)
+- Release 页面：<https://github.com/PointerItera/PointerEditor/releases/tag/v0.2.4.1>
 - 在线使用：<https://peditor.ctspace.xyz/editor/editor.html>
 
 ## 目录结构
