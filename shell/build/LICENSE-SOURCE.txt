@@ -1,0 +1,30 @@
+PointerEditor 许可与源码说明
+=============================
+
+一、本程序是什么
+  本程序（PointerEditor）是基于 TurboWarp scratch-gui
+  （https://github.com/TurboWarp/scratch-gui）修改而来的衍生作品。
+  修改者：指针迭代（PointerEditor 项目组）
+  修改时间：自 2026 年 11 月起持续修改
+
+二、许可证
+  本程序整体按 GNU General Public License version 3（GPL-3.0-only）分发。
+  许可证全文见同目录 LICENSE-GPL-3.0.txt，
+  也可从 https://www.gnu.org/licenses/gpl-3.0.txt 获取。
+
+三、完整对应源码
+  源码仓库（含全部修改）：https://github.com/PointerItera/PointerEditor
+  各版本源码快照：https://github.com/PointerItera/PointerEditor/releases
+  若无法访问上述地址，可联系发布者索取对应版本的完整源码。
+  本程序的源码以 GPL-3.0 提供，您有权修改并以同一许可证再分发。
+
+四、第三方组件与商标
+  详细清单见同目录 NOTICE.md。
+  Scratch 是麻省理工学院（MIT）的商标，本项目与 MIT、Scratch 团队
+  无隶属或背书关系。
+  TurboWarp 名称仅用于说明技术来源，不代表 TurboWarp 项目对本程序的
+  认可或背书。
+
+五、无担保
+  本程序按“现状”提供，不附带任何明示或默示担保，包括但不限于
+  适销性与特定用途适用性的担保。使用风险由使用者自行承担。
