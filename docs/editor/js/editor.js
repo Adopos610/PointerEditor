@@ -553,20 +553,15 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".workspace-background-picker_picker_3n9LJ {\n    position: absolute;\n    right: 22px;\n    bottom: 42px;\n    z-index: 10;\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n\n.workspace-background-picker_trigger_2EMh6 {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n    height: 32px;\n    padding: 0 11px;\n    border: 1px solid rgba(201, 216, 238, .9);\n    border-radius: 9px;\n    background: rgba(255, 255, 255, .9);\n    color: #47617f;\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n    box-shadow: 0 6px 16px rgba(8, 35, 85, .14);\n    -webkit-backdrop-filter: blur(8px);\n            backdrop-filter: blur(8px);\n}\n\n.workspace-background-picker_trigger_2EMh6:hover { border-color: #8fb6f3; background: #fff; color: #2258b8; }\n\n.workspace-background-picker_triggerDot_1Aub3 {\n    width: 15px;\n    height: 15px;\n    border: 1px solid #c9d8ee;\n    border-radius: 50%;\n    background-color: #fff;\n    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .65);\n}\n\n.workspace-background-picker_panel_19R92 {\n    position: absolute;\n    right: 0;\n    bottom: calc(100% + 8px);\n    width: 320px;\n    max-height: min(72vh, 560px, calc(100vh - 250px));\n    overflow-y: auto;\n    padding: 14px;\n    border: 1px solid #e3edfb;\n    border-radius: 14px;\n    background: #fff;\n    color: #2b4a71;\n    box-shadow: 0 20px 54px rgba(8, 35, 85, .26);\n}\n\n.workspace-background-picker_head_lEkjx {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 12px;\n    margin-bottom: 8px;\n}\n\n.workspace-background-picker_head_lEkjx strong { color: #173a6d; font-size: .84rem; }\n\n.workspace-background-picker_close_3QHHH {\n    width: 26px;\n    height: 26px;\n    border: 0;\n    border-radius: 7px;\n    background: transparent;\n    color: #8ba0ba;\n    font-size: 1rem;\n    line-height: 1;\n    cursor: pointer;\n}\n\n.workspace-background-picker_close_3QHHH:hover { background: #fdecea; color: #c0392b; }\n\n.workspace-background-picker_sectionTitle_2TCgn {\n    margin: 12px 0 6px;\n    color: #93a8c4;\n    font-size: .64rem;\n    font-weight: 700;\n    letter-spacing: .06em;\n}\n\n.workspace-background-picker_presetGrid_3ITS7 {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 7px;\n}\n\n.workspace-background-picker_preset_3kU_R {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n    padding: 5px;\n    border: 1px solid transparent;\n    border-radius: 9px;\n    background: transparent;\n    color: #47617f;\n    font: 600 .64rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n    text-align: center;\n}\n\n.workspace-background-picker_preset_3kU_R:hover { background: #f4f9ff; }\n\n.workspace-background-picker_presetActive_2EFZh {\n    border-color: #2f6fe4;\n    background: #eef6ff;\n    color: #2258b8;\n    box-shadow: 0 0 0 2px rgba(47, 111, 228, .12);\n}\n\n.workspace-background-picker_presetSwatch_30rf7 {\n    display: block;\n    height: 36px;\n    border: 1px solid #dbe7f8;\n    border-radius: 7px;\n    background-size: cover;\n    background-position: center;\n}\n\n.workspace-background-picker_row_yn2kK {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 8px;\n    min-height: 30px;\n    color: #47617f;\n    font-size: .7rem;\n}\n\n.workspace-background-picker_rowActions_2MLzB { display: flex; align-items: center; gap: 6px; }\n\n.workspace-background-picker_colorInput_2xS7o {\n    width: 42px;\n    height: 28px;\n    padding: 0;\n    border: 1px solid #dbe7f8;\n    border-radius: 7px;\n    background: transparent;\n    cursor: pointer;\n}\n\n.workspace-background-picker_smallButton_E7ebG {\n    height: 27px;\n    padding: 0 9px;\n    border: 1px solid #c9d8ee;\n    border-radius: 7px;\n    background: #fff;\n    color: #2f6fe4;\n    font: 600 .65rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.workspace-background-picker_smallButton_E7ebG:hover { background: #eef6ff; }\n\n.workspace-background-picker_fileInput_2aH4q { display: none; }\n\n.workspace-background-picker_sliderRow_2u1wp {\n    display: grid;\n    grid-template-columns: 64px 1fr 42px;\n    align-items: center;\n    gap: 8px;\n    margin-top: 6px;\n    color: #47617f;\n    font-size: .68rem;\n}\n\n.workspace-background-picker_slider_2yknZ {\n    width: 100%;\n    accent-color: #2f6fe4;\n    cursor: pointer;\n}\n\n.workspace-background-picker_message_1gSWP {\n    margin-top: 9px;\n    color: #c0392b;\n    font-size: .66rem;\n    line-height: 1.5;\n}\n\n.workspace-background-picker_reset_359Pi {\n    width: 100%;\n    height: 32px;\n    margin-top: 12px;\n    border: 1px solid #c9d8ee;\n    border-radius: 8px;\n    background: #f7fbff;\n    color: #2f6fe4;\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.workspace-background-picker_reset_359Pi:hover { background: #eef6ff; }\n\n@media (max-width: 720px) {\n    .workspace-background-picker_panel_19R92 { width: 280px; }\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_trigger_2EMh6 {\n    border-color: rgba(255, 255, 255, .18);\n    background: rgba(14, 22, 38, .78);\n    color: rgba(235, 244, 255, .92);\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_trigger_2EMh6:hover {\n    border-color: rgba(255, 255, 255, .3);\n    background: rgba(20, 32, 52, .92);\n    color: #fff;\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_triggerDot_1Aub3 { border-color: rgba(255, 255, 255, .24); }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_panel_19R92 {\n    border-color: rgba(255, 255, 255, .16);\n    background: #101a2c;\n    color: #dbeafe;\n    box-shadow: 0 20px 54px rgba(0, 0, 0, .45);\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_head_lEkjx strong { color: #f0f7ff; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_close_3QHHH { color: #8ba0ba; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_close_3QHHH:hover { background: rgba(255, 255, 255, .08); color: #ff9b8f; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_sectionTitle_2TCgn { color: #7d93b5; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_preset_3kU_R { color: #c9d8ee; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_preset_3kU_R:hover { background: rgba(255, 255, 255, .06); }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_presetActive_2EFZh {\n    border-color: #61a0ff;\n    background: rgba(47, 111, 228, .22);\n    color: #dbeafe;\n    box-shadow: 0 0 0 2px rgba(97, 160, 255, .16);\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_presetSwatch_30rf7 { border-color: rgba(255, 255, 255, .16); }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_row_yn2kK,\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_sliderRow_2u1wp { color: #c9d8ee; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_colorInput_2xS7o { border-color: rgba(255, 255, 255, .16); }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_slider_2yknZ { accent-color: #61a0ff; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_smallButton_E7ebG {\n    border-color: rgba(255, 255, 255, .16);\n    background: #16233a;\n    color: #9ec5ff;\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_smallButton_E7ebG:hover { background: #1e2f4d; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_reset_359Pi {\n    border-color: rgba(255, 255, 255, .16);\n    background: #16233a;\n    color: #9ec5ff;\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_reset_359Pi:hover { background: #1e2f4d; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_message_1gSWP { color: #ff9b8f; }\n", ""]);
+exports.push([module.i, ".workspace-background-picker_settings_YtTdV {\n    --wb-text: #47617f;\n    --wb-text-dim: #93a8c4;\n    --wb-border: #dbe7f8;\n    --wb-surface: #ffffff;\n    --wb-surface-hover: #f4f9ff;\n    --wb-accent: #2f6fe4;\n    --wb-accent-bg: #eef6ff;\n    --wb-danger: #c0392b;\n\n    display: flex;\n    flex-direction: column;\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    color: var(--wb-text);\n}\n\nbody.pointer-dark-theme .workspace-background-picker_settings_YtTdV {\n    --wb-text: #c9d8ee;\n    --wb-text-dim: #7d93b5;\n    --wb-border: rgba(255, 255, 255, .16);\n    --wb-surface: #16233a;\n    --wb-surface-hover: rgba(255, 255, 255, .06);\n    --wb-accent: #61a0ff;\n    --wb-accent-bg: rgba(47, 111, 228, .22);\n    --wb-danger: #ff9b8f;\n}\n\n.workspace-background-picker_hint_1p2Op {\n    margin: 0 0 4px;\n    color: var(--wb-text-dim);\n    font-size: .66rem;\n    line-height: 1.6;\n}\n\n.workspace-background-picker_sectionTitle_2TCgn {\n    margin: 12px 0 6px;\n    color: var(--wb-text-dim);\n    font-size: .64rem;\n    font-weight: 700;\n    letter-spacing: .06em;\n}\n\n.workspace-background-picker_presetGrid_3ITS7 {\n    display: grid;\n    grid-template-columns: repeat(5, 1fr);\n    gap: 8px;\n}\n\n.workspace-background-picker_preset_3kU_R {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n    padding: 5px;\n    border: 1px solid transparent;\n    border-radius: 9px;\n    background: transparent;\n    color: var(--wb-text);\n    font: 600 .64rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n    text-align: center;\n}\n\n.workspace-background-picker_preset_3kU_R:hover { background: var(--wb-surface-hover); }\n\n.workspace-background-picker_preset_3kU_R[data-active='true'] {\n    border-color: var(--wb-accent);\n    background: var(--wb-accent-bg);\n    color: var(--wb-accent);\n    box-shadow: 0 0 0 2px rgba(47, 111, 228, .12);\n}\n\n.workspace-background-picker_presetSwatch_30rf7 {\n    display: block;\n    height: 34px;\n    border: 1px solid var(--wb-border);\n    border-radius: 7px;\n    background-size: cover;\n    background-position: center;\n}\n\n.workspace-background-picker_row_yn2kK {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 8px;\n    min-height: 30px;\n    color: var(--wb-text);\n    font-size: .7rem;\n}\n\n.workspace-background-picker_rowActions_2MLzB { display: flex; align-items: center; gap: 6px; }\n\n.workspace-background-picker_colorInput_2xS7o {\n    width: 42px;\n    height: 28px;\n    padding: 0;\n    border: 1px solid var(--wb-border);\n    border-radius: 7px;\n    background: transparent;\n    cursor: pointer;\n}\n\n.workspace-background-picker_smallButton_E7ebG {\n    height: 27px;\n    padding: 0 9px;\n    border: 1px solid var(--wb-border);\n    border-radius: 7px;\n    background: var(--wb-surface);\n    color: var(--wb-accent);\n    font: 600 .65rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.workspace-background-picker_smallButton_E7ebG:hover { background: var(--wb-accent-bg); }\n\n.workspace-background-picker_fileInput_2aH4q { display: none; }\n\n.workspace-background-picker_sliderRow_2u1wp {\n    display: grid;\n    grid-template-columns: 64px 1fr 42px;\n    align-items: center;\n    gap: 8px;\n    margin-top: 6px;\n    color: var(--wb-text);\n    font-size: .68rem;\n}\n\n.workspace-background-picker_slider_2yknZ {\n    width: 100%;\n    accent-color: var(--wb-accent);\n    cursor: pointer;\n}\n\n.workspace-background-picker_message_1gSWP {\n    margin-top: 9px;\n    color: var(--wb-danger);\n    font-size: .66rem;\n    line-height: 1.5;\n}\n\n.workspace-background-picker_reset_359Pi {\n    width: 100%;\n    height: 32px;\n    margin-top: 12px;\n    border: 1px solid var(--wb-border);\n    border-radius: 8px;\n    background: var(--wb-surface);\n    color: var(--wb-accent);\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.workspace-background-picker_reset_359Pi:hover { background: var(--wb-accent-bg); }\n\n@media (max-width: 760px) {\n    .workspace-background-picker_presetGrid_3ITS7 { grid-template-columns: repeat(3, 1fr); }\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"picker": "workspace-background-picker_picker_3n9LJ",
-	"trigger": "workspace-background-picker_trigger_2EMh6",
-	"triggerDot": "workspace-background-picker_triggerDot_1Aub3",
-	"panel": "workspace-background-picker_panel_19R92",
-	"head": "workspace-background-picker_head_lEkjx",
-	"close": "workspace-background-picker_close_3QHHH",
+	"settings": "workspace-background-picker_settings_YtTdV",
+	"hint": "workspace-background-picker_hint_1p2Op",
 	"sectionTitle": "workspace-background-picker_sectionTitle_2TCgn",
 	"presetGrid": "workspace-background-picker_presetGrid_3ITS7",
 	"preset": "workspace-background-picker_preset_3kU_R",
-	"presetActive": "workspace-background-picker_presetActive_2EFZh",
 	"presetSwatch": "workspace-background-picker_presetSwatch_30rf7",
 	"row": "workspace-background-picker_row_yn2kK",
 	"rowActions": "workspace-background-picker_rowActions_2MLzB",
@@ -576,8 +571,7 @@ exports.locals = {
 	"sliderRow": "workspace-background-picker_sliderRow_2u1wp",
 	"slider": "workspace-background-picker_slider_2yknZ",
 	"message": "workspace-background-picker_message_1gSWP",
-	"reset": "workspace-background-picker_reset_359Pi",
-	"dark": "workspace-background-picker_dark_2i4aJ"
+	"reset": "workspace-background-picker_reset_359Pi"
 };
 
 /***/ }),
@@ -1329,7 +1323,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Dark editor chrome, enabled only when the workspace background is dark. */\n\nbody.pointer-dark-theme {\n    background: #0b1220;\n    color: #e8f1ff;\n}\n\nbody.pointer-dark-theme [class*=\"gui_page-wrapper\"],\nbody.pointer-dark-theme [class*=\"gui_body-wrapper\"] {\n    background-color: #0b1220 !important;\n    color: #e8f1ff;\n}\n\n/* Top menu bar */\n\nbody.pointer-dark-theme [class*=\"menu-bar_menu-bar\"] {\n    background: #0d1626 !important;\n    background-image: none !important;\n    color: #e8f1ff !important;\n    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account\"] {\n    color: #e8f1ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account-button\"] {\n    background: rgba(255, 255, 255, .08) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account-button\"]:hover {\n    background: rgba(255, 255, 255, .14) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account-points\"] {\n    background: rgba(97, 160, 255, .2) !important;\n    color: #cfe0ff !important;\n}\n\n/* Project tab strip */\n\nbody.pointer-dark-theme [class*=\"pointer-project-tab-bar_tab-bar\"] {\n    background: #111c33 !important;\n    background-image: none !important;\n    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_batch-button\"],\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_history-button\"] {\n    border-color: rgba(255, 255, 255, .24) !important;\n    background: rgba(255, 255, 255, .06) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_batch-button\"]:hover,\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_history-button\"]:hover {\n    border-color: rgba(255, 255, 255, .45) !important;\n    background: rgba(255, 255, 255, .14) !important;\n    color: #fff !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_tab-add\"] {\n    border-color: rgba(255, 255, 255, .28) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_tab-active\"] {\n    background: rgba(255, 255, 255, .08) !important;\n    border-color: rgba(255, 255, 255, .35) !important;\n}\n\n/* Code / costume / sound tabs */\n\nbody.pointer-dark-theme [class*=\"gui_tab-list\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab_\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #9fb2cc !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab_\"]:hover {\n    background-color: #1a2740 !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab_\"] img {\n    filter: grayscale(100%) brightness(1.6) !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_is-selected\"] {\n    background-color: #0b1220 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #9ec5ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_is-selected\"] img {\n    filter: none !important;\n}\n\n/* Find bar addon */\n\nbody.pointer-dark-theme [class*=\"sa-find-bar\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-bar\"] img {\n    filter: invert(1) brightness(1.2) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-dropdown\"] {\n    background: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #e8f1ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-dropdown\"] li:hover {\n    background: rgba(255, 255, 255, .08) !important;\n}\n\n/* Form inputs across the sprite info and search */\n\nbody.pointer-dark-theme input[class*=\"input_input-form\"],\nbody.pointer-dark-theme input[class*=\"input_\"],\nbody.pointer-dark-theme select,\nbody.pointer-dark-theme textarea {\n    background-color: #0f1a2d !important;\n    color: #e8f1ff !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color-scheme: dark;\n}\n\nbody.pointer-dark-theme input::-ms-input-placeholder, body.pointer-dark-theme textarea::-ms-input-placeholder {\n    color: #7d93b5 !important;\n}\n\nbody.pointer-dark-theme input::placeholder,\nbody.pointer-dark-theme textarea::placeholder {\n    color: #7d93b5 !important;\n}\n\n/* Right hand stage + sprite panel */\n\nbody.pointer-dark-theme [class*=\"gui_stage-and-target-wrapper\"],\nbody.pointer-dark-theme [class*=\"gui_target-wrapper\"],\nbody.pointer-dark-theme [class*=\"target-pane_\"],\nbody.pointer-dark-theme [class*=\"stage-wrapper_stage-wrapper\"] {\n    color: #c9d8ee;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-size-row\"] > * {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-size-toggle-group\"] {\n    background-color: #16233a !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-size-toggle-group\"] img,\nbody.pointer-dark-theme [class*=\"stage-header_stage-button-icon\"],\nbody.pointer-dark-theme [class*=\"stage-header_fullscreen-buttons-row\"] img {\n    filter: brightness(0) invert(1) opacity(.82) !important;\n}\n\nbody.pointer-dark-theme [class*=\"toggle-buttons_button_\"] {\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-header-wrapper-overlay\"] {\n    background-color: #0d1626 !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-wrapper_full-screen\"] {\n    background-color: #0b1220 !important;\n}\n\nbody.pointer-dark-theme span[class*=\"stage-header_stage-button\"] {\n    background: #16233a !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_unselect-wrapper\"] {\n    background-color: #16233a !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage_stage-wrapper\"],\nbody.pointer-dark-theme [class*=\"stage_stage_\"] {\n    border-color: rgba(255, 255, 255, .18) !important;\n}\n\nbody.pointer-dark-theme button[class*=\"pointer-fps-monitor_chip_\"] {\n    background: rgba(16, 26, 44, .92) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-pulse\"] {\n    background: #3ddc84 !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-good\"] {\n    color: #4ade80 !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-medium\"] {\n    color: #f2b64a !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-bad\"] {\n    color: #ff7b7b !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-label\"] {\n    color: #8ba0ba !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_monitor\"] {\n    background: rgba(13, 22, 38, .96) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_stats\"] div {\n    background: rgba(255, 255, 255, .06) !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chart-wrap\"] {\n    background: rgba(255, 255, 255, .04) !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\n/* Sprite selector */\n\nbody.pointer-dark-theme [class*=\"sprite-selector_sprite-selector\"] {\n    background-color: #111c33 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-info_sprite-info\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-info_sprite-info\"] img {\n    filter: invert(1) brightness(1.3) opacity(.85) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-info_rotation-select\"] {\n    background-color: #0f1a2d !important;\n    color: #e8f1ff !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_sprite-selector-item\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_sprite-selector-item\"]:hover,\nbody.pointer-dark-theme [class*=\"sprite-selector-item_is-selected\"] {\n    background-color: #1a2740 !important;\n    border-color: #61a0ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_is-selected\"] [class*=\"sprite-selector-item_sprite-info\"] {\n    background-color: #2f6fe4 !important;\n    color: #fff !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_sprite-name\"] {\n    color: inherit;\n}\n\n/* Stage selector column */\n\nbody.pointer-dark-theme [class*=\"stage-selector_stage-selector\"] {\n    background-color: #111c33 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_header\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_header-title\"],\nbody.pointer-dark-theme [class*=\"stage-selector_count\"],\nbody.pointer-dark-theme [class*=\"stage-selector_label\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_is-selected\"] [class*=\"stage-selector_header\"] {\n    background-color: #2f6fe4 !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_costume-canvas\"] {\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\n/* Backpack bar */\n\nbody.pointer-dark-theme [class*=\"backpack_backpack-header\"] {\n    background: #111c33 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"backpack_backpack-item\"] > div {\n    background: #1a2740 !important;\n}\n\nbody.pointer-dark-theme [class*=\"backpack_status-message\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"backpack_backpack-list\"] {\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\n/* Extension button */\n\nbody.pointer-dark-theme [class*=\"gui_extension-button-container\"] {\n    background: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\n/* Costume and sound asset panels */\n\nbody.pointer-dark-theme [class*=\"gui_tab-panel\"] [class*=\"asset-panel_wrapper\"] {\n    background-color: #111c33 !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab-panel\"] [class*=\"selector_wrapper\"] {\n    background-color: #0d1626 !important;\n    border-color: rgba(255, 255, 255, .08) !important;\n    color: #c9d8ee !important;\n}\n\n/* Paint editor tool icons: light strokes on the dark palette */\n\nbody.pointer-dark-theme [class*=\"tool-select-base_tool-select-icon\"] {\n    filter: brightness(0) invert(1) opacity(.78) !important;\n}\n\nbody.pointer-dark-theme [class*=\"tool-select-base_is-selected\"] [class*=\"tool-select-icon\"] {\n    filter: brightness(0) invert(1) !important;\n}\n\n/* Sound editor chrome */\n\nbody.pointer-dark-theme [class*=\"sound-editor_effect-button\"],\nbody.pointer-dark-theme [class*=\"sound-editor_tool-button\"],\nbody.pointer-dark-theme [class*=\"sound-editor_trim-button\"],\nbody.pointer-dark-theme [class*=\"sound-editor_duration\"],\nbody.pointer-dark-theme [class*=\"sound-editor_advanced-info\"],\nbody.pointer-dark-theme [class*=\"sound-editor_info-row\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_button_\"] {\n    background: #1a2740 !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_button_\"]:hover {\n    background: #22324f !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_button_\"] img {\n    filter: brightness(0) invert(1) opacity(.75) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_waveform-container\"] {\n    background: rgba(133, 92, 214, .2) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\n/* Right click menus */\n\nbody.pointer-dark-theme [class*=\"context-menu_context-menu\"] {\n    background: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"context-menu_menu-item\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"context-menu_menu-item\"]:hover {\n    background: rgba(255, 255, 255, .08) !important;\n    color: #9ec5ff !important;\n}\n\n/* Addon popups inside the paint editor */\n\nbody.pointer-dark-theme .sa-onion-settings {\n    background: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #c9d8ee !important;\n}\n\n/* Dropdown menus */\n\nbody.pointer-dark-theme [class*=\"menu_menu_\"] {\n    background-color: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu-item\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu-item\"]:hover,\nbody.pointer-dark-theme [class*=\"menu_menu-item\"].pointer-dark-theme_active_2xXFY,\nbody.pointer-dark-theme [class*=\"menu_menu-item\"].pointer-dark-theme_expanded_NJweq {\n    background-color: rgba(255, 255, 255, .08) !important;\n    color: #9ec5ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu-section\"] {\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu_\"] img {\n    filter: invert(1) brightness(1.15) !important;\n}\n\n/* Make the theme switch immediate for panels and inputs */\n\n[class*=\"stage-selector_stage-selector\"],\n[class*=\"stage-selector_header\"],\n[class*=\"backpack_backpack-header\"],\n[class*=\"pointer-fps-monitor_chip\"],\n[class*=\"sprite-info_sprite-info\"],\ninput[class*=\"input_\"],\nselect,\n[class*=\"sa-find-input\"] {\n    transition: none !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-input\"] {\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme #sa-find-input {\n    -webkit-appearance: none !important;\n    -moz-appearance: none !important;\n         appearance: none !important;\n    filter: invert(1);\n    background: #f0e5d2 !important;\n    color: #0f1a2d !important;\n    border: 1px solid #444 !important;\n    box-shadow: none !important;\n}\n\nbody.pointer-dark-theme #sa-find-input::-ms-input-placeholder {\n    color: #555 !important;\n}\n\nbody.pointer-dark-theme #sa-find-input::placeholder {\n    color: #555 !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-wrapper\"],\nbody.pointer-dark-theme [class*=\"sa-find-dropdown-out\"] {\n    background: transparent !important;\n}\n", ""]);
+exports.push([module.i, "/* Dark editor chrome, enabled only when the workspace background is dark. */\n\nbody.pointer-dark-theme {\n    background: #0b1220;\n    color: #e8f1ff;\n}\n\nbody.pointer-dark-theme [class*=\"gui_page-wrapper\"],\nbody.pointer-dark-theme [class*=\"gui_body-wrapper\"] {\n    background-color: #0b1220 !important;\n    color: #e8f1ff;\n}\n\n/* Top menu bar */\n\nbody.pointer-dark-theme [class*=\"menu-bar_menu-bar\"] {\n    background: #0d1626 !important;\n    background-image: none !important;\n    color: #e8f1ff !important;\n    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account\"] {\n    color: #e8f1ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account-button\"] {\n    background: rgba(255, 255, 255, .08) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account-button\"]:hover {\n    background: rgba(255, 255, 255, .14) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account-points\"] {\n    background: rgba(97, 160, 255, .2) !important;\n    color: #cfe0ff !important;\n}\n\n/* Project tab strip */\n\nbody.pointer-dark-theme [class*=\"pointer-project-tab-bar_tab-bar\"] {\n    background: #111c33 !important;\n    background-image: none !important;\n    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_batch-button\"],\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_history-button\"] {\n    border-color: rgba(255, 255, 255, .24) !important;\n    background: rgba(255, 255, 255, .06) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_batch-button\"]:hover,\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_history-button\"]:hover {\n    border-color: rgba(255, 255, 255, .45) !important;\n    background: rgba(255, 255, 255, .14) !important;\n    color: #fff !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_tab-add\"] {\n    border-color: rgba(255, 255, 255, .28) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_tab-active\"] {\n    background: rgba(255, 255, 255, .08) !important;\n    border-color: rgba(255, 255, 255, .35) !important;\n}\n\n/* Code / costume / sound tabs */\n\nbody.pointer-dark-theme [class*=\"gui_tab-list\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab_\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #9fb2cc !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab_\"]:hover {\n    background-color: #1a2740 !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab_\"] img {\n    filter: grayscale(100%) brightness(1.6) !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_is-selected\"] {\n    background-color: #0b1220 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #9ec5ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_is-selected\"] img {\n    filter: none !important;\n}\n\n/* Find bar addon */\n\nbody.pointer-dark-theme [class*=\"sa-find-bar\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-bar\"] img {\n    filter: invert(1) brightness(1.2) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-dropdown\"] {\n    background: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #e8f1ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-dropdown\"] li:hover {\n    background: rgba(255, 255, 255, .08) !important;\n}\n\n/* Form inputs across the sprite info and search */\n\nbody.pointer-dark-theme input[class*=\"input_input-form\"],\nbody.pointer-dark-theme input[class*=\"input_\"],\nbody.pointer-dark-theme select,\nbody.pointer-dark-theme textarea {\n    background-color: #0f1a2d !important;\n    color: #e8f1ff !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color-scheme: dark;\n}\n\nbody.pointer-dark-theme input::-ms-input-placeholder, body.pointer-dark-theme textarea::-ms-input-placeholder {\n    color: #7d93b5 !important;\n}\n\nbody.pointer-dark-theme input::placeholder,\nbody.pointer-dark-theme textarea::placeholder {\n    color: #7d93b5 !important;\n}\n\n/* Right hand stage + sprite panel */\n\nbody.pointer-dark-theme [class*=\"gui_stage-and-target-wrapper\"],\nbody.pointer-dark-theme [class*=\"gui_target-wrapper\"],\nbody.pointer-dark-theme [class*=\"target-pane_\"],\nbody.pointer-dark-theme [class*=\"stage-wrapper_stage-wrapper\"] {\n    color: #c9d8ee;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-size-row\"] > * {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-size-toggle-group\"] {\n    background-color: #16233a !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-size-toggle-group\"] img,\nbody.pointer-dark-theme [class*=\"stage-header_stage-button-icon\"],\nbody.pointer-dark-theme [class*=\"stage-header_fullscreen-buttons-row\"] img {\n    filter: brightness(0) invert(1) opacity(.82) !important;\n}\n\nbody.pointer-dark-theme [class*=\"toggle-buttons_button_\"] {\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-header-wrapper-overlay\"] {\n    background-color: #0d1626 !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-wrapper_full-screen\"] {\n    background-color: #0b1220 !important;\n}\n\nbody.pointer-dark-theme span[class*=\"stage-header_stage-button\"] {\n    background: #16233a !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_unselect-wrapper\"] {\n    background-color: #16233a !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage_stage-wrapper\"],\nbody.pointer-dark-theme [class*=\"stage_stage_\"] {\n    border-color: rgba(255, 255, 255, .18) !important;\n}\n\nbody.pointer-dark-theme button[class*=\"pointer-fps-monitor_chip_\"] {\n    background: rgba(16, 26, 44, .92) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-pulse\"] {\n    background: #3ddc84 !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-good\"] {\n    color: #4ade80 !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-medium\"] {\n    color: #f2b64a !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-bad\"] {\n    color: #ff7b7b !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-label\"] {\n    color: #8ba0ba !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_monitor\"] {\n    background: rgba(13, 22, 38, .96) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_stats\"] div {\n    background: rgba(255, 255, 255, .06) !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chart-wrap\"] {\n    background: rgba(255, 255, 255, .04) !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\n/* Sprite selector */\n\nbody.pointer-dark-theme [class*=\"sprite-selector_sprite-selector\"] {\n    background-color: #111c33 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-info_sprite-info\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-info_sprite-info\"] img {\n    filter: invert(1) brightness(1.3) opacity(.85) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-info_rotation-select\"] {\n    background-color: #0f1a2d !important;\n    color: #e8f1ff !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_sprite-selector-item\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_sprite-selector-item\"]:hover,\nbody.pointer-dark-theme [class*=\"sprite-selector-item_is-selected\"] {\n    background-color: #1a2740 !important;\n    border-color: #61a0ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_is-selected\"] [class*=\"sprite-selector-item_sprite-info\"] {\n    background-color: #2f6fe4 !important;\n    color: #fff !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_sprite-name\"] {\n    color: inherit;\n}\n\n/* Stage selector column */\n\nbody.pointer-dark-theme [class*=\"stage-selector_stage-selector\"] {\n    background-color: #111c33 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_header\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_header-title\"],\nbody.pointer-dark-theme [class*=\"stage-selector_count\"],\nbody.pointer-dark-theme [class*=\"stage-selector_label\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_is-selected\"] [class*=\"stage-selector_header\"] {\n    background-color: #2f6fe4 !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_costume-canvas\"] {\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\n/* Backpack bar */\n\nbody.pointer-dark-theme [class*=\"backpack_backpack-header\"] {\n    background: #111c33 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"backpack_backpack-item\"] > div {\n    background: #1a2740 !important;\n}\n\nbody.pointer-dark-theme [class*=\"backpack_status-message\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"backpack_backpack-list\"] {\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\n/* Extension button */\n\nbody.pointer-dark-theme [class*=\"gui_extension-button-container\"] {\n    background: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\n/* Costume and sound asset panels */\n\nbody.pointer-dark-theme [class*=\"gui_tab-panel\"] [class*=\"asset-panel_wrapper\"] {\n    background-color: #111c33 !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab-panel\"] [class*=\"selector_wrapper\"] {\n    background-color: #0d1626 !important;\n    border-color: rgba(255, 255, 255, .08) !important;\n    color: #c9d8ee !important;\n}\n\n/* Paint editor tool icons: light strokes on the dark palette */\n\nbody.pointer-dark-theme [class*=\"tool-select-base_tool-select-icon\"] {\n    filter: brightness(0) invert(1) opacity(.78) !important;\n}\n\nbody.pointer-dark-theme [class*=\"tool-select-base_is-selected\"] [class*=\"tool-select-icon\"] {\n    filter: brightness(0) invert(1) !important;\n}\n\n/* Sound editor chrome */\n\nbody.pointer-dark-theme [class*=\"sound-editor_effect-button\"],\nbody.pointer-dark-theme [class*=\"sound-editor_tool-button\"],\nbody.pointer-dark-theme [class*=\"sound-editor_trim-button\"],\nbody.pointer-dark-theme [class*=\"sound-editor_duration\"],\nbody.pointer-dark-theme [class*=\"sound-editor_advanced-info\"],\nbody.pointer-dark-theme [class*=\"sound-editor_info-row\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_button_\"] {\n    background: #1a2740 !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_button_\"]:hover {\n    background: #22324f !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_button_\"] img {\n    filter: brightness(0) invert(1) opacity(.75) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_waveform-container\"] {\n    background: rgba(133, 92, 214, .2) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\n/* Right click menus */\n\nbody.pointer-dark-theme [class*=\"context-menu_context-menu\"] {\n    background: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"context-menu_menu-item\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"context-menu_menu-item\"]:hover {\n    background: rgba(255, 255, 255, .08) !important;\n    color: #9ec5ff !important;\n}\n\n/* Addon popups inside the paint editor */\n\nbody.pointer-dark-theme .sa-onion-settings {\n    background: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #c9d8ee !important;\n}\n\n/* Dropdown menus */\n\nbody.pointer-dark-theme [class*=\"menu_menu_\"] {\n    background-color: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu-item\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu-item\"]:hover,\nbody.pointer-dark-theme [class*=\"menu_menu-item\"].pointer-dark-theme_active_2xXFY,\nbody.pointer-dark-theme [class*=\"menu_menu-item\"].pointer-dark-theme_expanded_NJweq {\n    background-color: rgba(255, 255, 255, .08) !important;\n    color: #9ec5ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu-section\"] {\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu_\"] img {\n    filter: invert(1) brightness(1.15) !important;\n}\n\n/* Settings modal in workspace dark mode */\n\nbody.pointer-dark-theme [class*=\"settings-modal_body\"] {\n    background: #0f1a2d !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"settings-modal_header\"] {\n    color: #e8f1ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"settings-modal_divider\"] {\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"settings-modal_setting\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"settings-modal_setting\"]:hover,\nbody.pointer-dark-theme [class*=\"settings-modal_setting\"]:focus-within,\nbody.pointer-dark-theme [class*=\"settings-modal_setting\"][class*=\"active\"] {\n    background: rgba(255, 255, 255, .06) !important;\n}\n\nbody.pointer-dark-theme [class*=\"settings-modal_help-icon\"] img {\n    filter: invert(1) brightness(1.3) !important;\n}\n\n/* Make the theme switch immediate for panels and inputs */\n\n[class*=\"stage-selector_stage-selector\"],\n[class*=\"stage-selector_header\"],\n[class*=\"backpack_backpack-header\"],\n[class*=\"pointer-fps-monitor_chip\"],\n[class*=\"sprite-info_sprite-info\"],\ninput[class*=\"input_\"],\nselect,\n[class*=\"sa-find-input\"] {\n    transition: none !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-input\"] {\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme #sa-find-input {\n    -webkit-appearance: none !important;\n    -moz-appearance: none !important;\n         appearance: none !important;\n    filter: invert(1);\n    background: #f0e5d2 !important;\n    color: #0f1a2d !important;\n    border: 1px solid #444 !important;\n    box-shadow: none !important;\n}\n\nbody.pointer-dark-theme #sa-find-input::-ms-input-placeholder {\n    color: #555 !important;\n}\n\nbody.pointer-dark-theme #sa-find-input::placeholder {\n    color: #555 !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-wrapper\"],\nbody.pointer-dark-theme [class*=\"sa-find-dropdown-out\"] {\n    background: transparent !important;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -4497,7 +4491,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n.settings-modal_modal-content_14XGC {\n    max-width: 750px;\n}\n\n.settings-modal_body_2_OnB {\n    background: var(--ui-modal-background);\n    padding: 1.5rem 2.25rem;\n    min-height: 150px;\n    max-height: calc(100vh - 250px);\n    overflow-y: auto;\n}\n\n/* For small screens, such as in the embed */\n\n@media (max-height: 600px) {\n    .settings-modal_modal-content_14XGC {\n        margin: 50px auto;\n    }\n    .settings-modal_body_2_OnB {\n        max-height: calc(100vh - 150px);\n    }\n}\n\n.settings-modal_setting_3KFrK {\n    display: flex;\n    flex-direction: column;\n    padding: 0.5rem 1rem;\n    margin: 0.25rem 0;\n    border-radius: 4px;\n}\n\n.settings-modal_setting_3KFrK.settings-modal_active_1Tl18 {\n    background: var(--badge-background);\n}\n\n.settings-modal_setting_3KFrK:hover,\n.settings-modal_setting_3KFrK:focus-within {\n    background: var(--badge-border);\n}\n\n.settings-modal_label_21R3L {\n    height: 32px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.settings-modal_setting_3KFrK table {\n    border-collapse: collapse;\n}\n\n.settings-modal_setting_3KFrK tr,\n.settings-modal_setting_3KFrK td,\n.settings-modal_setting_3KFrK th {\n    padding: 0;\n    margin: 0;\n    border: 1px solid var(--ui-tertiary);\n}\n\n.settings-modal_checkbox_3KZcV {\n    margin-right: 0.5rem;\n}\n\n.settings-modal_help-icon__QQqI {\n    position: relative;\n    border: 0;\n    background-color: transparent;\n    width: 20px;\n    height: 20px;\n    background-size: 100%;\n    margin-left: 0.5rem;\n    cursor: pointer;\n}\n\n.settings-modal_help-icon__QQqI img {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    filter: var(--filter-icon-black);\n}\n\n.settings-modal_custom-stage-size_dr_Qv > * {\n    margin-right: 0.5rem;\n}\n\n.settings-modal_custom-stage-size-input_1Pr3z {\n    width: 80px;\n}\n\n.settings-modal_info_Ce_iV {\n    margin-bottom: 0.25rem;\n}\n\n.settings-modal_header_112iQ {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    margin: 0.5rem 0 0 0;\n    font-weight: bold;\n}\n\n.settings-modal_divider_3K8K_ {\n    flex-grow: 1;\n    margin-left: 1rem;\n    border-top: 1px dashed var(--ui-tertiary);\n}\n\n.settings-modal_button_ACn0P {\n    font-family: inherit;\n    font-size: 14px;\n    background-color: var(--looks-secondary);\n    color: white;\n    border: none;\n    padding: 0.5rem 1rem;\n    margin: 0;\n    border-radius: 4px;\n    cursor: pointer;\n    font-family: inherit;\n    font-weight: bold;\n}\n\n.settings-modal_button_ACn0P:active, .settings-modal_button_ACn0P:focus-within {\n    box-shadow: 0 0 0 3px var(--looks-transparent);\n}\n\n.settings-modal_warning_3UmRm {\n    padding: 0.5rem 1rem;\n    margin: 0.25rem 0;\n    border-radius: 4px;\n    background: rgb(233, 233, 53);\n    color: var(--text-primary-default);\n}\n", ""]);
+exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n.settings-modal_modal-content_14XGC {\n    max-width: 750px;\n}\n\n.settings-modal_body_2_OnB {\n    background: var(--ui-modal-background);\n    padding: 1.5rem 2.25rem;\n    min-height: 150px;\n    max-height: calc(100vh - 250px);\n    overflow-y: auto;\n}\n\n/* For small screens, such as in the embed */\n\n@media (max-height: 600px) {\n    .settings-modal_modal-content_14XGC {\n        margin: 50px auto;\n    }\n    .settings-modal_body_2_OnB {\n        max-height: calc(100vh - 150px);\n    }\n}\n\n.settings-modal_setting_3KFrK {\n    display: flex;\n    flex-direction: column;\n    padding: 0.5rem 1rem;\n    margin: 0.25rem 0;\n    border-radius: 4px;\n}\n\n.settings-modal_setting_3KFrK.settings-modal_active_1Tl18 {\n    background: var(--badge-background);\n}\n\n.settings-modal_setting_3KFrK:hover,\n.settings-modal_setting_3KFrK:focus-within {\n    background: var(--badge-border);\n}\n\n.settings-modal_appearance_x7H49 {\n    padding: 0.25rem 1rem 0.5rem;\n}\n\n.settings-modal_label_21R3L {\n    height: 32px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.settings-modal_setting_3KFrK table {\n    border-collapse: collapse;\n}\n\n.settings-modal_setting_3KFrK tr,\n.settings-modal_setting_3KFrK td,\n.settings-modal_setting_3KFrK th {\n    padding: 0;\n    margin: 0;\n    border: 1px solid var(--ui-tertiary);\n}\n\n.settings-modal_checkbox_3KZcV {\n    margin-right: 0.5rem;\n}\n\n.settings-modal_help-icon__QQqI {\n    position: relative;\n    border: 0;\n    background-color: transparent;\n    width: 20px;\n    height: 20px;\n    background-size: 100%;\n    margin-left: 0.5rem;\n    cursor: pointer;\n}\n\n.settings-modal_help-icon__QQqI img {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    filter: var(--filter-icon-black);\n}\n\n.settings-modal_custom-stage-size_dr_Qv > * {\n    margin-right: 0.5rem;\n}\n\n.settings-modal_custom-stage-size-input_1Pr3z {\n    width: 80px;\n}\n\n.settings-modal_info_Ce_iV {\n    margin-bottom: 0.25rem;\n}\n\n.settings-modal_header_112iQ {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    margin: 0.5rem 0 0 0;\n    font-weight: bold;\n}\n\n.settings-modal_divider_3K8K_ {\n    flex-grow: 1;\n    margin-left: 1rem;\n    border-top: 1px dashed var(--ui-tertiary);\n}\n\n.settings-modal_button_ACn0P {\n    font-family: inherit;\n    font-size: 14px;\n    background-color: var(--looks-secondary);\n    color: white;\n    border: none;\n    padding: 0.5rem 1rem;\n    margin: 0;\n    border-radius: 4px;\n    cursor: pointer;\n    font-family: inherit;\n    font-weight: bold;\n}\n\n.settings-modal_button_ACn0P:active, .settings-modal_button_ACn0P:focus-within {\n    box-shadow: 0 0 0 3px var(--looks-transparent);\n}\n\n.settings-modal_warning_3UmRm {\n    padding: 0.5rem 1rem;\n    margin: 0.25rem 0;\n    border-radius: 4px;\n    background: rgb(233, 233, 53);\n    color: var(--text-primary-default);\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -4506,6 +4500,7 @@ exports.locals = {
 	"body": "settings-modal_body_2_OnB",
 	"setting": "settings-modal_setting_3KFrK",
 	"active": "settings-modal_active_1Tl18",
+	"appearance": "settings-modal_appearance_x7H49",
 	"label": "settings-modal_label_21R3L",
 	"checkbox": "settings-modal_checkbox_3KZcV",
 	"help-icon": "settings-modal_help-icon__QQqI",
@@ -7204,11 +7199,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _box_box_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../box/box.jsx */ "./src/components/box/box.jsx");
-/* harmony import */ var _workspace_background_picker_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./workspace-background-picker.jsx */ "./src/components/blocks/workspace-background-picker.jsx");
-/* harmony import */ var _lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../lib/pointer-workspace-background */ "./src/lib/pointer-workspace-background.js");
-/* harmony import */ var _blocks_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blocks.css */ "./src/components/blocks/blocks.css");
-/* harmony import */ var _blocks_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_blocks_css__WEBPACK_IMPORTED_MODULE_6__);
-const _excluded = ["containerRef", "dragOver", "style"];
+/* harmony import */ var _lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib/pointer-workspace-background */ "./src/lib/pointer-workspace-background.js");
+/* harmony import */ var _blocks_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks.css */ "./src/components/blocks/blocks.css");
+/* harmony import */ var _blocks_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_blocks_css__WEBPACK_IMPORTED_MODULE_5__);
+const _excluded = ["containerRef", "dragOver", "style", "theme"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -7223,12 +7217,11 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 
 
 
-
 class BlocksComponent extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
   constructor(props) {
     super(props);
     this.state = {
-      background: Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__["getWorkspaceBackground"])()
+      background: Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_4__["getWorkspaceBackground"])()
     };
     this.handleBackgroundChanged = this.handleBackgroundChanged.bind(this);
   }
@@ -7240,7 +7233,7 @@ class BlocksComponent extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compo
   }
   handleBackgroundChanged(event) {
     this.setState({
-      background: event && event.detail ? event.detail : Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__["getWorkspaceBackground"])()
+      background: event && event.detail ? event.detail : Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_4__["getWorkspaceBackground"])()
     });
   }
   render() {
@@ -7248,33 +7241,36 @@ class BlocksComponent extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compo
       containerRef = _this$props.containerRef,
       dragOver = _this$props.dragOver,
       style = _this$props.style,
+      theme = _this$props.theme,
       componentProps = _objectWithoutProperties(_this$props, _excluded);
     const background = this.state.background;
-    const panelStyle = _objectSpread(_objectSpread({}, Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__["getWorkspacePanelStyle"])(background)), style);
-    const darkControls = Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__["isDarkBackground"])(background);
+    const themeDark = Boolean(theme && theme.isDark && theme.isDark());
+    const dark = themeDark || Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_4__["isDarkBackground"])(background);
+    const panelStyle = _objectSpread(_objectSpread({}, Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_4__["getWorkspacePanelStyle"])(background, dark)), style);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_blocks_css__WEBPACK_IMPORTED_MODULE_6___default.a.blocksWrap, {
-        [_blocks_css__WEBPACK_IMPORTED_MODULE_6___default.a.darkControls]: darkControls
+      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_blocks_css__WEBPACK_IMPORTED_MODULE_5___default.a.blocksWrap, {
+        [_blocks_css__WEBPACK_IMPORTED_MODULE_5___default.a.darkControls]: dark
       }),
       style: panelStyle
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _blocks_css__WEBPACK_IMPORTED_MODULE_6___default.a.workspaceBackground,
-      style: Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__["getWorkspaceBackgroundStyle"])(background)
+      className: _blocks_css__WEBPACK_IMPORTED_MODULE_5___default.a.workspaceBackground,
+      style: Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_4__["getWorkspaceBackgroundStyle"])(background, themeDark)
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({
-      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_blocks_css__WEBPACK_IMPORTED_MODULE_6___default.a.blocks, {
-        [_blocks_css__WEBPACK_IMPORTED_MODULE_6___default.a.dragOver]: dragOver
+      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_blocks_css__WEBPACK_IMPORTED_MODULE_5___default.a.blocks, {
+        [_blocks_css__WEBPACK_IMPORTED_MODULE_5___default.a.dragOver]: dragOver
       })
     }, componentProps, {
       componentRef: containerRef
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_workspace_background_picker_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      settings: background
-    }));
+    })));
   }
 }
 BlocksComponent.propTypes = {
   containerRef: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
   dragOver: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.bool,
-  style: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object
+  style: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object,
+  theme: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.shape({
+    isDark: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func
+  })
 };
 /* harmony default export */ __webpack_exports__["default"] = (BlocksComponent);
 
@@ -7319,33 +7315,24 @@ if(false) {}
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib/pointer-workspace-background */ "./src/lib/pointer-workspace-background.js");
-/* harmony import */ var _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./workspace-background-picker.css */ "./src/components/blocks/workspace-background-picker.css");
-/* harmony import */ var _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib/pointer-workspace-background */ "./src/lib/pointer-workspace-background.js");
+/* harmony import */ var _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./workspace-background-picker.css */ "./src/components/blocks/workspace-background-picker.css");
+/* harmony import */ var _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
-
-
-class WorkspaceBackgroundPicker extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
+class WorkspaceBackgroundSettings extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
+      settings: Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_1__["getWorkspaceBackground"])(),
       message: ''
     };
-    this.pickerRef = null;
     this.fileInput = null;
-    this.setPickerRef = this.setPickerRef.bind(this);
     this.setFileInput = this.setFileInput.bind(this);
-    this.handleToggle = this.handleToggle.bind(this);
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.handleBackgroundChanged = this.handleBackgroundChanged.bind(this);
     this.handlePreset = this.handlePreset.bind(this);
     this.handleColor = this.handleColor.bind(this);
     this.handleChooseFile = this.handleChooseFile.bind(this);
@@ -7357,35 +7344,24 @@ class WorkspaceBackgroundPicker extends react__WEBPACK_IMPORTED_MODULE_2___defau
     this.handleReset = this.handleReset.bind(this);
   }
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleOutsideClick, true);
+    window.addEventListener('pointere-workspace-background-changed', this.handleBackgroundChanged);
   }
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleOutsideClick, true);
-  }
-  setPickerRef(element) {
-    this.pickerRef = element;
+    window.removeEventListener('pointere-workspace-background-changed', this.handleBackgroundChanged);
   }
   setFileInput(element) {
     this.fileInput = element;
   }
-  handleOutsideClick(event) {
-    if (!this.state.open || !this.pickerRef) return;
-    if (this.pickerRef.contains(event.target)) return;
+  handleBackgroundChanged(event) {
     this.setState({
-      open: false
+      settings: event && event.detail ? event.detail : Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_1__["getWorkspaceBackground"])()
     });
-  }
-  handleToggle() {
-    this.setState(previous => ({
-      open: !previous.open,
-      message: ''
-    }));
   }
   apply(patch) {
     this.setState({
       message: ''
     });
-    Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["setWorkspaceBackground"])(patch);
+    Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_1__["setWorkspaceBackground"])(patch);
   }
   handlePreset(preset) {
     this.apply({
@@ -7400,7 +7376,7 @@ class WorkspaceBackgroundPicker extends react__WEBPACK_IMPORTED_MODULE_2___defau
       preset: 'color',
       color: event.target.value,
       image: '',
-      dark: Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["isDarkColor"])(event.target.value)
+      dark: Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_1__["isDarkColor"])(event.target.value)
     });
   }
   handleChooseFile() {
@@ -7433,7 +7409,7 @@ class WorkspaceBackgroundPicker extends react__WEBPACK_IMPORTED_MODULE_2___defau
     this.setState({
       message: ''
     });
-    Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["setWorkspaceBackground"])({
+    Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_1__["setWorkspaceBackground"])({
       preset: 'default',
       color: '',
       image: '',
@@ -7500,7 +7476,7 @@ class WorkspaceBackgroundPicker extends react__WEBPACK_IMPORTED_MODULE_2___defau
           });
           return;
         }
-        const persisted = Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["setWorkspaceBackground"])({
+        const persisted = Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_1__["setWorkspaceBackground"])({
           preset: 'image',
           image: dataUrl,
           color: '',
@@ -7521,141 +7497,98 @@ class WorkspaceBackgroundPicker extends react__WEBPACK_IMPORTED_MODULE_2___defau
     reader.readAsDataURL(file);
   }
   render() {
-    const settings = this.props.settings;
     const _this$state = this.state,
-      open = _this$state.open,
+      settings = _this$state.settings,
       message = _this$state.message;
     const activePreset = settings.image ? 'image' : settings.color ? 'color' : settings.preset;
-    const triggerStyle = Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["getWorkspaceBackgroundStyle"])(settings);
-    const dark = Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["isDarkBackground"])(settings);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.picker, {
-        [_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.dark]: dark
-      }),
-      ref: this.setPickerRef
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.trigger,
-      type: "button",
-      onClick: this.handleToggle,
-      "aria-expanded": open,
-      title: "\u81EA\u5B9A\u4E49\u5DE5\u4F5C\u533A\u80CC\u666F"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.triggerDot,
-      style: {
-        backgroundColor: triggerStyle.backgroundColor,
-        backgroundImage: triggerStyle.backgroundImage,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }
-    }), "\u80CC\u666F"), open ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.panel,
-      role: "dialog",
-      "aria-label": "\u5DE5\u4F5C\u533A\u80CC\u666F",
-      onMouseDown: event => event.stopPropagation()
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.head
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("strong", null, "\u5DE5\u4F5C\u533A\u80CC\u666F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.close,
-      type: "button",
-      onClick: this.handleToggle,
-      "aria-label": "\u5173\u95ED\u80CC\u666F\u8BBE\u7F6E"
-    }, "\xD7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sectionTitle
-    }, "\u9884\u8BBE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.presetGrid
-    }, _lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["WORKSPACE_BACKGROUND_PRESETS"].map(preset => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.settings
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.hint
+    }, "\u9009\u62E9\u80CC\u666F\u540E\u79EF\u6728\u9762\u677F\u4F1A\u81EA\u52A8\u4FDD\u6301\u53EF\u8BFB\uFF1B\u6DF1\u8272\u80CC\u666F\u4F1A\u540C\u6B65\u5207\u6362\u6DF1\u8272\u4E3B\u9898\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.sectionTitle
+    }, "\u9884\u8BBE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.presetGrid
+    }, _lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_1__["WORKSPACE_BACKGROUND_PRESETS"].map(preset => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       key: preset.id,
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.preset, {
-        [_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.presetActive]: activePreset === preset.id
-      }),
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.preset,
+      "data-active": activePreset === preset.id ? 'true' : undefined,
       type: "button",
       onClick: () => this.handlePreset(preset)
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.presetSwatch,
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.presetSwatch,
       style: {
-        background: preset.id === 'default' ? '#fff' : preset.css
+        background: preset.id === 'default' ? 'linear-gradient(135deg, #f8fafc 0%, #dbe7f8 100%)' : preset.css
       }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, preset.name)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sectionTitle
-    }, "\u81EA\u5B9A\u4E49"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("label", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.row
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, "\u7EAF\u8272\u80CC\u666F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.colorInput,
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, preset.name)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.sectionTitle
+    }, "\u81EA\u5B9A\u4E49"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.row
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u7EAF\u8272\u80CC\u666F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.colorInput,
       type: "color",
       value: settings.color || '#ffffff',
       onChange: this.handleColor
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.row
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, "\u80CC\u666F\u56FE\u7247"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.rowActions
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.smallButton,
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.row
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u80CC\u666F\u56FE\u7247"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.rowActions
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.smallButton,
       type: "button",
       onClick: this.handleChooseFile
-    }, "\u4E0A\u4F20\u56FE\u7247"), settings.image ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.smallButton,
+    }, "\u4E0A\u4F20\u56FE\u7247"), settings.image ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.smallButton,
       type: "button",
       onClick: this.handleClearImage
-    }, "\u6E05\u9664") : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.fileInput,
-      id: "workspace-background-file",
+    }, "\u6E05\u9664") : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.fileInput,
       ref: this.setFileInput,
       type: "file",
       accept: "image/*",
       onChange: this.handleFileChange
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sectionTitle
-    }, "\u9762\u677F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("label", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sliderRow
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, "\u80CC\u666F\u6A21\u7CCA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.slider,
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.sectionTitle
+    }, "\u9762\u677F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.sliderRow
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u80CC\u666F\u6A21\u7CCA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.slider,
       type: "range",
       min: "0",
       max: "16",
       step: "1",
       value: settings.backgroundBlur,
       onChange: this.handleBackgroundBlur
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, settings.backgroundBlur, "px")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("label", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sliderRow
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, "\u9762\u677F\u6A21\u7CCA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.slider,
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, settings.backgroundBlur, "px")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.sliderRow
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u9762\u677F\u6A21\u7CCA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.slider,
       type: "range",
       min: "0",
       max: "24",
       step: "1",
       value: settings.panelBlur,
       onChange: this.handlePanelBlur
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, settings.panelBlur, "px")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("label", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sliderRow
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, "\u9762\u677F\u900F\u660E\u5EA6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.slider,
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, settings.panelBlur, "px")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.sliderRow
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u9762\u677F\u900F\u660E\u5EA6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.slider,
       type: "range",
       min: "30",
       max: "95",
       step: "1",
       value: Math.round(settings.panelOpacity * 100),
       onChange: this.handlePanelOpacity
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, Math.round(settings.panelOpacity * 100), "%")), message ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.message
-    }, message) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
-      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.reset,
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, Math.round(settings.panelOpacity * 100), "%")), message ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.message
+    }, message) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_2___default.a.reset,
       type: "button",
       onClick: this.handleReset
-    }, "\u6062\u590D\u9ED8\u8BA4")) : null);
+    }, "\u6062\u590D\u9ED8\u8BA4"));
   }
 }
-WorkspaceBackgroundPicker.propTypes = {
-  settings: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
-    preset: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-    color: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-    image: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-    dark: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
-    backgroundBlur: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    panelBlur: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    panelOpacity: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired
-  }).isRequired
-};
-/* harmony default export */ __webpack_exports__["default"] = (WorkspaceBackgroundPicker);
+/* harmony default export */ __webpack_exports__["default"] = (WorkspaceBackgroundSettings);
 
 /***/ }),
 
@@ -11863,21 +11796,38 @@ const getFullscreenBackgroundColor = () => {
   return 'white';
 };
 class WorkspaceThemeSync extends react__WEBPACK_IMPORTED_MODULE_3___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.handleThemeChange = this.handleThemeChange.bind(this);
+  }
   componentDidMount() {
-    this.handleThemeChange = () => {
-      document.body.classList.toggle('pointer-dark-theme', Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_41__["isDarkBackground"])(Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_41__["getWorkspaceBackground"])()));
-    };
     window.addEventListener('pointere-workspace-background-changed', this.handleThemeChange);
     this.handleThemeChange();
+  }
+  componentDidUpdate(prevProps) {
+    const previousDark = Boolean(prevProps.theme && prevProps.theme.isDark && prevProps.theme.isDark());
+    const currentDark = Boolean(this.props.theme && this.props.theme.isDark && this.props.theme.isDark());
+    if (previousDark !== currentDark) {
+      this.handleThemeChange();
+    }
   }
   componentWillUnmount() {
     window.removeEventListener('pointere-workspace-background-changed', this.handleThemeChange);
     document.body.classList.remove('pointer-dark-theme');
   }
+  handleThemeChange() {
+    const themeDark = Boolean(this.props.theme && this.props.theme.isDark && this.props.theme.isDark());
+    document.body.classList.toggle('pointer-dark-theme', themeDark || Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_41__["isDarkBackground"])(Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_41__["getWorkspaceBackground"])()));
+  }
   render() {
     return null;
   }
 }
+WorkspaceThemeSync.propTypes = {
+  theme: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    isDark: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func
+  })
+};
 const GUIComponent = props => {
   const _omit = lodash_omit__WEBPACK_IMPORTED_MODULE_1___default()(props, 'dispatch'),
     accountNavOpen = _omit.accountNavOpen,
@@ -12008,7 +11958,9 @@ const GUIComponent = props => {
         minWidth: 1024 + Math.max(0, customStageSize.width - 480),
         minHeight: 640 + Math.max(0, customStageSize.height - 360)
       }
-    }, componentProps), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(WorkspaceThemeSync, null), alwaysEnabledModals, telemetryModalVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_telemetry_modal_telemetry_modal_jsx__WEBPACK_IMPORTED_MODULE_29__["default"], {
+    }, componentProps), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(WorkspaceThemeSync, {
+      theme: theme
+    }), alwaysEnabledModals, telemetryModalVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_telemetry_modal_telemetry_modal_jsx__WEBPACK_IMPORTED_MODULE_29__["default"], {
       isRtl: isRtl,
       isTelemetryEnabled: isTelemetryEnabled,
       onCancel: onTelemetryModalCancel,
@@ -33980,16 +33932,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_input_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../forms/input.jsx */ "./src/components/forms/input.jsx");
 /* harmony import */ var _forms_buffered_input_hoc_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../forms/buffered-input-hoc.jsx */ "./src/components/forms/buffered-input-hoc.jsx");
 /* harmony import */ var _tw_documentation_link_documentation_link_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../tw-documentation-link/documentation-link.jsx */ "./src/components/tw-documentation-link/documentation-link.jsx");
-/* harmony import */ var _settings_modal_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./settings-modal.css */ "./src/components/tw-settings-modal/settings-modal.css");
-/* harmony import */ var _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_settings_modal_css__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _help_icon_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./help-icon.svg */ "./src/components/tw-settings-modal/help-icon.svg");
-/* harmony import */ var _help_icon_svg__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_help_icon_svg__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _lib_brand_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../lib/brand.js */ "./src/lib/brand.js");
-/* harmony import */ var _lib_brand_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_lib_brand_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _blocks_workspace_background_picker_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../blocks/workspace-background-picker.jsx */ "./src/components/blocks/workspace-background-picker.jsx");
+/* harmony import */ var _settings_modal_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./settings-modal.css */ "./src/components/tw-settings-modal/settings-modal.css");
+/* harmony import */ var _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_settings_modal_css__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _help_icon_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./help-icon.svg */ "./src/components/tw-settings-modal/help-icon.svg");
+/* harmony import */ var _help_icon_svg__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_help_icon_svg__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _lib_brand_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../lib/brand.js */ "./src/lib/brand.js");
+/* harmony import */ var _lib_brand_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_lib_brand_js__WEBPACK_IMPORTED_MODULE_14__);
 const _excluded = ["value", "onChange", "label"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+
 
 
 
@@ -34045,20 +33999,20 @@ class UnwrappedSetting extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Comp
   }
   render() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(_settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.setting, {
-        [_settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.active]: this.props.active
+      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(_settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.setting, {
+        [_settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.active]: this.props.active
       })
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.label
+      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.label
     }, this.props.primary, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
-      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.helpIcon,
+      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.helpIcon,
       onClick: this.handleClickHelp,
       title: this.props.intl.formatMessage(messages.help)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
-      src: _help_icon_svg__WEBPACK_IMPORTED_MODULE_12___default.a,
+      src: _help_icon_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
       draggable: false
     }))), this.state.helpVisible && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.detail
+      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.detail
     }, this.props.help, this.props.slug && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(LearnMore, {
       slug: this.props.slug
     })), this.props.secondary);
@@ -34081,9 +34035,9 @@ const BooleanSetting = _ref => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Setting, _extends({}, props, {
     active: value,
     primary: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("label", {
-      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.label
+      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.label
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_tw_fancy_checkbox_checkbox_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.checkbox,
+      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.checkbox,
       checked: value,
       onChange: onChange
     }), label)
@@ -34208,7 +34162,7 @@ const DisableCompiler = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__
     defaultMessage: "Disables the {APP_NAME} compiler. You may want to enable this while editing projects so that scripts update immediately. Otherwise, you should never enable this.",
     id: "tw.settingsModal.disableCompilerHelp",
     values: {
-      APP_NAME: _lib_brand_js__WEBPACK_IMPORTED_MODULE_13__["APP_NAME"]
+      APP_NAME: _lib_brand_js__WEBPACK_IMPORTED_MODULE_14__["APP_NAME"]
     }
   }),
   slug: "disable-compiler"
@@ -34222,14 +34176,14 @@ const CustomStageSize = _ref2 => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Setting, {
     active: customStageSizeEnabled,
     primary: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(_settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.label, _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.customStageSize)
+      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(_settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.label, _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.customStageSize)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_0__["FormattedMessage"], {
       defaultMessage: "Custom Stage Size:",
       id: "tw.settingsModal.customStageSize"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(BufferedInput, {
       value: stageWidth,
       onSubmit: onStageWidthChange,
-      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.customStageSizeInput,
+      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.customStageSizeInput,
       type: "number",
       min: "0",
       max: "1024",
@@ -34237,14 +34191,14 @@ const CustomStageSize = _ref2 => {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, '×'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(BufferedInput, {
       value: stageHeight,
       onSubmit: onStageHeightChange,
-      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.customStageSizeInput,
+      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.customStageSizeInput,
       type: "number",
       min: "0",
       max: "1024",
       step: "1"
     })),
     secondary: (stageWidth >= 1000 || stageHeight >= 1000) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.warning
+      className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.warning
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_0__["FormattedMessage"]
     // eslint-disable-next-line max-len
     , {
@@ -34272,10 +34226,10 @@ CustomStageSize.propTypes = {
 const StoreProjectOptions = _ref3 => {
   let onStoreProjectOptions = _ref3.onStoreProjectOptions;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.setting
+    className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.setting
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
     onClick: onStoreProjectOptions,
-    className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.button
+    className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.button
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_0__["FormattedMessage"], {
     defaultMessage: "Store settings in project",
     id: "tw.settingsModal.storeProjectOptions"
@@ -34290,21 +34244,26 @@ StoreProjectOptions.propTypes = {
   onStoreProjectOptions: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
 };
 const Header = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-  className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.header
+  className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.header
 }, props.children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-  className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.divider
+  className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.divider
 }));
 Header.propTypes = {
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node
 };
 const SettingsModalComponent = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_containers_modal_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
-  className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.modalContent,
+  className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.modalContent,
   onRequestClose: props.onClose,
   contentLabel: props.intl.formatMessage(messages.title),
   id: "settingsModal"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
-  className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_11___default.a.body
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Header, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_0__["FormattedMessage"], {
+  className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.body
+}, !props.isEmbedded && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Header, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_0__["FormattedMessage"], {
+  defaultMessage: "\u5916\u89C2",
+  id: "pointer.settingsModal.appearance"
+})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+  className: _settings_modal_css__WEBPACK_IMPORTED_MODULE_12___default.a.appearance
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_blocks_workspace_background_picker_jsx__WEBPACK_IMPORTED_MODULE_11__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Header, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_0__["FormattedMessage"], {
   defaultMessage: "Featured",
   id: "tw.settingsModal.featured"
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(CustomFPS, {
@@ -56347,7 +56306,7 @@ const setWorkspaceBackground = patch => {
   return persisted;
 };
 const blurFilter = settings => settings.backgroundBlur ? "blur(".concat(settings.backgroundBlur, "px)") : 'none';
-const getWorkspaceBackgroundStyle = settings => {
+const getWorkspaceBackgroundStyle = (settings, forceDark) => {
   const preset = getWorkspacePreset(settings.preset);
   const usePreset = preset.id !== 'default' && !settings.color && !settings.image;
   if (settings.image) {
@@ -56364,14 +56323,21 @@ const getWorkspaceBackgroundStyle = settings => {
       filter: blurFilter(settings)
     };
   }
+  if (usePreset) {
+    return {
+      backgroundColor: 'transparent',
+      backgroundImage: preset.css,
+      filter: blurFilter(settings)
+    };
+  }
   return {
-    backgroundColor: usePreset ? 'transparent' : '#f9f9f9',
-    backgroundImage: usePreset ? preset.css : 'none',
+    backgroundColor: forceDark ? '#0b1220' : '#f9f9f9',
+    backgroundImage: 'none',
     filter: blurFilter(settings)
   };
 };
-const getWorkspacePanelStyle = settings => {
-  const dark = isDarkBackground(settings);
+const getWorkspacePanelStyle = (settings, forceDark) => {
+  const dark = Boolean(forceDark) || isDarkBackground(settings);
   return {
     '--pointer-workspace-panel-bg': dark ? "rgba(2, 5, 12, ".concat(settings.panelOpacity, ")") : "rgba(255, 255, 255, ".concat(settings.panelOpacity, ")"),
     '--pointer-workspace-panel-fill': dark ? "rgba(2, 5, 12, ".concat(settings.panelOpacity, ")") : "rgba(249, 249, 249, ".concat(settings.panelOpacity, ")"),

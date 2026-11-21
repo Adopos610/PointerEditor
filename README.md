@@ -2,7 +2,7 @@
 
 PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼容编辑器，包含桌面端、网页端、在线协作服务与移动端界面原型。
 
-- 当前版本：0.3.0 Beta
+- 当前版本：0.3.0 Beta2（测试版，可能存在不稳定）
 - 官网：<https://peditor.ctspace.xyz/>
 - 网页版编辑器：<https://peditor.ctspace.xyz/editor/editor.html>
 - 扩展商店：<https://peditor.ctspace.xyz/extensions/>
@@ -37,7 +37,7 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 
 ## 下载
 
-0.3.0 Beta 安装包、免安装版与网页版静态包：
+0.3.0 Beta2 安装包、免安装版与网页版静态包：
 
 国内推荐（123 云盘，免登录、下载更快）：
 
@@ -45,10 +45,10 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 
 GitHub Releases（海外 / 备用）：
 
-- Windows 安装版：[PointerEditor-0.3.0-Beta-setup.exe](https://github.com/PointerItera/PointerEditor/releases/download/v0.3.0-beta.1/PointerEditor-0.3.0-Beta-setup.exe)
-- Windows 免安装版：[PointerEditor-0.3.0-Beta-win64.zip](https://github.com/PointerItera/PointerEditor/releases/download/v0.3.0-beta.1/PointerEditor-0.3.0-Beta-win64.zip)
-- 网页版静态包：[PointerEditor-0.3.0-Beta-web.zip](https://github.com/PointerItera/PointerEditor/releases/download/v0.3.0-beta.1/PointerEditor-0.3.0-Beta-web.zip)
-- Release 页面：<https://github.com/PointerItera/PointerEditor/releases/tag/v0.3.0-beta.1>
+- Windows 安装版：[PointerEditor-0.3.0-Beta2-setup.exe](https://github.com/PointerItera/PointerEditor/releases/download/v0.3.0-beta.2/PointerEditor-0.3.0-Beta2-setup.exe)
+- Windows 免安装版：[PointerEditor-0.3.0-Beta2-win64.zip](https://github.com/PointerItera/PointerEditor/releases/download/v0.3.0-beta.2/PointerEditor-0.3.0-Beta2-win64.zip)
+- 网页版静态包：[PointerEditor-0.3.0-Beta2-web.zip](https://github.com/PointerItera/PointerEditor/releases/download/v0.3.0-beta.2/PointerEditor-0.3.0-Beta2-web.zip)
+- Release 页面：<https://github.com/PointerItera/PointerEditor/releases/tag/v0.3.0-beta.2>
 - 在线使用：<https://peditor.ctspace.xyz/editor/editor.html>
 
 ## 目录结构

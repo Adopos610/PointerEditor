@@ -362,6 +362,29 @@
     filter: invert(1) brightness(1.15) !important;
 }
 
+/* Settings modal in workspace dark mode */
+:global(body.pointer-dark-theme) [class*="settings-modal_body"] {
+    background: #0f1a2d !important;
+    color: #dbeafe !important;
+}
+:global(body.pointer-dark-theme) [class*="settings-modal_header"] {
+    color: #e8f1ff !important;
+}
+:global(body.pointer-dark-theme) [class*="settings-modal_divider"] {
+    border-color: rgba(255, 255, 255, .16) !important;
+}
+:global(body.pointer-dark-theme) [class*="settings-modal_setting"] {
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="settings-modal_setting"]:hover,
+:global(body.pointer-dark-theme) [class*="settings-modal_setting"]:focus-within,
+:global(body.pointer-dark-theme) [class*="settings-modal_setting"][class*="active"] {
+    background: rgba(255, 255, 255, .06) !important;
+}
+:global(body.pointer-dark-theme) [class*="settings-modal_help-icon"] img {
+    filter: invert(1) brightness(1.3) !important;
+}
+
 /* Make the theme switch immediate for panels and inputs */
 [class*="stage-selector_stage-selector"],
 [class*="stage-selector_header"],

@@ -39,6 +39,10 @@
     background: $badge-border;
 }
 
+.appearance {
+    padding: 0.25rem 1rem 0.5rem;
+}
+
 .label {
     height: 32px;
     display: flex;

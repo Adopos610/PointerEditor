@@ -76,12 +76,22 @@ const getFullscreenBackgroundColor = () => {
 };
 
 class WorkspaceThemeSync extends React.Component {
+    constructor (props) {
+        super(props);
+        this.handleThemeChange = this.handleThemeChange.bind(this);
+    }
+
     componentDidMount () {
-        this.handleThemeChange = () => {
-            document.body.classList.toggle('pointer-dark-theme', isDarkBackground(getWorkspaceBackground()));
-        };
         window.addEventListener('pointere-workspace-background-changed', this.handleThemeChange);
         this.handleThemeChange();
+    }
+
+    componentDidUpdate (prevProps) {
+        const previousDark = Boolean(prevProps.theme && prevProps.theme.isDark && prevProps.theme.isDark());
+        const currentDark = Boolean(this.props.theme && this.props.theme.isDark && this.props.theme.isDark());
+        if (previousDark !== currentDark) {
+            this.handleThemeChange();
+        }
     }
 
     componentWillUnmount () {
@@ -89,10 +99,24 @@ class WorkspaceThemeSync extends React.Component {
         document.body.classList.remove('pointer-dark-theme');
     }
 
+    handleThemeChange () {
+        const themeDark = Boolean(this.props.theme && this.props.theme.isDark && this.props.theme.isDark());
+        document.body.classList.toggle(
+            'pointer-dark-theme',
+            themeDark || isDarkBackground(getWorkspaceBackground())
+        );
+    }
+
     render () {
         return null;
     }
 }
+
+WorkspaceThemeSync.propTypes = {
+    theme: PropTypes.shape({
+        isDark: PropTypes.func
+    })
+};
 
 const GUIComponent = props => {
     const {
@@ -256,7 +280,7 @@ const GUIComponent = props => {
                 }}
                 {...componentProps}
             >
-                <WorkspaceThemeSync />
+                <WorkspaceThemeSync theme={theme} />
                 {alwaysEnabledModals}
                 {telemetryModalVisible ? (
                     <TelemetryModal

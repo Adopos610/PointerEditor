@@ -1,29 +1,23 @@
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import {
     WORKSPACE_BACKGROUND_PRESETS,
-    getWorkspaceBackgroundStyle,
-    isDarkBackground,
+    getWorkspaceBackground,
     isDarkColor,
     setWorkspaceBackground
 } from '../../lib/pointer-workspace-background';
 import styles from './workspace-background-picker.css';
 
-class WorkspaceBackgroundPicker extends React.Component {
+class WorkspaceBackgroundSettings extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            open: false,
+            settings: getWorkspaceBackground(),
             message: ''
         };
-        this.pickerRef = null;
         this.fileInput = null;
-        this.setPickerRef = this.setPickerRef.bind(this);
         this.setFileInput = this.setFileInput.bind(this);
-        this.handleToggle = this.handleToggle.bind(this);
-        this.handleOutsideClick = this.handleOutsideClick.bind(this);
+        this.handleBackgroundChanged = this.handleBackgroundChanged.bind(this);
         this.handlePreset = this.handlePreset.bind(this);
         this.handleColor = this.handleColor.bind(this);
         this.handleChooseFile = this.handleChooseFile.bind(this);
@@ -36,29 +30,21 @@ class WorkspaceBackgroundPicker extends React.Component {
     }
 
     componentDidMount () {
-        document.addEventListener('mousedown', this.handleOutsideClick, true);
+        window.addEventListener('pointere-workspace-background-changed', this.handleBackgroundChanged);
     }
 
     componentWillUnmount () {
-        document.removeEventListener('mousedown', this.handleOutsideClick, true);
-    }
-
-    setPickerRef (element) {
-        this.pickerRef = element;
+        window.removeEventListener('pointere-workspace-background-changed', this.handleBackgroundChanged);
     }
 
     setFileInput (element) {
         this.fileInput = element;
     }
 
-    handleOutsideClick (event) {
-        if (!this.state.open || !this.pickerRef) return;
-        if (this.pickerRef.contains(event.target)) return;
-        this.setState({open: false});
-    }
-
-    handleToggle () {
-        this.setState(previous => ({open: !previous.open, message: ''}));
+    handleBackgroundChanged (event) {
+        this.setState({
+            settings: event && event.detail ? event.detail : getWorkspaceBackground()
+        });
     }
 
     apply (patch) {
@@ -179,181 +165,128 @@ class WorkspaceBackgroundPicker extends React.Component {
     }
 
     render () {
-        const {settings} = this.props;
-        const {open, message} = this.state;
+        const {settings, message} = this.state;
         const activePreset = settings.image ? 'image' : (settings.color ? 'color' : settings.preset);
-        const triggerStyle = getWorkspaceBackgroundStyle(settings);
-        const dark = isDarkBackground(settings);
         return (
-            <div
-                className={classNames(styles.picker, {
-                    [styles.dark]: dark
-                })}
-                ref={this.setPickerRef}
-            >
-                <button
-                    className={styles.trigger}
-                    type="button"
-                    onClick={this.handleToggle}
-                    aria-expanded={open}
-                    title="自定义工作区背景"
-                >
-                    <span
-                        className={styles.triggerDot}
-                        style={{
-                            backgroundColor: triggerStyle.backgroundColor,
-                            backgroundImage: triggerStyle.backgroundImage,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center'
-                        }}
-                    />
-                    背景
-                </button>
-                {open ? (
-                    <div
-                        className={styles.panel}
-                        role="dialog"
-                        aria-label="工作区背景"
-                        onMouseDown={event => event.stopPropagation()}
-                    >
-                        <div className={styles.head}>
-                            <strong>工作区背景</strong>
-                            <button
-                                className={styles.close}
-                                type="button"
-                                onClick={this.handleToggle}
-                                aria-label="关闭背景设置"
-                            >
-                                ×
-                            </button>
-                        </div>
+            <div className={styles.settings}>
+                <p className={styles.hint}>
+                    选择背景后积木面板会自动保持可读；深色背景会同步切换深色主题。
+                </p>
 
-                        <div className={styles.sectionTitle}>预设</div>
-                        <div className={styles.presetGrid}>
-                            {WORKSPACE_BACKGROUND_PRESETS.map(preset => (
-                                <button
-                                    key={preset.id}
-                                    className={classNames(styles.preset, {
-                                        [styles.presetActive]: activePreset === preset.id
-                                    })}
-                                    type="button"
-                                    onClick={() => this.handlePreset(preset)}
-                                >
-                                    <span
-                                        className={styles.presetSwatch}
-                                        style={{background: preset.id === 'default' ? '#fff' : preset.css}}
-                                    />
-                                    <span>{preset.name}</span>
-                                </button>
-                            ))}
-                        </div>
-
-                        <div className={styles.sectionTitle}>自定义</div>
-                        <label className={styles.row}>
-                            <span>纯色背景</span>
-                            <input
-                                className={styles.colorInput}
-                                type="color"
-                                value={settings.color || '#ffffff'}
-                                onChange={this.handleColor}
-                            />
-                        </label>
-                        <div className={styles.row}>
-                            <span>背景图片</span>
-                            <div className={styles.rowActions}>
-                                <button
-                                    className={styles.smallButton}
-                                    type="button"
-                                    onClick={this.handleChooseFile}
-                                >
-                                    上传图片
-                                </button>
-                                {settings.image ? (
-                                    <button
-                                        className={styles.smallButton}
-                                        type="button"
-                                        onClick={this.handleClearImage}
-                                    >
-                                        清除
-                                    </button>
-                                ) : null}
-                            </div>
-                        </div>
-                        <input
-                            className={styles.fileInput}
-                            id="workspace-background-file"
-                            ref={this.setFileInput}
-                            type="file"
-                            accept="image/*"
-                            onChange={this.handleFileChange}
-                        />
-
-                        <div className={styles.sectionTitle}>面板</div>
-                        <label className={styles.sliderRow}>
-                            <span>背景模糊</span>
-                            <input
-                                className={styles.slider}
-                                type="range"
-                                min="0"
-                                max="16"
-                                step="1"
-                                value={settings.backgroundBlur}
-                                onChange={this.handleBackgroundBlur}
-                            />
-                            <span>{settings.backgroundBlur}px</span>
-                        </label>
-                        <label className={styles.sliderRow}>
-                            <span>面板模糊</span>
-                            <input
-                                className={styles.slider}
-                                type="range"
-                                min="0"
-                                max="24"
-                                step="1"
-                                value={settings.panelBlur}
-                                onChange={this.handlePanelBlur}
-                            />
-                            <span>{settings.panelBlur}px</span>
-                        </label>
-                        <label className={styles.sliderRow}>
-                            <span>面板透明度</span>
-                            <input
-                                className={styles.slider}
-                                type="range"
-                                min="30"
-                                max="95"
-                                step="1"
-                                value={Math.round(settings.panelOpacity * 100)}
-                                onChange={this.handlePanelOpacity}
-                            />
-                            <span>{Math.round(settings.panelOpacity * 100)}%</span>
-                        </label>
-
-                        {message ? <div className={styles.message}>{message}</div> : null}
+                <div className={styles.sectionTitle}>预设</div>
+                <div className={styles.presetGrid}>
+                    {WORKSPACE_BACKGROUND_PRESETS.map(preset => (
                         <button
-                            className={styles.reset}
+                            key={preset.id}
+                            className={styles.preset}
+                            data-active={activePreset === preset.id ? 'true' : undefined}
                             type="button"
-                            onClick={this.handleReset}
+                            onClick={() => this.handlePreset(preset)}
                         >
-                            恢复默认
+                            <span
+                                className={styles.presetSwatch}
+                                style={{
+                                    background: preset.id === 'default' ?
+                                        'linear-gradient(135deg, #f8fafc 0%, #dbe7f8 100%)' :
+                                        preset.css
+                                }}
+                            />
+                            <span>{preset.name}</span>
                         </button>
+                    ))}
+                </div>
+
+                <div className={styles.sectionTitle}>自定义</div>
+                <label className={styles.row}>
+                    <span>纯色背景</span>
+                    <input
+                        className={styles.colorInput}
+                        type="color"
+                        value={settings.color || '#ffffff'}
+                        onChange={this.handleColor}
+                    />
+                </label>
+                <div className={styles.row}>
+                    <span>背景图片</span>
+                    <div className={styles.rowActions}>
+                        <button
+                            className={styles.smallButton}
+                            type="button"
+                            onClick={this.handleChooseFile}
+                        >
+                            上传图片
+                        </button>
+                        {settings.image ? (
+                            <button
+                                className={styles.smallButton}
+                                type="button"
+                                onClick={this.handleClearImage}
+                            >
+                                清除
+                            </button>
+                        ) : null}
                     </div>
-                ) : null}
+                </div>
+                <input
+                    className={styles.fileInput}
+                    ref={this.setFileInput}
+                    type="file"
+                    accept="image/*"
+                    onChange={this.handleFileChange}
+                />
+
+                <div className={styles.sectionTitle}>面板</div>
+                <label className={styles.sliderRow}>
+                    <span>背景模糊</span>
+                    <input
+                        className={styles.slider}
+                        type="range"
+                        min="0"
+                        max="16"
+                        step="1"
+                        value={settings.backgroundBlur}
+                        onChange={this.handleBackgroundBlur}
+                    />
+                    <span>{settings.backgroundBlur}px</span>
+                </label>
+                <label className={styles.sliderRow}>
+                    <span>面板模糊</span>
+                    <input
+                        className={styles.slider}
+                        type="range"
+                        min="0"
+                        max="24"
+                        step="1"
+                        value={settings.panelBlur}
+                        onChange={this.handlePanelBlur}
+                    />
+                    <span>{settings.panelBlur}px</span>
+                </label>
+                <label className={styles.sliderRow}>
+                    <span>面板透明度</span>
+                    <input
+                        className={styles.slider}
+                        type="range"
+                        min="30"
+                        max="95"
+                        step="1"
+                        value={Math.round(settings.panelOpacity * 100)}
+                        onChange={this.handlePanelOpacity}
+                    />
+                    <span>{Math.round(settings.panelOpacity * 100)}%</span>
+                </label>
+
+                {message ? <div className={styles.message}>{message}</div> : null}
+                <button
+                    className={styles.reset}
+                    type="button"
+                    onClick={this.handleReset}
+                >
+                    恢复默认
+                </button>
             </div>
         );
     }
 }
 
-WorkspaceBackgroundPicker.propTypes = {
-    settings: PropTypes.shape({
-        preset: PropTypes.string.isRequired,
-        color: PropTypes.string,
-        image: PropTypes.string,
-        dark: PropTypes.bool,
-        backgroundBlur: PropTypes.number.isRequired,
-        panelBlur: PropTypes.number.isRequired,
-        panelOpacity: PropTypes.number.isRequired
-    }).isRequired
-};
-
-export default WorkspaceBackgroundPicker;
+export default WorkspaceBackgroundSettings;

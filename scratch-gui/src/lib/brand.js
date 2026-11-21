@@ -2,5 +2,5 @@
 // eslint-disable-next-line import/no-commonjs
 module.exports = {
     APP_NAME: 'PointerEditor',
-    APP_VERSION: '0.3.0-Beta'
+    APP_VERSION: '0.3.0-Beta2'
 };

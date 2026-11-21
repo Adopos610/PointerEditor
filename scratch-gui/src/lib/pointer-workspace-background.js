@@ -77,7 +77,7 @@ const blurFilter = settings => (
     settings.backgroundBlur ? `blur(${settings.backgroundBlur}px)` : 'none'
 );
 
-export const getWorkspaceBackgroundStyle = settings => {
+export const getWorkspaceBackgroundStyle = (settings, forceDark) => {
     const preset = getWorkspacePreset(settings.preset);
     const usePreset = preset.id !== 'default' && !settings.color && !settings.image;
     if (settings.image) {
@@ -94,15 +94,22 @@ export const getWorkspaceBackgroundStyle = settings => {
             filter: blurFilter(settings)
         };
     }
+    if (usePreset) {
+        return {
+            backgroundColor: 'transparent',
+            backgroundImage: preset.css,
+            filter: blurFilter(settings)
+        };
+    }
     return {
-        backgroundColor: usePreset ? 'transparent' : '#f9f9f9',
-        backgroundImage: usePreset ? preset.css : 'none',
+        backgroundColor: forceDark ? '#0b1220' : '#f9f9f9',
+        backgroundImage: 'none',
         filter: blurFilter(settings)
     };
 };
 
-export const getWorkspacePanelStyle = settings => {
-    const dark = isDarkBackground(settings);
+export const getWorkspacePanelStyle = (settings, forceDark) => {
+    const dark = Boolean(forceDark) || isDarkBackground(settings);
     return {
         '--pointer-workspace-panel-bg': dark ?
             `rgba(2, 5, 12, ${settings.panelOpacity})` :

@@ -85,9 +85,9 @@ const persistTheme = theme => {
     if (theme.accent !== systemPreferences.accent) {
         nonDefaultSettings.accent = theme.accent;
     }
-    if (theme.gui !== systemPreferences.gui) {
-        nonDefaultSettings.gui = theme.gui;
-    }
+    // Persist the explicit light/dark choice even when it matches the system
+    // preference, otherwise the app falls back to its fixed light theme after reload.
+    nonDefaultSettings.gui = theme.gui;
     // custom blocks are managed by addon at runtime, don't save here
     if (theme.blocks !== systemPreferences.blocks && theme.blocks !== BLOCKS_CUSTOM) {
         nonDefaultSettings.blocks = theme.blocks;

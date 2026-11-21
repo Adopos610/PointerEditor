@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import React from 'react';
 import Box from '../box/box.jsx';
-import WorkspaceBackgroundPicker from './workspace-background-picker.jsx';
 import {
     getWorkspaceBackground,
     getWorkspaceBackgroundStyle,
@@ -39,21 +38,23 @@ class BlocksComponent extends React.Component {
             containerRef,
             dragOver,
             style,
+            theme,
             ...componentProps
         } = this.props;
         const background = this.state.background;
-        const panelStyle = {...getWorkspacePanelStyle(background), ...style};
-        const darkControls = isDarkBackground(background);
+        const themeDark = Boolean(theme && theme.isDark && theme.isDark());
+        const dark = themeDark || isDarkBackground(background);
+        const panelStyle = {...getWorkspacePanelStyle(background, dark), ...style};
         return (
             <div
                 className={classNames(styles.blocksWrap, {
-                    [styles.darkControls]: darkControls
+                    [styles.darkControls]: dark
                 })}
                 style={panelStyle}
             >
                 <div
                     className={styles.workspaceBackground}
-                    style={getWorkspaceBackgroundStyle(background)}
+                    style={getWorkspaceBackgroundStyle(background, themeDark)}
                 />
                 <Box
                     className={classNames(styles.blocks, {
@@ -62,7 +63,6 @@ class BlocksComponent extends React.Component {
                     {...componentProps}
                     componentRef={containerRef}
                 />
-                <WorkspaceBackgroundPicker settings={background} />
             </div>
         );
     }
@@ -71,7 +71,10 @@ class BlocksComponent extends React.Component {
 BlocksComponent.propTypes = {
     containerRef: PropTypes.func,
     dragOver: PropTypes.bool,
-    style: PropTypes.object
+    style: PropTypes.object,
+    theme: PropTypes.shape({
+        isDark: PropTypes.func
+    })
 };
 
 export default BlocksComponent;

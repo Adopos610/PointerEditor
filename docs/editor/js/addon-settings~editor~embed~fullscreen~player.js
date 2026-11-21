@@ -166,7 +166,7 @@ module.exports = "data:image/svg+xml;base64,PCEtLSBodHRwczovL2FrYXJpY29ucy5jb20v
 // eslint-disable-next-line import/no-commonjs
 module.exports = {
   APP_NAME: 'PointerEditor',
-  APP_VERSION: '0.3.0-Beta'
+  APP_VERSION: '0.3.0-Beta2'
 };
 
 /***/ }),
@@ -1548,9 +1548,9 @@ const persistTheme = theme => {
   if (theme.accent !== systemPreferences.accent) {
     nonDefaultSettings.accent = theme.accent;
   }
-  if (theme.gui !== systemPreferences.gui) {
-    nonDefaultSettings.gui = theme.gui;
-  }
+  // Persist the explicit light/dark choice even when it matches the system
+  // preference, otherwise the app falls back to its fixed light theme after reload.
+  nonDefaultSettings.gui = theme.gui;
   // custom blocks are managed by addon at runtime, don't save here
   if (theme.blocks !== systemPreferences.blocks && theme.blocks !== ___WEBPACK_IMPORTED_MODULE_0__["BLOCKS_CUSTOM"]) {
     nonDefaultSettings.blocks = theme.blocks;

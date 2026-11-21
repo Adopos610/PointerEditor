@@ -9,6 +9,7 @@ import FancyCheckbox from '../tw-fancy-checkbox/checkbox.jsx';
 import Input from '../forms/input.jsx';
 import BufferedInputHOC from '../forms/buffered-input-hoc.jsx';
 import DocumentationLink from '../tw-documentation-link/documentation-link.jsx';
+import WorkspaceBackgroundSettings from '../blocks/workspace-background-picker.jsx';
 import styles from './settings-modal.css';
 import helpIcon from './help-icon.svg';
 import {APP_NAME} from '../../lib/brand.js';
@@ -440,6 +441,20 @@ const SettingsModalComponent = props => (
         id="settingsModal"
     >
         <Box className={styles.body}>
+            {!props.isEmbedded && (
+                <React.Fragment>
+                    <Header>
+                        <FormattedMessage
+                            defaultMessage="外观"
+                            description="Settings modal section"
+                            id="pointer.settingsModal.appearance"
+                        />
+                    </Header>
+                    <div className={styles.appearance}>
+                        <WorkspaceBackgroundSettings />
+                    </div>
+                </React.Fragment>
+            )}
             <Header>
                 <FormattedMessage
                     defaultMessage="Featured"
