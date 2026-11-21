@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const {app, ipcMain, safeStorage} = require('electron');
+const {prepareMessages, toOpenAIContent, toAnthropicContent} = require('./peagent-messages.cjs');
 
 const DEFAULTS = {
     provider: 'deepseek',
@@ -151,18 +152,9 @@ const chat = async payload => {
     const config = readConfig();
     const apiKey = decodeKey(config);
     if (!apiKey) return {ok: false, code: 'no-key', error: '请先填写模型 API Key'};
-    const messages = Array.isArray(payload.messages) ? payload.messages : [];
-    if (!messages.length) return {ok: false, error: '消息为空'};
-    if (messages.length > 40) return {ok: false, error: '会话过长，请新建会话'};
-    const safeMessages = [];
-    let total = 0;
-    for (const item of messages) {
-        const role = ['system', 'user', 'assistant'].includes(item && item.role) ? item.role : 'user';
-        const content = String(item && item.content || '').slice(0, 24000);
-        total += content.length;
-        if (total > 120000) return {ok: false, error: '会话内容过长，请新建会话'};
-        safeMessages.push({role, content});
-    }
+    const prepared = prepareMessages(payload.messages);
+    if (prepared.error) return {ok: false, error: prepared.error};
+    const safeMessages = prepared.messages;
     const model = String(payload.model || config.model || DEFAULTS.model).slice(0, 80);
     const base = normaliseBase(payload.baseUrl || config.baseUrl);
     const apiFormat = (payload.apiFormat || config.apiFormat) === 'anthropic' ? 'anthropic' : 'openai';
@@ -199,7 +191,7 @@ const chat = async payload => {
             max_tokens: maxTokens,
             messages: chatMessages.map(item => ({
                 role: item.role === 'assistant' ? 'assistant' : 'user',
-                content: item.content
+                content: toAnthropicContent(item.content)
             }))
         };
         if (systemMessages.length) body.system = systemMessages.map(item => item.content).join('\n\n');
@@ -216,7 +208,10 @@ const chat = async payload => {
         };
         body = {
             model,
-            messages: safeMessages,
+            messages: safeMessages.map(item => ({
+                role: item.role,
+                content: toOpenAIContent(item.content)
+            })),
             stream: false,
             max_tokens: maxTokens
         };
@@ -292,18 +287,9 @@ const streamChat = async (event, payload) => {
     const config = readConfig();
     const apiKey = decodeKey(config);
     if (!apiKey) return {ok: false, code: 'no-key', error: '请先填写模型 API Key'};
-    const messages = Array.isArray(payload.messages) ? payload.messages : [];
-    if (!messages.length) return {ok: false, error: '消息为空'};
-    if (messages.length > 40) return {ok: false, error: '会话过长，请新建会话'};
-    const safeMessages = [];
-    let total = 0;
-    for (const item of messages) {
-        const role = ['system', 'user', 'assistant'].includes(item && item.role) ? item.role : 'user';
-        const content = String(item && item.content || '').slice(0, 24000);
-        total += content.length;
-        if (total > 120000) return {ok: false, error: '会话内容过长，请新建会话'};
-        safeMessages.push({role, content});
-    }
+    const prepared = prepareMessages(payload.messages);
+    if (prepared.error) return {ok: false, error: prepared.error};
+    const safeMessages = prepared.messages;
     const model = String(payload.model || config.model || DEFAULTS.model).slice(0, 80);
     const base = normaliseBase(payload.baseUrl || config.baseUrl);
     const apiFormat = (payload.apiFormat || config.apiFormat) === 'anthropic' ? 'anthropic' : 'openai';
@@ -341,7 +327,7 @@ const streamChat = async (event, payload) => {
             stream: true,
             messages: chatMessages.map(item => ({
                 role: item.role === 'assistant' ? 'assistant' : 'user',
-                content: item.content
+                content: toAnthropicContent(item.content)
             }))
         };
         if (systemMessages.length) body.system = systemMessages.map(item => item.content).join('\n\n');
@@ -358,7 +344,10 @@ const streamChat = async (event, payload) => {
         };
         body = {
             model,
-            messages: safeMessages,
+            messages: safeMessages.map(item => ({
+                role: item.role,
+                content: toOpenAIContent(item.content)
+            })),
             stream: true,
             max_tokens: maxTokens
         };

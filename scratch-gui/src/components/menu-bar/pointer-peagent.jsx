@@ -28,6 +28,8 @@ import {
     setActivePeAgentSessionId
 } from '../../lib/pointer-peagent';
 import {selectedBlockPayload} from '../../lib/pointer-cross-window';
+import {buildProjectContext} from '../../lib/pointer-agent-context';
+import {captureStageImage, getImageMime, readImageFile} from '../../lib/pointer-agent-image';
 import downloadBlob from '../../lib/download-blob';
 import PointerMarkdown from './pointer-markdown.jsx';
 import styles from './pointer-peagent.css';
@@ -97,6 +99,7 @@ class PointerPeAgent extends React.Component {
             reasoningEffort: AGENT_DEFAULTS.reasoningEffort,
             permission: AGENT_DEFAULTS.permission,
             webSearch: false,
+            attachStage: false,
             ...sessionState,
             input: '',
             attachments: [],
@@ -108,13 +111,16 @@ class PointerPeAgent extends React.Component {
             applyResult: null,
             minimized: false,
             pendingApproval: null,
-            runNotice: ''
+            runNotice: '',
+            contextPreview: ''
         };
         this.requestSeq = 0;
         this.activeRequestId = null;
         this.streamText = {content: '', reasoning: ''};
         this.flushTimer = null;
         this.noticeTimer = null;
+        this.sending = false;
+        this.lastRequestIncludedImages = false;
         this.handleSend = this.handleSend.bind(this);
         this.handleSaveSettings = this.handleSaveSettings.bind(this);
         this.handleNewChat = this.handleNewChat.bind(this);
@@ -124,6 +130,7 @@ class PointerPeAgent extends React.Component {
         this.handleMinimize = this.handleMinimize.bind(this);
         this.handleRestore = this.handleRestore.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.handleContextPreview = this.handleContextPreview.bind(this);
         this.handleCancelRun = this.handleCancelRun.bind(this);
         this.handleExecuteActions = this.handleExecuteActions.bind(this);
         this.handleSelectSession = this.handleSelectSession.bind(this);
@@ -410,12 +417,20 @@ class PointerPeAgent extends React.Component {
     }
 
     addAttachment (attachment) {
+        if (attachment.kind === 'image') {
+            const imageCount = this.state.attachments.filter(item => item.kind === 'image').length;
+            if (imageCount >= 2) {
+                this.setRunNotice('最多附加 2 张图片');
+                return false;
+            }
+        }
         this.setState(previous => ({
             attachments: previous.attachments.concat({
                 ...attachment,
                 id: `att_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 6)}`
             })
         }));
+        return true;
     }
 
     removeAttachment (id) {
@@ -441,6 +456,17 @@ class PointerPeAgent extends React.Component {
         const file = event.target.files && event.target.files[0];
         event.target.value = '';
         if (!file) return;
+        if (/^image\//i.test(file.type || '')) {
+            readImageFile(file)
+                .then(dataUrl => {
+                    const mime = getImageMime(dataUrl) || 'image/jpeg';
+                    if (this.addAttachment({name: file.name, kind: 'image', dataUrl, mime})) {
+                        this.setRunNotice(`已附加图片 ${file.name}`);
+                    }
+                })
+                .catch(error => this.setRunNotice(error.message || '无法读取图片'));
+            return;
+        }
         if (file.size > 400000) {
             this.setRunNotice('附件过大，请选择 400KB 以内的文本/代码文件');
             return;
@@ -469,6 +495,16 @@ class PointerPeAgent extends React.Component {
         this.props.onClose();
     }
 
+    handleContextPreview () {
+        let preview = '';
+        try {
+            preview = buildProjectContext(this.props.vm);
+        } catch (error) {
+            preview = `生成项目上下文失败：${error.message}`;
+        }
+        this.setState({contextPreview: preview});
+    }
+
     handleCancelRun () {
         const requestId = this.activeRequestId;
         this.requestSeq += 1;
@@ -495,12 +531,45 @@ class PointerPeAgent extends React.Component {
         }, () => this.persistSession());
     }
 
-    handleSend () {
+    async handleSend () {
         const text = this.state.input.trim();
         const attachments = this.state.attachments;
-        if ((!text && !attachments.length) || this.state.busy || this.state.phase !== 'chat') return;
-        const attachmentText = attachments.map(item => `\n\n[附件：${item.name}]\n${item.content}`).join('');
-        const outgoing = (text || '请结合附件内容处理。') + attachmentText;
+        const attachStage = this.state.attachStage;
+        if ((!text && !attachments.length && !attachStage) ||
+            this.state.busy || this.state.phase !== 'chat' || this.sending) return;
+        this.sending = true;
+        let stageImage = null;
+        let stageNotice = '';
+        if (attachStage) {
+            this.setRunNotice('正在获取舞台画面…', 0);
+            try {
+                stageImage = await captureStageImage(this.props.vm);
+            } catch (error) {
+                stageImage = null;
+            }
+            if (!this.mounted) {
+                this.sending = false;
+                return;
+            }
+            if (!stageImage) stageNotice = '未能获取舞台画面，本次仅发送文字';
+        }
+        const textAttachments = attachments.filter(item => item.kind !== 'image');
+        const imageAttachments = attachments.filter(item => item.kind === 'image').slice(0, 2);
+        if (stageImage && imageAttachments.length < 2) {
+            imageAttachments.push({name: '舞台画面', kind: 'image', dataUrl: stageImage});
+        } else if (stageImage) {
+            stageNotice = '已附加 2 张图片，舞台画面未加入';
+        }
+        if (!text && !textAttachments.length && !imageAttachments.length) {
+            this.sending = false;
+            return;
+        }
+        const attachmentText = textAttachments.map(item => `\n\n[附件：${item.name}]\n${item.content}`).join('');
+        const queryText = (text || '请结合附件内容处理。') + attachmentText;
+        const userContent = imageAttachments.length ? [
+            {type: 'text', text: queryText},
+            ...imageAttachments.map(item => ({type: 'image', dataUrl: item.dataUrl}))
+        ] : queryText;
         const history = this.state.messages
             .filter(message => message.role !== 'system' && !message.streaming && message.content)
             .slice(-14)
@@ -510,9 +579,10 @@ class PointerPeAgent extends React.Component {
             }));
         const userMessage = {
             role: 'user',
-            content: text || '（附件）',
+            content: text || (imageAttachments.length ? '（图片）' : '（附件）'),
             context: attachmentText,
             attachments: attachments.map(item => ({name: item.name, kind: item.kind}))
+                .concat(stageImage ? [{name: '舞台画面', kind: 'image'}] : [])
         };
         const assistantIndex = this.state.messages.length + 1;
         const requestId = `req_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
@@ -528,20 +598,28 @@ class PointerPeAgent extends React.Component {
             searchInfo: '',
             applyResult: null,
             pendingApproval: null,
-            runNotice: ''
+            runNotice: stageNotice
         }), () => {
+            this.sending = false;
             this.persistSession();
             this.scrollToEnd();
-            this.runAgent(history.concat({role: 'user', content: outgoing}), outgoing, assistantIndex, requestId);
+            this.runAgent(
+                history.concat({role: 'user', content: userContent}),
+                queryText,
+                assistantIndex,
+                requestId,
+                imageAttachments.length > 0
+            );
         });
     }
 
-    runAgent (history, query, assistantIndex, requestId) {
+    runAgent (history, userContent, searchText, assistantIndex, requestId, includesImages) {
         const generation = ++this.requestSeq;
         const {
             config, deepThink, reasoningEffort, webSearch, temperature, maxTokens, permission
         } = this.state;
-        const searchStep = webSearch ? peagentSearch(query) : Promise.resolve(null);
+        this.lastRequestIncludedImages = Boolean(includesImages);
+        const searchStep = webSearch ? peagentSearch(searchText) : Promise.resolve(null);
         searchStep
             .then(search => {
                 if (!this.mounted || generation !== this.requestSeq) return null;
@@ -557,7 +635,10 @@ class PointerPeAgent extends React.Component {
                     }
                 }
                 const system = buildPeAgentSystemPrompt(this.props.vm, searchContext, permission);
-                const messages = [{role: 'system', content: system}].concat(history);
+                const messages = [{role: 'system', content: system}].concat(
+                    history,
+                    {role: 'user', content: userContent}
+                );
                 const payload = {
                     messages,
                     model: config.model,
@@ -614,6 +695,12 @@ class PointerPeAgent extends React.Component {
     finishWithError (error) {
         clearTimeout(this.flushTimer);
         this.activeRequestId = null;
+        const message = error && error.message ? error.message : '请求失败';
+        const imageHint = this.lastRequestIncludedImages &&
+            /image|vision|multimodal|input_image|image_url|图片|视觉|content.*type|type.*content|invalid|unsupported|bad request|400/i.test(message) ?
+            '。当前模型可能不支持图片输入，请关闭「舞台画面」或换用支持视觉的模型' : '';
+        this.lastRequestIncludedImages = false;
+        const display = `${message}${imageHint}`;
         this.setState(previous => {
             const messages = previous.messages.slice();
             const last = messages.length - 1;
@@ -621,10 +708,10 @@ class PointerPeAgent extends React.Component {
                 messages[last] = {
                     ...messages[last],
                     streaming: false,
-                    content: messages[last].content || `（请求失败：${error.message}）`
+                    content: messages[last].content || `（请求失败：${display}）`
                 };
             }
-            return {messages, busy: false, error: error.message, executing: false};
+            return {messages, busy: false, error: display, executing: false};
         }, () => this.persistSession());
     }
 
@@ -636,6 +723,7 @@ class PointerPeAgent extends React.Component {
             this.finishWithError(new Error(result.error || 'PEAgent 请求失败'));
             return;
         }
+        this.lastRequestIncludedImages = false;
         const content = result.content || this.streamText.content;
         const reasoning = result.reasoning || this.streamText.reasoning;
         this.setState(previous => ({
@@ -935,6 +1023,10 @@ class PointerPeAgent extends React.Component {
                     </div>
                     <span className={styles.providerTag}>{provider === 'deepseek' ? '参数预置' : '可接入'}</span>
                 </div>
+                <details className={styles.contextPreview}>
+                    <summary onClick={this.handleContextPreview}>查看当前项目上下文</summary>
+                    <pre className={styles.contextPre}>{this.state.contextPreview || '展开后生成…'}</pre>
+                </details>
                 <form className={styles.settingsForm} onSubmit={this.handleSaveSettings}>
                     <div className={styles.advancedGrid}>
                         <label className={styles.field}>
@@ -1110,7 +1202,7 @@ class PointerPeAgent extends React.Component {
     renderChat () {
         const {
             messages, input, attachments, busy, deepThink, reasoningEffort, webSearch,
-            error, searchInfo, runNotice
+            attachStage, error, searchInfo, runNotice
         } = this.state;
         const hasUser = messages.some(message => message.role === 'user');
         const sessionTitle = derivePeAgentSessionTitle(messages) || '新对话';
@@ -1158,7 +1250,7 @@ class PointerPeAgent extends React.Component {
                                     <div className={styles.attachTags}>
                                         {message.attachments.map((item, i) => (
                                             <span key={`${item.name}-${i}`} className={styles.attachTag}>
-                                                {item.kind === 'blocks' ? '⧉ ' : '📄 '}
+                                                {item.kind === 'image' ? '图 · ' : (item.kind === 'blocks' ? '⧉ ' : '📄 ')}
                                                 {item.name}
                                             </span>
                                         ))}
@@ -1178,7 +1270,9 @@ class PointerPeAgent extends React.Component {
                         <div className={styles.attachChips}>
                             {attachments.map(item => (
                                 <span key={item.id} className={styles.attachChip}>
-                                    {item.kind === 'blocks' ? '⧉ ' : '📄 '}
+                                    {item.kind === 'image' && item.dataUrl ? (
+                                        <img className={styles.attachThumb} src={item.dataUrl} alt="" />
+                                    ) : (item.kind === 'blocks' ? '⧉ ' : '📄 ')}
                                     {item.name}
                                     <button
                                         type="button"
@@ -1213,7 +1307,15 @@ class PointerPeAgent extends React.Component {
                                 选择积木
                             </button>
                             <button type="button" className={styles.toolBtn} onClick={this.handleAttachFile}>
-                                添加文件
+                                添加图片/文件
+                            </button>
+                            <button
+                                type="button"
+                                className={attachStage ? styles.toolBtnActive : styles.toolBtn}
+                                onClick={() => this.setState(previous => ({attachStage: !previous.attachStage}))}
+                                title="把当前舞台画面随消息发送，需要模型支持视觉输入"
+                            >
+                                舞台画面
                             </button>
                             <button
                                 type="button"
@@ -1239,7 +1341,7 @@ class PointerPeAgent extends React.Component {
                                 type="button"
                                 className={styles.sendBtn}
                                 onClick={this.handleSend}
-                                disabled={busy || (!input.trim() && !attachments.length)}
+                                disabled={busy || (!input.trim() && !attachments.length && !attachStage)}
                                 aria-label="发送"
                             >
                                 ➤
@@ -1247,14 +1349,14 @@ class PointerPeAgent extends React.Component {
                         </div>
                     </div>
                     <p className={styles.hint}>
-                        Enter 发送 · Shift+Enter 换行 · 操作按「Agent 权限」执行 · 支持 Markdown 与流式输出
+                        Enter 发送 · Shift+Enter 换行 · 操作按「Agent 权限」执行 · 「舞台画面」需要模型支持视觉
                     </p>
                 </div>
                 <input
                     ref={node => { this.fileInput = node; }}
                     className={styles.fileInput}
                     type="file"
-                    accept=".txt,.md,.json,.xml,.js,.jsx,.ts,.css,.html,.csv,.log"
+                    accept=".txt,.md,.json,.xml,.js,.jsx,.ts,.css,.html,.csv,.log,image/png,image/jpeg,image/webp"
                     onChange={this.handleFileChange}
                 />
             </section>

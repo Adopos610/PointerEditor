@@ -2383,111 +2383,111 @@ const server = http.createServer(async (req, res) => {
             return;
         }
 
-        if (pathname === '/api/pointere-console/login' && req.method === 'POST') {
+        if (pathname === '/api/52dj99/login' && req.method === 'POST') {
             await handleAdminLogin(req, res);
             return;
         }
-        if (pathname === '/api/pointere-console/me' && req.method === 'GET') {
+        if (pathname === '/api/52dj99/me' && req.method === 'GET') {
             const found = requireAdmin(req, res);
             if (found) sendJson(res, 200, {user: store.publicUser(found.user)});
             return;
         }
-        if (pathname === '/api/pointere-console/users' && req.method === 'GET') {
+        if (pathname === '/api/52dj99/users' && req.method === 'GET') {
             handleAdminUsers(req, res, url);
             return;
         }
-        const pointsMatch = pathname.match(/^\/api\/pointere-console\/users\/([a-f0-9]+)\/points$/);
+        const pointsMatch = pathname.match(/^\/api\/52dj99\/users\/([a-f0-9]+)\/points$/);
         if (pointsMatch && req.method === 'POST') {
             await handleAdminUserPoints(req, res, pointsMatch[1]);
             return;
         }
-        const actionMatch = pathname.match(/^\/api\/pointere-console\/users\/([a-f0-9]+)\/action$/);
+        const actionMatch = pathname.match(/^\/api\/52dj99\/users\/([a-f0-9]+)\/action$/);
         if (actionMatch && req.method === 'POST') {
             await handleAdminUserAction(req, res, actionMatch[1]);
             return;
         }
-        if (pathname === '/api/pointere-console/smtp' && (req.method === 'GET' || req.method === 'POST')) {
+        if (pathname === '/api/52dj99/smtp' && (req.method === 'GET' || req.method === 'POST')) {
             await handleAdminSmtp(req, res, req.method === 'POST');
             return;
         }
-        if (pathname === '/api/pointere-console/rooms' && req.method === 'GET') {
+        if (pathname === '/api/52dj99/rooms' && req.method === 'GET') {
             handleAdminRooms(req, res);
             return;
         }
-        if (pathname === '/api/pointere-console/products' && req.method === 'GET') {
+        if (pathname === '/api/52dj99/products' && req.method === 'GET') {
             handleAdminProducts(req, res);
             return;
         }
-        if (pathname === '/api/pointere-console/products' && req.method === 'POST') {
+        if (pathname === '/api/52dj99/products' && req.method === 'POST') {
             await handleAdminProductCreate(req, res);
             return;
         }
-        const productDeleteMatch = pathname.match(/^\/api\/pointere-console\/products\/([A-Za-z0-9_-]+)\/delete$/);
+        const productDeleteMatch = pathname.match(/^\/api\/52dj99\/products\/([A-Za-z0-9_-]+)\/delete$/);
         if (productDeleteMatch && req.method === 'POST') {
             handleAdminProductDelete(req, res, productDeleteMatch[1]);
             return;
         }
-        const productMatch = pathname.match(/^\/api\/pointere-console\/products\/([A-Za-z0-9_-]+)$/);
+        const productMatch = pathname.match(/^\/api\/52dj99\/products\/([A-Za-z0-9_-]+)$/);
         if (productMatch && req.method === 'POST') {
             await handleAdminProductUpdate(req, res, productMatch[1]);
             return;
         }
-        if (pathname === '/api/pointere-console/notices' && req.method === 'GET') {
+        if (pathname === '/api/52dj99/notices' && req.method === 'GET') {
             handleAdminNotices(req, res);
             return;
         }
-        if (pathname === '/api/pointere-console/notices' && req.method === 'POST') {
+        if (pathname === '/api/52dj99/notices' && req.method === 'POST') {
             await handleAdminNoticeCreate(req, res);
             return;
         }
-        const noticeDeleteMatch = pathname.match(/^\/api\/pointere-console\/notices\/([A-Za-z0-9_]+)\/delete$/);
+        const noticeDeleteMatch = pathname.match(/^\/api\/52dj99\/notices\/([A-Za-z0-9_]+)\/delete$/);
         if (noticeDeleteMatch && req.method === 'POST') {
             handleAdminNoticeDelete(req, res, noticeDeleteMatch[1]);
             return;
         }
-        const noticeMatch = pathname.match(/^\/api\/pointere-console\/notices\/([A-Za-z0-9_]+)$/);
+        const noticeMatch = pathname.match(/^\/api\/52dj99\/notices\/([A-Za-z0-9_]+)$/);
         if (noticeMatch && req.method === 'POST') {
             await handleAdminNoticeUpdate(req, res, noticeMatch[1]);
             return;
         }
-        if (pathname === '/api/pointere-console/release' && req.method === 'POST') {
+        if (pathname === '/api/52dj99/release' && req.method === 'POST') {
             await handleAdminRelease(req, res);
             return;
         }
-        if (pathname === '/api/pointere-console/extensions' && req.method === 'GET') {
+        if (pathname === '/api/52dj99/extensions' && req.method === 'GET') {
             handleAdminExtensions(req, res);
             return;
         }
-        const extensionSourceMatch = pathname.match(/^\/api\/pointere-console\/extensions\/([A-Za-z0-9_]+)\/source$/);
+        const extensionSourceMatch = pathname.match(/^\/api\/52dj99\/extensions\/([A-Za-z0-9_]+)\/source$/);
         if (extensionSourceMatch && req.method === 'GET') {
             handleAdminExtensionSource(req, res, extensionSourceMatch[1]);
             return;
         }
-        const extensionApproveMatch = pathname.match(/^\/api\/pointere-console\/extensions\/([A-Za-z0-9_]+)\/approve$/);
+        const extensionApproveMatch = pathname.match(/^\/api\/52dj99\/extensions\/([A-Za-z0-9_]+)\/approve$/);
         if (extensionApproveMatch && req.method === 'POST') {
             await handleAdminExtensionApprove(req, res, extensionApproveMatch[1]);
             return;
         }
-        const extensionRejectMatch = pathname.match(/^\/api\/pointere-console\/extensions\/([A-Za-z0-9_]+)\/reject$/);
+        const extensionRejectMatch = pathname.match(/^\/api\/52dj99\/extensions\/([A-Za-z0-9_]+)\/reject$/);
         if (extensionRejectMatch && req.method === 'POST') {
             await handleAdminExtensionReject(req, res, extensionRejectMatch[1]);
             return;
         }
-        const extensionDeleteMatch = pathname.match(/^\/api\/pointere-console\/extensions\/([A-Za-z0-9_]+)\/delete$/);
+        const extensionDeleteMatch = pathname.match(/^\/api\/52dj99\/extensions\/([A-Za-z0-9_]+)\/delete$/);
         if (extensionDeleteMatch && req.method === 'POST') {
             handleAdminExtensionDelete(req, res, extensionDeleteMatch[1]);
             return;
         }
-        const communityDeleteMatch = pathname.match(/^\/api\/pointere-console\/community-extensions\/([A-Za-z0-9_]+)\/delete$/);
+        const communityDeleteMatch = pathname.match(/^\/api\/52dj99\/community-extensions\/([A-Za-z0-9_]+)\/delete$/);
         if (communityDeleteMatch && req.method === 'POST') {
             handleAdminCommunityDelete(req, res, communityDeleteMatch[1]);
             return;
         }
-        if (pathname === '/api/pointere-console/orders' && req.method === 'GET') {
+        if (pathname === '/api/52dj99/orders' && req.method === 'GET') {
             handleAdminOrders(req, res);
             return;
         }
-        const orderMatch = pathname.match(/^\/api\/pointere-console\/orders\/([a-f0-9]+)\/status$/);
+        const orderMatch = pathname.match(/^\/api\/52dj99\/orders\/([a-f0-9]+)\/status$/);
         if (orderMatch && req.method === 'POST') {
             await handleAdminOrderStatus(req, res, orderMatch[1]);
             return;
@@ -2573,11 +2573,11 @@ const server = http.createServer(async (req, res) => {
             res.end(item.code);
             return;
         }
-        if (pathname === '/pointere-console' || pathname === '/pointere-console/') {
+        if (pathname === '/52dj99' || pathname === '/52dj99/') {
             serveStatic(res, 'admin.html');
             return;
         }
-        if (pathname === '/pointere-console/app.js') {
+        if (pathname === '/52dj99/app.js') {
             serveStatic(res, 'admin.js');
             return;
         }

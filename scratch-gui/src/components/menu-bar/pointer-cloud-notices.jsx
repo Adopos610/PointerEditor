@@ -47,8 +47,15 @@ const isNewer = (latest, current) => {
     }
     const latestSuffix = versionSuffix(latest);
     const currentSuffix = versionSuffix(current);
-    if (latestSuffix && !currentSuffix) return true;
-    if (latestSuffix && currentSuffix && latestSuffix !== currentSuffix) return true;
+    if (!latestSuffix && currentSuffix) return true;
+    if (latestSuffix && !currentSuffix) return false;
+    if (latestSuffix && currentSuffix) {
+        return latestSuffix.toLowerCase().localeCompare(
+            currentSuffix.toLowerCase(),
+            undefined,
+            {numeric: true}
+        ) > 0;
+    }
     return false;
 };
 

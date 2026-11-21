@@ -126,6 +126,17 @@ const RestorePointModal = props => (
                 </p>
             )}
 
+            <div className={styles.createRow}>
+                <button
+                    className={styles.button}
+                    onClick={props.onClickCreate}
+                    disabled={props.isLoading}
+                >
+                    保存当前版本
+                </button>
+                <span className={styles.createHint}>手动保存一个可恢复的版本；自动备份仍按上面的间隔运行。</span>
+            </div>
+
             {props.error ? (
                 <div className={styles.error}>
                     <p>

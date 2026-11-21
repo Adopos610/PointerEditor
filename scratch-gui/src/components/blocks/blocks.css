@@ -2,8 +2,43 @@
 @import "../../css/colors.css";
 @import "../../css/z-index.css";
 
-.blocks {
+.blocksWrap {
+    position: relative;
     height: 100%;
+    overflow: hidden;
+    border-top-right-radius: $space;
+    border-bottom-right-radius: $space;
+}
+
+[dir="rtl"] .blocksWrap {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: $space;
+    border-bottom-left-radius: $space;
+}
+
+.workspaceBackground {
+    position: absolute;
+    inset: -24px;
+    z-index: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.blocks {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.darkControls :global(.blocklyZoom) image {
+    filter: invert(1);
+}
+
+.darkControls :global(.blocklyScrollbarHandle) {
+    fill: var(--pointer-workspace-scrollbar, #cecdce);
 }
 
 .drag-over:after {
@@ -24,7 +59,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    border: 1px solid $ui-black-transparent;
+    border: 1px solid var(--pointer-workspace-panel-border, $ui-black-transparent);
     border-top-right-radius: $space;
     border-bottom-right-radius: $space;
 }
@@ -36,15 +71,23 @@
     border-bottom-left-radius: $space;
 }
 
+.blocks :global(.blocklySvg) {
+    background: transparent !important;
+}
+
 .blocks :global(.blocklyMainBackground) {
     stroke: none;
 }
 
 .blocks :global(.blocklyToolboxDiv) {
-    border-right: 1px solid $ui-black-transparent;
-    border-bottom: 1px solid $ui-black-transparent;
+    border-right: 1px solid var(--pointer-workspace-panel-border, $ui-black-transparent);
+    border-bottom: 1px solid var(--pointer-workspace-panel-border, $ui-black-transparent);
     box-sizing: content-box;
     height: calc(100% - 3.25rem) !important;
+    background-color: var(--pointer-workspace-panel-bg, #fff);
+    color: var(--pointer-workspace-panel-text, #575e75);
+    backdrop-filter: blur(var(--pointer-workspace-panel-blur, 0px)) saturate(1.08);
+    -webkit-backdrop-filter: blur(var(--pointer-workspace-panel-blur, 0px)) saturate(1.08);
 
     /*
         For now, the layout cannot support scrollbars in the category menu.
@@ -65,8 +108,12 @@
 }
 
 .blocks :global(.blocklyFlyout) {
-    border-right: 1px solid $ui-black-transparent;
+    border-right: 1px solid var(--pointer-workspace-panel-border, $ui-black-transparent);
     box-sizing: content-box;
+}
+
+.blocks :global(.scratchCategoryMenuItem.categorySelected) {
+    background-color: var(--pointer-workspace-panel-selected, rgba(47, 111, 228, .12)) !important;
 }
 
 [dir="rtl"] .blocks :global(.blocklyFlyout) {
@@ -74,6 +121,15 @@
     border-left: 1px solid $ui-black-transparent;
 }
 
+
+.blocks :global(.blocklyFlyoutBackground) {
+    fill: var(--pointer-workspace-panel-fill, rgba(249, 249, 249, .8));
+    fill-opacity: 1;
+}
+
+.blocks :global(.blocklyFlyoutLabelText) {
+    fill: var(--pointer-workspace-panel-text, #575e75);
+}
 
 .blocks :global(.blocklyBlockDragSurface) {
     /*
@@ -89,8 +145,19 @@
     Probably will need different solutions for language support later, so
     make the change here instead of in scratch-blocks.
 */
+.blocks :global(.scratchCategoryMenu),
+.blocks :global(.scratchCategoryMenuHorizontal) {
+    background: var(--pointer-workspace-panel-bg, #02050c) !important;
+    color: var(--pointer-workspace-panel-text, #e8f1ff) !important;
+}
+
 .blocks :global(.scratchCategoryMenuItemLabel) {
     font-size: 0.65rem;
+    color: var(--pointer-workspace-panel-text, inherit) !important;
+}
+
+.blocks :global(.scratchCategoryMenuItem:hover .scratchCategoryMenuItemLabel) {
+    color: var(--pointer-workspace-panel-hover-text, #2f6fe4) !important;
 }
 
 .blocks :global(.blocklyMinimalBody) {

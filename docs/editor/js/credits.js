@@ -236,7 +236,7 @@ const AddonHooks = {
 // eslint-disable-next-line import/no-commonjs
 module.exports = {
   APP_NAME: 'PointerEditor',
-  APP_VERSION: '0.2.4.1'
+  APP_VERSION: '0.3.0-Beta'
 };
 
 /***/ }),

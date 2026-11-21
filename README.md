@@ -2,7 +2,7 @@
 
 PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼容编辑器，包含桌面端、网页端、在线协作服务与移动端界面原型。
 
-- 当前版本：0.2.4.1
+- 当前版本：0.3.0 Beta
 - 官网：<https://peditor.ctspace.xyz/>
 - 网页版编辑器：<https://peditor.ctspace.xyz/editor/editor.html>
 - 扩展商店：<https://peditor.ctspace.xyz/extensions/>
@@ -25,6 +25,8 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 - **Windows 文件关联**：注册 `.sb3` / `.sb2` / `.sb`，支持双击打开、`Ctrl+O` 打开、`Ctrl+S` 保存到原文件与 `Ctrl+Shift+S` 另存为。
 - **PointerGuard 协作安全引擎**：实时监控异常锁定、整包同步轰炸和恶意清空；同步前自动保留本地快照，可一键回滚；校验协作项目完整性，协作中拒绝内嵌扩展。
 - **多标签页与版本记录**：同一窗口打开多个作品，标签栏重命名/切换/关闭，每个标签自动保留最近 12 个快照并可恢复。
+- **工作区背景自定义与深色主题**：支持预设、纯色与本地图片背景，可调背景模糊、面板模糊与透明度；深色背景会自动切换编辑器深色主题（顶栏、分类栏、舞台/角色面板、造型/声音资产区与全屏模式）。
+- **云空间**：编辑器内直接上传、下载、重命名和删除云端 .sb3 作品与角色，角色卡片右键即可上传。
 - **全部保存**：一次把所有标签页导出为独立 .sb3 文件。
 - **圆角矩形**：画图工具栏新增圆角矩形，圆角半径 0–80 可调。
 - **多窗口与跨窗口素材**：新建窗口、角色卡片拖拽到另一个窗口。
@@ -35,7 +37,7 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 
 ## 下载
 
-0.2.4.1 安装包、免安装版与网页版静态包：
+0.3.0 Beta 安装包、免安装版与网页版静态包：
 
 国内推荐（123 云盘，免登录、下载更快）：
 
@@ -43,10 +45,10 @@ PointerEditor 是一个基于 TurboWarp scratch-gui 的蓝白主题 Scratch 兼�
 
 GitHub Releases（海外 / 备用）：
 
-- Windows 安装版：[PointerEditor-0.2.4.1-setup.exe](https://github.com/PointerItera/PointerEditor/releases/download/v0.2.4.1/PointerEditor-0.2.4.1-setup.exe)
-- Windows 免安装版：[PointerEditor-0.2.4.1-win64.zip](https://github.com/PointerItera/PointerEditor/releases/download/v0.2.4.1/PointerEditor-0.2.4.1-win64.zip)
-- 网页版静态包：[PointerEditor-0.2.4.1-web.zip](https://github.com/PointerItera/PointerEditor/releases/download/v0.2.4.1/PointerEditor-0.2.4.1-web.zip)
-- Release 页面：<https://github.com/PointerItera/PointerEditor/releases/tag/v0.2.4.1>
+- Windows 安装版：[PointerEditor-0.3.0-Beta-setup.exe](https://github.com/PointerItera/PointerEditor/releases/download/v0.3.0-beta.1/PointerEditor-0.3.0-Beta-setup.exe)
+- Windows 免安装版：[PointerEditor-0.3.0-Beta-win64.zip](https://github.com/PointerItera/PointerEditor/releases/download/v0.3.0-beta.1/PointerEditor-0.3.0-Beta-win64.zip)
+- 网页版静态包：[PointerEditor-0.3.0-Beta-web.zip](https://github.com/PointerItera/PointerEditor/releases/download/v0.3.0-beta.1/PointerEditor-0.3.0-Beta-web.zip)
+- Release 页面：<https://github.com/PointerItera/PointerEditor/releases/tag/v0.3.0-beta.1>
 - 在线使用：<https://peditor.ctspace.xyz/editor/editor.html>
 
 ## 目录结构

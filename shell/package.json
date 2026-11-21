@@ -1,6 +1,6 @@
 {
   "name": "pointer-editor-desktop",
-  "version": "0.2.4",
+  "version": "0.3.0-beta.1",
   "private": true,
   "description": "PointerEditor desktop shell",
   "author": "PointerEditor",
@@ -29,6 +29,7 @@
       "main.cjs",
       "preload.cjs",
       "peagent.cjs",
+      "peagent-messages.cjs",
       "batch-save.cjs",
       "package.json"
     ],
@@ -91,7 +92,7 @@
       }
     ],
     "portable": {
-      "artifactName": "PointerEditor-0.2.4.1-portable.${ext}"
+      "artifactName": "PointerEditor-0.3.0-Beta-portable.${ext}"
     },
     "nsis": {
       "oneClick": false,
@@ -101,7 +102,7 @@
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "PointerEditor",
-      "artifactName": "PointerEditor-0.2.4.1-setup.${ext}",
+      "artifactName": "PointerEditor-0.3.0-Beta-setup.${ext}",
       "deleteAppDataOnUninstall": false,
       "installerLanguages": [
         "zh_CN"

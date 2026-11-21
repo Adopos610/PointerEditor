@@ -359,7 +359,8 @@ const createWindow = async () => {
     if (!url) {
         if (!sharedGuiUrl) {
             const server = await startStaticServer();
-            sharedGuiUrl = `http://127.0.0.1:${server.address().port}/editor.html`;
+            const benchQuery = process.env.POINTER_LOADBENCH ? '?loadbench=1' : '';
+            sharedGuiUrl = `http://127.0.0.1:${server.address().port}/editor.html${benchQuery}`;
         }
         url = sharedGuiUrl;
     }

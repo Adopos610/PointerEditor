@@ -361,6 +361,7 @@ class MenuBar extends React.Component {
             'handleClickSeeInside',
             'handleOpenCloud',
             'handleCloseCloud',
+            'handleOpenCloudSpace',
             'handleOpenPublish',
             'handleClosePublish',
             'handleOpenCollab',
@@ -406,6 +407,9 @@ class MenuBar extends React.Component {
     }
     componentDidMount () {
         this.unmounted = false;
+        if (window.location.search.includes('loadbench=1')) {
+            window.__pointerVm = this.props.vm;
+        }
         document.addEventListener('keydown', this.handleKeyPress);
         window.addEventListener('pointere-account-changed', this.handleAccountChanged);
         window.addEventListener('pointere-points-changed', this.handlePointsChanged);
@@ -722,6 +726,11 @@ class MenuBar extends React.Component {
     }
     handleCloseCloud () {
         this.setState({cloudMenuOpen: false});
+    }
+    handleOpenCloudSpace () {
+        this.setState({cloudMenuOpen: false});
+        this.props.onRequestCloseFile();
+        window.dispatchEvent(new CustomEvent('pointere-cloud-open'));
     }
     handleOpenAbout () {
         this.props.onRequestCloseFile();
@@ -1295,13 +1304,7 @@ class MenuBar extends React.Component {
                                 width={24}
                                 height={24}
                             />
-                            <span className={styles.collapsibleLabel}>
-                                <FormattedMessage
-                                    defaultMessage="云端"
-                                    description="Text for cloud dropdown menu"
-                                    id="pointer.menuBar.cloud"
-                                />
-                            </span>
+                            <span className={styles.collapsibleLabel}>云端</span>
                             <img
                                 src={dropdownCaret}
                                 draggable={false}
@@ -1314,6 +1317,7 @@ class MenuBar extends React.Component {
                                 place={this.props.isRtl ? 'left' : 'right'}
                             >
                                 <MenuSection>
+                                    <MenuItem onClick={this.handleOpenCloudSpace}>云空间</MenuItem>
                                     <MenuItem onClick={this.handleOpenPublish}>
                                         <FormattedMessage
                                             defaultMessage="发布到创客次元"

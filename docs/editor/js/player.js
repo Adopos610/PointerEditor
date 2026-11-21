@@ -527,13 +527,57 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* make sure to keep these in sync with other constants,\ne.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */\n\n/* layout contants from `layout-constants.js` */\n\n/* overridden by src/lib/themes/guiHelpers.js */\n\n/*\n    Contains constants for the z-index values of elements that are part of the global stack context.\n    In other words, z-index values that are \"inside\" a component are not added here.\n    This prevents conflicts between identical z-index values in different components.\n*/\n\n/* Toolbox z-index: 40; set in scratch-blocks */\n\n/* tooltips should go over add buttons if they overlap */\n\n/* monitors go over add buttons */\n\n/* \"ask\" block text input goes above monitors */\n\n/* menu-bar should go over monitors, alerts and tutorials */\n\n/* behind menu-bar */\n\n/* Block drag z-index: 1000; default 50 is overriden in blocks.css */\n\n/* so it is draggable into other panes */\n\n/* behind modals */\n\n/* behind modals */\n\n/* in most interfaces, the context menu is always on top */\n\n.blocks_blocks_2LOZ2 {\n    height: 100%;\n}\n\n.blocks_drag-over_QI1Mw:after {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    opacity: 0.75;\n    background-color: var(--drop-highlight);\n    transition: all 0.25s ease;\n}\n\n.blocks_blocks_2LOZ2 .injectionDiv{\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    border: 1px solid var(--ui-black-transparent);\n    border-top-right-radius: 0.5rem;\n    border-bottom-right-radius: 0.5rem;\n}\n\n[dir=\"rtl\"] .blocks_blocks_2LOZ2 .injectionDiv {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0;\n    border-top-left-radius: 0.5rem;\n    border-bottom-left-radius: 0.5rem;\n}\n\n.blocks_blocks_2LOZ2 .blocklyMainBackground {\n    stroke: none;\n}\n\n.blocks_blocks_2LOZ2 .blocklyToolboxDiv {\n    border-right: 1px solid var(--ui-black-transparent);\n    border-bottom: 1px solid var(--ui-black-transparent);\n    box-sizing: content-box;\n    height: calc(100% - 3.25rem) !important;\n\n    /*\n        For now, the layout cannot support scrollbars in the category menu.\n        The line below works for Edge, the `::-webkit-scrollbar` line\n        below that is for webkit browsers. It isn't possible to do the\n        same for Firefox, so a different solution may be needed for them.\n    */\n    -ms-overflow-style: none;\n}\n\n[dir=\"rtl\"] .blocks_blocks_2LOZ2 .blocklyToolboxDiv {\n    border-right: none;\n    border-left: 1px solid var(--ui-black-transparent);\n}\n\n.blocks_blocks_2LOZ2 .blocklyToolboxDiv::-webkit-scrollbar {\n    display: none;\n}\n\n.blocks_blocks_2LOZ2 .blocklyFlyout {\n    border-right: 1px solid var(--ui-black-transparent);\n    box-sizing: content-box;\n}\n\n[dir=\"rtl\"] .blocks_blocks_2LOZ2 .blocklyFlyout {\n    border-right: none;\n    border-left: 1px solid var(--ui-black-transparent);\n}\n\n.blocks_blocks_2LOZ2 .blocklyBlockDragSurface {\n    /*\n        Fix an issue where the drag surface was preventing hover events for sharing blocks.\n        This does not prevent user interaction on the blocks themselves.\n    */\n    pointer-events: none;\n    z-index: 1000; /* make blocks match gui drag layer */\n}\n\n/*\n    Shrink category font to fit \"My Blocks\" for now.\n    Probably will need different solutions for language support later, so\n    make the change here instead of in scratch-blocks.\n*/\n\n.blocks_blocks_2LOZ2 .scratchCategoryMenuItemLabel {\n    font-size: 0.65rem;\n}\n\n.blocks_blocks_2LOZ2 .blocklyMinimalBody {\n    min-width: auto;\n    min-height: auto;\n}\n", ""]);
+exports.push([module.i, "/* make sure to keep these in sync with other constants,\ne.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */\n\n/* layout contants from `layout-constants.js` */\n\n/* overridden by src/lib/themes/guiHelpers.js */\n\n/*\n    Contains constants for the z-index values of elements that are part of the global stack context.\n    In other words, z-index values that are \"inside\" a component are not added here.\n    This prevents conflicts between identical z-index values in different components.\n*/\n\n/* Toolbox z-index: 40; set in scratch-blocks */\n\n/* tooltips should go over add buttons if they overlap */\n\n/* monitors go over add buttons */\n\n/* \"ask\" block text input goes above monitors */\n\n/* menu-bar should go over monitors, alerts and tutorials */\n\n/* behind menu-bar */\n\n/* Block drag z-index: 1000; default 50 is overriden in blocks.css */\n\n/* so it is draggable into other panes */\n\n/* behind modals */\n\n/* behind modals */\n\n/* in most interfaces, the context menu is always on top */\n\n.blocks_blocksWrap_1nMEh {\n    position: relative;\n    height: 100%;\n    overflow: hidden;\n    border-top-right-radius: 0.5rem;\n    border-bottom-right-radius: 0.5rem;\n}\n\n[dir=\"rtl\"] .blocks_blocksWrap_1nMEh {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0;\n    border-top-left-radius: 0.5rem;\n    border-bottom-left-radius: 0.5rem;\n}\n\n.blocks_workspaceBackground_2T4Vv {\n    position: absolute;\n    inset: -24px;\n    z-index: 0;\n    pointer-events: none;\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: center;\n}\n\n.blocks_blocks_2LOZ2 {\n    position: relative;\n    z-index: 1;\n    height: 100%;\n}\n\n.blocks_darkControls_1xb1Z .blocklyZoom image {\n    filter: invert(1);\n}\n\n.blocks_darkControls_1xb1Z .blocklyScrollbarHandle {\n    fill: var(--pointer-workspace-scrollbar, #cecdce);\n}\n\n.blocks_drag-over_QI1Mw:after {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    opacity: 0.75;\n    background-color: var(--drop-highlight);\n    transition: all 0.25s ease;\n}\n\n.blocks_blocks_2LOZ2 .injectionDiv{\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    border: 1px solid var(--pointer-workspace-panel-border, var(--ui-black-transparent));\n    border-top-right-radius: 0.5rem;\n    border-bottom-right-radius: 0.5rem;\n}\n\n[dir=\"rtl\"] .blocks_blocks_2LOZ2 .injectionDiv {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0;\n    border-top-left-radius: 0.5rem;\n    border-bottom-left-radius: 0.5rem;\n}\n\n.blocks_blocks_2LOZ2 .blocklySvg {\n    background: transparent !important;\n}\n\n.blocks_blocks_2LOZ2 .blocklyMainBackground {\n    stroke: none;\n}\n\n.blocks_blocks_2LOZ2 .blocklyToolboxDiv {\n    border-right: 1px solid var(--pointer-workspace-panel-border, var(--ui-black-transparent));\n    border-bottom: 1px solid var(--pointer-workspace-panel-border, var(--ui-black-transparent));\n    box-sizing: content-box;\n    height: calc(100% - 3.25rem) !important;\n    background-color: var(--pointer-workspace-panel-bg, #fff);\n    color: var(--pointer-workspace-panel-text, #575e75);\n    backdrop-filter: blur(var(--pointer-workspace-panel-blur, 0px)) saturate(1.08);\n    -webkit-backdrop-filter: blur(var(--pointer-workspace-panel-blur, 0px)) saturate(1.08);\n\n    /*\n        For now, the layout cannot support scrollbars in the category menu.\n        The line below works for Edge, the `::-webkit-scrollbar` line\n        below that is for webkit browsers. It isn't possible to do the\n        same for Firefox, so a different solution may be needed for them.\n    */\n    -ms-overflow-style: none;\n}\n\n[dir=\"rtl\"] .blocks_blocks_2LOZ2 .blocklyToolboxDiv {\n    border-right: none;\n    border-left: 1px solid var(--ui-black-transparent);\n}\n\n.blocks_blocks_2LOZ2 .blocklyToolboxDiv::-webkit-scrollbar {\n    display: none;\n}\n\n.blocks_blocks_2LOZ2 .blocklyFlyout {\n    border-right: 1px solid var(--pointer-workspace-panel-border, var(--ui-black-transparent));\n    box-sizing: content-box;\n}\n\n.blocks_blocks_2LOZ2 .scratchCategoryMenuItem.categorySelected {\n    background-color: var(--pointer-workspace-panel-selected, rgba(47, 111, 228, .12)) !important;\n}\n\n[dir=\"rtl\"] .blocks_blocks_2LOZ2 .blocklyFlyout {\n    border-right: none;\n    border-left: 1px solid var(--ui-black-transparent);\n}\n\n.blocks_blocks_2LOZ2 .blocklyFlyoutBackground {\n    fill: var(--pointer-workspace-panel-fill, rgba(249, 249, 249, .8));\n    fill-opacity: 1;\n}\n\n.blocks_blocks_2LOZ2 .blocklyFlyoutLabelText {\n    fill: var(--pointer-workspace-panel-text, #575e75);\n}\n\n.blocks_blocks_2LOZ2 .blocklyBlockDragSurface {\n    /*\n        Fix an issue where the drag surface was preventing hover events for sharing blocks.\n        This does not prevent user interaction on the blocks themselves.\n    */\n    pointer-events: none;\n    z-index: 1000; /* make blocks match gui drag layer */\n}\n\n/*\n    Shrink category font to fit \"My Blocks\" for now.\n    Probably will need different solutions for language support later, so\n    make the change here instead of in scratch-blocks.\n*/\n\n.blocks_blocks_2LOZ2 .scratchCategoryMenu,\n.blocks_blocks_2LOZ2 .scratchCategoryMenuHorizontal {\n    background: var(--pointer-workspace-panel-bg, #02050c) !important;\n    color: var(--pointer-workspace-panel-text, #e8f1ff) !important;\n}\n\n.blocks_blocks_2LOZ2 .scratchCategoryMenuItemLabel {\n    font-size: 0.65rem;\n    color: var(--pointer-workspace-panel-text, inherit) !important;\n}\n\n.blocks_blocks_2LOZ2 .scratchCategoryMenuItem:hover .scratchCategoryMenuItemLabel {\n    color: var(--pointer-workspace-panel-hover-text, #2f6fe4) !important;\n}\n\n.blocks_blocks_2LOZ2 .blocklyMinimalBody {\n    min-width: auto;\n    min-height: auto;\n}\n", ""]);
 
 // exports
 exports.locals = {
+	"blocksWrap": "blocks_blocksWrap_1nMEh",
+	"workspaceBackground": "blocks_workspaceBackground_2T4Vv",
 	"blocks": "blocks_blocks_2LOZ2",
+	"darkControls": "blocks_darkControls_1xb1Z",
 	"drag-over": "blocks_drag-over_QI1Mw",
 	"dragOver": "blocks_drag-over_QI1Mw"
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/blocks/workspace-background-picker.css":
+/*!**********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/components/blocks/workspace-background-picker.css ***!
+  \**********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".workspace-background-picker_picker_3n9LJ {\n    position: absolute;\n    right: 22px;\n    bottom: 42px;\n    z-index: 10;\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n\n.workspace-background-picker_trigger_2EMh6 {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n    height: 32px;\n    padding: 0 11px;\n    border: 1px solid rgba(201, 216, 238, .9);\n    border-radius: 9px;\n    background: rgba(255, 255, 255, .9);\n    color: #47617f;\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n    box-shadow: 0 6px 16px rgba(8, 35, 85, .14);\n    -webkit-backdrop-filter: blur(8px);\n            backdrop-filter: blur(8px);\n}\n\n.workspace-background-picker_trigger_2EMh6:hover { border-color: #8fb6f3; background: #fff; color: #2258b8; }\n\n.workspace-background-picker_triggerDot_1Aub3 {\n    width: 15px;\n    height: 15px;\n    border: 1px solid #c9d8ee;\n    border-radius: 50%;\n    background-color: #fff;\n    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .65);\n}\n\n.workspace-background-picker_panel_19R92 {\n    position: absolute;\n    right: 0;\n    bottom: calc(100% + 8px);\n    width: 320px;\n    max-height: min(72vh, 560px, calc(100vh - 250px));\n    overflow-y: auto;\n    padding: 14px;\n    border: 1px solid #e3edfb;\n    border-radius: 14px;\n    background: #fff;\n    color: #2b4a71;\n    box-shadow: 0 20px 54px rgba(8, 35, 85, .26);\n}\n\n.workspace-background-picker_head_lEkjx {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 12px;\n    margin-bottom: 8px;\n}\n\n.workspace-background-picker_head_lEkjx strong { color: #173a6d; font-size: .84rem; }\n\n.workspace-background-picker_close_3QHHH {\n    width: 26px;\n    height: 26px;\n    border: 0;\n    border-radius: 7px;\n    background: transparent;\n    color: #8ba0ba;\n    font-size: 1rem;\n    line-height: 1;\n    cursor: pointer;\n}\n\n.workspace-background-picker_close_3QHHH:hover { background: #fdecea; color: #c0392b; }\n\n.workspace-background-picker_sectionTitle_2TCgn {\n    margin: 12px 0 6px;\n    color: #93a8c4;\n    font-size: .64rem;\n    font-weight: 700;\n    letter-spacing: .06em;\n}\n\n.workspace-background-picker_presetGrid_3ITS7 {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 7px;\n}\n\n.workspace-background-picker_preset_3kU_R {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n    padding: 5px;\n    border: 1px solid transparent;\n    border-radius: 9px;\n    background: transparent;\n    color: #47617f;\n    font: 600 .64rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n    text-align: center;\n}\n\n.workspace-background-picker_preset_3kU_R:hover { background: #f4f9ff; }\n\n.workspace-background-picker_presetActive_2EFZh {\n    border-color: #2f6fe4;\n    background: #eef6ff;\n    color: #2258b8;\n    box-shadow: 0 0 0 2px rgba(47, 111, 228, .12);\n}\n\n.workspace-background-picker_presetSwatch_30rf7 {\n    display: block;\n    height: 36px;\n    border: 1px solid #dbe7f8;\n    border-radius: 7px;\n    background-size: cover;\n    background-position: center;\n}\n\n.workspace-background-picker_row_yn2kK {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 8px;\n    min-height: 30px;\n    color: #47617f;\n    font-size: .7rem;\n}\n\n.workspace-background-picker_rowActions_2MLzB { display: flex; align-items: center; gap: 6px; }\n\n.workspace-background-picker_colorInput_2xS7o {\n    width: 42px;\n    height: 28px;\n    padding: 0;\n    border: 1px solid #dbe7f8;\n    border-radius: 7px;\n    background: transparent;\n    cursor: pointer;\n}\n\n.workspace-background-picker_smallButton_E7ebG {\n    height: 27px;\n    padding: 0 9px;\n    border: 1px solid #c9d8ee;\n    border-radius: 7px;\n    background: #fff;\n    color: #2f6fe4;\n    font: 600 .65rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.workspace-background-picker_smallButton_E7ebG:hover { background: #eef6ff; }\n\n.workspace-background-picker_fileInput_2aH4q { display: none; }\n\n.workspace-background-picker_sliderRow_2u1wp {\n    display: grid;\n    grid-template-columns: 64px 1fr 42px;\n    align-items: center;\n    gap: 8px;\n    margin-top: 6px;\n    color: #47617f;\n    font-size: .68rem;\n}\n\n.workspace-background-picker_slider_2yknZ {\n    width: 100%;\n    accent-color: #2f6fe4;\n    cursor: pointer;\n}\n\n.workspace-background-picker_message_1gSWP {\n    margin-top: 9px;\n    color: #c0392b;\n    font-size: .66rem;\n    line-height: 1.5;\n}\n\n.workspace-background-picker_reset_359Pi {\n    width: 100%;\n    height: 32px;\n    margin-top: 12px;\n    border: 1px solid #c9d8ee;\n    border-radius: 8px;\n    background: #f7fbff;\n    color: #2f6fe4;\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.workspace-background-picker_reset_359Pi:hover { background: #eef6ff; }\n\n@media (max-width: 720px) {\n    .workspace-background-picker_panel_19R92 { width: 280px; }\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_trigger_2EMh6 {\n    border-color: rgba(255, 255, 255, .18);\n    background: rgba(14, 22, 38, .78);\n    color: rgba(235, 244, 255, .92);\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_trigger_2EMh6:hover {\n    border-color: rgba(255, 255, 255, .3);\n    background: rgba(20, 32, 52, .92);\n    color: #fff;\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_triggerDot_1Aub3 { border-color: rgba(255, 255, 255, .24); }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_panel_19R92 {\n    border-color: rgba(255, 255, 255, .16);\n    background: #101a2c;\n    color: #dbeafe;\n    box-shadow: 0 20px 54px rgba(0, 0, 0, .45);\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_head_lEkjx strong { color: #f0f7ff; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_close_3QHHH { color: #8ba0ba; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_close_3QHHH:hover { background: rgba(255, 255, 255, .08); color: #ff9b8f; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_sectionTitle_2TCgn { color: #7d93b5; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_preset_3kU_R { color: #c9d8ee; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_preset_3kU_R:hover { background: rgba(255, 255, 255, .06); }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_presetActive_2EFZh {\n    border-color: #61a0ff;\n    background: rgba(47, 111, 228, .22);\n    color: #dbeafe;\n    box-shadow: 0 0 0 2px rgba(97, 160, 255, .16);\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_presetSwatch_30rf7 { border-color: rgba(255, 255, 255, .16); }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_row_yn2kK,\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_sliderRow_2u1wp { color: #c9d8ee; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_colorInput_2xS7o { border-color: rgba(255, 255, 255, .16); }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_slider_2yknZ { accent-color: #61a0ff; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_smallButton_E7ebG {\n    border-color: rgba(255, 255, 255, .16);\n    background: #16233a;\n    color: #9ec5ff;\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_smallButton_E7ebG:hover { background: #1e2f4d; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_reset_359Pi {\n    border-color: rgba(255, 255, 255, .16);\n    background: #16233a;\n    color: #9ec5ff;\n}\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_reset_359Pi:hover { background: #1e2f4d; }\n\n.workspace-background-picker_dark_2i4aJ .workspace-background-picker_message_1gSWP { color: #ff9b8f; }\n", ""]);
+
+// exports
+exports.locals = {
+	"picker": "workspace-background-picker_picker_3n9LJ",
+	"trigger": "workspace-background-picker_trigger_2EMh6",
+	"triggerDot": "workspace-background-picker_triggerDot_1Aub3",
+	"panel": "workspace-background-picker_panel_19R92",
+	"head": "workspace-background-picker_head_lEkjx",
+	"close": "workspace-background-picker_close_3QHHH",
+	"sectionTitle": "workspace-background-picker_sectionTitle_2TCgn",
+	"presetGrid": "workspace-background-picker_presetGrid_3ITS7",
+	"preset": "workspace-background-picker_preset_3kU_R",
+	"presetActive": "workspace-background-picker_presetActive_2EFZh",
+	"presetSwatch": "workspace-background-picker_presetSwatch_30rf7",
+	"row": "workspace-background-picker_row_yn2kK",
+	"rowActions": "workspace-background-picker_rowActions_2MLzB",
+	"colorInput": "workspace-background-picker_colorInput_2xS7o",
+	"smallButton": "workspace-background-picker_smallButton_E7ebG",
+	"fileInput": "workspace-background-picker_fileInput_2aH4q",
+	"sliderRow": "workspace-background-picker_sliderRow_2u1wp",
+	"slider": "workspace-background-picker_slider_2yknZ",
+	"message": "workspace-background-picker_message_1gSWP",
+	"reset": "workspace-background-picker_reset_359Pi",
+	"dark": "workspace-background-picker_dark_2i4aJ"
 };
 
 /***/ }),
@@ -1273,6 +1317,28 @@ exports.locals = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/gui/pointer-dark-theme.css":
+/*!**********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/components/gui/pointer-dark-theme.css ***!
+  \**********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/* Dark editor chrome, enabled only when the workspace background is dark. */\n\nbody.pointer-dark-theme {\n    background: #0b1220;\n    color: #e8f1ff;\n}\n\nbody.pointer-dark-theme [class*=\"gui_page-wrapper\"],\nbody.pointer-dark-theme [class*=\"gui_body-wrapper\"] {\n    background-color: #0b1220 !important;\n    color: #e8f1ff;\n}\n\n/* Top menu bar */\n\nbody.pointer-dark-theme [class*=\"menu-bar_menu-bar\"] {\n    background: #0d1626 !important;\n    background-image: none !important;\n    color: #e8f1ff !important;\n    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account\"] {\n    color: #e8f1ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account-button\"] {\n    background: rgba(255, 255, 255, .08) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account-button\"]:hover {\n    background: rgba(255, 255, 255, .14) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu-bar_pointer-e-account-points\"] {\n    background: rgba(97, 160, 255, .2) !important;\n    color: #cfe0ff !important;\n}\n\n/* Project tab strip */\n\nbody.pointer-dark-theme [class*=\"pointer-project-tab-bar_tab-bar\"] {\n    background: #111c33 !important;\n    background-image: none !important;\n    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_batch-button\"],\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_history-button\"] {\n    border-color: rgba(255, 255, 255, .24) !important;\n    background: rgba(255, 255, 255, .06) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_batch-button\"]:hover,\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_history-button\"]:hover {\n    border-color: rgba(255, 255, 255, .45) !important;\n    background: rgba(255, 255, 255, .14) !important;\n    color: #fff !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_tab-add\"] {\n    border-color: rgba(255, 255, 255, .28) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-project-tabs_tab-active\"] {\n    background: rgba(255, 255, 255, .08) !important;\n    border-color: rgba(255, 255, 255, .35) !important;\n}\n\n/* Code / costume / sound tabs */\n\nbody.pointer-dark-theme [class*=\"gui_tab-list\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab_\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #9fb2cc !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab_\"]:hover {\n    background-color: #1a2740 !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab_\"] img {\n    filter: grayscale(100%) brightness(1.6) !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_is-selected\"] {\n    background-color: #0b1220 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #9ec5ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_is-selected\"] img {\n    filter: none !important;\n}\n\n/* Find bar addon */\n\nbody.pointer-dark-theme [class*=\"sa-find-bar\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-bar\"] img {\n    filter: invert(1) brightness(1.2) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-dropdown\"] {\n    background: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #e8f1ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-dropdown\"] li:hover {\n    background: rgba(255, 255, 255, .08) !important;\n}\n\n/* Form inputs across the sprite info and search */\n\nbody.pointer-dark-theme input[class*=\"input_input-form\"],\nbody.pointer-dark-theme input[class*=\"input_\"],\nbody.pointer-dark-theme select,\nbody.pointer-dark-theme textarea {\n    background-color: #0f1a2d !important;\n    color: #e8f1ff !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color-scheme: dark;\n}\n\nbody.pointer-dark-theme input::-ms-input-placeholder, body.pointer-dark-theme textarea::-ms-input-placeholder {\n    color: #7d93b5 !important;\n}\n\nbody.pointer-dark-theme input::placeholder,\nbody.pointer-dark-theme textarea::placeholder {\n    color: #7d93b5 !important;\n}\n\n/* Right hand stage + sprite panel */\n\nbody.pointer-dark-theme [class*=\"gui_stage-and-target-wrapper\"],\nbody.pointer-dark-theme [class*=\"gui_target-wrapper\"],\nbody.pointer-dark-theme [class*=\"target-pane_\"],\nbody.pointer-dark-theme [class*=\"stage-wrapper_stage-wrapper\"] {\n    color: #c9d8ee;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-size-row\"] > * {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-size-toggle-group\"] {\n    background-color: #16233a !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-size-toggle-group\"] img,\nbody.pointer-dark-theme [class*=\"stage-header_stage-button-icon\"],\nbody.pointer-dark-theme [class*=\"stage-header_fullscreen-buttons-row\"] img {\n    filter: brightness(0) invert(1) opacity(.82) !important;\n}\n\nbody.pointer-dark-theme [class*=\"toggle-buttons_button_\"] {\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_stage-header-wrapper-overlay\"] {\n    background-color: #0d1626 !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-wrapper_full-screen\"] {\n    background-color: #0b1220 !important;\n}\n\nbody.pointer-dark-theme span[class*=\"stage-header_stage-button\"] {\n    background: #16233a !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-header_unselect-wrapper\"] {\n    background-color: #16233a !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage_stage-wrapper\"],\nbody.pointer-dark-theme [class*=\"stage_stage_\"] {\n    border-color: rgba(255, 255, 255, .18) !important;\n}\n\nbody.pointer-dark-theme button[class*=\"pointer-fps-monitor_chip_\"] {\n    background: rgba(16, 26, 44, .92) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-pulse\"] {\n    background: #3ddc84 !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-good\"] {\n    color: #4ade80 !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-medium\"] {\n    color: #f2b64a !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-bad\"] {\n    color: #ff7b7b !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chip-label\"] {\n    color: #8ba0ba !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_monitor\"] {\n    background: rgba(13, 22, 38, .96) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_stats\"] div {\n    background: rgba(255, 255, 255, .06) !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\nbody.pointer-dark-theme [class*=\"pointer-fps-monitor_chart-wrap\"] {\n    background: rgba(255, 255, 255, .04) !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\n/* Sprite selector */\n\nbody.pointer-dark-theme [class*=\"sprite-selector_sprite-selector\"] {\n    background-color: #111c33 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-info_sprite-info\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-info_sprite-info\"] img {\n    filter: invert(1) brightness(1.3) opacity(.85) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-info_rotation-select\"] {\n    background-color: #0f1a2d !important;\n    color: #e8f1ff !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_sprite-selector-item\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_sprite-selector-item\"]:hover,\nbody.pointer-dark-theme [class*=\"sprite-selector-item_is-selected\"] {\n    background-color: #1a2740 !important;\n    border-color: #61a0ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_is-selected\"] [class*=\"sprite-selector-item_sprite-info\"] {\n    background-color: #2f6fe4 !important;\n    color: #fff !important;\n}\n\nbody.pointer-dark-theme [class*=\"sprite-selector-item_sprite-name\"] {\n    color: inherit;\n}\n\n/* Stage selector column */\n\nbody.pointer-dark-theme [class*=\"stage-selector_stage-selector\"] {\n    background-color: #111c33 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_header\"] {\n    background-color: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_header-title\"],\nbody.pointer-dark-theme [class*=\"stage-selector_count\"],\nbody.pointer-dark-theme [class*=\"stage-selector_label\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_is-selected\"] [class*=\"stage-selector_header\"] {\n    background-color: #2f6fe4 !important;\n}\n\nbody.pointer-dark-theme [class*=\"stage-selector_costume-canvas\"] {\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\n/* Backpack bar */\n\nbody.pointer-dark-theme [class*=\"backpack_backpack-header\"] {\n    background: #111c33 !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"backpack_backpack-item\"] > div {\n    background: #1a2740 !important;\n}\n\nbody.pointer-dark-theme [class*=\"backpack_status-message\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"backpack_backpack-list\"] {\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\n/* Extension button */\n\nbody.pointer-dark-theme [class*=\"gui_extension-button-container\"] {\n    background: #16233a !important;\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\n/* Costume and sound asset panels */\n\nbody.pointer-dark-theme [class*=\"gui_tab-panel\"] [class*=\"asset-panel_wrapper\"] {\n    background-color: #111c33 !important;\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"gui_tab-panel\"] [class*=\"selector_wrapper\"] {\n    background-color: #0d1626 !important;\n    border-color: rgba(255, 255, 255, .08) !important;\n    color: #c9d8ee !important;\n}\n\n/* Paint editor tool icons: light strokes on the dark palette */\n\nbody.pointer-dark-theme [class*=\"tool-select-base_tool-select-icon\"] {\n    filter: brightness(0) invert(1) opacity(.78) !important;\n}\n\nbody.pointer-dark-theme [class*=\"tool-select-base_is-selected\"] [class*=\"tool-select-icon\"] {\n    filter: brightness(0) invert(1) !important;\n}\n\n/* Sound editor chrome */\n\nbody.pointer-dark-theme [class*=\"sound-editor_effect-button\"],\nbody.pointer-dark-theme [class*=\"sound-editor_tool-button\"],\nbody.pointer-dark-theme [class*=\"sound-editor_trim-button\"],\nbody.pointer-dark-theme [class*=\"sound-editor_duration\"],\nbody.pointer-dark-theme [class*=\"sound-editor_advanced-info\"],\nbody.pointer-dark-theme [class*=\"sound-editor_info-row\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_button_\"] {\n    background: #1a2740 !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_button_\"]:hover {\n    background: #22324f !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_button_\"] img {\n    filter: brightness(0) invert(1) opacity(.75) !important;\n}\n\nbody.pointer-dark-theme [class*=\"sound-editor_waveform-container\"] {\n    background: rgba(133, 92, 214, .2) !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\n/* Right click menus */\n\nbody.pointer-dark-theme [class*=\"context-menu_context-menu\"] {\n    background: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"context-menu_menu-item\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"context-menu_menu-item\"]:hover {\n    background: rgba(255, 255, 255, .08) !important;\n    color: #9ec5ff !important;\n}\n\n/* Addon popups inside the paint editor */\n\nbody.pointer-dark-theme .sa-onion-settings {\n    background: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #c9d8ee !important;\n}\n\n/* Dropdown menus */\n\nbody.pointer-dark-theme [class*=\"menu_menu_\"] {\n    background-color: #101a2c !important;\n    border-color: rgba(255, 255, 255, .16) !important;\n    color: #dbeafe !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu-item\"] {\n    color: #c9d8ee !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu-item\"]:hover,\nbody.pointer-dark-theme [class*=\"menu_menu-item\"].pointer-dark-theme_active_2xXFY,\nbody.pointer-dark-theme [class*=\"menu_menu-item\"].pointer-dark-theme_expanded_NJweq {\n    background-color: rgba(255, 255, 255, .08) !important;\n    color: #9ec5ff !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu-section\"] {\n    border-color: rgba(255, 255, 255, .12) !important;\n}\n\nbody.pointer-dark-theme [class*=\"menu_menu_\"] img {\n    filter: invert(1) brightness(1.15) !important;\n}\n\n/* Make the theme switch immediate for panels and inputs */\n\n[class*=\"stage-selector_stage-selector\"],\n[class*=\"stage-selector_header\"],\n[class*=\"backpack_backpack-header\"],\n[class*=\"pointer-fps-monitor_chip\"],\n[class*=\"sprite-info_sprite-info\"],\ninput[class*=\"input_\"],\nselect,\n[class*=\"sa-find-input\"] {\n    transition: none !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-input\"] {\n    border-color: rgba(255, 255, 255, .16) !important;\n}\n\nbody.pointer-dark-theme #sa-find-input {\n    -webkit-appearance: none !important;\n    -moz-appearance: none !important;\n         appearance: none !important;\n    filter: invert(1);\n    background: #f0e5d2 !important;\n    color: #0f1a2d !important;\n    border: 1px solid #444 !important;\n    box-shadow: none !important;\n}\n\nbody.pointer-dark-theme #sa-find-input::-ms-input-placeholder {\n    color: #555 !important;\n}\n\nbody.pointer-dark-theme #sa-find-input::placeholder {\n    color: #555 !important;\n}\n\nbody.pointer-dark-theme [class*=\"sa-find-wrapper\"],\nbody.pointer-dark-theme [class*=\"sa-find-dropdown-out\"] {\n    background: transparent !important;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"active": "pointer-dark-theme_active_2xXFY",
+	"expanded": "pointer-dark-theme_expanded_NJweq"
+};
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/gui/pointer-project-tab-bar.css":
 /*!***************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/components/gui/pointer-project-tab-bar.css ***!
@@ -1731,7 +1797,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".pointer-account-center_overlay_3jDIN {\n    position: fixed;\n    inset: 0;\n    z-index: 2200;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 24px;\n    background: rgba(9, 28, 60, 0.38);\n    -webkit-backdrop-filter: blur(18px) saturate(120%);\n            backdrop-filter: blur(18px) saturate(120%);\n    animation: pointer-account-center_overlay-in_3zrix 0.22s ease both;\n}\n\n.pointer-account-center_panel_35TsD {\n    width: min(760px, 100%);\n    max-height: 90vh;\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n    border: 1px solid rgba(255, 255, 255, 0.7);\n    border-radius: 20px;\n    background: #f7faff;\n    color: #1d3557;\n    box-shadow: 0 28px 80px rgba(8, 35, 85, 0.34);\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    animation: pointer-account-center_panel-in_36ibH 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) both;\n}\n\n.pointer-account-center_header_2kxs9 {\n    flex: 0 0 auto;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 16px;\n    padding: 16px 22px;\n    color: #fff;\n    background: linear-gradient(135deg, #3f82f5, #2f6fe4 58%, #2258b8);\n}\n\n.pointer-account-center_header_2kxs9 h1 {\n    margin: 2px 0 0;\n    font-size: 1.15rem;\n    font-weight: 700;\n    letter-spacing: 0.01em;\n}\n\n.pointer-account-center_header-kicker_2xOHr {\n    color: rgba(229, 242, 255, 0.72);\n    font-size: 0.68rem;\n    letter-spacing: 0.12em;\n    font-weight: 600;\n}\n\n.pointer-account-center_close__D9Ap {\n    width: 30px;\n    height: 30px;\n    border: 0;\n    border-radius: 8px;\n    background: rgba(255, 255, 255, 0.15);\n    color: #fff;\n    font-size: 1.25rem;\n    line-height: 1;\n    cursor: pointer;\n    transition: background 0.18s ease, transform 0.18s ease;\n}\n\n.pointer-account-center_close__D9Ap:hover { background: rgba(255, 255, 255, 0.28); transform: rotate(90deg); }\n\n.pointer-account-center_body_2GD1- {\n    flex: 1;\n    min-height: 0;\n    padding: 18px 20px 22px;\n    overflow-y: auto;\n}\n\n.pointer-account-center_login-wrap_2TmtH {\n    display: grid;\n    grid-template-columns: 0.9fr 1.1fr;\n    gap: 24px;\n    align-items: center;\n    padding: 12px 8px;\n}\n\n.pointer-account-center_login-intro_aklrD {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 14px;\n}\n\n.pointer-account-center_login-mark_3R_Is {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    width: 58px;\n    height: 58px;\n    border-radius: 16px;\n    background: linear-gradient(145deg, #5e9cff, #2f6fe4);\n    color: #fff;\n    font-size: 1.5rem;\n    font-weight: 800;\n    box-shadow: 0 10px 24px rgba(47, 111, 228, 0.28);\n}\n\n.pointer-account-center_login-intro_aklrD h2 { margin: 0; font-size: 1.25rem; color: #173a6d; }\n\n.pointer-account-center_login-intro_aklrD p { margin: 8px 0 0; color: #6f88aa; font-size: 0.82rem; line-height: 1.7; }\n\n.pointer-account-center_login-form_l16sS { display: flex; flex-direction: column; gap: 12px; }\n\n.pointer-account-center_field_1wysU { display: flex; flex-direction: column; gap: 6px; color: #3d5a80; font-size: 0.8rem; }\n\n.pointer-account-center_field_1wysU span { font-weight: 600; }\n\n.pointer-account-center_field_1wysU input,\n.pointer-account-center_field_1wysU textarea {\n    width: 100%;\n    border: 1px solid #c9d8ee;\n    border-radius: 9px;\n    background: #fff;\n    color: #1d3557;\n    font-size: 0.9rem;\n    font-family: inherit;\n    outline: none;\n    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;\n}\n\n.pointer-account-center_field_1wysU input { height: 40px; padding: 0 12px; }\n\n.pointer-account-center_field_1wysU textarea { padding: 10px 12px; resize: vertical; min-height: 72px; }\n\n.pointer-account-center_field_1wysU input:focus,\n.pointer-account-center_field_1wysU textarea:focus {\n    border-color: #2f6fe4;\n    box-shadow: 0 0 0 3px rgba(47, 111, 228, 0.14);\n}\n\n.pointer-account-center_actions_1xsYU { display: flex; gap: 9px; flex-wrap: wrap; }\n\n.pointer-account-center_primary_2n28K,\n.pointer-account-center_secondary_3pWyW {\n    min-height: 38px;\n    padding: 0 16px;\n    border-radius: 9px;\n    font-family: inherit;\n    font-size: 0.85rem;\n    font-weight: 600;\n    cursor: pointer;\n    transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;\n}\n\n.pointer-account-center_primary_2n28K {\n    border: 1px solid #2f6fe4;\n    background: linear-gradient(180deg, #4b8df7, #2f6fe4);\n    color: #fff;\n    box-shadow: 0 6px 14px rgba(47, 111, 228, 0.22);\n}\n\n.pointer-account-center_primary_2n28K:hover:not(:disabled) { transform: translateY(-1px); background: #2f6fe4; }\n\n.pointer-account-center_primary_2n28K:disabled { opacity: 0.55; cursor: default; box-shadow: none; }\n\n.pointer-account-center_secondary_3pWyW { border: 1px solid #c9d8ee; background: #fff; color: #2f6fe4; }\n\n.pointer-account-center_secondary_3pWyW:hover:not(:disabled) { border-color: #8fb6f3; background: #f4f9ff; }\n\n.pointer-account-center_secondary_3pWyW:disabled { opacity: 0.55; cursor: default; }\n\n.pointer-account-center_link-button_1Yw7S { padding: 0; border: 0; background: transparent; color: #2f6fe4; font: 600 0.78rem \"OPPO Sans\", sans-serif; cursor: pointer; }\n\n.pointer-account-center_link-button_1Yw7S:hover { text-decoration: underline; }\n\n.pointer-account-center_error_1D33p { margin: 0; padding: 8px 10px; border-radius: 8px; background: #fff1f0; color: #c0392b; font-size: 0.78rem; line-height: 1.5; }\n\n.pointer-account-center_success_1lsp8 { margin: 0; padding: 8px 10px; border-radius: 8px; background: #eafaf2; color: #18794a; font-size: 0.78rem; line-height: 1.5; }\n\n.pointer-account-center_hint_ZRlZ1 { margin: 0; color: #7d94b4; font-size: 0.74rem; line-height: 1.6; }\n\n.pointer-account-center_dashboard_3K0Cl { display: flex; flex-direction: column; gap: 14px; }\n\n.pointer-account-center_account-header_Un4ws { display: flex; align-items: center; gap: 11px; padding: 12px 14px; border: 1px solid #d9e7fa; border-radius: 12px; background: #fff; }\n\n.pointer-account-center_avatar_2_tw4 { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; flex: 0 0 auto; border-radius: 12px; background: linear-gradient(145deg, #5e9cff, #2f6fe4); color: #fff; font-size: 1.05rem; font-weight: 800; }\n\n.pointer-account-center_identity_1HR1q { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }\n\n.pointer-account-center_identity_1HR1q strong { font-size: 0.95rem; color: #1d3557; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }\n\n.pointer-account-center_identity_1HR1q span { color: #8298b5; font-size: 0.74rem; }\n\n.pointer-account-center_account-actions_3YClu { display: flex; align-items: center; gap: 12px; }\n\n.pointer-account-center_account-actions_3YClu .pointer-account-center_secondary_3pWyW { min-height: 30px; font-size: 0.75rem; padding: 0 11px; }\n\n.pointer-account-center_tabs_3SAlb { display: flex; gap: 4px; padding: 4px; border-radius: 10px; background: #eaf2ff; }\n\n.pointer-account-center_tab_1smRQ,\n.pointer-account-center_tab-active_3Cwr3 { flex: 1; height: 32px; border: 0; border-radius: 7px; background: transparent; color: #6582a6; font: 600 0.8rem \"OPPO Sans\", sans-serif; cursor: pointer; transition: all 0.18s ease; }\n\n.pointer-account-center_tab_1smRQ:hover { background: rgba(255, 255, 255, 0.6); }\n\n.pointer-account-center_tab-active_3Cwr3 { background: #fff; color: #2258b8; box-shadow: 0 2px 8px rgba(35, 82, 170, 0.12); }\n\n.pointer-account-center_loading-state_1XjUD { padding: 50px 20px; color: #8298b5; text-align: center; font-size: 0.85rem; }\n\n.pointer-account-center_tab-pane_1M44o { display: flex; flex-direction: column; gap: 14px; }\n\n.pointer-account-center_points-hero_2TIxQ { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 14px; color: #fff; background: radial-gradient(circle at 90% 10%, rgba(255,255,255,.22), transparent 32%), linear-gradient(135deg, #4e8ff8, #2f6fe4 54%, #1f55b8); box-shadow: 0 12px 26px rgba(47,111,228,.24); }\n\n.pointer-account-center_points-label_1MI-s { display: block; margin-bottom: 3px; color: rgba(235,245,255,.72); font-size: 0.75rem; }\n\n.pointer-account-center_points-value_2nZ75 { display: block; font-size: 2.15rem; line-height: 1.05; font-weight: 800; letter-spacing: -.05em; }\n\n.pointer-account-center_points-stats_2UGn6 { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }\n\n.pointer-account-center_stat-done_1B3Xb, .pointer-account-center_stat-pending_3bY49 { padding: 4px 8px; border-radius: 999px; color: #fff; font-size: 0.7rem; font-weight: 600; background: rgba(255,255,255,.17); }\n\n.pointer-account-center_stat-pending_3bY49 { background: rgba(255,255,255,.1); color: rgba(238,248,255,.75); }\n\n.pointer-account-center_reward-grid_39apy { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }\n\n.pointer-account-center_reward-card_3Pt1w { display: flex; align-items: center; gap: 10px; min-height: 74px; padding: 11px 12px; border: 1px solid #dce9fb; border-radius: 11px; background: #fff; }\n\n.pointer-account-center_reward-icon_2Gld- { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px; background: #e8f2ff; color: #2f6fe4; font-size: 1rem; }\n\n.pointer-account-center_reward-card_3Pt1w div { flex: 1; min-width: 0; }\n\n.pointer-account-center_reward-card_3Pt1w strong { display: block; font-size: 0.82rem; color: #2a4a72; }\n\n.pointer-account-center_reward-card_3Pt1w p { margin: 3px 0 0; color: #849ab6; font-size: 0.71rem; line-height: 1.45; }\n\n.pointer-account-center_badge-done_3YL9I, .pointer-account-center_badge-pending_1QOKk { flex: 0 0 auto; padding: 3px 6px; border-radius: 5px; font-size: 0.68rem; font-weight: 600; }\n\n.pointer-account-center_badge-done_3YL9I { background: #eafaf2; color: #18794a; }\n\n.pointer-account-center_badge-pending_1QOKk { background: #fff6e7; color: #9a6508; }\n\n.pointer-account-center_section_39UA7 { display: flex; flex-direction: column; gap: 8px; }\n\n.pointer-account-center_section-head__su1H { display: flex; align-items: center; justify-content: space-between; gap: 12px; }\n\n.pointer-account-center_section-head__su1H h3 { margin: 0; color: #2a4a72; font-size: 0.9rem; }\n\n.pointer-account-center_section-head__su1H span { color: #8ba0ba; font-size: 0.72rem; }\n\n.pointer-account-center_address-card_2qhtp { display: flex; flex-direction: column; gap: 3px; padding: 10px 12px; border-radius: 9px; background: #fff; border: 1px solid #dce9fb; }\n\n.pointer-account-center_address-card_2qhtp strong { color: #3a5a82; font-size: 0.8rem; }\n\n.pointer-account-center_address-card_2qhtp span { color: #7e94b0; font-size: 0.75rem; line-height: 1.5; }\n\n.pointer-account-center_address-form_2J-gU { display: flex; flex-direction: column; gap: 9px; padding: 12px; border: 1px solid #dce9fb; border-radius: 10px; background: #fff; }\n\n.pointer-account-center_history-list_1G2Ih, .pointer-account-center_order-list_1NMin { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }\n\n.pointer-account-center_history-list_1G2Ih li { display: flex; align-items: center; gap: 9px; min-height: 34px; padding: 0 10px; border: 1px solid #e5effb; border-radius: 8px; background: #fff; font-size: 0.76rem; }\n\n.pointer-account-center_delta-plus_2gU8V { min-width: 42px; color: #1c9b63; font-weight: 700; }\n\n.pointer-account-center_delta-minus_3a66K { min-width: 42px; color: #c55a45; font-weight: 700; }\n\n.pointer-account-center_history-reason_3fJiw { flex: 1; color: #4c688e; }\n\n.pointer-account-center_history-list_1G2Ih time { color: #96a9c0; font-size: 0.7rem; }\n\n.pointer-account-center_empty_LBlpN { padding: 22px 12px; border: 1px dashed #cfdff5; border-radius: 9px; color: #8ba0ba; font-size: 0.8rem; text-align: center; }\n\n.pointer-account-center_mall-head_358IW { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }\n\n.pointer-account-center_mall-head_358IW h3 { margin: 0; color: #2a4a72; font-size: 1rem; }\n\n.pointer-account-center_mall-head_358IW p { margin: 4px 0 0; color: #8298b5; font-size: 0.75rem; }\n\n.pointer-account-center_mall-head_358IW > strong { color: #2f6fe4; font-size: 1.1rem; }\n\n.pointer-account-center_product-grid_SFfSH { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }\n\n.pointer-account-center_product-card_3XrgT { display: flex; flex-direction: column; gap: 6px; padding: 13px; border: 1px solid #dce9fb; border-radius: 12px; background: #fff; transition: transform 0.2s ease, box-shadow 0.2s ease; }\n\n.pointer-account-center_product-card_3XrgT:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(32, 76, 145, 0.09); }\n\n.pointer-account-center_product-icon_3Fmd4 { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 11px; background: #eaf3ff; color: #2f6fe4; font-size: 1.15rem; font-weight: 700; }\n\n.pointer-account-center_product-card_3XrgT h4 { margin: 2px 0 0; color: #2a4a72; font-size: 0.86rem; }\n\n.pointer-account-center_product-card_3XrgT p { margin: 0; color: #8298b5; font-size: 0.73rem; line-height: 1.5; flex: 1; }\n\n.pointer-account-center_product-meta_3--My { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #7f96b2; font-size: 0.7rem; }\n\n.pointer-account-center_product-meta_3--My strong { color: #2f6fe4; font-size: 0.8rem; }\n\n.pointer-account-center_product-card_3XrgT .pointer-account-center_primary_2n28K { min-height: 32px; margin-top: 2px; font-size: 0.76rem; }\n\n.pointer-account-center_checkout-card_2jwtH { display: flex; gap: 12px; align-items: center; padding: 14px; border-radius: 12px; background: linear-gradient(135deg, #eaf4ff, #f8fbff); border: 1px solid #d4e4f9; }\n\n.pointer-account-center_product-icon-large_8pCG7 { display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; flex: 0 0 auto; border-radius: 14px; background: #fff; color: #2f6fe4; font-size: 1.6rem; box-shadow: 0 5px 14px rgba(35, 82, 170, .1); }\n\n.pointer-account-center_checkout-card_2jwtH div { display: flex; flex-direction: column; gap: 3px; }\n\n.pointer-account-center_checkout-card_2jwtH h3 { margin: 0; color: #2a4a72; font-size: 0.95rem; }\n\n.pointer-account-center_checkout-card_2jwtH p { margin: 0; color: #8298b5; font-size: 0.73rem; line-height: 1.45; }\n\n.pointer-account-center_checkout-card_2jwtH strong { color: #2f6fe4; font-size: 0.88rem; }\n\n.pointer-account-center_checkout-card_2jwtH span { color: #839ab6; font-size: 0.72rem; }\n\n.pointer-account-center_order-list_1NMin li { display: flex; align-items: flex-start; gap: 9px; padding: 10px 11px; border: 1px solid #e2ecfa; border-radius: 9px; background: #fff; }\n\n.pointer-account-center_product-icon-small_3EEzS { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex: 0 0 auto; border-radius: 8px; background: #eaf3ff; color: #2f6fe4; }\n\n.pointer-account-center_order-main_z4rMW { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; color: #879cb7; font-size: 0.71rem; line-height: 1.45; }\n\n.pointer-account-center_order-main_z4rMW strong { color: #2a4a72; font-size: 0.8rem; }\n\n.pointer-account-center_order-main_z4rMW span { overflow: hidden; text-overflow: ellipsis; }\n\n.pointer-account-center_order-status_9kaaZ { flex: 0 0 auto; padding: 3px 7px; border-radius: 5px; background: #eef6ff; color: #4073b8; font-size: 0.68rem; font-weight: 600; }\n\n@keyframes pointer-account-center_overlay-in_3zrix { from { opacity: 0; } to { opacity: 1; } }\n\n@keyframes pointer-account-center_panel-in_36ibH { from { opacity: 0; transform: translateY(12px) scale(0.985); } to { opacity: 1; transform: translateY(0) scale(1); } }\n\n@media (max-width: 680px) {\n    .pointer-account-center_overlay_3jDIN { padding: 10px; }\n    .pointer-account-center_panel_35TsD { max-height: 94vh; }\n    .pointer-account-center_login-wrap_2TmtH { grid-template-columns: 1fr; gap: 18px; }\n    .pointer-account-center_login-intro_aklrD { align-items: center; text-align: center; }\n    .pointer-account-center_reward-grid_39apy, .pointer-account-center_product-grid_SFfSH { grid-template-columns: 1fr; }\n    .pointer-account-center_points-hero_2TIxQ { align-items: flex-start; flex-direction: column; }\n    .pointer-account-center_points-stats_2UGn6 { flex-direction: row; align-items: center; }\n    .pointer-account-center_account-header_Un4ws { align-items: flex-start; flex-wrap: wrap; }\n    .pointer-account-center_account-actions_3YClu { width: 100%; justify-content: flex-end; }\n}\n", ""]);
+exports.push([module.i, ".pointer-account-center_overlay_3jDIN {\n    position: fixed;\n    inset: 0;\n    z-index: 2200;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 24px;\n    background: rgba(9, 28, 60, 0.38);\n    -webkit-backdrop-filter: blur(18px) saturate(120%);\n            backdrop-filter: blur(18px) saturate(120%);\n    animation: pointer-account-center_overlay-in_3zrix 0.22s ease both;\n}\n\n.pointer-account-center_panel_35TsD {\n    width: min(760px, 100%);\n    max-height: 90vh;\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n    border: 1px solid rgba(255, 255, 255, 0.7);\n    border-radius: 20px;\n    background: #f7faff;\n    color: #1d3557;\n    box-shadow: 0 28px 80px rgba(8, 35, 85, 0.34);\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    animation: pointer-account-center_panel-in_36ibH 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) both;\n}\n\n.pointer-account-center_header_2kxs9 {\n    flex: 0 0 auto;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 16px;\n    padding: 16px 22px;\n    color: #fff;\n    background: linear-gradient(135deg, #3f82f5, #2f6fe4 58%, #2258b8);\n}\n\n.pointer-account-center_header_2kxs9 h1 {\n    margin: 2px 0 0;\n    font-size: 1.15rem;\n    font-weight: 700;\n    letter-spacing: 0.01em;\n}\n\n.pointer-account-center_header-kicker_2xOHr {\n    color: rgba(229, 242, 255, 0.72);\n    font-size: 0.68rem;\n    letter-spacing: 0.12em;\n    font-weight: 600;\n}\n\n.pointer-account-center_close__D9Ap {\n    width: 30px;\n    height: 30px;\n    border: 0;\n    border-radius: 8px;\n    background: rgba(255, 255, 255, 0.15);\n    color: #fff;\n    font-size: 1.25rem;\n    line-height: 1;\n    cursor: pointer;\n    transition: background 0.18s ease, transform 0.18s ease;\n}\n\n.pointer-account-center_close__D9Ap:hover { background: rgba(255, 255, 255, 0.28); transform: rotate(90deg); }\n\n.pointer-account-center_body_2GD1- {\n    flex: 1;\n    min-height: 0;\n    padding: 18px 20px 22px;\n    overflow-y: auto;\n}\n\n.pointer-account-center_login-wrap_2TmtH {\n    display: grid;\n    grid-template-columns: 0.9fr 1.1fr;\n    gap: 24px;\n    align-items: center;\n    padding: 12px 8px;\n}\n\n.pointer-account-center_login-intro_aklrD {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 14px;\n}\n\n.pointer-account-center_login-mark_3R_Is {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    width: 58px;\n    height: 58px;\n    border-radius: 16px;\n    background: linear-gradient(145deg, #5e9cff, #2f6fe4);\n    color: #fff;\n    font-size: 1.5rem;\n    font-weight: 800;\n    box-shadow: 0 10px 24px rgba(47, 111, 228, 0.28);\n}\n\n.pointer-account-center_login-intro_aklrD h2 { margin: 0; font-size: 1.25rem; color: #173a6d; }\n\n.pointer-account-center_login-intro_aklrD p { margin: 8px 0 0; color: #6f88aa; font-size: 0.82rem; line-height: 1.7; }\n\n.pointer-account-center_login-form_l16sS { display: flex; flex-direction: column; gap: 12px; }\n\n.pointer-account-center_field_1wysU { display: flex; flex-direction: column; gap: 6px; color: #3d5a80; font-size: 0.8rem; }\n\n.pointer-account-center_field_1wysU span { font-weight: 600; }\n\n.pointer-account-center_field_1wysU input,\n.pointer-account-center_field_1wysU textarea {\n    width: 100%;\n    border: 1px solid #c9d8ee;\n    border-radius: 9px;\n    background: #fff;\n    color: #1d3557;\n    font-size: 0.9rem;\n    font-family: inherit;\n    outline: none;\n    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;\n}\n\n.pointer-account-center_field_1wysU input { height: 40px; padding: 0 12px; }\n\n.pointer-account-center_field_1wysU textarea { padding: 10px 12px; resize: vertical; min-height: 72px; }\n\n.pointer-account-center_field_1wysU input:focus,\n.pointer-account-center_field_1wysU textarea:focus {\n    border-color: #2f6fe4;\n    box-shadow: 0 0 0 3px rgba(47, 111, 228, 0.14);\n}\n\n.pointer-account-center_actions_1xsYU { display: flex; gap: 9px; flex-wrap: wrap; }\n\n.pointer-account-center_primary_2n28K,\n.pointer-account-center_secondary_3pWyW {\n    min-height: 38px;\n    padding: 0 16px;\n    border-radius: 9px;\n    font-family: inherit;\n    font-size: 0.85rem;\n    font-weight: 600;\n    cursor: pointer;\n    transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;\n}\n\n.pointer-account-center_primary_2n28K {\n    border: 1px solid #2f6fe4;\n    background: linear-gradient(180deg, #4b8df7, #2f6fe4);\n    color: #fff;\n    box-shadow: 0 6px 14px rgba(47, 111, 228, 0.22);\n}\n\n.pointer-account-center_primary_2n28K:hover:not(:disabled) { transform: translateY(-1px); background: #2f6fe4; }\n\n.pointer-account-center_primary_2n28K:disabled { opacity: 0.55; cursor: default; box-shadow: none; }\n\n.pointer-account-center_secondary_3pWyW { border: 1px solid #c9d8ee; background: #fff; color: #2f6fe4; }\n\n.pointer-account-center_secondary_3pWyW:hover:not(:disabled) { border-color: #8fb6f3; background: #f4f9ff; }\n\n.pointer-account-center_secondary_3pWyW:disabled { opacity: 0.55; cursor: default; }\n\n.pointer-account-center_link-button_1Yw7S { padding: 0; border: 0; background: transparent; color: #2f6fe4; font: 600 0.78rem \"OPPO Sans\", sans-serif; cursor: pointer; }\n\n.pointer-account-center_link-button_1Yw7S:hover { text-decoration: underline; }\n\n.pointer-account-center_error_1D33p { margin: 0; padding: 8px 10px; border-radius: 8px; background: #fff1f0; color: #c0392b; font-size: 0.78rem; line-height: 1.5; }\n\n.pointer-account-center_success_1lsp8 { margin: 0; padding: 8px 10px; border-radius: 8px; background: #eafaf2; color: #18794a; font-size: 0.78rem; line-height: 1.5; }\n\n.pointer-account-center_hint_ZRlZ1 { margin: 0; color: #7d94b4; font-size: 0.74rem; line-height: 1.6; }\n\n.pointer-account-center_dashboard_3K0Cl { display: flex; flex-direction: column; gap: 14px; }\n\n.pointer-account-center_account-header_Un4ws { display: flex; align-items: center; gap: 11px; padding: 12px 14px; border: 1px solid #d9e7fa; border-radius: 12px; background: #fff; }\n\n.pointer-account-center_avatar_2_tw4 { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; flex: 0 0 auto; border-radius: 12px; background: linear-gradient(145deg, #5e9cff, #2f6fe4); color: #fff; font-size: 1.05rem; font-weight: 800; }\n\n.pointer-account-center_identity_1HR1q { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }\n\n.pointer-account-center_identity_1HR1q strong { font-size: 0.95rem; color: #1d3557; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }\n\n.pointer-account-center_identity_1HR1q span { color: #8298b5; font-size: 0.74rem; }\n\n.pointer-account-center_account-actions_3YClu { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px; }\n\n.pointer-account-center_account-actions_3YClu .pointer-account-center_primary_2n28K { min-height: 30px; font-size: 0.75rem; padding: 0 12px; }\n\n.pointer-account-center_account-actions_3YClu .pointer-account-center_secondary_3pWyW { min-height: 30px; font-size: 0.75rem; padding: 0 11px; }\n\n.pointer-account-center_tabs_3SAlb { display: flex; gap: 4px; padding: 4px; border-radius: 10px; background: #eaf2ff; }\n\n.pointer-account-center_tab_1smRQ,\n.pointer-account-center_tab-active_3Cwr3 { flex: 1; height: 32px; border: 0; border-radius: 7px; background: transparent; color: #6582a6; font: 600 0.8rem \"OPPO Sans\", sans-serif; cursor: pointer; transition: all 0.18s ease; }\n\n.pointer-account-center_tab_1smRQ:hover { background: rgba(255, 255, 255, 0.6); }\n\n.pointer-account-center_tab-active_3Cwr3 { background: #fff; color: #2258b8; box-shadow: 0 2px 8px rgba(35, 82, 170, 0.12); }\n\n.pointer-account-center_loading-state_1XjUD { padding: 50px 20px; color: #8298b5; text-align: center; font-size: 0.85rem; }\n\n.pointer-account-center_tab-pane_1M44o { display: flex; flex-direction: column; gap: 14px; }\n\n.pointer-account-center_points-hero_2TIxQ { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 14px; color: #fff; background: radial-gradient(circle at 90% 10%, rgba(255,255,255,.22), transparent 32%), linear-gradient(135deg, #4e8ff8, #2f6fe4 54%, #1f55b8); box-shadow: 0 12px 26px rgba(47,111,228,.24); }\n\n.pointer-account-center_points-label_1MI-s { display: block; margin-bottom: 3px; color: rgba(235,245,255,.72); font-size: 0.75rem; }\n\n.pointer-account-center_points-value_2nZ75 { display: block; font-size: 2.15rem; line-height: 1.05; font-weight: 800; letter-spacing: -.05em; }\n\n.pointer-account-center_points-stats_2UGn6 { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }\n\n.pointer-account-center_stat-done_1B3Xb, .pointer-account-center_stat-pending_3bY49 { padding: 4px 8px; border-radius: 999px; color: #fff; font-size: 0.7rem; font-weight: 600; background: rgba(255,255,255,.17); }\n\n.pointer-account-center_stat-pending_3bY49 { background: rgba(255,255,255,.1); color: rgba(238,248,255,.75); }\n\n.pointer-account-center_reward-grid_39apy { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }\n\n.pointer-account-center_reward-card_3Pt1w { display: flex; align-items: center; gap: 10px; min-height: 74px; padding: 11px 12px; border: 1px solid #dce9fb; border-radius: 11px; background: #fff; }\n\n.pointer-account-center_reward-icon_2Gld- { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px; background: #e8f2ff; color: #2f6fe4; font-size: 1rem; }\n\n.pointer-account-center_reward-card_3Pt1w div { flex: 1; min-width: 0; }\n\n.pointer-account-center_reward-card_3Pt1w strong { display: block; font-size: 0.82rem; color: #2a4a72; }\n\n.pointer-account-center_reward-card_3Pt1w p { margin: 3px 0 0; color: #849ab6; font-size: 0.71rem; line-height: 1.45; }\n\n.pointer-account-center_badge-done_3YL9I, .pointer-account-center_badge-pending_1QOKk { flex: 0 0 auto; padding: 3px 6px; border-radius: 5px; font-size: 0.68rem; font-weight: 600; }\n\n.pointer-account-center_badge-done_3YL9I { background: #eafaf2; color: #18794a; }\n\n.pointer-account-center_badge-pending_1QOKk { background: #fff6e7; color: #9a6508; }\n\n.pointer-account-center_section_39UA7 { display: flex; flex-direction: column; gap: 8px; }\n\n.pointer-account-center_section-head__su1H { display: flex; align-items: center; justify-content: space-between; gap: 12px; }\n\n.pointer-account-center_section-head__su1H h3 { margin: 0; color: #2a4a72; font-size: 0.9rem; }\n\n.pointer-account-center_section-head__su1H span { color: #8ba0ba; font-size: 0.72rem; }\n\n.pointer-account-center_address-card_2qhtp { display: flex; flex-direction: column; gap: 3px; padding: 10px 12px; border-radius: 9px; background: #fff; border: 1px solid #dce9fb; }\n\n.pointer-account-center_address-card_2qhtp strong { color: #3a5a82; font-size: 0.8rem; }\n\n.pointer-account-center_address-card_2qhtp span { color: #7e94b0; font-size: 0.75rem; line-height: 1.5; }\n\n.pointer-account-center_address-form_2J-gU { display: flex; flex-direction: column; gap: 9px; padding: 12px; border: 1px solid #dce9fb; border-radius: 10px; background: #fff; }\n\n.pointer-account-center_history-list_1G2Ih, .pointer-account-center_order-list_1NMin { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }\n\n.pointer-account-center_history-list_1G2Ih li { display: flex; align-items: center; gap: 9px; min-height: 34px; padding: 0 10px; border: 1px solid #e5effb; border-radius: 8px; background: #fff; font-size: 0.76rem; }\n\n.pointer-account-center_delta-plus_2gU8V { min-width: 42px; color: #1c9b63; font-weight: 700; }\n\n.pointer-account-center_delta-minus_3a66K { min-width: 42px; color: #c55a45; font-weight: 700; }\n\n.pointer-account-center_history-reason_3fJiw { flex: 1; color: #4c688e; }\n\n.pointer-account-center_history-list_1G2Ih time { color: #96a9c0; font-size: 0.7rem; }\n\n.pointer-account-center_empty_LBlpN { padding: 22px 12px; border: 1px dashed #cfdff5; border-radius: 9px; color: #8ba0ba; font-size: 0.8rem; text-align: center; }\n\n.pointer-account-center_mall-head_358IW { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }\n\n.pointer-account-center_mall-head_358IW h3 { margin: 0; color: #2a4a72; font-size: 1rem; }\n\n.pointer-account-center_mall-head_358IW p { margin: 4px 0 0; color: #8298b5; font-size: 0.75rem; }\n\n.pointer-account-center_mall-head_358IW > strong { color: #2f6fe4; font-size: 1.1rem; }\n\n.pointer-account-center_product-grid_SFfSH { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }\n\n.pointer-account-center_product-card_3XrgT { display: flex; flex-direction: column; gap: 6px; padding: 13px; border: 1px solid #dce9fb; border-radius: 12px; background: #fff; transition: transform 0.2s ease, box-shadow 0.2s ease; }\n\n.pointer-account-center_product-card_3XrgT:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(32, 76, 145, 0.09); }\n\n.pointer-account-center_product-icon_3Fmd4 { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 11px; background: #eaf3ff; color: #2f6fe4; font-size: 1.15rem; font-weight: 700; }\n\n.pointer-account-center_product-card_3XrgT h4 { margin: 2px 0 0; color: #2a4a72; font-size: 0.86rem; }\n\n.pointer-account-center_product-card_3XrgT p { margin: 0; color: #8298b5; font-size: 0.73rem; line-height: 1.5; flex: 1; }\n\n.pointer-account-center_product-meta_3--My { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #7f96b2; font-size: 0.7rem; }\n\n.pointer-account-center_product-meta_3--My strong { color: #2f6fe4; font-size: 0.8rem; }\n\n.pointer-account-center_product-card_3XrgT .pointer-account-center_primary_2n28K { min-height: 32px; margin-top: 2px; font-size: 0.76rem; }\n\n.pointer-account-center_checkout-card_2jwtH { display: flex; gap: 12px; align-items: center; padding: 14px; border-radius: 12px; background: linear-gradient(135deg, #eaf4ff, #f8fbff); border: 1px solid #d4e4f9; }\n\n.pointer-account-center_product-icon-large_8pCG7 { display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; flex: 0 0 auto; border-radius: 14px; background: #fff; color: #2f6fe4; font-size: 1.6rem; box-shadow: 0 5px 14px rgba(35, 82, 170, .1); }\n\n.pointer-account-center_checkout-card_2jwtH div { display: flex; flex-direction: column; gap: 3px; }\n\n.pointer-account-center_checkout-card_2jwtH h3 { margin: 0; color: #2a4a72; font-size: 0.95rem; }\n\n.pointer-account-center_checkout-card_2jwtH p { margin: 0; color: #8298b5; font-size: 0.73rem; line-height: 1.45; }\n\n.pointer-account-center_checkout-card_2jwtH strong { color: #2f6fe4; font-size: 0.88rem; }\n\n.pointer-account-center_checkout-card_2jwtH span { color: #839ab6; font-size: 0.72rem; }\n\n.pointer-account-center_order-list_1NMin li { display: flex; align-items: flex-start; gap: 9px; padding: 10px 11px; border: 1px solid #e2ecfa; border-radius: 9px; background: #fff; }\n\n.pointer-account-center_product-icon-small_3EEzS { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex: 0 0 auto; border-radius: 8px; background: #eaf3ff; color: #2f6fe4; }\n\n.pointer-account-center_order-main_z4rMW { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; color: #879cb7; font-size: 0.71rem; line-height: 1.45; }\n\n.pointer-account-center_order-main_z4rMW strong { color: #2a4a72; font-size: 0.8rem; }\n\n.pointer-account-center_order-main_z4rMW span { overflow: hidden; text-overflow: ellipsis; }\n\n.pointer-account-center_order-status_9kaaZ { flex: 0 0 auto; padding: 3px 7px; border-radius: 5px; background: #eef6ff; color: #4073b8; font-size: 0.68rem; font-weight: 600; }\n\n@keyframes pointer-account-center_overlay-in_3zrix { from { opacity: 0; } to { opacity: 1; } }\n\n@keyframes pointer-account-center_panel-in_36ibH { from { opacity: 0; transform: translateY(12px) scale(0.985); } to { opacity: 1; transform: translateY(0) scale(1); } }\n\n@media (max-width: 680px) {\n    .pointer-account-center_overlay_3jDIN { padding: 10px; }\n    .pointer-account-center_panel_35TsD { max-height: 94vh; }\n    .pointer-account-center_login-wrap_2TmtH { grid-template-columns: 1fr; gap: 18px; }\n    .pointer-account-center_login-intro_aklrD { align-items: center; text-align: center; }\n    .pointer-account-center_reward-grid_39apy, .pointer-account-center_product-grid_SFfSH { grid-template-columns: 1fr; }\n    .pointer-account-center_points-hero_2TIxQ { align-items: flex-start; flex-direction: column; }\n    .pointer-account-center_points-stats_2UGn6 { flex-direction: row; align-items: center; }\n    .pointer-account-center_account-header_Un4ws { align-items: flex-start; flex-wrap: wrap; }\n    .pointer-account-center_account-actions_3YClu { width: 100%; justify-content: flex-end; }\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -1842,6 +1908,53 @@ exports.locals = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/menu-bar/pointer-cloud-modal.css":
+/*!****************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/components/menu-bar/pointer-cloud-modal.css ***!
+  \****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".pointer-cloud-modal_overlay_1YDk1 {\n    position: fixed;\n    inset: 0;\n    z-index: 2400;\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n    background:\n        radial-gradient(circle at 8% 0%, #e8f2ff 0, transparent 34%),\n        radial-gradient(circle at 92% 8%, #eef5ff 0, transparent 30%),\n        #f2f7ff;\n}\n\n.pointer-cloud-modal_panel_NhoZN {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n    background: transparent;\n    color: #2b4a71;\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n\n.pointer-cloud-modal_header_1GJn4 {\n    flex: 0 0 auto;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 16px;\n    padding: 18px 32px;\n    border-bottom: 1px solid #e3edfb;\n    background: rgba(255, 255, 255, .92);\n    -webkit-backdrop-filter: blur(14px);\n            backdrop-filter: blur(14px);\n}\n\n.pointer-cloud-modal_header_1GJn4 strong { display: block; color: #173a6d; font-size: 1.12rem; letter-spacing: -.01em; }\n\n.pointer-cloud-modal_header_1GJn4 span { display: block; margin-top: 2px; color: #8ba0ba; font-size: .7rem; }\n\n.pointer-cloud-modal_close_2mEmE {\n    width: 34px;\n    height: 34px;\n    border: 1px solid #dbe7f8;\n    border-radius: 9px;\n    background: #fff;\n    color: #6b7f9b;\n    font-size: 1.2rem;\n    line-height: 1;\n    cursor: pointer;\n}\n\n.pointer-cloud-modal_close_2mEmE:hover { border-color: #f3c7c1; background: #fdecea; color: #c0392b; }\n\n.pointer-cloud-modal_content_1fjdf {\n    flex: 1;\n    min-height: 0;\n    width: 100%;\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 20px 28px 24px;\n    display: flex;\n    flex-direction: column;\n    box-sizing: border-box;\n}\n\n.pointer-cloud-modal_tabs_3PShc {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n    flex: 0 0 auto;\n}\n\n.pointer-cloud-modal_tab_A5Tkc,\n.pointer-cloud-modal_tabActive_2AG_E {\n    height: 32px;\n    padding: 0 15px;\n    border: 1px solid #c9d8ee;\n    border-radius: 8px;\n    background: #fff;\n    color: #47617f;\n    font: 600 .74rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.pointer-cloud-modal_tabActive_2AG_E {\n    border-color: #2f6fe4;\n    background: #eef6ff;\n    color: #2258b8;\n}\n\n.pointer-cloud-modal_count_14nf0 { color: #93a8c4; font-size: .68rem; }\n\n.pointer-cloud-modal_refresh_-AhKX {\n    height: 30px;\n    padding: 0 11px;\n    border: 1px solid #c9d8ee;\n    border-radius: 8px;\n    background: #fff;\n    color: #47617f;\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.pointer-cloud-modal_refresh_-AhKX:hover { background: #eef6ff; color: #2f6fe4; }\n\n.pointer-cloud-modal_refresh_-AhKX:disabled { opacity: .5; cursor: default; }\n\n.pointer-cloud-modal_quota_2s-qp {\n    flex: 0 0 auto;\n    max-width: 520px;\n    padding-top: 16px;\n}\n\n.pointer-cloud-modal_quotaHead_3slFt {\n    display: flex;\n    justify-content: space-between;\n    gap: 12px;\n    color: #6b7f9b;\n    font-size: .7rem;\n}\n\n.pointer-cloud-modal_quotaBar_2YE9j {\n    overflow: hidden;\n    height: 8px;\n    margin-top: 6px;\n    border-radius: 999px;\n    background: #e6f0fc;\n}\n\n.pointer-cloud-modal_quotaFill_2AqE- {\n    height: 100%;\n    width: 0;\n    border-radius: inherit;\n    background: linear-gradient(90deg, #2f6fe4, #61a0ff);\n    transition: width .25s ease;\n}\n\n.pointer-cloud-modal_actions_2jLRF {\n    flex: 0 0 auto;\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    margin-top: 16px;\n    padding-bottom: 14px;\n    border-bottom: 1px solid #e3edfb;\n}\n\n.pointer-cloud-modal_primary_2EpSR {\n    height: 34px;\n    padding: 0 15px;\n    border: 1px solid #2f6fe4;\n    border-radius: 8px;\n    background: #2f6fe4;\n    color: #fff;\n    font: 600 .74rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.pointer-cloud-modal_primary_2EpSR:hover { background: #2258b8; }\n\n.pointer-cloud-modal_primary_2EpSR:disabled { opacity: .5; cursor: default; }\n\n.pointer-cloud-modal_hint_3cYna { color: #93a8c4; font-size: .68rem; }\n\n.pointer-cloud-modal_spacer_nY0Lt { flex: 1; }\n\n.pointer-cloud-modal_error_fMh94 {\n    flex: 0 0 auto;\n    margin-top: 12px;\n    padding: 9px 12px;\n    border: 1px solid #f3c7c1;\n    border-radius: 9px;\n    background: #fdecea;\n    color: #7a2a20;\n    font-size: .72rem;\n}\n\n.pointer-cloud-modal_notice_3sWFX {\n    flex: 0 0 auto;\n    margin-top: 12px;\n    padding: 9px 12px;\n    border: 1px solid #bfe9d5;\n    border-radius: 9px;\n    background: #eafaf2;\n    color: #18794a;\n    font-size: .72rem;\n}\n\n.pointer-cloud-modal_empty_3bbVd {\n    margin-top: 18px;\n    padding: 48px 16px;\n    border: 1px dashed #d8e6fa;\n    border-radius: 12px;\n    background: rgba(255, 255, 255, .5);\n    color: #93a8c4;\n    font-size: .76rem;\n    text-align: center;\n}\n\n.pointer-cloud-modal_list_3qPT1 {\n    flex: 1;\n    min-height: 0;\n    margin: 14px 0 0;\n    padding: 0 4px 8px 0;\n    overflow-y: auto;\n    list-style: none;\n    display: grid;\n    align-content: start;\n    gap: 8px;\n}\n\n.pointer-cloud-modal_item_11rNx {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 14px;\n    padding: 14px 16px;\n    border: 1px solid #e3edfb;\n    border-radius: 11px;\n    background: rgba(255, 255, 255, .92);\n    transition: border-color .16s ease, box-shadow .16s ease;\n}\n\n.pointer-cloud-modal_item_11rNx:hover {\n    border-color: #c9dcf7;\n    box-shadow: 0 8px 20px rgba(31, 85, 184, .08);\n}\n\n.pointer-cloud-modal_itemInfo_54e98 { min-width: 0; display: flex; flex-direction: column; gap: 3px; }\n\n.pointer-cloud-modal_itemInfo_54e98 strong {\n    overflow: hidden;\n    color: #2a4a72;\n    font-size: .84rem;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n\n.pointer-cloud-modal_itemInfo_54e98 span { color: #93a8c4; font-size: .68rem; }\n\n.pointer-cloud-modal_itemActions_2_lGe { display: flex; flex-wrap: wrap; gap: 6px; flex: 0 0 auto; }\n\n.pointer-cloud-modal_smallButton_1OV1B,\n.pointer-cloud-modal_danger_2Wi8w {\n    height: 30px;\n    padding: 0 11px;\n    border: 1px solid #c9d8ee;\n    border-radius: 7px;\n    background: #fff;\n    color: #2f6fe4;\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.pointer-cloud-modal_smallButton_1OV1B:hover { background: #eef6ff; }\n\n.pointer-cloud-modal_danger_2Wi8w { border-color: #f3c7c1; color: #c0392b; }\n\n.pointer-cloud-modal_danger_2Wi8w:hover { background: #fdecea; }\n\n.pointer-cloud-modal_smallButton_1OV1B:disabled,\n.pointer-cloud-modal_danger_2Wi8w:disabled { opacity: .5; cursor: default; }\n\n@media (max-width: 720px) {\n    .pointer-cloud-modal_header_1GJn4 { padding: 14px 18px; }\n    .pointer-cloud-modal_content_1fjdf { padding: 14px 16px 18px; }\n    .pointer-cloud-modal_item_11rNx { align-items: flex-start; flex-direction: column; }\n    .pointer-cloud-modal_itemActions_2_lGe { width: 100%; }\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"overlay": "pointer-cloud-modal_overlay_1YDk1",
+	"panel": "pointer-cloud-modal_panel_NhoZN",
+	"header": "pointer-cloud-modal_header_1GJn4",
+	"close": "pointer-cloud-modal_close_2mEmE",
+	"content": "pointer-cloud-modal_content_1fjdf",
+	"tabs": "pointer-cloud-modal_tabs_3PShc",
+	"tab": "pointer-cloud-modal_tab_A5Tkc",
+	"tabActive": "pointer-cloud-modal_tabActive_2AG_E",
+	"count": "pointer-cloud-modal_count_14nf0",
+	"refresh": "pointer-cloud-modal_refresh_-AhKX",
+	"quota": "pointer-cloud-modal_quota_2s-qp",
+	"quotaHead": "pointer-cloud-modal_quotaHead_3slFt",
+	"quotaBar": "pointer-cloud-modal_quotaBar_2YE9j",
+	"quotaFill": "pointer-cloud-modal_quotaFill_2AqE-",
+	"actions": "pointer-cloud-modal_actions_2jLRF",
+	"primary": "pointer-cloud-modal_primary_2EpSR",
+	"hint": "pointer-cloud-modal_hint_3cYna",
+	"spacer": "pointer-cloud-modal_spacer_nY0Lt",
+	"error": "pointer-cloud-modal_error_fMh94",
+	"notice": "pointer-cloud-modal_notice_3sWFX",
+	"empty": "pointer-cloud-modal_empty_3bbVd",
+	"list": "pointer-cloud-modal_list_3qPT1",
+	"item": "pointer-cloud-modal_item_11rNx",
+	"itemInfo": "pointer-cloud-modal_itemInfo_54e98",
+	"itemActions": "pointer-cloud-modal_itemActions_2_lGe",
+	"smallButton": "pointer-cloud-modal_smallButton_1OV1B",
+	"danger": "pointer-cloud-modal_danger_2Wi8w"
+};
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/menu-bar/pointer-cloud-notices.css":
 /*!******************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/components/menu-bar/pointer-cloud-notices.css ***!
@@ -1854,7 +1967,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".pointer-cloud-notices_overlay_uF4mF {\n    position: fixed;\n    inset: 0;\n    z-index: 2400;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 22px;\n    background: rgba(9, 28, 60, .34);\n    -webkit-backdrop-filter: blur(18px) saturate(120%);\n            backdrop-filter: blur(18px) saturate(120%);\n    animation: pointer-cloud-notices_notice-overlay-in_26PuB .2s ease both;\n}\n\n.pointer-cloud-notices_panel_3SPZi {\n    width: min(520px, 100%);\n    max-height: 82vh;\n    overflow-y: auto;\n    padding: 0 0 18px;\n    border: 1px solid rgba(255, 255, 255, .8);\n    border-radius: 16px;\n    background: #fff;\n    color: #2b4a71;\n    box-shadow: 0 28px 80px rgba(8, 35, 85, .34);\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    animation: pointer-cloud-notices_notice-panel-in_2_5sh .26s cubic-bezier(.2, .8, .2, 1) both;\n}\n\n.pointer-cloud-notices_notice-head_exEKU {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 12px 16px;\n    border-bottom: 1px solid #e3edfb;\n    background: #f4f9ff;\n}\n\n.pointer-cloud-notices_notice-update_2TIv4 { background: #e8f2ff; }\n\n.pointer-cloud-notices_notice-warning_1o1XO { background: #fff2e2; }\n\n.pointer-cloud-notices_notice-label_3zTEC {\n    padding: 3px 9px;\n    border-radius: 999px;\n    background: #2f6fe4;\n    color: #fff;\n    font-size: .62rem;\n    font-weight: 700;\n}\n\n.pointer-cloud-notices_notice-update_2TIv4 .pointer-cloud-notices_notice-label_3zTEC { background: #2258b8; }\n\n.pointer-cloud-notices_notice-warning_1o1XO .pointer-cloud-notices_notice-label_3zTEC { background: #c47b1e; }\n\n.pointer-cloud-notices_close_2RizT {\n    width: 28px;\n    height: 28px;\n    border: 0;\n    border-radius: 7px;\n    background: transparent;\n    color: #8ba0ba;\n    font-size: 1.1rem;\n    line-height: 1;\n    cursor: pointer;\n}\n\n.pointer-cloud-notices_close_2RizT:hover { background: #fdecea; color: #c0392b; }\n\n.pointer-cloud-notices_panel_3SPZi h2 {\n    margin: 18px 22px 10px;\n    color: #173a6d;\n    font-size: 1.14rem;\n    line-height: 1.45;\n}\n\n.pointer-cloud-notices_notice-body_3d5u_ {\n    padding: 0 22px;\n    color: #4b678c;\n    font-size: .84rem;\n    line-height: 1.75;\n    white-space: pre-wrap;\n    word-break: break-word;\n}\n\n.pointer-cloud-notices_notice-footer_38fou {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 12px;\n    margin-top: 18px;\n    padding: 0 22px;\n}\n\n.pointer-cloud-notices_more_Yrm9l { color: #93a8c4; font-size: .68rem; }\n\n.pointer-cloud-notices_primary_2JeZn,\n.pointer-cloud-notices_primary-small_1sKd9 {\n    border: 1px solid #2f6fe4;\n    border-radius: 8px;\n    background: #2f6fe4;\n    color: #fff;\n    font: 600 .78rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.pointer-cloud-notices_primary_2JeZn { height: 36px; padding: 0 20px; }\n\n.pointer-cloud-notices_primary_2JeZn:hover,\n.pointer-cloud-notices_primary-small_1sKd9:hover { background: #2258b8; }\n\n.pointer-cloud-notices_primary-small_1sKd9 { height: 30px; padding: 0 12px; font-size: .72rem; }\n\n.pointer-cloud-notices_ghost_lpjqb {\n    height: 30px;\n    padding: 0 10px;\n    border: 0;\n    border-radius: 7px;\n    background: transparent;\n    color: #7d94b4;\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.pointer-cloud-notices_ghost_lpjqb:hover { background: #eef4fc; color: #2f6fe4; }\n\n.pointer-cloud-notices_update-banner_Tc5vu {\n    position: fixed;\n    left: 50%;\n    bottom: 22px;\n    z-index: 2350;\n    display: flex;\n    align-items: center;\n    gap: 14px;\n    width: min(560px, calc(100vw - 24px));\n    padding: 10px 12px 10px 16px;\n    border: 1px solid #cfe0f7;\n    border-radius: 14px;\n    background: #fff;\n    box-shadow: 0 16px 42px rgba(8, 35, 85, .2);\n    transform: translateX(-50%);\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    animation: pointer-cloud-notices_update-in_20pAX .3s cubic-bezier(.2, .9, .2, 1) both;\n}\n\n.pointer-cloud-notices_update-text_1Bhxp { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }\n\n.pointer-cloud-notices_update-text_1Bhxp strong { color: #173a6d; font-size: .8rem; }\n\n.pointer-cloud-notices_update-text_1Bhxp span { color: #8ba0ba; font-size: .65rem; }\n\n.pointer-cloud-notices_update-actions_e5d3I { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; }\n\n.pointer-cloud-notices_banner-close_2nQYz {\n    width: 24px;\n    height: 24px;\n    border: 0;\n    border-radius: 6px;\n    background: transparent;\n    color: #8ba0ba;\n    font-size: .9rem;\n    cursor: pointer;\n}\n\n.pointer-cloud-notices_banner-close_2nQYz:hover { background: #fdecea; color: #c0392b; }\n\n@keyframes pointer-cloud-notices_notice-overlay-in_26PuB { from { opacity: 0; } to { opacity: 1; } }\n\n@keyframes pointer-cloud-notices_notice-panel-in_2_5sh {\n    from { opacity: 0; transform: translateY(10px) scale(.985); }\n    to { opacity: 1; transform: translateY(0) scale(1); }\n}\n\n@keyframes pointer-cloud-notices_update-in_20pAX {\n    from { opacity: 0; transform: translate(-50%, 8px); }\n    to { opacity: 1; transform: translate(-50%, 0); }\n}\n\n@media (max-width: 600px) {\n    .pointer-cloud-notices_overlay_uF4mF { padding: 12px; }\n    .pointer-cloud-notices_panel_3SPZi h2 { margin: 15px 16px 8px; }\n    .pointer-cloud-notices_notice-body_3d5u_ { padding: 0 16px; }\n    .pointer-cloud-notices_notice-footer_38fou { padding: 0 16px; }\n    .pointer-cloud-notices_update-banner_Tc5vu { flex-direction: column; align-items: stretch; gap: 8px; }\n    .pointer-cloud-notices_update-actions_e5d3I { justify-content: flex-end; }\n}\n", ""]);
+exports.push([module.i, ".pointer-cloud-notices_overlay_uF4mF {\n    position: fixed;\n    inset: 0;\n    z-index: 3000;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 22px;\n    background: rgba(9, 28, 60, .34);\n    -webkit-backdrop-filter: blur(18px) saturate(120%);\n            backdrop-filter: blur(18px) saturate(120%);\n    animation: pointer-cloud-notices_notice-overlay-in_26PuB .2s ease both;\n}\n\n.pointer-cloud-notices_panel_3SPZi {\n    width: min(520px, 100%);\n    max-height: 82vh;\n    overflow-y: auto;\n    padding: 0 0 18px;\n    border: 1px solid rgba(255, 255, 255, .8);\n    border-radius: 16px;\n    background: #fff;\n    color: #2b4a71;\n    box-shadow: 0 28px 80px rgba(8, 35, 85, .34);\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    animation: pointer-cloud-notices_notice-panel-in_2_5sh .26s cubic-bezier(.2, .8, .2, 1) both;\n}\n\n.pointer-cloud-notices_notice-head_exEKU {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 12px 16px;\n    border-bottom: 1px solid #e3edfb;\n    background: #f4f9ff;\n}\n\n.pointer-cloud-notices_notice-update_2TIv4 { background: #e8f2ff; }\n\n.pointer-cloud-notices_notice-warning_1o1XO { background: #fff2e2; }\n\n.pointer-cloud-notices_notice-label_3zTEC {\n    padding: 3px 9px;\n    border-radius: 999px;\n    background: #2f6fe4;\n    color: #fff;\n    font-size: .62rem;\n    font-weight: 700;\n}\n\n.pointer-cloud-notices_notice-update_2TIv4 .pointer-cloud-notices_notice-label_3zTEC { background: #2258b8; }\n\n.pointer-cloud-notices_notice-warning_1o1XO .pointer-cloud-notices_notice-label_3zTEC { background: #c47b1e; }\n\n.pointer-cloud-notices_close_2RizT {\n    width: 28px;\n    height: 28px;\n    border: 0;\n    border-radius: 7px;\n    background: transparent;\n    color: #8ba0ba;\n    font-size: 1.1rem;\n    line-height: 1;\n    cursor: pointer;\n}\n\n.pointer-cloud-notices_close_2RizT:hover { background: #fdecea; color: #c0392b; }\n\n.pointer-cloud-notices_panel_3SPZi h2 {\n    margin: 18px 22px 10px;\n    color: #173a6d;\n    font-size: 1.14rem;\n    line-height: 1.45;\n}\n\n.pointer-cloud-notices_notice-body_3d5u_ {\n    padding: 0 22px;\n    color: #4b678c;\n    font-size: .84rem;\n    line-height: 1.75;\n    white-space: pre-wrap;\n    word-break: break-word;\n}\n\n.pointer-cloud-notices_notice-footer_38fou {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 12px;\n    margin-top: 18px;\n    padding: 0 22px;\n}\n\n.pointer-cloud-notices_more_Yrm9l { color: #93a8c4; font-size: .68rem; }\n\n.pointer-cloud-notices_primary_2JeZn,\n.pointer-cloud-notices_primary-small_1sKd9 {\n    border: 1px solid #2f6fe4;\n    border-radius: 8px;\n    background: #2f6fe4;\n    color: #fff;\n    font: 600 .78rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.pointer-cloud-notices_primary_2JeZn { height: 36px; padding: 0 20px; }\n\n.pointer-cloud-notices_primary_2JeZn:hover,\n.pointer-cloud-notices_primary-small_1sKd9:hover { background: #2258b8; }\n\n.pointer-cloud-notices_primary-small_1sKd9 { height: 30px; padding: 0 12px; font-size: .72rem; }\n\n.pointer-cloud-notices_ghost_lpjqb {\n    height: 30px;\n    padding: 0 10px;\n    border: 0;\n    border-radius: 7px;\n    background: transparent;\n    color: #7d94b4;\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\n\n.pointer-cloud-notices_ghost_lpjqb:hover { background: #eef4fc; color: #2f6fe4; }\n\n.pointer-cloud-notices_update-banner_Tc5vu {\n    position: fixed;\n    left: 50%;\n    bottom: 22px;\n    z-index: 2900;\n    display: flex;\n    align-items: center;\n    gap: 14px;\n    width: min(560px, calc(100vw - 24px));\n    padding: 10px 12px 10px 16px;\n    border: 1px solid #cfe0f7;\n    border-radius: 14px;\n    background: #fff;\n    box-shadow: 0 16px 42px rgba(8, 35, 85, .2);\n    transform: translateX(-50%);\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    animation: pointer-cloud-notices_update-in_20pAX .3s cubic-bezier(.2, .9, .2, 1) both;\n}\n\n.pointer-cloud-notices_update-text_1Bhxp { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }\n\n.pointer-cloud-notices_update-text_1Bhxp strong { color: #173a6d; font-size: .8rem; }\n\n.pointer-cloud-notices_update-text_1Bhxp span { color: #8ba0ba; font-size: .65rem; }\n\n.pointer-cloud-notices_update-actions_e5d3I { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; }\n\n.pointer-cloud-notices_banner-close_2nQYz {\n    width: 24px;\n    height: 24px;\n    border: 0;\n    border-radius: 6px;\n    background: transparent;\n    color: #8ba0ba;\n    font-size: .9rem;\n    cursor: pointer;\n}\n\n.pointer-cloud-notices_banner-close_2nQYz:hover { background: #fdecea; color: #c0392b; }\n\n@keyframes pointer-cloud-notices_notice-overlay-in_26PuB { from { opacity: 0; } to { opacity: 1; } }\n\n@keyframes pointer-cloud-notices_notice-panel-in_2_5sh {\n    from { opacity: 0; transform: translateY(10px) scale(.985); }\n    to { opacity: 1; transform: translateY(0) scale(1); }\n}\n\n@keyframes pointer-cloud-notices_update-in_20pAX {\n    from { opacity: 0; transform: translate(-50%, 8px); }\n    to { opacity: 1; transform: translate(-50%, 0); }\n}\n\n@media (max-width: 600px) {\n    .pointer-cloud-notices_overlay_uF4mF { padding: 12px; }\n    .pointer-cloud-notices_panel_3SPZi h2 { margin: 15px 16px 8px; }\n    .pointer-cloud-notices_notice-body_3d5u_ { padding: 0 16px; }\n    .pointer-cloud-notices_notice-footer_38fou { padding: 0 16px; }\n    .pointer-cloud-notices_update-banner_Tc5vu { flex-direction: column; align-items: stretch; gap: 8px; }\n    .pointer-cloud-notices_update-actions_e5d3I { justify-content: flex-end; }\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -2168,7 +2281,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".pointer-peagent_overlay_3VfpR {\r\n    position: fixed;\r\n    inset: 0;\r\n    z-index: 2250;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 26px;\r\n    background: rgba(9, 28, 60, .34);\r\n    -webkit-backdrop-filter: blur(18px) saturate(120%);\r\n            backdrop-filter: blur(18px) saturate(120%);\r\n    animation: pointer-peagent_peagent-overlay-in_3r2qC .22s ease both;\r\n}\r\n\r\n.pointer-peagent_panel_15-4f {\r\n    width: min(1060px, 94vw);\r\n    height: min(720px, 88vh);\r\n    display: flex;\r\n    overflow: hidden;\r\n    border: 1px solid rgba(255, 255, 255, .8);\r\n    border-radius: 18px;\r\n    background: #fff;\r\n    color: #1d3557;\r\n    box-shadow: 0 30px 90px rgba(8, 35, 85, .36);\r\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n    animation: pointer-peagent_peagent-panel-in_2D7dj .28s cubic-bezier(.2, .8, .2, 1) both;\r\n}\r\n\r\n/* ------------------------------------------------------------------ sidebar */\r\n\r\n.pointer-peagent_sidebar_FpOcO {\r\n    flex: 0 0 232px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    min-height: 0;\r\n    border-right: 1px solid #dbe7f8;\r\n    background: #f2f7ff;\r\n}\r\n\r\n.pointer-peagent_sidebar-brand_1ty0c {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    padding: 16px 14px 12px;\r\n}\r\n\r\n.pointer-peagent_brand-text_2UnXb { display: flex; flex-direction: column; gap: 1px; min-width: 0; }\r\n\r\n.pointer-peagent_brand-text_2UnXb strong { color: #173a6d; font-size: .9rem; }\r\n\r\n.pointer-peagent_brand-text_2UnXb span { color: #7d94b4; font-size: .66rem; }\r\n\r\n.pointer-peagent_new-chat_27Og6 {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    gap: 6px;\r\n    height: 38px;\r\n    margin: 0 12px;\r\n    border: 1px dashed #9fc2f4;\r\n    border-radius: 10px;\r\n    background: #fff;\r\n    color: #2f6fe4;\r\n    font: 600 .8rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .16s ease, border-color .16s ease, transform .16s ease;\r\n}\r\n\r\n.pointer-peagent_new-chat_27Og6:hover { border-color: #2f6fe4; background: #e8f2ff; transform: translateY(-1px); }\r\n\r\n.pointer-peagent_new-chat_27Og6 span { font-size: .95rem; line-height: 1; }\r\n\r\n.pointer-peagent_sidebar-label_3ueUj {\r\n    padding: 16px 16px 6px;\r\n    color: #93a8c4;\r\n    font-size: .64rem;\r\n    font-weight: 700;\r\n    letter-spacing: .1em;\r\n}\r\n\r\n.pointer-peagent_session-list_1YxfM {\r\n    flex: 1;\r\n    min-height: 0;\r\n    margin: 0;\r\n    padding: 0 8px 8px;\r\n    overflow-y: auto;\r\n    list-style: none;\r\n}\r\n\r\n.pointer-peagent_session-item_3MHgW,\r\n.pointer-peagent_session-item-active_3RCLx {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    margin-bottom: 2px;\r\n    padding: 8px 8px 8px 10px;\r\n    border: 1px solid transparent;\r\n    border-radius: 9px;\r\n    cursor: pointer;\r\n    transition: background .16s ease, border-color .16s ease;\r\n}\r\n\r\n.pointer-peagent_session-item_3MHgW:hover { background: rgba(47, 111, 228, .07); }\r\n\r\n.pointer-peagent_session-item-active_3RCLx {\r\n    border-color: #cfe0f7;\r\n    background: #fff;\r\n    box-shadow: 0 3px 10px rgba(23, 58, 109, .06);\r\n}\r\n\r\n.pointer-peagent_session-main_6JEMV { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }\r\n\r\n.pointer-peagent_session-main_6JEMV strong {\r\n    overflow: hidden;\r\n    color: #2a4a72;\r\n    font-size: .76rem;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-peagent_session-main_6JEMV span { color: #93a8c4; font-size: .62rem; }\r\n\r\n.pointer-peagent_session-delete_2g58S {\r\n    flex: 0 0 auto;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 0;\r\n    border-radius: 6px;\r\n    background: transparent;\r\n    color: #a8b8cc;\r\n    font-size: .9rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n    opacity: 0;\r\n    transition: opacity .16s ease, background .16s ease, color .16s ease;\r\n}\r\n\r\n.pointer-peagent_session-item_3MHgW:hover .pointer-peagent_session-delete_2g58S,\r\n.pointer-peagent_session-item-active_3RCLx:hover .pointer-peagent_session-delete_2g58S { opacity: 1; }\r\n\r\n.pointer-peagent_session-delete_2g58S:hover { background: #fdecea; color: #c0392b; }\r\n\r\n.pointer-peagent_sidebar-foot_FchcS {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 8px;\r\n    padding: 10px 12px;\r\n    border-top: 1px solid #dbe7f8;\r\n}\r\n\r\n.pointer-peagent_foot-provider_fXeQe {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    min-width: 0;\r\n    overflow: hidden;\r\n    color: #5d7ea4;\r\n    font-size: .66rem;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-peagent_foot-provider_fXeQe em {\r\n    display: grid;\r\n    place-items: center;\r\n    width: 18px;\r\n    height: 18px;\r\n    border-radius: 6px;\r\n    background: #e8f2ff;\r\n    color: #2f6fe4;\r\n    font-size: .58rem;\r\n    font-style: normal;\r\n    font-weight: 800;\r\n}\r\n\r\n.pointer-peagent_foot-tag_1uLvg {\r\n    flex: 0 0 auto;\r\n    padding: 2px 6px;\r\n    border-radius: 5px;\r\n    background: #eafaf2;\r\n    color: #18794a;\r\n    font-size: .6rem;\r\n    font-weight: 600;\r\n}\r\n\r\n/* --------------------------------------------------------------------- main */\r\n\r\n.pointer-peagent_main_3g_pS { flex: 1; min-width: 0; display: flex; flex-direction: column; background: #fbfdff; }\r\n\r\n.pointer-peagent_main-header_2xI2Q {\r\n    flex: 0 0 auto;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    padding: 10px 14px;\r\n    border-bottom: 1px solid #e3edfb;\r\n    background: #fff;\r\n}\r\n\r\n.pointer-peagent_collapse-btn_RtM6g {\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 auto;\r\n    width: 30px;\r\n    height: 30px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 8px;\r\n    background: #fff;\r\n    color: #5d7ea4;\r\n    font-size: .95rem;\r\n    cursor: pointer;\r\n    transition: background .16s ease, color .16s ease, border-color .16s ease;\r\n}\r\n\r\n.pointer-peagent_collapse-btn_RtM6g:hover { border-color: #9fc2f4; background: #f4f9ff; color: #2f6fe4; }\r\n\r\n.pointer-peagent_main-title_3eOWu { display: flex; flex-direction: column; gap: 1px; min-width: 0; }\r\n\r\n.pointer-peagent_main-title_3eOWu strong {\r\n    max-width: 300px;\r\n    overflow: hidden;\r\n    color: #173a6d;\r\n    font-size: .86rem;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-peagent_main-title_3eOWu span { color: #8ba0ba; font-size: .64rem; }\r\n\r\n.pointer-peagent_header-spacer_1YoMK { flex: 1; }\r\n\r\n.pointer-peagent_header-btn_2Z9aQ {\r\n    flex: 0 0 auto;\r\n    height: 30px;\r\n    padding: 0 11px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 8px;\r\n    background: #fff;\r\n    color: #5d7ea4;\r\n    font: 600 .72rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .16s ease, color .16s ease, border-color .16s ease;\r\n}\r\n\r\n.pointer-peagent_header-btn_2Z9aQ:hover { border-color: #9fc2f4; background: #f4f9ff; color: #2f6fe4; }\r\n\r\n.pointer-peagent_close-btn_3QUIw {\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 auto;\r\n    width: 30px;\r\n    height: 30px;\r\n    border: 0;\r\n    border-radius: 8px;\r\n    background: transparent;\r\n    color: #8ba0ba;\r\n    font-size: 1.15rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n    transition: background .16s ease, color .16s ease;\r\n}\r\n\r\n.pointer-peagent_close-btn_3QUIw:hover { background: #fdecea; color: #c0392b; }\r\n\r\n/* -------------------------------------------------------------- model picker */\r\n\r\n.pointer-peagent_model-picker_2lNs5 { position: relative; flex: 0 0 auto; }\r\n\r\n.pointer-peagent_model-button_6IbOX {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    height: 30px;\r\n    max-width: 220px;\r\n    padding: 0 10px;\r\n    overflow: hidden;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 999px;\r\n    background: #f4f9ff;\r\n    color: #2258b8;\r\n    font: 600 .72rem \"OPPO Sans\", sans-serif;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n    cursor: pointer;\r\n    transition: border-color .16s ease, background .16s ease;\r\n}\r\n\r\n.pointer-peagent_model-button_6IbOX:hover { border-color: #9fc2f4; background: #e8f2ff; }\r\n\r\n.pointer-peagent_model-caret_eBftw { color: #7d94b4; font-size: .68rem; }\r\n\r\n.pointer-peagent_model-menu_2DNS1 {\r\n    position: absolute;\r\n    top: calc(100% + 6px);\r\n    right: 0;\r\n    z-index: 12;\r\n    width: 268px;\r\n    padding: 7px;\r\n    border: 1px solid #d8e6fa;\r\n    border-radius: 12px;\r\n    background: #fff;\r\n    box-shadow: 0 18px 44px rgba(8, 35, 85, .18);\r\n    animation: pointer-peagent_peagent-pop_29Q7j .2s ease both;\r\n}\r\n\r\n.pointer-peagent_model-group_1Yvha { padding: 3px 0; border-bottom: 1px solid #eef4fc; }\r\n\r\n.pointer-peagent_model-group_1Yvha:last-of-type { border-bottom: 0; }\r\n\r\n.pointer-peagent_model-group-label_33bxn {\r\n    padding: 5px 8px 4px;\r\n    color: #93a8c4;\r\n    font-size: .62rem;\r\n    font-weight: 700;\r\n    letter-spacing: .06em;\r\n}\r\n\r\n.pointer-peagent_model-row_3dl4P,\r\n.pointer-peagent_model-row-active_lgWKd {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    width: 100%;\r\n    padding: 7px 8px;\r\n    border: 0;\r\n    border-radius: 8px;\r\n    background: transparent;\r\n    color: #3d5a80;\r\n    font: 500 .74rem \"OPPO Sans\", sans-serif;\r\n    text-align: left;\r\n    cursor: pointer;\r\n    transition: background .14s ease, color .14s ease;\r\n}\r\n\r\n.pointer-peagent_model-row_3dl4P:hover { background: #eef6ff; color: #2258b8; }\r\n\r\n.pointer-peagent_model-row-active_lgWKd { background: #e8f2ff; color: #2258b8; font-weight: 700; }\r\n\r\n.pointer-peagent_model-icon_OpbI_ {\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 22px;\r\n    width: 22px;\r\n    height: 22px;\r\n    border-radius: 7px;\r\n    background: #e8f2ff;\r\n    color: #2f6fe4;\r\n    font-size: .6rem;\r\n    font-weight: 800;\r\n}\r\n\r\n.pointer-peagent_model-label_4XMgq { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }\r\n\r\n.pointer-peagent_model-check_1oHFr { color: #18794a; font-size: .72rem; }\r\n\r\n.pointer-peagent_model-custom_417bz {\r\n    width: 100%;\r\n    padding: 8px;\r\n    border: 0;\r\n    border-top: 1px solid #eef4fc;\r\n    background: transparent;\r\n    color: #2f6fe4;\r\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\r\n    text-align: left;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-peagent_model-custom_417bz:hover { text-decoration: underline; }\r\n\r\n/* --------------------------------------------------------------------- chat */\r\n\r\n.pointer-peagent_chat-scroll_2hSKj {\r\n    flex: 1;\r\n    min-height: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 14px;\r\n    padding: 18px 20px;\r\n    overflow-y: auto;\r\n}\r\n\r\n.pointer-peagent_welcome_Kn0nK {\r\n    max-width: 480px;\r\n    margin: auto;\r\n    padding: 26px 26px 22px;\r\n    border: 1px solid #e0ebfa;\r\n    border-radius: 16px;\r\n    background: #fff;\r\n    text-align: left;\r\n    box-shadow: 0 10px 30px rgba(8, 35, 85, .05);\r\n}\r\n\r\n.pointer-peagent_welcome-chip_1syUx {\r\n    display: inline-block;\r\n    padding: 3px 10px;\r\n    border-radius: 999px;\r\n    background: #e8f2ff;\r\n    color: #2258b8;\r\n    font-size: .66rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-peagent_welcome_Kn0nK h2 {\r\n    margin: 12px 0 8px;\r\n    color: #173a6d;\r\n    font-size: 1.25rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-peagent_welcome_Kn0nK p { margin: 0; color: #7d94b4; font-size: .8rem; line-height: 1.7; }\r\n\r\n.pointer-peagent_welcome-prompts_8I8cF { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }\r\n\r\n.pointer-peagent_welcome-prompt_1O8-c {\r\n    padding: 5px 10px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 999px;\r\n    background: #f8fbff;\r\n    color: #5d7ea4;\r\n    font: 500 .68rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .16s ease, border-color .16s ease, color .16s ease;\r\n}\r\n\r\n.pointer-peagent_welcome-prompt_1O8-c:hover { border-color: #9fc2f4; background: #eef6ff; color: #2258b8; }\r\n\r\n.pointer-peagent_user-message_p0Ra8,\r\n.pointer-peagent_assistant-message_3GdML {\r\n    max-width: 82%;\r\n    padding: 10px 13px;\r\n    border-radius: 14px;\r\n    font-size: .83rem;\r\n    line-height: 1.65;\r\n}\r\n\r\n.pointer-peagent_user-message_p0Ra8 {\r\n    align-self: flex-end;\r\n    border: 1px solid #2f6fe4;\r\n    border-bottom-right-radius: 4px;\r\n    background: #2f6fe4;\r\n    color: #fff;\r\n}\r\n\r\n.pointer-peagent_assistant-message_3GdML {\r\n    align-self: flex-start;\r\n    border: 1px solid #dce9fb;\r\n    border-bottom-left-radius: 4px;\r\n    background: #fff;\r\n    color: #2b4a71;\r\n}\r\n\r\n.pointer-peagent_message-meta_3CRwU {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    margin-bottom: 5px;\r\n    color: #8da2bc;\r\n    font-size: .66rem;\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-peagent_user-message_p0Ra8 .pointer-peagent_message-meta_3CRwU { color: rgba(235, 247, 255, .78); }\r\n\r\n.pointer-peagent_meta-avatar_2XJIq {\r\n    display: grid;\r\n    place-items: center;\r\n    width: 18px;\r\n    height: 18px;\r\n    border-radius: 6px;\r\n    background: #e8f2ff;\r\n    color: #2f6fe4;\r\n    font-size: .6rem;\r\n}\r\n\r\n.pointer-peagent_user-text_3EkCC { white-space: pre-wrap; word-break: break-word; }\r\n\r\n.pointer-peagent_attach-tags_3FQFS { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }\r\n\r\n.pointer-peagent_attach-tag_RYna8 {\r\n    padding: 2px 7px;\r\n    border-radius: 5px;\r\n    background: rgba(255, 255, 255, .18);\r\n    color: rgba(240, 248, 255, .9);\r\n    font-size: .62rem;\r\n}\r\n\r\n.pointer-peagent_reasoning_24p_u {\r\n    margin-bottom: 8px;\r\n    padding: 7px 9px;\r\n    border: 1px dashed #c9d9ef;\r\n    border-radius: 7px;\r\n    background: #f7fbff;\r\n    color: #64809f;\r\n    font-size: .74rem;\r\n}\r\n\r\n.pointer-peagent_reasoning_24p_u summary { color: #4c709b; font-weight: 600; cursor: pointer; }\r\n\r\n.pointer-peagent_reasoning_24p_u div { margin-top: 6px; white-space: pre-wrap; }\r\n\r\n.pointer-peagent_streaming-hint_dLY-C { color: #7d94b4; font-size: .8rem; }\r\n\r\n.pointer-peagent_streaming-cursor_1JYEz { display: inline-block; margin-left: 2px; color: #2f6fe4; animation: pointer-peagent_peagent-blink_1mpRr 1s steps(2) infinite; }\r\n\r\n.pointer-peagent_thinking_bq4nv {\r\n    align-self: flex-start;\r\n    padding: 7px 12px;\r\n    border-radius: 999px;\r\n    background: #f4f9ff;\r\n    color: #7490b0;\r\n    font-size: .74rem;\r\n    animation: pointer-peagent_peagent-thinking_OVK7C 1.2s ease-in-out infinite;\r\n}\r\n\r\n/* ------------------------------------------------------------- action cards */\r\n\r\n.pointer-peagent_action-card_6CgLh {\r\n    margin-top: 9px;\r\n    padding: 10px 11px;\r\n    border: 1px solid #dce9fb;\r\n    border-radius: 10px;\r\n    background: #f8fbff;\r\n}\r\n\r\n.pointer-peagent_action-head_3dezM {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    margin-bottom: 6px;\r\n    color: #3d5a80;\r\n    font-size: .72rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-peagent_action-head_3dezM em { color: #8da2bc; font-size: .64rem; font-style: normal; }\r\n\r\n.pointer-peagent_action-card_6CgLh ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }\r\n\r\n.pointer-peagent_action-card_6CgLh li { display: flex; gap: 6px; color: #5d7ea4; font-size: .72rem; line-height: 1.5; }\r\n\r\n.pointer-peagent_action-card_6CgLh li span { color: #2f6fe4; }\r\n\r\n.pointer-peagent_action-notice_3KmRd { margin: 7px 0 0; color: #7d94b4; font-size: .7rem; }\r\n\r\n.pointer-peagent_action-success_Z3RoT { margin: 7px 0 0; color: #18794a; font-size: .7rem; }\r\n\r\n.pointer-peagent_action-error_xMK4V { margin: 7px 0 0; color: #c0392b; font-size: .7rem; }\r\n\r\n.pointer-peagent_action-button_19RCU {\r\n    height: 28px;\r\n    margin-top: 8px;\r\n    padding: 0 10px;\r\n    border: 1px solid #8fb7f2;\r\n    border-radius: 7px;\r\n    background: #eef6ff;\r\n    color: #2258b8;\r\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-peagent_action-button_19RCU:hover { background: #dfeeff; }\r\n\r\n.pointer-peagent_search-info_1Pm4J { margin: 0 20px 3px; color: #5b86bb; font-size: .68rem; }\r\n\r\n.pointer-peagent_notice-line_M_gS_ { margin: 0 20px 3px; color: #18794a; font-size: .68rem; }\r\n\r\n.pointer-peagent_error_1mApC {\r\n    margin: 0 20px 6px;\r\n    padding: 7px 10px;\r\n    border-radius: 8px;\r\n    background: #fff1f0;\r\n    color: #c0392b;\r\n    font-size: .74rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n/* ----------------------------------------------------------------- composer */\r\n\r\n.pointer-peagent_composer_1KigL {\r\n    flex: 0 0 auto;\r\n    padding: 10px 16px 12px;\r\n    border-top: 1px solid #e3edfb;\r\n    background: #fff;\r\n}\r\n\r\n.pointer-peagent_attach-chips_OfnV- { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 7px; }\r\n\r\n.pointer-peagent_attach-chip_2w0sE {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    gap: 4px;\r\n    padding: 3px 4px 3px 8px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 7px;\r\n    background: #f4f9ff;\r\n    color: #3d5a80;\r\n    font-size: .66rem;\r\n}\r\n\r\n.pointer-peagent_attach-remove_1kyXD {\r\n    width: 16px;\r\n    height: 16px;\r\n    border: 0;\r\n    border-radius: 4px;\r\n    background: transparent;\r\n    color: #8ba0ba;\r\n    font-size: .8rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-peagent_attach-remove_1kyXD:hover { background: #fdecea; color: #c0392b; }\r\n\r\n.pointer-peagent_composer-box_3dgeL {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 7px;\r\n    padding: 9px 11px 8px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 14px;\r\n    background: #f8fbff;\r\n    transition: border-color .16s ease, box-shadow .16s ease, background .16s ease;\r\n}\r\n\r\n.pointer-peagent_composer-box_3dgeL:focus-within {\r\n    border-color: #2f6fe4;\r\n    background: #fff;\r\n    box-shadow: 0 0 0 3px rgba(47, 111, 228, .12);\r\n}\r\n\r\n.pointer-peagent_composer-box_3dgeL textarea {\r\n    box-sizing: border-box;\r\n    width: 100%;\r\n    min-height: 42px;\r\n    max-height: 140px;\r\n    padding: 3px 2px;\r\n    border: 0;\r\n    background: transparent;\r\n    color: #1d3557;\r\n    font: inherit;\r\n    font-size: .84rem;\r\n    line-height: 1.55;\r\n    resize: none;\r\n    outline: none;\r\n}\r\n\r\n.pointer-peagent_composer-bar_2-kKv { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }\r\n\r\n.pointer-peagent_tool-btn_2zFeP,\r\n.pointer-peagent_tool-btn-active_XpAxP {\r\n    height: 27px;\r\n    padding: 0 10px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 999px;\r\n    background: #fff;\r\n    color: #5d7ea4;\r\n    font: 600 .68rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .16s ease, border-color .16s ease, color .16s ease;\r\n}\r\n\r\n.pointer-peagent_tool-btn_2zFeP:hover { border-color: #9fc2f4; background: #f4f9ff; }\r\n\r\n.pointer-peagent_tool-btn-active_XpAxP { border-color: #2f6fe4; background: #e8f2ff; color: #2258b8; }\r\n\r\n.pointer-peagent_effort-select_cEJpE {\r\n    height: 25px;\r\n    padding: 0 5px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 6px;\r\n    background: #fff;\r\n    color: #2258b8;\r\n    font: 600 .64rem \"OPPO Sans\", sans-serif;\r\n    outline: none;\r\n}\r\n\r\n.pointer-peagent_bar-spacer_fpIl8 { flex: 1; }\r\n\r\n.pointer-peagent_send-btn_1FZKX {\r\n    display: grid;\r\n    place-items: center;\r\n    width: 34px;\r\n    height: 34px;\r\n    border: 0;\r\n    border-radius: 50%;\r\n    background: #2f6fe4;\r\n    color: #fff;\r\n    font-size: .9rem;\r\n    box-shadow: 0 5px 12px rgba(47, 111, 228, .28);\r\n    cursor: pointer;\r\n    transition: transform .16s ease, opacity .16s ease, box-shadow .16s ease;\r\n}\r\n\r\n.pointer-peagent_send-btn_1FZKX:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 16px rgba(47, 111, 228, .32); }\r\n\r\n.pointer-peagent_send-btn_1FZKX:disabled { opacity: .4; cursor: default; box-shadow: none; }\r\n\r\n.pointer-peagent_hint_3YEwt { margin: 7px 2px 0; color: #9aadc4; font-size: .64rem; line-height: 1.5; }\r\n\r\n.pointer-peagent_file-input_37I4L { display: none; }\r\n\r\n.pointer-peagent_loading_3Vh8v {\r\n    display: flex;\r\n    flex: 1;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background: #fbfdff;\r\n    color: #8298b5;\r\n    font-size: .85rem;\r\n}\r\n\r\n/* ----------------------------------------------------------------- settings */\r\n\r\n.pointer-peagent_settings_1cPwz {\r\n    flex: 1;\r\n    min-height: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 14px;\r\n    padding: 20px 24px;\r\n    overflow-x: hidden;\r\n    overflow-y: auto;\r\n}\r\n\r\n.pointer-peagent_setup-intro_3mPHe { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 6px 18px 0; }\r\n\r\n.pointer-peagent_setup-intro_3mPHe h2 { margin: 0; color: #173a6d; font-size: 1.25rem; }\r\n\r\n.pointer-peagent_setup-intro_3mPHe p { margin: 7px 0 0; max-width: 460px; color: #6f88aa; font-size: .8rem; line-height: 1.7; }\r\n\r\n.pointer-peagent_settings-head_3FIYV { display: flex; align-items: center; gap: 14px; }\r\n\r\n.pointer-peagent_settings-head_3FIYV h2 { margin: 0; color: #173a6d; font-size: 1.02rem; }\r\n\r\n.pointer-peagent_link-button_3xTHv { padding: 0; border: 0; background: transparent; color: #2f6fe4; font: 600 .76rem \"OPPO Sans\", sans-serif; cursor: pointer; }\r\n\r\n.pointer-peagent_link-button_3xTHv:hover { text-decoration: underline; }\r\n\r\n.pointer-peagent_provider-card_-U7d7 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 11px;\r\n    padding: 12px;\r\n    border: 1px solid #d8e6fa;\r\n    border-radius: 12px;\r\n    background: #fff;\r\n}\r\n\r\n.pointer-peagent_provider-icon_3W2p7 {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex: 0 0 auto;\r\n    width: 38px;\r\n    height: 38px;\r\n    border-radius: 11px;\r\n    background: #e8f2ff;\r\n    color: #2f6fe4;\r\n    font-weight: 800;\r\n}\r\n\r\n.pointer-peagent_provider-card_-U7d7 div { flex: 1; }\r\n\r\n.pointer-peagent_provider-card_-U7d7 strong { display: block; color: #2a4a72; font-size: .84rem; }\r\n\r\n.pointer-peagent_provider-card_-U7d7 p { margin: 3px 0 0; color: #8298b5; font-size: .72rem; line-height: 1.5; }\r\n\r\n.pointer-peagent_provider-tag_50_7A { padding: 3px 7px; border-radius: 5px; background: #eafaf2; color: #18794a; font-size: .66rem; font-weight: 600; }\r\n\r\n.pointer-peagent_settings-form_32-ke { display: flex; flex-direction: column; gap: 11px; }\r\n\r\n.pointer-peagent_field_V4ACh { display: flex; flex-direction: column; gap: 6px; color: #3d5a80; font-size: .78rem; }\r\n\r\n.pointer-peagent_field_V4ACh span { font-weight: 600; }\r\n\r\n.pointer-peagent_field_V4ACh input,\r\n.pointer-peagent_field_V4ACh select {\r\n    box-sizing: border-box;\r\n    width: 100%;\r\n    height: 40px;\r\n    padding: 0 12px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 9px;\r\n    background: #fff;\r\n    color: #1d3557;\r\n    font: inherit;\r\n    font-size: .86rem;\r\n    outline: none;\r\n    transition: border-color .18s ease, box-shadow .18s ease;\r\n}\r\n\r\n.pointer-peagent_field_V4ACh input:focus,\r\n.pointer-peagent_field_V4ACh select:focus { border-color: #2f6fe4; box-shadow: 0 0 0 3px rgba(47, 111, 228, .14); }\r\n\r\n.pointer-peagent_key-hint_2r0Kb { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; color: #8096b3; font-size: .7rem; line-height: 1.55; }\r\n\r\n.pointer-peagent_advanced_2XASl { padding: 8px 11px; border: 1px solid #e2ecfa; border-radius: 9px; background: #fbfdff; }\r\n\r\n.pointer-peagent_advanced_2XASl summary { color: #607fa4; font-size: .74rem; font-weight: 600; cursor: pointer; }\r\n\r\n.pointer-peagent_advanced-grid_3DMiL { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 9px; }\r\n\r\n.pointer-peagent_model-hint_1nY2F { margin: -2px 0 0; color: #8298b5; font-size: .68rem; line-height: 1.55; }\r\n\r\n.pointer-peagent_settings-actions_25BH8 { display: flex; align-items: center; gap: 9px; }\r\n\r\n.pointer-peagent_primary_2sxRR,\r\n.pointer-peagent_secondary_36B_p {\r\n    min-height: 38px;\r\n    padding: 0 16px;\r\n    border-radius: 9px;\r\n    font: 600 .84rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: transform .16s ease, background .16s ease, border-color .16s ease;\r\n}\r\n\r\n.pointer-peagent_primary_2sxRR {\r\n    border: 1px solid #2f6fe4;\r\n    background: #2f6fe4;\r\n    color: #fff;\r\n    box-shadow: 0 6px 14px rgba(47, 111, 228, .2);\r\n}\r\n\r\n.pointer-peagent_primary_2sxRR:hover:not(:disabled) { transform: translateY(-1px); background: #2f6fe4; }\r\n\r\n.pointer-peagent_primary_2sxRR:disabled { opacity: .55; cursor: default; box-shadow: none; }\r\n\r\n.pointer-peagent_secondary_36B_p { border: 1px solid #c9d8ee; background: #fff; color: #2f6fe4; }\r\n\r\n.pointer-peagent_secondary_36B_p:hover { border-color: #8fb6f3; background: #f4f9ff; }\r\n\r\n/* --------------------------------------------------------------- minimized */\r\n\r\n.pointer-peagent_min-wrap_7ck2H {\r\n    position: fixed;\r\n    top: 58px;\r\n    left: 50%;\r\n    z-index: 2320;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    gap: 8px;\r\n    transform: translateX(-50%);\r\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Arial, sans-serif;\r\n}\r\n\r\n.pointer-peagent_min-pill_1Xpyy {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 9px;\r\n    min-height: 38px;\r\n    padding: 5px 7px 5px 6px;\r\n    border: 1px solid #cfe0f7;\r\n    border-radius: 999px;\r\n    background: rgba(255, 255, 255, .96);\r\n    box-shadow: 0 10px 30px rgba(8, 35, 85, .18);\r\n    -webkit-backdrop-filter: blur(14px);\r\n            backdrop-filter: blur(14px);\r\n    animation: pointer-peagent_peagent-min-in_3RwJ3 .24s cubic-bezier(.2, .9, .2, 1) both;\r\n}\r\n\r\n.pointer-peagent_min-icon_1FiXk {\r\n    position: relative;\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 28px;\r\n    width: 28px;\r\n    height: 28px;\r\n    border-radius: 50%;\r\n    background: #2f6fe4;\r\n    color: #fff;\r\n    font-size: .8rem;\r\n    box-shadow: 0 4px 10px rgba(47, 111, 228, .26);\r\n}\r\n\r\n.pointer-peagent_min-pulse_3-6xw {\r\n    position: absolute;\r\n    inset: -3px;\r\n    border: 2px solid rgba(47, 111, 228, .35);\r\n    border-radius: 50%;\r\n    animation: pointer-peagent_peagent-pulse_3qC5f 1.6s ease-out infinite;\r\n}\r\n\r\n.pointer-peagent_min-text_fAcC6 { display: flex; flex-direction: column; gap: 1px; max-width: 300px; min-width: 0; }\r\n\r\n.pointer-peagent_min-text_fAcC6 strong { color: #173a6d; font-size: .72rem; }\r\n\r\n.pointer-peagent_min-text_fAcC6 span {\r\n    overflow: hidden;\r\n    color: #8ba0ba;\r\n    font-size: .62rem;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-peagent_min-buttons_2K8sw { display: flex; align-items: center; gap: 5px; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw button,\r\n.pointer-peagent_min-approval-actions_1UHO5 button {\r\n    height: 26px;\r\n    padding: 0 10px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 999px;\r\n    background: #fff;\r\n    color: #5d7ea4;\r\n    font: 600 .66rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .16s ease, border-color .16s ease, color .16s ease;\r\n}\r\n\r\n.pointer-peagent_min-buttons_2K8sw button:hover,\r\n.pointer-peagent_min-approval-actions_1UHO5 button:hover { border-color: #9fc2f4; background: #f4f9ff; color: #2f6fe4; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-open__ERWI { border-color: #2f6fe4; background: #2f6fe4; color: #fff; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-open__ERWI:hover { background: #2258b8; color: #fff; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-cancel_1LW6i { border-color: #f3c4be; color: #c0392b; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-cancel_1LW6i:hover { background: #fff1f0; color: #c0392b; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-close_2-L0b { width: 24px; padding: 0; border-color: transparent; background: transparent; color: #8ba0ba; font-size: .9rem; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-close_2-L0b:hover { background: #fdecea; color: #c0392b; }\r\n\r\n.pointer-peagent_min-approval_Oj1rm {\r\n    width: 340px;\r\n    padding: 12px 13px;\r\n    border: 1px solid #cfe0f7;\r\n    border-radius: 14px;\r\n    background: #fff;\r\n    box-shadow: 0 18px 44px rgba(8, 35, 85, .2);\r\n    animation: pointer-peagent_peagent-pop_29Q7j .22s ease both;\r\n}\r\n\r\n.pointer-peagent_min-approval_Oj1rm p { margin: 0 0 7px; color: #2a4a72; font-size: .76rem; font-weight: 600; }\r\n\r\n.pointer-peagent_min-approval_Oj1rm ul { margin: 0; padding: 0 0 0 2px; list-style: none; display: flex; flex-direction: column; gap: 3px; }\r\n\r\n.pointer-peagent_min-approval_Oj1rm li { color: #5d7ea4; font-size: .7rem; line-height: 1.5; }\r\n\r\n.pointer-peagent_min-approval-actions_1UHO5 { display: flex; gap: 6px; margin-top: 9px; }\r\n\r\n.pointer-peagent_min-approval-actions_1UHO5 .pointer-peagent_min-allow_aFYDG { border-color: #2f6fe4; background: #2f6fe4; color: #fff; }\r\n\r\n.pointer-peagent_min-approval-actions_1UHO5 .pointer-peagent_min-allow_aFYDG:hover { background: #2258b8; color: #fff; }\r\n\r\n@keyframes pointer-peagent_peagent-overlay-in_3r2qC { from { opacity: 0; } to { opacity: 1; } }\r\n\r\n@keyframes pointer-peagent_peagent-panel-in_2D7dj { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }\r\n\r\n@keyframes pointer-peagent_peagent-pop_29Q7j { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }\r\n\r\n@keyframes pointer-peagent_peagent-min-in_3RwJ3 { from { opacity: 0; transform: translateY(-7px) scale(.92); } to { opacity: 1; transform: translateY(0) scale(1); } }\r\n\r\n@keyframes pointer-peagent_peagent-blink_1mpRr { 50% { opacity: 0; } }\r\n\r\n@keyframes pointer-peagent_peagent-thinking_OVK7C { 50% { opacity: .55; } }\r\n\r\n@keyframes pointer-peagent_peagent-pulse_3qC5f { 0% { transform: scale(.92); opacity: 1; } 100% { transform: scale(1.45); opacity: 0; } }\r\n\r\n@media (max-width: 900px) {\r\n    .pointer-peagent_sidebar_FpOcO { flex-basis: 196px; }\r\n    .pointer-peagent_main-title_3eOWu strong { max-width: 160px; }\r\n    .pointer-peagent_header-btn_2Z9aQ { padding: 0 8px; }\r\n}\r\n\r\n@media (max-width: 720px) {\r\n    .pointer-peagent_overlay_3VfpR { padding: 10px; }\r\n    .pointer-peagent_panel_15-4f { width: 100vw; height: 92vh; border-radius: 14px; }\r\n    .pointer-peagent_sidebar_FpOcO { flex-basis: 168px; }\r\n    .pointer-peagent_main-title_3eOWu span, .pointer-peagent_header-btn_2Z9aQ { display: none; }\r\n    .pointer-peagent_model-button_6IbOX { max-width: 150px; }\r\n    .pointer-peagent_user-message_p0Ra8, .pointer-peagent_assistant-message_3GdML { max-width: 94%; }\r\n    .pointer-peagent_welcome_Kn0nK { padding: 20px; }\r\n    .pointer-peagent_welcome-prompts_8I8cF { display: none; }\r\n}", ""]);
+exports.push([module.i, ".pointer-peagent_overlay_3VfpR {\r\n    position: fixed;\r\n    inset: 0;\r\n    z-index: 2250;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 26px;\r\n    background: rgba(9, 28, 60, .34);\r\n    -webkit-backdrop-filter: blur(18px) saturate(120%);\r\n            backdrop-filter: blur(18px) saturate(120%);\r\n    animation: pointer-peagent_peagent-overlay-in_3r2qC .22s ease both;\r\n}\r\n\r\n.pointer-peagent_panel_15-4f {\r\n    width: min(1060px, 94vw);\r\n    height: min(720px, 88vh);\r\n    display: flex;\r\n    overflow: hidden;\r\n    border: 1px solid rgba(255, 255, 255, .8);\r\n    border-radius: 18px;\r\n    background: #fff;\r\n    color: #1d3557;\r\n    box-shadow: 0 30px 90px rgba(8, 35, 85, .36);\r\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n    animation: pointer-peagent_peagent-panel-in_2D7dj .28s cubic-bezier(.2, .8, .2, 1) both;\r\n}\r\n\r\n/* ------------------------------------------------------------------ sidebar */\r\n\r\n.pointer-peagent_sidebar_FpOcO {\r\n    flex: 0 0 232px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    min-height: 0;\r\n    border-right: 1px solid #dbe7f8;\r\n    background: #f2f7ff;\r\n}\r\n\r\n.pointer-peagent_sidebar-brand_1ty0c {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    padding: 16px 14px 12px;\r\n}\r\n\r\n.pointer-peagent_brand-text_2UnXb { display: flex; flex-direction: column; gap: 1px; min-width: 0; }\r\n\r\n.pointer-peagent_brand-text_2UnXb strong { color: #173a6d; font-size: .9rem; }\r\n\r\n.pointer-peagent_brand-text_2UnXb span { color: #7d94b4; font-size: .66rem; }\r\n\r\n.pointer-peagent_new-chat_27Og6 {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    gap: 6px;\r\n    height: 38px;\r\n    margin: 0 12px;\r\n    border: 1px dashed #9fc2f4;\r\n    border-radius: 10px;\r\n    background: #fff;\r\n    color: #2f6fe4;\r\n    font: 600 .8rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .16s ease, border-color .16s ease, transform .16s ease;\r\n}\r\n\r\n.pointer-peagent_new-chat_27Og6:hover { border-color: #2f6fe4; background: #e8f2ff; transform: translateY(-1px); }\r\n\r\n.pointer-peagent_new-chat_27Og6 span { font-size: .95rem; line-height: 1; }\r\n\r\n.pointer-peagent_sidebar-label_3ueUj {\r\n    padding: 16px 16px 6px;\r\n    color: #93a8c4;\r\n    font-size: .64rem;\r\n    font-weight: 700;\r\n    letter-spacing: .1em;\r\n}\r\n\r\n.pointer-peagent_session-list_1YxfM {\r\n    flex: 1;\r\n    min-height: 0;\r\n    margin: 0;\r\n    padding: 0 8px 8px;\r\n    overflow-y: auto;\r\n    list-style: none;\r\n}\r\n\r\n.pointer-peagent_session-item_3MHgW,\r\n.pointer-peagent_session-item-active_3RCLx {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    margin-bottom: 2px;\r\n    padding: 8px 8px 8px 10px;\r\n    border: 1px solid transparent;\r\n    border-radius: 9px;\r\n    cursor: pointer;\r\n    transition: background .16s ease, border-color .16s ease;\r\n}\r\n\r\n.pointer-peagent_session-item_3MHgW:hover { background: rgba(47, 111, 228, .07); }\r\n\r\n.pointer-peagent_session-item-active_3RCLx {\r\n    border-color: #cfe0f7;\r\n    background: #fff;\r\n    box-shadow: 0 3px 10px rgba(23, 58, 109, .06);\r\n}\r\n\r\n.pointer-peagent_session-main_6JEMV { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }\r\n\r\n.pointer-peagent_session-main_6JEMV strong {\r\n    overflow: hidden;\r\n    color: #2a4a72;\r\n    font-size: .76rem;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-peagent_session-main_6JEMV span { color: #93a8c4; font-size: .62rem; }\r\n\r\n.pointer-peagent_session-delete_2g58S {\r\n    flex: 0 0 auto;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 0;\r\n    border-radius: 6px;\r\n    background: transparent;\r\n    color: #a8b8cc;\r\n    font-size: .9rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n    opacity: 0;\r\n    transition: opacity .16s ease, background .16s ease, color .16s ease;\r\n}\r\n\r\n.pointer-peagent_session-item_3MHgW:hover .pointer-peagent_session-delete_2g58S,\r\n.pointer-peagent_session-item-active_3RCLx:hover .pointer-peagent_session-delete_2g58S { opacity: 1; }\r\n\r\n.pointer-peagent_session-delete_2g58S:hover { background: #fdecea; color: #c0392b; }\r\n\r\n.pointer-peagent_sidebar-foot_FchcS {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 8px;\r\n    padding: 10px 12px;\r\n    border-top: 1px solid #dbe7f8;\r\n}\r\n\r\n.pointer-peagent_foot-provider_fXeQe {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    min-width: 0;\r\n    overflow: hidden;\r\n    color: #5d7ea4;\r\n    font-size: .66rem;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-peagent_foot-provider_fXeQe em {\r\n    display: grid;\r\n    place-items: center;\r\n    width: 18px;\r\n    height: 18px;\r\n    border-radius: 6px;\r\n    background: #e8f2ff;\r\n    color: #2f6fe4;\r\n    font-size: .58rem;\r\n    font-style: normal;\r\n    font-weight: 800;\r\n}\r\n\r\n.pointer-peagent_foot-tag_1uLvg {\r\n    flex: 0 0 auto;\r\n    padding: 2px 6px;\r\n    border-radius: 5px;\r\n    background: #eafaf2;\r\n    color: #18794a;\r\n    font-size: .6rem;\r\n    font-weight: 600;\r\n}\r\n\r\n/* --------------------------------------------------------------------- main */\r\n\r\n.pointer-peagent_main_3g_pS { flex: 1; min-width: 0; display: flex; flex-direction: column; background: #fbfdff; }\r\n\r\n.pointer-peagent_main-header_2xI2Q {\r\n    flex: 0 0 auto;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    padding: 10px 14px;\r\n    border-bottom: 1px solid #e3edfb;\r\n    background: #fff;\r\n}\r\n\r\n.pointer-peagent_collapse-btn_RtM6g {\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 auto;\r\n    width: 30px;\r\n    height: 30px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 8px;\r\n    background: #fff;\r\n    color: #5d7ea4;\r\n    font-size: .95rem;\r\n    cursor: pointer;\r\n    transition: background .16s ease, color .16s ease, border-color .16s ease;\r\n}\r\n\r\n.pointer-peagent_collapse-btn_RtM6g:hover { border-color: #9fc2f4; background: #f4f9ff; color: #2f6fe4; }\r\n\r\n.pointer-peagent_main-title_3eOWu { display: flex; flex-direction: column; gap: 1px; min-width: 0; }\r\n\r\n.pointer-peagent_main-title_3eOWu strong {\r\n    max-width: 300px;\r\n    overflow: hidden;\r\n    color: #173a6d;\r\n    font-size: .86rem;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-peagent_main-title_3eOWu span { color: #8ba0ba; font-size: .64rem; }\r\n\r\n.pointer-peagent_header-spacer_1YoMK { flex: 1; }\r\n\r\n.pointer-peagent_header-btn_2Z9aQ {\r\n    flex: 0 0 auto;\r\n    height: 30px;\r\n    padding: 0 11px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 8px;\r\n    background: #fff;\r\n    color: #5d7ea4;\r\n    font: 600 .72rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .16s ease, color .16s ease, border-color .16s ease;\r\n}\r\n\r\n.pointer-peagent_header-btn_2Z9aQ:hover { border-color: #9fc2f4; background: #f4f9ff; color: #2f6fe4; }\r\n\r\n.pointer-peagent_close-btn_3QUIw {\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 auto;\r\n    width: 30px;\r\n    height: 30px;\r\n    border: 0;\r\n    border-radius: 8px;\r\n    background: transparent;\r\n    color: #8ba0ba;\r\n    font-size: 1.15rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n    transition: background .16s ease, color .16s ease;\r\n}\r\n\r\n.pointer-peagent_close-btn_3QUIw:hover { background: #fdecea; color: #c0392b; }\r\n\r\n/* -------------------------------------------------------------- model picker */\r\n\r\n.pointer-peagent_model-picker_2lNs5 { position: relative; flex: 0 0 auto; }\r\n\r\n.pointer-peagent_model-button_6IbOX {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    height: 30px;\r\n    max-width: 220px;\r\n    padding: 0 10px;\r\n    overflow: hidden;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 999px;\r\n    background: #f4f9ff;\r\n    color: #2258b8;\r\n    font: 600 .72rem \"OPPO Sans\", sans-serif;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n    cursor: pointer;\r\n    transition: border-color .16s ease, background .16s ease;\r\n}\r\n\r\n.pointer-peagent_model-button_6IbOX:hover { border-color: #9fc2f4; background: #e8f2ff; }\r\n\r\n.pointer-peagent_model-caret_eBftw { color: #7d94b4; font-size: .68rem; }\r\n\r\n.pointer-peagent_model-menu_2DNS1 {\r\n    position: absolute;\r\n    top: calc(100% + 6px);\r\n    right: 0;\r\n    z-index: 12;\r\n    width: 268px;\r\n    padding: 7px;\r\n    border: 1px solid #d8e6fa;\r\n    border-radius: 12px;\r\n    background: #fff;\r\n    box-shadow: 0 18px 44px rgba(8, 35, 85, .18);\r\n    animation: pointer-peagent_peagent-pop_29Q7j .2s ease both;\r\n}\r\n\r\n.pointer-peagent_model-group_1Yvha { padding: 3px 0; border-bottom: 1px solid #eef4fc; }\r\n\r\n.pointer-peagent_model-group_1Yvha:last-of-type { border-bottom: 0; }\r\n\r\n.pointer-peagent_model-group-label_33bxn {\r\n    padding: 5px 8px 4px;\r\n    color: #93a8c4;\r\n    font-size: .62rem;\r\n    font-weight: 700;\r\n    letter-spacing: .06em;\r\n}\r\n\r\n.pointer-peagent_model-row_3dl4P,\r\n.pointer-peagent_model-row-active_lgWKd {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    width: 100%;\r\n    padding: 7px 8px;\r\n    border: 0;\r\n    border-radius: 8px;\r\n    background: transparent;\r\n    color: #3d5a80;\r\n    font: 500 .74rem \"OPPO Sans\", sans-serif;\r\n    text-align: left;\r\n    cursor: pointer;\r\n    transition: background .14s ease, color .14s ease;\r\n}\r\n\r\n.pointer-peagent_model-row_3dl4P:hover { background: #eef6ff; color: #2258b8; }\r\n\r\n.pointer-peagent_model-row-active_lgWKd { background: #e8f2ff; color: #2258b8; font-weight: 700; }\r\n\r\n.pointer-peagent_model-icon_OpbI_ {\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 22px;\r\n    width: 22px;\r\n    height: 22px;\r\n    border-radius: 7px;\r\n    background: #e8f2ff;\r\n    color: #2f6fe4;\r\n    font-size: .6rem;\r\n    font-weight: 800;\r\n}\r\n\r\n.pointer-peagent_model-label_4XMgq { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }\r\n\r\n.pointer-peagent_model-check_1oHFr { color: #18794a; font-size: .72rem; }\r\n\r\n.pointer-peagent_model-custom_417bz {\r\n    width: 100%;\r\n    padding: 8px;\r\n    border: 0;\r\n    border-top: 1px solid #eef4fc;\r\n    background: transparent;\r\n    color: #2f6fe4;\r\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\r\n    text-align: left;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-peagent_model-custom_417bz:hover { text-decoration: underline; }\r\n\r\n/* --------------------------------------------------------------------- chat */\r\n\r\n.pointer-peagent_chat-scroll_2hSKj {\r\n    flex: 1;\r\n    min-height: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 14px;\r\n    padding: 18px 20px;\r\n    overflow-y: auto;\r\n}\r\n\r\n.pointer-peagent_welcome_Kn0nK {\r\n    max-width: 480px;\r\n    margin: auto;\r\n    padding: 26px 26px 22px;\r\n    border: 1px solid #e0ebfa;\r\n    border-radius: 16px;\r\n    background: #fff;\r\n    text-align: left;\r\n    box-shadow: 0 10px 30px rgba(8, 35, 85, .05);\r\n}\r\n\r\n.pointer-peagent_welcome-chip_1syUx {\r\n    display: inline-block;\r\n    padding: 3px 10px;\r\n    border-radius: 999px;\r\n    background: #e8f2ff;\r\n    color: #2258b8;\r\n    font-size: .66rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-peagent_welcome_Kn0nK h2 {\r\n    margin: 12px 0 8px;\r\n    color: #173a6d;\r\n    font-size: 1.25rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n.pointer-peagent_welcome_Kn0nK p { margin: 0; color: #7d94b4; font-size: .8rem; line-height: 1.7; }\r\n\r\n.pointer-peagent_welcome-prompts_8I8cF { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }\r\n\r\n.pointer-peagent_welcome-prompt_1O8-c {\r\n    padding: 5px 10px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 999px;\r\n    background: #f8fbff;\r\n    color: #5d7ea4;\r\n    font: 500 .68rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .16s ease, border-color .16s ease, color .16s ease;\r\n}\r\n\r\n.pointer-peagent_welcome-prompt_1O8-c:hover { border-color: #9fc2f4; background: #eef6ff; color: #2258b8; }\r\n\r\n.pointer-peagent_user-message_p0Ra8,\r\n.pointer-peagent_assistant-message_3GdML {\r\n    max-width: 82%;\r\n    padding: 10px 13px;\r\n    border-radius: 14px;\r\n    font-size: .83rem;\r\n    line-height: 1.65;\r\n}\r\n\r\n.pointer-peagent_user-message_p0Ra8 {\r\n    align-self: flex-end;\r\n    border: 1px solid #2f6fe4;\r\n    border-bottom-right-radius: 4px;\r\n    background: #2f6fe4;\r\n    color: #fff;\r\n}\r\n\r\n.pointer-peagent_assistant-message_3GdML {\r\n    align-self: flex-start;\r\n    border: 1px solid #dce9fb;\r\n    border-bottom-left-radius: 4px;\r\n    background: #fff;\r\n    color: #2b4a71;\r\n}\r\n\r\n.pointer-peagent_message-meta_3CRwU {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    margin-bottom: 5px;\r\n    color: #8da2bc;\r\n    font-size: .66rem;\r\n    font-weight: 600;\r\n}\r\n\r\n.pointer-peagent_user-message_p0Ra8 .pointer-peagent_message-meta_3CRwU { color: rgba(235, 247, 255, .78); }\r\n\r\n.pointer-peagent_meta-avatar_2XJIq {\r\n    display: grid;\r\n    place-items: center;\r\n    width: 18px;\r\n    height: 18px;\r\n    border-radius: 6px;\r\n    background: #e8f2ff;\r\n    color: #2f6fe4;\r\n    font-size: .6rem;\r\n}\r\n\r\n.pointer-peagent_user-text_3EkCC { white-space: pre-wrap; word-break: break-word; }\r\n\r\n.pointer-peagent_attach-tags_3FQFS { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }\r\n\r\n.pointer-peagent_attach-tag_RYna8 {\r\n    padding: 2px 7px;\r\n    border-radius: 5px;\r\n    background: rgba(255, 255, 255, .18);\r\n    color: rgba(240, 248, 255, .9);\r\n    font-size: .62rem;\r\n}\r\n\r\n.pointer-peagent_reasoning_24p_u {\r\n    margin-bottom: 8px;\r\n    padding: 7px 9px;\r\n    border: 1px dashed #c9d9ef;\r\n    border-radius: 7px;\r\n    background: #f7fbff;\r\n    color: #64809f;\r\n    font-size: .74rem;\r\n}\r\n\r\n.pointer-peagent_reasoning_24p_u summary { color: #4c709b; font-weight: 600; cursor: pointer; }\r\n\r\n.pointer-peagent_reasoning_24p_u div { margin-top: 6px; white-space: pre-wrap; }\r\n\r\n.pointer-peagent_streaming-hint_dLY-C { color: #7d94b4; font-size: .8rem; }\r\n\r\n.pointer-peagent_streaming-cursor_1JYEz { display: inline-block; margin-left: 2px; color: #2f6fe4; animation: pointer-peagent_peagent-blink_1mpRr 1s steps(2) infinite; }\r\n\r\n.pointer-peagent_thinking_bq4nv {\r\n    align-self: flex-start;\r\n    padding: 7px 12px;\r\n    border-radius: 999px;\r\n    background: #f4f9ff;\r\n    color: #7490b0;\r\n    font-size: .74rem;\r\n    animation: pointer-peagent_peagent-thinking_OVK7C 1.2s ease-in-out infinite;\r\n}\r\n\r\n/* ------------------------------------------------------------- action cards */\r\n\r\n.pointer-peagent_action-card_6CgLh {\r\n    margin-top: 9px;\r\n    padding: 10px 11px;\r\n    border: 1px solid #dce9fb;\r\n    border-radius: 10px;\r\n    background: #f8fbff;\r\n}\r\n\r\n.pointer-peagent_action-head_3dezM {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    margin-bottom: 6px;\r\n    color: #3d5a80;\r\n    font-size: .72rem;\r\n    font-weight: 700;\r\n}\r\n\r\n.pointer-peagent_action-head_3dezM em { color: #8da2bc; font-size: .64rem; font-style: normal; }\r\n\r\n.pointer-peagent_action-card_6CgLh ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }\r\n\r\n.pointer-peagent_action-card_6CgLh li { display: flex; gap: 6px; color: #5d7ea4; font-size: .72rem; line-height: 1.5; }\r\n\r\n.pointer-peagent_action-card_6CgLh li span { color: #2f6fe4; }\r\n\r\n.pointer-peagent_action-notice_3KmRd { margin: 7px 0 0; color: #7d94b4; font-size: .7rem; }\r\n\r\n.pointer-peagent_action-success_Z3RoT { margin: 7px 0 0; color: #18794a; font-size: .7rem; }\r\n\r\n.pointer-peagent_action-error_xMK4V { margin: 7px 0 0; color: #c0392b; font-size: .7rem; }\r\n\r\n.pointer-peagent_action-button_19RCU {\r\n    height: 28px;\r\n    margin-top: 8px;\r\n    padding: 0 10px;\r\n    border: 1px solid #8fb7f2;\r\n    border-radius: 7px;\r\n    background: #eef6ff;\r\n    color: #2258b8;\r\n    font: 600 .7rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-peagent_action-button_19RCU:hover { background: #dfeeff; }\r\n\r\n.pointer-peagent_search-info_1Pm4J { margin: 0 20px 3px; color: #5b86bb; font-size: .68rem; }\r\n\r\n.pointer-peagent_notice-line_M_gS_ { margin: 0 20px 3px; color: #18794a; font-size: .68rem; }\r\n\r\n.pointer-peagent_error_1mApC {\r\n    margin: 0 20px 6px;\r\n    padding: 7px 10px;\r\n    border-radius: 8px;\r\n    background: #fff1f0;\r\n    color: #c0392b;\r\n    font-size: .74rem;\r\n    line-height: 1.5;\r\n}\r\n\r\n/* ----------------------------------------------------------------- composer */\r\n\r\n.pointer-peagent_composer_1KigL {\r\n    flex: 0 0 auto;\r\n    padding: 10px 16px 12px;\r\n    border-top: 1px solid #e3edfb;\r\n    background: #fff;\r\n}\r\n\r\n.pointer-peagent_attach-chips_OfnV- { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 7px; }\r\n\r\n.pointer-peagent_attach-chip_2w0sE {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    gap: 4px;\r\n    padding: 3px 4px 3px 8px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 7px;\r\n    background: #f4f9ff;\r\n    color: #3d5a80;\r\n    font-size: .66rem;\r\n}\r\n\r\n.pointer-peagent_attach-remove_1kyXD {\r\n    width: 16px;\r\n    height: 16px;\r\n    border: 0;\r\n    border-radius: 4px;\r\n    background: transparent;\r\n    color: #8ba0ba;\r\n    font-size: .8rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-peagent_attach-thumb_ZoNx1 { width: 22px; height: 22px; border-radius: 4px; object-fit: cover; }\r\n\r\n.pointer-peagent_attach-remove_1kyXD:hover { background: #fdecea; color: #c0392b; }\r\n\r\n.pointer-peagent_composer-box_3dgeL {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 7px;\r\n    padding: 9px 11px 8px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 14px;\r\n    background: #f8fbff;\r\n    transition: border-color .16s ease, box-shadow .16s ease, background .16s ease;\r\n}\r\n\r\n.pointer-peagent_composer-box_3dgeL:focus-within {\r\n    border-color: #2f6fe4;\r\n    background: #fff;\r\n    box-shadow: 0 0 0 3px rgba(47, 111, 228, .12);\r\n}\r\n\r\n.pointer-peagent_composer-box_3dgeL textarea {\r\n    box-sizing: border-box;\r\n    width: 100%;\r\n    min-height: 42px;\r\n    max-height: 140px;\r\n    padding: 3px 2px;\r\n    border: 0;\r\n    background: transparent;\r\n    color: #1d3557;\r\n    font: inherit;\r\n    font-size: .84rem;\r\n    line-height: 1.55;\r\n    resize: none;\r\n    outline: none;\r\n}\r\n\r\n.pointer-peagent_composer-bar_2-kKv { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }\r\n\r\n.pointer-peagent_tool-btn_2zFeP,\r\n.pointer-peagent_tool-btn-active_XpAxP {\r\n    height: 27px;\r\n    padding: 0 10px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 999px;\r\n    background: #fff;\r\n    color: #5d7ea4;\r\n    font: 600 .68rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .16s ease, border-color .16s ease, color .16s ease;\r\n}\r\n\r\n.pointer-peagent_tool-btn_2zFeP:hover { border-color: #9fc2f4; background: #f4f9ff; }\r\n\r\n.pointer-peagent_tool-btn-active_XpAxP { border-color: #2f6fe4; background: #e8f2ff; color: #2258b8; }\r\n\r\n.pointer-peagent_effort-select_cEJpE {\r\n    height: 25px;\r\n    padding: 0 5px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 6px;\r\n    background: #fff;\r\n    color: #2258b8;\r\n    font: 600 .64rem \"OPPO Sans\", sans-serif;\r\n    outline: none;\r\n}\r\n\r\n.pointer-peagent_bar-spacer_fpIl8 { flex: 1; }\r\n\r\n.pointer-peagent_send-btn_1FZKX {\r\n    display: grid;\r\n    place-items: center;\r\n    width: 34px;\r\n    height: 34px;\r\n    border: 0;\r\n    border-radius: 50%;\r\n    background: #2f6fe4;\r\n    color: #fff;\r\n    font-size: .9rem;\r\n    box-shadow: 0 5px 12px rgba(47, 111, 228, .28);\r\n    cursor: pointer;\r\n    transition: transform .16s ease, opacity .16s ease, box-shadow .16s ease;\r\n}\r\n\r\n.pointer-peagent_send-btn_1FZKX:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 16px rgba(47, 111, 228, .32); }\r\n\r\n.pointer-peagent_send-btn_1FZKX:disabled { opacity: .4; cursor: default; box-shadow: none; }\r\n\r\n.pointer-peagent_hint_3YEwt { margin: 7px 2px 0; color: #9aadc4; font-size: .64rem; line-height: 1.5; }\r\n\r\n.pointer-peagent_file-input_37I4L { display: none; }\r\n\r\n.pointer-peagent_loading_3Vh8v {\r\n    display: flex;\r\n    flex: 1;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background: #fbfdff;\r\n    color: #8298b5;\r\n    font-size: .85rem;\r\n}\r\n\r\n/* ----------------------------------------------------------------- settings */\r\n\r\n.pointer-peagent_settings_1cPwz {\r\n    flex: 1;\r\n    min-height: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 14px;\r\n    padding: 20px 24px;\r\n    overflow-x: hidden;\r\n    overflow-y: auto;\r\n}\r\n\r\n.pointer-peagent_setup-intro_3mPHe { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 6px 18px 0; }\r\n\r\n.pointer-peagent_setup-intro_3mPHe h2 { margin: 0; color: #173a6d; font-size: 1.25rem; }\r\n\r\n.pointer-peagent_setup-intro_3mPHe p { margin: 7px 0 0; max-width: 460px; color: #6f88aa; font-size: .8rem; line-height: 1.7; }\r\n\r\n.pointer-peagent_settings-head_3FIYV { display: flex; align-items: center; gap: 14px; }\r\n\r\n.pointer-peagent_settings-head_3FIYV h2 { margin: 0; color: #173a6d; font-size: 1.02rem; }\r\n\r\n.pointer-peagent_link-button_3xTHv { padding: 0; border: 0; background: transparent; color: #2f6fe4; font: 600 .76rem \"OPPO Sans\", sans-serif; cursor: pointer; }\r\n\r\n.pointer-peagent_link-button_3xTHv:hover { text-decoration: underline; }\r\n\r\n.pointer-peagent_provider-card_-U7d7 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 11px;\r\n    padding: 12px;\r\n    border: 1px solid #d8e6fa;\r\n    border-radius: 12px;\r\n    background: #fff;\r\n}\r\n\r\n.pointer-peagent_provider-icon_3W2p7 {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex: 0 0 auto;\r\n    width: 38px;\r\n    height: 38px;\r\n    border-radius: 11px;\r\n    background: #e8f2ff;\r\n    color: #2f6fe4;\r\n    font-weight: 800;\r\n}\r\n\r\n.pointer-peagent_provider-card_-U7d7 div { flex: 1; }\r\n\r\n.pointer-peagent_provider-card_-U7d7 strong { display: block; color: #2a4a72; font-size: .84rem; }\r\n\r\n.pointer-peagent_provider-card_-U7d7 p { margin: 3px 0 0; color: #8298b5; font-size: .72rem; line-height: 1.5; }\r\n\r\n.pointer-peagent_provider-tag_50_7A { padding: 3px 7px; border-radius: 5px; background: #eafaf2; color: #18794a; font-size: .66rem; font-weight: 600; }\r\n\r\n.pointer-peagent_settings-form_32-ke { display: flex; flex-direction: column; gap: 11px; }\r\n\r\n.pointer-peagent_field_V4ACh { display: flex; flex-direction: column; gap: 6px; color: #3d5a80; font-size: .78rem; }\r\n\r\n.pointer-peagent_field_V4ACh span { font-weight: 600; }\r\n\r\n.pointer-peagent_field_V4ACh input,\r\n.pointer-peagent_field_V4ACh select {\r\n    box-sizing: border-box;\r\n    width: 100%;\r\n    height: 40px;\r\n    padding: 0 12px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 9px;\r\n    background: #fff;\r\n    color: #1d3557;\r\n    font: inherit;\r\n    font-size: .86rem;\r\n    outline: none;\r\n    transition: border-color .18s ease, box-shadow .18s ease;\r\n}\r\n\r\n.pointer-peagent_field_V4ACh input:focus,\r\n.pointer-peagent_field_V4ACh select:focus { border-color: #2f6fe4; box-shadow: 0 0 0 3px rgba(47, 111, 228, .14); }\r\n\r\n.pointer-peagent_key-hint_2r0Kb { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; color: #8096b3; font-size: .7rem; line-height: 1.55; }\r\n\r\n.pointer-peagent_advanced_2XASl { padding: 8px 11px; border: 1px solid #e2ecfa; border-radius: 9px; background: #fbfdff; }\r\n\r\n.pointer-peagent_advanced_2XASl summary { color: #607fa4; font-size: .74rem; font-weight: 600; cursor: pointer; }\r\n\r\n.pointer-peagent_advanced-grid_3DMiL { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 9px; }\r\n\r\n.pointer-peagent_context-preview_K7d26 { margin: 0 0 14px; padding: 9px 12px; border: 1px solid #e2ecfa; border-radius: 10px; background: #fbfdff; }\r\n\r\n.pointer-peagent_context-preview_K7d26 summary { color: #607fa4; font-size: .74rem; font-weight: 600; cursor: pointer; }\r\n\r\n.pointer-peagent_context-pre_ehNfl { margin: 9px 0 0; max-height: 260px; overflow: auto; white-space: pre-wrap; word-break: break-word; color: #40536d; font-family: \"SFMono-Regular\", Consolas, \"Liberation Mono\", monospace; font-size: .66rem; line-height: 1.55; }\r\n\r\n.pointer-peagent_model-hint_1nY2F { margin: -2px 0 0; color: #8298b5; font-size: .68rem; line-height: 1.55; }\r\n\r\n.pointer-peagent_settings-actions_25BH8 { display: flex; align-items: center; gap: 9px; }\r\n\r\n.pointer-peagent_primary_2sxRR,\r\n.pointer-peagent_secondary_36B_p {\r\n    min-height: 38px;\r\n    padding: 0 16px;\r\n    border-radius: 9px;\r\n    font: 600 .84rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: transform .16s ease, background .16s ease, border-color .16s ease;\r\n}\r\n\r\n.pointer-peagent_primary_2sxRR {\r\n    border: 1px solid #2f6fe4;\r\n    background: #2f6fe4;\r\n    color: #fff;\r\n    box-shadow: 0 6px 14px rgba(47, 111, 228, .2);\r\n}\r\n\r\n.pointer-peagent_primary_2sxRR:hover:not(:disabled) { transform: translateY(-1px); background: #2f6fe4; }\r\n\r\n.pointer-peagent_primary_2sxRR:disabled { opacity: .55; cursor: default; box-shadow: none; }\r\n\r\n.pointer-peagent_secondary_36B_p { border: 1px solid #c9d8ee; background: #fff; color: #2f6fe4; }\r\n\r\n.pointer-peagent_secondary_36B_p:hover { border-color: #8fb6f3; background: #f4f9ff; }\r\n\r\n/* --------------------------------------------------------------- minimized */\r\n\r\n.pointer-peagent_min-wrap_7ck2H {\r\n    position: fixed;\r\n    top: 58px;\r\n    left: 50%;\r\n    z-index: 2320;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    gap: 8px;\r\n    transform: translateX(-50%);\r\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Arial, sans-serif;\r\n}\r\n\r\n.pointer-peagent_min-pill_1Xpyy {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 9px;\r\n    min-height: 38px;\r\n    padding: 5px 7px 5px 6px;\r\n    border: 1px solid #cfe0f7;\r\n    border-radius: 999px;\r\n    background: rgba(255, 255, 255, .96);\r\n    box-shadow: 0 10px 30px rgba(8, 35, 85, .18);\r\n    -webkit-backdrop-filter: blur(14px);\r\n            backdrop-filter: blur(14px);\r\n    animation: pointer-peagent_peagent-min-in_3RwJ3 .24s cubic-bezier(.2, .9, .2, 1) both;\r\n}\r\n\r\n.pointer-peagent_min-icon_1FiXk {\r\n    position: relative;\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 28px;\r\n    width: 28px;\r\n    height: 28px;\r\n    border-radius: 50%;\r\n    background: #2f6fe4;\r\n    color: #fff;\r\n    font-size: .8rem;\r\n    box-shadow: 0 4px 10px rgba(47, 111, 228, .26);\r\n}\r\n\r\n.pointer-peagent_min-pulse_3-6xw {\r\n    position: absolute;\r\n    inset: -3px;\r\n    border: 2px solid rgba(47, 111, 228, .35);\r\n    border-radius: 50%;\r\n    animation: pointer-peagent_peagent-pulse_3qC5f 1.6s ease-out infinite;\r\n}\r\n\r\n.pointer-peagent_min-text_fAcC6 { display: flex; flex-direction: column; gap: 1px; max-width: 300px; min-width: 0; }\r\n\r\n.pointer-peagent_min-text_fAcC6 strong { color: #173a6d; font-size: .72rem; }\r\n\r\n.pointer-peagent_min-text_fAcC6 span {\r\n    overflow: hidden;\r\n    color: #8ba0ba;\r\n    font-size: .62rem;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-peagent_min-buttons_2K8sw { display: flex; align-items: center; gap: 5px; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw button,\r\n.pointer-peagent_min-approval-actions_1UHO5 button {\r\n    height: 26px;\r\n    padding: 0 10px;\r\n    border: 1px solid #d3e2f8;\r\n    border-radius: 999px;\r\n    background: #fff;\r\n    color: #5d7ea4;\r\n    font: 600 .66rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .16s ease, border-color .16s ease, color .16s ease;\r\n}\r\n\r\n.pointer-peagent_min-buttons_2K8sw button:hover,\r\n.pointer-peagent_min-approval-actions_1UHO5 button:hover { border-color: #9fc2f4; background: #f4f9ff; color: #2f6fe4; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-open__ERWI { border-color: #2f6fe4; background: #2f6fe4; color: #fff; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-open__ERWI:hover { background: #2258b8; color: #fff; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-cancel_1LW6i { border-color: #f3c4be; color: #c0392b; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-cancel_1LW6i:hover { background: #fff1f0; color: #c0392b; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-close_2-L0b { width: 24px; padding: 0; border-color: transparent; background: transparent; color: #8ba0ba; font-size: .9rem; }\r\n\r\n.pointer-peagent_min-buttons_2K8sw .pointer-peagent_min-close_2-L0b:hover { background: #fdecea; color: #c0392b; }\r\n\r\n.pointer-peagent_min-approval_Oj1rm {\r\n    width: 340px;\r\n    padding: 12px 13px;\r\n    border: 1px solid #cfe0f7;\r\n    border-radius: 14px;\r\n    background: #fff;\r\n    box-shadow: 0 18px 44px rgba(8, 35, 85, .2);\r\n    animation: pointer-peagent_peagent-pop_29Q7j .22s ease both;\r\n}\r\n\r\n.pointer-peagent_min-approval_Oj1rm p { margin: 0 0 7px; color: #2a4a72; font-size: .76rem; font-weight: 600; }\r\n\r\n.pointer-peagent_min-approval_Oj1rm ul { margin: 0; padding: 0 0 0 2px; list-style: none; display: flex; flex-direction: column; gap: 3px; }\r\n\r\n.pointer-peagent_min-approval_Oj1rm li { color: #5d7ea4; font-size: .7rem; line-height: 1.5; }\r\n\r\n.pointer-peagent_min-approval-actions_1UHO5 { display: flex; gap: 6px; margin-top: 9px; }\r\n\r\n.pointer-peagent_min-approval-actions_1UHO5 .pointer-peagent_min-allow_aFYDG { border-color: #2f6fe4; background: #2f6fe4; color: #fff; }\r\n\r\n.pointer-peagent_min-approval-actions_1UHO5 .pointer-peagent_min-allow_aFYDG:hover { background: #2258b8; color: #fff; }\r\n\r\n@keyframes pointer-peagent_peagent-overlay-in_3r2qC { from { opacity: 0; } to { opacity: 1; } }\r\n\r\n@keyframes pointer-peagent_peagent-panel-in_2D7dj { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }\r\n\r\n@keyframes pointer-peagent_peagent-pop_29Q7j { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }\r\n\r\n@keyframes pointer-peagent_peagent-min-in_3RwJ3 { from { opacity: 0; transform: translateY(-7px) scale(.92); } to { opacity: 1; transform: translateY(0) scale(1); } }\r\n\r\n@keyframes pointer-peagent_peagent-blink_1mpRr { 50% { opacity: 0; } }\r\n\r\n@keyframes pointer-peagent_peagent-thinking_OVK7C { 50% { opacity: .55; } }\r\n\r\n@keyframes pointer-peagent_peagent-pulse_3qC5f { 0% { transform: scale(.92); opacity: 1; } 100% { transform: scale(1.45); opacity: 0; } }\r\n\r\n@media (max-width: 900px) {\r\n    .pointer-peagent_sidebar_FpOcO { flex-basis: 196px; }\r\n    .pointer-peagent_main-title_3eOWu strong { max-width: 160px; }\r\n    .pointer-peagent_header-btn_2Z9aQ { padding: 0 8px; }\r\n}\r\n\r\n@media (max-width: 720px) {\r\n    .pointer-peagent_overlay_3VfpR { padding: 10px; }\r\n    .pointer-peagent_panel_15-4f { width: 100vw; height: 92vh; border-radius: 14px; }\r\n    .pointer-peagent_sidebar_FpOcO { flex-basis: 168px; }\r\n    .pointer-peagent_main-title_3eOWu span, .pointer-peagent_header-btn_2Z9aQ { display: none; }\r\n    .pointer-peagent_model-button_6IbOX { max-width: 150px; }\r\n    .pointer-peagent_user-message_p0Ra8, .pointer-peagent_assistant-message_3GdML { max-width: 94%; }\r\n    .pointer-peagent_welcome_Kn0nK { padding: 20px; }\r\n    .pointer-peagent_welcome-prompts_8I8cF { display: none; }\r\n}", ""]);
 
 // exports
 exports.locals = {
@@ -2299,6 +2412,8 @@ exports.locals = {
 	"attachChip": "pointer-peagent_attach-chip_2w0sE",
 	"attach-remove": "pointer-peagent_attach-remove_1kyXD",
 	"attachRemove": "pointer-peagent_attach-remove_1kyXD",
+	"attach-thumb": "pointer-peagent_attach-thumb_ZoNx1",
+	"attachThumb": "pointer-peagent_attach-thumb_ZoNx1",
 	"composer-box": "pointer-peagent_composer-box_3dgeL",
 	"composerBox": "pointer-peagent_composer-box_3dgeL",
 	"composer-bar": "pointer-peagent_composer-bar_2-kKv",
@@ -2338,6 +2453,10 @@ exports.locals = {
 	"advanced": "pointer-peagent_advanced_2XASl",
 	"advanced-grid": "pointer-peagent_advanced-grid_3DMiL",
 	"advancedGrid": "pointer-peagent_advanced-grid_3DMiL",
+	"context-preview": "pointer-peagent_context-preview_K7d26",
+	"contextPreview": "pointer-peagent_context-preview_K7d26",
+	"context-pre": "pointer-peagent_context-pre_ehNfl",
+	"contextPre": "pointer-peagent_context-pre_ehNfl",
 	"model-hint": "pointer-peagent_model-hint_1nY2F",
 	"modelHint": "pointer-peagent_model-hint_1nY2F",
 	"settings-actions": "pointer-peagent_settings-actions_25BH8",
@@ -2388,7 +2507,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".pointer-project-tabs_tabs-wrap_2i7zS {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    min-width: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    color: #fff;\r\n}\r\n\r\n.pointer-project-tabs_tabs_2x4j2 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 4px;\r\n    min-width: 0;\r\n    flex: 1;\r\n    overflow-x: auto;\r\n    scrollbar-width: none;\r\n}\r\n\r\n.pointer-project-tabs_tabs_2x4j2::-webkit-scrollbar { display: none; }\r\n\r\n.pointer-project-tabs_tab_3F9yM,\r\n.pointer-project-tabs_tab-active_2E7H2 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 3px;\r\n    flex: 0 0 auto;\r\n    max-width: 190px;\r\n    height: 26px;\r\n    padding: 0 3px 0 9px;\r\n    border: 1px solid transparent;\r\n    border-radius: 7px;\r\n    background: transparent;\r\n    color: rgba(255, 255, 255, .72);\r\n    transition: background .15s ease, border-color .15s ease, color .15s ease;\r\n}\r\n\r\n.pointer-project-tabs_tab_3F9yM:hover { background: rgba(255, 255, 255, .12); color: #fff; }\r\n\r\n.pointer-project-tabs_tab-active_2E7H2 {\r\n    border-color: rgba(255, 255, 255, .55);\r\n    background: rgba(255, 255, 255, .18);\r\n    color: #fff;\r\n    box-shadow: none;\r\n}\r\n\r\n.pointer-project-tabs_tab-label_ZJhHQ {\r\n    max-width: 150px;\r\n    overflow: hidden;\r\n    padding: 0;\r\n    border: 0;\r\n    background: transparent;\r\n    color: inherit;\r\n    font: 600 .68rem \"OPPO Sans\", sans-serif;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-project-tabs_tab-label_ZJhHQ:disabled { cursor: default; opacity: .7; }\r\n\r\n.pointer-project-tabs_tab-input_29yv9 {\r\n    width: 120px;\r\n    max-width: 150px;\r\n    height: 22px;\r\n    padding: 0 3px;\r\n    border: 0;\r\n    border-bottom: 1px solid rgba(255, 255, 255, .55);\r\n    background: transparent;\r\n    color: #fff;\r\n    font: 700 .68rem \"OPPO Sans\", sans-serif;\r\n    outline: none;\r\n}\r\n\r\n.pointer-project-tabs_tab-input_29yv9:focus { border-bottom-color: #fff; }\r\n\r\n.pointer-project-tabs_tab-input_29yv9:disabled { opacity: .7; }\r\n\r\n.pointer-project-tabs_tab-close_18y0b {\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 auto;\r\n    width: 15px;\r\n    height: 17px;\r\n    border: 0;\r\n    border-radius: 4px;\r\n    background: transparent;\r\n    color: #fff;\r\n    font-size: .78rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n    opacity: .55;\r\n}\r\n\r\n.pointer-project-tabs_tab-close_18y0b:hover { background: rgba(255, 255, 255, .18); opacity: 1; }\r\n\r\n.pointer-project-tabs_tab-close_18y0b:disabled { cursor: default; opacity: .3; }\r\n\r\n.pointer-project-tabs_tab-add_3lehq {\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 25px;\r\n    width: 25px;\r\n    height: 25px;\r\n    border: 1px dashed rgba(255, 255, 255, .55);\r\n    border-radius: 7px;\r\n    background: transparent;\r\n    color: #fff;\r\n    font-size: .9rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n    transition: background .15s ease, border-color .15s ease;\r\n}\r\n\r\n.pointer-project-tabs_tab-add_3lehq:hover { border-color: #fff; background: rgba(255, 255, 255, .18); }\r\n\r\n.pointer-project-tabs_tab-add_3lehq:disabled { cursor: default; opacity: .4; }\r\n\r\n.pointer-project-tabs_status_3BnRm,\r\n.pointer-project-tabs_notice_3SNbp,\r\n.pointer-project-tabs_error_TbvTW {\r\n    flex: 0 0 auto;\r\n    margin-left: 4px;\r\n    color: rgba(255, 255, 255, .72);\r\n    font-size: .6rem;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-project-tabs_notice_3SNbp {\r\n    max-width: 260px;\r\n    overflow: hidden;\r\n    color: #fff;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.pointer-project-tabs_error_TbvTW { color: #ffd0c9; }\r\n\r\n@media (max-width: 640px) {\r\n    .pointer-project-tabs_tab-input_29yv9 { width: 80px; }\r\n    .pointer-project-tabs_tab_3F9yM { max-width: 130px; }\r\n    .pointer-project-tabs_tab-label_ZJhHQ { max-width: 96px; }\r\n    .pointer-project-tabs_status_3BnRm, .pointer-project-tabs_notice_3SNbp, .pointer-project-tabs_error_TbvTW { display: none; }\r\n}\r\n\r\n.pointer-project-tabs_history-button_1K8l- {\r\n    flex: 0 0 auto;\r\n    height: 25px;\r\n    padding: 0 8px;\r\n    border: 1px solid rgba(255, 255, 255, .45);\r\n    border-radius: 7px;\r\n    background: transparent;\r\n    color: #fff;\r\n    font: 600 .62rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-project-tabs_history-button_1K8l-:hover { border-color: #fff; background: rgba(255, 255, 255, 1); color: #2258b8; }\r\n\r\n.pointer-project-tabs_history-button_1K8l-:disabled { opacity: .4; cursor: default; }\r\n\r\n.pointer-project-tabs_batch-button_1Uslg {\r\n    flex: 0 0 auto;\r\n    height: 25px;\r\n    padding: 0 9px;\r\n    border: 1px solid rgba(255, 255, 255, .75);\r\n    border-radius: 7px;\r\n    background: rgba(255, 255, 255, .14);\r\n    color: #fff;\r\n    font: 600 .62rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .15s ease, color .15s ease;\r\n}\r\n\r\n.pointer-project-tabs_batch-button_1Uslg:hover { border-color: #fff; background: #fff; color: #2258b8; }\r\n\r\n.pointer-project-tabs_batch-button_1Uslg:disabled { opacity: .4; cursor: default; }\r\n\r\n.pointer-project-tabs_history-overlay_2KI7V {\r\n    position: fixed;\r\n    inset: 0;\r\n    z-index: 2380;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 20px;\r\n    background: rgba(9, 28, 60, .32);\r\n    -webkit-backdrop-filter: blur(16px);\r\n            backdrop-filter: blur(16px);\r\n}\r\n\r\n.pointer-project-tabs_history-panel_38zgY {\r\n    width: min(480px, 100%);\r\n    max-height: 78vh;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0 0 14px;\r\n    border: 1px solid rgba(255, 255, 255, .8);\r\n    border-radius: 15px;\r\n    background: #fff;\r\n    color: #2b4a71;\r\n    box-shadow: 0 24px 70px rgba(8, 35, 85, .32);\r\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n}\r\n\r\n.pointer-project-tabs_history-head_3S2MW {\r\n    display: flex;\r\n    align-items: flex-start;\r\n    justify-content: space-between;\r\n    gap: 12px;\r\n    padding: 14px 16px;\r\n    border-bottom: 1px solid #e3edfb;\r\n    background: #f7fbff;\r\n}\r\n\r\n.pointer-project-tabs_history-head_3S2MW strong { display: block; color: #173a6d; font-size: .88rem; }\r\n\r\n.pointer-project-tabs_history-head_3S2MW span { display: block; margin-top: 2px; color: #8ba0ba; font-size: .66rem; }\r\n\r\n.pointer-project-tabs_close_1C2aK {\r\n    width: 28px;\r\n    height: 28px;\r\n    border: 0;\r\n    border-radius: 7px;\r\n    background: transparent;\r\n    color: #8ba0ba;\r\n    font-size: 1.1rem;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-project-tabs_close_1C2aK:hover { background: #fdecea; color: #c0392b; }\r\n\r\n.pointer-project-tabs_history-actions_1o5L0 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    padding: 11px 16px 4px;\r\n}\r\n\r\n.pointer-project-tabs_history-actions_1o5L0 span { color: #93a8c4; font-size: .64rem; }\r\n\r\n.pointer-project-tabs_primary-small_1lxBk {\r\n    height: 29px;\r\n    padding: 0 11px;\r\n    border: 1px solid #2f6fe4;\r\n    border-radius: 7px;\r\n    background: #2f6fe4;\r\n    color: #fff;\r\n    font: 600 .68rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-project-tabs_primary-small_1lxBk:hover { background: #2258b8; }\r\n\r\n.pointer-project-tabs_history-list_14hpV {\r\n    flex: 1;\r\n    min-height: 0;\r\n    margin: 8px 0 0;\r\n    padding: 0 10px;\r\n    overflow-y: auto;\r\n    list-style: none;\r\n}\r\n\r\n.pointer-project-tabs_history-list_14hpV li {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    padding: 9px 8px;\r\n    border-bottom: 1px solid #eef4fc;\r\n}\r\n\r\n.pointer-project-tabs_history-list_14hpV li:last-child { border-bottom: 0; }\r\n\r\n.pointer-project-tabs_history-list_14hpV li div { min-width: 0; display: flex; flex-direction: column; gap: 2px; }\r\n\r\n.pointer-project-tabs_history-list_14hpV strong {\r\n    overflow: hidden;\r\n    color: #2a4a72;\r\n    font-size: .76rem;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-project-tabs_history-list_14hpV span { color: #93a8c4; font-size: .62rem; }\r\n\r\n.pointer-project-tabs_history-restore_2b30o {\r\n    flex: 0 0 auto;\r\n    height: 26px;\r\n    padding: 0 9px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 7px;\r\n    background: #fff;\r\n    color: #2f6fe4;\r\n    font: 600 .66rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-project-tabs_history-restore_2b30o:hover { background: #eef6ff; }\r\n\r\n.pointer-project-tabs_history-restore_2b30o:disabled { opacity: .5; cursor: default; }\r\n\r\n.pointer-project-tabs_history-empty_2hoDI {\r\n    margin: 10px 16px;\r\n    padding: 18px 12px;\r\n    border: 1px dashed #d8e6fa;\r\n    border-radius: 9px;\r\n    color: #93a8c4;\r\n    font-size: .72rem;\r\n    text-align: center;\r\n}\r\n\r\n.pointer-project-tabs_history-error_3FwgG { margin: 6px 16px 0; color: #c0392b; font-size: .7rem; }\r\n\r\n\r\n", ""]);
+exports.push([module.i, ".pointer-project-tabs_tabs-wrap_2i7zS {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 6px;\r\n    min-width: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    color: #fff;\r\n}\r\n\r\n.pointer-project-tabs_tabs_2x4j2 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 4px;\r\n    min-width: 0;\r\n    flex: 1;\r\n    overflow-x: auto;\r\n    scrollbar-width: none;\r\n}\r\n\r\n.pointer-project-tabs_tabs_2x4j2::-webkit-scrollbar { display: none; }\r\n\r\n.pointer-project-tabs_tab_3F9yM,\r\n.pointer-project-tabs_tab-active_2E7H2 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 3px;\r\n    flex: 0 0 auto;\r\n    max-width: 190px;\r\n    height: 26px;\r\n    padding: 0 3px 0 9px;\r\n    border: 1px solid transparent;\r\n    border-radius: 7px;\r\n    background: transparent;\r\n    color: rgba(255, 255, 255, .72);\r\n    transition: background .15s ease, border-color .15s ease, color .15s ease;\r\n}\r\n\r\n.pointer-project-tabs_tab_3F9yM:hover { background: rgba(255, 255, 255, .12); color: #fff; }\r\n\r\n.pointer-project-tabs_tab-active_2E7H2 {\r\n    border-color: rgba(255, 255, 255, .55);\r\n    background: rgba(255, 255, 255, .18);\r\n    color: #fff;\r\n    box-shadow: none;\r\n}\r\n\r\n.pointer-project-tabs_tab-label_ZJhHQ {\r\n    max-width: 150px;\r\n    overflow: hidden;\r\n    padding: 0;\r\n    border: 0;\r\n    background: transparent;\r\n    color: inherit;\r\n    font: 600 .68rem \"OPPO Sans\", sans-serif;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-project-tabs_tab-label_ZJhHQ:disabled { cursor: default; opacity: .7; }\r\n\r\n.pointer-project-tabs_tab-input_29yv9 {\r\n    width: 120px;\r\n    max-width: 150px;\r\n    height: 22px;\r\n    padding: 0 3px;\r\n    border: 0;\r\n    border-bottom: 1px solid rgba(255, 255, 255, .55);\r\n    background: transparent;\r\n    color: #fff;\r\n    font: 700 .68rem \"OPPO Sans\", sans-serif;\r\n    outline: none;\r\n}\r\n\r\n.pointer-project-tabs_tab-input_29yv9:focus { border-bottom-color: #fff; }\r\n\r\n.pointer-project-tabs_tab-input_29yv9:disabled { opacity: .7; }\r\n\r\n.pointer-project-tabs_tab-close_18y0b {\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 auto;\r\n    width: 15px;\r\n    height: 17px;\r\n    border: 0;\r\n    border-radius: 4px;\r\n    background: transparent;\r\n    color: #fff;\r\n    font-size: .78rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n    opacity: .55;\r\n}\r\n\r\n.pointer-project-tabs_tab-close_18y0b:hover { background: rgba(255, 255, 255, .18); opacity: 1; }\r\n\r\n.pointer-project-tabs_tab-close_18y0b:disabled { cursor: default; opacity: .3; }\r\n\r\n.pointer-project-tabs_tab-add_3lehq {\r\n    display: grid;\r\n    place-items: center;\r\n    flex: 0 0 25px;\r\n    width: 25px;\r\n    height: 25px;\r\n    border: 1px dashed rgba(255, 255, 255, .55);\r\n    border-radius: 7px;\r\n    background: transparent;\r\n    color: #fff;\r\n    font-size: .9rem;\r\n    line-height: 1;\r\n    cursor: pointer;\r\n    transition: background .15s ease, border-color .15s ease;\r\n}\r\n\r\n.pointer-project-tabs_tab-add_3lehq:hover { border-color: #fff; background: rgba(255, 255, 255, .18); }\r\n\r\n.pointer-project-tabs_tab-add_3lehq:disabled { cursor: default; opacity: .4; }\r\n\r\n.pointer-project-tabs_status_3BnRm,\r\n.pointer-project-tabs_notice_3SNbp,\r\n.pointer-project-tabs_error_TbvTW {\r\n    flex: 0 0 auto;\r\n    margin-left: 4px;\r\n    color: rgba(255, 255, 255, .72);\r\n    font-size: .6rem;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-project-tabs_notice_3SNbp {\r\n    max-width: 260px;\r\n    overflow: hidden;\r\n    color: #fff;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.pointer-project-tabs_error_TbvTW { color: #ffd0c9; }\r\n\r\n@media (max-width: 640px) {\r\n    .pointer-project-tabs_tab-input_29yv9 { width: 80px; }\r\n    .pointer-project-tabs_tab_3F9yM { max-width: 130px; }\r\n    .pointer-project-tabs_tab-label_ZJhHQ { max-width: 96px; }\r\n    .pointer-project-tabs_status_3BnRm, .pointer-project-tabs_notice_3SNbp, .pointer-project-tabs_error_TbvTW { display: none; }\r\n}\r\n\r\n.pointer-project-tabs_history-button_1K8l- {\r\n    flex: 0 0 auto;\r\n    height: 25px;\r\n    padding: 0 8px;\r\n    border: 1px solid rgba(255, 255, 255, .45);\r\n    border-radius: 7px;\r\n    background: transparent;\r\n    color: #fff;\r\n    font: 600 .62rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-project-tabs_history-button_1K8l-:hover { border-color: #fff; background: rgba(255, 255, 255, 1); color: #2258b8; }\r\n\r\n.pointer-project-tabs_history-button_1K8l-:disabled { opacity: .4; cursor: default; }\r\n\r\n.pointer-project-tabs_batch-button_1Uslg {\r\n    flex: 0 0 auto;\r\n    height: 25px;\r\n    padding: 0 9px;\r\n    border: 1px solid rgba(255, 255, 255, .75);\r\n    border-radius: 7px;\r\n    background: rgba(255, 255, 255, .14);\r\n    color: #fff;\r\n    font: 600 .62rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n    transition: background .15s ease, color .15s ease;\r\n}\r\n\r\n.pointer-project-tabs_batch-button_1Uslg:hover { border-color: #fff; background: #fff; color: #2258b8; }\r\n\r\n.pointer-project-tabs_batch-button_1Uslg:disabled { opacity: .4; cursor: default; }\r\n\r\n.pointer-project-tabs_history-overlay_2KI7V {\r\n    position: fixed;\r\n    inset: 0;\r\n    z-index: 2380;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 20px;\r\n    background: rgba(9, 28, 60, .32);\r\n    -webkit-backdrop-filter: blur(16px);\r\n            backdrop-filter: blur(16px);\r\n}\r\n\r\n.pointer-project-tabs_history-panel_38zgY {\r\n    width: min(480px, 100%);\r\n    max-height: 78vh;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0 0 14px;\r\n    border: 1px solid rgba(255, 255, 255, .8);\r\n    border-radius: 15px;\r\n    background: #fff;\r\n    color: #2b4a71;\r\n    box-shadow: 0 24px 70px rgba(8, 35, 85, .32);\r\n    font-family: \"OPPO Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n}\r\n\r\n.pointer-project-tabs_history-head_3S2MW {\r\n    display: flex;\r\n    align-items: flex-start;\r\n    justify-content: space-between;\r\n    gap: 12px;\r\n    padding: 14px 16px;\r\n    border-bottom: 1px solid #e3edfb;\r\n    background: #f7fbff;\r\n}\r\n\r\n.pointer-project-tabs_history-head_3S2MW strong { display: block; color: #173a6d; font-size: .88rem; }\r\n\r\n.pointer-project-tabs_history-head_3S2MW span { display: block; margin-top: 2px; color: #8ba0ba; font-size: .66rem; }\r\n\r\n.pointer-project-tabs_close_1C2aK {\r\n    width: 28px;\r\n    height: 28px;\r\n    border: 0;\r\n    border-radius: 7px;\r\n    background: transparent;\r\n    color: #8ba0ba;\r\n    font-size: 1.1rem;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-project-tabs_close_1C2aK:hover { background: #fdecea; color: #c0392b; }\r\n\r\n.pointer-project-tabs_history-actions_1o5L0 {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    padding: 11px 16px 4px;\r\n}\r\n\r\n.pointer-project-tabs_history-actions_1o5L0 span { color: #93a8c4; font-size: .64rem; }\r\n\r\n.pointer-project-tabs_primary-small_1lxBk {\r\n    height: 29px;\r\n    padding: 0 11px;\r\n    border: 1px solid #2f6fe4;\r\n    border-radius: 7px;\r\n    background: #2f6fe4;\r\n    color: #fff;\r\n    font: 600 .68rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-project-tabs_primary-small_1lxBk:hover { background: #2258b8; }\r\n\r\n.pointer-project-tabs_history-list_14hpV {\r\n    flex: 1;\r\n    min-height: 0;\r\n    margin: 8px 0 0;\r\n    padding: 0 10px;\r\n    overflow-y: auto;\r\n    list-style: none;\r\n}\r\n\r\n.pointer-project-tabs_history-list_14hpV li {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n    padding: 9px 8px;\r\n    border-bottom: 1px solid #eef4fc;\r\n}\r\n\r\n.pointer-project-tabs_history-list_14hpV li:last-child { border-bottom: 0; }\r\n\r\n.pointer-project-tabs_history-list_14hpV li div { min-width: 0; display: flex; flex-direction: column; gap: 2px; }\r\n\r\n.pointer-project-tabs_history-list_14hpV strong {\r\n    overflow: hidden;\r\n    color: #2a4a72;\r\n    font-size: .76rem;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.pointer-project-tabs_history-list_14hpV span { color: #93a8c4; font-size: .62rem; }\r\n\r\n.pointer-project-tabs_history-restore_2b30o {\r\n    flex: 0 0 auto;\r\n    height: 26px;\r\n    padding: 0 9px;\r\n    border: 1px solid #c9d8ee;\r\n    border-radius: 7px;\r\n    background: #fff;\r\n    color: #2f6fe4;\r\n    font: 600 .66rem \"OPPO Sans\", sans-serif;\r\n    cursor: pointer;\r\n}\r\n\r\n.pointer-project-tabs_history-restore_2b30o:hover { background: #eef6ff; }\r\n\r\n.pointer-project-tabs_history-restore_2b30o:disabled { opacity: .5; cursor: default; }\r\n\r\n.pointer-project-tabs_history-empty_2hoDI {\r\n    margin: 10px 16px;\r\n    padding: 18px 12px;\r\n    border: 1px dashed #d8e6fa;\r\n    border-radius: 9px;\r\n    color: #93a8c4;\r\n    font-size: .72rem;\r\n    text-align: center;\r\n}\r\n\r\n.pointer-project-tabs_history-error_3FwgG { margin: 6px 16px 0; color: #c0392b; font-size: .7rem; }\r\n\r\n.pointer-project-tabs_dirty-dot_JwO7f {\n    flex: 0 0 auto;\n    width: 5px;\n    height: 5px;\n    border-radius: 50%;\n    background: #ffd36e;\n    box-shadow: 0 0 6px rgba(255, 211, 110, .7);\n}\r\n\r\n.pointer-project-tabs_auto-status_142Pp {\n    flex: 0 0 auto;\n    margin-left: 4px;\n    color: rgba(255, 255, 255, .64);\n    font-size: .6rem;\n    white-space: nowrap;\n}\r\n\r\n.pointer-project-tabs_secondary-small_vdYpg {\n    height: 29px;\n    padding: 0 10px;\n    border: 1px solid #c9d8ee;\n    border-radius: 7px;\n    background: #fff;\n    color: #2f6fe4;\n    font: 600 .66rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\r\n\r\n.pointer-project-tabs_secondary-small_vdYpg:hover { background: #eef6ff; }\r\n\r\n.pointer-project-tabs_version-actions_1R9VZ {\n    display: flex;\n    flex-direction: row;\n    flex: 0 0 auto;\n    gap: 6px;\n}\r\n\r\n.pointer-project-tabs_history-restore-new_2BV62 {\n    flex: 0 0 auto;\n    height: 26px;\n    padding: 0 8px;\n    border: 1px solid #c9d8ee;\n    border-radius: 7px;\n    background: #f7fbff;\n    color: #47617f;\n    font: 600 .64rem \"OPPO Sans\", sans-serif;\n    cursor: pointer;\n}\r\n\r\n.pointer-project-tabs_history-restore-new_2BV62:hover { background: #eef6ff; color: #2f6fe4; }\r\n\r\n.pointer-project-tabs_history-restore-new_2BV62:disabled { opacity: .5; cursor: default; }\r\n\r\n@media (max-width: 640px) {\n    .pointer-project-tabs_auto-status_142Pp { display: none; }\n}\n\r\n\r\n\r\n", ""]);
 
 // exports
 exports.locals = {
@@ -2431,7 +2550,17 @@ exports.locals = {
 	"history-empty": "pointer-project-tabs_history-empty_2hoDI",
 	"historyEmpty": "pointer-project-tabs_history-empty_2hoDI",
 	"history-error": "pointer-project-tabs_history-error_3FwgG",
-	"historyError": "pointer-project-tabs_history-error_3FwgG"
+	"historyError": "pointer-project-tabs_history-error_3FwgG",
+	"dirty-dot": "pointer-project-tabs_dirty-dot_JwO7f",
+	"dirtyDot": "pointer-project-tabs_dirty-dot_JwO7f",
+	"auto-status": "pointer-project-tabs_auto-status_142Pp",
+	"autoStatus": "pointer-project-tabs_auto-status_142Pp",
+	"secondary-small": "pointer-project-tabs_secondary-small_vdYpg",
+	"secondarySmall": "pointer-project-tabs_secondary-small_vdYpg",
+	"version-actions": "pointer-project-tabs_version-actions_1R9VZ",
+	"versionActions": "pointer-project-tabs_version-actions_1R9VZ",
+	"history-restore-new": "pointer-project-tabs_history-restore-new_2BV62",
+	"historyRestoreNew": "pointer-project-tabs_history-restore-new_2BV62"
 };
 
 /***/ }),
@@ -4133,7 +4262,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n.restore-point-modal_modal-content_1cTB4 {\n    max-width: 600px;\n    margin-top: 50px;\n}\n\n.restore-point-modal_body_Ne9Vp {\n    background: var(--ui-modal-background);\n    padding: 1.5rem 2.25rem;\n    max-height: calc(100vh - 150px);\n    overflow: auto;\n    display: flex;\n    flex-direction: column;\n    gap: 1rem;\n}\n\n.restore-point-modal_extra-container_tMv36 {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.restore-point-modal_total-size_3gtWl {\n\n}\n\n.restore-point-modal_total-size-description_3Zmy6 {\n    font-size: small;\n}\n\n.restore-point-modal_button_cFvo3 {\n    font: inherit;\n    color: inherit;\n    padding: 0.75rem 1rem;\n    border-radius: 0.25rem;\n    border: 1px solid var(--ui-black-transparent);\n    font-weight: 600;\n    font-size: 0.85rem;\n    color: var(--ui-white);\n}\n\n.restore-point-modal_button_cFvo3:disabled {\n    opacity: 0.8;\n}\n\n.restore-point-modal_delete-all-button_9PWf0 {\n    margin-left: 1rem;\n    background-color: var(--data-primary);\n    color: white;\n    white-space: nowrap;\n}\n\n.restore-point-modal_error-message_19Pqn {\n    font-family: monospace;\n    -webkit-user-select: text;\n       -moz-user-select: text;\n        -ms-user-select: text;\n            user-select: text;\n}\n\n.restore-point-modal_restore-point-container_3KiD9 {\n    display: grid;\n    grid-template-columns: 1fr;\n    gap: 0.5rem;\n}\n\n.restore-point-modal_restore-point_11IHu {\n    width: 100%;\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    border: 2px solid var(--ui-black-transparent);\n    padding: 0.5rem;\n    border-radius: 0.5rem;\n    gap: 0.5rem;\n}\n\n.restore-point-modal_restore-point_11IHu:hover {\n    border-color: var(--looks-secondary);\n}\n\n.restore-point-modal_restore-point-title_k0U8V {\n    font-weight: bold;\n}\n\n.restore-point-modal_thumbnail-container_3RM7b {\n    flex-shrink: 0;\n    /* 4:3 */\n    width: 100px;\n    height: 75px;\n}\n\n.restore-point-modal_thumbnail-image_31By_ {\n    display: block;\n    border-radius: 0.25rem;\n    width: 100%;\n    height: 100%;\n}\n\n.restore-point-modal_thumbnail-placeholder_2Q3El {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 2em;\n}\n\n.restore-point-modal_restore-point-buttons_1mPFn {\n    margin-left: auto;\n    display: flex;\n    flex-direction: row;\n    gap: 0.5rem;\n}\n\n.restore-point-modal_restore-point-button_2eIR7 {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    background: none;\n    border: none;\n    border-radius: 100%;\n    width: 2rem;\n    height: 2rem;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.restore-point-modal_restore-point-button_2eIR7[disabled] {\n    opacity: 0.5;\n}\n\n.restore-point-modal_restore-point-button_2eIR7 img {\n    display: block;\n    width: 75%;\n    height: 75%;\n    filter: var(--filter-icon-gray);\n}\n\n.restore-point-modal_restore-point-button_2eIR7:not([disabled]):hover {\n    background-color: var(--ui-black-transparent);\n}\n\n.restore-point-modal_disabled_7w0zS {\n    padding: 0.5rem;\n    border-radius: 0.5rem;\n    background-color: rgba(255, 0, 0, 0.18);\n    border: 2px solid rgba(255, 0, 0, 0.568);\n    font-weight: bold;\n}\n", ""]);
+exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n.restore-point-modal_modal-content_1cTB4 {\n    max-width: 600px;\n    margin-top: 50px;\n}\n\n.restore-point-modal_body_Ne9Vp {\n    background: var(--ui-modal-background);\n    padding: 1.5rem 2.25rem;\n    max-height: calc(100vh - 150px);\n    overflow: auto;\n    display: flex;\n    flex-direction: column;\n    gap: 1rem;\n}\n\n.restore-point-modal_extra-container_tMv36 {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.restore-point-modal_total-size_3gtWl {\n\n}\n\n.restore-point-modal_total-size-description_3Zmy6 {\n    font-size: small;\n}\n\n.restore-point-modal_button_cFvo3 {\n    font: inherit;\n    color: inherit;\n    padding: 0.75rem 1rem;\n    border-radius: 0.25rem;\n    border: 1px solid var(--ui-black-transparent);\n    font-weight: 600;\n    font-size: 0.85rem;\n    color: var(--ui-white);\n}\n\n.restore-point-modal_button_cFvo3:disabled {\n    opacity: 0.8;\n}\n\n.restore-point-modal_create-row_Qo1RO {\n    display: flex;\n    align-items: center;\n    gap: 0.75rem;\n    flex-wrap: wrap;\n}\n\n.restore-point-modal_create-row_Qo1RO .restore-point-modal_button_cFvo3 {\n    background-color: var(--looks-secondary);\n    color: white;\n    white-space: nowrap;\n}\n\n.restore-point-modal_create-hint_2szr3 {\n    font-size: small;\n    opacity: 0.8;\n}\n\n.restore-point-modal_delete-all-button_9PWf0 {\n    margin-left: 1rem;\n    background-color: var(--data-primary);\n    color: white;\n    white-space: nowrap;\n}\n\n.restore-point-modal_error-message_19Pqn {\n    font-family: monospace;\n    -webkit-user-select: text;\n       -moz-user-select: text;\n        -ms-user-select: text;\n            user-select: text;\n}\n\n.restore-point-modal_restore-point-container_3KiD9 {\n    display: grid;\n    grid-template-columns: 1fr;\n    gap: 0.5rem;\n}\n\n.restore-point-modal_restore-point_11IHu {\n    width: 100%;\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    border: 2px solid var(--ui-black-transparent);\n    padding: 0.5rem;\n    border-radius: 0.5rem;\n    gap: 0.5rem;\n}\n\n.restore-point-modal_restore-point_11IHu:hover {\n    border-color: var(--looks-secondary);\n}\n\n.restore-point-modal_restore-point-title_k0U8V {\n    font-weight: bold;\n}\n\n.restore-point-modal_thumbnail-container_3RM7b {\n    flex-shrink: 0;\n    /* 4:3 */\n    width: 100px;\n    height: 75px;\n}\n\n.restore-point-modal_thumbnail-image_31By_ {\n    display: block;\n    border-radius: 0.25rem;\n    width: 100%;\n    height: 100%;\n}\n\n.restore-point-modal_thumbnail-placeholder_2Q3El {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 2em;\n}\n\n.restore-point-modal_restore-point-buttons_1mPFn {\n    margin-left: auto;\n    display: flex;\n    flex-direction: row;\n    gap: 0.5rem;\n}\n\n.restore-point-modal_restore-point-button_2eIR7 {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    background: none;\n    border: none;\n    border-radius: 100%;\n    width: 2rem;\n    height: 2rem;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.restore-point-modal_restore-point-button_2eIR7[disabled] {\n    opacity: 0.5;\n}\n\n.restore-point-modal_restore-point-button_2eIR7 img {\n    display: block;\n    width: 75%;\n    height: 75%;\n    filter: var(--filter-icon-gray);\n}\n\n.restore-point-modal_restore-point-button_2eIR7:not([disabled]):hover {\n    background-color: var(--ui-black-transparent);\n}\n\n.restore-point-modal_disabled_7w0zS {\n    padding: 0.5rem;\n    border-radius: 0.5rem;\n    background-color: rgba(255, 0, 0, 0.18);\n    border: 2px solid rgba(255, 0, 0, 0.568);\n    font-weight: bold;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -4147,6 +4276,10 @@ exports.locals = {
 	"total-size-description": "restore-point-modal_total-size-description_3Zmy6",
 	"totalSizeDescription": "restore-point-modal_total-size-description_3Zmy6",
 	"button": "restore-point-modal_button_cFvo3",
+	"create-row": "restore-point-modal_create-row_Qo1RO",
+	"createRow": "restore-point-modal_create-row_Qo1RO",
+	"create-hint": "restore-point-modal_create-hint_2szr3",
+	"createHint": "restore-point-modal_create-hint_2szr3",
 	"delete-all-button": "restore-point-modal_delete-all-button_9PWf0",
 	"deleteAllButton": "restore-point-modal_delete-all-button_9PWf0",
 	"error-message": "restore-point-modal_error-message_19Pqn",
@@ -7071,10 +7204,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _box_box_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../box/box.jsx */ "./src/components/box/box.jsx");
-/* harmony import */ var _blocks_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks.css */ "./src/components/blocks/blocks.css");
-/* harmony import */ var _blocks_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_blocks_css__WEBPACK_IMPORTED_MODULE_4__);
-const _excluded = ["containerRef", "dragOver"];
+/* harmony import */ var _workspace_background_picker_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./workspace-background-picker.jsx */ "./src/components/blocks/workspace-background-picker.jsx");
+/* harmony import */ var _lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../lib/pointer-workspace-background */ "./src/lib/pointer-workspace-background.js");
+/* harmony import */ var _blocks_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blocks.css */ "./src/components/blocks/blocks.css");
+/* harmony import */ var _blocks_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_blocks_css__WEBPACK_IMPORTED_MODULE_6__);
+const _excluded = ["containerRef", "dragOver", "style"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+function _toPrimitive(t, e) { if ("object" != typeof t || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 
@@ -7082,23 +7222,440 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 
 
 
-const BlocksComponent = props => {
-  const containerRef = props.containerRef,
-    dragOver = props.dragOver,
-    componentProps = _objectWithoutProperties(props, _excluded);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({
-    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_blocks_css__WEBPACK_IMPORTED_MODULE_4___default.a.blocks, {
-      [_blocks_css__WEBPACK_IMPORTED_MODULE_4___default.a.dragOver]: dragOver
-    })
-  }, componentProps, {
-    componentRef: containerRef
-  }));
-};
+
+
+class BlocksComponent extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      background: Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__["getWorkspaceBackground"])()
+    };
+    this.handleBackgroundChanged = this.handleBackgroundChanged.bind(this);
+  }
+  componentDidMount() {
+    window.addEventListener('pointere-workspace-background-changed', this.handleBackgroundChanged);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('pointere-workspace-background-changed', this.handleBackgroundChanged);
+  }
+  handleBackgroundChanged(event) {
+    this.setState({
+      background: event && event.detail ? event.detail : Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__["getWorkspaceBackground"])()
+    });
+  }
+  render() {
+    const _this$props = this.props,
+      containerRef = _this$props.containerRef,
+      dragOver = _this$props.dragOver,
+      style = _this$props.style,
+      componentProps = _objectWithoutProperties(_this$props, _excluded);
+    const background = this.state.background;
+    const panelStyle = _objectSpread(_objectSpread({}, Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__["getWorkspacePanelStyle"])(background)), style);
+    const darkControls = Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__["isDarkBackground"])(background);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_blocks_css__WEBPACK_IMPORTED_MODULE_6___default.a.blocksWrap, {
+        [_blocks_css__WEBPACK_IMPORTED_MODULE_6___default.a.darkControls]: darkControls
+      }),
+      style: panelStyle
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: _blocks_css__WEBPACK_IMPORTED_MODULE_6___default.a.workspaceBackground,
+      style: Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_5__["getWorkspaceBackgroundStyle"])(background)
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({
+      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_blocks_css__WEBPACK_IMPORTED_MODULE_6___default.a.blocks, {
+        [_blocks_css__WEBPACK_IMPORTED_MODULE_6___default.a.dragOver]: dragOver
+      })
+    }, componentProps, {
+      componentRef: containerRef
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_workspace_background_picker_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      settings: background
+    }));
+  }
+}
 BlocksComponent.propTypes = {
   containerRef: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
-  dragOver: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.bool
+  dragOver: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.bool,
+  style: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object
 };
 /* harmony default export */ __webpack_exports__["default"] = (BlocksComponent);
+
+/***/ }),
+
+/***/ "./src/components/blocks/workspace-background-picker.css":
+/*!***************************************************************!*\
+  !*** ./src/components/blocks/workspace-background-picker.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--5-1!../../../node_modules/postcss-loader/src??postcss!./workspace-background-picker.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/blocks/workspace-background-picker.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/blocks/workspace-background-picker.jsx":
+/*!***************************************************************!*\
+  !*** ./src/components/blocks/workspace-background-picker.jsx ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib/pointer-workspace-background */ "./src/lib/pointer-workspace-background.js");
+/* harmony import */ var _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./workspace-background-picker.css */ "./src/components/blocks/workspace-background-picker.css");
+/* harmony import */ var _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+class WorkspaceBackgroundPicker extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+      message: ''
+    };
+    this.pickerRef = null;
+    this.fileInput = null;
+    this.setPickerRef = this.setPickerRef.bind(this);
+    this.setFileInput = this.setFileInput.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.handlePreset = this.handlePreset.bind(this);
+    this.handleColor = this.handleColor.bind(this);
+    this.handleChooseFile = this.handleChooseFile.bind(this);
+    this.handleClearImage = this.handleClearImage.bind(this);
+    this.handleFileChange = this.handleFileChange.bind(this);
+    this.handleBackgroundBlur = this.handleBackgroundBlur.bind(this);
+    this.handlePanelBlur = this.handlePanelBlur.bind(this);
+    this.handlePanelOpacity = this.handlePanelOpacity.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleOutsideClick, true);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleOutsideClick, true);
+  }
+  setPickerRef(element) {
+    this.pickerRef = element;
+  }
+  setFileInput(element) {
+    this.fileInput = element;
+  }
+  handleOutsideClick(event) {
+    if (!this.state.open || !this.pickerRef) return;
+    if (this.pickerRef.contains(event.target)) return;
+    this.setState({
+      open: false
+    });
+  }
+  handleToggle() {
+    this.setState(previous => ({
+      open: !previous.open,
+      message: ''
+    }));
+  }
+  apply(patch) {
+    this.setState({
+      message: ''
+    });
+    Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["setWorkspaceBackground"])(patch);
+  }
+  handlePreset(preset) {
+    this.apply({
+      preset: preset.id,
+      color: '',
+      image: '',
+      dark: Boolean(preset.dark)
+    });
+  }
+  handleColor(event) {
+    this.apply({
+      preset: 'color',
+      color: event.target.value,
+      image: '',
+      dark: Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["isDarkColor"])(event.target.value)
+    });
+  }
+  handleChooseFile() {
+    if (this.fileInput) this.fileInput.click();
+  }
+  handleClearImage() {
+    this.apply({
+      preset: 'default',
+      image: '',
+      color: '',
+      dark: false
+    });
+  }
+  handleBackgroundBlur(event) {
+    this.apply({
+      backgroundBlur: Number(event.target.value)
+    });
+  }
+  handlePanelBlur(event) {
+    this.apply({
+      panelBlur: Number(event.target.value)
+    });
+  }
+  handlePanelOpacity(event) {
+    this.apply({
+      panelOpacity: Number(event.target.value) / 100
+    });
+  }
+  handleReset() {
+    this.setState({
+      message: ''
+    });
+    Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["setWorkspaceBackground"])({
+      preset: 'default',
+      color: '',
+      image: '',
+      dark: false,
+      backgroundBlur: 0,
+      panelBlur: 14,
+      panelOpacity: 0.55
+    });
+  }
+  handleFileChange(event) {
+    const file = event.target.files && event.target.files[0];
+    event.target.value = '';
+    if (!file) return;
+    if (!file.type || !file.type.startsWith('image/')) {
+      this.setState({
+        message: '请选择图片文件'
+      });
+      return;
+    }
+    this.setState({
+      message: '正在处理图片…'
+    });
+    const reader = new FileReader();
+    reader.onload = () => {
+      const image = new Image();
+      image.onload = () => {
+        const maxWidth = 1600;
+        const maxHeight = 1000;
+        const scale = Math.min(1, maxWidth / image.width, maxHeight / image.height);
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.max(1, Math.round(image.width * scale));
+        canvas.height = Math.max(1, Math.round(image.height * scale));
+        const context = canvas.getContext('2d');
+        if (!context) {
+          this.setState({
+            message: '图片处理失败'
+          });
+          return;
+        }
+        context.fillStyle = '#ffffff';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);
+        let dark = false;
+        try {
+          const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+          let total = 0;
+          let samples = 0;
+          const step = 4 * 24;
+          for (let index = 0; index < pixels.length; index += step) {
+            total += 0.2126 * pixels[index] + 0.7152 * pixels[index + 1] + 0.0722 * pixels[index + 2];
+            samples += 1;
+          }
+          dark = samples > 0 && total / samples < 128;
+        } catch (error) {
+          dark = false;
+        }
+        let dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+        if (dataUrl.length > 2.2 * 1024 * 1024) {
+          dataUrl = canvas.toDataURL('image/jpeg', 0.68);
+        }
+        if (dataUrl.length > 2.8 * 1024 * 1024) {
+          this.setState({
+            message: '图片太大，请换一张'
+          });
+          return;
+        }
+        const persisted = Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["setWorkspaceBackground"])({
+          preset: 'image',
+          image: dataUrl,
+          color: '',
+          dark
+        });
+        this.setState({
+          message: persisted ? '' : '图片已应用，但无法长期保存'
+        });
+      };
+      image.onerror = () => this.setState({
+        message: '图片读取失败'
+      });
+      image.src = reader.result;
+    };
+    reader.onerror = () => this.setState({
+      message: '图片读取失败'
+    });
+    reader.readAsDataURL(file);
+  }
+  render() {
+    const settings = this.props.settings;
+    const _this$state = this.state,
+      open = _this$state.open,
+      message = _this$state.message;
+    const activePreset = settings.image ? 'image' : settings.color ? 'color' : settings.preset;
+    const triggerStyle = Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["getWorkspaceBackgroundStyle"])(settings);
+    const dark = Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["isDarkBackground"])(settings);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.picker, {
+        [_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.dark]: dark
+      }),
+      ref: this.setPickerRef
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.trigger,
+      type: "button",
+      onClick: this.handleToggle,
+      "aria-expanded": open,
+      title: "\u81EA\u5B9A\u4E49\u5DE5\u4F5C\u533A\u80CC\u666F"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.triggerDot,
+      style: {
+        backgroundColor: triggerStyle.backgroundColor,
+        backgroundImage: triggerStyle.backgroundImage,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }
+    }), "\u80CC\u666F"), open ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.panel,
+      role: "dialog",
+      "aria-label": "\u5DE5\u4F5C\u533A\u80CC\u666F",
+      onMouseDown: event => event.stopPropagation()
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.head
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("strong", null, "\u5DE5\u4F5C\u533A\u80CC\u666F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.close,
+      type: "button",
+      onClick: this.handleToggle,
+      "aria-label": "\u5173\u95ED\u80CC\u666F\u8BBE\u7F6E"
+    }, "\xD7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sectionTitle
+    }, "\u9884\u8BBE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.presetGrid
+    }, _lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_3__["WORKSPACE_BACKGROUND_PRESETS"].map(preset => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+      key: preset.id,
+      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.preset, {
+        [_workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.presetActive]: activePreset === preset.id
+      }),
+      type: "button",
+      onClick: () => this.handlePreset(preset)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.presetSwatch,
+      style: {
+        background: preset.id === 'default' ? '#fff' : preset.css
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, preset.name)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sectionTitle
+    }, "\u81EA\u5B9A\u4E49"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("label", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.row
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, "\u7EAF\u8272\u80CC\u666F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.colorInput,
+      type: "color",
+      value: settings.color || '#ffffff',
+      onChange: this.handleColor
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.row
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, "\u80CC\u666F\u56FE\u7247"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.rowActions
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.smallButton,
+      type: "button",
+      onClick: this.handleChooseFile
+    }, "\u4E0A\u4F20\u56FE\u7247"), settings.image ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.smallButton,
+      type: "button",
+      onClick: this.handleClearImage
+    }, "\u6E05\u9664") : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.fileInput,
+      id: "workspace-background-file",
+      ref: this.setFileInput,
+      type: "file",
+      accept: "image/*",
+      onChange: this.handleFileChange
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sectionTitle
+    }, "\u9762\u677F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("label", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sliderRow
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, "\u80CC\u666F\u6A21\u7CCA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.slider,
+      type: "range",
+      min: "0",
+      max: "16",
+      step: "1",
+      value: settings.backgroundBlur,
+      onChange: this.handleBackgroundBlur
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, settings.backgroundBlur, "px")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("label", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sliderRow
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, "\u9762\u677F\u6A21\u7CCA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.slider,
+      type: "range",
+      min: "0",
+      max: "24",
+      step: "1",
+      value: settings.panelBlur,
+      onChange: this.handlePanelBlur
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, settings.panelBlur, "px")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("label", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.sliderRow
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, "\u9762\u677F\u900F\u660E\u5EA6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.slider,
+      type: "range",
+      min: "30",
+      max: "95",
+      step: "1",
+      value: Math.round(settings.panelOpacity * 100),
+      onChange: this.handlePanelOpacity
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, Math.round(settings.panelOpacity * 100), "%")), message ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.message
+    }, message) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+      className: _workspace_background_picker_css__WEBPACK_IMPORTED_MODULE_4___default.a.reset,
+      type: "button",
+      onClick: this.handleReset
+    }, "\u6062\u590D\u9ED8\u8BA4")) : null);
+  }
+}
+WorkspaceBackgroundPicker.propTypes = {
+  settings: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    preset: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    color: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    image: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    dark: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+    backgroundBlur: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    panelBlur: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    panelOpacity: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired
+  }).isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (WorkspaceBackgroundPicker);
 
 /***/ }),
 
@@ -11222,18 +11779,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_layout_constants__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../../lib/layout-constants */ "./src/lib/layout-constants.js");
 /* harmony import */ var _lib_screen_utils__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../../lib/screen-utils */ "./src/lib/screen-utils.js");
 /* harmony import */ var _lib_themes__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../../lib/themes */ "./src/lib/themes/index.js");
-/* harmony import */ var _lib_tw_environment_support_prober__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../../lib/tw-environment-support-prober */ "./src/lib/tw-environment-support-prober.js");
-/* harmony import */ var _gui_css__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./gui.css */ "./src/components/gui/gui.css");
-/* harmony import */ var _gui_css__WEBPACK_IMPORTED_MODULE_42___default = /*#__PURE__*/__webpack_require__.n(_gui_css__WEBPACK_IMPORTED_MODULE_42__);
-/* harmony import */ var _icon_extensions_svg__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./icon--extensions.svg */ "./src/components/gui/icon--extensions.svg");
-/* harmony import */ var _icon_extensions_svg__WEBPACK_IMPORTED_MODULE_43___default = /*#__PURE__*/__webpack_require__.n(_icon_extensions_svg__WEBPACK_IMPORTED_MODULE_43__);
-/* harmony import */ var _lib_tw_recolor_build_icon_code_svg__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ../../lib/tw-recolor/build!./icon--code.svg */ "./src/lib/tw-recolor/build.js!./src/components/gui/icon--code.svg");
-/* harmony import */ var _lib_tw_recolor_build_icon_costumes_svg__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ../../lib/tw-recolor/build!./icon--costumes.svg */ "./src/lib/tw-recolor/build.js!./src/components/gui/icon--costumes.svg");
-/* harmony import */ var _lib_tw_recolor_build_icon_sounds_svg__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ../../lib/tw-recolor/build!./icon--sounds.svg */ "./src/lib/tw-recolor/build.js!./src/components/gui/icon--sounds.svg");
+/* harmony import */ var _lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../../lib/pointer-workspace-background */ "./src/lib/pointer-workspace-background.js");
+/* harmony import */ var _pointer_dark_theme_css__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./pointer-dark-theme.css */ "./src/components/gui/pointer-dark-theme.css");
+/* harmony import */ var _pointer_dark_theme_css__WEBPACK_IMPORTED_MODULE_42___default = /*#__PURE__*/__webpack_require__.n(_pointer_dark_theme_css__WEBPACK_IMPORTED_MODULE_42__);
+/* harmony import */ var _lib_tw_environment_support_prober__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../../lib/tw-environment-support-prober */ "./src/lib/tw-environment-support-prober.js");
+/* harmony import */ var _gui_css__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./gui.css */ "./src/components/gui/gui.css");
+/* harmony import */ var _gui_css__WEBPACK_IMPORTED_MODULE_44___default = /*#__PURE__*/__webpack_require__.n(_gui_css__WEBPACK_IMPORTED_MODULE_44__);
+/* harmony import */ var _icon_extensions_svg__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./icon--extensions.svg */ "./src/components/gui/icon--extensions.svg");
+/* harmony import */ var _icon_extensions_svg__WEBPACK_IMPORTED_MODULE_45___default = /*#__PURE__*/__webpack_require__.n(_icon_extensions_svg__WEBPACK_IMPORTED_MODULE_45__);
+/* harmony import */ var _lib_tw_recolor_build_icon_code_svg__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ../../lib/tw-recolor/build!./icon--code.svg */ "./src/lib/tw-recolor/build.js!./src/components/gui/icon--code.svg");
+/* harmony import */ var _lib_tw_recolor_build_icon_costumes_svg__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ../../lib/tw-recolor/build!./icon--costumes.svg */ "./src/lib/tw-recolor/build.js!./src/components/gui/icon--costumes.svg");
+/* harmony import */ var _lib_tw_recolor_build_icon_sounds_svg__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ../../lib/tw-recolor/build!./icon--sounds.svg */ "./src/lib/tw-recolor/build.js!./src/components/gui/icon--sounds.svg");
 const _excluded = ["accountNavOpen", "activeTabIndex", "alertsVisible", "authorId", "authorThumbnailUrl", "authorUsername", "basePath", "backdropLibraryVisible", "backpackHost", "backpackVisible", "blocksId", "blocksTabVisible", "cardsVisible", "canChangeLanguage", "canChangeTheme", "canCreateNew", "canEditTitle", "canManageFiles", "canRemix", "canSave", "canCreateCopy", "canShare", "canUseCloud", "children", "connectionModalVisible", "costumeLibraryVisible", "costumesTabVisible", "customStageSize", "enableCommunity", "intl", "isCreating", "isEmbedded", "isFullScreen", "isPlayerOnly", "isRtl", "isShared", "isWindowFullScreen", "isTelemetryEnabled", "isTotallyNormal", "loading", "logo", "renderLogin", "onClickAbout", "onClickAccountNav", "onCloseAccountNav", "onClickAddonSettings", "onClickDesktopSettings", "onClickNewWindow", "onClickPackager", "onLogOut", "onOpenRegistration", "onToggleLoginOpen", "onActivateCostumesTab", "onActivateSoundsTab", "onActivateTab", "onClickLogo", "onExtensionButtonClick", "onOpenCustomExtensionModal", "onProjectTelemetryEvent", "onRequestCloseBackdropLibrary", "onRequestCloseCostumeLibrary", "onRequestCloseTelemetryModal", "onSeeCommunity", "onShare", "onShowPrivacyPolicy", "onStartSelectingFileUpload", "onTelemetryModalCancel", "onTelemetryModalOptIn", "onTelemetryModalOptOut", "securityManager", "showComingSoon", "showOpenFilePicker", "showSaveFilePicker", "soundsTabVisible", "stageSizeMode", "targetIsStage", "telemetryModalVisible", "theme", "tipsLibraryVisible", "usernameModalVisible", "settingsModalVisible", "customExtensionModalVisible", "fontsModalVisible", "unknownPlatformModalVisible", "invalidProjectModalVisible", "vm"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+
+
 
 
 
@@ -11292,12 +11854,30 @@ const getFullscreenBackgroundColor = () => {
   if (params.has('fullscreen-background')) {
     return params.get('fullscreen-background');
   }
+  if (Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_41__["isDarkBackground"])(Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_41__["getWorkspaceBackground"])())) {
+    return '#0b1220';
+  }
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     return '#111';
   }
   return 'white';
 };
-const fullscreenBackgroundColor = getFullscreenBackgroundColor();
+class WorkspaceThemeSync extends react__WEBPACK_IMPORTED_MODULE_3___default.a.Component {
+  componentDidMount() {
+    this.handleThemeChange = () => {
+      document.body.classList.toggle('pointer-dark-theme', Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_41__["isDarkBackground"])(Object(_lib_pointer_workspace_background__WEBPACK_IMPORTED_MODULE_41__["getWorkspaceBackground"])()));
+    };
+    window.addEventListener('pointere-workspace-background-changed', this.handleThemeChange);
+    this.handleThemeChange();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('pointere-workspace-background-changed', this.handleThemeChange);
+    document.body.classList.remove('pointer-dark-theme');
+  }
+  render() {
+    return null;
+  }
+}
 const GUIComponent = props => {
   const _omit = lodash_omit__WEBPACK_IMPORTED_MODULE_1___default()(props, 'dispatch'),
     accountNavOpen = _omit.accountNavOpen,
@@ -11391,12 +11971,12 @@ const GUIComponent = props => {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], componentProps, children);
   }
   const tabClassNames = {
-    tabs: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.tabs,
-    tab: classnames__WEBPACK_IMPORTED_MODULE_0___default()(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_8___default.a.reactTabsTab, _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.tab),
-    tabList: classnames__WEBPACK_IMPORTED_MODULE_0___default()(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_8___default.a.reactTabsTabList, _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.tabList),
-    tabPanel: classnames__WEBPACK_IMPORTED_MODULE_0___default()(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_8___default.a.reactTabsTabPanel, _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.tabPanel),
-    tabPanelSelected: classnames__WEBPACK_IMPORTED_MODULE_0___default()(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_8___default.a.reactTabsTabPanelSelected, _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.isSelected),
-    tabSelected: classnames__WEBPACK_IMPORTED_MODULE_0___default()(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_8___default.a.reactTabsTabSelected, _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.isSelected)
+    tabs: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.tabs,
+    tab: classnames__WEBPACK_IMPORTED_MODULE_0___default()(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_8___default.a.reactTabsTab, _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.tab),
+    tabList: classnames__WEBPACK_IMPORTED_MODULE_0___default()(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_8___default.a.reactTabsTabList, _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.tabList),
+    tabPanel: classnames__WEBPACK_IMPORTED_MODULE_0___default()(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_8___default.a.reactTabsTabPanel, _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.tabPanel),
+    tabPanelSelected: classnames__WEBPACK_IMPORTED_MODULE_0___default()(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_8___default.a.reactTabsTabPanelSelected, _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.isSelected),
+    tabSelected: classnames__WEBPACK_IMPORTED_MODULE_0___default()(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_8___default.a.reactTabsTabSelected, _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.isSelected)
   };
   const unconstrainedWidth = _lib_layout_constants__WEBPACK_IMPORTED_MODULE_38__["UNCONSTRAINED_NON_STAGE_WIDTH"] + _lib_layout_constants__WEBPACK_IMPORTED_MODULE_38__["FIXED_WIDTH"] + Math.max(0, customStageSize.width - _lib_layout_constants__WEBPACK_IMPORTED_MODULE_38__["FIXED_WIDTH"]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_responsive__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -11407,28 +11987,28 @@ const GUIComponent = props => {
       securityManager: securityManager
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_tw_restore_point_manager_jsx__WEBPACK_IMPORTED_MODULE_34__["default"], null), usernameModalVisible && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_tw_username_modal_jsx__WEBPACK_IMPORTED_MODULE_30__["default"], null), settingsModalVisible && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_tw_settings_modal_jsx__WEBPACK_IMPORTED_MODULE_31__["default"], null), customExtensionModalVisible && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_tw_custom_extension_modal_jsx__WEBPACK_IMPORTED_MODULE_33__["default"], null), fontsModalVisible && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_tw_fonts_modal_jsx__WEBPACK_IMPORTED_MODULE_35__["default"], null), unknownPlatformModalVisible && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_tw_unknown_platform_modal_jsx__WEBPACK_IMPORTED_MODULE_36__["default"], null), invalidProjectModalVisible && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_tw_invalid_project_modal_jsx__WEBPACK_IMPORTED_MODULE_37__["default"], null));
     return isPlayerOnly ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, isWindowFullScreen ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.fullscreenBackground,
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.fullscreenBackground,
       style: {
-        backgroundColor: fullscreenBackgroundColor
+        backgroundColor: getFullscreenBackgroundColor()
       }
     }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_stage_wrapper_jsx__WEBPACK_IMPORTED_MODULE_14__["default"], {
       isFullScreen: isFullScreen,
       isEmbedded: isEmbedded,
-      isRendererSupported: Object(_lib_tw_environment_support_prober__WEBPACK_IMPORTED_MODULE_41__["isRendererSupported"])(),
+      isRendererSupported: Object(_lib_tw_environment_support_prober__WEBPACK_IMPORTED_MODULE_43__["isRendererSupported"])(),
       isRtl: isRtl,
       loading: loading,
       stageSize: _lib_layout_constants__WEBPACK_IMPORTED_MODULE_38__["STAGE_SIZE_MODES"].full,
       vm: vm
     }, alertsVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_alerts_jsx__WEBPACK_IMPORTED_MODULE_26__["default"], {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.alertsContainer
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.alertsContainer
     }) : null), alwaysEnabledModals) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], _extends({
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.pageWrapper,
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.pageWrapper,
       dir: isRtl ? 'rtl' : 'ltr',
       style: {
         minWidth: 1024 + Math.max(0, customStageSize.width - 480),
         minHeight: 640 + Math.max(0, customStageSize.height - 360)
       }
-    }, componentProps), alwaysEnabledModals, telemetryModalVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_telemetry_modal_telemetry_modal_jsx__WEBPACK_IMPORTED_MODULE_29__["default"], {
+    }, componentProps), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(WorkspaceThemeSync, null), alwaysEnabledModals, telemetryModalVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_telemetry_modal_telemetry_modal_jsx__WEBPACK_IMPORTED_MODULE_29__["default"], {
       isRtl: isRtl,
       isTelemetryEnabled: isTelemetryEnabled,
       onCancel: onTelemetryModalCancel,
@@ -11441,11 +12021,11 @@ const GUIComponent = props => {
     }) : null, isCreating ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_loader_loader_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
       isFullScreen: true,
       messageId: "gui.loader.creating"
-    }) : null, Object(_lib_tw_environment_support_prober__WEBPACK_IMPORTED_MODULE_41__["isBrowserSupported"])() ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_browser_modal_browser_modal_jsx__WEBPACK_IMPORTED_MODULE_23__["default"], {
+    }) : null, Object(_lib_tw_environment_support_prober__WEBPACK_IMPORTED_MODULE_43__["isBrowserSupported"])() ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_browser_modal_browser_modal_jsx__WEBPACK_IMPORTED_MODULE_23__["default"], {
       isRtl: isRtl,
       onClickDesktopSettings: onClickDesktopSettings
     }), tipsLibraryVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_tips_library_jsx__WEBPACK_IMPORTED_MODULE_24__["default"], null) : null, cardsVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_cards_jsx__WEBPACK_IMPORTED_MODULE_25__["default"], null) : null, alertsVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_alerts_jsx__WEBPACK_IMPORTED_MODULE_26__["default"], {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.alertsContainer
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.alertsContainer
     }) : null, connectionModalVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_connection_modal_jsx__WEBPACK_IMPORTED_MODULE_28__["default"], {
       vm: vm
     }) : null, costumeLibraryVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_costume_library_jsx__WEBPACK_IMPORTED_MODULE_19__["default"], {
@@ -11468,7 +12048,7 @@ const GUIComponent = props => {
       canRemix: canRemix,
       canSave: canSave,
       canShare: canShare,
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.menuBarPosition,
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.menuBarPosition,
       enableCommunity: enableCommunity,
       isShared: isShared,
       isTotallyNormal: isTotallyNormal,
@@ -11496,11 +12076,11 @@ const GUIComponent = props => {
       canEditTitle: canEditTitle && !isPlayerOnly,
       vm: vm
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.bodyWrapper
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.bodyWrapper
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.flexWrapper
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.flexWrapper
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.editorWrapper
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.editorWrapper
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_tabs__WEBPACK_IMPORTED_MODULE_7__["Tabs"], {
       forceRenderTabPanel: true,
       className: tabClassNames.tabs,
@@ -11514,7 +12094,7 @@ const GUIComponent = props => {
       className: tabClassNames.tab
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
       draggable: false,
-      src: Object(_lib_tw_recolor_build_icon_code_svg__WEBPACK_IMPORTED_MODULE_44__["default"])()
+      src: Object(_lib_tw_recolor_build_icon_code_svg__WEBPACK_IMPORTED_MODULE_46__["default"])()
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_4__["FormattedMessage"], {
       defaultMessage: "Code",
       id: "gui.gui.codeTab"
@@ -11523,7 +12103,7 @@ const GUIComponent = props => {
       onClick: onActivateCostumesTab
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
       draggable: false,
-      src: Object(_lib_tw_recolor_build_icon_costumes_svg__WEBPACK_IMPORTED_MODULE_45__["default"])()
+      src: Object(_lib_tw_recolor_build_icon_costumes_svg__WEBPACK_IMPORTED_MODULE_47__["default"])()
     }), targetIsStage ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_4__["FormattedMessage"], {
       defaultMessage: "Backdrops",
       id: "gui.gui.backdropsTab"
@@ -11535,14 +12115,14 @@ const GUIComponent = props => {
       onClick: onActivateSoundsTab
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
       draggable: false,
-      src: Object(_lib_tw_recolor_build_icon_sounds_svg__WEBPACK_IMPORTED_MODULE_46__["default"])()
+      src: Object(_lib_tw_recolor_build_icon_sounds_svg__WEBPACK_IMPORTED_MODULE_48__["default"])()
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_4__["FormattedMessage"], {
       defaultMessage: "Sounds",
       id: "gui.gui.soundsTab"
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_tabs__WEBPACK_IMPORTED_MODULE_7__["TabPanel"], {
       className: tabClassNames.tabPanel
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.blocksWrapper
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.blocksWrapper
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_blocks_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], {
       key: "".concat(blocksId, "/").concat(theme.id),
       canUseCloud: canUseCloud,
@@ -11556,17 +12136,17 @@ const GUIComponent = props => {
       theme: theme,
       vm: vm
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.extensionButtonContainer
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.extensionButtonContainer
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("button", {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.extensionButton,
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.extensionButton,
       title: intl.formatMessage(messages.addExtension),
       onClick: onExtensionButtonClick
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.extensionButtonIcon,
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.extensionButtonIcon,
       draggable: false,
-      src: _icon_extensions_svg__WEBPACK_IMPORTED_MODULE_43___default.a
+      src: _icon_extensions_svg__WEBPACK_IMPORTED_MODULE_45___default.a
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.watermark
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.watermark
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_watermark_jsx__WEBPACK_IMPORTED_MODULE_21__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_tabs__WEBPACK_IMPORTED_MODULE_7__["TabPanel"], {
       className: tabClassNames.tabPanel
     }, costumesTabVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_costume_tab_jsx__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -11578,15 +12158,15 @@ const GUIComponent = props => {
     }) : null)), backpackVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_backpack_jsx__WEBPACK_IMPORTED_MODULE_22__["default"], {
       host: backpackHost
     }) : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(_gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.stageAndTargetWrapper, _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a[stageSize])
+      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(_gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.stageAndTargetWrapper, _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a[stageSize])
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_stage_wrapper_jsx__WEBPACK_IMPORTED_MODULE_14__["default"], {
       isFullScreen: isFullScreen,
-      isRendererSupported: Object(_lib_tw_environment_support_prober__WEBPACK_IMPORTED_MODULE_41__["isRendererSupported"])(),
+      isRendererSupported: Object(_lib_tw_environment_support_prober__WEBPACK_IMPORTED_MODULE_43__["isRendererSupported"])(),
       isRtl: isRtl,
       stageSize: stageSize,
       vm: vm
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
-      className: _gui_css__WEBPACK_IMPORTED_MODULE_42___default.a.targetWrapper
+      className: _gui_css__WEBPACK_IMPORTED_MODULE_44___default.a.targetWrapper
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_containers_target_pane_jsx__WEBPACK_IMPORTED_MODULE_12__["default"], {
       stageSize: stageSize,
       vm: vm
@@ -11728,6 +12308,36 @@ module.exports = __webpack_require__.p + "static/assets/d259fcbecaa9d2a22d19848d
 
 /***/ }),
 
+/***/ "./src/components/gui/pointer-dark-theme.css":
+/*!***************************************************!*\
+  !*** ./src/components/gui/pointer-dark-theme.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--5-1!../../../node_modules/postcss-loader/src??postcss!./pointer-dark-theme.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/gui/pointer-dark-theme.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./src/components/gui/pointer-project-tab-bar.css":
 /*!********************************************************!*\
   !*** ./src/components/gui/pointer-project-tab-bar.css ***!
@@ -11776,9 +12386,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_intl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-intl */ "./node_modules/react-intl/lib/index.es.js");
 /* harmony import */ var _reducers_project_title__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../reducers/project-title */ "./src/reducers/project-title.js");
 /* harmony import */ var _reducers_project_changed__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../reducers/project-changed */ "./src/reducers/project-changed.js");
-/* harmony import */ var _menu_bar_pointer_project_tabs_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../menu-bar/pointer-project-tabs.jsx */ "./src/components/menu-bar/pointer-project-tabs.jsx");
-/* harmony import */ var _pointer_project_tab_bar_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pointer-project-tab-bar.css */ "./src/components/gui/pointer-project-tab-bar.css");
-/* harmony import */ var _pointer_project_tab_bar_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_pointer_project_tab_bar_css__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _reducers_modals__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../reducers/modals */ "./src/reducers/modals.js");
+/* harmony import */ var _menu_bar_pointer_project_tabs_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../menu-bar/pointer-project-tabs.jsx */ "./src/components/menu-bar/pointer-project-tabs.jsx");
+/* harmony import */ var _pointer_project_tab_bar_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pointer-project-tab-bar.css */ "./src/components/gui/pointer-project-tab-bar.css");
+/* harmony import */ var _pointer_project_tab_bar_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_pointer_project_tab_bar_css__WEBPACK_IMPORTED_MODULE_9__);
+
 
 
 
@@ -11793,15 +12405,17 @@ const PointerProjectTabBar = _ref => {
     intl = _ref.intl,
     projectTitle = _ref.projectTitle,
     vm = _ref.vm,
+    onOpenRestorePoints = _ref.onOpenRestorePoints,
     onProjectUnchanged = _ref.onProjectUnchanged,
     onSetProjectTitle = _ref.onSetProjectTitle;
   if (!canEditTitle) return null;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: _pointer_project_tab_bar_css__WEBPACK_IMPORTED_MODULE_8___default.a.tabBar
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_menu_bar_pointer_project_tabs_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: _pointer_project_tab_bar_css__WEBPACK_IMPORTED_MODULE_9___default.a.tabBar
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_menu_bar_pointer_project_tabs_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {
     intl: intl,
     projectTitle: projectTitle,
     vm: vm,
+    onOpenRestorePoints: onOpenRestorePoints,
     onProjectUnchanged: onProjectUnchanged,
     onSetProjectTitle: onSetProjectTitle,
     onTabChange: () => {
@@ -11812,6 +12426,7 @@ const PointerProjectTabBar = _ref => {
 PointerProjectTabBar.propTypes = {
   canEditTitle: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.bool,
   intl: react_intl__WEBPACK_IMPORTED_MODULE_4__["intlShape"].isRequired,
+  onOpenRestorePoints: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
   onProjectUnchanged: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
   onSetProjectTitle: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
   projectTitle: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
@@ -11821,6 +12436,7 @@ const mapStateToProps = state => ({
   projectTitle: state.scratchGui.projectTitle
 });
 const mapDispatchToProps = dispatch => ({
+  onOpenRestorePoints: () => dispatch(Object(_reducers_modals__WEBPACK_IMPORTED_MODULE_7__["openRestorePointModal"])()),
   onProjectUnchanged: () => dispatch(Object(_reducers_project_changed__WEBPACK_IMPORTED_MODULE_6__["setProjectUnchanged"])()),
   onSetProjectTitle: title => dispatch(Object(_reducers_project_title__WEBPACK_IMPORTED_MODULE_5__["setProjectTitle"])(title))
 });
@@ -13978,10 +14594,13 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_7___default.a.Component {
       externalProject: null,
       aboutOpen: false
     };
-    lodash_bindall__WEBPACK_IMPORTED_MODULE_5___default()(this, ['handleClickSeeInside', 'handleOpenCloud', 'handleCloseCloud', 'handleOpenPublish', 'handleClosePublish', 'handleOpenCollab', 'handleCloseCollab', 'handleCollabState', 'handleOpenAccount', 'handleCloseAccount', 'handleAccountChanged', 'handlePointsChanged', 'handleProjectChanged', 'handleOpenPeAgent', 'handleClosePeAgent', 'handleToggleTodo', 'handleCrossDragOver', 'handleCrossDrop', 'showAssetToast', 'handleClickNew', 'handleClickNewTab', 'handleClickNewWindow', 'handleClickSaveAllTabs', 'handleOpenAbout', 'handleCloseAbout', 'handleActiveTabChanged', 'handleClickRemix', 'handleClickSave', 'handleClickSaveAsCopy', 'handleClickPackager', 'handleClickDesktopSettings', 'handleClickRestorePoints', 'handleClickSeeCommunity', 'handleClickShare', 'handleSetMode', 'handleKeyPress', 'handleRestoreOption', 'getSaveToComputerHandler', 'restoreOptionMessage', 'queueExternalProject', 'handleExternalProject', 'handleDesktopOpenProject', 'handleDesktopSave', 'handleDesktopSaveAs']);
+    lodash_bindall__WEBPACK_IMPORTED_MODULE_5___default()(this, ['handleClickSeeInside', 'handleOpenCloud', 'handleCloseCloud', 'handleOpenCloudSpace', 'handleOpenPublish', 'handleClosePublish', 'handleOpenCollab', 'handleCloseCollab', 'handleCollabState', 'handleOpenAccount', 'handleCloseAccount', 'handleAccountChanged', 'handlePointsChanged', 'handleProjectChanged', 'handleOpenPeAgent', 'handleClosePeAgent', 'handleToggleTodo', 'handleCrossDragOver', 'handleCrossDrop', 'showAssetToast', 'handleClickNew', 'handleClickNewTab', 'handleClickNewWindow', 'handleClickSaveAllTabs', 'handleOpenAbout', 'handleCloseAbout', 'handleActiveTabChanged', 'handleClickRemix', 'handleClickSave', 'handleClickSaveAsCopy', 'handleClickPackager', 'handleClickDesktopSettings', 'handleClickRestorePoints', 'handleClickSeeCommunity', 'handleClickShare', 'handleSetMode', 'handleKeyPress', 'handleRestoreOption', 'getSaveToComputerHandler', 'restoreOptionMessage', 'queueExternalProject', 'handleExternalProject', 'handleDesktopOpenProject', 'handleDesktopSave', 'handleDesktopSaveAs']);
   }
   componentDidMount() {
     this.unmounted = false;
+    if (window.location.search.includes('loadbench=1')) {
+      window.__pointerVm = this.props.vm;
+    }
     document.addEventListener('keydown', this.handleKeyPress);
     window.addEventListener('pointere-account-changed', this.handleAccountChanged);
     window.addEventListener('pointere-points-changed', this.handlePointsChanged);
@@ -14316,6 +14935,13 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_7___default.a.Component {
     this.setState({
       cloudMenuOpen: false
     });
+  }
+  handleOpenCloudSpace() {
+    this.setState({
+      cloudMenuOpen: false
+    });
+    this.props.onRequestCloseFile();
+    window.dispatchEvent(new CustomEvent('pointere-cloud-open'));
   }
   handleOpenAbout() {
     this.props.onRequestCloseFile();
@@ -14777,10 +15403,7 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_7___default.a.Component {
       height: 24
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
       className: _menu_bar_css__WEBPACK_IMPORTED_MODULE_40___default.a.collapsibleLabel
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_3__["FormattedMessage"], {
-      defaultMessage: "\u4E91\u7AEF",
-      id: "pointer.menuBar.cloud"
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
+    }, "\u4E91\u7AEF"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
       src: _dropdown_caret_svg__WEBPACK_IMPORTED_MODULE_45___default.a,
       draggable: false,
       width: 8,
@@ -14790,6 +15413,8 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_7___default.a.Component {
       open: this.state.cloudMenuOpen,
       place: this.props.isRtl ? 'left' : 'right'
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_menu_menu_jsx__WEBPACK_IMPORTED_MODULE_19__["MenuSection"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_menu_menu_jsx__WEBPACK_IMPORTED_MODULE_19__["MenuItem"], {
+      onClick: this.handleOpenCloudSpace
+    }, "\u4E91\u7A7A\u95F4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_menu_menu_jsx__WEBPACK_IMPORTED_MODULE_19__["MenuItem"], {
       onClick: this.handleOpenPublish
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_3__["FormattedMessage"], {
       defaultMessage: "\u53D1\u5E03\u5230\u521B\u5BA2\u6B21\u5143",
@@ -15622,6 +16247,7 @@ class PointerAccountCenter extends react__WEBPACK_IMPORTED_MODULE_1___default.a.
     this.handleRedeem = this.handleRedeem.bind(this);
     this.handleSaveAddress = this.handleSaveAddress.bind(this);
     this.handleOpenRegister = this.handleOpenRegister.bind(this);
+    this.handleOpenCloud = this.handleOpenCloud.bind(this);
   }
   componentDidMount() {
     this.mounted = true;
@@ -15740,6 +16366,11 @@ class PointerAccountCenter extends react__WEBPACK_IMPORTED_MODULE_1___default.a.
   }
   handleOpenRegister() {
     window.open(_lib_pointer_account__WEBPACK_IMPORTED_MODULE_2__["REGISTER_URL"], '_blank', 'noopener');
+  }
+  handleOpenCloud() {
+    localStorage.removeItem('pointer.cloud.token');
+    window.dispatchEvent(new CustomEvent('pointere-cloud-open'));
+    this.props.onClose();
   }
   handleCheckout(product) {
     this.setState(prev => ({
@@ -16100,6 +16731,10 @@ class PointerAccountCenter extends react__WEBPACK_IMPORTED_MODULE_1___default.a.
       className: _pointer_account_center_css__WEBPACK_IMPORTED_MODULE_3___default.a.accountActions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
+      className: _pointer_account_center_css__WEBPACK_IMPORTED_MODULE_3___default.a.primary,
+      onClick: this.handleOpenCloud
+    }, "\u4E91\u7A7A\u95F4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
       className: _pointer_account_center_css__WEBPACK_IMPORTED_MODULE_3___default.a.secondary,
       onClick: () => this.loadPoints(account),
       disabled: loading
@@ -16167,6 +16802,396 @@ PointerAccountCenter.propTypes = {
   onClose: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func.isRequired
 };
 /* harmony default export */ __webpack_exports__["default"] = (PointerAccountCenter);
+
+/***/ }),
+
+/***/ "./src/components/menu-bar/pointer-cloud-modal.css":
+/*!*********************************************************!*\
+  !*** ./src/components/menu-bar/pointer-cloud-modal.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--5-1!../../../node_modules/postcss-loader/src??postcss!./pointer-cloud-modal.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/menu-bar/pointer-cloud-modal.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/menu-bar/pointer-cloud-modal.jsx":
+/*!*********************************************************!*\
+  !*** ./src/components/menu-bar/pointer-cloud-modal.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pointer-cloud-modal.css */ "./src/components/menu-bar/pointer-cloud-modal.css");
+/* harmony import */ var _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _lib_pointer_cloud__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib/pointer-cloud */ "./src/lib/pointer-cloud.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+const formatBytes = bytes => {
+  if (!Number.isFinite(bytes)) return '—';
+  if (bytes < 1024) return "".concat(bytes, " B");
+  if (bytes < 1024 * 1024) return "".concat((bytes / 1024).toFixed(1), " KB");
+  if (bytes < 1024 * 1024 * 1024) return "".concat((bytes / 1024 / 1024).toFixed(1), " MB");
+  return "".concat((bytes / 1024 / 1024 / 1024).toFixed(2), " GB");
+};
+const formatDate = value => new Date(value).toLocaleString();
+const toBase64 = buffer => {
+  const bytes = buffer instanceof Uint8Array ? buffer : new Uint8Array(buffer);
+  let binary = '';
+  const chunkSize = 0x8000;
+  for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+    binary += String.fromCharCode.apply(null, bytes.subarray(offset, offset + chunkSize));
+  }
+  return window.btoa(binary);
+};
+class PointerCloudModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.mounted = false;
+    this.state = {
+      kind: 'project',
+      loading: true,
+      items: [],
+      quota: null,
+      valid: true,
+      error: '',
+      notice: '',
+      busy: false
+    };
+    this.handleUpdated = () => this.load();
+    this.loadSeq = 0;
+    this.handleKeyDown = event => {
+      if (event.key === 'Escape') this.props.onClose();
+    };
+    this.handleSwitchKind = this.handleSwitchKind.bind(this);
+    this.handleReconnect = this.handleReconnect.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
+    this.handleDownload = this.handleDownload.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleRename = this.handleRename.bind(this);
+  }
+  componentDidMount() {
+    this.mounted = true;
+    window.addEventListener('pointere-cloud-updated', this.handleUpdated);
+    window.addEventListener('keydown', this.handleKeyDown, true);
+    this.load();
+  }
+  componentWillUnmount() {
+    this.mounted = false;
+    window.removeEventListener('pointere-cloud-updated', this.handleUpdated);
+    window.removeEventListener('keydown', this.handleKeyDown, true);
+  }
+  load() {
+    const requestId = ++this.loadSeq;
+    const kind = this.state.kind;
+    this.setState({
+      loading: true,
+      error: '',
+      notice: ''
+    });
+    return Promise.all([Object(_lib_pointer_cloud__WEBPACK_IMPORTED_MODULE_4__["getCloudStatus"])(), Object(_lib_pointer_cloud__WEBPACK_IMPORTED_MODULE_4__["listCloud"])(kind)]).then(_ref => {
+      let _ref2 = _slicedToArray(_ref, 2),
+        status = _ref2[0],
+        list = _ref2[1];
+      if (!this.mounted || requestId !== this.loadSeq) return;
+      this.setState({
+        loading: false,
+        items: list.projects || [],
+        quota: status.quota,
+        valid: status.license.valid
+      });
+    }).catch(error => {
+      if (!this.mounted || requestId !== this.loadSeq) return;
+      this.setState({
+        loading: false,
+        error: error.message
+      });
+    });
+  }
+  handleSwitchKind(kind) {
+    if (kind === this.state.kind) return;
+    this.setState({
+      kind,
+      items: [],
+      notice: '',
+      error: ''
+    }, () => this.load());
+  }
+  handleReconnect() {
+    if (this.state.busy || this.state.loading) return;
+    localStorage.removeItem('pointer.cloud.token');
+    this.load();
+  }
+  handleUpload() {
+    if (this.state.busy) return;
+    this.setState({
+      busy: true,
+      error: '',
+      notice: ''
+    });
+    Object(_lib_pointer_cloud__WEBPACK_IMPORTED_MODULE_4__["uploadCloudProject"])(this.props.vm, this.props.projectTitle || '未命名作品').then(result => {
+      if (this.props.onNotice) this.props.onNotice("\u4F5C\u54C1\u300C".concat(result.project.title, "\u300D\u5DF2\u4E0A\u4F20\u5230\u4E91"));
+      return this.load().then(() => {
+        if (this.mounted) this.setState({
+          notice: "\u4F5C\u54C1\u300C".concat(result.project.title, "\u300D\u5DF2\u4E0A\u4F20\u5230\u4E91")
+        });
+      });
+    }).catch(error => {
+      if (this.mounted) this.setState({
+        error: error.message
+      });
+    }).then(() => {
+      if (this.mounted) this.setState({
+        busy: false
+      });
+    });
+  }
+  handleDownload(item) {
+    if (this.state.busy) return;
+    this.setState({
+      busy: true,
+      error: '',
+      notice: ''
+    });
+    Object(_lib_pointer_cloud__WEBPACK_IMPORTED_MODULE_4__["downloadCloud"])(item.id).then(blob => {
+      if (window.pointerDesktop && typeof window.pointerDesktop.saveProjectAs === 'function') {
+        return blob.arrayBuffer().then(buffer => window.pointerDesktop.saveProjectAs("".concat(item.title, ".sb3"), toBase64(buffer))).then(result => {
+          if (!result || result.canceled) return null;
+          if (!result.ok) throw new Error(result.error || '保存失败');
+          return result.name;
+        });
+      }
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = "".concat(item.title, ".sb3");
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 20000);
+      return "".concat(item.title, ".sb3");
+    }).then(name => {
+      if (this.mounted && name) this.setState({
+        notice: "\u5DF2\u4FDD\u5B58\u300C".concat(name, "\u300D")
+      });
+    }).catch(error => {
+      if (this.mounted) this.setState({
+        error: error.message
+      });
+    }).then(() => {
+      if (this.mounted) this.setState({
+        busy: false
+      });
+    });
+  }
+  handleDelete(item) {
+    if (this.state.busy) return;
+    if (!window.confirm("\u5220\u9664\u4E91\u7AEF\u7684\u300C".concat(item.title, "\u300D\uFF1F"))) return;
+    this.setState({
+      busy: true,
+      error: '',
+      notice: ''
+    });
+    Object(_lib_pointer_cloud__WEBPACK_IMPORTED_MODULE_4__["deleteCloud"])(item.id).then(() => this.load().then(() => {
+      if (this.mounted) this.setState({
+        notice: "\u5DF2\u5220\u9664\u300C".concat(item.title, "\u300D")
+      });
+    })).catch(error => {
+      if (this.mounted) this.setState({
+        error: error.message
+      });
+    }).then(() => {
+      if (this.mounted) this.setState({
+        busy: false
+      });
+    });
+  }
+  handleRename(item) {
+    if (this.state.busy) return;
+    const title = window.prompt('新的名称', item.title);
+    if (title === null) return;
+    const next = title.trim();
+    if (!next || next === item.title) return;
+    this.setState({
+      busy: true,
+      error: '',
+      notice: ''
+    });
+    Object(_lib_pointer_cloud__WEBPACK_IMPORTED_MODULE_4__["renameCloud"])(item.id, next).then(() => this.load().then(() => {
+      if (this.mounted) this.setState({
+        notice: "\u5DF2\u91CD\u547D\u540D\u4E3A\u300C".concat(next, "\u300D")
+      });
+    })).catch(error => {
+      if (this.mounted) this.setState({
+        error: error.message
+      });
+    }).then(() => {
+      if (this.mounted) this.setState({
+        busy: false
+      });
+    });
+  }
+  render() {
+    const _this$state = this.state,
+      loading = _this$state.loading,
+      items = _this$state.items,
+      quota = _this$state.quota,
+      valid = _this$state.valid,
+      error = _this$state.error,
+      notice = _this$state.notice,
+      busy = _this$state.busy,
+      kind = _this$state.kind;
+    const used = quota ? quota.usedBytes : 0;
+    const total = quota ? quota.quotaBytes : 0;
+    const percent = total ? Math.min(100, used / total * 100) : 0;
+    return /*#__PURE__*/react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.createPortal(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.overlay,
+      role: "dialog",
+      "aria-modal": "true",
+      "aria-label": "\u4E91\u7A7A\u95F4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.panel
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.header
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "\u4E91\u7A7A\u95F4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u4E91\u7AEF .sb3 \u6587\u4EF6", valid ? '' : ' · 当前额度不可用，仅可下载')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.close,
+      type: "button",
+      onClick: this.props.onClose,
+      "aria-label": "\u8FD4\u56DE\u7F16\u8F91\u5668"
+    }, "\xD7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.content
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.tabs
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: kind === 'project' ? _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.tabActive : _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.tab,
+      type: "button",
+      onClick: () => this.handleSwitchKind('project')
+    }, "\u4F5C\u54C1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: kind === 'sprite' ? _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.tabActive : _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.tab,
+      type: "button",
+      onClick: () => this.handleSwitchKind('sprite')
+    }, "\u89D2\u8272"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.spacer
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.count
+    }, loading ? '正在加载…' : "".concat(items.length, " \u4E2A")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.refresh,
+      type: "button",
+      onClick: () => this.load(),
+      disabled: loading || busy
+    }, "\u5237\u65B0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.refresh,
+      type: "button",
+      onClick: this.handleReconnect,
+      disabled: loading || busy,
+      title: "\u6309\u5F53\u524D PointerE \u767B\u5F55\u91CD\u65B0\u8FDE\u63A5\u4E91\u7A7A\u95F4"
+    }, "\u91CD\u65B0\u8FDE\u63A5")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.quota
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.quotaHead
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5B58\u50A8\u7A7A\u95F4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, quota ? "".concat(formatBytes(used), " / ").concat(formatBytes(total)) : '— / —')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.quotaBar
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.quotaFill,
+      style: {
+        width: "".concat(percent.toFixed(1), "%")
+      }
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.actions
+    }, kind === 'project' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.primary,
+      type: "button",
+      onClick: this.handleUpload,
+      disabled: busy || loading || !valid
+    }, "\u4E0A\u4F20\u5F53\u524D\u4F5C\u54C1") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.hint
+    }, "\u5728\u89D2\u8272\u4E0A\u53F3\u952E \u2192 \u201C\u4E0A\u4F20\u5230\u4E91\u201D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.spacer
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.hint
+    }, "\u4EC5\u652F\u6301 .sb3")), error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.error
+    }, error) : null, notice ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.notice
+    }, notice) : null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.empty
+    }, "\u6B63\u5728\u52A0\u8F7D\u2026") : items.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.empty
+    }, kind === 'project' ? '还没有云端作品，点上方按钮上传。' : '还没有云端角色，右键角色上传。') : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.list
+    }, items.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      key: item.id,
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.item
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.itemInfo
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, item.kind === 'sprite' && item.spriteName ? "\u89D2\u8272\uFF1A".concat(item.spriteName, " \xB7 ") : '', formatBytes(item.size), " \xB7 ", formatDate(item.updatedAt))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.itemActions
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.smallButton,
+      type: "button",
+      onClick: () => this.handleDownload(item),
+      disabled: busy
+    }, "\u4E0B\u8F7D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.smallButton,
+      type: "button",
+      onClick: () => this.handleRename(item),
+      disabled: busy
+    }, "\u91CD\u547D\u540D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: _pointer_cloud_modal_css__WEBPACK_IMPORTED_MODULE_3___default.a.danger,
+      type: "button",
+      onClick: () => this.handleDelete(item),
+      disabled: busy
+    }, "\u5220\u9664")))))))), document.body);
+  }
+}
+PointerCloudModal.propTypes = {
+  onClose: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func.isRequired,
+  onNotice: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
+  projectTitle: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
+  vm: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.shape({
+    saveProjectSb3: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
+    saveProjectSb3DontZip: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
+    toJSON: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func
+  }).isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (PointerCloudModal);
 
 /***/ }),
 
@@ -16257,8 +17282,13 @@ const isNewer = (latest, current) => {
   }
   const latestSuffix = versionSuffix(latest);
   const currentSuffix = versionSuffix(current);
-  if (latestSuffix && !currentSuffix) return true;
-  if (latestSuffix && currentSuffix && latestSuffix !== currentSuffix) return true;
+  if (!latestSuffix && currentSuffix) return true;
+  if (latestSuffix && !currentSuffix) return false;
+  if (latestSuffix && currentSuffix) {
+    return latestSuffix.toLowerCase().localeCompare(currentSuffix.toLowerCase(), undefined, {
+      numeric: true
+    }) > 0;
+  }
   return false;
 };
 class PointerCloudNotices extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
@@ -18792,15 +19822,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib/pointer-peagent */ "./src/lib/pointer-peagent.js");
 /* harmony import */ var _lib_pointer_cross_window__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib/pointer-cross-window */ "./src/lib/pointer-cross-window.js");
-/* harmony import */ var _lib_download_blob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../lib/download-blob */ "./src/lib/download-blob.js");
-/* harmony import */ var _pointer_markdown_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pointer-markdown.jsx */ "./src/components/menu-bar/pointer-markdown.jsx");
-/* harmony import */ var _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pointer-peagent.css */ "./src/components/menu-bar/pointer-peagent.css");
-/* harmony import */ var _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _lib_pointer_agent_context__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../lib/pointer-agent-context */ "./src/lib/pointer-agent-context.js");
+/* harmony import */ var _lib_pointer_agent_image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../lib/pointer-agent-image */ "./src/lib/pointer-agent-image.js");
+/* harmony import */ var _lib_download_blob__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../lib/download-blob */ "./src/lib/download-blob.js");
+/* harmony import */ var _pointer_markdown_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pointer-markdown.jsx */ "./src/components/menu-bar/pointer-markdown.jsx");
+/* harmony import */ var _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pointer-peagent.css */ "./src/components/menu-bar/pointer-peagent.css");
+/* harmony import */ var _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9__);
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
 function _toPrimitive(t, e) { if ("object" != typeof t || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
+
+
 
 
 
@@ -18871,7 +19905,8 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       deepThink: _lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["AGENT_DEFAULTS"].thinking,
       reasoningEffort: _lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["AGENT_DEFAULTS"].reasoningEffort,
       permission: _lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["AGENT_DEFAULTS"].permission,
-      webSearch: false
+      webSearch: false,
+      attachStage: false
     }, sessionState), {}, {
       input: '',
       attachments: [],
@@ -18883,7 +19918,8 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       applyResult: null,
       minimized: false,
       pendingApproval: null,
-      runNotice: ''
+      runNotice: '',
+      contextPreview: ''
     });
     this.requestSeq = 0;
     this.activeRequestId = null;
@@ -18893,6 +19929,8 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
     };
     this.flushTimer = null;
     this.noticeTimer = null;
+    this.sending = false;
+    this.lastRequestIncludedImages = false;
     this.handleSend = this.handleSend.bind(this);
     this.handleSaveSettings = this.handleSaveSettings.bind(this);
     this.handleNewChat = this.handleNewChat.bind(this);
@@ -18902,6 +19940,7 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
     this.handleMinimize = this.handleMinimize.bind(this);
     this.handleRestore = this.handleRestore.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleContextPreview = this.handleContextPreview.bind(this);
     this.handleCancelRun = this.handleCancelRun.bind(this);
     this.handleExecuteActions = this.handleExecuteActions.bind(this);
     this.handleSelectSession = this.handleSelectSession.bind(this);
@@ -19206,17 +20245,25 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       if (message.reasoning) lines.push('> 思考过程：', message.reasoning, '');
       lines.push(message.content || '', '');
     });
-    Object(_lib_download_blob__WEBPACK_IMPORTED_MODULE_5__["default"])("".concat(title, ".md"), new Blob([lines.join('\n')], {
+    Object(_lib_download_blob__WEBPACK_IMPORTED_MODULE_7__["default"])("".concat(title, ".md"), new Blob([lines.join('\n')], {
       type: 'text/markdown;charset=utf-8'
     }));
     this.setRunNotice('会话已导出为 Markdown');
   }
   addAttachment(attachment) {
+    if (attachment.kind === 'image') {
+      const imageCount = this.state.attachments.filter(item => item.kind === 'image').length;
+      if (imageCount >= 2) {
+        this.setRunNotice('最多附加 2 张图片');
+        return false;
+      }
+    }
     this.setState(previous => ({
       attachments: previous.attachments.concat(_objectSpread(_objectSpread({}, attachment), {}, {
         id: "att_".concat(Date.now().toString(36), "_").concat(Math.random().toString(36).slice(2, 6))
       }))
     }));
+    return true;
   }
   removeAttachment(id) {
     this.setState(previous => ({
@@ -19240,6 +20287,20 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
     const file = event.target.files && event.target.files[0];
     event.target.value = '';
     if (!file) return;
+    if (/^image\//i.test(file.type || '')) {
+      Object(_lib_pointer_agent_image__WEBPACK_IMPORTED_MODULE_6__["readImageFile"])(file).then(dataUrl => {
+        const mime = Object(_lib_pointer_agent_image__WEBPACK_IMPORTED_MODULE_6__["getImageMime"])(dataUrl) || 'image/jpeg';
+        if (this.addAttachment({
+          name: file.name,
+          kind: 'image',
+          dataUrl,
+          mime
+        })) {
+          this.setRunNotice("\u5DF2\u9644\u52A0\u56FE\u7247 ".concat(file.name));
+        }
+      }).catch(error => this.setRunNotice(error.message || '无法读取图片'));
+      return;
+    }
     if (file.size > 400000) {
       this.setRunNotice('附件过大，请选择 400KB 以内的文本/代码文件');
       return;
@@ -19274,6 +20335,17 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
     }
     this.props.onClose();
   }
+  handleContextPreview() {
+    let preview = '';
+    try {
+      preview = Object(_lib_pointer_agent_context__WEBPACK_IMPORTED_MODULE_5__["buildProjectContext"])(this.props.vm);
+    } catch (error) {
+      preview = "\u751F\u6210\u9879\u76EE\u4E0A\u4E0B\u6587\u5931\u8D25\uFF1A".concat(error.message);
+    }
+    this.setState({
+      contextPreview: preview
+    });
+  }
   handleCancelRun() {
     const requestId = this.activeRequestId;
     this.requestSeq += 1;
@@ -19298,24 +20370,66 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       };
     }, () => this.persistSession());
   }
-  handleSend() {
+  async handleSend() {
     const text = this.state.input.trim();
     const attachments = this.state.attachments;
-    if (!text && !attachments.length || this.state.busy || this.state.phase !== 'chat') return;
-    const attachmentText = attachments.map(item => "\n\n[\u9644\u4EF6\uFF1A".concat(item.name, "]\n").concat(item.content)).join('');
-    const outgoing = (text || '请结合附件内容处理。') + attachmentText;
+    const attachStage = this.state.attachStage;
+    if (!text && !attachments.length && !attachStage || this.state.busy || this.state.phase !== 'chat' || this.sending) return;
+    this.sending = true;
+    let stageImage = null;
+    let stageNotice = '';
+    if (attachStage) {
+      this.setRunNotice('正在获取舞台画面…', 0);
+      try {
+        stageImage = await Object(_lib_pointer_agent_image__WEBPACK_IMPORTED_MODULE_6__["captureStageImage"])(this.props.vm);
+      } catch (error) {
+        stageImage = null;
+      }
+      if (!this.mounted) {
+        this.sending = false;
+        return;
+      }
+      if (!stageImage) stageNotice = '未能获取舞台画面，本次仅发送文字';
+    }
+    const textAttachments = attachments.filter(item => item.kind !== 'image');
+    const imageAttachments = attachments.filter(item => item.kind === 'image').slice(0, 2);
+    if (stageImage && imageAttachments.length < 2) {
+      imageAttachments.push({
+        name: '舞台画面',
+        kind: 'image',
+        dataUrl: stageImage
+      });
+    } else if (stageImage) {
+      stageNotice = '已附加 2 张图片，舞台画面未加入';
+    }
+    if (!text && !textAttachments.length && !imageAttachments.length) {
+      this.sending = false;
+      return;
+    }
+    const attachmentText = textAttachments.map(item => "\n\n[\u9644\u4EF6\uFF1A".concat(item.name, "]\n").concat(item.content)).join('');
+    const queryText = (text || '请结合附件内容处理。') + attachmentText;
+    const userContent = imageAttachments.length ? [{
+      type: 'text',
+      text: queryText
+    }, ...imageAttachments.map(item => ({
+      type: 'image',
+      dataUrl: item.dataUrl
+    }))] : queryText;
     const history = this.state.messages.filter(message => message.role !== 'system' && !message.streaming && message.content).slice(-14).map(message => ({
       role: message.role,
       content: message.context ? message.content + message.context : message.content
     }));
     const userMessage = {
       role: 'user',
-      content: text || '（附件）',
+      content: text || (imageAttachments.length ? '（图片）' : '（附件）'),
       context: attachmentText,
       attachments: attachments.map(item => ({
         name: item.name,
         kind: item.kind
-      }))
+      })).concat(stageImage ? [{
+        name: '舞台画面',
+        kind: 'image'
+      }] : [])
     };
     const assistantIndex = this.state.messages.length + 1;
     const requestId = "req_".concat(Date.now().toString(36), "_").concat(Math.random().toString(36).slice(2, 8));
@@ -19339,17 +20453,18 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       searchInfo: '',
       applyResult: null,
       pendingApproval: null,
-      runNotice: ''
+      runNotice: stageNotice
     }), () => {
+      this.sending = false;
       this.persistSession();
       this.scrollToEnd();
       this.runAgent(history.concat({
         role: 'user',
-        content: outgoing
-      }), outgoing, assistantIndex, requestId);
+        content: userContent
+      }), queryText, assistantIndex, requestId, imageAttachments.length > 0);
     });
   }
-  runAgent(history, query, assistantIndex, requestId) {
+  runAgent(history, userContent, searchText, assistantIndex, requestId, includesImages) {
     const generation = ++this.requestSeq;
     const _this$state2 = this.state,
       config = _this$state2.config,
@@ -19359,7 +20474,8 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       temperature = _this$state2.temperature,
       maxTokens = _this$state2.maxTokens,
       permission = _this$state2.permission;
-    const searchStep = webSearch ? Object(_lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["peagentSearch"])(query) : Promise.resolve(null);
+    this.lastRequestIncludedImages = Boolean(includesImages);
+    const searchStep = webSearch ? Object(_lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["peagentSearch"])(searchText) : Promise.resolve(null);
     searchStep.then(search => {
       if (!this.mounted || generation !== this.requestSeq) return null;
       let searchContext = '';
@@ -19379,7 +20495,10 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       const messages = [{
         role: 'system',
         content: system
-      }].concat(history);
+      }].concat(history, {
+        role: 'user',
+        content: userContent
+      });
       const payload = {
         messages,
         model: config.model,
@@ -19435,19 +20554,23 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
   finishWithError(error) {
     clearTimeout(this.flushTimer);
     this.activeRequestId = null;
+    const message = error && error.message ? error.message : '请求失败';
+    const imageHint = this.lastRequestIncludedImages && /image|vision|multimodal|input_image|image_url|图片|视觉|content.*type|type.*content|invalid|unsupported|bad request|400/i.test(message) ? '。当前模型可能不支持图片输入，请关闭「舞台画面」或换用支持视觉的模型' : '';
+    this.lastRequestIncludedImages = false;
+    const display = "".concat(message).concat(imageHint);
     this.setState(previous => {
       const messages = previous.messages.slice();
       const last = messages.length - 1;
       if (last >= 0 && messages[last].role === 'assistant') {
         messages[last] = _objectSpread(_objectSpread({}, messages[last]), {}, {
           streaming: false,
-          content: messages[last].content || "\uFF08\u8BF7\u6C42\u5931\u8D25\uFF1A".concat(error.message, "\uFF09")
+          content: messages[last].content || "\uFF08\u8BF7\u6C42\u5931\u8D25\uFF1A".concat(display, "\uFF09")
         });
       }
       return {
         messages,
         busy: false,
-        error: error.message,
+        error: display,
         executing: false
       };
     }, () => this.persistSession());
@@ -19460,6 +20583,7 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       this.finishWithError(new Error(result.error || 'PEAgent 请求失败'));
       return;
     }
+    this.lastRequestIncludedImages = false;
     const content = result.content || this.streamText.content;
     const reasoning = result.reasoning || this.streamText.reasoning;
     this.setState(previous => ({
@@ -19544,36 +20668,36 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
     const sessions = this.state.sessions.slice().sort((a, b) => b.updatedAt - a.updatedAt);
     const providerInfo = Object(_lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["getPeAgentProvider"])(this.state.provider);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("aside", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.sidebar
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.sidebar
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.sidebarBrand
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.sidebarBrand
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.brandText
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.brandText
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "PEAgent"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u9879\u76EE\u4F1A\u8BDD"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.newChat,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.newChat,
       onClick: this.handleNewChat
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\uFF0B"), " \u65B0\u5BF9\u8BDD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.sidebarLabel
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.sidebarLabel
     }, "\u6700\u8FD1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.sessionList
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.sessionList
     }, sessions.map(session => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
       key: session.id,
-      className: session.id === this.state.sessionId ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.sessionItemActive : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.sessionItem,
+      className: session.id === this.state.sessionId ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.sessionItemActive : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.sessionItem,
       onClick: () => this.handleSelectSession(session.id)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.sessionMain
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.sessionMain
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, session.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, formatHistoryTime(session.updatedAt), " \xB7 ", session.messages.length, " \u6761")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.sessionDelete,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.sessionDelete,
       onClick: event => this.handleDeleteSession(session.id, event),
       "aria-label": "\u5220\u9664\u4F1A\u8BDD"
     }, "\xD7")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.sidebarFoot
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.sidebarFoot
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.footProvider
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.footProvider
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("em", null, providerInfo.icon), providerInfo.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.footTag
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.footTag
     }, this.state.permission === 'full' ? '完全权限' : this.state.permission === 'readonly' ? '只读' : '确认模式')));
   }
   renderModelPicker() {
@@ -19583,37 +20707,37 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       config = _this$state3.config;
     const current = config.model || model;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelPicker
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelPicker
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelButton,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelButton,
       onClick: () => this.setState(previous => ({
         modelMenuOpen: !previous.modelMenuOpen
       })),
       "aria-expanded": modelMenuOpen
     }, current, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelCaret
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelCaret
     }, "\u2304")), modelMenuOpen ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelMenu
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelMenu
     }, _lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["PEAGENT_PROVIDERS"].filter(provider => provider.models.length).map(provider => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       key: provider.value,
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelGroup
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelGroup
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelGroupLabel
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelGroupLabel
     }, provider.label), provider.models.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       key: item.value,
       type: "button",
-      className: item.value === current ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelRowActive : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelRow,
+      className: item.value === current ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelRowActive : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelRow,
       onClick: () => this.handleSelectModel(item.value)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelIcon
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelIcon
     }, provider.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelLabel
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelLabel
     }, item.value), item.value === current ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelCheck
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelCheck
     }, "\u2713") : null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelCustom,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelCustom,
       onClick: () => this.setState({
         modelMenuOpen: false,
         settingsOpen: true,
@@ -19628,24 +20752,24 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
     const result = this.state.applyResult && this.state.applyResult.index === index ? this.state.applyResult : null;
     const permission = this.state.permission;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.actionCard
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.actionCard
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.actionHead
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.actionHead
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Agent \u64CD\u4F5C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("em", null, actions.length, " \u9879")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, actions.map((action, actionIndex) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
       key: "".concat(action.type, "-").concat(actionIndex)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u2726"), Object(_lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["describeAgentAction"])(action)))), permission === 'readonly' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.actionNotice
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.actionNotice
     }, "\u53EA\u8BFB\u5EFA\u8BAE\u6A21\u5F0F\uFF1A\u4EE5\u4E0A\u64CD\u4F5C\u4E0D\u4F1A\u6267\u884C\u3002") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, result && result.running ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.actionNotice
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.actionNotice
     }, "\u6B63\u5728\u6267\u884C\u2026") : null, result && result.success ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: result.ok === false ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.actionError : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.actionSuccess
+      className: result.ok === false ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.actionError : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.actionSuccess
     }, result.success) : null, result && result.error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.actionError
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.actionError
     }, result.error) : null, !result && permission === 'full' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.actionNotice
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.actionNotice
     }, "\u5B8C\u5168\u6743\u9650\u6A21\u5F0F\uFF1A\u56DE\u7B54\u7ED3\u675F\u540E\u81EA\u52A8\u6267\u884C\u3002") : null, !result && permission !== 'full' || result && result.error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.actionButton,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.actionButton,
       onClick: () => this.handleExecuteActions(index),
       disabled: this.state.executing
     }, this.state.executing ? '正在执行…' : '执行这些操作') : null));
@@ -19653,32 +20777,32 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
   renderAssistantMessage(message, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       key: "assistant-".concat(index),
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.assistantMessage
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.assistantMessage
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.messageMeta
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.messageMeta
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.metaAvatar
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.metaAvatar
     }, "\u2726"), "PEAgent"), message.reasoning ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("details", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.reasoning
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("summary", null, "\u6DF1\u5EA6\u601D\u8003\u8FC7\u7A0B"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, message.reasoning)) : null, message.content ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_pointer_markdown_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.reasoning
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("summary", null, "\u6DF1\u5EA6\u601D\u8003\u8FC7\u7A0B"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, message.reasoning)) : null, message.content ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_pointer_markdown_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {
       content: message.content
     }) : message.streaming ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.streamingHint
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.streamingHint
     }, "\u6B63\u5728\u601D\u8003\u2026") : null, message.streaming ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.streamingCursor
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.streamingCursor
     }, "\u258D") : null, this.renderActionCard(message, index));
   }
   renderWelcome() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.welcome
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.welcome
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.welcomeChip
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.welcomeChip
     }, "PEAgent"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "\u628A\u95EE\u9898\u3001\u9700\u6C42\u6216\u4EE3\u7801\u7247\u6BB5", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), "\u76F4\u63A5\u53D1\u8FDB\u6765"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u53EF\u4EE5\u8BA9\u5B83\u89E3\u91CA\u79EF\u6728\u903B\u8F91\u3001\u6574\u7406\u4E0A\u4E0B\u6587\u3001\u5206\u6790\u9644\u4EF6\uFF0C\u6216\u8005\u76F4\u63A5\u5E2E\u52A9\u4F60\u4FEE\u6539\u5F53\u524D\u5DE5\u4F5C\u533A\u5185\u5BB9\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.welcomePrompts
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.welcomePrompts
     }, QUICK_PROMPTS.map(prompt => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       key: prompt,
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.welcomePrompt,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.welcomePrompt,
       onClick: () => this.setState({
         input: prompt
       })
@@ -19704,31 +20828,37 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
     const onboarding = phase === 'setup';
     const providerInfo = Object(_lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["getPeAgentProvider"])(provider);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.settings
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.settings
     }, !settingsOpen ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.setupIntro
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.setupIntro
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "PEAgent"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u7528\u81EA\u7136\u8BED\u8A00\u751F\u6210\u79EF\u6728\u3001\u521B\u5EFA\u53D8\u91CF\u548C\u5E7F\u64AD\u3001\u7ED8\u5236 SVG \u9020\u578B\u3002\u5DF2\u9884\u586B DeepSeek V4 \u53C2\u6570\uFF0C\u4E5F\u80FD\u63A5\u5165\u5176\u4ED6\u517C\u5BB9\u6A21\u578B\u3002")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.settingsHead
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.settingsHead
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.linkButton,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.linkButton,
       onClick: () => this.setState({
         settingsOpen: false,
         error: ''
       })
     }, "\u2190 \u8FD4\u56DE\u5BF9\u8BDD")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.providerCard
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.providerCard
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.providerIcon
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.providerIcon
     }, providerInfo.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, providerInfo.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, provider === 'deepseek' ? '已预填 deepseek-flash / deepseek-v4-pro 与 1M 上下文参数；思考模式默认开启。' : '支持任何 OpenAI Chat Completions 兼容接口，也可切换到 Anthropic 兼容格式。')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.providerTag
-    }, provider === 'deepseek' ? '参数预置' : '可接入')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.settingsForm,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.providerTag
+    }, provider === 'deepseek' ? '参数预置' : '可接入')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("details", {
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.contextPreview
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("summary", {
+      onClick: this.handleContextPreview
+    }, "\u67E5\u770B\u5F53\u524D\u9879\u76EE\u4E0A\u4E0B\u6587"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("pre", {
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.contextPre
+    }, this.state.contextPreview || '展开后生成…')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.settingsForm,
       onSubmit: this.handleSaveSettings
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.advancedGrid
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.advancedGrid
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u6A21\u578B\u670D\u52A1\u5546"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
       value: provider,
       onChange: this.handleProviderChange
@@ -19736,7 +20866,7 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       key: item.value,
       value: item.value
     }, item.label)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u63A5\u53E3\u683C\u5F0F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
       value: apiFormat,
       onChange: this.handleFormatChange
@@ -19744,7 +20874,7 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       key: item.value,
       value: item.value
     }, item.label))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, provider === 'custom' ? 'API Key' : "".concat(providerInfo.label, " API Key")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       type: "password",
       value: apiKey,
@@ -19755,13 +20885,13 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       autoComplete: "off",
       spellCheck: false
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.keyHint
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.keyHint
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Key \u53EA\u4FDD\u5B58\u5728\u672C\u673A\uFF0C\u7531\u7CFB\u7EDF\u5BC6\u94A5\u52A0\u5BC6\uFF1B\u8BF7\u6C42\u76F4\u63A5\u53D1\u9001\u5230\u4F60\u586B\u5199\u7684\u63A5\u53E3\uFF0C\u4E0D\u7ECF\u8FC7 PointerE \u670D\u52A1\u5668\u3002"), providerInfo.keyUrl ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.linkButton,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.linkButton,
       onClick: () => window.open(providerInfo.keyUrl, '_blank', 'noopener')
     }, "\u83B7\u53D6 API Key") : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "API Base URL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       value: baseUrl,
       onChange: e => this.setState({
@@ -19770,7 +20900,7 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       placeholder: "https://api.example.com/v1",
       spellCheck: false
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u6A21\u578B\u540D\u79F0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       value: model,
       onChange: e => this.setState({
@@ -19785,9 +20915,9 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       key: item.value,
       value: item.value
     }, item.label)))), provider === 'deepseek' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelHint
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelHint
     }, "deepseek-flash \u4E3A V4.1 Flash\uFF08\u652F\u6301\u56FE\u50CF\u7406\u89E3\uFF09\uFF0Cdeepseek-v4-pro \u4E3A V4 Pro\uFF1B\u4E0A\u4E0B\u6587 1M\uFF0C\u6700\u5927\u8F93\u51FA 384K\u3002\u4E5F\u53EF\u76F4\u63A5\u586B\u5199\u65E7\u7248\u6A21\u578B\u540D\u3002") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Agent \u6743\u9650"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
       value: permission,
       onChange: e => this.setState({
@@ -19797,13 +20927,13 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       key: item.value,
       value: item.value
     }, item.label)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelHint
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelHint
     }, "\u5B8C\u5168\u6743\u9650\u4F1A\u81EA\u52A8\u521B\u5EFA\u53D8\u91CF/\u5E7F\u64AD\u3001\u63D2\u5165\u79EF\u6728\u548C\u6DFB\u52A0 SVG \u9020\u578B\uFF1B\u786E\u8BA4\u6A21\u5F0F\u4F1A\u5148\u5C55\u793A\u64CD\u4F5C\u6458\u8981\uFF1B\u53EA\u8BFB\u6A21\u5F0F\u4EC5\u63D0\u4F9B\u5EFA\u8BAE\u3002Agent \u4E0D\u4F1A\u6267\u884C\u4EFB\u610F JavaScript\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("details", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.advanced
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.advanced
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("summary", null, "\u9AD8\u7EA7\u53C2\u6570\uFF08\u5DF2\u9884\u586B\uFF09"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.advancedGrid
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.advancedGrid
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Temperature"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       type: "number",
       min: "0",
@@ -19814,7 +20944,7 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
         temperature: e.target.value
       })
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Max Tokens"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       type: "number",
       min: "128",
@@ -19825,7 +20955,7 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
         maxTokens: e.target.value
       })
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u9ED8\u8BA4\u601D\u8003\u6A21\u5F0F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
       value: deepThink ? 'on' : 'off',
       onChange: e => this.setState({
@@ -19836,7 +20966,7 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
     }, "\u5F00\u542F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
       value: "off"
     }, "\u5173\u95ED"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.field
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.field
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u601D\u8003\u5F3A\u5EA6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
       value: reasoningEffort,
       onChange: e => this.setState({
@@ -19847,18 +20977,18 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       key: item.value,
       value: item.value
     }, item.label))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.modelHint
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.modelHint
     }, "\u601D\u8003\u6A21\u5F0F\u4E0B DeepSeek \u4F1A\u5FFD\u7565 Temperature\uFF1B\u975E\u601D\u8003\u6A21\u5F0F\u4ECD\u53EF\u8C03\u6574\u3002Max Tokens \u4F1A\u6309\u63A5\u53E3\u80FD\u529B\u81EA\u52A8\u9650\u5236\u3002")), error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.error
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.error
     }, error) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.settingsActions
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.settingsActions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "submit",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.primary,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.primary,
       disabled: busy || !Object(_lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["isPeAgentAvailable"])()
     }, busy ? '保存中…' : onboarding ? '保存并开始' : '保存设置'), !onboarding ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.secondary,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.secondary,
       onClick: () => {
         Object(_lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["clearPeAgentConfig"])().then(next => {
           if (!this.mounted) return;
@@ -19891,32 +21021,33 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       deepThink = _this$state5.deepThink,
       reasoningEffort = _this$state5.reasoningEffort,
       webSearch = _this$state5.webSearch,
+      attachStage = _this$state5.attachStage,
       error = _this$state5.error,
       searchInfo = _this$state5.searchInfo,
       runNotice = _this$state5.runNotice;
     const hasUser = messages.some(message => message.role === 'user');
     const sessionTitle = Object(_lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["derivePeAgentSessionTitle"])(messages) || '新对话';
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.main
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.main
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.mainHeader
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.mainHeader
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.collapseBtn,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.collapseBtn,
       onClick: this.handleMinimize,
       title: "\u6700\u5C0F\u5316",
       "aria-label": "\u6700\u5C0F\u5316"
     }, "\u2190"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.mainTitle
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.mainTitle
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, sessionTitle), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Scratch \u4EE3\u7801 \xB7 \u5B9E\u65F6\u9879\u76EE\u4E0A\u4E0B\u6587")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.headerSpacer
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.headerSpacer
     }), this.renderModelPicker(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.headerBtn,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.headerBtn,
       onClick: this.handleExportSession
     }, "\u5BFC\u51FA\u4F1A\u8BDD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.headerBtn,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.headerBtn,
       onClick: () => this.setState({
         settingsOpen: true,
         modelMenuOpen: false,
@@ -19924,52 +21055,56 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       })
     }, "\u8BBE\u7F6E"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.closeBtn,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.closeBtn,
       onClick: this.handleClose,
       "aria-label": "\u5173\u95ED"
     }, "\xD7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.chatScroll
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.chatScroll
     }, !hasUser ? this.renderWelcome() : null, messages.map((message, index) => {
       if (!hasUser && index === 0 && message.role === 'assistant') return null;
       return message.role === 'user' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         key: "user-".concat(index),
-        className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.userMessage
+        className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.userMessage
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.messageMeta
+        className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.messageMeta
       }, "\u4F60"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.userText
+        className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.userText
       }, message.content), message.attachments && message.attachments.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.attachTags
+        className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.attachTags
       }, message.attachments.map((item, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         key: "".concat(item.name, "-").concat(i),
-        className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.attachTag
-      }, item.kind === 'blocks' ? '⧉ ' : '📄 ', item.name))) : null) : this.renderAssistantMessage(message, index);
+        className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.attachTag
+      }, item.kind === 'image' ? '图 · ' : item.kind === 'blocks' ? '⧉ ' : '📄 ', item.name))) : null) : this.renderAssistantMessage(message, index);
     }), busy ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.thinking
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.thinking
     }, "PEAgent \u6B63\u5728\u601D\u8003\u2026") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       ref: node => {
         this.messagesEnd = node;
       }
     })), searchInfo ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.searchInfo
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.searchInfo
     }, searchInfo) : null, runNotice ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.noticeLine
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.noticeLine
     }, runNotice) : null, error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.error
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.error
     }, error) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.composer
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.composer
     }, attachments.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.attachChips
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.attachChips
     }, attachments.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       key: item.id,
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.attachChip
-    }, item.kind === 'blocks' ? '⧉ ' : '📄 ', item.name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.attachChip
+    }, item.kind === 'image' && item.dataUrl ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.attachThumb,
+      src: item.dataUrl,
+      alt: ""
+    }) : item.kind === 'blocks' ? '⧉ ' : '📄 ', item.name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.attachRemove,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.attachRemove,
       onClick: () => this.removeAttachment(item.id),
       "aria-label": "\u79FB\u9664\u9644\u4EF6"
     }, "\xD7")))) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.composerBox
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.composerBox
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
       value: input,
       onChange: e => this.setState({
@@ -19980,29 +21115,36 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       rows: 2,
       disabled: busy
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.composerBar
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.composerBar
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: deepThink ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.toolBtnActive : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.toolBtn,
+      className: deepThink ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.toolBtnActive : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.toolBtn,
       onClick: () => this.setState({
         deepThink: !deepThink
       })
     }, "\u601D\u8003"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.toolBtn,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.toolBtn,
       onClick: this.handleAttachBlocks
     }, "\u9009\u62E9\u79EF\u6728"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.toolBtn,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.toolBtn,
       onClick: this.handleAttachFile
-    }, "\u6DFB\u52A0\u6587\u4EF6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    }, "\u6DFB\u52A0\u56FE\u7247/\u6587\u4EF6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: webSearch ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.toolBtnActive : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.toolBtn,
+      className: attachStage ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.toolBtnActive : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.toolBtn,
+      onClick: () => this.setState(previous => ({
+        attachStage: !previous.attachStage
+      })),
+      title: "\u628A\u5F53\u524D\u821E\u53F0\u753B\u9762\u968F\u6D88\u606F\u53D1\u9001\uFF0C\u9700\u8981\u6A21\u578B\u652F\u6301\u89C6\u89C9\u8F93\u5165"
+    }, "\u821E\u53F0\u753B\u9762"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
+      className: webSearch ? _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.toolBtnActive : _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.toolBtn,
       onClick: () => this.setState({
         webSearch: !webSearch
       })
     }, "\u7F51\u9875\u641C\u7D22"), deepThink ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.effortSelect,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.effortSelect,
       value: reasoningEffort,
       onChange: e => this.setState({
         reasoningEffort: e.target.value
@@ -20012,22 +21154,22 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       key: item.value,
       value: item.value
     }, item.value))) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.barSpacer
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.barSpacer
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.sendBtn,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.sendBtn,
       onClick: this.handleSend,
-      disabled: busy || !input.trim() && !attachments.length,
+      disabled: busy || !input.trim() && !attachments.length && !attachStage,
       "aria-label": "\u53D1\u9001"
     }, "\u27A4"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.hint
-    }, "Enter \u53D1\u9001 \xB7 Shift+Enter \u6362\u884C \xB7 \u64CD\u4F5C\u6309\u300CAgent \u6743\u9650\u300D\u6267\u884C \xB7 \u652F\u6301 Markdown \u4E0E\u6D41\u5F0F\u8F93\u51FA")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.hint
+    }, "Enter \u53D1\u9001 \xB7 Shift+Enter \u6362\u884C \xB7 \u64CD\u4F5C\u6309\u300CAgent \u6743\u9650\u300D\u6267\u884C \xB7 \u300C\u821E\u53F0\u753B\u9762\u300D\u9700\u8981\u6A21\u578B\u652F\u6301\u89C6\u89C9")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
       ref: node => {
         this.fileInput = node;
       },
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.fileInput,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.fileInput,
       type: "file",
-      accept: ".txt,.md,.json,.xml,.js,.jsx,.ts,.css,.html,.csv,.log",
+      accept: ".txt,.md,.json,.xml,.js,.jsx,.ts,.css,.html,.csv,.log,image/png,image/jpeg,image/webp",
       onChange: this.handleFileChange
     }));
   }
@@ -20041,43 +21183,43 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       config = _this$state6.config;
     if (!minimized) return null;
     return /*#__PURE__*/react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.createPortal(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minWrap
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minWrap
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minPill
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minPill
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minIcon
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minIcon
     }, "\u2726", busy ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minPulse
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minPulse
     }) : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minText
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minText
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, busy ? 'PEAgent 正在运行' : executing ? '正在应用操作' : pendingApproval ? '需要你的确认' : 'PEAgent'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, busy ? "\u4F7F\u7528 ".concat(config.model || '模型', " \u751F\u6210\u4E2D\u2026") : pendingApproval ? summarizeActions(pendingApproval.actions) : runNotice || '点击打开对话')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minButtons
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minButtons
     }, busy ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minCancel,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minCancel,
       onClick: this.handleCancelRun
     }, "\u53D6\u6D88") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minOpen,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minOpen,
       onClick: this.handleRestore
     }, "\u6253\u5F00"), !busy ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minClose,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minClose,
       onClick: this.handleClose,
       "aria-label": "\u5173\u95ED"
     }, "\xD7") : null)), pendingApproval ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minApproval
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minApproval
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u6A21\u578B\u8BF7\u6C42\u6267\u884C\u4EE5\u4E0B\u64CD\u4F5C\uFF0C\u662F\u5426\u5141\u8BB8\uFF1F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, pendingApproval.actions.map((action, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
       key: "".concat(action.type, "-").concat(index)
     }, Object(_lib_pointer_peagent__WEBPACK_IMPORTED_MODULE_3__["describeAgentAction"])(action)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minApprovalActions
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minApprovalActions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minAllow,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minAllow,
       onClick: () => this.handleExecuteActions(pendingApproval.messageIndex, pendingApproval.actions)
     }, "\u5141\u8BB8\u5E76\u6267\u884C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.minClose,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.minClose,
       onClick: this.handleDismissApproval
     }, "\u5FFD\u7565"))) : null), document.body);
   }
@@ -20087,29 +21229,29 @@ class PointerPeAgent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compon
       settingsOpen = _this$state7.settingsOpen,
       minimized = _this$state7.minimized;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, !minimized ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.overlay,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.overlay,
       role: "dialog",
       "aria-modal": "true"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.panel
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.panel
     }, this.renderSidebar(), phase === 'loading' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.loading
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.loading
     }, "\u6B63\u5728\u8BFB\u53D6 PEAgent \u914D\u7F6E\u2026") : phase === 'setup' || settingsOpen ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.main
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.main
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.mainHeader
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.mainHeader
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.collapseBtn,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.collapseBtn,
       onClick: this.handleMinimize,
       "aria-label": "\u6700\u5C0F\u5316"
     }, "\u2190"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.mainTitle
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.mainTitle
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, settingsOpen ? 'PEAgent 设置' : 'PEAgent'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, settingsOpen ? '模型接入与权限' : '连接模型后开始对话')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.headerSpacer
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.headerSpacer
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_7___default.a.closeBtn,
+      className: _pointer_peagent_css__WEBPACK_IMPORTED_MODULE_9___default.a.closeBtn,
       onClick: this.handleClose,
       "aria-label": "\u5173\u95ED"
     }, "\xD7")), this.renderSettings()) : this.renderChat())) : null, this.renderMinimized());
@@ -20175,8 +21317,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_intl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-intl */ "./node_modules/react-intl/lib/index.es.js");
 /* harmony import */ var _lib_default_project__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib/default-project */ "./src/lib/default-project/index.js");
-/* harmony import */ var _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pointer-project-tabs.css */ "./src/components/menu-bar/pointer-project-tabs.css");
-/* harmony import */ var _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _lib_pointer_cloud__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../lib/pointer-cloud */ "./src/lib/pointer-cloud.js");
+/* harmony import */ var _pointer_cloud_modal_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pointer-cloud-modal.jsx */ "./src/components/menu-bar/pointer-cloud-modal.jsx");
+/* harmony import */ var _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pointer-project-tabs.css */ "./src/components/menu-bar/pointer-project-tabs.css");
+/* harmony import */ var _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7__);
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
@@ -20188,7 +21332,10 @@ function _toPrimitive(t, e) { if ("object" != typeof t || !t) return t; var r; i
 
 
 
+
+
 const INVALID_FILENAME_CHARS = /[<>:"/\\|?*\u0000-\u001f]/g;
+const AUTO_VERSION_INTERVAL = 5 * 60 * 1000;
 const toBase64 = buffer => {
   const bytes = new Uint8Array(buffer);
   let binary = '';
@@ -20229,9 +21376,14 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       busyLabel: '',
       notice: '',
       error: '',
-      historyOpen: false
+      historyOpen: false,
+      cloudOpen: false,
+      dirty: false,
+      lastAutoSaveAt: 0
     };
     this.seq = 1;
+    this.loadingTab = false;
+    this.autoVersionTimer = null;
     this.blankProject = getBlankProject(props.intl);
     this.commitTitle = this.commitTitle.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -20243,6 +21395,12 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     this.handleOpenHistory = this.handleOpenHistory.bind(this);
     this.handleSaveVersion = this.handleSaveVersion.bind(this);
     this.handleRestoreVersion = this.handleRestoreVersion.bind(this);
+    this.handleRestoreVersionToNewTab = this.handleRestoreVersionToNewTab.bind(this);
+    this.handleOpenRestorePoints = this.handleOpenRestorePoints.bind(this);
+    this.handleProjectChanged = this.handleProjectChanged.bind(this);
+    this.handleCloudSpriteUpload = this.handleCloudSpriteUpload.bind(this);
+    this.handleExternalOpenCloud = this.handleExternalOpenCloud.bind(this);
+    this.showNotice = this.showNotice.bind(this);
     this.handleSaveAll = this.handleSaveAll.bind(this);
   }
   componentDidUpdate(prevProps) {
@@ -20261,17 +21419,46 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     this.handleExternalSaveAll = () => this.handleSaveAll();
     window.addEventListener('pointere-new-tab', this.handleExternalNewTab);
     window.addEventListener('pointere-save-all-tabs', this.handleExternalSaveAll);
+    window.addEventListener('pointere-cloud-upload-sprite', this.handleCloudSpriteUpload);
+    window.addEventListener('pointere-cloud-open', this.handleExternalOpenCloud);
+    if (this.props.vm && typeof this.props.vm.on === 'function') {
+      this.props.vm.on('PROJECT_CHANGED', this.handleProjectChanged);
+    }
+    this.autoVersionTimer = window.setInterval(() => {
+      if (!this.state.dirty || this.state.busy || this.loadingTab) return;
+      this.saveActiveTab(true, 'auto').catch(error => {
+        this.setState({
+          error: error.message
+        });
+      });
+    }, AUTO_VERSION_INTERVAL);
   }
   componentWillUnmount() {
     window.removeEventListener('pointere-new-tab', this.handleExternalNewTab);
     window.removeEventListener('pointere-save-all-tabs', this.handleExternalSaveAll);
+    window.removeEventListener('pointere-cloud-upload-sprite', this.handleCloudSpriteUpload);
+    window.removeEventListener('pointere-cloud-open', this.handleExternalOpenCloud);
+    if (this.props.vm && typeof this.props.vm.off === 'function') {
+      this.props.vm.off('PROJECT_CHANGED', this.handleProjectChanged);
+    }
+    if (this.autoVersionTimer) {
+      window.clearInterval(this.autoVersionTimer);
+      this.autoVersionTimer = null;
+    }
     if (this.noticeTimer) window.clearTimeout(this.noticeTimer);
+  }
+  handleProjectChanged() {
+    if (this.loadingTab || this.state.busy) return;
+    if (!this.state.dirty) this.setState({
+      dirty: true
+    });
   }
   getActiveTab() {
     return this.state.tabs.find(tab => tab.id === this.state.activeId) || this.state.tabs[0];
   }
   saveActiveTab() {
     let recordVersion = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+    let source = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'auto';
     const vm = this.props.vm;
     if (!vm || typeof vm.saveProjectSb3 !== 'function') return Promise.resolve();
     return vm.saveProjectSb3('arraybuffer').then(data => new Promise(resolve => {
@@ -20282,13 +21469,16 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
             id: "version_".concat(Date.now(), "_").concat(Math.random().toString(36).slice(2, 5)),
             at: Date.now(),
             title: previous.editingTitle || tab.title,
+            source,
             data
           }, ...(tab.versions || [])].slice(0, 12) : tab.versions || [];
           return _objectSpread(_objectSpread({}, tab), {}, {
             data,
             versions
           });
-        })
+        }),
+        dirty: recordVersion ? false : previous.dirty,
+        lastAutoSaveAt: recordVersion ? Date.now() : previous.lastAutoSaveAt
       }), resolve);
     }));
   }
@@ -20296,18 +21486,25 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const vm = this.props.vm;
     const data = tab.data || this.blankProject;
     if (!data) return Promise.reject(new Error('无法创建空白项目'));
+    this.loadingTab = true;
     vm.quit();
     return vm.loadProject(data).then(() => {
       if (vm.renderer) vm.renderer.draw();
       this.props.onSetProjectTitle(tab.title);
       this.props.onProjectUnchanged();
+      this.loadingTab = false;
       this.setState({
         activeId: tab.id,
         editingTitle: tab.title,
         busy: false,
-        error: ''
+        error: '',
+        dirty: false,
+        lastAutoSaveAt: 0
       });
       if (this.props.onTabChange) this.props.onTabChange();
+    }).catch(error => {
+      this.loadingTab = false;
+      throw error;
     });
   }
   handleSwitchTab(tabId) {
@@ -20417,7 +21614,7 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     this.setState({
       busy: true
     });
-    this.saveActiveTab(true).then(() => this.setState({
+    this.saveActiveTab(true, 'manual').then(() => this.setState({
       busy: false,
       historyOpen: true
     })).catch(error => this.setState({
@@ -20431,10 +21628,12 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     this.setState({
       busy: true
     });
-    this.saveActiveTab(true).then(() => this.props.vm.loadProject(version.data)).then(() => {
+    this.loadingTab = true;
+    this.saveActiveTab(true, 'manual').then(() => this.props.vm.loadProject(version.data)).then(() => {
       const vm = this.props.vm;
       if (vm.renderer) vm.renderer.draw();
       this.props.onSetProjectTitle(version.title);
+      this.loadingTab = false;
       this.setState(previous => ({
         tabs: previous.tabs.map(tab => tab.id === previous.activeId ? _objectSpread(_objectSpread({}, tab), {}, {
           data: version.data,
@@ -20443,12 +21642,67 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         editingTitle: version.title,
         historyOpen: false,
         busy: false,
+        dirty: false,
         error: ''
+      }));
+    }).catch(error => {
+      this.loadingTab = false;
+      this.setState({
+        busy: false,
+        error: error.message
+      });
+    });
+  }
+  handleRestoreVersionToNewTab(version) {
+    if (this.state.busy) return;
+    this.setState({
+      busy: true
+    });
+    this.saveActiveTab(false).then(() => {
+      const tab = {
+        id: "tab_".concat(++this.seq),
+        title: "".concat(version.title, " \xB7 \u6062\u590D"),
+        data: version.data,
+        versions: []
+      };
+      this.setState(previous => ({
+        tabs: previous.tabs.concat(tab),
+        historyOpen: false
+      }), () => this.loadTab(tab).catch(error => {
+        this.setState({
+          busy: false,
+          error: error.message
+        });
       }));
     }).catch(error => this.setState({
       busy: false,
       error: error.message
     }));
+  }
+  handleOpenRestorePoints() {
+    if (this.props.onOpenRestorePoints) this.props.onOpenRestorePoints();
+  }
+  handleExternalOpenCloud() {
+    if (this.state.busy || this.loadingTab) {
+      this.showNotice('正在切换标签页，请稍后再打开云空间');
+      return;
+    }
+    this.setState({
+      cloudOpen: true
+    });
+  }
+  handleCloudSpriteUpload(event) {
+    if (this.state.busy || this.loadingTab) {
+      this.showNotice('正在切换标签页，请稍后再上传');
+      return;
+    }
+    const detail = event && event.detail ? event.detail : {};
+    if (!detail.targetId) return;
+    this.showNotice('正在上传角色…');
+    Object(_lib_pointer_cloud__WEBPACK_IMPORTED_MODULE_5__["uploadCloudSprite"])(this.props.vm, detail.targetId, detail.spriteName).then(result => {
+      this.showNotice("\u89D2\u8272\u300C".concat(result.project.title, "\u300D\u5DF2\u4E0A\u4F20\u5230\u4E91"));
+      window.dispatchEvent(new CustomEvent('pointere-cloud-updated'));
+    }).catch(error => this.showNotice("\u4E0A\u4F20\u5931\u8D25\uFF1A".concat(error.message)));
   }
   showNotice(text) {
     if (this.noticeTimer) window.clearTimeout(this.noticeTimer);
@@ -20529,39 +21783,50 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     const active = this.getActiveTab();
     const versions = active && active.versions || [];
     return /*#__PURE__*/react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.createPortal(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.historyOverlay,
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyOverlay,
       role: "dialog",
       "aria-modal": "true"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.historyPanel
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyPanel
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.historyHead
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "\u7248\u672C\u8FED\u4EE3\u8BB0\u5F55"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, active ? active.title : '', " \xB7 \u6700\u8FD1 ", versions.length, " \u4E2A\u5FEB\u7167")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyHead
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "\u7248\u672C\u8FED\u4EE3\u8BB0\u5F55"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, active ? active.title : '', " \xB7 \u6700\u8FD1 ", versions.length, " \u4E2A\u5FEB\u7167 \xB7 \u81EA\u52A8\u8BB0\u5F55\u6BCF 5 \u5206\u949F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.close,
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.close,
       onClick: () => this.setState({
         historyOpen: false
       }),
       "aria-label": "\u5173\u95ED\u7248\u672C\u8BB0\u5F55"
     }, "\xD7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.historyActions
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyActions
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.primarySmall,
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.primarySmall,
       onClick: this.handleSaveVersion
-    }, "\u4FDD\u5B58\u5F53\u524D\u7248\u672C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5207\u6362\u6807\u7B7E\u9875\u548C\u65B0\u5EFA\u6807\u7B7E\u65F6\u4E5F\u4F1A\u81EA\u52A8\u8BB0\u5F55")), versions.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.historyList
+    }, "\u4FDD\u5B58\u5F53\u524D\u7248\u672C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.secondarySmall,
+      onClick: this.handleOpenRestorePoints
+    }, "\u6301\u4E45\u81EA\u52A8\u5907\u4EFD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "\u5207\u6362\u6807\u7B7E\u9875\u3001\u65B0\u5EFA\u6807\u7B7E\u548C\u6BCF 5 \u5206\u949F\u4F1A\u81EA\u52A8\u8BB0\u5F55")), versions.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyList
     }, versions.map(version => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
       key: version.id
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, version.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, new Date(version.at).toLocaleString(), " \xB7 ", (version.data.byteLength / 1024).toFixed(0), " KB")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, version.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, version.source === 'manual' ? '手动' : '自动', " \xB7", ' ', new Date(version.at).toLocaleString(), " \xB7", ' ', (version.data.byteLength / 1024).toFixed(0), " KB")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.versionActions
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.historyRestore,
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyRestore,
       onClick: () => this.handleRestoreVersion(version),
       disabled: this.state.busy
-    }, "\u6062\u590D")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.historyEmpty
+    }, "\u6062\u590D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyRestoreNew,
+      onClick: () => this.handleRestoreVersionToNewTab(version),
+      disabled: this.state.busy
+    }, "\u65B0\u6807\u7B7E"))))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyEmpty
     }, "\u8FD8\u6CA1\u6709\u7248\u672C\u5FEB\u7167\u3002\u4FDD\u5B58\u5F53\u524D\u7248\u672C\uFF0C\u6216\u5207\u6362\u4E00\u6B21\u6807\u7B7E\u9875\u540E\u56DE\u6765\u3002"), this.state.error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.historyError
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyError
     }, this.state.error) : null)), document.body);
   }
   render() {
@@ -20572,22 +21837,24 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       busy = _this$state.busy,
       busyLabel = _this$state.busyLabel,
       notice = _this$state.notice,
-      error = _this$state.error;
+      error = _this$state.error,
+      dirty = _this$state.dirty,
+      lastAutoSaveAt = _this$state.lastAutoSaveAt;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.tabsWrap
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.tabsWrap
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.tabs,
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.tabs,
       role: "tablist",
       "aria-label": "\u9879\u76EE\u6807\u7B7E\u9875"
     }, tabs.map(tab => {
       const active = tab.id === activeId;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         key: tab.id,
-        className: active ? _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.tabActive : _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.tab,
+        className: active ? _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.tabActive : _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.tab,
         role: "tab",
         "aria-selected": active
       }, active ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.tabInput,
+        className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.tabInput,
         value: editingTitle,
         maxLength: "100",
         spellCheck: false,
@@ -20598,49 +21865,69 @@ class PointerProjectTabs extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         "aria-label": "\u9879\u76EE\u540D\u79F0"
       }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "button",
-        className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.tabLabel,
+        className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.tabLabel,
         onClick: () => this.handleSwitchTab(tab.id),
         disabled: busy
-      }, tab.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      }, tab.title), active && dirty ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.dirtyDot,
+        title: "\u6709\u672A\u8BB0\u5F55\u5230\u7248\u672C\u7684\u6539\u52A8"
+      }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "button",
-        className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.tabClose,
+        className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.tabClose,
         onClick: event => this.handleCloseTab(tab.id, event),
         disabled: busy,
         "aria-label": "\u5173\u95ED\u6807\u7B7E\u9875"
       }, "\xD7"));
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.tabAdd,
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.tabAdd,
       onClick: this.handleNewTab,
       disabled: busy,
       title: "\u65B0\u5EFA\u6807\u7B7E\u9875",
       "aria-label": "\u65B0\u5EFA\u6807\u7B7E\u9875"
     }, "\uFF0B"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.batchButton,
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.batchButton,
       onClick: this.handleSaveAll,
       disabled: busy,
       title: "\u6279\u91CF\u4FDD\u5B58\u6240\u6709\u6807\u7B7E\u9875\u5230\u7535\u8111",
       "aria-label": "\u6279\u91CF\u4FDD\u5B58\u6240\u6709\u6807\u7B7E\u9875\u5230\u7535\u8111"
     }, "\u5168\u90E8\u4FDD\u5B58"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       type: "button",
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.historyButton,
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyButton,
       onClick: this.handleOpenHistory,
       disabled: busy,
       title: "\u7248\u672C\u8FED\u4EE3\u8BB0\u5F55",
       "aria-label": "\u7248\u672C\u8FED\u4EE3\u8BB0\u5F55"
-    }, "\u7248\u672C"), busy ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.status
+    }, "\u7248\u672C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      type: "button",
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.historyButton,
+      onClick: this.handleOpenRestorePoints,
+      title: "\u6253\u5F00\u6301\u4E45\u81EA\u52A8\u5907\u4EFD\uFF0C\u53EF\u8DE8\u91CD\u542F\u6062\u590D",
+      "aria-label": "\u6253\u5F00\u6301\u4E45\u81EA\u52A8\u5907\u4EFD"
+    }, "\u81EA\u52A8\u5907\u4EFD"), busy ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.status
     }, busyLabel || '切换中…') : null, !busy && notice ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.notice
-    }, notice) : null, error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_5___default.a.error,
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.notice
+    }, notice) : null, !busy && !notice ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.autoStatus,
+      title: "\u81EA\u52A8\u8BB0\u5F55\u6BCF 5 \u5206\u949F"
+    }, dirty ? '有未记录改动' : lastAutoSaveAt ? "\u5DF2\u8BB0\u5F55\u7248\u672C ".concat(new Date(lastAutoSaveAt).toLocaleTimeString()) : '自动记录已开启') : null, error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: _pointer_project_tabs_css__WEBPACK_IMPORTED_MODULE_7___default.a.error,
       title: error
-    }, "\u5931\u8D25") : null), this.renderHistory());
+    }, "\u5931\u8D25") : null), this.renderHistory(), this.state.cloudOpen ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_pointer_cloud_modal_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      vm: this.props.vm,
+      projectTitle: editingTitle || this.getActiveTab() && this.getActiveTab().title || '未命名作品',
+      onClose: () => this.setState({
+        cloudOpen: false
+      }),
+      onNotice: this.showNotice
+    }) : null);
   }
 }
 PointerProjectTabs.propTypes = {
   intl: react_intl__WEBPACK_IMPORTED_MODULE_3__["intlShape"].isRequired,
+  onOpenRestorePoints: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
   onProjectUnchanged: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
   onSetProjectTitle: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func.isRequired,
   onTabChange: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
@@ -26402,7 +27689,7 @@ const SpriteSelectorItem = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_
 }, props.details) : null), props.selected && props.onDeleteButtonClick ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_delete_button_delete_button_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
   className: _sprite_selector_item_css__WEBPACK_IMPORTED_MODULE_4___default.a.deleteButton,
   onClick: props.onDeleteButtonClick
-}) : null, props.onDuplicateButtonClick || props.onDeleteButtonClick || props.onExportButtonClick ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_context_menu_context_menu_jsx__WEBPACK_IMPORTED_MODULE_6__["ContextMenu"], {
+}) : null, props.onDuplicateButtonClick || props.onDeleteButtonClick || props.onExportButtonClick || props.onCloudUpload ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_context_menu_context_menu_jsx__WEBPACK_IMPORTED_MODULE_6__["ContextMenu"], {
   id: "".concat(props.name, "-").concat(contextMenuId++)
 }, props.onDuplicateButtonClick ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_context_menu_context_menu_jsx__WEBPACK_IMPORTED_MODULE_6__["MenuItem"], {
   onClick: props.onDuplicateButtonClick
@@ -26414,7 +27701,9 @@ const SpriteSelectorItem = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_7__["FormattedMessage"], {
   defaultMessage: "export",
   id: "gui.spriteSelectorItem.contextMenuExport"
-})) : null, props.onRenameButtonClick ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_context_menu_context_menu_jsx__WEBPACK_IMPORTED_MODULE_6__["MenuItem"], {
+})) : null, props.onCloudUpload ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_context_menu_context_menu_jsx__WEBPACK_IMPORTED_MODULE_6__["MenuItem"], {
+  onClick: props.onCloudUpload
+}, "\u4E0A\u4F20\u5230\u4E91") : null, props.onRenameButtonClick ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_context_menu_context_menu_jsx__WEBPACK_IMPORTED_MODULE_6__["MenuItem"], {
   onClick: props.onRenameButtonClick
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_7__["FormattedMessage"], {
   defaultMessage: "rename",
@@ -26434,6 +27723,7 @@ SpriteSelectorItem.propTypes = {
   name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.any,
   number: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
   onClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onCloudUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   onDeleteButtonClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   onCrossDragStart: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   onDuplicateButtonClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
@@ -26543,7 +27833,13 @@ const SpriteList = function SpriteList(props) {
       onClick: onSelectSprite,
       onDeleteButtonClick: onDeleteSprite,
       onDuplicateButtonClick: onDuplicateSprite,
-      onExportButtonClick: onExportSprite
+      onExportButtonClick: onExportSprite,
+      onCloudUpload: () => window.dispatchEvent(new CustomEvent('pointere-cloud-upload-sprite', {
+        detail: {
+          targetId: sprite.id,
+          spriteName: sprite.name
+        }
+      }))
     }));
   })));
 };
@@ -26555,7 +27851,7 @@ SpriteList.propTypes = {
   hoveredTarget: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.shape({
     hoveredSprite: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
     receivedBlocks: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.bool,
-    sprite: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string
+    sprite: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number])
   }),
   items: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.shape({
     costume: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.shape({
@@ -31256,7 +32552,15 @@ const RestorePointModal = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2
   ,
 
   id: "tw.restorePoints.off"
-})), props.error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+  className: _restore_point_modal_css__WEBPACK_IMPORTED_MODULE_5___default.a.createRow
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+  className: _restore_point_modal_css__WEBPACK_IMPORTED_MODULE_5___default.a.button,
+  onClick: props.onClickCreate,
+  disabled: props.isLoading
+}, "\u4FDD\u5B58\u5F53\u524D\u7248\u672C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", {
+  className: _restore_point_modal_css__WEBPACK_IMPORTED_MODULE_5___default.a.createHint
+}, "\u624B\u52A8\u4FDD\u5B58\u4E00\u4E2A\u53EF\u6062\u590D\u7684\u7248\u672C\uFF1B\u81EA\u52A8\u5907\u4EFD\u4ECD\u6309\u4E0A\u9762\u7684\u95F4\u9694\u8FD0\u884C\u3002")), props.error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
   className: _restore_point_modal_css__WEBPACK_IMPORTED_MODULE_5___default.a.error
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_0__["FormattedMessage"], {
   defaultMessage: "Restore points are not available due to an error:"
@@ -41567,6 +42871,7 @@ SpriteSelectorItem.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.any,
   onClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onCloudUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   onDeleteButtonClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   onRenameButtonClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   onDrag: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
@@ -51696,8 +53001,10 @@ const emitAccountChanged = () => {
   }
 };
 const saveAccount = (token, user) => {
+  const hadUser = Boolean(localStorage.getItem(USER_KEY));
   localStorage.setItem(TOKEN_KEY, token);
   localStorage.setItem(USER_KEY, JSON.stringify(user || {}));
+  if (!hadUser) localStorage.removeItem('pointer.cloud.token');
   emitAccountChanged();
 };
 const updateStoredUser = user => {
@@ -51708,6 +53015,7 @@ const updateStoredUser = user => {
 const clearAccount = () => {
   localStorage.removeItem(TOKEN_KEY);
   localStorage.removeItem(USER_KEY);
+  localStorage.removeItem('pointer.cloud.token');
   emitAccountChanged();
 };
 const request = function request(path) {
@@ -51813,6 +53121,793 @@ const redeemMallProduct = (token, productId, address) => request('/points/redeem
     address
   }
 });
+
+/***/ }),
+
+/***/ "./src/lib/pointer-agent-context.js":
+/*!******************************************!*\
+  !*** ./src/lib/pointer-agent-context.js ***!
+  \******************************************/
+/*! exports provided: buildProjectSnapshot, serializeProjectSnapshot, buildProjectContext, getProjectContextStats, DEFAULT_MAX_CHARS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildProjectSnapshot", function() { return buildProjectSnapshot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serializeProjectSnapshot", function() { return serializeProjectSnapshot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildProjectContext", function() { return buildProjectContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getProjectContextStats", function() { return getProjectContextStats; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_MAX_CHARS", function() { return DEFAULT_MAX_CHARS; });
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+function _toPrimitive(t, e) { if ("object" != typeof t || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
+const DEFAULT_MAX_CHARS = 12000;
+const MAX_TARGETS = 40;
+const MAX_SCRIPTS_PER_TARGET = 24;
+const MAX_LINES_PER_TARGET = 100;
+const MAX_TOTAL_LINES = 520;
+const MAX_INLINE_DEPTH = 3;
+const MAX_COSTUME_NAMES = 12;
+const MAX_SOUND_NAMES = 12;
+const MAX_VARIABLE_VALUE = 80;
+const MAX_LIST_ITEMS = 5;
+const HAT_OPCODES = new Set(['event_whenflagclicked', 'event_whenkeypressed', 'event_whenthisspriteclicked', 'event_whenstageclicked', 'event_whenbackdropswitchesto', 'event_whengreaterthan', 'event_whenbroadcastreceived', 'control_start_as_clone', 'procedures_definition']);
+const BLOCK_TEMPLATES = {
+  event_whenflagclicked: '当绿旗被点击',
+  event_whenkeypressed: '当按下 {KEY_OPTION} 键',
+  event_whenthisspriteclicked: '当角色被点击',
+  event_whenstageclicked: '当舞台被点击',
+  event_whenbackdropswitchesto: '当背景换成 {BACKDROP}',
+  event_whengreaterthan: '当 {WHENGREATERTHANMENU} > {VALUE}',
+  event_whenbroadcastreceived: '当收到广播 {BROADCAST_OPTION}',
+  event_broadcast: '广播 {BROADCAST_INPUT}',
+  event_broadcastandwait: '广播 {BROADCAST_INPUT} 并等待',
+  control_wait: '等待 {DURATION} 秒',
+  control_repeat: '重复执行 {TIMES} 次',
+  control_forever: '重复执行',
+  control_if: '如果 {CONDITION} 那么',
+  control_if_else: '如果 {CONDITION} 那么 … 否则',
+  control_wait_until: '等待直到 {CONDITION}',
+  control_repeat_until: '重复执行直到 {CONDITION}',
+  control_while: '当 {CONDITION} 重复执行',
+  control_for_each: '对于 {VARIABLE} 中的每个 {VALUE}',
+  control_start_as_clone: '当作为克隆体启动时',
+  control_create_clone_of: '克隆 {CLONE_OPTION}',
+  control_delete_this_clone: '删除此克隆体',
+  control_stop: '停止 {STOP_OPTION}',
+  motion_movesteps: '移动 {STEPS} 步',
+  motion_turnright: '右转 {DEGREES} 度',
+  motion_turnleft: '左转 {DEGREES} 度',
+  motion_goto: '移到 {TO}',
+  motion_gotoxy: '移到 x: {X} y: {Y}',
+  motion_glideto: '在 {SECS} 秒内滑行到 {TO}',
+  motion_glidesecstoxy: '在 {SECS} 秒内滑行到 x: {X} y: {Y}',
+  motion_pointindirection: '面向 {DIRECTION} 方向',
+  motion_pointtowards: '面向 {TOWARDS}',
+  motion_changexby: '将 x 坐标增加 {DX}',
+  motion_setx: '将 x 坐标设为 {X}',
+  motion_changeyby: '将 y 坐标增加 {DY}',
+  motion_sety: '将 y 坐标设为 {Y}',
+  motion_ifonedgebounce: '碰到边缘就反弹',
+  motion_setrotationstyle: '将旋转方式设为 {STYLE}',
+  motion_xposition: 'x 坐标',
+  motion_yposition: 'y 坐标',
+  motion_direction: '方向',
+  looks_say: '说 {MESSAGE}',
+  looks_sayforsecs: '说 {MESSAGE} {SECS} 秒',
+  looks_think: '思考 {MESSAGE}',
+  looks_thinkforsecs: '思考 {MESSAGE} {SECS} 秒',
+  looks_show: '显示',
+  looks_hide: '隐藏',
+  looks_switchcostumeto: '换成 {COSTUME} 造型',
+  looks_nextcostume: '下一个造型',
+  looks_switchbackdropto: '换成 {BACKDROP} 背景',
+  looks_nextbackdrop: '下一个背景',
+  looks_changeeffectby: '将 {EFFECT} 特效增加 {CHANGE}',
+  looks_seteffectto: '将 {EFFECT} 特效设定为 {VALUE}',
+  looks_cleargraphiceffects: '清除图形特效',
+  looks_changesizeby: '将大小增加 {CHANGE}',
+  looks_setsizeto: '将大小设为 {SIZE}',
+  looks_gotofrontback: '移到最 {FRONT_BACK}',
+  looks_goforwardbackward: '前移/后移 {NUM} 层',
+  looks_costumename: '造型名称',
+  looks_backdropnumbername: '背景 {NUMBER_NAME}',
+  looks_size: '大小',
+  sound_play: '播放声音 {SOUND_MENU}',
+  sound_playuntildone: '播放声音 {SOUND_MENU} 等待播完',
+  sound_stopallsounds: '停止所有声音',
+  sound_changeeffectby: '将 {EFFECT} 音效增加 {VALUE}',
+  sound_seteffectto: '将 {EFFECT} 音效设定为 {VALUE}',
+  sound_cleareffects: '清除音效',
+  sound_changevolumeby: '将音量增加 {VOLUME}',
+  sound_setvolumeto: '将音量设为 {VOLUME}',
+  sound_volume: '音量',
+  sensing_touchingobject: '碰到 {TOUCHINGOBJECTMENU}?',
+  sensing_touchingcolor: '碰到颜色 {COLOR}?',
+  sensing_coloristouchingcolor: '颜色 {COLOR} 碰到 {COLOR2}?',
+  sensing_distanceto: '到 {DISTANCETOMENU} 的距离',
+  sensing_askandwait: '询问 {QUESTION} 并等待',
+  sensing_answer: '回答',
+  sensing_keypressed: '按下 {KEY_OPTION} 键?',
+  sensing_mousedown: '按下鼠标?',
+  sensing_mousex: '鼠标 x 坐标',
+  sensing_mousey: '鼠标 y 坐标',
+  sensing_setdragmode: '将拖动模式设为 {DRAG_MODE}',
+  sensing_loudness: '响度',
+  sensing_timer: '计时器',
+  sensing_resettimer: '重置计时器',
+  sensing_of: '{PROPERTY} of {OBJECT}',
+  sensing_current: '当前 {CURRENTMENU}',
+  sensing_dayssince2000: '2000 年至今的天数',
+  sensing_username: '用户名',
+  operator_add: '{NUM1} + {NUM2}',
+  operator_subtract: '{NUM1} - {NUM2}',
+  operator_multiply: '{NUM1} * {NUM2}',
+  operator_divide: '{NUM1} / {NUM2}',
+  operator_random: '在 {FROM} 和 {TO} 之间取随机数',
+  operator_gt: '{OPERAND1} > {OPERAND2}',
+  operator_lt: '{OPERAND1} < {OPERAND2}',
+  operator_equals: '{OPERAND1} = {OPERAND2}',
+  operator_and: '{OPERAND1} 且 {OPERAND2}',
+  operator_or: '{OPERAND1} 或 {OPERAND2}',
+  operator_not: '不成立 {OPERAND}',
+  operator_join: '连接 {STRING1} 和 {STRING2}',
+  operator_letter_of: '{STRING} 的第 {LETTER} 个字符',
+  operator_length: '{STRING} 的长度',
+  operator_contains: '{STRING1} 包含 {STRING2}?',
+  operator_mod: '{NUM1} 除以 {NUM2} 的余数',
+  operator_round: '四舍五入 {NUM}',
+  operator_mathop: '{OPERATOR} {NUM}',
+  data_setvariableto: '将 {VARIABLE} 设为 {VALUE}',
+  data_changevariableby: '将 {VARIABLE} 增加 {VALUE}',
+  data_showvariable: '显示变量 {VARIABLE}',
+  data_hidevariable: '隐藏变量 {VARIABLE}',
+  data_addtolist: '将 {ITEM} 加入列表 {LIST}',
+  data_deleteoflist: '删除列表 {LIST} 的第 {INDEX} 项',
+  data_deletealloflist: '删除列表 {LIST} 的全部项目',
+  data_insertatlist: '在列表 {LIST} 的第 {INDEX} 项前插入 {ITEM}',
+  data_replaceitemoflist: '将列表 {LIST} 的第 {INDEX} 项替换为 {ITEM}',
+  data_itemoflist: '列表 {LIST} 的第 {INDEX} 项',
+  data_itemnumoflist: '列表 {LIST} 中 {ITEM} 的编号',
+  data_lengthoflist: '列表 {LIST} 的长度',
+  data_listcontainsitem: '列表 {LIST} 包含 {ITEM}?',
+  data_showlist: '显示列表 {LIST}',
+  data_hidelist: '隐藏列表 {LIST}',
+  procedures_definition: '定义 {PROCCode}',
+  procedures_call: '调用 {PROCCode}',
+  argument_reporter_string_number: '{VALUE}',
+  argument_reporter_boolean: '{VALUE}'
+};
+const cleanText = function cleanText(value) {
+  let max = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 120;
+  const text = String(value === undefined || value === null ? '' : value).replace(/\s+/g, ' ').trim();
+  return text.length > max ? "".concat(text.slice(0, max), "\u2026") : text;
+};
+const roundNumber = value => {
+  const number = Number(value);
+  return Number.isFinite(number) ? Math.round(number * 10) / 10 : 0;
+};
+const getBlocks = target => target && target.blocks && target.blocks._blocks ? target.blocks._blocks : {};
+const getScriptIds = target => {
+  if (target && target.blocks && typeof target.blocks.getScripts === 'function') {
+    return target.blocks.getScripts().slice();
+  }
+  const blocks = getBlocks(target);
+  return Object.keys(blocks).filter(id => blocks[id] && blocks[id].topLevel);
+};
+const getFieldValue = (block, name) => {
+  const field = block && block.fields && block.fields[name];
+  return field && field.value !== undefined ? cleanText(field.value, 60) : '';
+};
+const getShadowValue = block => {
+  if (!block) return '';
+  const fields = block.fields || {};
+  const keys = Object.keys(fields);
+  for (const key of keys) {
+    const field = fields[key];
+    if (field && field.value !== undefined) return cleanText(field.value, 60);
+  }
+  return '';
+};
+const getSubstackId = (block, name) => {
+  const input = block && block.inputs && block.inputs[name];
+  return input && input.block ? input.block : null;
+};
+const describeFallback = (block, blocks, depth) => {
+  const parts = [];
+  const fields = block.fields || {};
+  Object.keys(fields).forEach(key => {
+    const field = fields[key];
+    if (field && field.value !== undefined) parts.push("".concat(key, "=").concat(cleanText(field.value, 60)));
+  });
+  const inputs = block.inputs || {};
+  Object.keys(inputs).forEach(key => {
+    if (key === 'SUBSTACK' || key === 'SUBSTACK2') return;
+    const value = resolveInput(block, key, blocks, depth);
+    if (value) parts.push("".concat(key, "=").concat(value));
+  });
+  return "[".concat(block.opcode).concat(parts.length ? " ".concat(parts.join(', ')) : '', "]");
+};
+const resolveInput = (block, name, blocks, depth) => {
+  const input = block && block.inputs && block.inputs[name];
+  if (!input) return '';
+  if (Array.isArray(input)) return cleanText(input[0], 60);
+  if (typeof input !== 'object') return cleanText(input, 60);
+  const id = input.block || input.shadow;
+  if (!id) return '';
+  const child = blocks[id];
+  if (!child) return '';
+  if (child.shadow) return getShadowValue(child);
+  return describeInline(child, blocks, depth + 1);
+};
+const describeInline = (block, blocks, depth) => {
+  if (!block) return '';
+  if (depth > MAX_INLINE_DEPTH) return "[".concat(block.opcode, "]");
+  const template = BLOCK_TEMPLATES[block.opcode];
+  if (!template) return describeFallback(block, blocks, depth);
+  const fields = _objectSpread({}, block.fields || {});
+  if ((block.opcode === 'procedures_definition' || block.opcode === 'procedures_call') && block.mutation && block.mutation.proccode) {
+    fields.PROCCode = {
+      value: block.mutation.proccode
+    };
+  }
+  const used = new Set();
+  let text = template.replace(/\{([A-Za-z0-9_]+)\}/g, (match, key) => {
+    used.add(key);
+    if (fields[key] && fields[key].value !== undefined) {
+      return cleanText(fields[key].value, 60) || '（空）';
+    }
+    const value = resolveInput(block, key, blocks, depth);
+    return value || '（空）';
+  });
+  const extras = Object.keys(fields).filter(key => !used.has(key) && fields[key] && fields[key].value !== undefined).map(key => "".concat(key, "=").concat(cleanText(fields[key].value, 60)));
+  if (extras.length) text += "\uFF08".concat(extras.join(', '), "\uFF09");
+  return text.replace(/\s+/g, ' ').trim();
+};
+const buildScript = (topId, blocks, maxLines) => {
+  const lines = [];
+  const seen = new Set();
+  const walk = (id, level, isTop) => {
+    if (!id || seen.has(id) || lines.length >= maxLines) return;
+    const block = blocks[id];
+    if (!block || block.shadow) return;
+    seen.add(id);
+    lines.push("".concat('  '.repeat(level)).concat(describeInline(block, blocks, 0)));
+    const substack = getSubstackId(block, 'SUBSTACK');
+    if (substack) walk(substack, level + 1, false);
+    const substack2 = getSubstackId(block, 'SUBSTACK2');
+    if (substack2) {
+      if (lines.length < maxLines) lines.push("".concat('  '.repeat(level + 1), "\u5426\u5219:"));
+      walk(substack2, level + 1, false);
+    }
+    if (block.next) {
+      const nextLevel = isTop && HAT_OPCODES.has(block.opcode) ? level + 1 : level;
+      walk(block.next, nextLevel, false);
+    }
+  };
+  walk(topId, 0, true);
+  return lines;
+};
+const countTargetBlocks = target => {
+  const blocks = getBlocks(target);
+  return Object.keys(blocks).reduce((count, id) => count + (blocks[id] && !blocks[id].shadow ? 1 : 0), 0);
+};
+const formatListValue = value => {
+  if (!Array.isArray(value)) return '[]';
+  const items = value.slice(0, MAX_LIST_ITEMS).map(item => cleanText(item, 24));
+  const suffix = value.length > MAX_LIST_ITEMS ? ", \u2026\u5171 ".concat(value.length, " \u9879") : '';
+  return "[".concat(items.join(', ')).concat(suffix, "]");
+};
+const getTargetVariables = target => {
+  const variables = Object.values(target && target.variables ? target.variables : {});
+  return variables.filter(variable => variable && !variable.isCloud).map(variable => {
+    const isList = variable.type === 'list';
+    const isBroadcast = variable.type === 'broadcast_msg';
+    return {
+      id: variable.id,
+      name: cleanText(variable.name, 40) || '未命名',
+      type: isList ? 'list' : isBroadcast ? 'broadcast' : 'variable',
+      value: isList ? formatListValue(variable.value) : cleanText(variable.value, MAX_VARIABLE_VALUE)
+    };
+  });
+};
+const getCostumeNames = target => {
+  const costumes = target && target.sprite && Array.isArray(target.sprite.costumes) ? target.sprite.costumes : [];
+  return costumes.map(costume => cleanText(costume && costume.name, 40)).filter(Boolean).slice(0, MAX_COSTUME_NAMES);
+};
+const getCurrentCostumeName = target => {
+  const costumes = target && target.sprite && Array.isArray(target.sprite.costumes) ? target.sprite.costumes : [];
+  const index = Number(target && target.currentCostume);
+  return costumes[index] ? cleanText(costumes[index].name, 40) : '';
+};
+const getSoundNames = target => {
+  const sounds = target && target.sprite && Array.isArray(target.sprite.sounds) ? target.sprite.sounds : [];
+  return sounds.map(sound => cleanText(sound && sound.name, 40)).filter(Boolean).slice(0, MAX_SOUND_NAMES);
+};
+const buildTargetSnapshot = (target, editingTargetId, lineBudget, knownBlockCount) => {
+  const blocks = getBlocks(target);
+  const scriptIds = getScriptIds(target);
+  const scripts = [];
+  let linesLeft = lineBudget;
+  for (const scriptId of scriptIds) {
+    if (linesLeft <= 0 || scripts.length >= MAX_SCRIPTS_PER_TARGET) break;
+    const lines = buildScript(scriptId, blocks, Math.min(MAX_LINES_PER_TARGET, linesLeft));
+    if (!lines.length) continue;
+    scripts.push({
+      id: scriptId,
+      lines
+    });
+    linesLeft -= lines.length;
+  }
+  const variables = getTargetVariables(target);
+  return {
+    id: target.id,
+    name: cleanText(target.getName ? target.getName() : target.name, 48) || '未命名角色',
+    isStage: Boolean(target.isStage),
+    isEditing: target.id === editingTargetId,
+    visible: target.visible !== false,
+    x: roundNumber(target.x),
+    y: roundNumber(target.y),
+    size: roundNumber(target.size),
+    direction: roundNumber(target.direction),
+    layerOrder: Number.isFinite(Number(target.layerOrder)) ? Number(target.layerOrder) : 0,
+    costumeNames: getCostumeNames(target),
+    currentCostume: getCurrentCostumeName(target),
+    costumeCount: target.sprite && Array.isArray(target.sprite.costumes) ? target.sprite.costumes.length : 0,
+    soundNames: getSoundNames(target),
+    soundCount: target.sprite && Array.isArray(target.sprite.sounds) ? target.sprite.sounds.length : 0,
+    variables: variables.filter(variable => variable.type === 'variable' || variable.type === 'list'),
+    broadcasts: variables.filter(variable => variable.type === 'broadcast'),
+    blockCount: Number.isFinite(knownBlockCount) ? knownBlockCount : countTargetBlocks(target),
+    scriptCount: scriptIds.length,
+    scripts,
+    truncated: scripts.length < scriptIds.length || linesLeft <= 0
+  };
+};
+const sortTargets = targets => targets.slice().sort((a, b) => {
+  if (a.isStage) return -1;
+  if (b.isStage) return 1;
+  return b.layerOrder - a.layerOrder;
+});
+const buildProjectSnapshot = vm => {
+  const runtime = vm && vm.runtime;
+  const allTargets = runtime && Array.isArray(runtime.targets) ? runtime.targets : [];
+  const originals = allTargets.filter(target => target && target.isOriginal !== false);
+  const ordered = originals.slice().sort((a, b) => {
+    if (a.isStage) return -1;
+    if (b.isStage) return 1;
+    return 0;
+  });
+  const selected = ordered.slice(0, MAX_TARGETS);
+  const blockCounts = new Map();
+  originals.forEach(target => {
+    blockCounts.set(target.id, countTargetBlocks(target));
+  });
+  let totalBlocks = 0;
+  blockCounts.forEach(count => {
+    totalBlocks += count;
+  });
+  const editingTargetId = vm && vm.editingTarget ? vm.editingTarget.id : '';
+  const targets = selected.map(target => buildTargetSnapshot(target, editingTargetId, Math.min(MAX_LINES_PER_TARGET, MAX_TOTAL_LINES), blockCounts.get(target.id)));
+  return {
+    editingTargetId,
+    targetCount: originals.length,
+    listedTargetCount: targets.length,
+    spriteCount: originals.filter(target => !target.isStage).length,
+    cloneCount: allTargets.filter(target => target && target.isOriginal === false).length,
+    totalBlockCount: totalBlocks,
+    targets: sortTargets(targets),
+    truncated: originals.length > MAX_TARGETS
+  };
+};
+const appendLine = (buffer, line) => "".concat(buffer).concat(line, "\n");
+const formatVariables = variables => variables.map(variable => "".concat(variable.name, "=").concat(variable.value || '（空）')).join('、');
+const formatTarget = target => {
+  let text = '';
+  const title = "".concat(target.name).concat(target.isStage ? '（舞台）' : '（角色）').concat(target.isEditing ? '【当前编辑】' : '');
+  text = appendLine(text, "## ".concat(title));
+  text = appendLine(text, "id: ".concat(target.id));
+  const meta = [];
+  if (!target.isStage) {
+    meta.push(target.visible ? '可见' : '隐藏');
+    meta.push("x=".concat(target.x));
+    meta.push("y=".concat(target.y));
+    meta.push("\u5927\u5C0F=".concat(target.size, "%"));
+    meta.push("\u65B9\u5411=".concat(target.direction));
+  }
+  meta.push("\u9020\u578B=".concat(target.costumeCount));
+  meta.push("\u58F0\u97F3=".concat(target.soundCount));
+  meta.push("\u79EF\u6728=".concat(target.blockCount));
+  text = appendLine(text, meta.join(' · '));
+  if (target.currentCostume) {
+    text = appendLine(text, "".concat(target.isStage ? '当前背景' : '当前造型', ": ").concat(target.currentCostume));
+  }
+  if (target.costumeNames.length) {
+    text = appendLine(text, "\u9020\u578B/\u80CC\u666F: ".concat(target.costumeNames.join('、')).concat(target.costumeCount > target.costumeNames.length ? '…' : ''));
+  }
+  if (target.soundNames.length) {
+    text = appendLine(text, "\u58F0\u97F3: ".concat(target.soundNames.join('、')).concat(target.soundCount > target.soundNames.length ? '…' : ''));
+  }
+  if (target.variables.length) {
+    text = appendLine(text, "".concat(target.isStage ? '全局变量' : '角色变量', ": ").concat(formatVariables(target.variables)));
+  }
+  if (target.broadcasts.length) {
+    text = appendLine(text, "\u5E7F\u64AD: ".concat(target.broadcasts.map(item => item.name).join('、')));
+  }
+  text = appendLine(text, '脚本:');
+  if (!target.scripts.length) {
+    text = appendLine(text, '  （无脚本）');
+  } else {
+    target.scripts.forEach(script => {
+      script.lines.forEach(line => {
+        text = appendLine(text, "  ".concat(line));
+      });
+    });
+  }
+  if (target.truncated) {
+    text = appendLine(text, '  …（该角色脚本已截断）');
+  }
+  return "".concat(text, "\n");
+};
+const serializeProjectSnapshot = function serializeProjectSnapshot(snapshot) {
+  let maxChars = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DEFAULT_MAX_CHARS;
+  const limit = Number.isFinite(Number(maxChars)) && Number(maxChars) > 2000 ? Number(maxChars) : DEFAULT_MAX_CHARS;
+  let text = '<project>\n';
+  text = appendLine(text, "\u89D2\u8272\u6570\u91CF: ".concat(snapshot.targetCount, "\uFF08\u821E\u53F0 + ").concat(snapshot.spriteCount, " \u4E2A\u89D2\u8272\uFF09"));
+  text = appendLine(text, "\u79EF\u6728\u603B\u6570: ".concat(snapshot.totalBlockCount));
+  if (snapshot.cloneCount) text = appendLine(text, "\u8FD0\u884C\u4E2D\u7684\u514B\u9686\u4F53: ".concat(snapshot.cloneCount));
+  const editingTarget = snapshot.targets.find(target => target.isEditing);
+  if (editingTarget) text = appendLine(text, "\u5F53\u524D\u7F16\u8F91: ".concat(editingTarget.name));
+  if (snapshot.listedTargetCount && snapshot.listedTargetCount < snapshot.targetCount) {
+    text = appendLine(text, "\u4EE5\u4E0B\u4EC5\u5217\u51FA\u524D ".concat(snapshot.listedTargetCount, " \u4E2A\u89D2\u8272\uFF0C\u5176\u4F59 ").concat(snapshot.targetCount - snapshot.listedTargetCount, " \u4E2A\u672A\u5305\u542B\u3002"));
+  }
+  text += '\n';
+  for (const target of snapshot.targets) {
+    const block = formatTarget(target);
+    if (text.length + block.length > limit) {
+      text = appendLine(text, '…（上下文已截断，仅包含部分角色和脚本；不要假设未列出的内容不存在）');
+      break;
+    }
+    text += block;
+  }
+  text = appendLine(text, '</project>');
+  if (text.length > limit) {
+    text = "".concat(text.slice(0, limit), "\n\u2026\uFF08\u4E0A\u4E0B\u6587\u5DF2\u622A\u65AD\uFF09\n</project>");
+  }
+  return text;
+};
+const buildProjectContext = function buildProjectContext(vm) {
+  let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  const snapshot = buildProjectSnapshot(vm);
+  return serializeProjectSnapshot(snapshot, options.maxChars || DEFAULT_MAX_CHARS);
+};
+const getProjectContextStats = vm => {
+  const snapshot = buildProjectSnapshot(vm);
+  return {
+    targetCount: snapshot.targetCount,
+    spriteCount: snapshot.spriteCount,
+    totalBlockCount: snapshot.totalBlockCount,
+    cloneCount: snapshot.cloneCount,
+    truncated: snapshot.truncated
+  };
+};
+
+
+/***/ }),
+
+/***/ "./src/lib/pointer-agent-image.js":
+/*!****************************************!*\
+  !*** ./src/lib/pointer-agent-image.js ***!
+  \****************************************/
+/*! exports provided: prepareImageDataUrl, captureStageImage, readImageFile, getImageMime */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "prepareImageDataUrl", function() { return prepareImageDataUrl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "captureStageImage", function() { return captureStageImage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "readImageFile", function() { return readImageFile; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getImageMime", function() { return getImageMime; });
+const MAX_IMAGE_SIDE = 1280;
+const MAX_SOURCE_BYTES = 8 * 1024 * 1024;
+const MAX_DATA_URL_LENGTH = 2500000;
+const STAGE_SNAPSHOT_TIMEOUT = 3000;
+const requestStageSnapshot = vm => new Promise(resolve => {
+  if (!vm || !vm.renderer || typeof vm.renderer.requestSnapshot !== 'function') {
+    resolve(null);
+    return;
+  }
+  let settled = false;
+  const finish = dataUrl => {
+    if (settled) return;
+    settled = true;
+    resolve(dataUrl && /^data:image\//i.test(dataUrl) ? dataUrl : null);
+  };
+  const timer = setTimeout(() => finish(null), STAGE_SNAPSHOT_TIMEOUT);
+  try {
+    vm.renderer.requestSnapshot(dataUrl => {
+      clearTimeout(timer);
+      finish(dataUrl);
+    });
+    if (typeof vm.renderer.draw === 'function') vm.renderer.draw();
+  } catch (error) {
+    clearTimeout(timer);
+    finish(null);
+  }
+});
+const loadImage = source => new Promise((resolve, reject) => {
+  const image = new Image();
+  image.onload = () => resolve(image);
+  image.onerror = () => reject(new Error('无法读取图片'));
+  image.src = source;
+});
+const prepareImageDataUrl = async function prepareImageDataUrl(dataUrl) {
+  let maxSide = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : MAX_IMAGE_SIDE;
+  const source = String(dataUrl || '');
+  if (!/^data:image\/(?:png|jpeg|jpg|webp);base64,/i.test(source)) {
+    throw new Error('不支持该图片格式，请使用 PNG、JPEG 或 WebP');
+  }
+  const image = await loadImage(source);
+  const width = image.naturalWidth || image.width;
+  const height = image.naturalHeight || image.height;
+  if (!width || !height) throw new Error('图片尺寸无效');
+  const scale = Math.min(1, maxSide / Math.max(width, height));
+  if (scale >= 1 && source.length <= MAX_DATA_URL_LENGTH) return source;
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.max(1, Math.round(width * scale));
+  canvas.height = Math.max(1, Math.round(height * scale));
+  const context = canvas.getContext('2d');
+  context.fillStyle = '#ffffff';
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(image, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL('image/jpeg', 0.85);
+};
+const captureStageImage = async vm => {
+  const snapshot = await requestStageSnapshot(vm);
+  if (!snapshot) return null;
+  try {
+    return await prepareImageDataUrl(snapshot);
+  } catch (error) {
+    return snapshot;
+  }
+};
+const readImageFile = file => {
+  if (!file || !/^image\/(?:png|jpeg|webp)$/i.test(file.type || '')) {
+    return Promise.reject(new Error('请选择 PNG、JPEG 或 WebP 图片'));
+  }
+  if (file.size > MAX_SOURCE_BYTES) {
+    return Promise.reject(new Error('图片过大，请选择 8MB 以内的图片'));
+  }
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      prepareImageDataUrl(String(reader.result || '')).then(resolve).catch(reject);
+    };
+    reader.onerror = () => reject(new Error('无法读取图片'));
+    reader.readAsDataURL(file);
+  });
+};
+const getImageMime = dataUrl => {
+  const match = /^data:(image\/(?:png|jpeg|webp));base64,/i.exec(String(dataUrl || ''));
+  return match ? match[1].toLowerCase() : '';
+};
+
+/***/ }),
+
+/***/ "./src/lib/pointer-cloud.js":
+/*!**********************************!*\
+  !*** ./src/lib/pointer-cloud.js ***!
+  \**********************************/
+/*! exports provided: bootstrapCloud, getCloudStatus, listCloud, renameCloud, deleteCloud, uploadCloudProject, createSpriteSb3, uploadCloudSprite, downloadCloud */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bootstrapCloud", function() { return bootstrapCloud; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCloudStatus", function() { return getCloudStatus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "listCloud", function() { return listCloud; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renameCloud", function() { return renameCloud; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCloud", function() { return deleteCloud; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uploadCloudProject", function() { return uploadCloudProject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSpriteSb3", function() { return createSpriteSb3; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uploadCloudSprite", function() { return uploadCloudSprite; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "downloadCloud", function() { return _downloadCloud; });
+/* harmony import */ var _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turbowarp/jszip */ "./node_modules/@turbowarp/jszip/dist/jszip.min.js");
+/* harmony import */ var _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_turbowarp_jszip__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _pointer_account__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pointer-account */ "./src/lib/pointer-account.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+function _toPrimitive(t, e) { if ("object" != typeof t || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
+
+
+const CLOUD_BASE = window.POINTER_CLOUD_BASE || 'https://vable.ctspace.xyz/cloud';
+const TOKEN_KEY = 'pointer.cloud.token';
+const DEVICE_KEY = 'pointer.cloud.device';
+const getDeviceId = () => {
+  let id = localStorage.getItem(DEVICE_KEY);
+  if (!id) {
+    id = window.crypto && crypto.randomUUID ? crypto.randomUUID() : "dev-".concat(Math.random().toString(36).slice(2), "-").concat(Date.now());
+    localStorage.setItem(DEVICE_KEY, id);
+  }
+  return id;
+};
+const toBase64 = buffer => {
+  const bytes = buffer instanceof Uint8Array ? buffer : new Uint8Array(buffer);
+  let binary = '';
+  const chunkSize = 0x8000;
+  for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+    binary += String.fromCharCode.apply(null, bytes.subarray(offset, offset + chunkSize));
+  }
+  return window.btoa(binary);
+};
+const readError = data => data && data.error && data.error.message || null;
+const normalizeName = value => {
+  if (typeof value === 'string') return value;
+  if (value && typeof value === 'object') {
+    if (typeof value.realName === 'string') return value.realName;
+    if (typeof value.defaultMessage === 'string') return value.defaultMessage;
+    if (typeof value.name === 'string') return value.name;
+    if (typeof value.title === 'string') return value.title;
+    if (value.props) {
+      if (typeof value.props.defaultMessage === 'string') return value.props.defaultMessage;
+      if (typeof value.props.children === 'string') return value.props.children;
+    }
+  }
+  return '未命名角色';
+};
+const bootstrapCloud = () => {
+  const account = Object(_pointer_account__WEBPACK_IMPORTED_MODULE_1__["getAccount"])();
+  const body = {
+    accountKey: getDeviceId(),
+    accountName: '本机用户'
+  };
+  if (account && account.token) {
+    body.pointereToken = account.token;
+    if (account.user) {
+      body.accountName = account.user.username || account.user.name || body.accountName;
+    }
+  }
+  return fetch("".concat(CLOUD_BASE, "/api/bootstrap"), {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(response => response.json().catch(() => ({})).then(data => {
+    if (!response.ok || data.ok === false) {
+      throw new Error(readError(data) || "\u4E91\u670D\u52A1\u521D\u59CB\u5316\u5931\u8D25\uFF08".concat(response.status, "\uFF09"));
+    }
+    localStorage.setItem(TOKEN_KEY, data.token);
+    return data;
+  })).catch(error => {
+    if (error instanceof TypeError) {
+      throw new Error('无法连接云服务，请确认 PointerCloud 已启动');
+    }
+    throw error;
+  });
+};
+const _requestJson = function requestJson(path) {
+  let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  let retry = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+  const headers = new Headers(options.headers || {});
+  if (options.body) headers.set('Content-Type', 'application/json');
+  const token = localStorage.getItem(TOKEN_KEY);
+  if (token) headers.set('Authorization', "Bearer ".concat(token));
+  return fetch("".concat(CLOUD_BASE).concat(path), _objectSpread(_objectSpread({}, options), {}, {
+    headers
+  })).then(response => response.json().catch(() => ({})).then(data => {
+    if (response.status === 401 && retry) {
+      localStorage.removeItem(TOKEN_KEY);
+      return bootstrapCloud().then(() => _requestJson(path, options, false));
+    }
+    if (!response.ok || data.ok === false) {
+      throw new Error(readError(data) || "\u4E91\u670D\u52A1\u8BF7\u6C42\u5931\u8D25\uFF08".concat(response.status, "\uFF09"));
+    }
+    return data;
+  })).catch(error => {
+    if (error instanceof TypeError) {
+      throw new Error('无法连接云服务，请确认 PointerCloud 已启动');
+    }
+    throw error;
+  });
+};
+const getCloudStatus = () => _requestJson('/api/license');
+const listCloud = kind => _requestJson("/api/projects".concat(kind ? "?kind=".concat(encodeURIComponent(kind)) : ''));
+const renameCloud = (id, title) => _requestJson("/api/projects/".concat(encodeURIComponent(id)), {
+  method: 'PATCH',
+  body: JSON.stringify({
+    title
+  })
+});
+const deleteCloud = id => _requestJson("/api/projects/".concat(encodeURIComponent(id)), {
+  method: 'DELETE'
+});
+const uploadCloudProject = (vm, title) => vm.saveProjectSb3('arraybuffer').then(buffer => _requestJson('/api/projects', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: title || '未命名作品',
+    kind: 'project',
+    fileBase64: toBase64(buffer)
+  })
+}));
+const createSpriteSb3 = (vm, targetId) => {
+  const fullProject = JSON.parse(vm.toJSON());
+  const spriteJson = JSON.parse(vm.toJSON(targetId));
+  const stage = fullProject.targets.find(target => target.isStage);
+  if (!stage) throw new Error('找不到舞台，无法导出角色');
+  const project = _objectSpread(_objectSpread({}, fullProject), {}, {
+    targets: [stage, spriteJson],
+    monitors: []
+  });
+  const files = vm.saveProjectSb3DontZip();
+  const referencedAssets = new Set();
+  for (const target of [stage, spriteJson]) {
+    for (const costume of target.costumes || []) {
+      if (costume.md5ext) referencedAssets.add(costume.md5ext);
+    }
+    for (const sound of target.sounds || []) {
+      if (sound.md5ext) referencedAssets.add(sound.md5ext);
+    }
+  }
+  const zip = new _turbowarp_jszip__WEBPACK_IMPORTED_MODULE_0___default.a();
+  zip.file('project.json', JSON.stringify(project));
+  for (const _ref of Object.entries(files)) {
+    var _ref2 = _slicedToArray(_ref, 2);
+    const name = _ref2[0];
+    const data = _ref2[1];
+    if (name === 'project.json') continue;
+    if (referencedAssets.has(name) || /\.(ttf|otf|woff2?)$/i.test(name)) {
+      zip.file(name, data);
+    }
+  }
+  return zip.generateAsync({
+    type: 'arraybuffer',
+    compression: 'DEFLATE'
+  });
+};
+const uploadCloudSprite = (vm, targetId, spriteName) => {
+  const name = normalizeName(spriteName);
+  return createSpriteSb3(vm, targetId).then(buffer => _requestJson('/api/projects', {
+    method: 'POST',
+    body: JSON.stringify({
+      title: name,
+      kind: 'sprite',
+      spriteName: name,
+      fileBase64: toBase64(buffer)
+    })
+  }));
+};
+const _downloadCloud = function downloadCloud(id) {
+  let retry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+  const token = localStorage.getItem(TOKEN_KEY);
+  return fetch("".concat(CLOUD_BASE, "/api/projects/").concat(encodeURIComponent(id), "/file"), {
+    headers: token ? {
+      Authorization: "Bearer ".concat(token)
+    } : {}
+  }).then(response => {
+    if (response.status === 401 && retry) {
+      localStorage.removeItem(TOKEN_KEY);
+      return bootstrapCloud().then(() => _downloadCloud(id, false));
+    }
+    if (!response.ok) {
+      return response.json().catch(() => ({})).then(data => {
+        throw new Error(data.error && data.error.message || '下载失败');
+      });
+    }
+    return response.blob();
+  });
+};
+
 
 /***/ }),
 
@@ -53073,11 +55168,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AGENT_DEFAULTS", function() { return AGENT_DEFAULTS; });
 /* harmony import */ var _turbowarp_scratch_svg_renderer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @turbowarp/scratch-svg-renderer */ "./node_modules/@turbowarp/scratch-svg-renderer/src/index.js");
 /* harmony import */ var _turbowarp_scratch_svg_renderer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_turbowarp_scratch_svg_renderer__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _pointer_agent_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pointer-agent-context */ "./src/lib/pointer-agent-context.js");
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
 function _toPrimitive(t, e) { if ("object" != typeof t || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
+
 
 const AGENT_DEFAULTS = {
   provider: 'deepseek',
@@ -53272,13 +55369,6 @@ const extractScratchXml = content => {
   const direct = source.match(/<xml[\s\S]*?<\/xml>/i);
   return direct ? direct[0].trim() : null;
 };
-const targetVariables = target => {
-  const variables = target && target.variables ? Object.values(target.variables) : [];
-  return variables.filter(variable => variable && !variable.isCloud).map(variable => ({
-    name: variable.name,
-    type: variable.type === 'list' ? '列表' : variable.type === 'broadcast_msg' ? '广播' : '变量'
-  }));
-};
 const targetBlockTypes = (vm, target) => {
   if (!vm || !vm.runtime || !target || typeof vm.runtime.getBlocksXML !== 'function') return [];
   const categories = vm.runtime.getBlocksXML(target) || [];
@@ -53297,9 +55387,15 @@ const buildPeAgentContext = vm => {
   const target = vm && vm.editingTarget;
   if (!target) return '当前没有打开的角色。';
   const blockCount = target.blocks && target.blocks._blocks ? Object.keys(target.blocks._blocks).length : 0;
-  const variables = targetVariables(target);
+  let projectContext;
+  try {
+    projectContext = Object(_pointer_agent_context__WEBPACK_IMPORTED_MODULE_1__["buildProjectContext"])(vm);
+  } catch (error) {
+    projectContext = ["\u5F53\u524D\u89D2\u8272\uFF1A".concat(target.isStage ? '舞台' : target.getName(), "\uFF08").concat(target.isStage ? 'stage' : 'sprite', "\uFF09"), "\u5F53\u524D\u89D2\u8272\u79EF\u6728\u6570\u91CF\uFF1A".concat(blockCount)].join('\n');
+  }
   const types = targetBlockTypes(vm, target);
-  return ["\u5F53\u524D\u89D2\u8272\uFF1A".concat(target.isStage ? '舞台' : target.getName(), "\uFF08").concat(target.isStage ? 'stage' : 'sprite', "\uFF09"), "\u5F53\u524D\u89D2\u8272\u79EF\u6728\u6570\u91CF\uFF1A".concat(blockCount), variables.length ? "\u5DF2\u6709\u53D8\u91CF/\u5217\u8868\uFF1A".concat(variables.map(v => "".concat(v.name, "\uFF08").concat(v.type, "\uFF09")).join('、')) : '当前没有变量或列表。', types.length ? "\u5F53\u524D\u53EF\u7528\u79EF\u6728\u7C7B\u578B\uFF08\u53EA\u80FD\u4F7F\u7528\u8FD9\u4E9B opcode\uFF09\uFF1A".concat(types.join(', ')) : ''].filter(Boolean).join('\n');
+  const available = types.length ? "\n\n\u5F53\u524D\u7F16\u8F91\u89D2\u8272\u53EF\u7528\u79EF\u6728 opcode\uFF08\u53EA\u80FD\u4F7F\u7528\u8FD9\u4E9B\uFF09\uFF1A".concat(types.join(', ')) : '';
+  return "".concat(projectContext).concat(available);
 };
 const resolveVariableField = (field, target) => {
   const name = String(field.textContent || '').trim();
@@ -53664,7 +55760,7 @@ const buildPeAgentSystemPrompt = function buildPeAgentSystemPrompt(vm, searchCon
   const context = buildPeAgentContext(vm);
   const search = searchContext ? "\n\u8054\u7F51\u68C0\u7D22\u8D44\u6599\uFF1A\n".concat(searchContext, "\n") : '';
   const permissionRule = permission === 'readonly' ? '当前是只读建议模式：不要输出 agent、xml 或 svg 代码块，也不要声称已经修改项目；只给出步骤、思路或示例文字。' : permission === 'full' ? '当前是完全权限模式：可以直接输出可执行操作，客户端会在回答结束后自动执行。' : '当前是确认模式：可以输出可执行操作，客户端会先展示摘要，等待用户点击执行。';
-  return "\u4F60\u662F PEAgent\uFF0CPointerEditor\uFF08Scratch \u517C\u5BB9\u7F16\u8F91\u5668\uFF09\u7684\u79EF\u6728\u7F16\u7A0B\u52A9\u624B\u3002\u4F60\u8981\u5E2E\u52A9\u7528\u6237\u7528\u81EA\u7136\u8BED\u8A00\u5B8C\u6210\u5F53\u524D\u89D2\u8272\u7684 Scratch \u9879\u76EE\u3002\n\n".concat(context, "\n").concat(search, "\n\n").concat(permissionRule, "\n\n\u4F60\u53EF\u4EE5\u4F7F\u7528\u8FD9\u4E9B\u8F93\u51FA\u65B9\u5F0F\uFF1A\n1. \u76F4\u63A5\u7528\u4E2D\u6587\u89E3\u91CA\u601D\u8DEF\uFF0C\u652F\u6301 Markdown\uFF08\u6807\u9898\u3001\u5217\u8868\u3001\u7C97\u4F53\u3001\u4EE3\u7801\u3001\u94FE\u63A5\uFF09\u3002\n2. \u9700\u8981\u63D2\u5165 Scratch \u79EF\u6728\u65F6\uFF0C\u8F93\u51FA\u4E00\u4E2A\u8BED\u8A00\u6807\u8BB0\u4E3A xml \u7684\u4EE3\u7801\u5757\uFF0C\u5185\u5BB9\u662F\u5408\u6CD5\u7684 Scratch 3 Blockly XML\uFF0C\u5305\u542B <xml>...</xml>\u3002\n3. \u9700\u8981\u521B\u5EFA\u53D8\u91CF\u6216\u5E7F\u64AD\u65F6\uFF0C\u8F93\u51FA\u4E00\u4E2A\u8BED\u8A00\u6807\u8BB0\u4E3A agent \u7684 JSON \u4EE3\u7801\u5757\uFF1A\n{\n  \"actions\": [\n    {\"action\": \"create_variable\", \"name\": \"\u5206\u6570\", \"scope\": \"global\"},\n    {\"action\": \"create_broadcast\", \"name\": \"\u5F00\u59CB\u6E38\u620F\"}\n  ]\n}\nscope \u53EF\u4EE5\u662F global\uFF08\u821E\u53F0\u5168\u5C40\u53D8\u91CF\uFF09\u6216 local\uFF08\u5F53\u524D\u89D2\u8272\u53D8\u91CF\uFF09\u3002\u53D8\u91CF\u548C\u5E7F\u64AD\u4F1A\u5728\u63D2\u5165\u79EF\u6728\u524D\u81EA\u52A8\u521B\u5EFA\u3002\n4. \u9700\u8981\u7ED8\u5236\u89D2\u8272\u9020\u578B\u65F6\uFF0C\u8F93\u51FA\u4E00\u4E2A\u8BED\u8A00\u6807\u8BB0\u4E3A svg \u7684\u4EE3\u7801\u5757\uFF0C\u5185\u5BB9\u5FC5\u987B\u662F\u5B89\u5168\u3001\u7EAF\u77E2\u91CF\u7684 SVG\uFF0C\u5305\u542B width\u3001height \u548C viewBox\uFF1B\u53EF\u4EE5\u5728\u5F00\u5934\u7528 <!-- name: \u5C0F\u732B --> \u6307\u5B9A\u9020\u578B\u540D\u3002\u4E0D\u8981\u5305\u542B script\u3001foreignObject\u3001\u4E8B\u4EF6\u5C5E\u6027\u6216\u5916\u90E8\u56FE\u7247\u94FE\u63A5\u3002\n5. \u9700\u8981\u5F15\u7528\u521A\u521B\u5EFA\u7684\u53D8\u91CF/\u5E7F\u64AD\u65F6\uFF0C\u628A XML \u653E\u5728 agent \u52A8\u4F5C\u4E4B\u540E\u7684 xml \u4EE3\u7801\u5757\u4E2D\u3002\u4E5F\u53EF\u4EE5\u4F7F\u7528 {\"action\":\"insert_scratch_code\",\"xml\":\"...\"} \u63D2\u5165 Scratch \u79EF\u6728\uFF0C\u4F46\u8FD9\u53EA\u63A5\u53D7 Blockly XML\uFF0C\u7EDD\u4E0D\u6267\u884C\u4EFB\u610F JavaScript\u3002\n\n\u89C4\u5219\uFF1A\n1. \u5148\u7528\u7B80\u77ED\u4E2D\u6587\u8BF4\u660E\u4F60\u7684\u601D\u8DEF\uFF0C\u4E0D\u8981\u8F93\u51FA\u65E0\u5173\u7684\u957F\u7BC7\u7406\u8BBA\u3002\n2. XML \u53EA\u80FD\u4F7F\u7528 Scratch 3 Blockly \u771F\u5B9E\u79EF\u6728\u7C7B\u578B\uFF1B\u4E0D\u8981\u7F16\u9020\u79EF\u6728\u7C7B\u578B\u3002\u53D8\u91CF\u79EF\u6728\u5FC5\u987B\u4F7F\u7528 data_setvariableto / data_changevariableby\uFF0C\u4E0D\u80FD\u4F7F\u7528 variables_set / variables_change\u3002\u79EF\u6728\u5757\u53EF\u4EE5\u5305\u542B next\u3001value\u3001shadow\u3001field\u3001x\u3001y\u3002\n3. \u751F\u6210\u7684\u662F\u8FFD\u52A0\u811A\u672C\uFF0C\u4E0D\u8981\u5220\u9664\u7528\u6237\u5DF2\u6709\u79EF\u6728\u3002\u5C3D\u91CF\u628A\u65B0\u811A\u672C\u653E\u5728\u7A7A\u767D\u4F4D\u7F6E\uFF0C\u5E76\u4FDD\u6301\u79EF\u6728\u987A\u5E8F\u6B63\u786E\u3002\n4. \u4E0D\u8981\u8F93\u51FA <category>\u3001<sep>\u3001<button> \u7B49\u5DE5\u5177\u7BB1\u7ED3\u6784\uFF0C\u53EA\u8F93\u51FA\u53EF\u63D2\u5165\u5DE5\u4F5C\u533A\u7684\u79EF\u6728\u3002\n5. \u9700\u8981\u65B0\u53D8\u91CF\u6216\u5E7F\u64AD\u65F6\u76F4\u63A5\u4F7F\u7528 agent \u52A8\u4F5C\u521B\u5EFA\uFF0C\u4E0D\u8981\u53EA\u8BA9\u7528\u6237\u624B\u52A8\u53BB\u9762\u677F\u521B\u5EFA\uFF1B\u53D8\u91CF\u540D\u548C\u5E7F\u64AD\u540D\u8981\u7B80\u77ED\u3001\u65E0\u6362\u884C\u3002\n6. \u5982\u679C\u95EE\u9898\u4E0D\u9700\u8981\u5199\u4EE3\u7801\uFF0C\u76F4\u63A5\u7ED9\u51FA\u6E05\u6670\u7684\u64CD\u4F5C\u6B65\u9AA4\u5373\u53EF\u3002\n7. SVG \u9020\u578B\u8981\u9002\u5408 Scratch \u89D2\u8272\uFF1A\u7B80\u6D01\u3001\u5C45\u4E2D\u3001\u900F\u660E\u80CC\u666F\u3001\u4F7F\u7528\u660E\u786E\u7684\u586B\u5145\u8272\u548C\u63CF\u8FB9\uFF0C\u907F\u514D\u8FC7\u4E8E\u590D\u6742\u7684\u6EE4\u955C\u548C\u8D85\u5927\u8DEF\u5F84\u3002");
+  return "\u4F60\u662F PEAgent\uFF0CPointerEditor\uFF08Scratch \u517C\u5BB9\u7F16\u8F91\u5668\uFF09\u7684\u79EF\u6728\u7F16\u7A0B\u52A9\u624B\u3002\u4F60\u8981\u5E2E\u52A9\u7528\u6237\u7528\u81EA\u7136\u8BED\u8A00\u5B8C\u6210\u5F53\u524D\u89D2\u8272\u7684 Scratch \u9879\u76EE\u3002\n\n".concat(context, "\n").concat(search, "\n\n").concat(permissionRule, "\n\n\u4F60\u53EF\u4EE5\u4F7F\u7528\u8FD9\u4E9B\u8F93\u51FA\u65B9\u5F0F\uFF1A\n1. \u76F4\u63A5\u7528\u4E2D\u6587\u89E3\u91CA\u601D\u8DEF\uFF0C\u652F\u6301 Markdown\uFF08\u6807\u9898\u3001\u5217\u8868\u3001\u7C97\u4F53\u3001\u4EE3\u7801\u3001\u94FE\u63A5\uFF09\u3002\n2. \u9700\u8981\u63D2\u5165 Scratch \u79EF\u6728\u65F6\uFF0C\u8F93\u51FA\u4E00\u4E2A\u8BED\u8A00\u6807\u8BB0\u4E3A xml \u7684\u4EE3\u7801\u5757\uFF0C\u5185\u5BB9\u662F\u5408\u6CD5\u7684 Scratch 3 Blockly XML\uFF0C\u5305\u542B <xml>...</xml>\u3002\n3. \u9700\u8981\u521B\u5EFA\u53D8\u91CF\u6216\u5E7F\u64AD\u65F6\uFF0C\u8F93\u51FA\u4E00\u4E2A\u8BED\u8A00\u6807\u8BB0\u4E3A agent \u7684 JSON \u4EE3\u7801\u5757\uFF1A\n{\n  \"actions\": [\n    {\"action\": \"create_variable\", \"name\": \"\u5206\u6570\", \"scope\": \"global\"},\n    {\"action\": \"create_broadcast\", \"name\": \"\u5F00\u59CB\u6E38\u620F\"}\n  ]\n}\nscope \u53EF\u4EE5\u662F global\uFF08\u821E\u53F0\u5168\u5C40\u53D8\u91CF\uFF09\u6216 local\uFF08\u5F53\u524D\u89D2\u8272\u53D8\u91CF\uFF09\u3002\u53D8\u91CF\u548C\u5E7F\u64AD\u4F1A\u5728\u63D2\u5165\u79EF\u6728\u524D\u81EA\u52A8\u521B\u5EFA\u3002\n4. \u9700\u8981\u7ED8\u5236\u89D2\u8272\u9020\u578B\u65F6\uFF0C\u8F93\u51FA\u4E00\u4E2A\u8BED\u8A00\u6807\u8BB0\u4E3A svg \u7684\u4EE3\u7801\u5757\uFF0C\u5185\u5BB9\u5FC5\u987B\u662F\u5B89\u5168\u3001\u7EAF\u77E2\u91CF\u7684 SVG\uFF0C\u5305\u542B width\u3001height \u548C viewBox\uFF1B\u53EF\u4EE5\u5728\u5F00\u5934\u7528 <!-- name: \u5C0F\u732B --> \u6307\u5B9A\u9020\u578B\u540D\u3002\u4E0D\u8981\u5305\u542B script\u3001foreignObject\u3001\u4E8B\u4EF6\u5C5E\u6027\u6216\u5916\u90E8\u56FE\u7247\u94FE\u63A5\u3002\n5. \u9700\u8981\u5F15\u7528\u521A\u521B\u5EFA\u7684\u53D8\u91CF/\u5E7F\u64AD\u65F6\uFF0C\u628A XML \u653E\u5728 agent \u52A8\u4F5C\u4E4B\u540E\u7684 xml \u4EE3\u7801\u5757\u4E2D\u3002\u4E5F\u53EF\u4EE5\u4F7F\u7528 {\"action\":\"insert_scratch_code\",\"xml\":\"...\"} \u63D2\u5165 Scratch \u79EF\u6728\uFF0C\u4F46\u8FD9\u53EA\u63A5\u53D7 Blockly XML\uFF0C\u7EDD\u4E0D\u6267\u884C\u4EFB\u610F JavaScript\u3002\n\n\u89C4\u5219\uFF1A\n1. \u5148\u7528\u7B80\u77ED\u4E2D\u6587\u8BF4\u660E\u4F60\u7684\u601D\u8DEF\uFF0C\u4E0D\u8981\u8F93\u51FA\u65E0\u5173\u7684\u957F\u7BC7\u7406\u8BBA\u3002\n2. XML \u53EA\u80FD\u4F7F\u7528 Scratch 3 Blockly \u771F\u5B9E\u79EF\u6728\u7C7B\u578B\uFF1B\u4E0D\u8981\u7F16\u9020\u79EF\u6728\u7C7B\u578B\u3002\u53D8\u91CF\u79EF\u6728\u5FC5\u987B\u4F7F\u7528 data_setvariableto / data_changevariableby\uFF0C\u4E0D\u80FD\u4F7F\u7528 variables_set / variables_change\u3002\u79EF\u6728\u5757\u53EF\u4EE5\u5305\u542B next\u3001value\u3001shadow\u3001field\u3001x\u3001y\u3002\n3. \u751F\u6210\u7684\u662F\u8FFD\u52A0\u811A\u672C\uFF0C\u4E0D\u8981\u5220\u9664\u7528\u6237\u5DF2\u6709\u79EF\u6728\u3002\u5C3D\u91CF\u628A\u65B0\u811A\u672C\u653E\u5728\u7A7A\u767D\u4F4D\u7F6E\uFF0C\u5E76\u4FDD\u6301\u79EF\u6728\u987A\u5E8F\u6B63\u786E\u3002\n4. \u4E0D\u8981\u8F93\u51FA <category>\u3001<sep>\u3001<button> \u7B49\u5DE5\u5177\u7BB1\u7ED3\u6784\uFF0C\u53EA\u8F93\u51FA\u53EF\u63D2\u5165\u5DE5\u4F5C\u533A\u7684\u79EF\u6728\u3002\n5. \u9700\u8981\u65B0\u53D8\u91CF\u6216\u5E7F\u64AD\u65F6\u76F4\u63A5\u4F7F\u7528 agent \u52A8\u4F5C\u521B\u5EFA\uFF0C\u4E0D\u8981\u53EA\u8BA9\u7528\u6237\u624B\u52A8\u53BB\u9762\u677F\u521B\u5EFA\uFF1B\u53D8\u91CF\u540D\u548C\u5E7F\u64AD\u540D\u8981\u7B80\u77ED\u3001\u65E0\u6362\u884C\u3002\n6. \u5982\u679C\u95EE\u9898\u4E0D\u9700\u8981\u5199\u4EE3\u7801\uFF0C\u76F4\u63A5\u7ED9\u51FA\u6E05\u6670\u7684\u64CD\u4F5C\u6B65\u9AA4\u5373\u53EF\u3002\n7. SVG \u9020\u578B\u8981\u9002\u5408 Scratch \u89D2\u8272\uFF1A\u7B80\u6D01\u3001\u5C45\u4E2D\u3001\u900F\u660E\u80CC\u666F\u3001\u4F7F\u7528\u660E\u786E\u7684\u586B\u5145\u8272\u548C\u63CF\u8FB9\uFF0C\u907F\u514D\u8FC7\u4E8E\u590D\u6742\u7684\u6EE4\u955C\u548C\u8D85\u5927\u8DEF\u5F84\u3002\n8. \u9879\u76EE\u4E0A\u4E0B\u6587\u662F\u7F16\u8F91\u5668\u5B9E\u65F6\u751F\u6210\u7684\u7ED3\u6784\u5316\u5FEB\u7167\uFF1B\u53EA\u4F7F\u7528\u5176\u4E2D\u51FA\u73B0\u7684\u89D2\u8272\u3001\u53D8\u91CF\u3001\u5E7F\u64AD\u548C\u79EF\u6728\u7C7B\u578B\u3002\u4E0A\u4E0B\u6587\u6807\u6CE8\u201C\u5DF2\u622A\u65AD\u201D\u65F6\uFF0C\u4E0D\u8981\u5047\u8BBE\u672A\u5217\u51FA\u7684\u5185\u5BB9\u4E0D\u5B58\u5728\uFF0C\u5148\u5411\u7528\u6237\u786E\u8BA4\u3002\n9. \u4F60\u53EA\u80FD\u4FEE\u6539\u5F53\u524D\u7F16\u8F91\u89D2\u8272\uFF08\u4E0A\u4E0B\u6587\u4E2D\u7684\u3010\u5F53\u524D\u7F16\u8F91\u3011\uFF09\uFF1B\u5176\u4ED6\u89D2\u8272\u53EA\u7528\u4E8E\u7406\u89E3\u9879\u76EE\u3002\u7528\u6237\u8981\u6C42\u4FEE\u6539\u5176\u4ED6\u89D2\u8272\u65F6\uFF0C\u5148\u63D0\u793A\u7528\u6237\u5207\u6362\u89D2\u8272\u3002\n10. \u4FEE\u6539\u524D\u5148\u7528\u4E00\u53E5\u8BDD\u8BF4\u660E\u4F1A\u5F71\u54CD\u54EA\u4E9B\u89D2\u8272\u548C\u811A\u672C\uFF1B\u7528\u6237\u6CA1\u6709\u63D0\u5230\u7684\u90E8\u5206\u4E0D\u8981\u987A\u624B\u6539\u3002\n11. \u5982\u679C\u7528\u6237\u6D88\u606F\u9644\u5E26\u821E\u53F0\u622A\u56FE\uFF0C\u628A\u622A\u56FE\u5F53\u4F5C\u5F53\u524D\u821E\u53F0\u753B\u9762\uFF1B\u622A\u56FE\u4E0E\u811A\u672C\u51B2\u7A81\u65F6\uFF0C\u5148\u6307\u51FA\u53EF\u80FD\u7684\u8FD0\u884C\u72B6\u6001\u5DEE\u5F02\uFF0C\u4E0D\u8981\u5047\u8BBE\u622A\u56FE\u4E4B\u5916\u7684\u89D2\u8272\u6216\u754C\u9762\u3002");
 };
 
 
@@ -54126,6 +56222,165 @@ const analyzeExtensionWithAgent = async function analyzeExtensionWithAgent(sourc
     summary: String(parsed.summary || '').slice(0, 1000) || 'AI 已完成分析。',
     findings,
     model: result.model || config.model
+  };
+};
+
+/***/ }),
+
+/***/ "./src/lib/pointer-workspace-background.js":
+/*!*************************************************!*\
+  !*** ./src/lib/pointer-workspace-background.js ***!
+  \*************************************************/
+/*! exports provided: WORKSPACE_BACKGROUND_PRESETS, getWorkspacePreset, isDarkColor, isDarkBackground, getWorkspaceBackground, setWorkspaceBackground, getWorkspaceBackgroundStyle, getWorkspacePanelStyle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WORKSPACE_BACKGROUND_PRESETS", function() { return WORKSPACE_BACKGROUND_PRESETS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWorkspacePreset", function() { return getWorkspacePreset; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDarkColor", function() { return isDarkColor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDarkBackground", function() { return isDarkBackground; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWorkspaceBackground", function() { return getWorkspaceBackground; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setWorkspaceBackground", function() { return setWorkspaceBackground; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWorkspaceBackgroundStyle", function() { return getWorkspaceBackgroundStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWorkspacePanelStyle", function() { return getWorkspacePanelStyle; });
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+function _toPrimitive(t, e) { if ("object" != typeof t || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
+const STORAGE_KEY = 'pointer.workspace.background.v1';
+const WORKSPACE_BACKGROUND_PRESETS = [{
+  id: 'default',
+  name: '默认',
+  css: 'transparent',
+  dark: false
+}, {
+  id: 'mist',
+  name: '晨雾',
+  css: 'linear-gradient(135deg, #e8f2ff 0%, #dbeafe 55%, #f8fbff 100%)',
+  dark: false
+}, {
+  id: 'mint',
+  name: '薄荷',
+  css: 'linear-gradient(135deg, #e6fbf0 0%, #d1fae5 60%, #f0fdf4 100%)',
+  dark: false
+}, {
+  id: 'sakura',
+  name: '樱花',
+  css: 'linear-gradient(135deg, #fff1f6 0%, #ffe4ef 55%, #fff7ed 100%)',
+  dark: false
+}, {
+  id: 'sunset',
+  name: '晚霞',
+  css: 'linear-gradient(135deg, #ffe8d6 0%, #ffd6a5 45%, #ffc6c6 100%)',
+  dark: false
+}, {
+  id: 'sky',
+  name: '海盐',
+  css: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 55%, #e0f2fe 100%)',
+  dark: false
+}, {
+  id: 'paper',
+  name: '纸张',
+  css: 'linear-gradient(135deg, #f7f3e9 0%, #efe8d8 100%)',
+  dark: false
+}, {
+  id: 'night',
+  name: '夜航',
+  css: 'linear-gradient(135deg, #0b1220 0%, #111c33 55%, #1e2a44 100%)',
+  dark: true
+}, {
+  id: 'forest',
+  name: '深林',
+  css: 'linear-gradient(135deg, #0f2027 0%, #203a43 55%, #2c5364 100%)',
+  dark: true
+}];
+const DEFAULTS = {
+  preset: 'default',
+  color: '',
+  image: '',
+  dark: false,
+  backgroundBlur: 0,
+  panelBlur: 14,
+  panelOpacity: 0.55
+};
+const getWorkspacePreset = id => WORKSPACE_BACKGROUND_PRESETS.find(preset => preset.id === id) || WORKSPACE_BACKGROUND_PRESETS[0];
+const isDarkColor = value => {
+  const match = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(String(value || ''));
+  if (!match) return false;
+  const red = Number.parseInt(match[1], 16);
+  const green = Number.parseInt(match[2], 16);
+  const blue = Number.parseInt(match[3], 16);
+  return 0.2126 * red + 0.7152 * green + 0.0722 * blue < 128;
+};
+const isDarkBackground = settings => {
+  if (!settings) return false;
+  if (typeof settings.dark === 'boolean') return settings.dark;
+  return Boolean(getWorkspacePreset(settings.preset).dark) || isDarkColor(settings.color);
+};
+const readSettings = () => {
+  try {
+    const stored = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || '{}');
+    const merged = _objectSpread(_objectSpread({}, DEFAULTS), stored && typeof stored === 'object' ? stored : {});
+    if (!stored || typeof stored.dark !== 'boolean') {
+      merged.dark = Boolean(getWorkspacePreset(merged.preset).dark) || isDarkColor(merged.color);
+    }
+    return merged;
+  } catch (error) {
+    return _objectSpread({}, DEFAULTS);
+  }
+};
+let current = readSettings();
+const getWorkspaceBackground = () => current;
+const setWorkspaceBackground = patch => {
+  current = _objectSpread(_objectSpread({}, current), patch || {});
+  let persisted = true;
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(current));
+  } catch (error) {
+    persisted = false;
+  }
+  window.dispatchEvent(new CustomEvent('pointere-workspace-background-changed', {
+    detail: current
+  }));
+  return persisted;
+};
+const blurFilter = settings => settings.backgroundBlur ? "blur(".concat(settings.backgroundBlur, "px)") : 'none';
+const getWorkspaceBackgroundStyle = settings => {
+  const preset = getWorkspacePreset(settings.preset);
+  const usePreset = preset.id !== 'default' && !settings.color && !settings.image;
+  if (settings.image) {
+    return {
+      backgroundColor: 'transparent',
+      backgroundImage: "url(\"".concat(settings.image, "\")"),
+      filter: blurFilter(settings)
+    };
+  }
+  if (settings.color) {
+    return {
+      backgroundColor: settings.color,
+      backgroundImage: 'none',
+      filter: blurFilter(settings)
+    };
+  }
+  return {
+    backgroundColor: usePreset ? 'transparent' : '#f9f9f9',
+    backgroundImage: usePreset ? preset.css : 'none',
+    filter: blurFilter(settings)
+  };
+};
+const getWorkspacePanelStyle = settings => {
+  const dark = isDarkBackground(settings);
+  return {
+    '--pointer-workspace-panel-bg': dark ? "rgba(2, 5, 12, ".concat(settings.panelOpacity, ")") : "rgba(255, 255, 255, ".concat(settings.panelOpacity, ")"),
+    '--pointer-workspace-panel-fill': dark ? "rgba(2, 5, 12, ".concat(settings.panelOpacity, ")") : "rgba(249, 249, 249, ".concat(settings.panelOpacity, ")"),
+    '--pointer-workspace-panel-border': dark ? 'rgba(255, 255, 255, .16)' : 'rgba(0, 0, 0, .15)',
+    '--pointer-workspace-panel-text': dark ? 'rgba(235, 244, 255, .92)' : '#575e75',
+    '--pointer-workspace-panel-hover-text': dark ? '#9ec5ff' : '#2f6fe4',
+    '--pointer-workspace-panel-selected': dark ? 'rgba(47, 111, 228, .28)' : 'rgba(47, 111, 228, .12)',
+    '--pointer-workspace-scrollbar': dark ? 'rgba(255, 255, 255, .28)' : '#cecdce',
+    '--pointer-workspace-panel-blur': "".concat(settings.panelBlur, "px")
   };
 };
 

@@ -6,6 +6,7 @@ import {injectIntl, intlShape} from 'react-intl';
 
 import {setProjectTitle} from '../../reducers/project-title';
 import {setProjectUnchanged} from '../../reducers/project-changed';
+import {openRestorePointModal} from '../../reducers/modals';
 import PointerProjectTabs from '../menu-bar/pointer-project-tabs.jsx';
 import styles from './pointer-project-tab-bar.css';
 
@@ -14,6 +15,7 @@ const PointerProjectTabBar = ({
     intl,
     projectTitle,
     vm,
+    onOpenRestorePoints,
     onProjectUnchanged,
     onSetProjectTitle
 }) => {
@@ -24,6 +26,7 @@ const PointerProjectTabBar = ({
                 intl={intl}
                 projectTitle={projectTitle}
                 vm={vm}
+                onOpenRestorePoints={onOpenRestorePoints}
                 onProjectUnchanged={onProjectUnchanged}
                 onSetProjectTitle={onSetProjectTitle}
                 onTabChange={() => {
@@ -37,6 +40,7 @@ const PointerProjectTabBar = ({
 PointerProjectTabBar.propTypes = {
     canEditTitle: PropTypes.bool,
     intl: intlShape.isRequired,
+    onOpenRestorePoints: PropTypes.func,
     onProjectUnchanged: PropTypes.func,
     onSetProjectTitle: PropTypes.func,
     projectTitle: PropTypes.string,
@@ -48,6 +52,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+    onOpenRestorePoints: () => dispatch(openRestorePointModal()),
     onProjectUnchanged: () => dispatch(setProjectUnchanged()),
     onSetProjectTitle: title => dispatch(setProjectTitle(title))
 });

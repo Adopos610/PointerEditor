@@ -1,4 +1,5 @@
 import {sanitizeSvg} from '@turbowarp/scratch-svg-renderer';
+import {buildProjectContext} from './pointer-agent-context';
 
 const AGENT_DEFAULTS = {
     provider: 'deepseek',
@@ -213,14 +214,6 @@ export const extractScratchXml = content => {
     return direct ? direct[0].trim() : null;
 };
 
-const targetVariables = target => {
-    const variables = target && target.variables ? Object.values(target.variables) : [];
-    return variables.filter(variable => variable && !variable.isCloud).map(variable => ({
-        name: variable.name,
-        type: variable.type === 'list' ? '列表' : (variable.type === 'broadcast_msg' ? '广播' : '变量')
-    }));
-};
-
 const targetBlockTypes = (vm, target) => {
     if (!vm || !vm.runtime || !target || typeof vm.runtime.getBlocksXML !== 'function') return [];
     const categories = vm.runtime.getBlocksXML(target) || [];
@@ -241,14 +234,19 @@ export const buildPeAgentContext = vm => {
     if (!target) return '当前没有打开的角色。';
     const blockCount = target.blocks && target.blocks._blocks ?
         Object.keys(target.blocks._blocks).length : 0;
-    const variables = targetVariables(target);
+    let projectContext;
+    try {
+        projectContext = buildProjectContext(vm);
+    } catch (error) {
+        projectContext = [
+            `当前角色：${target.isStage ? '舞台' : target.getName()}（${target.isStage ? 'stage' : 'sprite'}）`,
+            `当前角色积木数量：${blockCount}`
+        ].join('\n');
+    }
     const types = targetBlockTypes(vm, target);
-    return [
-        `当前角色：${target.isStage ? '舞台' : target.getName()}（${target.isStage ? 'stage' : 'sprite'}）`,
-        `当前角色积木数量：${blockCount}`,
-        variables.length ? `已有变量/列表：${variables.map(v => `${v.name}（${v.type}）`).join('、')}` : '当前没有变量或列表。',
-        types.length ? `当前可用积木类型（只能使用这些 opcode）：${types.join(', ')}` : ''
-    ].filter(Boolean).join('\n');
+    const available = types.length ?
+        `\n\n当前编辑角色可用积木 opcode（只能使用这些）：${types.join(', ')}` : '';
+    return `${projectContext}${available}`;
 };
 
 const resolveVariableField = (field, target) => {
@@ -611,6 +609,10 @@ scope 可以是 global（舞台全局变量）或 local（当前角色变量）�
 4. 不要输出 <category>、<sep>、<button> 等工具箱结构，只输出可插入工作区的积木。
 5. 需要新变量或广播时直接使用 agent 动作创建，不要只让用户手动去面板创建；变量名和广播名要简短、无换行。
 6. 如果问题不需要写代码，直接给出清晰的操作步骤即可。
-7. SVG 造型要适合 Scratch 角色：简洁、居中、透明背景、使用明确的填充色和描边，避免过于复杂的滤镜和超大路径。`;
+7. SVG 造型要适合 Scratch 角色：简洁、居中、透明背景、使用明确的填充色和描边，避免过于复杂的滤镜和超大路径。
+8. 项目上下文是编辑器实时生成的结构化快照；只使用其中出现的角色、变量、广播和积木类型。上下文标注“已截断”时，不要假设未列出的内容不存在，先向用户确认。
+9. 你只能修改当前编辑角色（上下文中的【当前编辑】）；其他角色只用于理解项目。用户要求修改其他角色时，先提示用户切换角色。
+10. 修改前先用一句话说明会影响哪些角色和脚本；用户没有提到的部分不要顺手改。
+11. 如果用户消息附带舞台截图，把截图当作当前舞台画面；截图与脚本冲突时，先指出可能的运行状态差异，不要假设截图之外的角色或界面。`;
 };
 export {AGENT_DEFAULTS};

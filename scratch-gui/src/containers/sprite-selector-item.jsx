@@ -175,6 +175,7 @@ SpriteSelectorItem.propTypes = {
     // eslint-disable-next-line react/forbid-prop-types
     name: PropTypes.any,
     onClick: PropTypes.func,
+    onCloudUpload: PropTypes.func,
     onDeleteButtonClick: PropTypes.func,
     onRenameButtonClick: PropTypes.func,
     onDrag: PropTypes.func.isRequired,

@@ -1,0 +1,243 @@
+.picker {
+    position: absolute;
+    right: 22px;
+    bottom: 42px;
+    z-index: 10;
+    font-family: "OPPO Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 11px;
+    border: 1px solid rgba(201, 216, 238, .9);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, .9);
+    color: #47617f;
+    font: 600 .7rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(8, 35, 85, .14);
+    backdrop-filter: blur(8px);
+}
+.trigger:hover { border-color: #8fb6f3; background: #fff; color: #2258b8; }
+
+.triggerDot {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #c9d8ee;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .65);
+}
+
+.panel {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 8px);
+    width: 320px;
+    max-height: min(72vh, 560px, calc(100vh - 250px));
+    overflow-y: auto;
+    padding: 14px;
+    border: 1px solid #e3edfb;
+    border-radius: 14px;
+    background: #fff;
+    color: #2b4a71;
+    box-shadow: 0 20px 54px rgba(8, 35, 85, .26);
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+.head strong { color: #173a6d; font-size: .84rem; }
+
+.close {
+    width: 26px;
+    height: 26px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #8ba0ba;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.close:hover { background: #fdecea; color: #c0392b; }
+
+.sectionTitle {
+    margin: 12px 0 6px;
+    color: #93a8c4;
+    font-size: .64rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+.presetGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+}
+
+.preset {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: transparent;
+    color: #47617f;
+    font: 600 .64rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+    text-align: center;
+}
+.preset:hover { background: #f4f9ff; }
+.presetActive {
+    border-color: #2f6fe4;
+    background: #eef6ff;
+    color: #2258b8;
+    box-shadow: 0 0 0 2px rgba(47, 111, 228, .12);
+}
+
+.presetSwatch {
+    display: block;
+    height: 36px;
+    border: 1px solid #dbe7f8;
+    border-radius: 7px;
+    background-size: cover;
+    background-position: center;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 30px;
+    color: #47617f;
+    font-size: .7rem;
+}
+.rowActions { display: flex; align-items: center; gap: 6px; }
+
+.colorInput {
+    width: 42px;
+    height: 28px;
+    padding: 0;
+    border: 1px solid #dbe7f8;
+    border-radius: 7px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.smallButton {
+    height: 27px;
+    padding: 0 9px;
+    border: 1px solid #c9d8ee;
+    border-radius: 7px;
+    background: #fff;
+    color: #2f6fe4;
+    font: 600 .65rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+.smallButton:hover { background: #eef6ff; }
+
+.fileInput { display: none; }
+
+.sliderRow {
+    display: grid;
+    grid-template-columns: 64px 1fr 42px;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    color: #47617f;
+    font-size: .68rem;
+}
+
+.slider {
+    width: 100%;
+    accent-color: #2f6fe4;
+    cursor: pointer;
+}
+
+.message {
+    margin-top: 9px;
+    color: #c0392b;
+    font-size: .66rem;
+    line-height: 1.5;
+}
+
+.reset {
+    width: 100%;
+    height: 32px;
+    margin-top: 12px;
+    border: 1px solid #c9d8ee;
+    border-radius: 8px;
+    background: #f7fbff;
+    color: #2f6fe4;
+    font: 600 .7rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+.reset:hover { background: #eef6ff; }
+
+@media (max-width: 720px) {
+    .panel { width: 280px; }
+}
+
+.dark .trigger {
+    border-color: rgba(255, 255, 255, .18);
+    background: rgba(14, 22, 38, .78);
+    color: rgba(235, 244, 255, .92);
+}
+.dark .trigger:hover {
+    border-color: rgba(255, 255, 255, .3);
+    background: rgba(20, 32, 52, .92);
+    color: #fff;
+}
+.dark .triggerDot { border-color: rgba(255, 255, 255, .24); }
+
+.dark .panel {
+    border-color: rgba(255, 255, 255, .16);
+    background: #101a2c;
+    color: #dbeafe;
+    box-shadow: 0 20px 54px rgba(0, 0, 0, .45);
+}
+.dark .head strong { color: #f0f7ff; }
+.dark .close { color: #8ba0ba; }
+.dark .close:hover { background: rgba(255, 255, 255, .08); color: #ff9b8f; }
+.dark .sectionTitle { color: #7d93b5; }
+
+.dark .preset { color: #c9d8ee; }
+.dark .preset:hover { background: rgba(255, 255, 255, .06); }
+.dark .presetActive {
+    border-color: #61a0ff;
+    background: rgba(47, 111, 228, .22);
+    color: #dbeafe;
+    box-shadow: 0 0 0 2px rgba(97, 160, 255, .16);
+}
+.dark .presetSwatch { border-color: rgba(255, 255, 255, .16); }
+
+.dark .row,
+.dark .sliderRow { color: #c9d8ee; }
+.dark .colorInput { border-color: rgba(255, 255, 255, .16); }
+.dark .slider { accent-color: #61a0ff; }
+
+.dark .smallButton {
+    border-color: rgba(255, 255, 255, .16);
+    background: #16233a;
+    color: #9ec5ff;
+}
+.dark .smallButton:hover { background: #1e2f4d; }
+
+.dark .reset {
+    border-color: rgba(255, 255, 255, .16);
+    background: #16233a;
+    color: #9ec5ff;
+}
+.dark .reset:hover { background: #1e2f4d; }
+
+.dark .message { color: #ff9b8f; }

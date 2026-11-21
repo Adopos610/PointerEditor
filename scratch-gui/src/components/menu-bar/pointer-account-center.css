@@ -163,7 +163,8 @@
 .identity { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
 .identity strong { font-size: 0.95rem; color: #1d3557; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .identity span { color: #8298b5; font-size: 0.74rem; }
-.account-actions { display: flex; align-items: center; gap: 12px; }
+.account-actions { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px; }
+.account-actions .primary { min-height: 30px; font-size: 0.75rem; padding: 0 12px; }
 .account-actions .secondary { min-height: 30px; font-size: 0.75rem; padding: 0 11px; }
 
 .tabs { display: flex; gap: 4px; padding: 4px; border-radius: 10px; background: #eaf2ff; }

@@ -69,6 +69,7 @@ class PointerAccountCenter extends React.Component {
         this.handleRedeem = this.handleRedeem.bind(this);
         this.handleSaveAddress = this.handleSaveAddress.bind(this);
         this.handleOpenRegister = this.handleOpenRegister.bind(this);
+        this.handleOpenCloud = this.handleOpenCloud.bind(this);
     }
 
     componentDidMount () {
@@ -179,6 +180,12 @@ class PointerAccountCenter extends React.Component {
 
     handleOpenRegister () {
         window.open(REGISTER_URL, '_blank', 'noopener');
+    }
+
+    handleOpenCloud () {
+        localStorage.removeItem('pointer.cloud.token');
+        window.dispatchEvent(new CustomEvent('pointere-cloud-open'));
+        this.props.onClose();
     }
 
     handleCheckout (product) {
@@ -537,6 +544,9 @@ class PointerAccountCenter extends React.Component {
                         <span>@{user.username} · PointerE 账号</span>
                     </div>
                     <div className={styles.accountActions}>
+                        <button type="button" className={styles.primary} onClick={this.handleOpenCloud}>
+                            云空间
+                        </button>
                         <button type="button" className={styles.secondary} onClick={() => this.loadPoints(account)} disabled={loading}>
                             {loading ? '刷新中…' : '刷新'}
                         </button>

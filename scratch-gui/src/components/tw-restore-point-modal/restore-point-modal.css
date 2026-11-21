@@ -40,6 +40,21 @@
 .button:disabled {
     opacity: 0.8;
 }
+.create-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+.create-row .button {
+    background-color: $looks-secondary;
+    color: white;
+    white-space: nowrap;
+}
+.create-hint {
+    font-size: small;
+    opacity: 0.8;
+}
 .delete-all-button {
     margin-left: 1rem;
     background-color: $data-primary;

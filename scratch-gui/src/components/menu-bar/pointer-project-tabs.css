@@ -281,4 +281,59 @@
 }
 .history-error { margin: 6px 16px 0; color: #c0392b; font-size: .7rem; }
 
+.dirty-dot {
+    flex: 0 0 auto;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffd36e;
+    box-shadow: 0 0 6px rgba(255, 211, 110, .7);
+}
+
+.auto-status {
+    flex: 0 0 auto;
+    margin-left: 4px;
+    color: rgba(255, 255, 255, .64);
+    font-size: .6rem;
+    white-space: nowrap;
+}
+
+.secondary-small {
+    height: 29px;
+    padding: 0 10px;
+    border: 1px solid #c9d8ee;
+    border-radius: 7px;
+    background: #fff;
+    color: #2f6fe4;
+    font: 600 .66rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+.secondary-small:hover { background: #eef6ff; }
+
+.version-actions {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+    gap: 6px;
+}
+
+.history-restore-new {
+    flex: 0 0 auto;
+    height: 26px;
+    padding: 0 8px;
+    border: 1px solid #c9d8ee;
+    border-radius: 7px;
+    background: #f7fbff;
+    color: #47617f;
+    font: 600 .64rem "OPPO Sans", sans-serif;
+    cursor: pointer;
+}
+.history-restore-new:hover { background: #eef6ff; color: #2f6fe4; }
+.history-restore-new:disabled { opacity: .5; cursor: default; }
+
+@media (max-width: 640px) {
+    .auto-status { display: none; }
+}
+
+
 

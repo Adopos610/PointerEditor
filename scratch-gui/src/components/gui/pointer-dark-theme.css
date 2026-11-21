@@ -1,0 +1,395 @@
+/* Dark editor chrome, enabled only when the workspace background is dark. */
+
+:global(body.pointer-dark-theme) {
+    background: #0b1220;
+    color: #e8f1ff;
+}
+
+:global(body.pointer-dark-theme) [class*="gui_page-wrapper"],
+:global(body.pointer-dark-theme) [class*="gui_body-wrapper"] {
+    background-color: #0b1220 !important;
+    color: #e8f1ff;
+}
+
+/* Top menu bar */
+:global(body.pointer-dark-theme) [class*="menu-bar_menu-bar"] {
+    background: #0d1626 !important;
+    background-image: none !important;
+    color: #e8f1ff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
+}
+:global(body.pointer-dark-theme) [class*="menu-bar_pointer-e-account"] {
+    color: #e8f1ff !important;
+}
+:global(body.pointer-dark-theme) [class*="menu-bar_pointer-e-account-button"] {
+    background: rgba(255, 255, 255, .08) !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+}
+:global(body.pointer-dark-theme) [class*="menu-bar_pointer-e-account-button"]:hover {
+    background: rgba(255, 255, 255, .14) !important;
+}
+:global(body.pointer-dark-theme) [class*="menu-bar_pointer-e-account-points"] {
+    background: rgba(97, 160, 255, .2) !important;
+    color: #cfe0ff !important;
+}
+
+/* Project tab strip */
+:global(body.pointer-dark-theme) [class*="pointer-project-tab-bar_tab-bar"] {
+    background: #111c33 !important;
+    background-image: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-project-tabs_batch-button"],
+:global(body.pointer-dark-theme) [class*="pointer-project-tabs_history-button"] {
+    border-color: rgba(255, 255, 255, .24) !important;
+    background: rgba(255, 255, 255, .06) !important;
+    color: #dbeafe !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-project-tabs_batch-button"]:hover,
+:global(body.pointer-dark-theme) [class*="pointer-project-tabs_history-button"]:hover {
+    border-color: rgba(255, 255, 255, .45) !important;
+    background: rgba(255, 255, 255, .14) !important;
+    color: #fff !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-project-tabs_tab-add"] {
+    border-color: rgba(255, 255, 255, .28) !important;
+    color: #dbeafe !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-project-tabs_tab-active"] {
+    background: rgba(255, 255, 255, .08) !important;
+    border-color: rgba(255, 255, 255, .35) !important;
+}
+
+/* Code / costume / sound tabs */
+:global(body.pointer-dark-theme) [class*="gui_tab-list"] {
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="gui_tab_"] {
+    background-color: #16233a !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+    color: #9fb2cc !important;
+}
+:global(body.pointer-dark-theme) [class*="gui_tab_"]:hover {
+    background-color: #1a2740 !important;
+}
+:global(body.pointer-dark-theme) [class*="gui_tab_"] img {
+    filter: grayscale(100%) brightness(1.6) !important;
+}
+:global(body.pointer-dark-theme) [class*="gui_is-selected"] {
+    background-color: #0b1220 !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+    color: #9ec5ff !important;
+}
+:global(body.pointer-dark-theme) [class*="gui_is-selected"] img {
+    filter: none !important;
+}
+
+/* Find bar addon */
+:global(body.pointer-dark-theme) [class*="sa-find-bar"] {
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="sa-find-bar"] img {
+    filter: invert(1) brightness(1.2) !important;
+}
+:global(body.pointer-dark-theme) [class*="sa-find-dropdown"] {
+    background: #101a2c !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+    color: #e8f1ff !important;
+}
+:global(body.pointer-dark-theme) [class*="sa-find-dropdown"] li:hover {
+    background: rgba(255, 255, 255, .08) !important;
+}
+
+/* Form inputs across the sprite info and search */
+:global(body.pointer-dark-theme) input[class*="input_input-form"],
+:global(body.pointer-dark-theme) input[class*="input_"],
+:global(body.pointer-dark-theme) select,
+:global(body.pointer-dark-theme) textarea {
+    background-color: #0f1a2d !important;
+    color: #e8f1ff !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+    color-scheme: dark;
+}
+:global(body.pointer-dark-theme) input::placeholder,
+:global(body.pointer-dark-theme) textarea::placeholder {
+    color: #7d93b5 !important;
+}
+
+/* Right hand stage + sprite panel */
+:global(body.pointer-dark-theme) [class*="gui_stage-and-target-wrapper"],
+:global(body.pointer-dark-theme) [class*="gui_target-wrapper"],
+:global(body.pointer-dark-theme) [class*="target-pane_"],
+:global(body.pointer-dark-theme) [class*="stage-wrapper_stage-wrapper"] {
+    color: #c9d8ee;
+}
+
+:global(body.pointer-dark-theme) [class*="stage-header_"] {
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="stage-header_stage-size-row"] > * {
+    background-color: #16233a !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+}
+:global(body.pointer-dark-theme) [class*="stage-header_stage-size-toggle-group"] {
+    background-color: #16233a !important;
+}
+:global(body.pointer-dark-theme) [class*="stage-header_stage-size-toggle-group"] img,
+:global(body.pointer-dark-theme) [class*="stage-header_stage-button-icon"],
+:global(body.pointer-dark-theme) [class*="stage-header_fullscreen-buttons-row"] img {
+    filter: brightness(0) invert(1) opacity(.82) !important;
+}
+:global(body.pointer-dark-theme) [class*="toggle-buttons_button_"] {
+    border-color: rgba(255, 255, 255, .16) !important;
+}
+:global(body.pointer-dark-theme) [class*="stage-header_stage-header-wrapper-overlay"] {
+    background-color: #0d1626 !important;
+}
+:global(body.pointer-dark-theme) [class*="stage-wrapper_full-screen"] {
+    background-color: #0b1220 !important;
+}
+:global(body.pointer-dark-theme) span[class*="stage-header_stage-button"] {
+    background: #16233a !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+}
+:global(body.pointer-dark-theme) [class*="stage-header_unselect-wrapper"] {
+    background-color: #16233a !important;
+}
+:global(body.pointer-dark-theme) [class*="stage_stage-wrapper"],
+:global(body.pointer-dark-theme) [class*="stage_stage_"] {
+    border-color: rgba(255, 255, 255, .18) !important;
+}
+
+:global(body.pointer-dark-theme) button[class*="pointer-fps-monitor_chip_"] {
+    background: rgba(16, 26, 44, .92) !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-fps-monitor_chip-pulse"] {
+    background: #3ddc84 !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-fps-monitor_chip-good"] {
+    color: #4ade80 !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-fps-monitor_chip-medium"] {
+    color: #f2b64a !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-fps-monitor_chip-bad"] {
+    color: #ff7b7b !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-fps-monitor_chip-label"] {
+    color: #8ba0ba !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-fps-monitor_monitor"] {
+    background: rgba(13, 22, 38, .96) !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+    color: #dbeafe !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-fps-monitor_stats"] div {
+    background: rgba(255, 255, 255, .06) !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+}
+:global(body.pointer-dark-theme) [class*="pointer-fps-monitor_chart-wrap"] {
+    background: rgba(255, 255, 255, .04) !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+}
+
+/* Sprite selector */
+:global(body.pointer-dark-theme) [class*="sprite-selector_sprite-selector"] {
+    background-color: #111c33 !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="sprite-info_sprite-info"] {
+    background-color: #16233a !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="sprite-info_sprite-info"] img {
+    filter: invert(1) brightness(1.3) opacity(.85) !important;
+}
+:global(body.pointer-dark-theme) [class*="sprite-info_rotation-select"] {
+    background-color: #0f1a2d !important;
+    color: #e8f1ff !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+}
+
+:global(body.pointer-dark-theme) [class*="sprite-selector-item_sprite-selector-item"] {
+    background-color: #16233a !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="sprite-selector-item_sprite-selector-item"]:hover,
+:global(body.pointer-dark-theme) [class*="sprite-selector-item_is-selected"] {
+    background-color: #1a2740 !important;
+    border-color: #61a0ff !important;
+}
+:global(body.pointer-dark-theme) [class*="sprite-selector-item_is-selected"] [class*="sprite-selector-item_sprite-info"] {
+    background-color: #2f6fe4 !important;
+    color: #fff !important;
+}
+:global(body.pointer-dark-theme) [class*="sprite-selector-item_sprite-name"] {
+    color: inherit;
+}
+
+/* Stage selector column */
+:global(body.pointer-dark-theme) [class*="stage-selector_stage-selector"] {
+    background-color: #111c33 !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="stage-selector_header"] {
+    background-color: #16233a !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="stage-selector_header-title"],
+:global(body.pointer-dark-theme) [class*="stage-selector_count"],
+:global(body.pointer-dark-theme) [class*="stage-selector_label"] {
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="stage-selector_is-selected"] [class*="stage-selector_header"] {
+    background-color: #2f6fe4 !important;
+}
+:global(body.pointer-dark-theme) [class*="stage-selector_costume-canvas"] {
+    border-color: rgba(255, 255, 255, .16) !important;
+}
+
+/* Backpack bar */
+:global(body.pointer-dark-theme) [class*="backpack_backpack-header"] {
+    background: #111c33 !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+    color: #dbeafe !important;
+}
+:global(body.pointer-dark-theme) [class*="backpack_backpack-item"] > div {
+    background: #1a2740 !important;
+}
+:global(body.pointer-dark-theme) [class*="backpack_status-message"] {
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="backpack_backpack-list"] {
+    border-color: rgba(255, 255, 255, .12) !important;
+}
+
+/* Extension button */
+:global(body.pointer-dark-theme) [class*="gui_extension-button-container"] {
+    background: #16233a !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+}
+
+/* Costume and sound asset panels */
+:global(body.pointer-dark-theme) [class*="gui_tab-panel"] [class*="asset-panel_wrapper"] {
+    background-color: #111c33 !important;
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="gui_tab-panel"] [class*="selector_wrapper"] {
+    background-color: #0d1626 !important;
+    border-color: rgba(255, 255, 255, .08) !important;
+    color: #c9d8ee !important;
+}
+
+/* Paint editor tool icons: light strokes on the dark palette */
+:global(body.pointer-dark-theme) [class*="tool-select-base_tool-select-icon"] {
+    filter: brightness(0) invert(1) opacity(.78) !important;
+}
+:global(body.pointer-dark-theme) [class*="tool-select-base_is-selected"] [class*="tool-select-icon"] {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* Sound editor chrome */
+:global(body.pointer-dark-theme) [class*="sound-editor_effect-button"],
+:global(body.pointer-dark-theme) [class*="sound-editor_tool-button"],
+:global(body.pointer-dark-theme) [class*="sound-editor_trim-button"],
+:global(body.pointer-dark-theme) [class*="sound-editor_duration"],
+:global(body.pointer-dark-theme) [class*="sound-editor_advanced-info"],
+:global(body.pointer-dark-theme) [class*="sound-editor_info-row"] {
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="sound-editor_button_"] {
+    background: #1a2740 !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+}
+:global(body.pointer-dark-theme) [class*="sound-editor_button_"]:hover {
+    background: #22324f !important;
+}
+:global(body.pointer-dark-theme) [class*="sound-editor_button_"] img {
+    filter: brightness(0) invert(1) opacity(.75) !important;
+}
+:global(body.pointer-dark-theme) [class*="sound-editor_waveform-container"] {
+    background: rgba(133, 92, 214, .2) !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+}
+
+/* Right click menus */
+:global(body.pointer-dark-theme) [class*="context-menu_context-menu"] {
+    background: #101a2c !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+    color: #dbeafe !important;
+}
+:global(body.pointer-dark-theme) [class*="context-menu_menu-item"] {
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="context-menu_menu-item"]:hover {
+    background: rgba(255, 255, 255, .08) !important;
+    color: #9ec5ff !important;
+}
+
+/* Addon popups inside the paint editor */
+:global(body.pointer-dark-theme) :global(.sa-onion-settings) {
+    background: #101a2c !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+    color: #c9d8ee !important;
+}
+
+/* Dropdown menus */
+:global(body.pointer-dark-theme) [class*="menu_menu_"] {
+    background-color: #101a2c !important;
+    border-color: rgba(255, 255, 255, .16) !important;
+    color: #dbeafe !important;
+}
+:global(body.pointer-dark-theme) [class*="menu_menu-item"] {
+    color: #c9d8ee !important;
+}
+:global(body.pointer-dark-theme) [class*="menu_menu-item"]:hover,
+:global(body.pointer-dark-theme) [class*="menu_menu-item"].active,
+:global(body.pointer-dark-theme) [class*="menu_menu-item"].expanded {
+    background-color: rgba(255, 255, 255, .08) !important;
+    color: #9ec5ff !important;
+}
+:global(body.pointer-dark-theme) [class*="menu_menu-section"] {
+    border-color: rgba(255, 255, 255, .12) !important;
+}
+:global(body.pointer-dark-theme) [class*="menu_menu_"] img {
+    filter: invert(1) brightness(1.15) !important;
+}
+
+/* Make the theme switch immediate for panels and inputs */
+[class*="stage-selector_stage-selector"],
+[class*="stage-selector_header"],
+[class*="backpack_backpack-header"],
+[class*="pointer-fps-monitor_chip"],
+[class*="sprite-info_sprite-info"],
+input[class*="input_"],
+select,
+[class*="sa-find-input"] {
+    transition: none !important;
+}
+
+:global(body.pointer-dark-theme) [class*="sa-find-input"] {
+    border-color: rgba(255, 255, 255, .16) !important;
+}
+:global(body.pointer-dark-theme) :global(#sa-find-input) {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    filter: invert(1);
+    background: #f0e5d2 !important;
+    color: #0f1a2d !important;
+    border: 1px solid #444 !important;
+    box-shadow: none !important;
+}
+:global(body.pointer-dark-theme) :global(#sa-find-input)::placeholder {
+    color: #555 !important;
+}
+:global(body.pointer-dark-theme) [class*="sa-find-wrapper"],
+:global(body.pointer-dark-theme) [class*="sa-find-dropdown-out"] {
+    background: transparent !important;
+}

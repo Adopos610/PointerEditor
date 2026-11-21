@@ -42,6 +42,8 @@ import TWInvalidProjectModal from '../../containers/tw-invalid-project-modal.jsx
 import {STAGE_SIZE_MODES, FIXED_WIDTH, UNCONSTRAINED_NON_STAGE_WIDTH} from '../../lib/layout-constants';
 import {resolveStageSize} from '../../lib/screen-utils';
 import {Theme} from '../../lib/themes';
+import {getWorkspaceBackground, isDarkBackground} from '../../lib/pointer-workspace-background';
+import './pointer-dark-theme.css';
 
 import {isRendererSupported, isBrowserSupported} from '../../lib/tw-environment-support-prober';
 
@@ -64,13 +66,33 @@ const getFullscreenBackgroundColor = () => {
     if (params.has('fullscreen-background')) {
         return params.get('fullscreen-background');
     }
+    if (isDarkBackground(getWorkspaceBackground())) {
+        return '#0b1220';
+    }
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         return '#111';
     }
     return 'white';
 };
 
-const fullscreenBackgroundColor = getFullscreenBackgroundColor();
+class WorkspaceThemeSync extends React.Component {
+    componentDidMount () {
+        this.handleThemeChange = () => {
+            document.body.classList.toggle('pointer-dark-theme', isDarkBackground(getWorkspaceBackground()));
+        };
+        window.addEventListener('pointere-workspace-background-changed', this.handleThemeChange);
+        this.handleThemeChange();
+    }
+
+    componentWillUnmount () {
+        window.removeEventListener('pointere-workspace-background-changed', this.handleThemeChange);
+        document.body.classList.remove('pointer-dark-theme');
+    }
+
+    render () {
+        return null;
+    }
+}
 
 const GUIComponent = props => {
     const {
@@ -205,7 +227,7 @@ const GUIComponent = props => {
                     <div
                         className={styles.fullscreenBackground}
                         style={{
-                            backgroundColor: fullscreenBackgroundColor
+                            backgroundColor: getFullscreenBackgroundColor()
                         }}
                     />
                 ) : null}
@@ -234,6 +256,7 @@ const GUIComponent = props => {
                 }}
                 {...componentProps}
             >
+                <WorkspaceThemeSync />
                 {alwaysEnabledModals}
                 {telemetryModalVisible ? (
                     <TelemetryModal

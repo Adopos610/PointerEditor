@@ -4,9 +4,12 @@ import ReactDOM from 'react-dom';
 import {intlShape} from 'react-intl';
 
 import defaultProject from '../../lib/default-project';
+import {uploadCloudSprite} from '../../lib/pointer-cloud';
+import PointerCloudModal from './pointer-cloud-modal.jsx';
 import styles from './pointer-project-tabs.css';
 
 const INVALID_FILENAME_CHARS = /[<>:"/\\|?*\u0000-\u001f]/g;
+const AUTO_VERSION_INTERVAL = 5 * 60 * 1000;
 
 const toBase64 = buffer => {
     const bytes = new Uint8Array(buffer);
@@ -50,9 +53,14 @@ class PointerProjectTabs extends React.Component {
             busyLabel: '',
             notice: '',
             error: '',
-            historyOpen: false
+            historyOpen: false,
+            cloudOpen: false,
+            dirty: false,
+            lastAutoSaveAt: 0
         };
         this.seq = 1;
+        this.loadingTab = false;
+        this.autoVersionTimer = null;
         this.blankProject = getBlankProject(props.intl);
         this.commitTitle = this.commitTitle.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -64,6 +72,12 @@ class PointerProjectTabs extends React.Component {
         this.handleOpenHistory = this.handleOpenHistory.bind(this);
         this.handleSaveVersion = this.handleSaveVersion.bind(this);
         this.handleRestoreVersion = this.handleRestoreVersion.bind(this);
+        this.handleRestoreVersionToNewTab = this.handleRestoreVersionToNewTab.bind(this);
+        this.handleOpenRestorePoints = this.handleOpenRestorePoints.bind(this);
+        this.handleProjectChanged = this.handleProjectChanged.bind(this);
+        this.handleCloudSpriteUpload = this.handleCloudSpriteUpload.bind(this);
+        this.handleExternalOpenCloud = this.handleExternalOpenCloud.bind(this);
+        this.showNotice = this.showNotice.bind(this);
         this.handleSaveAll = this.handleSaveAll.bind(this);
     }
 
@@ -84,19 +98,44 @@ class PointerProjectTabs extends React.Component {
         this.handleExternalSaveAll = () => this.handleSaveAll();
         window.addEventListener('pointere-new-tab', this.handleExternalNewTab);
         window.addEventListener('pointere-save-all-tabs', this.handleExternalSaveAll);
+        window.addEventListener('pointere-cloud-upload-sprite', this.handleCloudSpriteUpload);
+        window.addEventListener('pointere-cloud-open', this.handleExternalOpenCloud);
+        if (this.props.vm && typeof this.props.vm.on === 'function') {
+            this.props.vm.on('PROJECT_CHANGED', this.handleProjectChanged);
+        }
+        this.autoVersionTimer = window.setInterval(() => {
+            if (!this.state.dirty || this.state.busy || this.loadingTab) return;
+            this.saveActiveTab(true, 'auto').catch(error => {
+                this.setState({error: error.message});
+            });
+        }, AUTO_VERSION_INTERVAL);
     }
 
     componentWillUnmount () {
         window.removeEventListener('pointere-new-tab', this.handleExternalNewTab);
         window.removeEventListener('pointere-save-all-tabs', this.handleExternalSaveAll);
+        window.removeEventListener('pointere-cloud-upload-sprite', this.handleCloudSpriteUpload);
+        window.removeEventListener('pointere-cloud-open', this.handleExternalOpenCloud);
+        if (this.props.vm && typeof this.props.vm.off === 'function') {
+            this.props.vm.off('PROJECT_CHANGED', this.handleProjectChanged);
+        }
+        if (this.autoVersionTimer) {
+            window.clearInterval(this.autoVersionTimer);
+            this.autoVersionTimer = null;
+        }
         if (this.noticeTimer) window.clearTimeout(this.noticeTimer);
+    }
+
+    handleProjectChanged () {
+        if (this.loadingTab || this.state.busy) return;
+        if (!this.state.dirty) this.setState({dirty: true});
     }
 
     getActiveTab () {
         return this.state.tabs.find(tab => tab.id === this.state.activeId) || this.state.tabs[0];
     }
 
-    saveActiveTab (recordVersion = true) {
+    saveActiveTab (recordVersion = true, source = 'auto') {
         const vm = this.props.vm;
         if (!vm || typeof vm.saveProjectSb3 !== 'function') return Promise.resolve();
         return vm.saveProjectSb3('arraybuffer').then(data => (
@@ -108,10 +147,13 @@ class PointerProjectTabs extends React.Component {
                             id: `version_${Date.now()}_${Math.random().toString(36).slice(2, 5)}`,
                             at: Date.now(),
                             title: previous.editingTitle || tab.title,
+                            source,
                             data
                         }, ...(tab.versions || [])].slice(0, 12) : (tab.versions || []);
                         return {...tab, data, versions};
-                    })
+                    }),
+                    dirty: recordVersion ? false : previous.dirty,
+                    lastAutoSaveAt: recordVersion ? Date.now() : previous.lastAutoSaveAt
                 }), resolve);
             })
         ));
@@ -121,18 +163,25 @@ class PointerProjectTabs extends React.Component {
         const vm = this.props.vm;
         const data = tab.data || this.blankProject;
         if (!data) return Promise.reject(new Error('无法创建空白项目'));
+        this.loadingTab = true;
         vm.quit();
         return vm.loadProject(data).then(() => {
             if (vm.renderer) vm.renderer.draw();
             this.props.onSetProjectTitle(tab.title);
             this.props.onProjectUnchanged();
+            this.loadingTab = false;
             this.setState({
                 activeId: tab.id,
                 editingTitle: tab.title,
                 busy: false,
-                error: ''
+                error: '',
+                dirty: false,
+                lastAutoSaveAt: 0
             });
             if (this.props.onTabChange) this.props.onTabChange();
+        }).catch(error => {
+            this.loadingTab = false;
+            throw error;
         });
     }
 
@@ -227,7 +276,7 @@ class PointerProjectTabs extends React.Component {
     handleSaveVersion () {
         if (this.state.busy) return;
         this.setState({busy: true});
-        this.saveActiveTab(true)
+        this.saveActiveTab(true, 'manual')
             .then(() => this.setState({busy: false, historyOpen: true}))
             .catch(error => this.setState({busy: false, error: error.message}));
     }
@@ -236,12 +285,14 @@ class PointerProjectTabs extends React.Component {
         if (this.state.busy) return;
         if (!window.confirm('恢复到这个版本？当前标签页会先记录一次快照。')) return;
         this.setState({busy: true});
-        this.saveActiveTab(true)
+        this.loadingTab = true;
+        this.saveActiveTab(true, 'manual')
             .then(() => this.props.vm.loadProject(version.data))
             .then(() => {
                 const vm = this.props.vm;
                 if (vm.renderer) vm.renderer.draw();
                 this.props.onSetProjectTitle(version.title);
+                this.loadingTab = false;
                 this.setState(previous => ({
                     tabs: previous.tabs.map(tab => (
                         tab.id === previous.activeId ?
@@ -250,10 +301,63 @@ class PointerProjectTabs extends React.Component {
                     editingTitle: version.title,
                     historyOpen: false,
                     busy: false,
+                    dirty: false,
                     error: ''
                 }));
             })
+            .catch(error => {
+                this.loadingTab = false;
+                this.setState({busy: false, error: error.message});
+            });
+    }
+
+    handleRestoreVersionToNewTab (version) {
+        if (this.state.busy) return;
+        this.setState({busy: true});
+        this.saveActiveTab(false)
+            .then(() => {
+                const tab = {
+                    id: `tab_${++this.seq}`,
+                    title: `${version.title} · 恢复`,
+                    data: version.data,
+                    versions: []
+                };
+                this.setState(previous => ({
+                    tabs: previous.tabs.concat(tab),
+                    historyOpen: false
+                }), () => this.loadTab(tab).catch(error => {
+                    this.setState({busy: false, error: error.message});
+                }));
+            })
             .catch(error => this.setState({busy: false, error: error.message}));
+    }
+
+    handleOpenRestorePoints () {
+        if (this.props.onOpenRestorePoints) this.props.onOpenRestorePoints();
+    }
+
+    handleExternalOpenCloud () {
+        if (this.state.busy || this.loadingTab) {
+            this.showNotice('正在切换标签页，请稍后再打开云空间');
+            return;
+        }
+        this.setState({cloudOpen: true});
+    }
+
+    handleCloudSpriteUpload (event) {
+        if (this.state.busy || this.loadingTab) {
+            this.showNotice('正在切换标签页，请稍后再上传');
+            return;
+        }
+        const detail = event && event.detail ? event.detail : {};
+        if (!detail.targetId) return;
+        this.showNotice('正在上传角色…');
+        uploadCloudSprite(this.props.vm, detail.targetId, detail.spriteName)
+            .then(result => {
+                this.showNotice(`角色「${result.project.title}」已上传到云`);
+                window.dispatchEvent(new CustomEvent('pointere-cloud-updated'));
+            })
+            .catch(error => this.showNotice(`上传失败：${error.message}`));
     }
 
     showNotice (text) {
@@ -330,7 +434,7 @@ class PointerProjectTabs extends React.Component {
                     <div className={styles.historyHead}>
                         <div>
                             <strong>版本迭代记录</strong>
-                            <span>{active ? active.title : ''} · 最近 {versions.length} 个快照</span>
+                            <span>{active ? active.title : ''} · 最近 {versions.length} 个快照 · 自动记录每 5 分钟</span>
                         </div>
                         <button
                             type="button"
@@ -345,7 +449,10 @@ class PointerProjectTabs extends React.Component {
                         <button type="button" className={styles.primarySmall} onClick={this.handleSaveVersion}>
                             保存当前版本
                         </button>
-                        <span>切换标签页和新建标签时也会自动记录</span>
+                        <button type="button" className={styles.secondarySmall} onClick={this.handleOpenRestorePoints}>
+                            持久自动备份
+                        </button>
+                        <span>切换标签页、新建标签和每 5 分钟会自动记录</span>
                     </div>
                     {versions.length ? (
                         <ul className={styles.historyList}>
@@ -353,16 +460,30 @@ class PointerProjectTabs extends React.Component {
                                 <li key={version.id}>
                                     <div>
                                         <strong>{version.title}</strong>
-                                        <span>{new Date(version.at).toLocaleString()} · {(version.data.byteLength / 1024).toFixed(0)} KB</span>
+                                        <span>
+                                            {version.source === 'manual' ? '手动' : '自动'} ·{' '}
+                                            {new Date(version.at).toLocaleString()} ·{' '}
+                                            {(version.data.byteLength / 1024).toFixed(0)} KB
+                                        </span>
                                     </div>
-                                    <button
-                                        type="button"
-                                        className={styles.historyRestore}
-                                        onClick={() => this.handleRestoreVersion(version)}
-                                        disabled={this.state.busy}
-                                    >
-                                        恢复
-                                    </button>
+                                    <div className={styles.versionActions}>
+                                        <button
+                                            type="button"
+                                            className={styles.historyRestore}
+                                            onClick={() => this.handleRestoreVersion(version)}
+                                            disabled={this.state.busy}
+                                        >
+                                            恢复
+                                        </button>
+                                        <button
+                                            type="button"
+                                            className={styles.historyRestoreNew}
+                                            onClick={() => this.handleRestoreVersionToNewTab(version)}
+                                            disabled={this.state.busy}
+                                        >
+                                            新标签
+                                        </button>
+                                    </div>
                                 </li>
                             ))}
                         </ul>
@@ -377,7 +498,7 @@ class PointerProjectTabs extends React.Component {
     }
 
     render () {
-        const {tabs, activeId, editingTitle, busy, busyLabel, notice, error} = this.state;
+        const {tabs, activeId, editingTitle, busy, busyLabel, notice, error, dirty, lastAutoSaveAt} = this.state;
         return (
             <React.Fragment>
             <div className={styles.tabsWrap}>
@@ -413,6 +534,12 @@ class PointerProjectTabs extends React.Component {
                                         {tab.title}
                                     </button>
                                 )}
+                                {active && dirty ? (
+                                    <span
+                                        className={styles.dirtyDot}
+                                        title="有未记录到版本的改动"
+                                    />
+                                ) : null}
                                 <button
                                     type="button"
                                     className={styles.tabClose}
@@ -456,11 +583,35 @@ class PointerProjectTabs extends React.Component {
                 >
                     版本
                 </button>
+                <button
+                    type="button"
+                    className={styles.historyButton}
+                    onClick={this.handleOpenRestorePoints}
+                    title="打开持久自动备份，可跨重启恢复"
+                    aria-label="打开持久自动备份"
+                >
+                    自动备份
+                </button>
                 {busy ? <span className={styles.status}>{busyLabel || '切换中…'}</span> : null}
                 {!busy && notice ? <span className={styles.notice}>{notice}</span> : null}
+                {!busy && !notice ? (
+                    <span className={styles.autoStatus} title="自动记录每 5 分钟">
+                        {dirty ? '有未记录改动' : lastAutoSaveAt ?
+                            `已记录版本 ${new Date(lastAutoSaveAt).toLocaleTimeString()}` :
+                            '自动记录已开启'}
+                    </span>
+                ) : null}
                 {error ? <span className={styles.error} title={error}>失败</span> : null}
             </div>
             {this.renderHistory()}
+            {this.state.cloudOpen ? (
+                <PointerCloudModal
+                    vm={this.props.vm}
+                    projectTitle={editingTitle || (this.getActiveTab() && this.getActiveTab().title) || '未命名作品'}
+                    onClose={() => this.setState({cloudOpen: false})}
+                    onNotice={this.showNotice}
+                />
+            ) : null}
             </React.Fragment>
         );
     }
@@ -468,6 +619,7 @@ class PointerProjectTabs extends React.Component {
 
 PointerProjectTabs.propTypes = {
     intl: intlShape.isRequired,
+    onOpenRestorePoints: PropTypes.func,
     onProjectUnchanged: PropTypes.func,
     onSetProjectTitle: PropTypes.func.isRequired,
     onTabChange: PropTypes.func,

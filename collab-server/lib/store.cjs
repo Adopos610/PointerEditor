@@ -239,7 +239,7 @@ const seedAdmin = () => {
     persist();
     fs.writeFileSync(
         ADMIN_FILE,
-        `PointerE 控制台\n地址：${config.publicBaseUrl}/pointere-console\n账号：${username}\n密码：${password}\n生成时间：${new Date().toISOString()}\n`,
+        `PointerE 控制台\n地址：${config.publicBaseUrl}/52dj99\n账号：${username}\n密码：${password}\n生成时间：${new Date().toISOString()}\n`,
         {mode: 0o600}
     );
     console.log(`[account] seeded admin "${username}" - credentials written to ${ADMIN_FILE}`);

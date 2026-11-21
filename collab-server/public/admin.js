@@ -202,7 +202,7 @@ const runUserAction = async (user, action) => {
     if (action === 'disable' && !window.confirm(`确定停用账号 ${user.username}？`)) return;
     showMessage(usersError, '');
     try {
-        const data = await api(`/api/pointere-console/users/${user.id}/action`, {
+        const data = await api(`/api/52dj99/users/${user.id}/action`, {
             method: 'POST',
             body: {action}
         });
@@ -256,7 +256,7 @@ const renderUsers = users => {
 
 const loadUsers = async () => {
     const query = userSearch.value.trim();
-    const data = await api(`/api/pointere-console/users${query ? `?query=${encodeURIComponent(query)}` : ''}`);
+    const data = await api(`/api/52dj99/users${query ? `?query=${encodeURIComponent(query)}` : ''}`);
     renderUsers(data.users || []);
     renderStats({...data.stats, rooms: (data.rooms || []).length});
 };
@@ -277,7 +277,7 @@ const renderRooms = rooms => {
 };
 
 const loadRooms = async () => {
-    const data = await api('/api/pointere-console/rooms');
+    const data = await api('/api/52dj99/rooms');
     renderRooms(data.rooms || []);
     renderStats({...data.stats, rooms: (data.rooms || []).length});
 };
@@ -292,7 +292,7 @@ const ORDER_STATUS = {
 
 const changeOrderStatus = async (order, status) => {
     try {
-        await api(`/api/pointere-console/orders/${order.id}/status`, {
+        await api(`/api/52dj99/orders/${order.id}/status`, {
             method: 'POST',
             body: {status}
         });
@@ -332,7 +332,7 @@ const renderOrders = orders => {
 
 const loadOrders = async () => {
     showMessage(ordersError, '');
-    const data = await api('/api/pointere-console/orders');
+    const data = await api('/api/52dj99/orders');
     renderOrders(data.orders || []);
 };
 
@@ -351,7 +351,7 @@ const fillSmtp = data => {
 
 const loadSmtp = async () => {
     try {
-        fillSmtp(await api('/api/pointere-console/smtp'));
+        fillSmtp(await api('/api/52dj99/smtp'));
     } catch (error) {
         showMessage(smtpError, error.message);
     }
@@ -418,13 +418,13 @@ const renderExtensions = data => {
 
 const loadExtensions = async () => {
     showMessage(extensionError, '');
-    const data = await api('/api/pointere-console/extensions');
+    const data = await api('/api/52dj99/extensions');
     renderExtensions(data);
 };
 
 const viewExtensionSource = async submission => {
     try {
-        const data = await api(`/api/pointere-console/extensions/${submission.id}/source`);
+        const data = await api(`/api/52dj99/extensions/${submission.id}/source`);
         const header = [
             `扩展：${submission.name}（${submission.extensionId}）`,
             `作者：${submission.author}`,
@@ -441,7 +441,7 @@ const viewExtensionSource = async submission => {
 const approveExtension = async submission => {
     if (!window.confirm(`将通过「${submission.name}」并固定当前源码快照？`)) return;
     try {
-        await api(`/api/pointere-console/extensions/${submission.id}/approve`, {method: 'POST'});
+        await api(`/api/52dj99/extensions/${submission.id}/approve`, {method: 'POST'});
         showMessage(extensionOk, '扩展已通过并上线');
         await loadExtensions();
     } catch (error) {
@@ -453,7 +453,7 @@ const rejectExtension = async submission => {
     const note = window.prompt('拒绝原因（可选，仅记录在后台）', '');
     if (note === null) return;
     try {
-        await api(`/api/pointere-console/extensions/${submission.id}/reject`, {method: 'POST', body: {note}});
+        await api(`/api/52dj99/extensions/${submission.id}/reject`, {method: 'POST', body: {note}});
         showMessage(extensionOk, '已拒绝该扩展');
         await loadExtensions();
     } catch (error) {
@@ -464,7 +464,7 @@ const rejectExtension = async submission => {
 const deleteExtensionSubmission = async submission => {
     if (!window.confirm(`删除提交「${submission.name}」及其源码？`)) return;
     try {
-        await api(`/api/pointere-console/extensions/${submission.id}/delete`, {method: 'POST'});
+        await api(`/api/52dj99/extensions/${submission.id}/delete`, {method: 'POST'});
         showMessage(extensionOk, '提交已删除');
         await loadExtensions();
     } catch (error) {
@@ -475,7 +475,7 @@ const deleteExtensionSubmission = async submission => {
 const deleteApprovedExtension = async item => {
     if (!window.confirm(`下架并删除扩展「${item.name}」？`)) return;
     try {
-        await api(`/api/pointere-console/community-extensions/${item.id}/delete`, {method: 'POST'});
+        await api(`/api/52dj99/community-extensions/${item.id}/delete`, {method: 'POST'});
         showMessage(extensionOk, '扩展已下架');
         await loadExtensions();
     } catch (error) {
@@ -501,7 +501,7 @@ loginForm.addEventListener('submit', async event => {
     loginButton.disabled = true;
     loginButton.textContent = '正在登录…';
     try {
-        const data = await api('/api/pointere-console/login', {
+        const data = await api('/api/52dj99/login', {
             method: 'POST',
             body: {
                 account: loginForm.elements.account.value.trim(),
@@ -556,7 +556,7 @@ const submitPoints = async event => {
     pointsSubmit.disabled = true;
     pointsSubmit.textContent = '正在调整…';
     try {
-        const data = await api(`/api/pointere-console/users/${selectedPointsUser.id}/points`, {
+        const data = await api(`/api/52dj99/users/${selectedPointsUser.id}/points`, {
             method: 'POST',
             body: {amount, reason}
         });
@@ -595,7 +595,7 @@ const renderProducts = list => {
 
 const loadProducts = async () => {
     showMessage(productsError, '');
-    const data = await api('/api/pointere-console/products');
+    const data = await api('/api/52dj99/products');
     renderProducts(data.products || []);
 };
 
@@ -637,7 +637,7 @@ const saveProduct = async event => {
     productSave.disabled = true;
     productSave.textContent = '保存中…';
     try {
-        await api(id ? `/api/pointere-console/products/${id}` : '/api/pointere-console/products', {
+        await api(id ? `/api/52dj99/products/${id}` : '/api/52dj99/products', {
             method: 'POST',
             body: payload
         });
@@ -655,7 +655,7 @@ const saveProduct = async event => {
 const toggleProduct = async product => {
     showMessage(productsError, '');
     try {
-        await api(`/api/pointere-console/products/${product.id}`, {
+        await api(`/api/52dj99/products/${product.id}`, {
             method: 'POST',
             body: {enabled: product.enabled === false}
         });
@@ -669,7 +669,7 @@ const deleteProduct = async product => {
     if (!window.confirm(`确定删除商品「${product.name}」？已产生的订单不会受影响。`)) return;
     showMessage(productsError, '');
     try {
-        await api(`/api/pointere-console/products/${product.id}/delete`, {method: 'POST'});
+        await api(`/api/52dj99/products/${product.id}/delete`, {method: 'POST'});
         await loadProducts();
         showMessage(productsOk, '商品已删除');
     } catch (error) {
@@ -716,7 +716,7 @@ const fillRelease = release => {
 
 const loadNotices = async () => {
     showMessage(noticeError, '');
-    const data = await api('/api/pointere-console/notices');
+    const data = await api('/api/52dj99/notices');
     renderNotices(data.announcements || []);
     fillRelease(data.release);
 };
@@ -755,7 +755,7 @@ const saveNotice = async event => {
     noticeSave.disabled = true;
     noticeSave.textContent = '保存中…';
     try {
-        await api(id ? `/api/pointere-console/notices/${id}` : '/api/pointere-console/notices', {
+        await api(id ? `/api/52dj99/notices/${id}` : '/api/52dj99/notices', {
             method: 'POST',
             body: payload
         });
@@ -773,7 +773,7 @@ const saveNotice = async event => {
 const toggleNotice = async notice => {
     showMessage(noticeError, '');
     try {
-        await api(`/api/pointere-console/notices/${notice.id}`, {
+        await api(`/api/52dj99/notices/${notice.id}`, {
             method: 'POST',
             body: {active: notice.active === false}
         });
@@ -787,7 +787,7 @@ const deleteNotice = async notice => {
     if (!window.confirm(`确定删除公告「${notice.title}」？`)) return;
     showMessage(noticeError, '');
     try {
-        await api(`/api/pointere-console/notices/${notice.id}/delete`, {method: 'POST'});
+        await api(`/api/52dj99/notices/${notice.id}/delete`, {method: 'POST'});
         await loadNotices();
         showMessage(noticeOk, '公告已删除');
     } catch (error) {
@@ -801,7 +801,7 @@ const saveRelease = async event => {
     showMessage(releaseOk, '');
     releaseSave.disabled = true;
     try {
-        const data = await api('/api/pointere-console/release', {
+        const data = await api('/api/52dj99/release', {
             method: 'POST',
             body: {
                 version: document.getElementById('release-version').value.trim(),
@@ -861,7 +861,7 @@ smtpForm.addEventListener('submit', async event => {
     showMessage(smtpOk, '');
     const elements = smtpForm.elements;
     try {
-        const data = await api('/api/pointere-console/smtp', {
+        const data = await api('/api/52dj99/smtp', {
             method: 'POST',
             body: {
                 host: elements.host.value.trim(),
@@ -886,7 +886,7 @@ $('smtp-test').addEventListener('click', async () => {
     buttonEl.disabled = true;
     buttonEl.textContent = '正在连接…';
     try {
-        await api('/api/pointere-console/smtp', {method: 'POST', body: {action: 'test'}});
+        await api('/api/52dj99/smtp', {method: 'POST', body: {action: 'test'}});
         showMessage(smtpOk, 'SMTP 连接正常，可以发送验证邮件');
     } catch (error) {
         showMessage(smtpError, `SMTP 连接失败：${error.message}`);
@@ -903,7 +903,7 @@ const boot = async () => {
         return;
     }
     try {
-        const data = await api('/api/pointere-console/me');
+        const data = await api('/api/52dj99/me');
         start(data.user);
     } catch (error) {
         loginView.hidden = false;

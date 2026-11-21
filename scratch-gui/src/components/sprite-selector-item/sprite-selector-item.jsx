@@ -67,7 +67,8 @@ const SpriteSelectorItem = props => (
                 onClick={props.onDeleteButtonClick}
             />
         ) : null }
-        {props.onDuplicateButtonClick || props.onDeleteButtonClick || props.onExportButtonClick ? (
+        {props.onDuplicateButtonClick || props.onDeleteButtonClick || props.onExportButtonClick ||
+            props.onCloudUpload ? (
             <ContextMenu id={`${props.name}-${contextMenuId++}`}>
                 {props.onDuplicateButtonClick ? (
                     <MenuItem onClick={props.onDuplicateButtonClick}>
@@ -87,6 +88,11 @@ const SpriteSelectorItem = props => (
                         />
                     </MenuItem>
                 ) : null }
+                {props.onCloudUpload ? (
+                    <MenuItem onClick={props.onCloudUpload}>
+                        上传到云
+                    </MenuItem>
+                ) : null}
                 {props.onRenameButtonClick ? (
                     <MenuItem onClick={props.onRenameButtonClick}>
                         <FormattedMessage
@@ -119,6 +125,7 @@ SpriteSelectorItem.propTypes = {
     name: PropTypes.any,
     number: PropTypes.number,
     onClick: PropTypes.func,
+    onCloudUpload: PropTypes.func,
     onDeleteButtonClick: PropTypes.func,
     onCrossDragStart: PropTypes.func,
     onDuplicateButtonClick: PropTypes.func,

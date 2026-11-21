@@ -28,8 +28,10 @@ const emitAccountChanged = () => {
 };
 
 export const saveAccount = (token, user) => {
+    const hadUser = Boolean(localStorage.getItem(USER_KEY));
     localStorage.setItem(TOKEN_KEY, token);
     localStorage.setItem(USER_KEY, JSON.stringify(user || {}));
+    if (!hadUser) localStorage.removeItem('pointer.cloud.token');
     emitAccountChanged();
 };
 
@@ -42,6 +44,7 @@ export const updateStoredUser = user => {
 export const clearAccount = () => {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(USER_KEY);
+    localStorage.removeItem('pointer.cloud.token');
     emitAccountChanged();
 };
 
